@@ -72,7 +72,7 @@ export function QuoteBlock() {
       <div className="container-1900 relative z-10 flex flex-col items-center px-5 text-center">
         <Sparkle className="mb-8 sm:mb-10 xl:mb-12 h-6 w-6 sm:h-7 sm:w-7 text-[#1C3C8C]" />
         <h2
-          className="max-w-[1400px] text-[28px] font-light leading-[1.2] text-[#1C3C8C] sm:text-[44px] sm:leading-[1.18] xl:text-[64px] xl:leading-[1.15]"
+          className="max-w-[900px] xl:max-w-[1100px] text-[26px] font-light leading-[1.2] text-[#1C3C8C] sm:text-[38px] sm:leading-[1.18] xl:text-[54px] xl:leading-[1.15]"
           style={{ fontFamily: "'Roslindale Display Condensed', serif" }}
         >
           Здесь можно выдохнуть и побыть в спокойном ритме. Работа с тем состоянием, в котором вы пришли — без шаблонов и без спешки
