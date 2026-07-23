@@ -100,7 +100,8 @@ function ServiceCard({
       >
         <span>{service.duration}</span>
         <span className="text-[#8D9DC5]">•</span>
-        <span>{service.price}</span>
+        <span>{computedPrice}</span>
+
       </div>
 
       {/* Buttons */}
