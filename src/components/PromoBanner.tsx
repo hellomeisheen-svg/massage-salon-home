@@ -88,9 +88,21 @@ export function PromoBanner() {
               </div>
               <button
                 type="button"
-                className="mt-8 w-full rounded-xl bg-white px-6 py-4 text-[15px] font-medium text-[#1C3C8C] shadow-[0_12px_30px_-12px_rgba(0,0,0,0.35)] transition-transform duration-300 hover:-translate-y-0.5"
+                className="group mt-8 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-white px-6 py-4 text-[15px] font-medium text-[#1C3C8C] shadow-[0_12px_30px_-12px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_40px_-14px_rgba(0,0,0,0.45)]"
               >
                 Записаться
+                <svg
+                  className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.75"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
               </button>
             </div>
           </div>
