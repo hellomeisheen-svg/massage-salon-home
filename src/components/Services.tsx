@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type Service = {
   title: string;
@@ -98,6 +98,23 @@ function ServiceCard({ service }: { service: Service }) {
 
 export function Services() {
   const [activeCategory, setActiveCategory] = useState(0);
+  const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const idx = Number((entry.target as HTMLElement).dataset.index);
+          setActiveCategory(idx >= 10 ? 1 : 0);
+        });
+      },
+      { rootMargin: "-45% 0px -45% 0px", threshold: 0 }
+    );
+
+    cardRefs.current.forEach((el) => el && observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section className="bg-[#EFF6FF] py-16 sm:py-20 xl:py-24">
@@ -144,10 +161,19 @@ export function Services() {
         {/* Right column */}
         <div className="flex flex-col gap-6">
           {services.map((s, i) => (
-            <ServiceCard key={i} service={s} />
+            <div
+              key={i}
+              ref={(el) => {
+                cardRefs.current[i] = el;
+              }}
+              data-index={i}
+            >
+              <ServiceCard service={s} />
+            </div>
           ))}
         </div>
       </div>
     </section>
   );
 }
+
