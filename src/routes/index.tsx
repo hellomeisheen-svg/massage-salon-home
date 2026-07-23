@@ -35,7 +35,9 @@ function Index() {
       <Hero />
       <QuoteBlock />
       <Services />
+      <Approach />
       <PromoBanner />
+
 
     </div>
   );
