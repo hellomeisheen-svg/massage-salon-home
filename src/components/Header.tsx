@@ -25,17 +25,14 @@ export function Header() {
       {/* Desktop header */}
       <div className="hidden h-20 w-full items-center justify-between rounded-xl border border-[#daebff] bg-white px-5 py-2.5 xl:flex xl:px-[30px]">
         {/* Logo */}
-        <div className="flex h-10 w-20 items-center">
+        <a href="/" aria-label="Татьяна Злобина — на главную" className="flex h-10 items-center">
           <span
-            className="text-[28px] leading-none font-bold italic"
-            style={{
-              fontFamily: "'Dancing Script', cursive",
-              color: "#1c3c8c",
-            }}
+            className="text-[34px] leading-none font-light"
+            style={logoStyle}
           >
-            Logo
+            Татьяна&nbsp;Злобина
           </span>
-        </div>
+        </a>
 
         {/* Navigation */}
         <nav aria-label="Основная навигация">
