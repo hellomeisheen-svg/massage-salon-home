@@ -46,7 +46,7 @@ const sessions = [
 function ServiceCard({ service }: { service: Service }) {
   const [activeSession, setActiveSession] = useState(0);
   return (
-    <article className="rounded-xl border border-[#daebff] bg-white p-8 sm:p-10">
+    <article className="rounded-2xl border border-[#daebff] bg-white p-8 sm:p-10">
       {/* Sessions */}
       <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-[15px] text-[#8D9DC5]">
         {sessions.map((s, i) => (
