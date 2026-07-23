@@ -106,8 +106,11 @@ function ServiceCard({
         <span>{service.duration}</span>
         <span className="text-[#8D9DC5]">•</span>
         <span>{computedPrice}</span>
-
+        {hasDiscount && (
+          <span className="text-[18px] text-[#8D9DC5] line-through">{originalPrice}</span>
+        )}
       </div>
+
 
       {/* Buttons */}
       <div className="mt-8 flex flex-col sm:flex-row gap-3">
