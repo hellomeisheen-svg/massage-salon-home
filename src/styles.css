@@ -12,6 +12,29 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@keyframes deco-float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-14px) rotate(var(--deco-rot, 2deg)); }
+}
+@keyframes deco-appear {
+  from { opacity: 0; transform: translateY(20px) scale(0.85); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.deco-photo {
+  opacity: 0;
+  animation:
+    deco-appear 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards,
+    deco-float 7s ease-in-out infinite;
+  animation-delay: var(--deco-delay, 0s), calc(var(--deco-delay, 0s) + 0.9s);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  will-change: transform;
+}
+.deco-photo:hover {
+  animation-play-state: paused, paused;
+  transform: scale(1.08) rotate(0deg);
+  box-shadow: 0 12px 30px -8px rgba(28, 60, 140, 0.25);
+}
+
 @utility container-1900 {
   width: 100%;
   max-width: 1900px;
