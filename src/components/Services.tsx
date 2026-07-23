@@ -11,29 +11,16 @@ type Service = {
 const description =
   "Комплексная техника для\u00A0глубокого расслабления и\u00A0восстановления баланса. Спокойный ритм, внимание к\u00A0деталям и\u00A0ощущение, что\u00A0тело отпускает накопленное напряжение\u00A0— для\u00A0полноценной паузы и\u00A0проработки всего тела.";
 
-const services: Service[] = [
-  {
-    title: "Векторный",
-    subtitle: "Глубокая работа со\u00A0всем телом",
-    description,
-    duration: "120\u00A0минут",
-    price: "5\u00A0000\u00A0₽",
-  },
-  {
-    title: "Векторный",
-    subtitle: "Глубокая работа со\u00A0всем телом",
-    description,
-    duration: "120\u00A0минут",
-    price: "5\u00A0000\u00A0₽",
-  },
-  {
-    title: "Векторный",
-    subtitle: "Глубокая работа со\u00A0всем телом",
-    description,
-    duration: "120\u00A0минут",
-    price: "5\u00A0000\u00A0₽",
-  },
-];
+const baseService: Service = {
+  title: "Векторный",
+  subtitle: "Глубокая работа со\u00A0всем телом",
+  description,
+  duration: "120\u00A0минут",
+  price: "5\u00A0000\u00A0₽",
+};
+
+const services: Service[] = Array.from({ length: 14 }, () => ({ ...baseService }));
+
 
 const categories = ["Массаж", "Оздоровительные процедуры"];
 
