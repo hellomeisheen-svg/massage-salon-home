@@ -3,12 +3,18 @@ import { Menu, X } from "lucide-react";
 
 const navigationItems = [
   "Услуги",
-  "Приемущества",
+  "Преимущества",
   "Программы",
   "Обо мне",
   "Вопросы",
   "Контакты",
 ];
+
+const logoStyle = {
+  fontFamily: "'Roslindale Display Condensed', serif",
+  color: "#1c3c8c",
+  letterSpacing: "0.01em",
+} as const;
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
