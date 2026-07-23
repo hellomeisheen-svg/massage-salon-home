@@ -17,7 +17,7 @@ function SpecialistBlock() {
         >
           Татьяна&nbsp;Злобина
         </h2>
-        <p className="text-[14px] font-normal leading-[20px] text-[#8D9DC5] sm:text-[15px] sm:leading-[22px]">
+        <p className="text-[16px] font-normal leading-[26px] text-[#8D9DC5]">
           Мастер кабинета, специалист
           <br />
           по&nbsp;оздоровительным практикам
@@ -36,7 +36,7 @@ function HeadlineBlock() {
       >
         Место, где&nbsp;можно замедлиться и&nbsp;вернуться к&nbsp;себе без&nbsp;спешки
       </h1>
-      <p className="mt-4 text-[15px] font-normal leading-[22px] text-[#8D9DC5] xl:text-[17px] xl:leading-[25.5px]">
+      <p className="mt-4 text-[16px] font-normal leading-[26px] text-[#8D9DC5]">
         Оздоровительные практики для&nbsp;тела: массаж, банки, гирудотерапия.
         Спокойный ритм и&nbsp;внимание к&nbsp;каждому состоянию.
       </p>
