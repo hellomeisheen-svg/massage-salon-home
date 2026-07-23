@@ -82,7 +82,7 @@ function ServiceCard({ service }: { service: Service }) {
       </p>
 
       {/* Description */}
-      <p className="mt-5 text-[16px] leading-[26px] text-[#5B6B92]">
+      <p className="mt-5 text-[16px] leading-[26px] text-[#8D9DC5]">
         {service.description}
       </p>
 
