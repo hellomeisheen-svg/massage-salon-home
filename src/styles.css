@@ -2,7 +2,94 @@
 @source "../src";
 @import "tw-animate-css";
 
+@font-face {
+  font-family: "Roslindale Display Condensed";
+  src: url("/fonts/RoslindaleCyrillicDisplayCondensed-ExtraLight.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
 @custom-variant dark (&:is(.dark *));
+
+@utility container-1900 {
+  width: 100%;
+  max-width: 1900px;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+@media (min-width: 640px) {
+  .container-1900 {
+    padding-inline: 1.25rem;
+  }
+}
+
+@utility btn-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 150%;
+  min-height: 60px;
+  transition: opacity 0.2s, background-color 0.2s, background-image 0.2s;
+}
+@utility btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 150%;
+  min-height: 60px;
+  color: #fff;
+  background-image: linear-gradient(to bottom, #A2CFFE, #88C1FF);
+  transition: background-color 0.2s, background-image 0.2s;
+}
+.btn-primary:hover {
+  background-image: none;
+  background-color: #5DAAFD;
+}
+@utility btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 150%;
+  min-height: 60px;
+  color: #1c3c8c;
+  background: transparent;
+  border: 1px solid rgba(141, 157, 197, 0.5);
+  transition: background-color 0.2s;
+}
+.btn-secondary:hover {
+  background-color: #EFF6FF;
+}
+
+.tablet-text-block {
+  width: 100%;
+}
+@media (min-width: 640px) and (max-width: 1279px) {
+  .tablet-text-block {
+    max-width: 550px;
+  }
+  .tablet-text-block h1 {
+    font-size: 52px;
+    line-height: 1.12;
+  }
+  .tablet-text-block p {
+    max-width: 680px;
+  }
+}
+
+
 
 /*
  * Design system definition for a wellness/massage brand.
