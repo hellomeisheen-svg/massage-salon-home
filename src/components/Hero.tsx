@@ -29,7 +29,7 @@ export function Hero() {
             </div>
 
             {/* Text + buttons at bottom */}
-            <div className="flex flex-col max-w-[640px]">
+            <div className="flex flex-col max-w-[640px] mt-[140px]">
               <h1
                 className="text-[58px] font-light leading-[1.15] text-[#1C3C8C]"
                 style={{ fontFamily: "'Roslindale Display Condensed', serif" }}
