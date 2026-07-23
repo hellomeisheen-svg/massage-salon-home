@@ -14,25 +14,25 @@ const decoImages = [
     src: "/images/deco-massage-1.jpg",
     alt: "",
     className:
-      "absolute left-[2%] top-[10%] h-[90px] w-[90px] sm:h-[110px] sm:w-[110px] xl:h-[130px] xl:w-[130px] rounded-2xl object-cover shadow-sm",
+      "absolute left-[2%] top-[6%] h-[70px] w-[70px] sm:h-[85px] sm:w-[85px] xl:h-[100px] xl:w-[100px] rounded-2xl object-cover shadow-sm",
   },
   {
     src: "/images/deco-massage-2.jpg",
     alt: "",
     className:
-      "absolute right-[2%] top-[8%] h-[90px] w-[90px] sm:h-[110px] sm:w-[110px] xl:h-[130px] xl:w-[130px] rounded-2xl object-cover shadow-sm",
+      "absolute right-[2%] top-[5%] h-[70px] w-[70px] sm:h-[85px] sm:w-[85px] xl:h-[100px] xl:w-[100px] rounded-2xl object-cover shadow-sm",
   },
   {
     src: "/images/deco-massage-3.jpg",
     alt: "",
     className:
-      "absolute left-[14%] bottom-[10%] h-[90px] w-[90px] sm:h-[110px] sm:w-[110px] xl:h-[130px] xl:w-[130px] rounded-2xl object-cover shadow-sm",
+      "absolute left-[10%] bottom-[6%] h-[70px] w-[70px] sm:h-[85px] sm:w-[85px] xl:h-[100px] xl:w-[100px] rounded-2xl object-cover shadow-sm",
   },
   {
     src: "/images/deco-massage-4.jpg",
     alt: "",
     className:
-      "absolute right-[14%] bottom-[12%] h-[90px] w-[90px] sm:h-[110px] sm:w-[110px] xl:h-[130px] xl:w-[130px] rounded-2xl object-cover shadow-sm",
+      "absolute right-[10%] bottom-[8%] h-[70px] w-[70px] sm:h-[85px] sm:w-[85px] xl:h-[100px] xl:w-[100px] rounded-2xl object-cover shadow-sm",
   },
 ];
 
@@ -46,7 +46,7 @@ const sparkles = [
 
 export function QuoteBlock() {
   return (
-    <section className="relative overflow-hidden bg-[#EFF6FF] py-20 sm:py-28 xl:py-36">
+    <section className="relative overflow-hidden bg-[#EFF6FF] py-28 sm:py-36 xl:py-48">
       {/* Decorative photos — hidden on very small screens to avoid clutter */}
       <div className="pointer-events-none absolute inset-0 hidden sm:block">
         {decoImages.map((img, i) => (
@@ -72,7 +72,7 @@ export function QuoteBlock() {
       <div className="container-1900 relative z-10 flex flex-col items-center px-5 text-center">
         <Sparkle className="mb-8 sm:mb-10 xl:mb-12 h-6 w-6 sm:h-7 sm:w-7 text-[#1C3C8C]" />
         <h2
-          className="max-w-[1400px] text-[28px] font-light leading-[1.2] text-[#1C3C8C] sm:text-[44px] sm:leading-[1.18] xl:text-[64px] xl:leading-[1.15]"
+          className="max-w-[900px] xl:max-w-[1100px] text-[26px] font-light leading-[1.2] text-[#1C3C8C] sm:text-[38px] sm:leading-[1.18] xl:text-[54px] xl:leading-[1.15]"
           style={{ fontFamily: "'Roslindale Display Condensed', serif" }}
         >
           Здесь можно выдохнуть и побыть в спокойном ритме. Работа с тем состоянием, в котором вы пришли — без шаблонов и без спешки
