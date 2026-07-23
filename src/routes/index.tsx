@@ -37,6 +37,7 @@ function Index() {
       <QuoteBlock />
       <Services />
       <Approach />
+      <Programs />
       <PromoBanner />
 
 
