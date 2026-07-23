@@ -48,7 +48,7 @@ function ServiceCard({ service }: { service: Service }) {
   return (
     <article className="rounded-2xl border border-[#daebff] bg-white p-8 sm:p-10 transition-shadow duration-300 hover:shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)]">
       {/* Sessions */}
-      <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-[15px] text-[#8D9DC5]">
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-[16px] leading-[26px] text-[#8D9DC5]">
         {sessions.map((s, i) => (
           <div key={s.label} className="flex items-center gap-x-3">
             <button
