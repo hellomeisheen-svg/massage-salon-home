@@ -183,13 +183,14 @@ button:focus-visible {
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
-  --color-sage: var(--sage);
-  --color-sage-light: var(--sage-light);
-  --color-sage-dark: var(--sage-dark);
-  --color-forest: var(--forest);
-  --color-cream: var(--cream);
-  --color-warm-white: var(--warm-white);
-  --color-charcoal: var(--charcoal);
+  /* Brand palette (Татьяна Злобина) */
+  --color-brand-ink: var(--brand-ink);
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-blue-soft: var(--brand-blue-soft);
+  --color-brand-blue-tint: var(--brand-blue-tint);
+  --color-brand-surface: var(--brand-surface);
+  --color-brand-border: var(--brand-border);
+  --color-brand-muted: var(--brand-muted);
 }
 
 :root {
