@@ -188,7 +188,12 @@ export function Services() {
         </div>
 
         {/* Right column */}
-        <div className="flex flex-col gap-6">
+        <div className="relative flex flex-col gap-6">
+          <div
+            className="pointer-events-none absolute -top-6 right-4 sm:right-8 z-10 rotate-[8deg] rounded-full bg-gradient-to-b from-[#8FBEFF] to-[#5DAAFD] px-5 py-2 text-[14px] font-medium text-white shadow-[0_10px_24px_-10px_rgba(93,170,253,0.6)]"
+          >
+            Курсом выгоднее
+          </div>
           {services.map((s, i) => (
             <div
               key={i}
@@ -201,6 +206,7 @@ export function Services() {
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );
