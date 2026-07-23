@@ -287,7 +287,7 @@ function Booking() {
                 asChild
                 variant="outline"
                 size="lg"
-                className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
+                className="border-primary-foreground/30 bg-transparent text-primary-foreground hover:bg-primary-foreground/10"
               >
                 <a href="#contacts">Узнать адрес</a>
               </Button>
