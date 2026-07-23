@@ -77,12 +77,12 @@ function ServiceCard({ service }: { service: Service }) {
       >
         {service.title}
       </h3>
-      <p className="mt-3 italic text-[15px] text-[#8D9DC5]">
+      <p className="mt-3 italic text-[16px] leading-[26px] text-[#8D9DC5]">
         {service.subtitle}
       </p>
 
       {/* Description */}
-      <p className="mt-5 text-[15px] leading-[24px] text-[#5B6B92]">
+      <p className="mt-5 text-[16px] leading-[26px] text-[#5B6B92]">
         {service.description}
       </p>
 
