@@ -3,9 +3,9 @@ export function Hero() {
     <>
       {/* Desktop */}
       <main className="hidden xl:block bg-[#EFF6FF] pb-5 pt-5">
-        <section className="container-1900 grid h-[calc(100vh-140px)] grid-cols-2 gap-5">
+        <section className="container-1900 grid h-[calc(100vh-80px)] grid-cols-2 gap-5">
           {/* Left content column */}
-          <div className="rounded-xl border border-[#daebff] bg-white flex flex-col justify-between p-10">
+          <div className="rounded-xl border border-[#daebff] bg-white flex flex-col p-10">
             {/* Specialist block at top */}
             <div className="flex flex-col items-start gap-4">
               <img
@@ -29,7 +29,7 @@ export function Hero() {
             </div>
 
             {/* Text + buttons at bottom */}
-            <div className="flex flex-col max-w-[640px]">
+            <div className="flex flex-col max-w-[640px] mt-[140px]">
               <h1
                 className="text-[58px] font-light leading-[1.15] text-[#1C3C8C]"
                 style={{ fontFamily: "'Roslindale Display Condensed', serif" }}
