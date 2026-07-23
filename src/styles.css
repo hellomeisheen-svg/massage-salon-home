@@ -65,6 +65,7 @@
   opacity: 1;
 }
 @utility btn-secondary {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -77,10 +78,34 @@
   color: #1c3c8c;
   background-color: transparent;
   border: 1px solid rgba(141, 157, 197, 0.5);
-  transition: background-color 0.35s ease, border-color 0.35s ease;
+  isolation: isolate;
+  overflow: hidden;
+  transition: border-color 0.35s ease, color 0.35s ease;
+}
+.btn-secondary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #EFF6FF;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  z-index: -1;
+}
+.btn-secondary:hover::before {
+  opacity: 1;
 }
 .btn-secondary:hover {
-  background-color: #EFF6FF;
+  border-color: #A2CFFE;
+}
+
+/* Unified focus-visible ring for interactive elements */
+.btn-primary:focus-visible,
+.btn-secondary:focus-visible,
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #5DAAFD;
+  outline-offset: 2px;
+  border-radius: 0.5rem;
 }
 
 
