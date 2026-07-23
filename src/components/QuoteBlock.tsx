@@ -46,7 +46,7 @@ const sparkles = [
 
 export function QuoteBlock() {
   return (
-    <section className="relative overflow-hidden bg-[#EFF6FF] py-20 sm:py-28 xl:py-36">
+    <section className="relative overflow-hidden bg-[#EFF6FF] py-28 sm:py-36 xl:py-48">
       {/* Decorative photos — hidden on very small screens to avoid clutter */}
       <div className="pointer-events-none absolute inset-0 hidden sm:block">
         {decoImages.map((img, i) => (
