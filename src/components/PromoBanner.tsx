@@ -11,84 +11,51 @@ const Sparkle = ({ className }: { className?: string }) => (
 
 export function PromoBanner() {
   return (
-    <section className="bg-[#EFF6FF] pb-10 sm:pb-16 xl:pb-20">
+    <section className="bg-brand-surface pb-10 sm:pb-16 xl:pb-20">
       <div className="container-1900 px-5">
-        <div
-          className="relative overflow-hidden rounded-2xl border border-[#daebff] px-6 py-16 sm:px-12 sm:py-20 xl:px-20 xl:py-24"
-          style={{
-            background:
-              "linear-gradient(135deg, #1C3C8C 0%, #2E5AC8 55%, #4A7EE0 100%)",
-          }}
-        >
-          {/* Soft glow */}
+        <div className="relative overflow-hidden rounded-3xl border border-brand-border bg-white px-6 py-16 sm:px-12 sm:py-20 xl:px-24 xl:py-24">
+          {/* Soft brand glows */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -right-32 -top-32 h-[420px] w-[420px] rounded-full opacity-40 blur-3xl"
-            style={{ background: "#8AB0FF" }}
+            className="pointer-events-none absolute -left-40 -top-40 h-[480px] w-[480px] rounded-full opacity-60 blur-3xl"
+            style={{ background: "var(--brand-blue-tint)" }}
           />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -bottom-40 -left-24 h-[380px] w-[380px] rounded-full opacity-25 blur-3xl"
-            style={{ background: "#EFF6FF" }}
+            className="pointer-events-none absolute -bottom-48 -right-32 h-[520px] w-[520px] rounded-full opacity-50 blur-3xl"
+            style={{ background: "var(--brand-surface)" }}
           />
 
           {/* Decorative sparkles */}
-          <Sparkle className="pointer-events-none absolute left-[8%] top-[22%] h-4 w-4 text-white/60" />
-          <Sparkle className="pointer-events-none absolute right-[12%] top-[18%] h-3 w-3 text-white/50" />
-          <Sparkle className="pointer-events-none absolute right-[8%] bottom-[24%] h-5 w-5 text-white/50" />
-          <Sparkle className="pointer-events-none absolute left-[14%] bottom-[18%] h-3 w-3 text-white/60" />
+          <Sparkle className="pointer-events-none absolute left-[6%] top-[18%] hidden h-4 w-4 text-brand-blue/60 sm:block" />
+          <Sparkle className="pointer-events-none absolute right-[10%] top-[14%] hidden h-3 w-3 text-brand-blue/50 sm:block" />
+          <Sparkle className="pointer-events-none absolute right-[6%] bottom-[22%] hidden h-5 w-5 text-brand-blue/50 sm:block" />
+          <Sparkle className="pointer-events-none absolute left-[12%] bottom-[16%] hidden h-3 w-3 text-brand-blue/60 sm:block" />
 
-          <div className="relative z-10 grid gap-10 xl:grid-cols-[1.4fr_1fr] xl:items-center xl:gap-16">
-            {/* Left: text */}
-            <div className="flex flex-col">
-              <span className="inline-flex w-fit items-center gap-2 rounded-full bg-white/15 px-4 py-1.5 text-[13px] font-medium tracking-wide text-white/90 backdrop-blur-sm">
-                <span className="h-1.5 w-1.5 rounded-full bg-white" />
-                Первый визит
-              </span>
-              <h2
-                className="mt-6 text-[34px] font-light leading-[1.1] text-white sm:text-[48px] xl:text-[60px]"
-                style={{ fontFamily: "'Roslindale Display Condensed', serif" }}
-              >
-                Начните мягко —<br />
-                с комфортной цены
-              </h2>
-              <p className="mt-5 max-w-[520px] text-[15px] leading-[24px] text-white/70 sm:text-[16px] sm:leading-[26px]">
-                Первое знакомство с кабинетом со скидкой 20%. Подберём формат
-                под ваше состояние и обсудим всё заранее — без спешки.
-              </p>
-            </div>
+          <div className="relative z-10 flex flex-col items-center text-center">
+            <span className="inline-flex items-center gap-2 rounded-full border border-brand-border bg-brand-surface px-4 py-1.5 text-[13px] font-medium tracking-wide text-brand-ink">
+              <span className="h-1.5 w-1.5 rounded-full bg-brand-blue" />
+              Первый визит
+            </span>
 
-            {/* Right: CTA card */}
-            <div className="rounded-2xl bg-white/10 p-6 backdrop-blur-md ring-1 ring-white/20 sm:p-8">
-              <div className="flex items-baseline gap-3">
-                <span
-                  className="text-[64px] font-light leading-none text-white sm:text-[80px]"
-                  style={{
-                    fontFamily: "'Roslindale Display Condensed', serif",
-                  }}
-                >
-                  −20%
-                </span>
-                <span className="text-[14px] text-white/70">на первый визит</span>
-              </div>
-              <div className="mt-6 h-px w-full bg-white/20" />
-              <div className="mt-6 flex flex-col gap-3 text-[14px] text-white/80">
-                <div className="flex items-center gap-3">
-                  <span className="h-1.5 w-1.5 rounded-full bg-white/70" />
-                  Индивидуальный подбор формата
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="h-1.5 w-1.5 rounded-full bg-white/70" />
-                  Спокойная беседа перед сеансом
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="h-1.5 w-1.5 rounded-full bg-white/70" />
-                  Без ограничений по услуге
-                </div>
-              </div>
+            <h2
+              className="mt-6 max-w-[880px] text-[34px] font-light leading-[1.1] text-brand-ink sm:text-[48px] xl:text-[60px]"
+              style={{ fontFamily: "'Roslindale Display Condensed', serif" }}
+            >
+              Знакомство с кабинетом
+              <br />
+              по комфортной цене
+            </h2>
+
+            <p className="mt-5 max-w-[600px] text-[15px] leading-[24px] text-brand-ink/60 sm:text-[16px] sm:leading-[26px]">
+              Первый визит со скидкой 20%. Подберём формат под ваше состояние
+              и обсудим всё заранее — без спешки и шаблонов.
+            </p>
+
+            <div className="mt-10 flex items-center gap-4">
               <button
                 type="button"
-                className="group mt-8 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-white px-6 py-4 text-[15px] font-medium text-[#1C3C8C] shadow-[0_12px_30px_-12px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_40px_-14px_rgba(0,0,0,0.45)]"
+                className="btn-primary group gap-2"
               >
                 Записаться
                 <svg
@@ -104,6 +71,11 @@ export function PromoBanner() {
                   <path d="M5 12h14M13 6l6 6-6 6" />
                 </svg>
               </button>
+              <span
+                className="inline-flex items-center rounded-full bg-brand-ink px-4 py-2 text-[13px] font-medium text-white"
+              >
+                −20%
+              </span>
             </div>
           </div>
         </div>
