@@ -12,27 +12,31 @@ const Sparkle = ({ className }: { className?: string }) => (
 const decoImages = [
   {
     src: "/images/deco-massage-1.jpg",
-    alt: "",
     className:
       "absolute left-[2%] top-[6%] xl:top-[120px] h-[70px] w-[70px] sm:h-[85px] sm:w-[85px] xl:h-[100px] xl:w-[100px] rounded-2xl object-cover shadow-sm",
+    delay: "0s",
+    rot: "-3deg",
   },
   {
     src: "/images/deco-massage-2.jpg",
-    alt: "",
     className:
       "absolute right-[2%] top-[5%] xl:top-[120px] h-[70px] w-[70px] sm:h-[85px] sm:w-[85px] xl:h-[100px] xl:w-[100px] rounded-2xl object-cover shadow-sm",
+    delay: "0.2s",
+    rot: "3deg",
   },
   {
     src: "/images/deco-massage-3.jpg",
-    alt: "",
     className:
       "absolute left-[10%] bottom-[6%] xl:bottom-[120px] h-[70px] w-[70px] sm:h-[85px] sm:w-[85px] xl:h-[100px] xl:w-[100px] rounded-2xl object-cover shadow-sm",
+    delay: "0.4s",
+    rot: "2deg",
   },
   {
     src: "/images/deco-massage-4.jpg",
-    alt: "",
     className:
       "absolute right-[10%] bottom-[8%] xl:bottom-[120px] h-[70px] w-[70px] sm:h-[85px] sm:w-[85px] xl:h-[100px] xl:w-[100px] rounded-2xl object-cover shadow-sm",
+    delay: "0.6s",
+    rot: "-2deg",
   },
 ];
 
@@ -46,16 +50,20 @@ export function QuoteBlock() {
   return (
     <section className="relative overflow-hidden bg-[#EFF6FF] py-28 sm:py-36 xl:py-48">
       {/* Decorative photos — hidden on very small screens to avoid clutter */}
-      <div className="pointer-events-none absolute inset-0 hidden sm:block">
+      <div className="absolute inset-0 hidden sm:block">
         {decoImages.map((img, i) => (
           <img
             key={i}
             src={img.src}
-            alt={img.alt}
+            alt=""
             width={512}
             height={512}
             loading="lazy"
-            className={img.className}
+            className={`deco-photo ${img.className}`}
+            style={{
+              ["--deco-delay" as string]: img.delay,
+              ["--deco-rot" as string]: img.rot,
+            }}
           />
         ))}
       </div>
