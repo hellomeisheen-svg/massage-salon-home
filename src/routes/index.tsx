@@ -5,6 +5,7 @@ import { QuoteBlock } from "@/components/QuoteBlock";
 import { Services } from "@/components/Services";
 import { Approach } from "@/components/Approach";
 import { PromoBanner } from "@/components/PromoBanner";
+import { Programs } from "@/components/Programs";
 
 export const Route = createFileRoute("/")({
   head: () => ({
