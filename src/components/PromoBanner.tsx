@@ -13,7 +13,7 @@ export function PromoBanner() {
   return (
     <section className="bg-brand-surface pb-10 sm:pb-16 xl:pb-20">
       <div className="container-1900 px-5">
-        <div className="relative overflow-hidden rounded-3xl border border-brand-border bg-white px-6 py-16 sm:px-12 sm:py-20 xl:px-24 xl:py-24">
+        <div className="relative overflow-hidden rounded-2xl border border-brand-border bg-white px-6 py-16 sm:px-12 sm:py-20 xl:px-24 xl:py-24">
           {/* Soft brand glows */}
           <div
             aria-hidden="true"

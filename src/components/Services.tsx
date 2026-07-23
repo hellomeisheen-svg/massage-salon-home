@@ -46,7 +46,7 @@ const sessions = [
 function ServiceCard({ service }: { service: Service }) {
   const [activeSession, setActiveSession] = useState(0);
   return (
-    <article className="rounded-xl border border-[#daebff] bg-white p-8 sm:p-10">
+    <article className="rounded-2xl border border-[#daebff] bg-white p-8 sm:p-10 transition-shadow duration-300 hover:shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)]">
       {/* Sessions */}
       <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-[15px] text-[#8D9DC5]">
         {sessions.map((s, i) => (
@@ -117,7 +117,8 @@ export function Services() {
       <div className="container-1900 px-5 grid grid-cols-1 xl:grid-cols-2 gap-10 xl:gap-16">
         {/* Left column */}
         <div className="xl:sticky xl:top-24 self-start">
-          <span className="inline-block rounded-lg bg-[#DCE9FF] px-4 py-2 text-[14px] text-[#1C3C8C]">
+          <span className="inline-flex items-center gap-2 rounded-full border border-[#daebff] bg-white px-4 py-1.5 text-[13px] font-medium tracking-wide text-[#1C3C8C]">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#5DAAFD]" />
             Услуги
           </span>
           <h2
