@@ -65,7 +65,7 @@ export function Hero() {
         {/* Content card */}
         <div className="flex flex-col rounded-2xl border border-[#daebff] bg-white p-5 sm:h-[700px] sm:p-6 xl:h-full xl:p-10">
           <SpecialistBlock />
-          <div className="mt-[80px] sm:mt-auto xl:mt-[140px]">
+          <div className="mt-[80px] sm:mt-auto xl:mt-auto xl:pt-[140px]">
             <HeadlineBlock />
           </div>
         </div>
