@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
+import { QuoteBlock } from "@/components/QuoteBlock";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -29,6 +30,7 @@ function Index() {
     <div className="min-h-screen bg-[#EFF6FF]">
       <Header />
       <Hero />
+      <QuoteBlock />
     </div>
   );
 }
