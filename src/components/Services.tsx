@@ -85,7 +85,7 @@ function ServiceCard({
       {/* Title */}
       <h3
         className="mt-4 text-[42px] font-light leading-[1.1] text-[#1C3C8C]"
-        style={{ fontFamily: "'Roslindale Display Condensed', serif" }}
+        style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
       >
         {service.title}
       </h3>
@@ -101,7 +101,7 @@ function ServiceCard({
       {/* Duration + price */}
       <div
         className="mt-8 flex flex-wrap items-baseline gap-x-4 text-[26px] font-light text-[#1C3C8C]"
-        style={{ fontFamily: "'Roslindale Display Condensed', serif" }}
+        style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
       >
         <span>{service.duration}</span>
         <span className="text-[#8D9DC5]">•</span>
@@ -156,7 +156,7 @@ export function Services() {
           </span>
           <h2
             className="mt-6 text-[38px] xl:text-[44px] font-light leading-[1.15] text-[#1C3C8C] max-w-[520px]"
-            style={{ fontFamily: "'Roslindale Display Condensed', serif" }}
+            style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
           >
             Перед каждым визитом обсуждаем ваше состояние&nbsp;— и&nbsp;подбираем технику под&nbsp;него
           </h2>
