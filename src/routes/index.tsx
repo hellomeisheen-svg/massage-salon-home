@@ -1,19 +1,34 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Header } from "@/components/Header";
+import { Hero } from "@/components/Hero";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Пустая страница" },
-      { name: "description", content: "Пустая страница." },
-      { property: "og:title", content: "Пустая страница" },
-      { property: "og:description", content: "Пустая страница." },
+      { title: "Татьяна Злобина — оздоровительные практики" },
+      {
+        name: "description",
+        content:
+          "Кабинет оздоровительных практик Татьяны Злобиной: массаж, банки, гирудотерапия. Спокойный ритм и внимание к каждому состоянию.",
+      },
+      { property: "og:title", content: "Татьяна Злобина — оздоровительные практики" },
+      {
+        property: "og:description",
+        content:
+          "Массаж, банки, гирудотерапия. Место, где можно замедлиться и вернуться к себе без спешки.",
+      },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Index,
 });
 
 function Index() {
-  return <div className="min-h-screen bg-background" />;
+  return (
+    <div className="min-h-screen bg-[#EFF6FF]">
+      <Header />
+      <Hero />
+    </div>
+  );
 }
