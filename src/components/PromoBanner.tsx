@@ -42,14 +42,14 @@ export function PromoBanner() {
               className="mt-6 max-w-[880px] text-[34px] font-light leading-[1.1] text-brand-ink sm:text-[48px] xl:text-[60px]"
               style={{ fontFamily: "'Roslindale Display Condensed', serif" }}
             >
-              Знакомство с кабинетом
+              Знакомство с&nbsp;кабинетом
               <br />
-              по комфортной цене
+              по&nbsp;комфортной цене
             </h2>
 
             <p className="mt-5 max-w-[600px] text-[15px] leading-[24px] text-brand-ink/60 sm:text-[16px] sm:leading-[26px]">
-              Первый визит со скидкой 20%. Подберём формат под ваше состояние
-              и обсудим всё заранее — без спешки и шаблонов.
+              Первый визит со&nbsp;скидкой 20%. Подберём формат под&nbsp;ваше состояние
+              и&nbsp;обсудим всё заранее&nbsp;— без&nbsp;спешки и&nbsp;шаблонов.
             </p>
 
             <div className="mt-10 flex items-center gap-4">

@@ -15,12 +15,12 @@ function SpecialistBlock() {
           className="text-[22px] font-light leading-[1.2] text-[#1c3c8c] sm:text-[24px] xl:text-[28px]"
           style={heroFont}
         >
-          Татьяна Злобина
+          Татьяна&nbsp;Злобина
         </h2>
         <p className="text-[14px] font-normal leading-[20px] text-[#8D9DC5] sm:text-[15px] sm:leading-[22px]">
           Мастер кабинета, специалист
           <br />
-          по оздоровительным практикам
+          по&nbsp;оздоровительным практикам
         </p>
       </div>
     </div>
@@ -34,11 +34,11 @@ function HeadlineBlock() {
         className="text-[38px] font-light leading-[1.12] text-[#1C3C8C] sm:text-[58px] sm:leading-[1.15]"
         style={heroFont}
       >
-        Место, где можно замедлиться и вернуться к себе без спешки
+        Место, где&nbsp;можно замедлиться и&nbsp;вернуться к&nbsp;себе без&nbsp;спешки
       </h1>
       <p className="mt-4 text-[15px] font-normal leading-[22px] text-[#8D9DC5] xl:text-[17px] xl:leading-[25.5px]">
-        Оздоровительные практики для тела: массаж, банки, гирудотерапия.
-        Спокойный ритм и внимание к каждому состоянию.
+        Оздоровительные практики для&nbsp;тела: массаж, банки, гирудотерапия.
+        Спокойный ритм и&nbsp;внимание к&nbsp;каждому состоянию.
       </p>
       <div className="mt-[30px] flex flex-col gap-3 sm:flex-row sm:gap-4">
         <button
