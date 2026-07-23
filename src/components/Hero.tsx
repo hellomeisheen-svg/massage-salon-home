@@ -176,7 +176,7 @@ export function Hero() {
           </div>
 
           {/* Image */}
-          <div className="rounded-xl border border-[#daebff] overflow-hidden h-[600px]">
+          <div className="rounded-xl border border-[#daebff] overflow-hidden h-[400px]">
             <img
               className="h-full w-full object-cover object-top"
               style={{ transform: "scaleX(-1)" }}
