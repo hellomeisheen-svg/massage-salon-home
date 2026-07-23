@@ -47,7 +47,7 @@ export function PromoBanner() {
               по&nbsp;комфортной цене
             </h2>
 
-            <p className="mt-5 max-w-[600px] text-[15px] leading-[24px] text-brand-ink/60 sm:text-[16px] sm:leading-[26px]">
+            <p className="mt-5 max-w-[600px] text-[16px] leading-[26px] text-brand-ink/60">
               Первый визит со&nbsp;скидкой 20%. Подберём формат под&nbsp;ваше состояние
               и&nbsp;обсудим всё заранее&nbsp;— без&nbsp;спешки и&nbsp;шаблонов.
             </p>
