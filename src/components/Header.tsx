@@ -11,7 +11,7 @@ const navigationItems = [
 ];
 
 const logoStyle = {
-  fontFamily: "'Roslindale Display Condensed', serif",
+  fontFamily: "'Roslindale Cyrillic Display Condensed', serif",
   color: "#1c3c8c",
   letterSpacing: "0.01em",
 } as const;

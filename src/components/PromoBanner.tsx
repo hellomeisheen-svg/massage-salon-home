@@ -40,7 +40,7 @@ export function PromoBanner() {
 
             <h2
               className="mt-6 max-w-[880px] text-[34px] font-light leading-[1.1] text-brand-ink sm:text-[48px] xl:text-[60px]"
-              style={{ fontFamily: "'Roslindale Display Condensed', serif" }}
+              style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
             >
               Знакомство с&nbsp;кабинетом
               <br />

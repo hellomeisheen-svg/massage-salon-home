@@ -79,7 +79,7 @@ export function QuoteBlock() {
         <Sparkle className="mb-8 sm:mb-10 xl:mb-12 h-6 w-6 sm:h-7 sm:w-7 text-[#1C3C8C]" />
         <h2
           className="max-w-[900px] xl:max-w-[1100px] text-[26px] font-light leading-[1.2] text-[#1C3C8C] sm:text-[38px] sm:leading-[1.18] xl:text-[54px] xl:leading-[1.15]"
-          style={{ fontFamily: "'Roslindale Display Condensed', serif" }}
+          style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
         >
           Здесь можно выдохнуть и&nbsp;побыть в&nbsp;спокойном ритме. Работа с&nbsp;тем состоянием, в&nbsp;котором вы&nbsp;пришли&nbsp;— без&nbsp;шаблонов и&nbsp;без&nbsp;спешки
         </h2>

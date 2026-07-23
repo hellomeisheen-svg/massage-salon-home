@@ -1,5 +1,5 @@
 const heroFont = {
-  fontFamily: "'Roslindale Display Condensed', serif",
+  fontFamily: "'Roslindale Cyrillic Display Condensed', serif",
 } as const;
 
 function SpecialistBlock() {
