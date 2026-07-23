@@ -65,9 +65,9 @@ export function Hero() {
         {/* Content card */}
         <div className="flex flex-col rounded-xl border border-[#daebff] bg-white p-5 sm:h-[700px] sm:p-6 xl:h-full xl:p-10">
           <SpecialistBlock />
-          {/* Spacer that flexes between breakpoints */}
-          <div className="mt-[80px] sm:mt-auto sm:pt-10 xl:mt-[140px] xl:pt-0" />
-          <HeadlineBlock />
+          <div className="mt-[80px] sm:mt-auto xl:mt-[140px]">
+            <HeadlineBlock />
+          </div>
         </div>
 
         {/* Hero image */}
