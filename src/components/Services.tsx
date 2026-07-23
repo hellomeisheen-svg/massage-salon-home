@@ -189,7 +189,7 @@ export function Services() {
               }}
               data-index={i}
             >
-              <ServiceCard service={s} />
+              <ServiceCard service={s} dynamicPricing={i === 0} />
             </div>
           ))}
         </div>
