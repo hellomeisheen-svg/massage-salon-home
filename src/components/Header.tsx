@@ -25,14 +25,17 @@ export function Header() {
       {/* Desktop header */}
       <div className="hidden h-20 w-full items-center justify-between rounded-xl border border-[#daebff] bg-white px-5 py-2.5 xl:flex xl:px-[30px]">
         {/* Logo */}
-        <a href="/" aria-label="Татьяна Злобина — на главную" className="flex h-10 items-center">
+        <div className="flex h-10 w-20 items-center">
           <span
-            className="text-[34px] leading-none font-light"
-            style={logoStyle}
+            className="text-[28px] leading-none font-bold italic"
+            style={{
+              fontFamily: "'Dancing Script', cursive",
+              color: "#1c3c8c",
+            }}
           >
-            Татьяна&nbsp;Злобина
+            Logo
           </span>
-        </a>
+        </div>
 
         {/* Navigation */}
         <nav aria-label="Основная навигация">
@@ -59,14 +62,17 @@ export function Header() {
       {/* Mobile / tablet header */}
       <div className="flex h-16 w-full items-center justify-between rounded-xl border border-[#daebff] bg-white px-4 py-2.5 xl:hidden">
         {/* Logo */}
-        <a href="/" aria-label="Татьяна Злобина — на главную" className="flex h-8 items-center">
+        <div className="flex h-8 items-center">
           <span
-            className="text-[22px] leading-none font-light"
-            style={logoStyle}
+            className="text-[24px] leading-none font-bold italic"
+            style={{
+              fontFamily: "'Dancing Script', cursive",
+              color: "#1c3c8c",
+            }}
           >
-            Татьяна&nbsp;Злобина
+            Logo
           </span>
-        </a>
+        </div>
 
         {/* Hamburger */}
         <button
