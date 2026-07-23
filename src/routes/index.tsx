@@ -3,6 +3,7 @@ import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { QuoteBlock } from "@/components/QuoteBlock";
 import { Services } from "@/components/Services";
+import { Approach } from "@/components/Approach";
 import { PromoBanner } from "@/components/PromoBanner";
 
 export const Route = createFileRoute("/")({
