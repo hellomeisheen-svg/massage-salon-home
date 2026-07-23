@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Roslindale Display Condensed";
+  src: url("/fonts/RoslindaleCyrillicDisplayCondensed-ExtraLight.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-body: 'Inter', Arial, sans-serif;
+  --font-weight-body: 400;
+  --font-weight-button: 500;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-body);
+}
+
+button,
+.btn,
+a.button,
+a.btn,
+.cta,
+[role="button"] {
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-button);
+}
+
+@layer components {
+  .container-1900 {
+    @apply w-full max-w-[1900px] mx-auto px-4 sm:px-5;
+  }
+  .tablet-text-block {
+    width: 100%;
+  }
+  @media (min-width: 640px) and (max-width: 1279px) {
+    .tablet-text-block {
+      max-width: 550px;
+    }
+    .tablet-text-block h1 {
+      font-size: 52px;
+      line-height: 1.12;
+    }
+    .tablet-text-block p {
+      max-width: 680px;
+    }
+  }
+  .btn-base {
+    @apply inline-flex items-center justify-center rounded-lg px-6 py-4 text-base font-medium leading-[150%] transition-opacity;
+    min-height: 60px;
+  }
+  .btn-primary {
+    @apply btn-base bg-gradient-to-b from-[#A2CFFE] to-[#88C1FF] text-white hover:bg-none hover:bg-[#5DAAFD];
+  }
+  .btn-secondary {
+    @apply btn-base border border-[#8d9dc580] bg-transparent text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors;
+  }
+}
