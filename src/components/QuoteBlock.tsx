@@ -14,25 +14,25 @@ const decoImages = [
     src: "/images/deco-massage-1.jpg",
     alt: "",
     className:
-      "absolute left-[2%] top-[6%] h-[70px] w-[70px] sm:h-[85px] sm:w-[85px] xl:h-[100px] xl:w-[100px] rounded-2xl object-cover shadow-sm",
+      "absolute left-[2%] top-[6%] xl:top-[120px] h-[70px] w-[70px] sm:h-[85px] sm:w-[85px] xl:h-[100px] xl:w-[100px] rounded-2xl object-cover shadow-sm",
   },
   {
     src: "/images/deco-massage-2.jpg",
     alt: "",
     className:
-      "absolute right-[2%] top-[5%] h-[70px] w-[70px] sm:h-[85px] sm:w-[85px] xl:h-[100px] xl:w-[100px] rounded-2xl object-cover shadow-sm",
+      "absolute right-[2%] top-[5%] xl:top-[120px] h-[70px] w-[70px] sm:h-[85px] sm:w-[85px] xl:h-[100px] xl:w-[100px] rounded-2xl object-cover shadow-sm",
   },
   {
     src: "/images/deco-massage-3.jpg",
     alt: "",
     className:
-      "absolute left-[10%] bottom-[6%] h-[70px] w-[70px] sm:h-[85px] sm:w-[85px] xl:h-[100px] xl:w-[100px] rounded-2xl object-cover shadow-sm",
+      "absolute left-[10%] bottom-[6%] xl:bottom-[120px] h-[70px] w-[70px] sm:h-[85px] sm:w-[85px] xl:h-[100px] xl:w-[100px] rounded-2xl object-cover shadow-sm",
   },
   {
     src: "/images/deco-massage-4.jpg",
     alt: "",
     className:
-      "absolute right-[10%] bottom-[8%] h-[70px] w-[70px] sm:h-[85px] sm:w-[85px] xl:h-[100px] xl:w-[100px] rounded-2xl object-cover shadow-sm",
+      "absolute right-[10%] bottom-[8%] xl:bottom-[120px] h-[70px] w-[70px] sm:h-[85px] sm:w-[85px] xl:h-[100px] xl:w-[100px] rounded-2xl object-cover shadow-sm",
   },
 ];
 
