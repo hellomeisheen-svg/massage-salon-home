@@ -30,8 +30,28 @@ const sessions = [
   { label: "6 сеансов", discount: "-15%" },
 ];
 
-function ServiceCard({ service }: { service: Service }) {
+function formatPrice(value: number) {
+  return `${value.toLocaleString("ru-RU").replace(/\s/g, "\u00A0")}\u00A0₽`;
+}
+
+function ServiceCard({
+  service,
+  dynamicPricing = false,
+  basePrice = 5000,
+}: {
+  service: Service;
+  dynamicPricing?: boolean;
+  basePrice?: number;
+}) {
   const [activeSession, setActiveSession] = useState(0);
+  const sessionCounts = [1, 3, 6];
+  const discounts = [0, 0.1, 0.15];
+  const computedPrice = dynamicPricing
+    ? formatPrice(
+        Math.round(basePrice * sessionCounts[activeSession] * (1 - discounts[activeSession]))
+      )
+    : service.price;
+
   return (
     <article className="rounded-2xl border border-[#daebff] bg-white p-8 sm:p-10 transition-shadow duration-300 hover:shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)]">
       {/* Sessions */}
@@ -80,7 +100,8 @@ function ServiceCard({ service }: { service: Service }) {
       >
         <span>{service.duration}</span>
         <span className="text-[#8D9DC5]">•</span>
-        <span>{service.price}</span>
+        <span>{computedPrice}</span>
+
       </div>
 
       {/* Buttons */}
@@ -168,7 +189,7 @@ export function Services() {
               }}
               data-index={i}
             >
-              <ServiceCard service={s} />
+              <ServiceCard service={s} dynamicPricing={i === 0} />
             </div>
           ))}
         </div>
