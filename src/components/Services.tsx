@@ -46,11 +46,16 @@ function ServiceCard({
   const [activeSession, setActiveSession] = useState(0);
   const sessionCounts = [1, 3, 6];
   const discounts = [0, 0.1, 0.15];
+  const hasDiscount = dynamicPricing && discounts[activeSession] > 0;
+  const originalPrice = dynamicPricing
+    ? formatPrice(basePrice * sessionCounts[activeSession])
+    : null;
   const computedPrice = dynamicPricing
     ? formatPrice(
         Math.round(basePrice * sessionCounts[activeSession] * (1 - discounts[activeSession]))
       )
     : service.price;
+
 
   return (
     <article className="rounded-2xl border border-[#daebff] bg-white p-8 sm:p-10 transition-shadow duration-300 hover:shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)]">
@@ -101,8 +106,11 @@ function ServiceCard({
         <span>{service.duration}</span>
         <span className="text-[#8D9DC5]">•</span>
         <span>{computedPrice}</span>
-
+        {hasDiscount && (
+          <span className="text-[18px] text-[#8D9DC5] line-through">{originalPrice}</span>
+        )}
       </div>
+
 
       {/* Buttons */}
       <div className="mt-8 flex flex-col sm:flex-row gap-3">
