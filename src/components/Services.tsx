@@ -117,7 +117,8 @@ export function Services() {
       <div className="container-1900 px-5 grid grid-cols-1 xl:grid-cols-2 gap-10 xl:gap-16">
         {/* Left column */}
         <div className="xl:sticky xl:top-24 self-start">
-          <span className="inline-block rounded-lg bg-[#DCE9FF] px-4 py-2 text-[14px] text-[#1C3C8C]">
+          <span className="inline-flex items-center gap-2 rounded-full border border-[#daebff] bg-white px-4 py-1.5 text-[13px] font-medium tracking-wide text-[#1C3C8C]">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#5DAAFD]" />
             Услуги
           </span>
           <h2
