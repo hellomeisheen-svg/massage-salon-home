@@ -204,7 +204,7 @@ export function Services() {
                   cardRefs.current[i] = el;
                 }}
                 data-index={i}
-                className={hiddenOnTablet ? "block sm:hidden xl:block" : ""}
+                className={hiddenOnTablet ? "hidden xl:block" : ""}
               >
                 <ServiceCard service={s} dynamicPricing={i === 0} />
               </div>
@@ -215,7 +215,7 @@ export function Services() {
             <button
               type="button"
               onClick={() => setShowAll(true)}
-              className="btn-secondary hidden sm:flex xl:hidden mt-2"
+              className="btn-secondary flex xl:hidden mt-2"
             >
               Показать больше
             </button>
