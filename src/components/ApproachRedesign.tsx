@@ -139,7 +139,7 @@ export function ApproachRedesign() {
                     {practiceSequence.map((tag, i) => (
                       <span
                         key={`${set}-${i}`}
-                        className="whitespace-nowrap rounded-full border border-[#EEF3FF] bg-white px-8 py-4 text-[#1C3C8C] shadow-[0_4px_14px_rgba(28,60,140,0.08)]"
+                        className="inline-flex h-[60px] items-center whitespace-nowrap rounded-lg border border-[#EEF3FF] bg-white px-6 text-[#1C3C8C] shadow-[0_4px_14px_rgba(28,60,140,0.08)]"
                         style={{ fontFamily: heading }}
                       >
                         {tag}
