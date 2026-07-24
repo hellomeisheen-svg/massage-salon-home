@@ -129,7 +129,7 @@ function Ruble() {
   return <span className="font-[system-ui,sans-serif] font-extralight">₽</span>;
 }
 
-}
+
 
 export function Programs() {
   const [active, setActive] = useState(0);
