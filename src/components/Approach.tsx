@@ -127,13 +127,14 @@ export function Approach() {
                     </div>
                   )}
                   <h4
-                    className="flex-1 text-[22px] xl:text-[24px] font-normal leading-[1.2] text-[#1C3C8C]"
+                    className="flex-1 text-[22px] xl:text-[24px] font-normal leading-[1] text-[#1C3C8C]"
                     style={{ fontFamily: heading }}
                   >
                     {item.title}
                   </h4>
                 </div>
-                <p className={`mt-4 text-[16px] leading-[26px] text-[#8D9DC5] ${item.image ? "pl-[80px] xl:pl-[90px]" : ""}`}>
+                <p className={`mt-2 text-[16px] leading-[24px] text-[#8D9DC5] ${item.image ? "pl-[80px] xl:pl-[90px]" : ""}`}>
+
                   {item.text}
                 </p>
 
