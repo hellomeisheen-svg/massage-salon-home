@@ -40,7 +40,7 @@ const environmentItems = [
 
 export function Approach() {
   return (
-    <section className="bg-[#EFF6FF] py-16 sm:py-20 xl:py-24">
+    <section className="bg-[#EFF6FF] py-[70px]">
       <div className="container-1900 px-5 grid grid-cols-1 xl:grid-cols-2 gap-6">
         {/* Left column */}
         <div className="flex flex-col gap-6">
