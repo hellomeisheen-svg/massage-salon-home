@@ -6,6 +6,24 @@ export function PromoBanner() {
           className="relative overflow-hidden rounded-2xl border px-6 py-14 sm:px-12 sm:py-16 xl:px-24 xl:py-[60px]"
           style={{ backgroundColor: "#DAEBFF", borderColor: "#BEDDFF" }}
         >
+          {/* Mobile-only depth layers: radial glow + soft vertical gradient */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 z-0 sm:hidden"
+            style={{
+              background:
+                "radial-gradient(circle at 20% 20%, rgba(255,255,255,0.6) 0%, transparent 55%)",
+            }}
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 z-0 sm:hidden"
+            style={{
+              background:
+                "linear-gradient(180deg, rgba(255,255,255,0.25) 0%, rgba(190,221,255,0.35) 100%)",
+            }}
+          />
+
           <img
             src="/images/banner-clouds.svg"
             alt=""
