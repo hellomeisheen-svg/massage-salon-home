@@ -74,17 +74,30 @@ export function Approach() {
             </div>
 
 
-            {/* Floating practice pills */}
-            <div className="absolute inset-x-6 bottom-6 flex flex-wrap gap-3 justify-center">
-              {practices.map((p, i) => (
-                <span
-                  key={i}
-                  className="inline-flex items-center justify-center rounded-lg bg-white px-6 py-4 min-h-[60px] text-[22px] xl:text-[26px] font-light leading-none text-[#1C3C8C] shadow-[0_8px_20px_-8px_rgba(28,60,140,0.25)]"
-                  style={{ fontFamily: heading }}
-                >
-                  {p}
-                </span>
-              ))}
+            {/* Floating practice pills — two staggered rows */}
+            <div className="absolute inset-x-0 bottom-6 flex flex-col gap-3 overflow-hidden">
+              <div className="flex gap-3 flex-nowrap px-6 -ml-6">
+                {practices.map((p, i) => (
+                  <span
+                    key={`r1-${i}`}
+                    className="inline-flex items-center justify-center rounded-lg bg-white px-6 py-4 min-h-[60px] text-[22px] xl:text-[26px] font-light leading-none text-[#1C3C8C] shadow-[0_8px_20px_-8px_rgba(28,60,140,0.25)] whitespace-nowrap"
+                    style={{ fontFamily: heading }}
+                  >
+                    {p}
+                  </span>
+                ))}
+              </div>
+              <div className="flex gap-3 flex-nowrap px-6 ml-16">
+                {practices.map((p, i) => (
+                  <span
+                    key={`r2-${i}`}
+                    className="inline-flex items-center justify-center rounded-lg bg-white px-6 py-4 min-h-[60px] text-[22px] xl:text-[26px] font-light leading-none text-[#1C3C8C] shadow-[0_8px_20px_-8px_rgba(28,60,140,0.25)] whitespace-nowrap"
+                    style={{ fontFamily: heading }}
+                  >
+                    {p}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>
