@@ -34,7 +34,7 @@ const decoImages = [
   {
     src: "/images/uslugi-girudoterapiya.jpg",
     className:
-      "absolute right-[10%] bottom-[8%] sm:bottom-[20px] xl:bottom-[40px] h-[70px] w-[70px] sm:h-[85px] sm:w-[85px] xl:h-[100px] xl:w-[100px] rounded-2xl object-cover shadow-sm",
+      "absolute right-[10%] bottom-[8%] sm:bottom-[-20px] xl:bottom-[-30px] h-[70px] w-[70px] sm:h-[85px] sm:w-[85px] xl:h-[100px] xl:w-[100px] rounded-2xl object-cover shadow-sm",
     delay: "0.6s",
     rot: "-2deg",
   },
