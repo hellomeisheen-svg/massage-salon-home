@@ -44,7 +44,7 @@ const environmentItems: { icon: string; image?: string; title: string; text: str
 
 export function Approach() {
   return (
-    <section className="bg-[#EFF6FF] py-[70px]">
+    <section id="advantages" className="scroll-mt-[120px] bg-[#EFF6FF] py-[70px]">
       <div className="container-1900 px-5 grid grid-cols-1 xl:grid-cols-2 gap-6">
         {/* Left column */}
         <div className="flex flex-col gap-6 xl:grid xl:grid-rows-2 xl:gap-6 xl:h-full">
