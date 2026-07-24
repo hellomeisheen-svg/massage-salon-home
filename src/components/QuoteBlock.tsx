@@ -11,28 +11,28 @@ const Sparkle = ({ className }: { className?: string }) => (
 
 const decoImages = [
   {
-    src: "/images/deco-massage-1.jpg",
+    src: "/images/uslugi-limfodrenazhnyi-massazh.jpg",
     className:
       "absolute left-[2%] top-[6%] sm:top-[140px] xl:top-[120px] h-[70px] w-[70px] sm:h-[85px] sm:w-[85px] xl:h-[100px] xl:w-[100px] rounded-2xl object-cover shadow-sm",
     delay: "0s",
     rot: "-3deg",
   },
   {
-    src: "/images/deco-massage-2.jpg",
+    src: "/images/uslugi-massazh-golovy.jpg",
     className:
       "absolute right-[2%] top-[5%] sm:top-[140px] xl:top-[120px] h-[70px] w-[70px] sm:h-[85px] sm:w-[85px] xl:h-[100px] xl:w-[100px] rounded-2xl object-cover shadow-sm",
     delay: "0.2s",
     rot: "3deg",
   },
   {
-    src: "/images/deco-massage-3.jpg",
+    src: "/images/uslugi-massazh-spiny-i-shei.jpg",
     className:
       "absolute left-[10%] bottom-[6%] sm:bottom-[40px] xl:bottom-[120px] h-[70px] w-[70px] sm:h-[85px] sm:w-[85px] xl:h-[100px] xl:w-[100px] rounded-2xl object-cover shadow-sm",
     delay: "0.4s",
     rot: "2deg",
   },
   {
-    src: "/images/deco-massage-4.jpg",
+    src: "/images/uslugi-girudoterapiya.jpg",
     className:
       "absolute right-[10%] bottom-[8%] sm:bottom-[40px] xl:bottom-[120px] h-[70px] w-[70px] sm:h-[85px] sm:w-[85px] xl:h-[100px] xl:w-[100px] rounded-2xl object-cover shadow-sm",
     delay: "0.6s",
