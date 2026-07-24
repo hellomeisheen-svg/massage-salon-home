@@ -117,7 +117,7 @@ export function Approach() {
                 {[...practicesRow1, ...practicesRow1].map((p, i) => (
                   <span
                     key={`r1-${i}`}
-                    className="inline-flex min-h-[60px] w-[250px] items-center justify-center whitespace-nowrap rounded-lg bg-white px-6 py-4 text-base leading-[1.5] text-[#1C3C8C] shadow-[0_8px_20px_-8px_rgba(28,60,140,0.25)] shrink-0"
+                    className="inline-flex min-h-[60px] w-[200px] sm:w-[250px] items-center justify-center whitespace-nowrap rounded-lg bg-white px-6 py-4 text-base leading-[1.5] text-[#1C3C8C] shadow-[0_8px_20px_-8px_rgba(28,60,140,0.25)] shrink-0"
                     style={{ fontFamily: heading }}
                   >
                     {p}
@@ -128,7 +128,7 @@ export function Approach() {
                 {[...practicesRow2, ...practicesRow2].map((p, i) => (
                   <span
                     key={`r2-${i}`}
-                    className="inline-flex min-h-[60px] w-[250px] items-center justify-center whitespace-nowrap rounded-lg bg-white px-6 py-4 text-base leading-[1.5] text-[#1C3C8C] shadow-[0_8px_20px_-8px_rgba(28,60,140,0.25)] shrink-0"
+                    className="inline-flex min-h-[60px] w-[200px] sm:w-[250px] items-center justify-center whitespace-nowrap rounded-lg bg-white px-6 py-4 text-base leading-[1.5] text-[#1C3C8C] shadow-[0_8px_20px_-8px_rgba(28,60,140,0.25)] shrink-0"
                     style={{ fontFamily: heading }}
                   >
                     {p}
