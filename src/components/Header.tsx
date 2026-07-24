@@ -37,12 +37,19 @@ export function Header() {
         setPinned(false);
         setVisible(true);
       } else {
-        setPinned(true);
-        if (y > lastY + 4) {
-          setVisible(false);
-        } else if (y < lastY - 4) {
-          setVisible(true);
-        }
+        const goingDown = y > lastY + 4;
+        const goingUp = y < lastY - 4;
+        setPinned((wasPinned) => {
+          if (!wasPinned) {
+            // Just crossed threshold — keep hidden until user scrolls up
+            setVisible(false);
+          } else if (goingDown) {
+            setVisible(false);
+          } else if (goingUp) {
+            setVisible(true);
+          }
+          return true;
+        });
       }
       lastY = y;
     };
@@ -52,7 +59,7 @@ export function Header() {
 
   return (
     <header
-      className={`${pinned ? "fixed" : "absolute"} top-0 left-0 z-50 w-full bg-transparent pt-4 sm:pt-5 transition-transform duration-300 ease-out ${
+      className={`${pinned ? "fixed transition-transform duration-300 ease-out" : "absolute"} top-0 left-0 z-50 w-full bg-transparent pt-4 sm:pt-5 ${
         visible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
