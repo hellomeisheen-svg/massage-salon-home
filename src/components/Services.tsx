@@ -336,7 +336,18 @@ export function Services() {
                 data-index={i}
                 className={hiddenOnTablet ? "hidden xl:block" : ""}
               >
-                <ServiceCard service={s} dynamicPricing={i === 0} />
+                <ServiceCard
+                  service={s}
+                  dynamicPricing={i === 0 || i === 11 || i === 12}
+                  basePrice={i === 11 || i === 12 ? 4800 : 5000}
+                  sessionLabels={
+                    i === 11
+                      ? ["6\u00A0пиявок", "16\u00A0пиявок", "74\u00A0пиявки"]
+                      : i === 12
+                      ? ["6\u00A0пиявок", "10\u00A0пиявок", "20\u00A0пиявок"]
+                      : undefined
+                  }
+                />
               </div>
             );
           })}
