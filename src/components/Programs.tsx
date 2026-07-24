@@ -190,7 +190,7 @@ export function Programs() {
             </span>
           </div>
 
-          <p className="mt-6 text-[15px] text-[#8D9DC5]">
+          <p className="mt-6 text-[13px] leading-[18px] sm:text-[15px] sm:leading-normal text-[#8D9DC5]">
             Срок использования: {program.validity}
           </p>
 
