@@ -18,7 +18,7 @@ const extraEducation: EduItem[] = [
 
 function EduCard({ item }: { item: EduItem }) {
   return (
-    <div className="rounded-[28px] bg-white border border-[#daebff] p-6 sm:p-8 xl:p-10">
+    <div className="rounded-[12px] bg-white border border-[#daebff] p-6 sm:p-8 xl:p-10">
       <h3
         className="text-[#1C3C8C] text-[26px] sm:text-[32px] xl:text-[36px] leading-[1.1]"
         style={{ fontFamily: heading }}
@@ -42,9 +42,9 @@ export function Education() {
     <section id="obrazovanie" className="bg-[#EFF6FF] py-[60px] xl:py-[70px]">
       <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-5">
         {/* Left: quote panel */}
-        <div className="relative rounded-[28px] bg-[#DAEBFF] overflow-hidden min-h-[420px] xl:min-h-[100%] flex">
+        <div className="relative rounded-[12px] bg-[#DAEBFF] overflow-hidden min-h-[420px] xl:min-h-[100%] flex">
           <div className="mt-auto w-full p-4 sm:p-5">
-            <div className="rounded-[20px] bg-white p-5 sm:p-7 xl:p-8 flex items-center gap-4 sm:gap-6">
+            <div className="rounded-[12px] bg-white p-5 sm:p-7 xl:p-8 flex items-center gap-4 sm:gap-6">
               <div className="flex-1">
                 <p className="text-[#1C3C8C] text-[15px] sm:text-[17px] leading-[1.5]">
                   «Я&nbsp;не&nbsp;обещаю мгновенных изменений. Я&nbsp;обещаю внимание, тишину и&nbsp;время, в&nbsp;котором не&nbsp;нужно никуда спешить.»

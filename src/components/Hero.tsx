@@ -63,7 +63,7 @@ export function Hero() {
     <main className="bg-[#EFF6FF] py-4 sm:py-5">
       <section className="container-1900 grid grid-cols-1 gap-4 sm:gap-5 xl:h-[calc(100vh-80px)] xl:grid-cols-2">
         {/* Content card */}
-        <div className="flex flex-col rounded-2xl border border-[#daebff] bg-white p-5 sm:h-[700px] sm:p-6 xl:h-full xl:p-10">
+        <div className="flex flex-col rounded-[12px] border border-[#daebff] bg-white p-5 sm:h-[700px] sm:p-6 xl:h-full xl:p-10">
           <SpecialistBlock />
           <div className="mt-[80px] sm:mt-auto xl:mt-auto xl:pt-[140px]">
             <HeadlineBlock />
@@ -71,7 +71,7 @@ export function Hero() {
         </div>
 
         {/* Hero image */}
-        <div className="h-[400px] overflow-hidden rounded-2xl border border-[#daebff] sm:h-[700px] xl:h-full">
+        <div className="h-[400px] overflow-hidden rounded-[12px] border border-[#daebff] sm:h-[700px] xl:h-full">
           <img
             className="h-full w-full object-cover object-top sm:object-center"
             style={{ transform: "scaleX(-1)" }}
