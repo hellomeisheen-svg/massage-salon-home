@@ -123,7 +123,7 @@ const categories = ["Массаж", "Оздоровительные процед
 
 const sessions = [
   { label: "1 сеанс", discount: null },
-  { label: "3 сеансов", discount: "-10%" },
+  { label: "3 сеанса", discount: "-10%" },
   { label: "6 сеансов", discount: "-15%" },
 ];
 
