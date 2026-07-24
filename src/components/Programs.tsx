@@ -176,7 +176,7 @@ export function Programs() {
           </div>
 
           <div
-            className="mt-8 flex flex-wrap items-baseline justify-start sm:justify-end gap-x-4 text-[26px] font-light text-[#1C3C8C]"
+            className="mt-auto pt-8 flex flex-wrap items-baseline justify-start sm:justify-end gap-x-4 text-[26px] font-light text-[#1C3C8C]"
             style={{ fontFamily: heading }}
           >
             <span className="text-[18px] text-[#8D9DC5] line-through">
