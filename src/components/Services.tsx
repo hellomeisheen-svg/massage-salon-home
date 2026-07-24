@@ -131,6 +131,17 @@ function formatPrice(value: number) {
   return `${value.toLocaleString("ru-RU").replace(/\s/g, "\u00A0")}\u00A0₽`;
 }
 
+function renderPrice(price: string) {
+  const idx = price.indexOf("₽");
+  if (idx === -1) return price;
+  return (
+    <>
+      {price.slice(0, idx)}
+      <span className="font-[system-ui,sans-serif] font-extralight">₽</span>
+    </>
+  );
+}
+
 function ServiceCard({
   service,
   dynamicPricing = false,
@@ -219,7 +230,7 @@ function ServiceCard({
               <span className="text-[#8D9DC5]">•</span>
               {t.note && <span>{t.note}</span>}
               {t.note && <span className="text-[#8D9DC5]">•</span>}
-              <span>{t.price}</span>
+              <span>{renderPrice(t.price)}</span>
             </div>
           ))}
         </div>
@@ -230,9 +241,9 @@ function ServiceCard({
         >
           <span>{computedDuration}</span>
           <span className="text-[#8D9DC5]">•</span>
-          <span>{computedPrice}</span>
+          <span>{renderPrice(computedPrice)}</span>
           {hasDiscount && (
-            <span className="text-[18px] text-[#8D9DC5] line-through">{originalPrice}</span>
+            <span className="text-[18px] text-[#8D9DC5] line-through">{renderPrice(originalPrice!)}</span>
           )}
         </div>
       )}
