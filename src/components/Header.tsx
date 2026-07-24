@@ -21,8 +21,14 @@ export function Header() {
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
+    const isDesktop = () => window.matchMedia("(min-width: 1280px)").matches;
     let lastY = window.scrollY;
     const onScroll = () => {
+      if (!isDesktop()) {
+        setVisible(true);
+        lastY = window.scrollY;
+        return;
+      }
       const y = window.scrollY;
       const heroThreshold = window.innerHeight * 0.8;
       if (y < heroThreshold) {
