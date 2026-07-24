@@ -167,7 +167,7 @@ export function Services() {
             Перед каждым визитом обсуждаем ваше состояние&nbsp;— и&nbsp;подбираем технику под&nbsp;него
           </h2>
 
-          <ul className="mt-8 flex sm:hidden xl:flex flex-col gap-3 items-center xl:items-start">
+          <ul className="mt-8 hidden xl:flex flex-col gap-3 items-center xl:items-start">
             {categories.map((c, i) => (
               <li key={c}>
                 <button
