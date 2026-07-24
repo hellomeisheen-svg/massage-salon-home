@@ -43,9 +43,9 @@ export function Approach() {
     <section className="bg-[#EFF6FF] py-[70px]">
       <div className="container-1900 px-5 grid grid-cols-1 xl:grid-cols-2 gap-6">
         {/* Left column */}
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6 xl:grid xl:grid-rows-2 xl:gap-6 xl:h-full">
           {/* Подход мастера */}
-          <div className="rounded-2xl border border-[#daebff] bg-white p-8 sm:p-10 xl:p-12 min-h-[380px] flex flex-col justify-between">
+          <div className="rounded-2xl border border-[#daebff] bg-white p-8 sm:p-10 xl:p-12 min-h-[380px] xl:min-h-0 xl:h-full flex flex-col justify-between">
             <h3
               className="text-[38px] xl:text-[44px] font-light leading-[1.1] text-[#1C3C8C]"
               style={{ fontFamily: heading }}
@@ -58,7 +58,7 @@ export function Approach() {
           </div>
 
           {/* Палитра практик */}
-          <div className="relative rounded-2xl border border-[#daebff] bg-white p-8 sm:p-10 xl:p-12 min-h-[420px] overflow-hidden">
+          <div className="relative rounded-2xl border border-[#daebff] bg-white p-8 sm:p-10 xl:p-12 min-h-[420px] xl:min-h-0 xl:h-full overflow-hidden">
             <h3
               className="relative z-10 text-[38px] xl:text-[44px] font-light leading-[1.1] text-[#1C3C8C]"
               style={{ fontFamily: heading }}
