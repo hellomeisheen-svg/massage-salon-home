@@ -17,7 +17,7 @@ function SpecialistBlock() {
         >
           Татьяна&nbsp;Злобина
         </h2>
-        <p className="text-[16px] font-normal leading-[26px] text-[#8D9DC5]">
+        <p className="text-[16px] font-light leading-[26px] text-[#8D9DC5]">
           Мастер кабинета, специалист
           <br />
           по&nbsp;оздоровительным практикам
