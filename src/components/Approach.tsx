@@ -120,7 +120,7 @@ export function Approach() {
           <ul className="mt-[140px] flex flex-col gap-8">
             {environmentItems.map((item, i) => (
               <li key={i}>
-                <div className="flex items-center gap-5">
+                <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-5">
                   {item.image ? (
                     <div className="shrink-0 w-[60px] h-[60px] xl:w-[70px] xl:h-[70px] overflow-hidden">
                       <img
