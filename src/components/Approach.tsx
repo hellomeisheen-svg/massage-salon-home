@@ -117,9 +117,10 @@ export function Approach() {
             {environmentItems.map((item, i) => (
               <li key={i} className="flex gap-5 items-start">
                 {item.image ? (
-                  <div className="shrink-0 w-[120px] h-[120px] xl:w-[140px] xl:h-[140px] overflow-hidden">
+                  <div className="shrink-0 w-[60px] h-[60px] xl:w-[70px] xl:h-[70px] overflow-hidden">
                     <img src={item.image} alt="" className="w-full h-full object-contain" />
                   </div>
+
                 ) : (
                   <div className="shrink-0 w-14 h-14 rounded-xl bg-[#EFF6FF] flex items-center justify-center text-[26px]">
                     {item.icon}
