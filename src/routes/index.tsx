@@ -32,7 +32,7 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <div className="min-h-screen bg-[#EFF6FF]">
+    <div className="relative min-h-screen bg-[#EFF6FF] pt-20 xl:pt-[100px]">
       <Header />
       <Hero />
       <QuoteBlock />

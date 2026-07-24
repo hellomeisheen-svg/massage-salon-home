@@ -19,12 +19,14 @@ const logoStyle = {
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [visible, setVisible] = useState(true);
+  const [pinned, setPinned] = useState(false);
 
   useEffect(() => {
     const isDesktop = () => window.matchMedia("(min-width: 1280px)").matches;
     let lastY = window.scrollY;
     const onScroll = () => {
       if (!isDesktop()) {
+        setPinned(false);
         setVisible(true);
         lastY = window.scrollY;
         return;
@@ -32,11 +34,15 @@ export function Header() {
       const y = window.scrollY;
       const heroThreshold = window.innerHeight * 0.8;
       if (y < heroThreshold) {
+        setPinned(false);
         setVisible(true);
-      } else if (y > lastY + 4) {
-        setVisible(false);
-      } else if (y < lastY - 4) {
-        setVisible(true);
+      } else {
+        setPinned(true);
+        if (y > lastY + 4) {
+          setVisible(false);
+        } else if (y < lastY - 4) {
+          setVisible(true);
+        }
       }
       lastY = y;
     };
@@ -46,10 +52,11 @@ export function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full bg-transparent pt-4 sm:pt-5 transition-transform duration-300 ease-out ${
+      className={`${pinned ? "fixed" : "absolute"} top-0 left-0 z-50 w-full bg-transparent pt-4 sm:pt-5 transition-transform duration-300 ease-out ${
         visible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
+
       <div className="container-1900 relative">
       {/* Desktop header */}
       <div className="hidden h-20 w-full items-center justify-between rounded-2xl border border-[#daebff] bg-white px-5 py-2.5 xl:flex xl:px-[30px]">
