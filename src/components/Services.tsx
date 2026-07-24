@@ -107,11 +107,6 @@ const services: Service[] = [
       "Постановка медицинских пиявок на\u00A0выбранные зоны тела. В\u00A0процессе пиявка мягко воздействует на\u00A0кожу, способствуя локальному кровообращению и\u00A0разгрузке напряжённых участков. Используется в\u00A0рамках оздоровительных программ для\u00A0общего восстановления и\u00A0поддержки самочувствия.",
     duration: "120\u00A0минут",
     price: "4\u00A0800\u00A0₽",
-    tiers: [
-      { duration: "120\u00A0минут", note: "6\u00A0пиявок", price: "4\u00A0800\u00A0₽" },
-      { duration: "120\u00A0минут", note: "16\u00A0пиявок", price: "12\u00A0800\u00A0₽" },
-      { duration: "120\u00A0минут", note: "74\u00A0пиявки", price: "59\u00A0200\u00A0₽" },
-    ],
   },
   {
     title: "Гирудотерапия. Косметические пиявки",
@@ -120,11 +115,6 @@ const services: Service[] = [
       "Деликатная постановка пиявок с\u00A0акцентом на\u00A0зону лица или\u00A0локальные участки. Процедура направлена на\u00A0улучшение внешнего вида кожи, ощущение свежести и\u00A0лёгкости. Воздействие мягкое, с\u00A0акцентом на\u00A0эстетический эффект и\u00A0комфортные ощущения.",
     duration: "120\u00A0минут",
     price: "4\u00A0800\u00A0₽",
-    tiers: [
-      { duration: "120\u00A0минут", note: "6\u00A0пиявок", price: "4\u00A0800\u00A0₽" },
-      { duration: "120\u00A0минут", note: "10\u00A0пиявок", price: "8\u00A0000\u00A0₽" },
-      { duration: "120\u00A0минут", note: "20\u00A0пиявок", price: "16\u00A0000\u00A0₽" },
-    ],
   },
 ];
 
@@ -145,10 +135,12 @@ function ServiceCard({
   service,
   dynamicPricing = false,
   basePrice = 5000,
+  sessionLabels,
 }: {
   service: Service;
   dynamicPricing?: boolean;
   basePrice?: number;
+  sessionLabels?: string[];
 }) {
   const [activeSession, setActiveSession] = useState(0);
   const sessionCounts = [1, 3, 6];
@@ -163,13 +155,17 @@ function ServiceCard({
       )
     : service.price;
 
+  const items = sessions.map((s, i) => ({
+    label: sessionLabels?.[i] ?? s.label,
+    discount: s.discount,
+  }));
 
   return (
     <article className="rounded-2xl border border-[#daebff] bg-white p-8 sm:p-10 transition-shadow duration-300 hover:shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)]">
       {/* Sessions */}
       <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-[16px] leading-[26px] text-[#8D9DC5]">
-        {sessions.map((s, i) => (
-          <div key={s.label} className="flex items-center gap-x-3">
+        {items.map((s, i) => (
+          <div key={i} className="flex items-center gap-x-3">
             <button
               type="button"
               onClick={() => setActiveSession(i)}
@@ -182,7 +178,7 @@ function ServiceCard({
                 <sup className="ml-0.5 text-[11px] align-super"> {s.discount}</sup>
               )}
             </button>
-            {i < sessions.length - 1 && (
+            {i < items.length - 1 && (
               <span className="text-[#8D9DC5]">•</span>
             )}
           </div>
@@ -330,7 +326,18 @@ export function Services() {
                 data-index={i}
                 className={hiddenOnTablet ? "hidden xl:block" : ""}
               >
-                <ServiceCard service={s} dynamicPricing={i === 0} />
+                <ServiceCard
+                  service={s}
+                  dynamicPricing={i === 0 || i === 11 || i === 12}
+                  basePrice={i === 11 || i === 12 ? 4800 : 5000}
+                  sessionLabels={
+                    i === 11
+                      ? ["6\u00A0пиявок", "16\u00A0пиявок", "74\u00A0пиявки"]
+                      : i === 12
+                      ? ["6\u00A0пиявок", "10\u00A0пиявок", "20\u00A0пиявок"]
+                      : undefined
+                  }
+                />
               </div>
             );
           })}
