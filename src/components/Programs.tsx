@@ -177,7 +177,7 @@ export function Programs() {
           </div>
 
           <div
-            className="mt-8 flex flex-wrap items-baseline justify-end gap-x-4 text-[26px] font-light text-[#1C3C8C]"
+            className="mt-8 flex flex-wrap items-baseline justify-start sm:justify-end gap-x-4 text-[26px] font-light text-[#1C3C8C]"
             style={{ fontFamily: heading }}
           >
             <span className="text-[18px] text-[#8D9DC5] line-through">
@@ -194,30 +194,32 @@ export function Programs() {
             Срок использования: {program.validity}
           </p>
 
-          <div className="mt-8 grid grid-cols-[1fr_auto_auto] sm:flex sm:flex-row gap-3">
-            <button type="button" className="btn-primary sm:flex-1">
+          <div className="mt-8 flex flex-col sm:flex-row gap-3">
+            <button type="button" className="btn-primary w-full sm:flex-1">
               Записаться
             </button>
-            <button
-              type="button"
-              onClick={prev}
-              aria-label="Предыдущая программа"
-              className="btn-secondary w-[56px] sm:w-auto sm:min-w-[80px] sm:flex-none flex items-center justify-center"
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                <path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
-            <button
-              type="button"
-              onClick={next}
-              aria-label="Следующая программа"
-              className="btn-secondary w-[56px] sm:w-auto sm:min-w-[80px] sm:flex-none flex items-center justify-center"
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
+            <div className="grid grid-cols-2 gap-3 sm:contents">
+              <button
+                type="button"
+                onClick={prev}
+                aria-label="Предыдущая программа"
+                className="btn-secondary sm:min-w-[80px] sm:flex-none flex items-center justify-center"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+              <button
+                type="button"
+                onClick={next}
+                aria-label="Следующая программа"
+                className="btn-secondary sm:min-w-[80px] sm:flex-none flex items-center justify-center"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+            </div>
           </div>
         </article>
       </div>
