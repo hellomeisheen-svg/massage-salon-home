@@ -45,7 +45,7 @@ export function Approach() {
         {/* Left column */}
         <div className="flex flex-col gap-6">
           {/* Подход мастера */}
-          <div className="rounded-2xl bg-white p-8 sm:p-10 xl:p-12 min-h-[380px] flex flex-col justify-between">
+          <div className="rounded-2xl border border-[#daebff] bg-white p-8 sm:p-10 xl:p-12 min-h-[380px] flex flex-col justify-between">
             <h3
               className="text-[38px] xl:text-[44px] font-light leading-[1.1] text-[#1C3C8C]"
               style={{ fontFamily: heading }}
