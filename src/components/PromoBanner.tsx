@@ -6,6 +6,12 @@ export function PromoBanner() {
           className="relative overflow-hidden rounded-2xl px-6 py-16 sm:px-12 sm:py-20 xl:px-24 xl:py-24"
           style={{ backgroundColor: "#DAEBFF" }}
         >
+          <img
+            src="/images/banner-ellipse.svg"
+            alt=""
+            aria-hidden="true"
+            className="pointer-events-none absolute left-1/2 bottom-0 z-0 w-[995px] max-w-none -translate-x-1/2 select-none"
+          />
 
 
           <div className="relative z-10 flex flex-col items-center text-center">
