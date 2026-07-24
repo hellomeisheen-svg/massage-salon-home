@@ -49,7 +49,7 @@ export function PromoBanner() {
 
           <div className="relative z-10 flex flex-col items-center text-center">
             <h2
-              className="max-w-[880px] text-[30px] font-light leading-[1.1] text-brand-ink sm:text-[44px] xl:text-[60px]"
+              className="max-w-[880px] text-[26px] font-light leading-[1.1] text-brand-ink sm:text-[36px] xl:text-[48px]"
               style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
             >
               Знакомство с&nbsp;кабинетом
