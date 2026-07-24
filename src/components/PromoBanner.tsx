@@ -10,8 +10,10 @@ export function PromoBanner() {
             src="/images/banner-ellipse.svg"
             alt=""
             aria-hidden="true"
-            className="pointer-events-none absolute left-1/2 bottom-0 z-0 w-[995px] max-w-none -translate-x-1/2 select-none"
+            className="pointer-events-none absolute inset-0 z-0 h-full w-full select-none"
+            style={{ objectFit: "fill" }}
           />
+
 
 
           <div className="relative z-10 flex flex-col items-center text-center">
