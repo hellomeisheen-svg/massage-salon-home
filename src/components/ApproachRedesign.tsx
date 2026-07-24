@@ -113,7 +113,7 @@ export function ApproachRedesign() {
               <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-white to-transparent xl:w-32" />
               <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-white to-transparent xl:w-32" />
 
-              <div className="flex w-max animate-[marquee_40s_linear_infinite] gap-4">
+              <div className="marquee-track">
                 {[0, 1].map((set) => (
                   <div key={set} className="flex gap-4 px-2">
                     {practiceTags.map((tag, i) => (
