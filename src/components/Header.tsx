@@ -37,12 +37,19 @@ export function Header() {
         setPinned(false);
         setVisible(true);
       } else {
-        setPinned(true);
-        if (y > lastY + 4) {
-          setVisible(false);
-        } else if (y < lastY - 4) {
-          setVisible(true);
-        }
+        const goingDown = y > lastY + 4;
+        const goingUp = y < lastY - 4;
+        setPinned((wasPinned) => {
+          if (!wasPinned) {
+            // Just crossed threshold — keep hidden until user scrolls up
+            setVisible(false);
+          } else if (goingDown) {
+            setVisible(false);
+          } else if (goingUp) {
+            setVisible(true);
+          }
+          return true;
+        });
       }
       lastY = y;
     };
