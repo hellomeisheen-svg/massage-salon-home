@@ -56,6 +56,26 @@ const practiceTags = [
   "Релакс",
 ];
 
+// Two different orderings so the visible sequence doesn't obviously repeat
+const practiceSequence = [
+  "Классический",
+  "Банки",
+  "Миофасциальный",
+  "Лимфодренажный",
+  "Релакс",
+  "Векторный",
+  "Спортивный",
+  "Лимфатический",
+  "Миофасциальный",
+  "Релакс",
+  "Классический",
+  "Спортивный",
+  "Банки",
+  "Лимфатический",
+  "Векторный",
+  "Лимфодренажный",
+];
+
 export function ApproachRedesign() {
   return (
     <section className="bg-white py-[70px]">
