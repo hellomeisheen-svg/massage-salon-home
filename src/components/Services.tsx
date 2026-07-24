@@ -226,7 +226,7 @@ function ServiceCard({
           className="mt-8 flex flex-wrap items-baseline gap-x-4 text-[26px] font-light text-[#1C3C8C]"
           style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
         >
-          <span>{service.duration}</span>
+          <span>{computedDuration}</span>
           <span className="text-[#8D9DC5]">•</span>
           <span>{computedPrice}</span>
           {hasDiscount && (
