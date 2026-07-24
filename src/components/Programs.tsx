@@ -221,7 +221,7 @@ export function Programs() {
 
           {/* Mobile: stacked blocks */}
           <div className="sm:hidden mt-6 border-t border-[#daebff] divide-y divide-[#daebff]">
-            {program.items.map((it, idx) => (
+            {computedItems.map((it, idx) => (
               <div key={idx} className="py-4">
                 <div className="text-[16px] leading-[22px] text-[#1C3C8C]">{it.title}</div>
                 <div className="mt-1 text-[13px] leading-[18px] text-[#8D9DC5]">{it.duration}</div>
