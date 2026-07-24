@@ -3,16 +3,16 @@ export function PromoBanner() {
     <section className="bg-brand-surface pb-10 sm:pb-16 xl:pb-20">
       <div className="container-1900 px-5">
         <div
-          className="relative overflow-hidden rounded-2xl px-6 py-[60px] sm:px-12 xl:px-24"
+          className="relative overflow-hidden rounded-2xl border px-6 py-[60px] sm:px-12 xl:px-24"
+          style={{ backgroundColor: "#DAEBFF", borderColor: "#BEDDFF" }}
         >
           <img
-            src="/images/banner-shape.svg"
+            src="/images/banner-ellipse.svg"
             alt=""
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 z-0 h-full w-full select-none"
+            className="pointer-events-none absolute left-1/2 top-0 z-0 h-full w-[995px] max-w-none -translate-x-1/2 select-none"
             style={{ objectFit: "fill" }}
           />
-
 
 
 
