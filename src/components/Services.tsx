@@ -343,6 +343,7 @@ export function Services() {
                       ? ["6\u00A0пиявок", "10\u00A0пиявок", "20\u00A0пиявок"]
                       : undefined
                   }
+                  multiplyDuration={i !== 9 && i !== 10}
                 />
               </div>
             );
