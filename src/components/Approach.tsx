@@ -115,14 +115,17 @@ export function Approach() {
 
           <ul className="mt-[140px] flex flex-col gap-8">
             {environmentItems.map((item, i) => (
-              <li key={i} className="flex gap-5">
-                <div className="shrink-0 w-14 h-14 rounded-xl bg-[#EFF6FF] flex items-center justify-center text-[26px] overflow-hidden">
-                  {item.image ? (
-                    <img src={item.image} alt="" className="w-full h-full object-cover" />
-                  ) : (
-                    item.icon
-                  )}
-                </div>
+              <li key={i} className="flex gap-5 items-start">
+                {item.image ? (
+                  <div className="shrink-0 w-[120px] h-[120px] xl:w-[140px] xl:h-[140px] overflow-hidden">
+                    <img src={item.image} alt="" className="w-full h-full object-contain" />
+                  </div>
+                ) : (
+                  <div className="shrink-0 w-14 h-14 rounded-xl bg-[#EFF6FF] flex items-center justify-center text-[26px]">
+                    {item.icon}
+                  </div>
+                )}
+
                 <div className="flex-1">
                   <h4
                     className="text-[22px] xl:text-[24px] font-normal leading-[1.2] text-[#1C3C8C]"
