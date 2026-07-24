@@ -28,6 +28,14 @@ export function PromoBanner() {
           />
 
           <div className="relative z-10 flex flex-col items-center text-center">
+            <svg
+              className="mb-6 h-6 w-6 text-brand-ink sm:mb-8 sm:h-7 sm:w-7"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path d="M12 0 L13.2 10.8 L24 12 L13.2 13.2 L12 24 L10.8 13.2 L0 12 L10.8 10.8 Z" />
+            </svg>
             <h2
               className="max-w-[880px] text-[30px] font-light leading-[1.1] text-brand-ink sm:text-[44px] xl:text-[60px]"
               style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
