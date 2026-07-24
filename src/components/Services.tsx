@@ -285,7 +285,7 @@ export function Services() {
 
   return (
     <section id="services" className="scroll-mt-[120px] bg-[#EFF6FF] py-[60px] sm:py-[70px]">
-      <div className="container-1900 px-5 grid grid-cols-1 xl:grid-cols-2 gap-10 xl:gap-16">
+      <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-5">
         {/* Left column */}
         <div
           className="xl:sticky self-start flex flex-col items-center xl:items-start text-center xl:text-left transition-[top] duration-300 ease-out"

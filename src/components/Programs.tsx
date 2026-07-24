@@ -139,7 +139,7 @@ export function Programs() {
 
   return (
     <section className="bg-[#EFF6FF] py-[60px] sm:py-[70px]">
-      <div className="container-1900 px-5 grid grid-cols-1 xl:grid-cols-2 gap-10 xl:gap-16 items-start">
+      <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-5 items-start">
         {/* Left column */}
         <div className="self-start flex flex-col items-center xl:items-start text-center xl:text-left">
           <span
