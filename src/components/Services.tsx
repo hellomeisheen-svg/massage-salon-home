@@ -155,6 +155,10 @@ function ServiceCard({
       )
     : service.price;
 
+  const computedDuration = dynamicPricing
+    ? service.duration.replace(/\d+/g, (n) => String(Number(n) * sessionCounts[activeSession]))
+    : service.duration;
+
   const items = sessions.map((s, i) => ({
     label: sessionLabels?.[i] ?? s.label,
     discount: s.discount,
