@@ -27,14 +27,14 @@ const decoImages = [
   {
     src: "/images/deco-massage-3.jpg",
     className:
-      "absolute left-[10%] bottom-[6%] sm:bottom-[140px] xl:bottom-[120px] h-[70px] w-[70px] sm:h-[85px] sm:w-[85px] xl:h-[100px] xl:w-[100px] rounded-2xl object-cover shadow-sm",
+      "absolute left-[10%] bottom-[6%] sm:bottom-[40px] xl:bottom-[120px] h-[70px] w-[70px] sm:h-[85px] sm:w-[85px] xl:h-[100px] xl:w-[100px] rounded-2xl object-cover shadow-sm",
     delay: "0.4s",
     rot: "2deg",
   },
   {
     src: "/images/deco-massage-4.jpg",
     className:
-      "absolute right-[10%] bottom-[8%] sm:bottom-[140px] xl:bottom-[120px] h-[70px] w-[70px] sm:h-[85px] sm:w-[85px] xl:h-[100px] xl:w-[100px] rounded-2xl object-cover shadow-sm",
+      "absolute right-[10%] bottom-[8%] sm:bottom-[40px] xl:bottom-[120px] h-[70px] w-[70px] sm:h-[85px] sm:w-[85px] xl:h-[100px] xl:w-[100px] rounded-2xl object-cover shadow-sm",
     delay: "0.6s",
     rot: "-2deg",
   },
