@@ -11,7 +11,7 @@ const Sparkle = ({ className }: { className?: string }) => (
 
 export function ApproachIntro() {
   return (
-    <section className="bg-[#EFF6FF] py-28 sm:py-36 xl:pt-[140px] xl:pb-48">
+    <section className="bg-[#EFF6FF] py-[70px]">
       <div className="container-1900 flex flex-col items-center sm:px-5 text-center">
         <Sparkle className="mb-8 sm:mb-10 xl:mb-12 h-6 w-6 sm:h-7 sm:w-7 text-[#1C3C8C]" />
         <h2
