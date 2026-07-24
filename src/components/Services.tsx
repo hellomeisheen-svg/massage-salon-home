@@ -335,9 +335,9 @@ export function Services() {
                   dynamicPricing
                   basePrice={Number(s.price.replace(/\D/g, "")) || 5000}
                   sessionLabels={
-                    i === 11
+                    i === 9
                       ? ["6\u00A0пиявок", "16\u00A0пиявок", "74\u00A0пиявки"]
-                      : i === 12
+                      : i === 10
                       ? ["6\u00A0пиявок", "10\u00A0пиявок", "20\u00A0пиявок"]
                       : undefined
                   }
