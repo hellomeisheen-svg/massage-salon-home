@@ -76,7 +76,7 @@ export function Hero() {
             className="h-full w-full object-cover object-top sm:object-center"
             style={{ transform: "scaleX(-1)" }}
             alt="Оздоровительные процедуры"
-            src="/images/hero-main-01.jpg"
+            src="/images/massazh-salon-glavnyi-ekran.jpg"
           />
         </div>
       </section>
