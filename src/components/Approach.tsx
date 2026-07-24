@@ -86,7 +86,7 @@ export function Approach() {
                 {[...practices, ...practices, ...practices, ...practices].map((p, i) => (
                   <span
                     key={`r1-${i}`}
-                    className="inline-flex items-center justify-center rounded-lg bg-white px-5 py-3 min-h-[48px] text-[16px] xl:text-[18px] font-normal leading-none text-[#1C3C8C] shadow-[0_8px_20px_-8px_rgba(28,60,140,0.25)] whitespace-nowrap"
+                    className="inline-flex items-center justify-center rounded-lg bg-white px-5 py-3 min-h-[48px] w-[250px] shrink-0 text-[16px] xl:text-[18px] font-normal leading-none text-[#1C3C8C] shadow-[0_8px_20px_-8px_rgba(28,60,140,0.25)] whitespace-nowrap"
                     style={{ fontFamily: heading }}
                   >
                     {p}
