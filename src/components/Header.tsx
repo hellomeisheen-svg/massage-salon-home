@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
-const navigationItems = [
-  "Услуги",
-  "Преимущества",
-  "Программы",
-  "Обо мне",
-  "Вопросы",
-  "Контакты",
+const navigationItems: { label: string; href?: string }[] = [
+  { label: "Услуги", href: "#services" },
+  { label: "Преимущества", href: "#advantages" },
+  { label: "Программы" },
+  { label: "Обо мне" },
+  { label: "Вопросы" },
+  { label: "Контакты" },
 ];
+
 
 const logoStyle = {
   fontFamily: "'Roslindale Cyrillic Display Condensed', serif",
