@@ -287,7 +287,10 @@ export function Services() {
     <section className="bg-[#EFF6FF] py-[70px]">
       <div className="container-1900 px-5 grid grid-cols-1 xl:grid-cols-2 gap-10 xl:gap-16">
         {/* Left column */}
-        <div className="xl:sticky xl:top-[120px] self-start flex flex-col items-center xl:items-start text-center xl:text-left">
+        <div
+          className="xl:sticky self-start flex flex-col items-center xl:items-start text-center xl:text-left transition-[top] duration-300 ease-out"
+          style={{ top: "calc(var(--header-offset, 0px) + 20px)" }}
+        >
           <span
             className="inline-flex items-center gap-2 px-4 py-1.5 text-[13px] font-medium tracking-wide text-white"
             style={{
