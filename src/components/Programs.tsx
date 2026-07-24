@@ -134,6 +134,9 @@ function Ruble() {
 export function Programs() {
   const [active, setActive] = useState(0);
   const program = programs[active];
+  const computedItems = program.items.map(computeItem);
+  const originalPrice = computedItems.reduce((s, i) => s + i.subtotal, 0);
+  const price = Math.round(originalPrice * (1 - DISCOUNT));
 
   const prev = () => setActive((i) => (i - 1 + programs.length) % programs.length);
   const next = () => setActive((i) => (i + 1) % programs.length);
