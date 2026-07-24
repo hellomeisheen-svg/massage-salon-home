@@ -91,7 +91,7 @@ export function Programs() {
     <section className="bg-[#EFF6FF] py-[60px] sm:py-[70px]">
       <div className="container-1900 px-5 grid grid-cols-1 xl:grid-cols-2 gap-10 xl:gap-16 items-start">
         {/* Left column */}
-        <div className="xl:sticky self-start flex flex-col items-center xl:items-start text-center xl:text-left" style={{ top: "calc(var(--header-offset, 0px) + 20px)" }}>
+        <div className="self-start flex flex-col items-center xl:items-start text-center xl:text-left">
           <span
             className="inline-flex items-center gap-2 px-4 py-1.5 text-[13px] font-medium tracking-wide text-white"
             style={{
