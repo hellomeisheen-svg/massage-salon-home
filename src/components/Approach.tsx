@@ -98,7 +98,7 @@ export function Approach() {
             Среда вокруг
           </h3>
 
-          <ul className="mt-8 flex flex-col gap-8">
+          <ul className="mt-[140px] flex flex-col gap-8">
             {environmentItems.map((item, i) => (
               <li key={i} className="flex gap-5">
                 <div className="shrink-0 w-14 h-14 rounded-xl bg-[#EFF6FF] flex items-center justify-center text-[26px]">
