@@ -106,7 +106,7 @@ export function Programs() {
             className="mt-6 text-[30px] sm:text-[38px] xl:text-[44px] font-light leading-[1.15] text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0"
             style={{ fontFamily: heading }}
           >
-            Программы из&nbsp;нескольких процедур&nbsp;— для глубокой работы с&nbsp;конкретным состоянием.
+            Программы из&nbsp;нескольких процедур&nbsp;— для глубокой работы с&nbsp;конкретным состоянием
           </h2>
 
           <ul className="mt-8 hidden xl:flex flex-col gap-3 items-start">
