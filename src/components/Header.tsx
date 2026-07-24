@@ -33,21 +33,23 @@ export function Header() {
       }
       const y = window.scrollY;
       const heroThreshold = window.innerHeight * 0.8;
+      const goingDown = y > lastY + 4;
+      const goingUp = y < lastY - 4;
       if (y < heroThreshold) {
         setPinned(false);
         setVisible(true);
       } else {
-        const goingDown = y > lastY + 4;
-        const goingUp = y < lastY - 4;
         setPinned((wasPinned) => {
           if (!wasPinned) {
-            // Just crossed threshold — keep hidden until user scrolls up
-            setVisible(false);
-          } else if (goingDown) {
-            setVisible(false);
-          } else if (goingUp) {
-            setVisible(true);
+            // Only pin (start showing) when the user scrolls UP past the hero.
+            if (goingUp) {
+              setVisible(true);
+              return true;
+            }
+            return false;
           }
+          if (goingDown) setVisible(false);
+          else if (goingUp) setVisible(true);
           return true;
         });
       }
