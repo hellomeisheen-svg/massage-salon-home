@@ -9,6 +9,36 @@ const practices = [
   "Банки",
 ];
 
+const practicesRow1 = [
+  "Классический",
+  "Банки",
+  "Векторный",
+  "Лимфодренажный",
+  "Гирудотерапия",
+  "Лимфатический",
+  "Векторный",
+  "Классический",
+  "Лимфодренажный",
+  "Банки",
+  "Лимфатический",
+  "Гирудотерапия",
+];
+
+const practicesRow2 = [
+  "Лимфодренажный",
+  "Гирудотерапия",
+  "Классический",
+  "Лимфатический",
+  "Банки",
+  "Векторный",
+  "Гирудотерапия",
+  "Лимфодренажный",
+  "Векторный",
+  "Классический",
+  "Лимфатический",
+  "Банки",
+];
+
 const environmentItems: { icon: string; image?: string; title: string; text: string }[] = [
   {
     icon: "🧻",
@@ -83,10 +113,10 @@ export function Approach() {
             {/* Floating practice pills — two infinite marquee rows */}
             <div className="absolute inset-x-0 bottom-6 flex flex-col gap-3 overflow-hidden">
               <div className="marquee-track">
-                {[...practices, ...practices, ...practices, ...practices].map((p, i) => (
+                {[...practicesRow1, ...practicesRow1].map((p, i) => (
                   <span
                     key={`r1-${i}`}
-                    className="inline-flex items-center justify-center rounded-lg bg-white px-5 py-3 min-h-[48px] w-[250px] shrink-0 text-[16px] xl:text-[18px] font-normal leading-none text-[#1C3C8C] shadow-[0_8px_20px_-8px_rgba(28,60,140,0.25)] whitespace-nowrap"
+                    className="inline-flex min-h-[60px] items-center justify-center whitespace-nowrap rounded-lg bg-white px-6 py-4 text-base leading-[1.5] text-[#1C3C8C] shadow-[0_8px_20px_-8px_rgba(28,60,140,0.25)] shrink-0"
                     style={{ fontFamily: heading }}
                   >
                     {p}
@@ -94,10 +124,10 @@ export function Approach() {
                 ))}
               </div>
               <div className="marquee-track reverse">
-                {[...practices, ...practices, ...practices, ...practices].map((p, i) => (
+                {[...practicesRow2, ...practicesRow2].map((p, i) => (
                   <span
                     key={`r2-${i}`}
-                    className="inline-flex items-center justify-center rounded-lg bg-white px-5 py-3 min-h-[48px] w-[250px] shrink-0 text-[16px] xl:text-[18px] font-normal leading-none text-[#1C3C8C] shadow-[0_8px_20px_-8px_rgba(28,60,140,0.25)] whitespace-nowrap"
+                    className="inline-flex min-h-[60px] items-center justify-center whitespace-nowrap rounded-lg bg-white px-6 py-4 text-base leading-[1.5] text-[#1C3C8C] shadow-[0_8px_20px_-8px_rgba(28,60,140,0.25)] shrink-0"
                     style={{ fontFamily: heading }}
                   >
                     {p}
