@@ -328,8 +328,8 @@ export function Services() {
               >
                 <ServiceCard
                   service={s}
-                  dynamicPricing={i === 0 || i === 11 || i === 12}
-                  basePrice={i === 11 || i === 12 ? 4800 : 5000}
+                  dynamicPricing
+                  basePrice={Number(s.price.replace(/\D/g, "")) || 5000}
                   sessionLabels={
                     i === 11
                       ? ["6\u00A0пиявок", "16\u00A0пиявок", "74\u00A0пиявки"]
