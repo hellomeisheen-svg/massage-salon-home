@@ -14,12 +14,19 @@ export function PromoBanner() {
             style={{ objectFit: "fill" }}
           />
           <img
+            src="/images/banner-clouds-bottom.svg"
+            alt=""
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-x-0 bottom-0 z-0 w-full select-none"
+          />
+          <img
             src="/images/banner-ellipse.svg"
             alt=""
             aria-hidden="true"
-            className="pointer-events-none absolute left-1/2 top-0 z-0 h-full w-[995px] max-w-none -translate-x-1/2 select-none"
+            className="pointer-events-none absolute left-1/2 top-0 z-[1] h-full w-[995px] max-w-none -translate-x-1/2 select-none"
             style={{ objectFit: "fill" }}
           />
+
 
 
 
