@@ -59,6 +59,11 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    const offset = pinned && visible ? "100px" : "0px";
+    document.documentElement.style.setProperty("--header-offset", offset);
+  }, [pinned, visible]);
+
   return (
     <header
       className={`${pinned ? "fixed transition-transform duration-300 ease-out" : "absolute"} top-0 left-0 z-50 w-full bg-transparent pt-4 sm:pt-5 ${
