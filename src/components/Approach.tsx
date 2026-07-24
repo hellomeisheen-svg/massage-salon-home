@@ -1,13 +1,19 @@
 const heading = "'Roslindale Cyrillic Display Condensed', serif";
 
 const practices = [
+  "Векторный",
   "Лимфатический",
+  "Лимфодренажный",
   "Классический",
+  "Спина",
+  "Лицо",
+  "Ноги",
+  "Голова",
   "Гирудотерапия",
+  "Пиявки",
   "Банки",
-  "Лимфатический",
-  "Классический",
-  "Гирудотерапия",
+  "Огонь",
+  "Воздух",
 ];
 
 const environmentItems = [
@@ -80,7 +86,8 @@ export function Approach() {
               {practices.map((p, i) => (
                 <span
                   key={i}
-                  className="rounded-full bg-white px-5 py-2.5 text-[14px] text-[#1C3C8C] shadow-[0_8px_20px_-8px_rgba(28,60,140,0.25)]"
+                  className="inline-flex items-center justify-center rounded-lg bg-white px-6 py-4 min-h-[60px] text-[22px] xl:text-[26px] font-light leading-none text-[#1C3C8C] shadow-[0_8px_20px_-8px_rgba(28,60,140,0.25)]"
+                  style={{ fontFamily: heading }}
                 >
                   {p}
                 </span>
