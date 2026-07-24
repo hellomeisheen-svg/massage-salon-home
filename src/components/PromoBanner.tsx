@@ -7,6 +7,13 @@ export function PromoBanner() {
           style={{ backgroundColor: "#DAEBFF", borderColor: "#BEDDFF" }}
         >
           <img
+            src="/images/banner-clouds.svg"
+            alt=""
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 z-0 h-full w-full select-none"
+            style={{ objectFit: "fill" }}
+          />
+          <img
             src="/images/banner-ellipse.svg"
             alt=""
             aria-hidden="true"
