@@ -36,9 +36,10 @@ function Index() {
       <Hero />
       <QuoteBlock />
       <Services />
+      <PromoBanner />
       <Approach />
       <Programs />
-      <PromoBanner />
+
 
 
     </div>
