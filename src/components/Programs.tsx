@@ -72,8 +72,14 @@ const programs: Program[] = [
   },
 ];
 
+const heading = "'Roslindale Cyrillic Display Condensed', serif";
+
 const formatPrice = (v: number) =>
-  `${v.toLocaleString("ru-RU").replace(/\s/g, "\u00A0")}\u00A0₽`;
+  `${v.toLocaleString("ru-RU").replace(/\s/g, "\u00A0")}\u00A0`;
+
+function Ruble() {
+  return <span className="font-[system-ui,sans-serif] font-extralight">₽</span>;
+}
 
 export function Programs() {
   const [active, setActive] = useState(0);
@@ -84,206 +90,124 @@ export function Programs() {
 
   return (
     <section className="bg-[#EFF6FF] py-[60px] sm:py-[70px]">
-      <div className="mx-auto max-w-[1400px] px-6 md:px-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-          {/* Left column */}
-          <div>
-            <span
-              className="inline-block rounded-full px-5 py-2 text-white text-sm"
-              style={{ background: "#98BFF6" }}
-            >
-              Программы восстановления
-            </span>
-            <h2
-              className="mt-8 text-[#1C3C8C] leading-[1.05]"
-              style={{
-                fontFamily: '"Roslindale Cyrillic Display Condensed", serif',
-                fontSize: "clamp(30px, 4vw, 56px)",
-              }}
-            >
-              Программы из нескольких процедур&nbsp;— для глубокой работы с&nbsp;конкретным состоянием.
-            </h2>
+      <div className="container-1900 px-5 grid grid-cols-1 xl:grid-cols-2 gap-10 xl:gap-16 items-start">
+        {/* Left column */}
+        <div className="xl:sticky self-start flex flex-col items-center xl:items-start text-center xl:text-left" style={{ top: "calc(var(--header-offset, 0px) + 20px)" }}>
+          <span
+            className="inline-flex items-center gap-2 px-4 py-1.5 text-[13px] font-medium tracking-wide text-white"
+            style={{
+              borderRadius: "4px",
+              backgroundImage: "linear-gradient(to bottom, #A2CFFE, #88C1FF)",
+            }}
+          >
+            Программы восстановления
+          </span>
+          <h2
+            className="mt-6 text-[30px] sm:text-[38px] xl:text-[44px] font-light leading-[1.15] text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0"
+            style={{ fontFamily: heading }}
+          >
+            Программы из&nbsp;нескольких процедур&nbsp;— для глубокой работы с&nbsp;конкретным состоянием.
+          </h2>
 
-            <ul className="mt-10 space-y-4">
-              {programs.map((p, i) => {
-                const isActive = i === active;
-                return (
-                  <li key={p.name}>
-                    <button
-                      type="button"
-                      onClick={() => setActive(i)}
-                      className="flex items-center gap-3 text-left transition-colors"
+          <ul className="mt-8 hidden xl:flex flex-col gap-3 items-start">
+            {programs.map((p, i) => {
+              const isActive = i === active;
+              return (
+                <li key={p.name}>
+                  <button
+                    type="button"
+                    onClick={() => setActive(i)}
+                    className="flex items-center gap-3 text-left"
+                  >
+                    <span
+                      className={`h-2 w-2 rounded-full transition-colors ${
+                        isActive ? "bg-[#1C3C8C]" : "bg-[#B7C5E3]"
+                      }`}
+                    />
+                    <span
+                      className={`text-[16px] transition-colors ${
+                        isActive ? "text-[#1C3C8C]" : "text-[#8D9DC5]"
+                      }`}
                     >
-                      <span
-                        className="inline-block rounded-full transition-all"
-                        style={{
-                          width: 8,
-                          height: 8,
-                          background: isActive ? "#1C3C8C" : "#8D9DC5",
-                        }}
-                      />
-                      <span
-                        style={{
-                          fontFamily: "Inter, sans-serif",
-                          fontSize: 18,
-                          color: isActive ? "#1C3C8C" : "#8D9DC5",
-                          fontWeight: isActive ? 500 : 400,
-                        }}
-                      >
-                        {p.name}
-                      </span>
-                    </button>
-                  </li>
-                );
-              })}
-            </ul>
+                      {p.name}
+                    </span>
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+
+        {/* Right column — program card */}
+        <article className="rounded-2xl border border-[#daebff] bg-white p-8 sm:p-10 transition-shadow duration-300 hover:shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)]">
+          <h3
+            className="text-[30px] sm:text-[38px] xl:text-[42px] font-light leading-[1.1] text-[#1C3C8C]"
+            style={{ fontFamily: heading }}
+          >
+            {program.name}
+          </h3>
+          <p className="mt-3 text-[16px] leading-[26px] text-[#8D9DC5]">
+            {program.description}
+          </p>
+
+          <div className="mt-8 grid grid-cols-[1.3fr_1fr] gap-6 pb-4 border-b border-[#daebff]">
+            <div className="text-[15px] font-semibold text-[#1C3C8C]">Что входит</div>
+            <div className="text-[15px] font-semibold text-[#1C3C8C]">Длительность</div>
           </div>
 
-          {/* Right column card */}
-          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-[0_10px_40px_-20px_rgba(28,60,140,0.15)]">
-            <h3
-              className="text-[#1C3C8C]"
-              style={{
-                fontFamily: '"Roslindale Cyrillic Display Condensed", serif',
-                fontSize: "clamp(30px, 3vw, 44px)",
-                lineHeight: 1.1,
-              }}
-            >
-              {program.name}
-            </h3>
-            <p
-              className="mt-4"
-              style={{
-                fontFamily: "Inter, sans-serif",
-                fontSize: 16,
-                lineHeight: "26px",
-                color: "#8D9DC5",
-              }}
-            >
-              {program.description}
-            </p>
-
-            <div className="mt-10 grid grid-cols-[1.3fr_1fr] gap-6 pb-4 border-b border-[#EFF6FF]">
-              <div
-                style={{
-                  fontFamily: "Inter, sans-serif",
-                  fontSize: 15,
-                  color: "#1C3C8C",
-                  fontWeight: 600,
-                }}
-              >
-                Что входит
+          <div className="divide-y divide-[#daebff]">
+            {program.items.map((it, idx) => (
+              <div key={idx} className="grid grid-cols-[1.3fr_1fr] gap-6 py-5">
+                <div className="text-[16px] leading-[26px] text-[#1C3C8C]">{it.title}</div>
+                <div className="text-[16px] leading-[26px] text-[#8D9DC5]">{it.duration}</div>
               </div>
-              <div
-                style={{
-                  fontFamily: "Inter, sans-serif",
-                  fontSize: 15,
-                  color: "#1C3C8C",
-                  fontWeight: 600,
-                }}
-              >
-                Длительность
-              </div>
-            </div>
+            ))}
+          </div>
 
-            <div className="divide-y divide-[#EFF6FF]">
-              {program.items.map((it, idx) => (
-                <div key={idx} className="grid grid-cols-[1.3fr_1fr] gap-6 py-5">
-                  <div
-                    style={{
-                      fontFamily: "Inter, sans-serif",
-                      fontSize: 16,
-                      lineHeight: "26px",
-                      color: "#1C3C8C",
-                    }}
-                  >
-                    {it.title}
-                  </div>
-                  <div
-                    style={{
-                      fontFamily: "Inter, sans-serif",
-                      fontSize: 16,
-                      lineHeight: "26px",
-                      color: "#8D9DC5",
-                    }}
-                  >
-                    {it.duration}
-                  </div>
-                </div>
-              ))}
-            </div>
+          <div
+            className="mt-8 flex flex-wrap items-baseline justify-end gap-x-4 text-[26px] font-light text-[#1C3C8C]"
+            style={{ fontFamily: heading }}
+          >
+            <span className="text-[18px] text-[#8D9DC5] line-through">
+              {formatPrice(program.originalPrice)}
+              <Ruble />
+            </span>
+            <span>
+              {formatPrice(program.price)}
+              <Ruble />
+            </span>
+          </div>
 
-            <div className="mt-10 flex items-end justify-end gap-4">
-              <span
-                style={{
-                  fontFamily: '"Roslindale Cyrillic Display Condensed", serif',
-                  fontSize: 22,
-                  color: "#8D9DC5",
-                  textDecoration: "line-through",
-                }}
-              >
-                {formatPrice(program.originalPrice)}
-              </span>
-              <span
-                style={{
-                  fontFamily: '"Roslindale Cyrillic Display Condensed", serif',
-                  fontSize: 40,
-                  color: "#1C3C8C",
-                  lineHeight: 1,
-                }}
-              >
-                {formatPrice(program.price)}
-              </span>
-            </div>
+          <p className="mt-6 text-[15px] text-[#8D9DC5]">
+            Срок использования: {program.validity}
+          </p>
 
-            <p
-              className="mt-8"
-              style={{
-                fontFamily: "Inter, sans-serif",
-                fontSize: 15,
-                color: "#8D9DC5",
-              }}
-            >
-              Срок использования: {program.validity}
-            </p>
-
-            <button
-              type="button"
-              className="mt-6 w-full rounded-2xl py-5 text-white transition-all hover:brightness-105"
-              style={{
-                background: "#98BFF6",
-                fontFamily: "Inter, sans-serif",
-                fontSize: 16,
-                fontWeight: 500,
-              }}
-            >
+          <div className="mt-8 flex flex-col sm:flex-row gap-3">
+            <button type="button" className="btn-primary flex-1">
               Записаться
             </button>
-
-            <div className="mt-4 grid grid-cols-2 gap-4">
-              <button
-                type="button"
-                onClick={prev}
-                aria-label="Предыдущая программа"
-                className="rounded-2xl border border-[#E4ECF9] py-5 flex items-center justify-center transition-colors hover:bg-[#F5F9FF]"
-              >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                  <path d="M15 6l-6 6 6 6" stroke="#8D9DC5" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-              <button
-                type="button"
-                onClick={next}
-                aria-label="Следующая программа"
-                className="rounded-2xl border border-[#E4ECF9] py-5 flex items-center justify-center transition-colors hover:bg-[#F5F9FF]"
-              >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                  <path d="M9 6l6 6-6 6" stroke="#8D9DC5" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-            </div>
+            <button
+              type="button"
+              onClick={prev}
+              aria-label="Предыдущая программа"
+              className="btn-secondary sm:min-w-[80px] sm:flex-none flex items-center justify-center"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+            <button
+              type="button"
+              onClick={next}
+              aria-label="Следующая программа"
+              className="btn-secondary sm:min-w-[80px] sm:flex-none flex items-center justify-center"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
           </div>
-        </div>
+        </article>
       </div>
     </section>
   );
