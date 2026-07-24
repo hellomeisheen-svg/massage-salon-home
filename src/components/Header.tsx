@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
-const navigationItems = [
-  "Услуги",
-  "Преимущества",
-  "Программы",
-  "Обо мне",
-  "Вопросы",
-  "Контакты",
+const navigationItems: { label: string; href?: string }[] = [
+  { label: "Услуги", href: "#services" },
+  { label: "Преимущества", href: "#advantages" },
+  { label: "Программы" },
+  { label: "Обо мне" },
+  { label: "Вопросы" },
+  { label: "Контакты" },
 ];
+
 
 const logoStyle = {
   fontFamily: "'Roslindale Cyrillic Display Condensed', serif",
@@ -90,16 +91,28 @@ export function Header() {
         {/* Navigation */}
         <nav aria-label="Основная навигация">
           <ul className="flex items-center gap-[30px]">
-            {navigationItems.map((item) => (
-              <li key={item}>
-                <button
-                  type="button"
-                  className="text-base font-normal leading-[150%] text-[#1c3c8c] hover:opacity-70 transition-opacity"
-                >
-                  {item}
-                </button>
-              </li>
-            ))}
+            {navigationItems.map((item) =>
+              item.href ? (
+                <li key={item.label}>
+                  <a
+                    href={item.href}
+                    className="text-base font-normal leading-[150%] text-[#1c3c8c] hover:opacity-70 transition-opacity"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ) : (
+                <li key={item.label}>
+                  <button
+                    type="button"
+                    className="text-base font-normal leading-[150%] text-[#1c3c8c] hover:opacity-70 transition-opacity"
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              ),
+            )}
+
           </ul>
         </nav>
 
@@ -141,17 +154,30 @@ export function Header() {
         <div className="mt-2 rounded-2xl border border-[#daebff] bg-white p-4 xl:hidden">
           <nav aria-label="Мобильная навигация">
             <ul className="flex flex-col gap-1">
-              {navigationItems.map((item) => (
-                <li key={item}>
-                  <button
-                    type="button"
-                    onClick={() => setMenuOpen(false)}
-                    className="w-full rounded-lg px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors"
-                  >
-                    {item}
-                  </button>
-                </li>
-              ))}
+              {navigationItems.map((item) =>
+                item.href ? (
+                  <li key={item.label}>
+                    <a
+                      href={item.href}
+                      onClick={() => setMenuOpen(false)}
+                      className="block w-full rounded-lg px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors"
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                ) : (
+                  <li key={item.label}>
+                    <button
+                      type="button"
+                      onClick={() => setMenuOpen(false)}
+                      className="w-full rounded-lg px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors"
+                    >
+                      {item.label}
+                    </button>
+                  </li>
+                ),
+              )}
+
             </ul>
           </nav>
           <button
