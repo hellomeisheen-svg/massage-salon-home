@@ -106,12 +106,7 @@ function formatSessions(n: number, unit: ServiceInfo["unit"]) {
 }
 
 function formatDuration(totalMin: number) {
-  if (totalMin < 60) return `${totalMin}\u00A0${pluralize(totalMin, ["минута", "минуты", "минут"])}`;
-  const h = Math.floor(totalMin / 60);
-  const m = totalMin % 60;
-  const hStr = `${h}\u00A0${pluralize(h, ["час", "часа", "часов"])}`;
-  if (!m) return hStr;
-  return `${hStr}\u00A0${m}\u00A0мин`;
+  return `${totalMin}\u00A0${pluralize(totalMin, ["минута", "минуты", "минут"])}`;
 }
 
 function computeItem(it: ProgramItem) {
