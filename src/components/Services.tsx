@@ -150,8 +150,14 @@ export function Services() {
       <div className="container-1900 px-5 grid grid-cols-1 xl:grid-cols-2 gap-10 xl:gap-16">
         {/* Left column */}
         <div className="xl:sticky xl:top-24 self-start">
-          <span className="inline-flex items-center gap-2 rounded-full border border-[#daebff] bg-white px-4 py-1.5 text-[13px] font-medium tracking-wide text-[#1C3C8C]">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#5DAAFD]" />
+          <span
+            className="inline-flex items-center gap-2 px-4 py-1.5 text-[13px] font-medium tracking-wide text-white"
+            style={{
+              borderRadius: "4px",
+              backgroundImage: "linear-gradient(to bottom, #A2CFFE, #88C1FF)",
+            }}
+          >
+            <span className="h-1.5 w-1.5 rounded-full bg-white/80" />
             Услуги
           </span>
           <h2
@@ -189,11 +195,6 @@ export function Services() {
 
         {/* Right column */}
         <div className="relative flex flex-col gap-6">
-          <div
-            className="pointer-events-none absolute -top-6 right-4 sm:right-8 z-10 rotate-[8deg] rounded-full bg-gradient-to-b from-[#8FBEFF] to-[#5DAAFD] px-5 py-2 text-[14px] font-medium text-white shadow-[0_10px_24px_-10px_rgba(93,170,253,0.6)]"
-          >
-            Курсом выгоднее
-          </div>
           {services.map((s, i) => (
             <div
               key={i}
