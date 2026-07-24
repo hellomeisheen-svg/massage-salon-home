@@ -115,31 +115,30 @@ export function Approach() {
 
           <ul className="mt-[140px] flex flex-col gap-8">
             {environmentItems.map((item, i) => (
-              <li key={i} className="flex gap-5 items-start">
-                {item.image ? (
-                  <div className="shrink-0 w-[60px] h-[60px] xl:w-[70px] xl:h-[70px] overflow-hidden">
-                    <img src={item.image} alt="" className="w-full h-full object-contain" />
-                  </div>
-
-                ) : (
-                  <div className="shrink-0 w-14 h-14 rounded-xl bg-[#EFF6FF] flex items-center justify-center text-[26px]">
-                    {item.icon}
-                  </div>
-                )}
-
-                <div className="flex-1">
+              <li key={i}>
+                <div className="flex items-center gap-5">
+                  {item.image ? (
+                    <div className="shrink-0 w-[60px] h-[60px] xl:w-[70px] xl:h-[70px] overflow-hidden">
+                      <img src={item.image} alt="" className="w-full h-full object-contain" />
+                    </div>
+                  ) : (
+                    <div className="shrink-0 w-14 h-14 rounded-xl bg-[#EFF6FF] flex items-center justify-center text-[26px]">
+                      {item.icon}
+                    </div>
+                  )}
                   <h4
-                    className="text-[22px] xl:text-[24px] font-normal leading-[1.2] text-[#1C3C8C]"
+                    className="flex-1 text-[22px] xl:text-[24px] font-normal leading-[1.2] text-[#1C3C8C]"
                     style={{ fontFamily: heading }}
                   >
                     {item.title}
                   </h4>
-                  <p className="mt-2 text-[16px] leading-[26px] text-[#8D9DC5]">
-                    {item.text}
-                  </p>
                 </div>
+                <p className="mt-2 text-[16px] leading-[26px] text-[#8D9DC5]">
+                  {item.text}
+                </p>
               </li>
             ))}
+
           </ul>
         </div>
       </div>
