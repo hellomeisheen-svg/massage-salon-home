@@ -33,13 +33,8 @@ export function PromoBanner() {
           <Sparkle className="pointer-events-none absolute left-[12%] bottom-[16%] hidden h-3 w-3 text-brand-blue/60 sm:block" />
 
           <div className="relative z-10 flex flex-col items-center text-center">
-            <span className="inline-flex items-center gap-2 rounded-full border border-brand-border bg-brand-surface px-4 py-1.5 text-[13px] font-medium tracking-wide text-brand-ink">
-              <span className="h-1.5 w-1.5 rounded-full bg-brand-blue" />
-              Первый визит
-            </span>
-
             <h2
-              className="mt-6 max-w-[880px] text-[34px] font-light leading-[1.1] text-brand-ink sm:text-[48px] xl:text-[60px]"
+              className="max-w-[880px] text-[34px] font-light leading-[1.1] text-brand-ink sm:text-[48px] xl:text-[60px]"
               style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
             >
               Знакомство с&nbsp;кабинетом
@@ -52,30 +47,13 @@ export function PromoBanner() {
               и&nbsp;обсудим всё заранее&nbsp;— без&nbsp;спешки и&nbsp;шаблонов.
             </p>
 
-            <div className="mt-10 flex items-center gap-4">
+            <div className="mt-10">
               <button
                 type="button"
-                className="btn-primary group gap-2"
+                className="btn-primary w-full sm:w-[250px]"
               >
                 Записаться
-                <svg
-                  className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.75"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M5 12h14M13 6l6 6-6 6" />
-                </svg>
               </button>
-              <span
-                className="inline-flex items-center rounded-full bg-brand-ink px-4 py-2 text-[13px] font-medium text-white"
-              >
-                −20%
-              </span>
             </div>
           </div>
         </div>
