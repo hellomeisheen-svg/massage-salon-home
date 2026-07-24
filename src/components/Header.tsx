@@ -30,7 +30,8 @@ export function Header() {
         return;
       }
       const y = window.scrollY;
-      if (y <= 10) {
+      const heroThreshold = window.innerHeight * 0.8;
+      if (y < heroThreshold) {
         setVisible(true);
       } else if (y > lastY + 4) {
         setVisible(false);
