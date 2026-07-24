@@ -150,15 +150,15 @@ export function Programs() {
             {program.description}
           </p>
 
-          <div className="mt-8 grid grid-cols-[1.3fr_1fr] gap-6 pb-4 border-b border-[#daebff]">
-            <div className="text-[15px] font-semibold text-[#1C3C8C]">Что входит</div>
-            <div className="text-[15px] font-semibold text-[#1C3C8C]">Длительность</div>
+          <div className="mt-8 grid grid-cols-[1.3fr_1fr] gap-6 pb-4 border-b border-[#8D9DC5]">
+            <div className="text-[15px] font-semibold text-[#8D9DC5]">Что входит</div>
+            <div className="text-[15px] font-semibold text-[#8D9DC5]">Длительность</div>
           </div>
 
-          <div className="divide-y divide-[#daebff]">
+          <div className="divide-y divide-[#8D9DC5]">
             {program.items.map((it, idx) => (
               <div key={idx} className="grid grid-cols-[1.3fr_1fr] gap-6 py-5">
-                <div className="text-[16px] leading-[26px] text-[#1C3C8C]">{it.title}</div>
+                <div className="text-[16px] leading-[26px] text-[#8D9DC5]">{it.title}</div>
                 <div className="text-[16px] leading-[26px] text-[#8D9DC5]">{it.duration}</div>
               </div>
             ))}
