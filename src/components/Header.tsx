@@ -91,16 +91,28 @@ export function Header() {
         {/* Navigation */}
         <nav aria-label="Основная навигация">
           <ul className="flex items-center gap-[30px]">
-            {navigationItems.map((item) => (
-              <li key={item}>
-                <button
-                  type="button"
-                  className="text-base font-normal leading-[150%] text-[#1c3c8c] hover:opacity-70 transition-opacity"
-                >
-                  {item}
-                </button>
-              </li>
-            ))}
+            {navigationItems.map((item) =>
+              item.href ? (
+                <li key={item.label}>
+                  <a
+                    href={item.href}
+                    className="text-base font-normal leading-[150%] text-[#1c3c8c] hover:opacity-70 transition-opacity"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ) : (
+                <li key={item.label}>
+                  <button
+                    type="button"
+                    className="text-base font-normal leading-[150%] text-[#1c3c8c] hover:opacity-70 transition-opacity"
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              ),
+            )}
+
           </ul>
         </nav>
 
