@@ -83,7 +83,7 @@ export function Programs() {
   const next = () => setActive((i) => (i + 1) % programs.length);
 
   return (
-    <section className="bg-[#EFF6FF] py-[70px]">
+    <section className="bg-[#EFF6FF] py-[60px] sm:py-[70px]">
       <div className="mx-auto max-w-[1400px] px-6 md:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
           {/* Left column */}
