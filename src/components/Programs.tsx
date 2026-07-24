@@ -139,27 +139,39 @@ export function Programs() {
         </div>
 
         {/* Right column — program card */}
-        <article className="rounded-2xl border border-[#daebff] bg-white p-8 sm:p-10 transition-shadow duration-300 hover:shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)]">
+        <article className="rounded-2xl border border-[#daebff] bg-white p-6 sm:p-10 transition-shadow duration-300 hover:shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)]">
           <h3
             className="text-[30px] sm:text-[38px] xl:text-[42px] font-light leading-[1.1] text-[#1C3C8C]"
             style={{ fontFamily: heading }}
           >
             {program.name}
           </h3>
-          <p className="mt-3 text-[16px] leading-[26px] text-[#8D9DC5]">
+          <p className="mt-3 text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-[#8D9DC5]">
             {program.description}
           </p>
 
-          <div className="mt-8 grid grid-cols-[1.3fr_1fr] gap-6 pb-4 border-b border-[#daebff]">
-            <div className="text-[15px] font-semibold text-[#1C3C8C]">Что входит</div>
-            <div className="text-[15px] font-semibold text-[#1C3C8C]">Длительность</div>
+          {/* Desktop / tablet: two-column table */}
+          <div className="hidden sm:block">
+            <div className="mt-8 grid grid-cols-[1.3fr_1fr] gap-6 pb-4 border-b border-[#daebff]">
+              <div className="text-[15px] font-semibold text-[#1C3C8C]">Что входит</div>
+              <div className="text-[15px] font-semibold text-[#1C3C8C]">Длительность</div>
+            </div>
+            <div className="divide-y divide-[#daebff]">
+              {program.items.map((it, idx) => (
+                <div key={idx} className="grid grid-cols-[1.3fr_1fr] gap-6 py-5">
+                  <div className="text-[16px] leading-[26px] text-[#8D9DC5]">{it.title}</div>
+                  <div className="text-[16px] leading-[26px] text-[#8D9DC5]">{it.duration}</div>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <div className="divide-y divide-[#daebff]">
+          {/* Mobile: stacked blocks */}
+          <div className="sm:hidden mt-6 border-t border-[#daebff] divide-y divide-[#daebff]">
             {program.items.map((it, idx) => (
-              <div key={idx} className="grid grid-cols-[1.3fr_1fr] gap-6 py-5">
-                <div className="text-[16px] leading-[26px] text-[#8D9DC5]">{it.title}</div>
-                <div className="text-[16px] leading-[26px] text-[#8D9DC5]">{it.duration}</div>
+              <div key={idx} className="py-4">
+                <div className="text-[16px] leading-[22px] text-[#1C3C8C]">{it.title}</div>
+                <div className="mt-1 text-[13px] leading-[18px] text-[#8D9DC5]">{it.duration}</div>
               </div>
             ))}
           </div>
@@ -182,15 +194,15 @@ export function Programs() {
             Срок использования: {program.validity}
           </p>
 
-          <div className="mt-8 flex flex-col sm:flex-row gap-3">
-            <button type="button" className="btn-primary flex-1">
+          <div className="mt-8 grid grid-cols-[1fr_auto_auto] sm:flex sm:flex-row gap-3">
+            <button type="button" className="btn-primary sm:flex-1">
               Записаться
             </button>
             <button
               type="button"
               onClick={prev}
               aria-label="Предыдущая программа"
-              className="btn-secondary sm:min-w-[80px] sm:flex-none flex items-center justify-center"
+              className="btn-secondary w-[56px] sm:w-auto sm:min-w-[80px] sm:flex-none flex items-center justify-center"
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                 <path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
@@ -200,7 +212,7 @@ export function Programs() {
               type="button"
               onClick={next}
               aria-label="Следующая программа"
-              className="btn-secondary sm:min-w-[80px] sm:flex-none flex items-center justify-center"
+              className="btn-secondary w-[56px] sm:w-auto sm:min-w-[80px] sm:flex-none flex items-center justify-center"
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                 <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
