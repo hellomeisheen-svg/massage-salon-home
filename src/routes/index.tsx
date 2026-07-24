@@ -3,7 +3,7 @@ import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { QuoteBlock } from "@/components/QuoteBlock";
 import { Services } from "@/components/Services";
-import { Approach } from "@/components/Approach";
+
 import { ApproachCopy } from "@/components/ApproachCopy";
 import { PromoBanner } from "@/components/PromoBanner";
 import { ApproachIntro } from "@/components/ApproachIntro";
@@ -42,7 +42,7 @@ function Index() {
       <Services />
       <PromoBanner />
       <ApproachIntro />
-      <Approach />
+      
       <ApproachCopy />
       
       
