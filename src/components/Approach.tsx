@@ -116,7 +116,7 @@ export function Approach() {
           <ul className="mt-[140px] flex flex-col gap-8">
             {environmentItems.map((item, i) => (
               <li key={i}>
-                <div className="flex items-center gap-5">
+                <div className="flex items-end gap-5">
                   {item.image ? (
                     <div className="shrink-0 w-[60px] h-[60px] xl:w-[70px] xl:h-[70px] overflow-hidden">
                       <img src={item.image} alt="" className="w-full h-full object-contain" />
@@ -133,7 +133,7 @@ export function Approach() {
                     {item.title}
                   </h4>
                 </div>
-                <p className={`mt-2 text-[16px] leading-[24px] text-[#8D9DC5] ${item.image ? "pl-[80px] xl:pl-[90px]" : ""}`}>
+                <p className={`mt-1 text-[16px] leading-[22px] text-[#8D9DC5] ${item.image ? "pl-[80px] xl:pl-[90px]" : ""}`}>
 
                   {item.text}
                 </p>
