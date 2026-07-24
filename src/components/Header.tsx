@@ -20,7 +20,7 @@ export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-[#EFF6FF] pt-4 sm:pt-5">
+    <header className="sticky top-0 z-50 w-full bg-transparent pt-4 sm:pt-5">
       <div className="container-1900">
       {/* Desktop header */}
       <div className="hidden h-20 w-full items-center justify-between rounded-2xl border border-[#daebff] bg-white px-5 py-2.5 xl:flex xl:px-[30px]">
