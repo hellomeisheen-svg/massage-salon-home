@@ -148,7 +148,7 @@ export function ApproachCopy() {
             Среда вокруг
           </h3>
 
-          <ul className="mt-[140px] flex flex-col gap-8">
+          <ul className="mt-[120px] sm:mt-[140px] flex flex-col gap-8">
             {environmentItems.map((item, i) => (
               <li key={i}>
                 <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-5">
