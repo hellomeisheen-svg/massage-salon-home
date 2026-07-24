@@ -1,6 +1,6 @@
 export function PromoBanner() {
   return (
-    <section className="bg-brand-surface pb-10 sm:pb-16 xl:pb-20">
+    <section className="bg-brand-surface pt-[140px] pb-10 sm:pb-16 xl:pb-20">
       <div className="container-1900 px-5">
         <div
           className="relative overflow-hidden rounded-2xl border px-6 py-[60px] sm:px-12 xl:px-24"
