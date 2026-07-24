@@ -260,7 +260,7 @@ export function Services() {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
           const idx = Number((entry.target as HTMLElement).dataset.index);
-          setActiveCategory(idx >= 10 ? 1 : 0);
+          setActiveCategory(idx >= 9 ? 1 : 0);
         });
       },
       { rootMargin: "-45% 0px -45% 0px", threshold: 0 }
