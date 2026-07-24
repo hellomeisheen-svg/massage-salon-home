@@ -9,7 +9,7 @@ const practices = [
   "Банки",
 ];
 
-const environmentItems = [
+const environmentItems: { icon: string; image?: string; title: string; text: string }[] = [
   {
     icon: "🧻",
     image: "/images/fresh-linen.jpg",
