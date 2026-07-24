@@ -10,9 +10,9 @@ export function PromoBanner() {
             src="/images/banner-clouds.svg"
             alt=""
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 z-0 h-full w-full select-none"
-            style={{ objectFit: "fill" }}
+            className="pointer-events-none absolute inset-x-0 top-0 z-0 w-full -translate-y-[80px] select-none"
           />
+
           <img
             src="/images/banner-clouds-bottom.svg"
             alt=""
