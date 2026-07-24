@@ -141,7 +141,7 @@ export function Approach() {
                     >
                       {item.title}
                     </h4>
-                    <p className="mt-4 text-[16px] leading-[1.5] text-[#8D9DC5]">
+                    <p className="mt-4 text-[16px] leading-[1.5] text-[#8D9DC5] xl:max-w-[600px]">
                       {item.text}
                     </p>
                   </div>
