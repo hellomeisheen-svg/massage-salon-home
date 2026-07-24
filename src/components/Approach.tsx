@@ -133,9 +133,10 @@ export function Approach() {
                     {item.title}
                   </h4>
                 </div>
-                <p className="mt-2 text-[16px] leading-[26px] text-[#8D9DC5]">
+                <p className={`mt-2 text-[16px] leading-[26px] text-[#8D9DC5] ${item.image ? "pl-[80px] xl:pl-[90px]" : ""}`}>
                   {item.text}
                 </p>
+
               </li>
             ))}
 
