@@ -10,8 +10,10 @@ export function PromoBanner() {
             src="/images/banner-ellipse.svg"
             alt=""
             aria-hidden="true"
-            className="pointer-events-none absolute left-1/2 top-0 z-0 w-[995px] max-w-none -translate-x-1/2 select-none"
+            className="pointer-events-none absolute left-1/2 top-0 z-0 h-full w-[995px] max-w-none -translate-x-1/2 select-none"
+            style={{ objectFit: "fill" }}
           />
+
 
 
 
