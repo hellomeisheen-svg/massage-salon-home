@@ -116,7 +116,8 @@ function formatDuration(totalMin: number) {
 
 function computeItem(it: ProgramItem) {
   const info = serviceCatalog[it.key];
-  const totalMin = info.durationMin * it.sessions;
+  const isHirudo = it.key === "hirudoMed" || it.key === "hirudoCosm";
+  const totalMin = isHirudo ? 120 : info.durationMin * it.sessions;
   const subtotal = info.priceMin * it.sessions;
   return {
     title: info.title,
