@@ -1,36 +1,12 @@
-const Sparkle = ({ className }: { className?: string }) => (
-  <svg
-    className={className}
-    viewBox="0 0 24 24"
-    fill="currentColor"
-    aria-hidden="true"
-  >
-    <path d="M12 0 L13.2 10.8 L24 12 L13.2 13.2 L12 24 L10.8 13.2 L0 12 L10.8 10.8 Z" />
-  </svg>
-);
-
 export function PromoBanner() {
   return (
     <section className="bg-brand-surface pb-10 sm:pb-16 xl:pb-20">
       <div className="container-1900 px-5">
-        <div className="relative overflow-hidden rounded-2xl border border-brand-border bg-white px-6 py-16 sm:px-12 sm:py-20 xl:px-24 xl:py-24">
-          {/* Soft brand glows */}
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute -left-40 -top-40 h-[480px] w-[480px] rounded-full opacity-60 blur-3xl"
-            style={{ background: "var(--brand-blue-tint)" }}
-          />
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute -bottom-48 -right-32 h-[520px] w-[520px] rounded-full opacity-50 blur-3xl"
-            style={{ background: "var(--brand-surface)" }}
-          />
+        <div
+          className="relative overflow-hidden rounded-2xl px-6 py-16 sm:px-12 sm:py-20 xl:px-24 xl:py-24"
+          style={{ backgroundColor: "#DAEBFF" }}
+        >
 
-          {/* Decorative sparkles */}
-          <Sparkle className="pointer-events-none absolute left-[6%] top-[18%] hidden h-4 w-4 text-brand-blue/60 sm:block" />
-          <Sparkle className="pointer-events-none absolute right-[10%] top-[14%] hidden h-3 w-3 text-brand-blue/50 sm:block" />
-          <Sparkle className="pointer-events-none absolute right-[6%] bottom-[22%] hidden h-5 w-5 text-brand-blue/50 sm:block" />
-          <Sparkle className="pointer-events-none absolute left-[12%] bottom-[16%] hidden h-3 w-3 text-brand-blue/60 sm:block" />
 
           <div className="relative z-10 flex flex-col items-center text-center">
             <h2
