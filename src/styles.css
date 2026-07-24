@@ -11,6 +11,13 @@
 }
 @font-face {
   font-family: "Roslindale Cyrillic Display Condensed";
+  src: url("/__l5e/assets-v1/4bcbd443-508e-4b59-9ee6-b102589ea065/RoslindaleCyrillicDisplayCondensed-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roslindale Cyrillic Display Condensed";
   src: url("/__l5e/assets-v1/b6d5d471-f013-483f-83f6-c82cfc276bf6/RoslindaleCyrillicDisplayCondensed-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
