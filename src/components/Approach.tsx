@@ -123,7 +123,11 @@ export function Approach() {
                 <div className="flex items-center gap-5">
                   {item.image ? (
                     <div className="shrink-0 w-[60px] h-[60px] xl:w-[70px] xl:h-[70px] overflow-hidden">
-                      <img src={item.image} alt="" className="w-full h-full object-contain" />
+                      <img
+                        src={item.image}
+                        alt=""
+                        className={`w-full h-full object-contain ${item.image === "/images/oils.jpg" ? "scale-[1.35]" : ""}`}
+                      />
                     </div>
                   ) : (
                     <div className="shrink-0 w-14 h-14 rounded-xl bg-[#EFF6FF] flex items-center justify-center text-[26px]">
