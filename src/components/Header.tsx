@@ -50,16 +50,6 @@ export function Header() {
         visible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 h-4 backdrop-blur-md sm:h-5"
-        style={{
-          WebkitMaskImage:
-            "linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)",
-          maskImage:
-            "linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)",
-        }}
-      />
       <div className="container-1900 relative">
       {/* Desktop header */}
       <div className="hidden h-20 w-full items-center justify-between rounded-2xl border border-[#daebff] bg-white px-5 py-2.5 xl:flex xl:px-[30px]">
