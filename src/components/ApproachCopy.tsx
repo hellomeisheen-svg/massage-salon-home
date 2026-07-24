@@ -146,36 +146,29 @@ export function ApproachCopy() {
           </h3>
 
           <ul className="mt-[120px] sm:mt-[140px] flex flex-col gap-8">
-            {environmentItems.map((item, i) => (
-              <li key={i}>
-                <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-5">
-                  {item.image ? (
-                    <div className="shrink-0 w-[60px] h-[60px] xl:w-[70px] xl:h-[70px] overflow-hidden">
-                      <img
-                        src={item.image}
-                        alt=""
-                        className={`w-full h-full object-contain ${item.image === "/images/v2/cream.jpg" ? "scale-[1.35]" : ""}`}
-                      />
+            {environmentItems.map((item, i) => {
+              const Icon = item.Icon;
+              return (
+                <li key={i}>
+                  <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-5">
+                    <div className="shrink-0 w-[60px] h-[60px] xl:w-[70px] xl:h-[70px] rounded-full bg-[#EFF6FF] border border-[#daebff] flex items-center justify-center">
+                      <Icon className="w-6 h-6 xl:w-7 xl:h-7 text-[#1C3C8C]" strokeWidth={1.5} />
                     </div>
-                  ) : (
-                    <div className="shrink-0 w-14 h-14 rounded-xl bg-[#EFF6FF] flex items-center justify-center text-[26px]">
-                      {item.icon}
+                    <div className="flex-1">
+                      <h4
+                        className="text-[22px] xl:text-[24px] font-normal leading-[1] text-[#1C3C8C]"
+                        style={{ fontFamily: heading }}
+                      >
+                        {item.title}
+                      </h4>
+                      <p className="mt-4 text-[16px] leading-[1.5] text-[#8D9DC5] xl:max-w-[600px]">
+                        {item.text}
+                      </p>
                     </div>
-                  )}
-                  <div className="flex-1">
-                    <h4
-                      className="text-[22px] xl:text-[24px] font-normal leading-[1] text-[#1C3C8C]"
-                      style={{ fontFamily: heading }}
-                    >
-                      {item.title}
-                    </h4>
-                    <p className="mt-4 text-[16px] leading-[1.5] text-[#8D9DC5] xl:max-w-[600px]">
-                      {item.text}
-                    </p>
                   </div>
-                </div>
-              </li>
-            ))}
+                </li>
+              );
+            })}
 
           </ul>
         </div>
