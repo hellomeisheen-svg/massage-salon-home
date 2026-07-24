@@ -8,6 +8,7 @@ import { ApproachCopy } from "@/components/ApproachCopy";
 import { PromoBanner } from "@/components/PromoBanner";
 import { ApproachIntro } from "@/components/ApproachIntro";
 import { Programs } from "@/components/Programs";
+import { Education } from "@/components/Education";
 
 
 export const Route = createFileRoute("/")({
