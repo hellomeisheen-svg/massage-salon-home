@@ -1,6 +1,10 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+
+
 
 @font-face {
   font-family: "Roslindale Cyrillic Display Condensed";
@@ -352,7 +356,10 @@ button:focus-visible {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-body);
+    font-weight: 400;
+    line-height: 1.5;
   }
+
 
   h1,
   h2,
