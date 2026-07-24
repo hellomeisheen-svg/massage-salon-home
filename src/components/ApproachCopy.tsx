@@ -39,34 +39,31 @@ const practicesRow2 = [
   "Банки",
 ];
 
-const environmentItems: { icon: string; image?: string; title: string; text: string }[] = [
+import { Sparkles, ShieldCheck, Droplets, Scissors, Leaf, type LucideIcon } from "lucide-react";
+
+const environmentItems: { Icon: LucideIcon; title: string; text: string }[] = [
   {
-    icon: "🧻",
-    image: "/images/v2/linen.jpg",
+    Icon: Sparkles,
     title: "Свежее бельё на\u00A0каждый сеанс",
     text: "На\u00A0каждый сеанс я\u00A0застилаю свежее, выглаженное бельё, чтобы вам было приятно и\u00A0спокойно с\u00A0первых минут.",
   },
   {
-    icon: "🧤",
-    image: "/images/v2/gloves.jpg",
+    Icon: ShieldCheck,
     title: "Одноразовые расходные материалы",
     text: "Все расходные материалы\u00A0— простыни, салфетки, перчатки\u00A0— одноразовые и\u00A0вскрываются при\u00A0вас для\u00A0чувства безопасности.",
   },
   {
-    icon: "🫙",
-    image: "/images/v2/cream.jpg",
+    Icon: Droplets,
     title: "Сертифицированные масла и\u00A0кремы",
     text: "Для\u00A0работы я\u00A0выбираю только сертифицированные масла и\u00A0кремы, мягкие к\u00A0коже и\u00A0подходящие даже при\u00A0повышенной чувствительности.",
   },
   {
-    icon: "🧪",
-    image: "/images/v2/instruments.jpg",
+    Icon: Scissors,
     title: "Стерильная обработка инструментов",
     text: "Все инструменты проходят стерильную обработку по\u00A0стандартам гигиены, чтобы вы\u00A0могли полностью довериться процессу.",
   },
   {
-    icon: "🌿",
-    image: "/images/v2/ambience.jpg",
+    Icon: Leaf,
     title: "Тихая и\u00A0расслабляющая атмосфера",
     text: "В\u00A0кабинете всегда тихо, без\u00A0лишних звуков и\u00A0отвлекающих факторов, чтобы вы\u00A0могли полностью переключиться и\u00A0отдохнуть.",
   },
