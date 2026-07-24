@@ -145,10 +145,12 @@ function ServiceCard({
   service,
   dynamicPricing = false,
   basePrice = 5000,
+  sessionLabels,
 }: {
   service: Service;
   dynamicPricing?: boolean;
   basePrice?: number;
+  sessionLabels?: string[];
 }) {
   const [activeSession, setActiveSession] = useState(0);
   const sessionCounts = [1, 3, 6];
@@ -163,13 +165,17 @@ function ServiceCard({
       )
     : service.price;
 
+  const items = sessions.map((s, i) => ({
+    label: sessionLabels?.[i] ?? s.label,
+    discount: s.discount,
+  }));
 
   return (
     <article className="rounded-2xl border border-[#daebff] bg-white p-8 sm:p-10 transition-shadow duration-300 hover:shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)]">
       {/* Sessions */}
       <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-[16px] leading-[26px] text-[#8D9DC5]">
-        {sessions.map((s, i) => (
-          <div key={s.label} className="flex items-center gap-x-3">
+        {items.map((s, i) => (
+          <div key={i} className="flex items-center gap-x-3">
             <button
               type="button"
               onClick={() => setActiveSession(i)}
@@ -182,7 +188,7 @@ function ServiceCard({
                 <sup className="ml-0.5 text-[11px] align-super"> {s.discount}</sup>
               )}
             </button>
-            {i < sessions.length - 1 && (
+            {i < items.length - 1 && (
               <span className="text-[#8D9DC5]">•</span>
             )}
           </div>
