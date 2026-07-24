@@ -9,9 +9,10 @@ const practices = [
   "Банки",
 ];
 
-const environmentItems = [
+const environmentItems: { icon: string; image?: string; title: string; text: string }[] = [
   {
     icon: "🧻",
+    image: "/images/fresh-linen.jpg",
     title: "Свежее бельё на\u00A0каждый сеанс",
     text: "На\u00A0каждый сеанс я\u00A0застилаю свежее, выглаженное бельё, чтобы вам было приятно и\u00A0спокойно с\u00A0первых минут.",
   },
@@ -115,8 +116,12 @@ export function Approach() {
           <ul className="mt-[140px] flex flex-col gap-8">
             {environmentItems.map((item, i) => (
               <li key={i} className="flex gap-5">
-                <div className="shrink-0 w-14 h-14 rounded-xl bg-[#EFF6FF] flex items-center justify-center text-[26px]">
-                  {item.icon}
+                <div className="shrink-0 w-14 h-14 rounded-xl bg-[#EFF6FF] flex items-center justify-center text-[26px] overflow-hidden">
+                  {item.image ? (
+                    <img src={item.image} alt="" className="w-full h-full object-cover" />
+                  ) : (
+                    item.icon
+                  )}
                 </div>
                 <div className="flex-1">
                   <h4
