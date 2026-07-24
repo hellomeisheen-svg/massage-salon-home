@@ -131,6 +131,17 @@ function formatPrice(value: number) {
   return `${value.toLocaleString("ru-RU").replace(/\s/g, "\u00A0")}\u00A0₽`;
 }
 
+function renderPrice(price: string) {
+  const idx = price.indexOf("₽");
+  if (idx === -1) return price;
+  return (
+    <>
+      {price.slice(0, idx)}
+      <span className="font-[system-ui,sans-serif] font-extralight">₽</span>
+    </>
+  );
+}
+
 function ServiceCard({
   service,
   dynamicPricing = false,
