@@ -119,7 +119,7 @@ export function Approach() {
                 </div>
                 <div className="flex-1">
                   <h4
-                    className="text-[22px] xl:text-[24px] font-light leading-[1.2] text-[#1C3C8C]"
+                    className="text-[22px] xl:text-[24px] font-normal leading-[1.2] text-[#1C3C8C]"
                     style={{ fontFamily: heading }}
                   >
                     {item.title}
