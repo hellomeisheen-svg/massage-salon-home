@@ -71,6 +71,7 @@ export function Approach() {
                 alt=""
                 className="w-full h-full object-cover object-[38%_100%] sm:object-[66%_center]"
               />
+              <div className="absolute inset-x-0 top-0 h-[55%] bg-gradient-to-b from-white via-white/85 to-transparent" />
             </div>
 
 
