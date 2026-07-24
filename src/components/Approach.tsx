@@ -12,6 +12,7 @@ const practices = [
 const environmentItems = [
   {
     icon: "🧻",
+    image: "/images/fresh-linen.jpg",
     title: "Свежее бельё на\u00A0каждый сеанс",
     text: "На\u00A0каждый сеанс я\u00A0застилаю свежее, выглаженное бельё, чтобы вам было приятно и\u00A0спокойно с\u00A0первых минут.",
   },
