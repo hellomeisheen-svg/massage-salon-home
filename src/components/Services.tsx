@@ -230,7 +230,7 @@ function ServiceCard({
               <span className="text-[#8D9DC5]">•</span>
               {t.note && <span>{t.note}</span>}
               {t.note && <span className="text-[#8D9DC5]">•</span>}
-              <span>{t.price}</span>
+              <span>{renderPrice(t.price)}</span>
             </div>
           ))}
         </div>
@@ -241,9 +241,9 @@ function ServiceCard({
         >
           <span>{computedDuration}</span>
           <span className="text-[#8D9DC5]">•</span>
-          <span>{computedPrice}</span>
+          <span>{renderPrice(computedPrice)}</span>
           {hasDiscount && (
-            <span className="text-[18px] text-[#8D9DC5] line-through">{originalPrice}</span>
+            <span className="text-[18px] text-[#8D9DC5] line-through">{renderPrice(originalPrice!)}</span>
           )}
         </div>
       )}
