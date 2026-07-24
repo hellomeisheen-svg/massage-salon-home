@@ -42,8 +42,8 @@ function Index() {
       <PromoBanner />
       <ApproachIntro />
       <Approach />
-      <Programs />
       <ApproachRedesign />
+      <Programs />
 
 
 
