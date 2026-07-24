@@ -70,7 +70,7 @@ export function Approach() {
               <img
                 src="/images/card.jpg"
                 alt=""
-                className="w-full h-full object-cover object-right"
+                className="w-full h-full object-cover object-[120%_center]"
               />
             </div>
 
