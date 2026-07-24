@@ -234,11 +234,11 @@ export function Programs() {
             style={{ fontFamily: heading }}
           >
             <span className="text-[18px] text-[#8D9DC5] line-through">
-              {formatPrice(program.originalPrice)}
+              {formatPrice(originalPrice)}
               <Ruble />
             </span>
             <span>
-              {formatPrice(program.price)}
+              {formatPrice(price)}
               <Ruble />
             </span>
           </div>
