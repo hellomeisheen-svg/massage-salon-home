@@ -102,7 +102,7 @@ export function ApproachCopy() {
 
             <div className="absolute inset-0">
               <img
-                src="/images/v2/palette.jpg"
+                src="/images/card.jpg"
                 alt=""
                 className="w-full h-full object-cover object-[38%_100%] sm:object-[66%_center]"
               />
