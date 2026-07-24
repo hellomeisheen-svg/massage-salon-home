@@ -69,7 +69,7 @@ export function Approach() {
               <img
                 src="/images/card.jpg"
                 alt=""
-                className="w-full h-full object-cover object-[75%_85%] sm:object-[66%_center]"
+                className="w-full h-full object-cover object-[30%_85%] sm:object-[66%_center]"
               />
             </div>
 
