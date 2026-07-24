@@ -66,14 +66,14 @@ export function Approach() {
               Палитра практик
             </h3>
 
-            <div className="absolute inset-0 top-24">
+            <div className="absolute inset-0">
               <img
-                src="/images/deco-massage-2.jpg"
+                src="/images/card.jpg"
                 alt=""
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-center"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-white/40 via-transparent to-transparent" />
             </div>
+
 
             {/* Floating practice pills */}
             <div className="absolute inset-x-6 bottom-6 flex flex-wrap gap-3 justify-center">
