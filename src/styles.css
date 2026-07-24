@@ -48,7 +48,7 @@
   gap: 0.75rem;
   width: max-content;
   flex-wrap: nowrap;
-  animation: marquee-left 40s linear infinite;
+  animation: marquee-left 70s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 .marquee-track.reverse {
   animation-name: marquee-right;
