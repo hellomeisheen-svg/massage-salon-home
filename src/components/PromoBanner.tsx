@@ -42,7 +42,7 @@ export function PromoBanner() {
               и&nbsp;обсудим всё заранее&nbsp;— без&nbsp;спешки и&nbsp;шаблонов.
             </p>
 
-            <div className="mt-8 w-full sm:mt-10 sm:w-auto">
+            <div className="mt-8 w-full px-2 sm:mt-10 sm:w-auto sm:px-0">
               <button
                 type="button"
                 className="btn-primary w-full sm:w-[250px]"
