@@ -17,7 +17,7 @@ export function PromoBanner() {
             src="/images/banner-clouds-bottom.svg"
             alt=""
             aria-hidden="true"
-            className="pointer-events-none absolute inset-x-0 bottom-0 z-0 w-full select-none"
+            className="pointer-events-none absolute inset-x-0 bottom-0 z-0 w-full translate-y-[30px] select-none"
           />
           <img
             src="/images/banner-ellipse.svg"
