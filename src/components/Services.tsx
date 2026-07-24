@@ -157,7 +157,6 @@ export function Services() {
               backgroundImage: "linear-gradient(to bottom, #A2CFFE, #88C1FF)",
             }}
           >
-            <span className="h-1.5 w-1.5 rounded-full bg-white/80" />
             Услуги
           </span>
           <h2
