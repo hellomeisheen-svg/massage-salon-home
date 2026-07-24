@@ -151,8 +151,8 @@ export function ApproachCopy() {
               return (
                 <li key={i}>
                   <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-5">
-                    <div className="shrink-0 w-[60px] h-[60px] xl:w-[70px] xl:h-[70px] rounded-full bg-[#EFF6FF] border border-[#daebff] flex items-center justify-center">
-                      <Icon className="w-6 h-6 xl:w-7 xl:h-7 text-[#1C3C8C]" strokeWidth={1.5} />
+                    <div className="shrink-0 w-[40px] h-[40px] xl:w-[44px] xl:h-[44px] rounded-lg bg-[#EFF6FF] border border-[#daebff] flex items-center justify-center">
+                      <Icon className="w-4 h-4 xl:w-[18px] xl:h-[18px] text-[#1C3C8C]" strokeWidth={1.5} />
                     </div>
                     <div className="flex-1">
                       <h4
