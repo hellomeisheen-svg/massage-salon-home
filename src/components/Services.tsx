@@ -204,7 +204,7 @@ function ServiceCard({
 
       {/* Title */}
       <h3
-        className="mt-4 text-[34px] sm:text-[38px] xl:text-[42px] font-light leading-[1.1] text-[#1C3C8C] break-words hyphens-auto"
+        className="mt-4 text-[30px] sm:text-[38px] xl:text-[42px] font-light leading-[1.1] text-[#1C3C8C] break-words hyphens-auto"
         style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
       >
         {service.title.replace(/\u00A0·\u00A0/g, " · ")}
@@ -301,7 +301,7 @@ export function Services() {
             Услуги
           </span>
           <h2
-            className="mt-6 text-[38px] xl:text-[44px] font-light leading-[1.15] text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0"
+            className="mt-6 text-[30px] sm:text-[38px] xl:text-[44px] font-light leading-[1.15] text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0"
             style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
           >
             Перед каждым визитом обсуждаем ваше состояние&nbsp;— и&nbsp;подбираем технику под&nbsp;него

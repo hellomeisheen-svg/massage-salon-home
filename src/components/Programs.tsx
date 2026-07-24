@@ -98,7 +98,7 @@ export function Programs() {
               className="mt-8 text-[#1C3C8C] leading-[1.05]"
               style={{
                 fontFamily: '"Roslindale Cyrillic Display Condensed", serif',
-                fontSize: "clamp(36px, 4vw, 56px)",
+                fontSize: "clamp(30px, 4vw, 56px)",
               }}
             >
               Программы из нескольких процедур&nbsp;— для глубокой работы с&nbsp;конкретным состоянием.
@@ -145,7 +145,7 @@ export function Programs() {
               className="text-[#1C3C8C]"
               style={{
                 fontFamily: '"Roslindale Cyrillic Display Condensed", serif',
-                fontSize: "clamp(32px, 3vw, 44px)",
+                fontSize: "clamp(30px, 3vw, 44px)",
                 lineHeight: 1.1,
               }}
             >
