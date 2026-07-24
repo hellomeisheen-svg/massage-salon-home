@@ -150,7 +150,7 @@ export function ApproachCopy() {
               const Icon = item.Icon;
               return (
                 <li key={i}>
-                  <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-5">
+                  <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-start sm:gap-5">
                     <div className="shrink-0 w-[40px] h-[40px] xl:w-[44px] xl:h-[44px] rounded-lg bg-[#EFF6FF] border border-[#daebff] flex items-center justify-center">
                       <Icon className="w-4 h-4 xl:w-[18px] xl:h-[18px] text-[#1C3C8C]" strokeWidth={1.5} />
                     </div>
