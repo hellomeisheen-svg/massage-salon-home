@@ -91,7 +91,7 @@ export function Programs() {
     <section className="bg-[#EFF6FF] py-[60px] sm:py-[70px]">
       <div className="container-1900 px-5 grid grid-cols-1 xl:grid-cols-2 gap-10 xl:gap-16 items-start">
         {/* Left column */}
-        <div className="xl:sticky self-start flex flex-col items-center xl:items-start text-center xl:text-left" style={{ top: "calc(var(--header-offset, 0px) + 20px)" }}>
+        <div className="self-start flex flex-col items-center xl:items-start text-center xl:text-left">
           <span
             className="inline-flex items-center gap-2 px-4 py-1.5 text-[13px] font-medium tracking-wide text-white"
             style={{
@@ -138,7 +138,7 @@ export function Programs() {
         </div>
 
         {/* Right column — program card */}
-        <article className="rounded-2xl border border-[#daebff] bg-white p-6 sm:p-10 transition-shadow duration-300 hover:shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)] flex flex-col sm:h-[820px] xl:h-[860px]">
+        <article className="rounded-2xl border border-[#daebff] bg-white p-6 sm:p-8 transition-shadow duration-300 hover:shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)] flex flex-col sm:h-[680px] xl:h-[700px]">
           <h3
             className="text-[30px] sm:text-[38px] xl:text-[42px] font-light leading-[1.1] text-[#1C3C8C]"
             style={{ fontFamily: heading }}
