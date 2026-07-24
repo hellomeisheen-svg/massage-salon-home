@@ -127,6 +127,7 @@ function ServiceCard({
 
 export function Services() {
   const [activeCategory, setActiveCategory] = useState(0);
+  const [showAll, setShowAll] = useState(false);
   const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
 
   useEffect(() => {
@@ -149,7 +150,7 @@ export function Services() {
     <section className="bg-[#EFF6FF] py-16 sm:py-20 xl:py-24">
       <div className="container-1900 px-5 grid grid-cols-1 xl:grid-cols-2 gap-10 xl:gap-16">
         {/* Left column */}
-        <div className="xl:sticky xl:top-24 self-start">
+        <div className="xl:sticky xl:top-24 self-start flex flex-col items-center xl:items-start text-center xl:text-left">
           <span
             className="inline-flex items-center gap-2 px-4 py-1.5 text-[13px] font-medium tracking-wide text-white"
             style={{
@@ -160,13 +161,13 @@ export function Services() {
             Услуги
           </span>
           <h2
-            className="mt-6 text-[38px] xl:text-[44px] font-light leading-[1.15] text-[#1C3C8C] max-w-[520px]"
+            className="mt-6 text-[38px] xl:text-[44px] font-light leading-[1.15] text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0"
             style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
           >
             Перед каждым визитом обсуждаем ваше состояние&nbsp;— и&nbsp;подбираем технику под&nbsp;него
           </h2>
 
-          <ul className="mt-8 flex flex-col gap-3">
+          <ul className="mt-8 flex sm:hidden xl:flex flex-col gap-3 items-center xl:items-start">
             {categories.map((c, i) => (
               <li key={c}>
                 <button
@@ -194,21 +195,36 @@ export function Services() {
 
         {/* Right column */}
         <div className="relative flex flex-col gap-6">
-          {services.map((s, i) => (
-            <div
-              key={i}
-              ref={(el) => {
-                cardRefs.current[i] = el;
-              }}
-              data-index={i}
+          {services.map((s, i) => {
+            const hiddenOnTablet = i >= 4 && !showAll;
+            return (
+              <div
+                key={i}
+                ref={(el) => {
+                  cardRefs.current[i] = el;
+                }}
+                data-index={i}
+                className={hiddenOnTablet ? "block sm:hidden xl:block" : ""}
+              >
+                <ServiceCard service={s} dynamicPricing={i === 0} />
+              </div>
+            );
+          })}
+
+          {!showAll && (
+            <button
+              type="button"
+              onClick={() => setShowAll(true)}
+              className="btn-secondary hidden sm:flex xl:hidden mt-2"
             >
-              <ServiceCard service={s} dynamicPricing={i === 0} />
-            </div>
-          ))}
+              Показать больше
+            </button>
+          )}
         </div>
 
       </div>
     </section>
   );
 }
+
 
