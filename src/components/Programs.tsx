@@ -1,72 +1,83 @@
 import { useState } from "react";
 
+type ServiceInfo = {
+  title: string;
+  priceMin: number;
+  durationMin: number;
+  unit: "сеанс" | "постановка" | "банка";
+};
+
+const serviceCatalog: Record<string, ServiceInfo> = {
+  lymphatic: { title: "Лимфатический", priceMin: 5000, durationMin: 120, unit: "сеанс" },
+  lymphdrainage: { title: "Лимфодренажный", priceMin: 5000, durationMin: 120, unit: "сеанс" },
+  lymphdrainageFace: { title: "Лимфодренажный  •  Лицо", priceMin: 2000, durationMin: 40, unit: "сеанс" },
+  classic: { title: "Классический", priceMin: 2000, durationMin: 60, unit: "сеанс" },
+  classicFace: { title: "Классический  •  Лицо", priceMin: 2000, durationMin: 40, unit: "сеанс" },
+  hirudoMed: { title: "Гирудотерапия  •  Медицинские пиявки", priceMin: 4800, durationMin: 120, unit: "постановка" },
+  hirudoCosm: { title: "Гирудотерапия  •  Косметические пиявки", priceMin: 4800, durationMin: 120, unit: "постановка" },
+  fireGlass: { title: "Стихия Огонь  •  Стеклянные банки", priceMin: 2000, durationMin: 10, unit: "банка" },
+  airSoft: { title: "Стихия Воздух  •  Мягкие банки", priceMin: 1000, durationMin: 10, unit: "банка" },
+};
+
+type ProgramItem = { key: keyof typeof serviceCatalog; sessions: number };
+
 type Program = {
   name: string;
   description: string;
-  items: { title: string; duration: string }[];
-  originalPrice: number;
-  price: number;
+  items: ProgramItem[];
   validity: string;
 };
+
+const DISCOUNT = 0.2;
 
 const programs: Program[] = [
   {
     name: "Лёгкость",
     description: "При отёках и тяжести в теле — мягкое восстановление лимфотока.",
     items: [
-      { title: "Лимфатический", duration: "1 сеанс  •  40 минут" },
-      { title: "Лимфодренажный", duration: "6 сеанс  •  40 минут" },
-      { title: "Воздух. Мягкие банки", duration: "6 сеанс  •  40 минут" },
+      { key: "lymphatic", sessions: 1 },
+      { key: "lymphdrainage", sessions: 6 },
+      { key: "airSoft", sessions: 6 },
     ],
-    originalPrice: 25000,
-    price: 12000,
     validity: "2 месяца с первого сеанса",
   },
   {
     name: "Свежесть",
     description: "Тонус кожи, поддержка овала и ощущение отдохнувшего лица.",
     items: [
-      { title: "Лимфодренажный  •  Лицо", duration: "3 сеанса  •  40 минут" },
-      { title: "Классический  •  Лицо", duration: "3 сеанса  •  40 минут" },
-      { title: "Гирудотерапия  •  Косметические пиявки", duration: "6 постановок  •  10 минут" },
+      { key: "lymphdrainageFace", sessions: 3 },
+      { key: "classicFace", sessions: 3 },
+      { key: "hirudoCosm", sessions: 6 },
     ],
-    originalPrice: 25000,
-    price: 12000,
     validity: "2 месяца с первого сеанса",
   },
   {
     name: "Тишина",
     description: "Антистресс и восстановление ресурса — спокойный маршрут из мягких техник.",
     items: [
-      { title: "Лимфодренажный", duration: "3 сеанса  •  40 минут" },
-      { title: "Лимфодренажный", duration: "3 сеанса  •  40 минут" },
-      { title: "Косметические пиявки", duration: "6 постановок  •  10 минут" },
+      { key: "lymphdrainage", sessions: 3 },
+      { key: "classic", sessions: 3 },
+      { key: "hirudoCosm", sessions: 6 },
     ],
-    originalPrice: 25000,
-    price: 12000,
     validity: "2 месяца с первого сеанса",
   },
   {
     name: "Баланс",
     description: "Глубокая проработка мышц для тех, кто много сидит или за рулём.",
     items: [
-      { title: "Классический массаж", duration: "6 сеансов  •  40 минут" },
-      { title: "Стихия Огонь  •  Стеклянные банки", duration: "6 банок  •  10 минут" },
-      { title: "Гирудотерапия  •  Медицинские пиявки", duration: "6 постановок  •  10 минут" },
+      { key: "classic", sessions: 6 },
+      { key: "fireGlass", sessions: 6 },
+      { key: "hirudoMed", sessions: 6 },
     ],
-    originalPrice: 25000,
-    price: 12000,
     validity: "2 месяца с первого сеанса",
   },
   {
     name: "Свобода",
     description: "Снятие тяжести и усталости — для тех, кто много на ногах.",
     items: [
-      { title: "Гирудотерапия  •  Медицинские пиявки", duration: "6 сеансов  •  40 минут" },
-      { title: "Гирудотерапия  •  Медицинские пиявки", duration: "8 банок  •  10 минут" },
+      { key: "hirudoMed", sessions: 6 },
+      { key: "fireGlass", sessions: 8 },
     ],
-    originalPrice: 25000,
-    price: 12000,
     validity: "2 месяца с первого сеанса",
   },
 ];
@@ -76,13 +87,56 @@ const heading = "'Roslindale Cyrillic Display Condensed', serif";
 const formatPrice = (v: number) =>
   `${v.toLocaleString("ru-RU").replace(/\s/g, "\u00A0")}\u00A0`;
 
+function pluralize(n: number, forms: [string, string, string]) {
+  const mod10 = n % 10;
+  const mod100 = n % 100;
+  if (mod10 === 1 && mod100 !== 11) return forms[0];
+  if (mod10 >= 2 && mod10 <= 4 && (mod100 < 10 || mod100 >= 20)) return forms[1];
+  return forms[2];
+}
+
+const unitForms: Record<ServiceInfo["unit"], [string, string, string]> = {
+  "сеанс": ["сеанс", "сеанса", "сеансов"],
+  "постановка": ["постановка", "постановки", "постановок"],
+  "банка": ["банка", "банки", "банок"],
+};
+
+function formatSessions(n: number, unit: ServiceInfo["unit"]) {
+  return `${n}\u00A0${pluralize(n, unitForms[unit])}`;
+}
+
+function formatDuration(totalMin: number) {
+  if (totalMin < 60) return `${totalMin}\u00A0${pluralize(totalMin, ["минута", "минуты", "минут"])}`;
+  const h = Math.floor(totalMin / 60);
+  const m = totalMin % 60;
+  const hStr = `${h}\u00A0${pluralize(h, ["час", "часа", "часов"])}`;
+  if (!m) return hStr;
+  return `${hStr}\u00A0${m}\u00A0мин`;
+}
+
+function computeItem(it: ProgramItem) {
+  const info = serviceCatalog[it.key];
+  const totalMin = info.durationMin * it.sessions;
+  const subtotal = info.priceMin * it.sessions;
+  return {
+    title: info.title,
+    duration: `${formatSessions(it.sessions, info.unit)}  •  ${formatDuration(totalMin)}`,
+    subtotal,
+  };
+}
+
 function Ruble() {
   return <span className="font-[system-ui,sans-serif] font-extralight">₽</span>;
 }
 
+
+
 export function Programs() {
   const [active, setActive] = useState(0);
   const program = programs[active];
+  const computedItems = program.items.map(computeItem);
+  const originalPrice = computedItems.reduce((s, i) => s + i.subtotal, 0);
+  const price = Math.round(originalPrice * (1 - DISCOUNT));
 
   const prev = () => setActive((i) => (i - 1 + programs.length) % programs.length);
   const next = () => setActive((i) => (i + 1) % programs.length);
@@ -156,7 +210,7 @@ export function Programs() {
               <div className="text-[15px] font-semibold text-[#1C3C8C]">Длительность</div>
             </div>
             <div className="divide-y divide-[#daebff]">
-              {program.items.map((it, idx) => (
+              {computedItems.map((it, idx) => (
                 <div key={idx} className="grid grid-cols-[1.3fr_1fr] gap-6 py-5">
                   <div className="text-[16px] leading-[26px] text-[#8D9DC5]">{it.title}</div>
                   <div className="text-[16px] leading-[26px] text-[#8D9DC5]">{it.duration}</div>
@@ -167,7 +221,7 @@ export function Programs() {
 
           {/* Mobile: stacked blocks */}
           <div className="sm:hidden mt-6 border-t border-[#daebff] divide-y divide-[#daebff]">
-            {program.items.map((it, idx) => (
+            {computedItems.map((it, idx) => (
               <div key={idx} className="py-4">
                 <div className="text-[16px] leading-[22px] text-[#1C3C8C]">{it.title}</div>
                 <div className="mt-1 text-[13px] leading-[18px] text-[#8D9DC5]">{it.duration}</div>
@@ -180,11 +234,11 @@ export function Programs() {
             style={{ fontFamily: heading }}
           >
             <span className="text-[18px] text-[#8D9DC5] line-through">
-              {formatPrice(program.originalPrice)}
+              {formatPrice(originalPrice)}
               <Ruble />
             </span>
             <span>
-              {formatPrice(program.price)}
+              {formatPrice(price)}
               <Ruble />
             </span>
           </div>
