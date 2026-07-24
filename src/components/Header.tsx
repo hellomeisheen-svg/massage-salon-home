@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const navigationItems = [
@@ -18,9 +18,32 @@ const logoStyle = {
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    let lastY = window.scrollY;
+    const onScroll = () => {
+      const y = window.scrollY;
+      const heroThreshold = window.innerHeight * 0.8;
+      if (y < heroThreshold) {
+        setVisible(true);
+      } else if (y > lastY) {
+        setVisible(false);
+      } else if (y < lastY) {
+        setVisible(true);
+      }
+      lastY = y;
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-transparent pt-4 sm:pt-5">
+    <header
+      className={`sticky top-0 z-50 w-full bg-transparent pt-4 sm:pt-5 transition-transform duration-300 ease-out ${
+        visible ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
       <div className="container-1900">
       {/* Desktop header */}
       <div className="hidden h-20 w-full items-center justify-between rounded-2xl border border-[#daebff] bg-white px-5 py-2.5 xl:flex xl:px-[30px]">
