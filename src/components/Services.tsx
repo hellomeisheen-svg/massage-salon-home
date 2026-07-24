@@ -193,10 +193,10 @@ function ServiceCard({
 
       {/* Title */}
       <h3
-        className="mt-4 text-[42px] font-light leading-[1.1] text-[#1C3C8C]"
+        className="mt-4 text-[34px] sm:text-[38px] xl:text-[42px] font-light leading-[1.1] text-[#1C3C8C] break-words hyphens-auto"
         style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
       >
-        {service.title}
+        {service.title.replace(/\u00A0·\u00A0/g, " · ")}
       </h3>
       <p className="mt-3 italic text-[16px] leading-[26px] text-[#8D9DC5]">
         {service.subtitle}
