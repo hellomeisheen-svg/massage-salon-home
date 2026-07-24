@@ -36,6 +36,7 @@ function Index() {
       <Header />
       <Hero />
       <QuoteBlock />
+      <div aria-hidden className="bg-[#EFF6FF] h-[40px] sm:h-[90px] xl:h-[100px]" />
       <Services />
       <PromoBanner />
       <ApproachIntro />
