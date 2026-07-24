@@ -133,7 +133,7 @@ export function Approach() {
                     {item.title}
                   </h4>
                 </div>
-                <p className={`mt-1 text-[16px] leading-[22px] text-[#8D9DC5] ${item.image ? "pl-[80px] xl:pl-[90px]" : ""}`}>
+                <p className={`mt-4 text-[16px] leading-[22px] text-[#8D9DC5] ${item.image ? "pl-[80px] xl:pl-[90px]" : ""}`}>
 
                   {item.text}
                 </p>
