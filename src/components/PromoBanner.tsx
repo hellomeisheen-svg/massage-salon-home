@@ -10,20 +10,20 @@ export function PromoBanner() {
             src="/images/banner-clouds.svg"
             alt=""
             aria-hidden="true"
-            className="pointer-events-none absolute inset-x-0 top-0 z-0 w-full -translate-y-[10px] select-none"
+            className="pointer-events-none absolute inset-x-0 top-0 z-0 w-full -translate-y-[10px] select-none sm:hidden xl:block"
           />
 
           <img
             src="/images/banner-clouds-bottom.svg"
             alt=""
             aria-hidden="true"
-            className="pointer-events-none absolute inset-x-0 bottom-0 z-0 w-full translate-y-[30px] select-none"
+            className="pointer-events-none absolute inset-x-0 bottom-0 z-0 w-full translate-y-[30px] select-none sm:hidden xl:block"
           />
           <img
             src="/images/banner-ellipse.svg"
             alt=""
             aria-hidden="true"
-            className="pointer-events-none absolute left-1/2 top-0 z-[1] h-full w-[140%] max-w-none -translate-x-1/2 select-none sm:w-[120%] xl:w-[995px]"
+            className="pointer-events-none absolute left-1/2 top-0 z-[1] hidden h-full w-[140%] max-w-none -translate-x-1/2 select-none sm:block sm:w-[120%] xl:w-[995px]"
             style={{ objectFit: "fill" }}
           />
 
