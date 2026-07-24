@@ -138,7 +138,7 @@ export function Programs() {
         </div>
 
         {/* Right column — program card */}
-        <article className="rounded-2xl border border-[#daebff] bg-white p-6 sm:p-10 transition-shadow duration-300 hover:shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)]">
+        <article className="rounded-2xl border border-[#daebff] bg-white p-6 sm:p-10 transition-shadow duration-300 hover:shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)] flex flex-col sm:h-[820px] xl:h-[860px]">
           <h3
             className="text-[30px] sm:text-[38px] xl:text-[42px] font-light leading-[1.1] text-[#1C3C8C]"
             style={{ fontFamily: heading }}
@@ -176,7 +176,7 @@ export function Programs() {
           </div>
 
           <div
-            className="mt-8 flex flex-wrap items-baseline justify-start sm:justify-end gap-x-4 text-[26px] font-light text-[#1C3C8C]"
+            className="mt-auto pt-8 flex flex-wrap items-baseline justify-start sm:justify-end gap-x-4 text-[26px] font-light text-[#1C3C8C]"
             style={{ fontFamily: heading }}
           >
             <span className="text-[18px] text-[#8D9DC5] line-through">
