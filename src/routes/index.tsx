@@ -7,7 +7,7 @@ import { Approach } from "@/components/Approach";
 import { PromoBanner } from "@/components/PromoBanner";
 import { ApproachIntro } from "@/components/ApproachIntro";
 import { Programs } from "@/components/Programs";
-import { ApproachRedesign } from "@/components/ApproachRedesign";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -42,7 +42,7 @@ function Index() {
       <PromoBanner />
       <ApproachIntro />
       <Approach />
-      <ApproachRedesign />
+      
       <Programs />
 
 
