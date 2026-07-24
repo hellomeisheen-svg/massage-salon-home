@@ -136,11 +136,13 @@ function ServiceCard({
   dynamicPricing = false,
   basePrice = 5000,
   sessionLabels,
+  multiplyDuration = true,
 }: {
   service: Service;
   dynamicPricing?: boolean;
   basePrice?: number;
   sessionLabels?: string[];
+  multiplyDuration?: boolean;
 }) {
   const [activeSession, setActiveSession] = useState(0);
   const sessionCounts = [1, 3, 6];
@@ -155,7 +157,7 @@ function ServiceCard({
       )
     : service.price;
 
-  const computedDuration = dynamicPricing
+  const computedDuration = dynamicPricing && multiplyDuration
     ? service.duration.replace(/\d+/g, (n) => String(Number(n) * sessionCounts[activeSession]))
     : service.duration;
 
