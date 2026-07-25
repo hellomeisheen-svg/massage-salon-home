@@ -17,11 +17,10 @@ const extraEducation: EduItem[] = [
 ];
 
 function EduCard({ item }: { item: EduItem }) {
-  const isMagnat = item.school.startsWith("Школа «Магнат»");
   return (
     <div className="rounded-[12px] bg-white border border-[#daebff] p-6 sm:p-8 xl:p-10">
       <h3
-        className={`text-[#1C3C8C] text-[26px] sm:text-[32px] leading-[1.1] ${isMagnat ? "xl:text-[32px]" : "xl:text-[36px]"}`}
+        className="text-[#1C3C8C] text-[26px] sm:text-[32px] xl:text-[36px] leading-[1.1]"
         style={{ fontFamily: heading }}
       >
         {item.school}
