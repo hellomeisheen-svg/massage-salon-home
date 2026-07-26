@@ -117,9 +117,14 @@ export function Header() {
         </nav>
 
         {/* CTA Button */}
-        <button type="button" className="btn-primary w-[250px]">
+        <a
+          href="https://n2418813.yclients.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-primary w-[250px] inline-flex items-center justify-center"
+        >
           Онлайн запись
-        </button>
+        </a>
       </div>
 
       {/* Mobile / tablet header */}
@@ -180,13 +185,15 @@ export function Header() {
 
             </ul>
           </nav>
-          <button
-            type="button"
+          <a
+            href="https://n2418813.yclients.com"
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setMenuOpen(false)}
-            className="btn-primary mt-3 w-full"
+            className="btn-primary mt-3 w-full inline-flex items-center justify-center"
           >
             Онлайн запись
-          </button>
+          </a>
         </div>
       )}
       </div>
