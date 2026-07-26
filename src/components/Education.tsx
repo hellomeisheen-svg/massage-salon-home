@@ -66,15 +66,15 @@ export function Education() {
         </div>
 
         {/* Right: education lists */}
-        <div className="flex flex-col gap-3 sm:gap-4 xl:gap-2 xl:h-full xl:min-h-0">
+        <div className="flex flex-col gap-3 sm:gap-4 xl:gap-3 xl:h-full xl:min-h-0">
           <div className="px-2 text-[#8D9DC5] text-[14px] sm:text-[15px]">Основное образование</div>
-          <div className="flex flex-col gap-3 sm:gap-4 xl:gap-2 xl:flex-1 xl:min-h-0">
+          <div className="flex flex-col gap-3 sm:gap-4 xl:gap-3 xl:flex-[4] xl:min-h-0">
             {mainEducation.map((e) => (
               <EduCard key={e.school} item={e} />
             ))}
           </div>
           <div className="px-2 mt-2 xl:mt-1 text-[#8D9DC5] text-[14px] sm:text-[15px]">Дополнительное образование</div>
-          <div className="flex flex-col gap-3 sm:gap-4 xl:gap-2 xl:flex-1 xl:min-h-0">
+          <div className="flex flex-col gap-3 sm:gap-4 xl:gap-3 xl:flex-[1] xl:min-h-0">
             {extraEducation.map((e) => (
               <EduCard key={e.school} item={e} />
             ))}
