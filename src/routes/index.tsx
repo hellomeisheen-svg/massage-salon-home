@@ -9,6 +9,7 @@ import { PromoBanner } from "@/components/PromoBanner";
 import { ApproachIntro } from "@/components/ApproachIntro";
 import { Programs } from "@/components/Programs";
 import { Education } from "@/components/Education";
+import { Faq } from "@/components/Faq";
 
 
 export const Route = createFileRoute("/")({
@@ -49,6 +50,7 @@ function Index() {
       
       <Programs />
       <Education />
+      <Faq />
 
 
 
