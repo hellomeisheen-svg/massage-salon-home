@@ -46,7 +46,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
           {q}
         </span>
         <span
-          className={`shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-[10px] bg-[#DAEBFF] flex items-center justify-center transition-transform duration-300 ${
+          className={`shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-[10px] bg-[#EFF6FF] border border-[#daebff] flex items-center justify-center transition-transform duration-300 ${
             open ? "rotate-45" : ""
           }`}
         >
