@@ -162,7 +162,7 @@ export const RollingGallery: React.FC<RollingGalleryProps> = ({
                 src={url}
                 alt="gallery"
                 draggable={false}
-                className="pointer-events-none h-[180px] w-[440px] rounded-[12px] border border-[#daebff] object-cover sm:h-[220px] sm:w-[540px]"
+                className="pointer-events-none h-[240px] w-[620px] rounded-[12px] border border-[#daebff] object-cover sm:h-[300px] sm:w-[760px]"
               />
             </div>
           ))}
