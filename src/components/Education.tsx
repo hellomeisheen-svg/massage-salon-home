@@ -40,7 +40,24 @@ function EduCard({ item }: { item: EduItem }) {
 export function Education() {
   return (
     <section id="obrazovanie" className="bg-[#EFF6FF] py-[60px] xl:py-[70px]">
+      <div className="container-1900 mb-10 sm:mb-14 xl:mb-16 flex flex-col items-center text-center">
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="mb-8 sm:mb-10 xl:mb-12 h-6 w-6 sm:h-7 sm:w-7 text-[#1C3C8C]"
+        >
+          <path d="M12 0 L13.2 10.8 L24 12 L13.2 13.2 L12 24 L10.8 13.2 L0 12 L10.8 10.8 Z" />
+        </svg>
+        <h2
+          className="max-w-none sm:max-w-[900px] xl:max-w-[1100px] text-[30px] font-light leading-[1.15] text-[#1C3C8C] sm:text-[38px] sm:leading-[1.18] xl:text-[54px] xl:leading-[1.15]"
+          style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
+        >
+          За&nbsp;плечами&nbsp;— годы ежедневной практики, регулярное обучение и&nbsp;спокойный подход к&nbsp;работе с&nbsp;телом
+        </h2>
+      </div>
       <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-5 items-stretch">
+
         {/* Left: quote panel */}
         <div className="relative rounded-[12px] bg-[#DAEBFF] overflow-hidden min-h-[420px] xl:min-h-0 xl:h-full flex">
           <div className="mt-auto w-full p-4 sm:p-5">
