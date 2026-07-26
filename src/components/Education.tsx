@@ -40,7 +40,8 @@ function EduCard({ item }: { item: EduItem }) {
 export function Education() {
   return (
     <section id="obrazovanie" className="bg-[#EFF6FF] py-[60px] xl:py-[70px]">
-      <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-5 xl:h-[calc(100vh-140px)]">
+      <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-5 xl:items-stretch">
+
         {/* Left: quote panel */}
         <div className="relative rounded-[12px] bg-[#DAEBFF] overflow-hidden min-h-[420px] xl:min-h-0 xl:h-full flex">
           <div className="mt-auto w-full p-4 sm:p-5">
