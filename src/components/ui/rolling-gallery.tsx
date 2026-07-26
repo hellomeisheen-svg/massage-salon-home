@@ -8,16 +8,19 @@ import {
 } from "framer-motion";
 
 const IMGS: string[] = [
-  "/images/ambience.jpg",
-  "/images/card.jpg",
-  "/images/deco-massage-1.jpg",
-  "/images/deco-massage-2.jpg",
-  "/images/deco-massage-3.jpg",
-  "/images/deco-massage-4.jpg",
-  "/images/fresh-linen.jpg",
-  "/images/oils.jpg",
-  "/images/instruments.jpg",
-  "/images/disposables.jpg",
+  "/images/uslugi-girudoterapiya.jpg",
+  "/images/uslugi-girudoterapiya-litsa.jpg",
+  "/images/uslugi-klassicheskii-massazh.jpg",
+  "/images/uslugi-limfodrenazhnyi-massazh.jpg",
+  "/images/uslugi-massazh-golovy.jpg",
+  "/images/uslugi-massazh-litsa.jpg",
+  "/images/uslugi-massazh-litsa-variant-2.jpg",
+  "/images/uslugi-massazh-litsa-variant-3.jpg",
+  "/images/uslugi-massazh-nog.jpg",
+  "/images/uslugi-massazh-spiny-i-shei.jpg",
+  "/images/uslugi-massazh-vorotnikovoi-zony.jpg",
+  "/images/uslugi-myagkie-banki.jpg",
+  "/images/uslugi-steklyannye-banki.jpg",
 ];
 
 interface RollingGalleryProps {
