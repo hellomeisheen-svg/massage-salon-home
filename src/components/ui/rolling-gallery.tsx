@@ -160,8 +160,10 @@ export const RollingGallery: React.FC<RollingGalleryProps> = ({
                 src={url}
                 alt="gallery"
                 draggable={false}
-                className="pointer-events-none h-[120px] w-[820px] rounded-[12px] border border-[#daebff] object-cover sm:h-[160px] sm:w-[1000px]"
+                style={{ width: isScreenSizeSm ? 320 : 460, height: isScreenSizeSm ? 120 : 160, flexShrink: 0, maxWidth: "none" }}
+                className="pointer-events-none rounded-[12px] border border-[#daebff] object-cover"
               />
+
             </div>
           ))}
         </motion.div>
