@@ -40,8 +40,7 @@ function EduCard({ item }: { item: EduItem }) {
 export function Education() {
   return (
     <section id="obrazovanie" className="bg-[#EFF6FF] py-[60px] xl:py-[70px]">
-      <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-5 xl:items-stretch">
-
+      <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-5 xl:h-[calc(100vh-140px)]">
         {/* Left: quote panel */}
         <div className="relative rounded-[12px] bg-[#DAEBFF] overflow-hidden min-h-[420px] xl:min-h-0 xl:h-full flex">
           <div className="mt-auto w-full p-4 sm:p-5">
@@ -67,7 +66,7 @@ export function Education() {
         </div>
 
         {/* Right: education lists */}
-        <div className="flex flex-col gap-3 sm:gap-4 xl:gap-2">
+        <div className="flex flex-col gap-3 sm:gap-4 xl:gap-2 xl:h-full xl:overflow-hidden">
           <div className="px-2 text-[#8D9DC5] text-[14px] sm:text-[15px]">Основное образование</div>
           <div className="flex flex-col gap-3 sm:gap-4 xl:gap-2">
             {mainEducation.map((e) => (
