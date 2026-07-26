@@ -66,7 +66,7 @@ export const RollingGallery: React.FC<RollingGalleryProps> = ({
     controls.start({
       rotateY: [startAngle, startAngle - 360],
       transition: {
-        duration: 20,
+        duration: 35,
         ease: "linear",
         repeat: Infinity,
       },
