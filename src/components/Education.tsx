@@ -18,14 +18,14 @@ const extraEducation: EduItem[] = [
 
 function EduCard({ item }: { item: EduItem }) {
   return (
-    <div className="rounded-[12px] bg-white border border-[#daebff] p-6 sm:p-7 xl:px-7 xl:py-5 xl:flex-1 xl:min-h-0 xl:flex xl:flex-col xl:justify-center">
+    <div className="rounded-[12px] bg-white border border-[#daebff] p-6 sm:p-7 xl:px-8 xl:py-6 xl:flex-1 xl:min-h-0 xl:flex xl:flex-col xl:justify-center">
       <h3
-        className="text-[#1C3C8C] text-[26px] sm:text-[30px] xl:text-[24px] leading-[1.15]"
+        className="text-[#1C3C8C] text-[26px] sm:text-[30px] xl:text-[22px] leading-[1.2]"
         style={{ fontFamily: heading }}
       >
         {item.school}
       </h3>
-      <ul className="mt-3 sm:mt-4 xl:mt-2 space-y-2 xl:space-y-1">
+      <ul className="mt-3 sm:mt-4 xl:mt-3 space-y-2 xl:space-y-1.5">
         {item.items.map((i) => (
           <li key={i} className="text-[#8D9DC5] text-[15px] sm:text-[16px] xl:text-[14px] leading-[1.5] flex gap-2">
             <span aria-hidden>•</span>
@@ -66,15 +66,15 @@ export function Education() {
         </div>
 
         {/* Right: education lists */}
-        <div className="flex flex-col gap-3 sm:gap-4 xl:gap-2 xl:h-full xl:min-h-0">
+        <div className="flex flex-col gap-3 sm:gap-4 xl:gap-3 xl:h-full xl:min-h-0">
           <div className="px-2 text-[#8D9DC5] text-[14px] sm:text-[15px]">Основное образование</div>
-          <div className="flex flex-col gap-3 sm:gap-4 xl:gap-2 xl:flex-1 xl:min-h-0">
+          <div className="flex flex-col gap-3 sm:gap-4 xl:gap-3 xl:flex-[4] xl:min-h-0">
             {mainEducation.map((e) => (
               <EduCard key={e.school} item={e} />
             ))}
           </div>
           <div className="px-2 mt-2 xl:mt-1 text-[#8D9DC5] text-[14px] sm:text-[15px]">Дополнительное образование</div>
-          <div className="flex flex-col gap-3 sm:gap-4 xl:gap-2 xl:flex-1 xl:min-h-0">
+          <div className="flex flex-col gap-3 sm:gap-4 xl:gap-3 xl:flex-[1] xl:min-h-0">
             {extraEducation.map((e) => (
               <EduCard key={e.school} item={e} />
             ))}
