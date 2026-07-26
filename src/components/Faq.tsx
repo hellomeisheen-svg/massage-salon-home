@@ -94,7 +94,7 @@ export function Faq() {
             <img
               src="/images/tatyana-photo.jpg"
               alt="Татьяна Злобина"
-              className="w-[140px] h-[140px] rounded-[12px] object-cover"
+              className="h-[90px] w-[70px] xl:h-[110px] xl:w-[85px] rounded-lg object-cover"
             />
             <h3
               className="mt-6 text-[#1C3C8C] text-[26px] sm:text-[30px] leading-[1.1] font-light"
