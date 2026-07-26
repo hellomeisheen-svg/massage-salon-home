@@ -10,6 +10,7 @@ import { ApproachIntro } from "@/components/ApproachIntro";
 import { Programs } from "@/components/Programs";
 import { Education } from "@/components/Education";
 import { Faq } from "@/components/Faq";
+import Gallery from "@/components/Gallery";
 
 
 export const Route = createFileRoute("/")({
