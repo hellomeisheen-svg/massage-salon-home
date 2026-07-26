@@ -14,13 +14,6 @@ const navItems = [
   { label: "Вопросы", href: "#faq" },
 ];
 
-const services = [
-  "Классический массаж",
-  "Лимфодренажный массаж",
-  "Массаж лица",
-  "Гирудотерапия",
-  "Массаж головы",
-];
 
 const ADDRESS =
   "Приморский край, п. Трудовое, ул. Лермонтова, 46";
@@ -109,7 +102,7 @@ export function Footer() {
 
         {/* Bottom band */}
         <div className="mt-5 rounded-[12px] border border-[#daebff] bg-white p-5 xl:p-[30px]">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Brand */}
             <div>
               <span
@@ -151,21 +144,6 @@ export function Footer() {
                     >
                       {item.label}
                     </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Services */}
-            <div>
-              <div className="text-xs uppercase tracking-wider text-[#1c3c8c]/60">Услуги</div>
-              <ul className="mt-4 flex flex-col gap-2.5">
-                {services.map((s) => (
-                  <li
-                    key={s}
-                    className="text-[15px] leading-[150%] text-[#1c3c8c] font-light"
-                  >
-                    {s}
                   </li>
                 ))}
               </ul>
