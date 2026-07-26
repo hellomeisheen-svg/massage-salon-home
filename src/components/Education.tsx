@@ -27,7 +27,7 @@ function EduCard({ item }: { item: EduItem }) {
       </h3>
       <ul className="mt-4 space-y-2 xl:space-y-1.5">
         {item.items.map((i) => (
-          <li key={i} className="text-[#8D9DC5] text-[15px] sm:text-[16px] xl:text-[14px] leading-[1.5] flex gap-2">
+          <li key={i} className="text-[#8D9DC5] text-[15px] sm:text-[16px] leading-[1.5] flex gap-2">
             <span aria-hidden>•</span>
             <span>{i}</span>
           </li>
