@@ -45,7 +45,7 @@ export const RollingGallery: React.FC<RollingGalleryProps> = ({
     }
   }, []);
 
-  const cylinderWidth: number = isScreenSizeSm ? 1100 : 1800;
+  const cylinderWidth: number = isScreenSizeSm ? 1300 : 2100;
   const faceCount: number = galleryImages.length;
   const faceWidth: number = (cylinderWidth / faceCount) * 1.5;
   const radius: number = cylinderWidth / (2 * Math.PI);
