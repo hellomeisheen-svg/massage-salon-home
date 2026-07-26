@@ -50,6 +50,7 @@ function Index() {
       
       <Programs />
       <Education />
+      <Faq />
 
 
 
