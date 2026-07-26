@@ -33,7 +33,7 @@ const heading = "'Roslindale Cyrillic Display Condensed', serif";
 function FaqItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="rounded-[12px] bg-white">
+    <div className="rounded-[12px] border border-[#daebff] bg-white">
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
