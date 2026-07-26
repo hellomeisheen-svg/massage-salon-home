@@ -28,18 +28,20 @@ const items = [
   },
 ];
 
-function FaqItem({ q, a }: { q: string; a: string }) {
+const heading = "'Roslindale Cyrillic Display Condensed', serif";
+
+function FaqItem({ q, a, isLast }: { q: string; a: string; isLast: boolean }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="rounded-[12px] bg-white">
+    <div className={isLast ? "" : "border-b border-[#daebff]"}>
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        className="w-full flex items-center justify-between gap-4 p-5 sm:p-6 xl:p-7 text-left"
+        className="w-full flex items-center justify-between gap-4 py-5 sm:py-6 text-left"
       >
         <span
-          className="text-[#1C3C8C] text-[20px] sm:text-[24px] xl:text-[28px] leading-[1.2]"
-          style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
+          className="text-[#1C3C8C] text-[20px] sm:text-[24px] xl:text-[26px] leading-[1.2] font-light"
+          style={{ fontFamily: heading }}
         >
           {q}
         </span>
@@ -57,7 +59,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
         }`}
       >
         <div className="overflow-hidden">
-          <p className="px-5 sm:px-6 xl:px-7 pb-5 sm:pb-6 xl:pb-7 text-[#1C3C8C] text-[15px] sm:text-[16px] leading-[1.5] max-w-[720px]">
+          <p className="pb-5 sm:pb-6 text-[#8D9DC5] text-[15px] sm:text-[16px] leading-[1.5] max-w-[720px]">
             {a}
           </p>
         </div>
@@ -69,37 +71,45 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 export function Faq() {
   return (
     <section id="faq" className="bg-[#EFF6FF] py-[60px] sm:py-[70px]">
-      <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-6 sm:gap-8 xl:gap-10 items-start">
+      <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-5 items-start">
         {/* Left column */}
-        <div className="flex flex-col gap-6 sm:gap-8">
+        <div className="self-start flex flex-col items-center xl:items-start text-center xl:text-left">
           <span
-            className="self-start inline-flex items-center px-4 py-2 rounded-[12px] bg-[#DAEBFF] text-[#1C3C8C] text-[14px] leading-none"
+            className="inline-flex items-center gap-2 px-4 py-1.5 text-[13px] font-medium tracking-wide text-white"
+            style={{
+              borderRadius: "4px",
+              backgroundImage: "linear-gradient(to bottom, #A2CFFE, #88C1FF)",
+            }}
           >
             FAQs
           </span>
           <h2
-            className="text-[30px] sm:text-[44px] xl:text-[56px] leading-[1.1] text-[#1C3C8C] font-light"
-            style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
+            className="mt-6 text-[30px] sm:text-[38px] xl:text-[44px] font-light leading-[1.15] text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0"
+            style={{ fontFamily: heading }}
           >
-            Отвечаю на&nbsp;самые<br className="hidden sm:block" /> важные вопросы
+            Отвечаю на&nbsp;самые важные вопросы
           </h2>
 
-          <div className="rounded-[12px] bg-white p-5 sm:p-6 xl:p-7 max-w-[420px]">
-            <img
-              src="/images/tatyana-photo.jpg"
-              alt="Татьяна Злобина"
-              className="w-[110px] h-[110px] sm:w-[130px] sm:h-[130px] rounded-[12px] object-cover"
-            />
-            <h3
-              className="mt-5 text-[#1C3C8C] text-[24px] sm:text-[28px] leading-[1.1]"
-              style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
-            >
-              Татьяна Злобина
-            </h3>
-            <p className="mt-2 text-[#8D9DC5] text-[15px] sm:text-[16px] leading-[1.5]">
-              Мастер кабинета, специалист<br /> по&nbsp;оздоровительным практикам
-            </p>
-            <p className="mt-5 text-[#1C3C8C] text-[15px] sm:text-[16px] leading-[1.5]">
+          <div className="mt-8 rounded-[12px] border border-[#daebff] bg-white p-6 sm:p-8 w-full max-w-[520px] mx-auto xl:mx-0 text-left">
+            <div className="flex items-start gap-5">
+              <img
+                src="/images/tatyana-photo.jpg"
+                alt="Татьяна Злобина"
+                className="w-[110px] h-[110px] sm:w-[130px] sm:h-[130px] rounded-[12px] object-cover shrink-0"
+              />
+              <div>
+                <h3
+                  className="text-[#1C3C8C] text-[24px] sm:text-[28px] leading-[1.1] font-light"
+                  style={{ fontFamily: heading }}
+                >
+                  Татьяна Злобина
+                </h3>
+                <p className="mt-2 text-[#8D9DC5] text-[15px] sm:text-[16px] leading-[1.5]">
+                  Мастер кабинета, специалист по&nbsp;оздоровительным практикам
+                </p>
+              </div>
+            </div>
+            <p className="mt-6 text-[#8D9DC5] text-[15px] sm:text-[16px] leading-[1.5]">
               Остались вопросы? Напишите мне&nbsp;— я&nbsp;всё подробно расскажу.
             </p>
             <a
@@ -113,12 +123,12 @@ export function Faq() {
           </div>
         </div>
 
-        {/* Right column: accordion */}
-        <div className="flex flex-col gap-3 sm:gap-4">
-          {items.map((it) => (
-            <FaqItem key={it.q} q={it.q} a={it.a} />
+        {/* Right column: accordion card */}
+        <article className="rounded-[12px] border border-[#daebff] bg-white p-6 sm:p-8 transition-shadow duration-300 hover:shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)]">
+          {items.map((it, idx) => (
+            <FaqItem key={it.q} q={it.q} a={it.a} isLast={idx === items.length - 1} />
           ))}
-        </div>
+        </article>
       </div>
     </section>
   );
