@@ -14,13 +14,9 @@ const IMGS: string[] = [
   "/images/uslugi-limfodrenazhnyi-massazh.jpg",
   "/images/uslugi-massazh-golovy.jpg",
   "/images/uslugi-massazh-litsa.jpg",
-  "/images/uslugi-massazh-litsa-variant-2.jpg",
-  "/images/uslugi-massazh-litsa-variant-3.jpg",
   "/images/uslugi-massazh-nog.jpg",
   "/images/uslugi-massazh-spiny-i-shei.jpg",
   "/images/uslugi-massazh-vorotnikovoi-zony.jpg",
-  "/images/uslugi-myagkie-banki.jpg",
-  "/images/uslugi-steklyannye-banki.jpg",
 ];
 
 interface RollingGalleryProps {
