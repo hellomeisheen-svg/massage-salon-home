@@ -91,24 +91,20 @@ export function Faq() {
           </h2>
 
           <div className="mt-8 rounded-[12px] border border-[#daebff] bg-white p-6 sm:p-7 w-full max-w-[320px] mx-auto xl:mx-0 text-left">
-            <div className="flex items-start gap-5">
-              <img
-                src="/images/tatyana-photo.jpg"
-                alt="Татьяна Злобина"
-                className="w-[110px] h-[110px] sm:w-[130px] sm:h-[130px] rounded-[12px] object-cover shrink-0"
-              />
-              <div>
-                <h3
-                  className="text-[#1C3C8C] text-[24px] sm:text-[28px] leading-[1.1] font-light"
-                  style={{ fontFamily: heading }}
-                >
-                  Татьяна Злобина
-                </h3>
-                <p className="mt-2 text-[#8D9DC5] text-[15px] sm:text-[16px] leading-[1.5]">
-                  Мастер кабинета, специалист по&nbsp;оздоровительным практикам
-                </p>
-              </div>
-            </div>
+            <img
+              src="/images/tatyana-photo.jpg"
+              alt="Татьяна Злобина"
+              className="w-full h-[220px] rounded-[12px] object-cover"
+            />
+            <h3
+              className="mt-5 text-[#1C3C8C] text-[24px] sm:text-[28px] leading-[1.1] font-light"
+              style={{ fontFamily: heading }}
+            >
+              Татьяна Злобина
+            </h3>
+            <p className="mt-2 text-[#8D9DC5] text-[15px] sm:text-[16px] leading-[1.5]">
+              Мастер кабинета, специалист по&nbsp;оздоровительным практикам
+            </p>
             <p className="mt-6 text-[#8D9DC5] text-[15px] sm:text-[16px] leading-[1.5]">
               Остались вопросы? Напишите мне&nbsp;— я&nbsp;всё подробно расскажу.
             </p>
