@@ -46,11 +46,11 @@ function FaqItem({ q, a }: { q: string; a: string }) {
           {q}
         </span>
         <span
-          className={`shrink-0 w-[60px] h-[60px] rounded-lg bg-[#EFF6FF] border border-[#daebff] flex items-center justify-center transition-transform duration-300 ${
+          className={`shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-[#EFF6FF] border border-[#daebff] flex items-center justify-center transition-transform duration-300 ${
             open ? "rotate-45" : ""
           }`}
         >
-          <Plus className="w-5 h-5 text-[#1C3C8C]" strokeWidth={2} />
+          <Plus className="w-4 h-4 sm:w-5 sm:h-5 text-[#1C3C8C]" strokeWidth={2} />
         </span>
       </button>
       <div
