@@ -22,8 +22,11 @@ const services = [
   "Массаж головы",
 ];
 
-const ADDRESS = "Москва, ул. Тверская, 15";
-const MAP_QUERY = encodeURIComponent(ADDRESS);
+const ADDRESS =
+  "Приморский край, п. Трудовое, ул. Лермонтова, 46";
+const YANDEX_QUERY = encodeURIComponent(
+  "Приморский край, посёлок Трудовое, улица Лермонтова, 46"
+);
 
 export function Footer() {
   return (
@@ -35,7 +38,7 @@ export function Footer() {
           <div className="relative rounded-[12px] overflow-hidden border border-[#daebff] min-h-[320px] xl:min-h-[440px]">
             <iframe
               title="Карта — расположение кабинета"
-              src={`https://maps.google.com/maps?q=${MAP_QUERY}&t=&z=15&ie=UTF8&iwloc=&output=embed`}
+              src={`https://yandex.ru/map-widget/v1/?text=${YANDEX_QUERY}&z=16`}
               className="absolute inset-0 h-full w-full"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
