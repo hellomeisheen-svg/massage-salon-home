@@ -8,18 +8,16 @@ import {
 } from "framer-motion";
 
 const IMGS: string[] = [
-  "/massazh-salon-glavnyi-ekran.jpg",
-  "/uslugi-klassicheskii-massazh.jpg",
-  "/uslugi-limfodrenazhnyi-massazh.jpg",
-  "/uslugi-massazh-spiny-i-shei.jpg",
-  "/uslugi-massazh-vorotnikovoi-zony.jpg",
-  "/uslugi-massazh-litsa.jpg",
-  "/uslugi-massazh-litsa-variant-2.jpg",
-  "/uslugi-massazh-golovy.jpg",
-  "/uslugi-massazh-nog.jpg",
-  "/uslugi-steklyannye-banki.jpg",
-  "/uslugi-myagkie-banki.jpg",
-  "/uslugi-girudoterapiya.jpg",
+  "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=1600&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=1600&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=1600&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1600&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1591343395082-e120087004b4?q=80&w=1600&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=1600&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1620733723572-11c53f73a416?q=80&w=1600&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1583417319070-4a69db38a482?q=80&w=1600&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1552693673-1bf958298935?q=80&w=1600&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1600&auto=format&fit=crop",
 ];
 
 interface RollingGalleryProps {
