@@ -52,9 +52,9 @@ function Index() {
       
       <Programs />
       <Education />
-      <Faq />
       <GalleryIntro />
       <Gallery />
+      <Faq />
 
 
 
