@@ -71,10 +71,8 @@ export function Education() {
                 </p>
               </div>
               <img
-                src="/images/signature.png"
+                src="/images/signature.svg"
                 alt=""
-                width={1024}
-                height={512}
                 loading="lazy"
                 className="w-[110px] sm:w-[150px] xl:w-[140px] h-auto shrink-0"
               />
