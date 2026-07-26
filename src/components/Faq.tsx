@@ -105,7 +105,7 @@ export function Faq() {
             <p className="mt-3 text-[#8D9DC5] text-[15px] sm:text-[16px] leading-[1.5]">
               Мастер кабинета, специалист по&nbsp;оздоровительным практикам
             </p>
-            <p className="mt-6 text-[#8D9DC5] text-[15px] sm:text-[16px] leading-[1.5]">
+            <p className="mt-6 text-[#1C3C8C] text-[15px] sm:text-[16px] leading-[1.5]">
               Остались вопросы? Напишите мне&nbsp;— я&nbsp;всё подробно расскажу.
             </p>
             <a
