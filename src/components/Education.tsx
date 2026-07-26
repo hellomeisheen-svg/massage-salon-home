@@ -18,7 +18,7 @@ const extraEducation: EduItem[] = [
 
 function EduCard({ item }: { item: EduItem }) {
   return (
-    <div className="rounded-[12px] bg-white border border-[#daebff] px-6 sm:px-7 xl:px-8 py-5 xl:flex-1 xl:min-h-0 xl:flex xl:flex-col xl:justify-center">
+    <div className="rounded-[12px] bg-white border border-[#daebff] px-6 sm:px-7 xl:px-8 py-5">
       <h3
         className="text-[#1C3C8C] text-[26px] sm:text-[30px] xl:text-[22px] leading-[1.2]"
         style={{ fontFamily: heading }}
