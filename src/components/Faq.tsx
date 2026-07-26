@@ -106,7 +106,7 @@ export function Faq() {
               href="https://n2418813.yclients.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-accent mt-6 w-full text-center block"
+              className="btn-primary mt-6 w-full inline-flex items-center justify-center"
             >
               Получить консультацию
             </a>
