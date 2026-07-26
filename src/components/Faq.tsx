@@ -30,17 +30,17 @@ const items = [
 
 const heading = "'Roslindale Cyrillic Display Condensed', serif";
 
-function FaqItem({ q, a, isLast }: { q: string; a: string; isLast: boolean }) {
+function FaqItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className={isLast ? "" : "border-b border-[#daebff]"}>
+    <div className="rounded-[12px] bg-white">
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        className="w-full flex items-center justify-between gap-4 py-5 sm:py-6 text-left"
+        className="w-full flex items-center justify-between gap-4 p-5 sm:p-6 xl:p-7 text-left"
       >
         <span
-          className="text-[#1C3C8C] text-[20px] sm:text-[24px] xl:text-[26px] leading-[1.2] font-light"
+          className="text-[#1C3C8C] text-[20px] sm:text-[24px] xl:text-[28px] leading-[1.2]"
           style={{ fontFamily: heading }}
         >
           {q}
@@ -59,7 +59,7 @@ function FaqItem({ q, a, isLast }: { q: string; a: string; isLast: boolean }) {
         }`}
       >
         <div className="overflow-hidden">
-          <p className="pb-5 sm:pb-6 text-[#8D9DC5] text-[15px] sm:text-[16px] leading-[1.5] max-w-[720px]">
+          <p className="px-5 sm:px-6 xl:px-7 pb-5 sm:pb-6 xl:pb-7 text-[#1C3C8C] text-[15px] sm:text-[16px] leading-[1.5] max-w-[720px]">
             {a}
           </p>
         </div>
@@ -124,11 +124,11 @@ export function Faq() {
         </div>
 
         {/* Right column: accordion card */}
-        <article className="rounded-[12px] border border-[#daebff] bg-white p-6 sm:p-8 transition-shadow duration-300 hover:shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)]">
-          {items.map((it, idx) => (
-            <FaqItem key={it.q} q={it.q} a={it.a} isLast={idx === items.length - 1} />
+        <div className="flex flex-col gap-3 sm:gap-4">
+          {items.map((it) => (
+            <FaqItem key={it.q} q={it.q} a={it.a} />
           ))}
-        </article>
+        </div>
       </div>
     </section>
   );
