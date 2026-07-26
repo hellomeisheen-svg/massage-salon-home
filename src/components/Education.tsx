@@ -67,7 +67,7 @@ export function Education() {
         </div>
 
         {/* Right: education lists */}
-        <div className="flex flex-col gap-3 sm:gap-4 xl:gap-2 xl:h-full xl:overflow-hidden">
+        <div className="flex flex-col gap-3 sm:gap-4 xl:gap-2">
           <div className="px-2 text-[#8D9DC5] text-[14px] sm:text-[15px]">Основное образование</div>
           <div className="flex flex-col gap-3 sm:gap-4 xl:gap-2">
             {mainEducation.map((e) => (
