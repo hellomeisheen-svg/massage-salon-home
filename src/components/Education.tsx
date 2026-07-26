@@ -18,7 +18,7 @@ const extraEducation: EduItem[] = [
 
 function EduCard({ item }: { item: EduItem }) {
   return (
-    <div className="rounded-[12px] bg-white border border-[#daebff] p-6 sm:p-7 xl:px-7 xl:py-5">
+    <div className="rounded-[12px] bg-white border border-[#daebff] p-6 sm:p-7 xl:px-7 xl:py-5 xl:flex-1 xl:min-h-0 xl:flex xl:flex-col xl:justify-center">
       <h3
         className="text-[#1C3C8C] text-[26px] sm:text-[30px] xl:text-[24px] leading-[1.15]"
         style={{ fontFamily: heading }}
@@ -66,15 +66,15 @@ export function Education() {
         </div>
 
         {/* Right: education lists */}
-        <div className="flex flex-col gap-3 sm:gap-4 xl:gap-2 xl:h-full xl:overflow-hidden">
+        <div className="flex flex-col gap-3 sm:gap-4 xl:gap-2 xl:h-full xl:min-h-0">
           <div className="px-2 text-[#8D9DC5] text-[14px] sm:text-[15px]">Основное образование</div>
-          <div className="flex flex-col gap-3 sm:gap-4 xl:gap-2">
+          <div className="flex flex-col gap-3 sm:gap-4 xl:gap-2 xl:flex-1 xl:min-h-0">
             {mainEducation.map((e) => (
               <EduCard key={e.school} item={e} />
             ))}
           </div>
           <div className="px-2 mt-2 xl:mt-1 text-[#8D9DC5] text-[14px] sm:text-[15px]">Дополнительное образование</div>
-          <div className="flex flex-col gap-3 sm:gap-4 xl:gap-2">
+          <div className="flex flex-col gap-3 sm:gap-4 xl:gap-2 xl:flex-1 xl:min-h-0">
             {extraEducation.map((e) => (
               <EduCard key={e.school} item={e} />
             ))}
