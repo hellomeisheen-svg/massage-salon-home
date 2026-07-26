@@ -124,11 +124,11 @@ export function Faq() {
         </div>
 
         {/* Right column: accordion card */}
-        <article className="rounded-[12px] border border-[#daebff] bg-white p-6 sm:p-8 transition-shadow duration-300 hover:shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)]">
-          {items.map((it, idx) => (
-            <FaqItem key={it.q} q={it.q} a={it.a} isLast={idx === items.length - 1} />
+        <div className="flex flex-col gap-3 sm:gap-4">
+          {items.map((it) => (
+            <FaqItem key={it.q} q={it.q} a={it.a} />
           ))}
-        </article>
+        </div>
       </div>
     </section>
   );
