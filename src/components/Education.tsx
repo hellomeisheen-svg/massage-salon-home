@@ -18,16 +18,16 @@ const extraEducation: EduItem[] = [
 
 function EduCard({ item }: { item: EduItem }) {
   return (
-    <div className="rounded-[12px] bg-white border border-[#daebff] p-6 sm:p-7 xl:px-8 xl:py-6 xl:flex-1 xl:min-h-0 xl:flex xl:flex-col xl:justify-center">
+    <div className="rounded-[12px] bg-white border border-[#daebff] p-6 xl:flex-1 xl:min-h-0 xl:flex xl:flex-col xl:justify-center">
       <h3
-        className="text-[#1C3C8C] text-[26px] sm:text-[30px] xl:text-[22px] leading-[1.2]"
+        className="text-[#1C3C8C] text-[26px] sm:text-[28px] xl:text-[22px] leading-[1.2]"
         style={{ fontFamily: heading }}
       >
         {item.school}
       </h3>
-      <ul className="mt-3 sm:mt-4 xl:mt-3 space-y-2 xl:space-y-1.5">
+      <ul className="mt-3 space-y-1.5">
         {item.items.map((i) => (
-          <li key={i} className="text-[#8D9DC5] text-[15px] sm:text-[16px] xl:text-[14px] leading-[1.5] flex gap-2">
+          <li key={i} className="text-[#8D9DC5] text-[15px] xl:text-[14px] leading-[1.5] flex gap-2">
             <span aria-hidden>•</span>
             <span>{i}</span>
           </li>
