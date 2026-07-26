@@ -71,9 +71,9 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 export function Faq() {
   return (
     <section id="faq" className="bg-[#EFF6FF] py-[60px] sm:py-[70px]">
-      <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-5 items-start">
+      <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-5 items-stretch">
         {/* Left column */}
-        <div className="self-start flex flex-col items-center xl:items-start text-center xl:text-left">
+        <div className="flex flex-col items-center xl:items-start text-center xl:text-left h-full">
           <span
             className="inline-flex items-center gap-2 px-4 py-1.5 text-[13px] font-medium tracking-wide text-white"
             style={{
@@ -90,7 +90,7 @@ export function Faq() {
             Отвечаю на&nbsp;самые важные вопросы
           </h2>
 
-          <div className="mt-8 rounded-[12px] border border-[#daebff] bg-white p-6 sm:p-7 w-full max-w-[320px] mx-auto xl:mx-0 text-left">
+          <div className="mt-8 xl:mt-auto rounded-[12px] border border-[#daebff] bg-white p-6 sm:p-7 w-full max-w-[320px] mx-auto xl:mx-0 text-left">
             <img
               src="/images/tatyana-photo.jpg"
               alt="Татьяна Злобина"
