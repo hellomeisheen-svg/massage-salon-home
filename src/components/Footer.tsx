@@ -53,9 +53,9 @@ export function Footer() {
               </p>
             </div>
 
-            <ul className="flex flex-col gap-3">
-              <li className="flex items-start gap-3 rounded-[12px] border border-[#daebff] bg-[#EFF6FF] px-4 py-3">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white border border-[#daebff] text-[#1c3c8c]">
+            <ul className="flex flex-col gap-5">
+              <li className="flex items-start gap-3">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-[#daebff] bg-white text-[#1c3c8c]">
                   <MapPin size={18} strokeWidth={1.5} />
                 </span>
                 <div className="text-[#1c3c8c] leading-[150%] font-light">
@@ -63,26 +63,24 @@ export function Footer() {
                   <div className="text-[15px] xl:text-base">{ADDRESS}</div>
                 </div>
               </li>
-              <li className="flex items-start gap-3 rounded-[12px] border border-[#daebff] bg-[#EFF6FF] px-4 py-3">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white border border-[#daebff] text-[#1c3c8c]">
+              <li className="flex items-start gap-3">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-[#daebff] bg-white text-[#1c3c8c]">
                   <Phone size={18} strokeWidth={1.5} />
                 </span>
                 <div className="text-[#1c3c8c] leading-[150%] font-light">
                   <div className="text-xs uppercase tracking-wider opacity-60">Телефон</div>
-                  <a href="tel:+79000000000" className="text-[15px] xl:text-base hover:opacity-70 transition-opacity">
-                    +7 (900) 000-00-00
+                  <a href="tel:+79242324611" className="text-[15px] xl:text-base hover:opacity-70 transition-opacity">
+                    +7 924 232 46 11
                   </a>
                 </div>
               </li>
-              <li className="flex items-start gap-3 rounded-[12px] border border-[#daebff] bg-[#EFF6FF] px-4 py-3">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white border border-[#daebff] text-[#1c3c8c]">
-                  <Mail size={18} strokeWidth={1.5} />
+              <li className="flex items-start gap-3">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-[#daebff] bg-white text-[#1c3c8c]">
+                  <Clock size={18} strokeWidth={1.5} />
                 </span>
                 <div className="text-[#1c3c8c] leading-[150%] font-light">
-                  <div className="text-xs uppercase tracking-wider opacity-60">Почта</div>
-                  <a href="mailto:hello@zlobina.ru" className="text-[15px] xl:text-base hover:opacity-70 transition-opacity">
-                    hello@zlobina.ru
-                  </a>
+                  <div className="text-xs uppercase tracking-wider opacity-60">Режим работы</div>
+                  <div className="text-[15px] xl:text-base">пн-сб с 9:00 до 22:00</div>
                 </div>
               </li>
             </ul>
