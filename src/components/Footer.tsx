@@ -1,4 +1,4 @@
-
+import { MapPin, Phone, Clock } from "lucide-react";
 
 const headingStyle = {
   fontFamily: "'Roslindale Cyrillic Display Condensed', serif",
@@ -53,28 +53,35 @@ export function Footer() {
               </p>
             </div>
 
-            <ul className="flex flex-col gap-6">
-              <li>
-                <div className="text-[14px] sm:text-[16px] uppercase tracking-wider text-[#1c3c8c] opacity-60">Адресс</div>
-                <div
-                  className="mt-1 text-[28px] sm:text-[32px] xl:text-[36px] font-light leading-[1.2] text-[#1c3c8c]"
-                  style={{ fontFamily: headingStyle.fontFamily }}
-                >
-                  {ADDRESS}
+            <ul className="flex flex-col gap-5">
+              <li className="flex items-start gap-3">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-[#daebff] bg-white text-[#1c3c8c]">
+                  <MapPin size={18} strokeWidth={1.5} />
+                </span>
+                <div className="text-[#1c3c8c] leading-[150%] font-light">
+                  <div className="text-xs uppercase tracking-wider opacity-60">Адрес</div>
+                  <div className="text-[15px] xl:text-base">{ADDRESS}</div>
                 </div>
               </li>
-              <li>
-                <div className="text-[14px] sm:text-[16px] uppercase tracking-wider text-[#1c3c8c] opacity-60">Номер телефона</div>
-                <a
-                  href="tel:+79242324611"
-                  className="mt-1 block text-[15px] xl:text-base text-[#1c3c8c] hover:opacity-70 transition-opacity"
-                >
-                  +7 924 232 46 11
-                </a>
+              <li className="flex items-start gap-3">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-[#daebff] bg-white text-[#1c3c8c]">
+                  <Phone size={18} strokeWidth={1.5} />
+                </span>
+                <div className="text-[#1c3c8c] leading-[150%] font-light">
+                  <div className="text-xs uppercase tracking-wider opacity-60">Телефон</div>
+                  <a href="tel:+79242324611" className="text-[15px] xl:text-base hover:opacity-70 transition-opacity">
+                    +7 924 232 46 11
+                  </a>
+                </div>
               </li>
-              <li>
-                <div className="text-[14px] sm:text-[16px] uppercase tracking-wider text-[#1c3c8c] opacity-60">Режим работы</div>
-                <div className="mt-1 text-[15px] xl:text-base text-[#1c3c8c]">пн-сб с 9:00 до 22:00</div>
+              <li className="flex items-start gap-3">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-[#daebff] bg-white text-[#1c3c8c]">
+                  <Clock size={18} strokeWidth={1.5} />
+                </span>
+                <div className="text-[#1c3c8c] leading-[150%] font-light">
+                  <div className="text-xs uppercase tracking-wider opacity-60">Режим работы</div>
+                  <div className="text-[15px] xl:text-base">пн-сб с 9:00 до 22:00</div>
+                </div>
               </li>
             </ul>
 
