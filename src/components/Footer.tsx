@@ -1,5 +1,3 @@
-
-
 const headingStyle = {
   fontFamily: "'Roslindale Cyrillic Display Condensed', serif",
   color: "#1c3c8c",
