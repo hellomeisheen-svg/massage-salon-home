@@ -1,3 +1,5 @@
+import tatianaPhoto from "@/assets/tatiana-zlobina.jpg.asset.json";
+
 const heading = "'Roslindale Cyrillic Display Condensed', serif";
 
 type EduItem = { school: string; items: string[] };
