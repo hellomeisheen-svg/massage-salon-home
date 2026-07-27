@@ -60,9 +60,19 @@ export function Education() {
       </div>
       <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-5 items-stretch">
 
-        {/* Left: quote panel */}
-        <div className="relative rounded-[12px] bg-[#DAEBFF] overflow-hidden min-h-[420px] xl:min-h-0 xl:h-full flex">
-          <div className="mt-auto w-full p-4 sm:p-5">
+        {/* Left: photo + quote panel */}
+        <div className="relative rounded-[12px] bg-[#DAEBFF] overflow-hidden min-h-[420px] xl:min-h-0 xl:h-full flex flex-col">
+          <div className="flex-1 p-4 sm:p-5 pb-0 sm:pb-0">
+            <div className="relative w-full h-full rounded-[12px] bg-white overflow-hidden">
+              <img
+                src={tatianaPhoto.url}
+                alt="Татьяна Злобина — мастер кабинета Седьмое небо"
+                loading="lazy"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+          <div className="w-full p-4 sm:p-5">
             <div className="rounded-[12px] bg-white p-5 sm:p-7 xl:p-6 flex items-center gap-4 sm:gap-6">
               <div className="flex-1">
                 <p className="text-[#1C3C8C] text-[15px] sm:text-[16px] leading-[1.5]">
