@@ -138,7 +138,7 @@ export function Programs() {
   const next = () => setActive((i) => (i + 1) % programs.length);
 
   return (
-    <section id="programs" className="scroll-mt-[120px] bg-[#EFF6FF] py-[60px] sm:py-[70px] xl:pt-[120px] xl:pb-0">
+    <section id="programs" className="scroll-mt-[140px] bg-[#EFF6FF] py-[60px] sm:py-[70px] xl:pt-[140px] xl:pb-0">
       <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-5 items-start">
         {/* Left column */}
         <div className="self-start flex flex-col items-center xl:items-start text-center xl:text-left">

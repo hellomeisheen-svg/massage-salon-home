@@ -1,6 +1,6 @@
 export function GalleryIntro() {
   return (
-    <section className="bg-[#EFF6FF] py-[60px] xl:pt-[120px] xl:pb-0">
+    <section className="bg-[#EFF6FF] py-[60px] xl:pt-[140px] xl:pb-0">
       <div className="container-1900 flex flex-col items-center text-center">
         <svg
           aria-hidden="true"
