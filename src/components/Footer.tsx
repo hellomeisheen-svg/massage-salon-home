@@ -134,7 +134,7 @@ export function Footer() {
 
             {/* Nav */}
             <div>
-              <div className="text-xs uppercase tracking-wider text-[#1c3c8c]/60">Навигация</div>
+              
               <ul className="mt-4 flex flex-col gap-2.5">
                 {navItems.map((item) => (
                   <li key={item.label}>
