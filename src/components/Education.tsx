@@ -41,7 +41,7 @@ function EduCard({ item }: { item: EduItem }) {
 
 export function Education() {
   return (
-    <section id="obrazovanie" className="bg-[#EFF6FF] py-[60px] xl:py-[140px]">
+    <section id="obrazovanie" className="bg-[#EFF6FF] py-[60px] xl:py-[120px]">
       <div className="container-1900 mb-10 sm:mb-14 xl:mb-16 flex flex-col items-center text-center">
         <svg
           aria-hidden="true"
