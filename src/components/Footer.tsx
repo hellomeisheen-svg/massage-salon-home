@@ -152,7 +152,7 @@ export function Footer() {
 
           <div className="mt-8 pt-5 border-t border-[#daebff] flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
             <p className="text-[13px] text-[#1c3c8c]/60 font-light">
-              © {new Date().getFullYear()} Татьяна Злобина. Все права защищены.
+              © {new Date().getFullYear()} Седьмое небо. Все права защищены.
             </p>
             <p className="text-[13px] text-[#1c3c8c]/60 font-light">
               Информация не является публичной офертой
