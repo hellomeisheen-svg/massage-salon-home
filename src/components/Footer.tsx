@@ -31,7 +31,7 @@ export function Footer() {
           <div className="relative rounded-[12px] overflow-hidden border border-[#daebff] min-h-[320px] xl:min-h-[440px]">
             <iframe
               title="Карта — расположение кабинета"
-              src={`https://yandex.ru/map-widget/v1/?text=${YANDEX_QUERY}&z=16`}
+              src="https://yandex.ru/map-widget/v1/org/sedmoye_nebo/130811843218/?ll=132.072118%2C43.306027&z=16"
               className="absolute inset-0 h-full w-full"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
