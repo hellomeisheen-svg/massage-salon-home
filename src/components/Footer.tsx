@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail, Instagram, Send } from "lucide-react";
+import { MapPin, Phone, Mail } from "lucide-react";
 
 const headingStyle = {
   fontFamily: "'Roslindale Cyrillic Display Condensed', serif",
@@ -116,18 +116,13 @@ export function Footer() {
               </p>
               <div className="mt-5 flex items-center gap-2">
                 <a
-                  href="#"
-                  aria-label="Instagram"
+                  href="https://maks.ru"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Макс — мессенджер"
                   className="flex h-10 w-10 items-center justify-center rounded-lg border border-[#daebff] bg-[#EFF6FF] text-[#1c3c8c] hover:bg-[#DAEBFF] transition-colors"
                 >
-                  <Instagram size={18} strokeWidth={1.5} />
-                </a>
-                <a
-                  href="#"
-                  aria-label="Telegram"
-                  className="flex h-10 w-10 items-center justify-center rounded-lg border border-[#daebff] bg-[#EFF6FF] text-[#1c3c8c] hover:bg-[#DAEBFF] transition-colors"
-                >
-                  <Send size={18} strokeWidth={1.5} />
+                  <span className="text-[14px] font-medium leading-none">М</span>
                 </a>
               </div>
             </div>
@@ -154,9 +149,17 @@ export function Footer() {
             <p className="text-[13px] text-[#1c3c8c]/60 font-light">
               © {new Date().getFullYear()} Седьмое небо. Все права защищены.
             </p>
-            <p className="text-[13px] text-[#1c3c8c]/60 font-light">
-              Информация не является публичной офертой
-            </p>
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6">
+              <a
+                href="/privacy-policy"
+                className="text-[13px] text-[#1c3c8c]/60 hover:text-[#1c3c8c] transition-colors font-light"
+              >
+                Политика конфиденциальности
+              </a>
+              <p className="text-[13px] text-[#1c3c8c]/60 font-light">
+                Информация не является публичной офертой
+              </p>
+            </div>
           </div>
         </div>
       </div>
