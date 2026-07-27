@@ -60,7 +60,7 @@ function HeadlineBlock() {
 
 export function Hero() {
   return (
-    <main className="bg-[#EFF6FF] py-4 sm:py-5">
+    <main className="bg-[#EFF6FF] py-4 sm:py-5 xl:py-0">
       <section className="container-1900 grid grid-cols-1 gap-4 sm:gap-5 xl:h-[calc(100vh-80px)] xl:grid-cols-2">
         {/* Content card */}
         <div className="flex flex-col rounded-[12px] border border-[#daebff] bg-white p-5 sm:h-[700px] sm:p-6 xl:h-full xl:p-10">
