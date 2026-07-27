@@ -90,7 +90,7 @@ export function Faq() {
             Отвечаю на&nbsp;самые важные вопросы
           </h2>
 
-          <div className="mt-8 xl:mt-auto rounded-[12px] border border-[#daebff] bg-white p-6 sm:p-7 w-full max-w-[320px] mx-auto xl:mx-0 text-left">
+          <div className="mt-8 xl:mt-auto rounded-[12px] border border-[#daebff] bg-white p-6 sm:p-7 w-full max-w-[320px] md:max-w-none mx-auto xl:mx-0 xl:max-w-[320px] text-left">
             <img
               src="/images/tatyana-photo.jpg"
               alt="Татьяна Злобина"
