@@ -35,7 +35,7 @@ export function Footer() {
               className="absolute inset-0 h-full w-full"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              style={{ border: 0, filter: "grayscale(0.15) contrast(0.95)" }}
+              style={{ border: 0, filter: "grayscale(0.35) sepia(0.08) hue-rotate(170deg) saturate(0.6) brightness(1.05) contrast(0.92)" }}
             />
           </div>
 
