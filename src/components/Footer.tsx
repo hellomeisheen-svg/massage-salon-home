@@ -26,9 +26,9 @@ export function Footer() {
     <footer id="contacts" className="bg-[#EFF6FF] pt-[60px] xl:pt-[100px] pb-8">
       <div className="container-1900">
         {/* Top card: map + contacts */}
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-5 rounded-[12px] border border-[#daebff] bg-white p-5 xl:p-[30px]">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-5">
           {/* Map */}
-          <div className="relative rounded-[12px] overflow-hidden border border-[#daebff] min-h-[320px] xl:min-h-[440px]">
+          <div className="relative rounded-[12px] overflow-hidden border border-[#daebff] bg-white min-h-[320px] xl:min-h-[440px]">
             <iframe
               title="Карта — расположение кабинета"
               src="https://yandex.ru/map-widget/v1/org/sedmoye_nebo/130811843218/?ll=132.072118%2C43.306027&z=16"
@@ -40,15 +40,13 @@ export function Footer() {
           </div>
 
           {/* Contacts */}
-          <div className="flex flex-col justify-between gap-8">
+          <div className="flex flex-col justify-between gap-8 rounded-[12px] border border-[#daebff] bg-white p-5 xl:p-[30px]">
             <div>
               <h2
                 className="text-[30px] xl:text-[44px] leading-[1.1]"
                 style={headingStyle}
               >
-                Как найти
-                <br />
-                кабинет
+                Как найти кабинет
               </h2>
               <p className="mt-4 xl:mt-5 text-[#1c3c8c]/70 text-[15px] xl:text-base leading-[150%] max-w-[440px] font-light">
                 Уютное пространство в центре города — приходите за пятнадцать минут до сеанса, чтобы спокойно выдохнуть.
