@@ -1,4 +1,4 @@
-import { } from "lucide-react";
+
 
 const headingStyle = {
   fontFamily: "'Roslindale Cyrillic Display Condensed', serif",
