@@ -71,7 +71,7 @@ const environmentItems: { Icon: LucideIcon; title: string; text: string }[] = [
 
 export function ApproachCopy() {
   return (
-    <section id="advantages-2" className="scroll-mt-[120px] bg-[#EFF6FF] py-[60px] sm:py-[70px] xl:py-[120px]">
+    <section id="advantages-2" className="scroll-mt-[120px] bg-[#EFF6FF] py-[60px] sm:py-[70px] xl:pt-[120px] xl:pb-0">
       <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-5">
         {/* Left column */}
         <div className="flex flex-col gap-6 xl:grid xl:grid-rows-2 xl:gap-6 xl:h-full">

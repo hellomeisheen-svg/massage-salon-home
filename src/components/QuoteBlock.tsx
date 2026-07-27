@@ -48,7 +48,7 @@ const sparkles = [
 
 export function QuoteBlock() {
   return (
-    <section className="relative bg-[#EFF6FF] pt-[60px] pb-[60px] sm:pt-[120px] sm:pb-[120px] xl:py-[120px]">
+    <section className="relative bg-[#EFF6FF] pt-[60px] pb-[60px] sm:pt-[120px] sm:pb-[120px] xl:pt-[120px] xl:pb-0">
       {/* Decorative photos — hidden on very small screens to avoid clutter */}
       <div className="absolute inset-0 hidden sm:block">
         {decoImages.map((img, i) => (
