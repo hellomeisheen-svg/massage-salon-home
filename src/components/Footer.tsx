@@ -35,7 +35,12 @@ export function Footer() {
               className="absolute inset-0 h-full w-full"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              style={{ border: 0, filter: "grayscale(0.35) sepia(0.08) hue-rotate(170deg) saturate(0.6) brightness(1.05) contrast(0.92)" }}
+              style={{ border: 0, filter: "grayscale(0.45) brightness(1.08) contrast(0.92)" }}
+            />
+            <div
+              className="pointer-events-none absolute inset-0"
+              style={{ background: "#1c3c8c", opacity: 0.08, mixBlendMode: "color" }}
+              aria-hidden="true"
             />
           </div>
 
