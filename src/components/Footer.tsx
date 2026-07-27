@@ -1,4 +1,4 @@
-import { MapPin, Phone, Clock } from "lucide-react";
+import { } from "lucide-react";
 
 const headingStyle = {
   fontFamily: "'Roslindale Cyrillic Display Condensed', serif",
