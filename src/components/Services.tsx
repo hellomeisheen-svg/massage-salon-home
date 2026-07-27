@@ -284,7 +284,7 @@ export function Services() {
   }, []);
 
   return (
-    <section id="services" className="scroll-mt-[120px] bg-[#EFF6FF] py-[60px] sm:py-[70px]">
+    <section id="services" className="scroll-mt-[120px] bg-[#EFF6FF] py-[60px] sm:py-[70px] xl:py-[140px]">
       <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-5">
         {/* Left column */}
         <div
