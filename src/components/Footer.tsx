@@ -1,4 +1,4 @@
-
+import { MapPin, Phone, Clock } from "lucide-react";
 
 const headingStyle = {
   fontFamily: "'Roslindale Cyrillic Display Condensed', serif",
@@ -40,7 +40,7 @@ export function Footer() {
           </div>
 
           {/* Contacts */}
-          <div className="flex flex-col justify-between gap-8 rounded-[12px] bg-[#DAEBFF] p-5 xl:p-[30px]">
+          <div className="flex flex-col justify-between gap-8 rounded-[12px] border border-[#daebff] bg-white p-5 xl:p-[30px]">
             <div>
               <h2
                 className="text-[30px] xl:text-[44px] leading-[1.1]"
@@ -53,39 +53,34 @@ export function Footer() {
               </p>
             </div>
 
-            <ul className="flex flex-col gap-8">
-              <li>
-                <div className="text-[#8D9DC5] text-[14px] sm:text-[15px] font-light leading-[150%]">
-                  Адрес
-                </div>
-                <div
-                  className="mt-1 text-[#1C3C8C] text-[24px] sm:text-[28px] xl:text-[40px] leading-[1.1] font-light break-words"
-                  style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
-                >
-                  {ADDRESS}
+            <ul className="flex flex-col gap-5">
+              <li className="flex items-start gap-3">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-[#daebff] bg-white text-[#1c3c8c]">
+                  <MapPin size={18} strokeWidth={1.5} />
+                </span>
+                <div className="text-[#1c3c8c] leading-[150%] font-light">
+                  <div className="text-xs uppercase tracking-wider opacity-60">Адрес</div>
+                  <div className="text-[15px] xl:text-base">{ADDRESS}</div>
                 </div>
               </li>
-              <li>
-                <div className="text-[#8D9DC5] text-[14px] sm:text-[15px] font-light leading-[150%]">
-                  Телефон
+              <li className="flex items-start gap-3">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-[#daebff] bg-white text-[#1c3c8c]">
+                  <Phone size={18} strokeWidth={1.5} />
+                </span>
+                <div className="text-[#1c3c8c] leading-[150%] font-light">
+                  <div className="text-xs uppercase tracking-wider opacity-60">Телефон</div>
+                  <a href="tel:+79242324611" className="text-[15px] xl:text-base hover:opacity-70 transition-opacity">
+                    +7 924 232 46 11
+                  </a>
                 </div>
-                <a
-                  href="tel:+79242324611"
-                  className="mt-1 block text-[#1C3C8C] text-[24px] sm:text-[28px] xl:text-[40px] leading-[1.1] font-light hover:opacity-70 transition-opacity"
-                  style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
-                >
-                  +7 924 232 46 11
-                </a>
               </li>
-              <li>
-                <div className="text-[#8D9DC5] text-[14px] sm:text-[15px] font-light leading-[150%]">
-                  Режим работы
-                </div>
-                <div
-                  className="mt-1 text-[#1C3C8C] text-[24px] sm:text-[28px] xl:text-[40px] leading-[1.1] font-light"
-                  style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
-                >
-                  пн-сб с 9:00 до 22:00
+              <li className="flex items-start gap-3">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-[#daebff] bg-white text-[#1c3c8c]">
+                  <Clock size={18} strokeWidth={1.5} />
+                </span>
+                <div className="text-[#1c3c8c] leading-[150%] font-light">
+                  <div className="text-xs uppercase tracking-wider opacity-60">Режим работы</div>
+                  <div className="text-[15px] xl:text-base">пн-сб с 9:00 до 22:00</div>
                 </div>
               </li>
             </ul>
