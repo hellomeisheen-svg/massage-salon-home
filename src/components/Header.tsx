@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
-const navigationItems: { label: string; href?: string }[] = [
+const navigationItems: { label: string; href: string }[] = [
   { label: "Услуги", href: "#services" },
   { label: "Преимущества", href: "#advantages" },
-  { label: "Программы" },
-  { label: "Обо мне" },
-  { label: "Вопросы" },
-  { label: "Контакты" },
+  { label: "Программы", href: "#programs" },
+  { label: "Обо мне", href: "#obrazovanie" },
+  { label: "Вопросы", href: "#faq" },
+  { label: "Контакты", href: "#contacts" },
 ];
 
 
