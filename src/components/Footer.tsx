@@ -89,7 +89,7 @@ export function Footer() {
               href="https://n2418813.yclients.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary inline-flex items-center justify-center w-full xl:w-[280px]"
+              className="btn-primary inline-flex items-center justify-center w-full"
             >
               Онлайн запись
             </a>
