@@ -180,7 +180,7 @@ function ServiceCard({
   return (
     <article className="rounded-[12px] border border-[#daebff] bg-white p-8 sm:p-10 transition-shadow duration-300 hover:shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)]">
       {/* Sessions — mobile: pill switcher with badges */}
-      <div className="mt-1 flex items-stretch gap-1 rounded-[12px] bg-background p-1.5 sm:hidden">
+      <div className="mt-1 flex items-stretch gap-1 rounded-[12px] bg-[#EFF6FF] p-1.5 sm:hidden">
         {items.map((s, i) => (
           <button
             key={i}
