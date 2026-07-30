@@ -1,3 +1,5 @@
+import { ArrowUp } from "lucide-react";
+
 const headingStyle = {
   fontFamily: "'Roslindale Cyrillic Display Condensed', serif",
   color: "#1c3c8c",
@@ -145,6 +147,14 @@ export function Footer() {
               <p className="text-[13px] text-[#1c3c8c]/60 font-light">
                 Информация не является публичной офертой
               </p>
+              <button
+                type="button"
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                aria-label="Наверх"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-[#daebff] bg-[#EFF6FF] text-[#1c3c8c] hover:bg-[#DAEBFF] transition-colors shrink-0"
+              >
+                <ArrowUp size={18} strokeWidth={2} />
+              </button>
             </div>
           </div>
         </div>
