@@ -18,6 +18,7 @@ const logoStyle = {
 } as const;
 
 export function Header() {
+  const headerRef = useRef<HTMLElement>(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [visible, setVisible] = useState(true);
   const [pinned, setPinned] = useState(false);
