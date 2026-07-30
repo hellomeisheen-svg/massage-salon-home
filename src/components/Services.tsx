@@ -179,26 +179,35 @@ function ServiceCard({
 
   return (
     <article className="rounded-[12px] border border-[#daebff] bg-white p-8 sm:p-10 transition-shadow duration-300 hover:shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)]">
-      {/* Sessions — mobile: segmented pills */}
-      <div className="grid grid-cols-3 gap-2 sm:hidden">
+      {/* Sessions — mobile: pill switcher with badges */}
+      <div className="mt-1 flex items-stretch gap-1 rounded-[12px] bg-[#DAEBFF] p-1.5 sm:hidden">
         {items.map((s, i) => (
           <button
             key={i}
             type="button"
             onClick={() => setActiveSession(i)}
-            className={`flex flex-col items-center justify-center rounded-[12px] border px-2 py-2.5 text-[14px] leading-[18px] transition-colors duration-300 ${
+            className={`relative flex flex-1 items-center justify-center rounded-[10px] px-2 py-3.5 transition-all duration-300 ${
               activeSession === i
-                ? "border-[#1C3C8C] bg-[#1C3C8C] text-white"
-                : "border-[#daebff] bg-[#F7FAFF] text-[#8D9DC5]"
+                ? "bg-white shadow-[0_2px_8px_rgba(28,60,140,0.08)]"
+                : "bg-transparent"
             }`}
           >
-            <span className="whitespace-nowrap">{s.label}</span>
-            <span className={`text-[11px] leading-[14px] ${activeSession === i ? "text-white/70" : "text-[#8D9DC5]/70"}`}>
-              {s.discount ?? "\u00A0"}
+            <span
+              className={`whitespace-nowrap text-[13px] tracking-tight transition-colors duration-300 ${
+                activeSession === i ? "font-medium text-[#1C3C8C]" : "font-light text-[#8D9DC5]"
+              }`}
+            >
+              {s.label}
             </span>
+            {s.discount && (
+              <span className="absolute -top-1 right-1 rounded-full bg-[#1C3C8C] px-1.5 py-0.5 text-[9px] font-semibold tracking-wide text-white">
+                {s.discount}
+              </span>
+            )}
           </button>
         ))}
       </div>
+
 
       {/* Sessions — tablet/desktop: inline list */}
       <div className="hidden sm:flex flex-wrap items-center gap-x-3 gap-y-2 text-[16px] leading-[26px] text-[#8D9DC5]">
