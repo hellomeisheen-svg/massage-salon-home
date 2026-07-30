@@ -180,7 +180,7 @@ function ServiceCard({
   return (
     <article className="rounded-[12px] border border-[#daebff] bg-white p-8 sm:p-10 transition-shadow duration-300 hover:shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)]">
       {/* Sessions — mobile: pill switcher with badges */}
-      <div className="mt-1 flex items-stretch gap-1 rounded-[12px] bg-[#EFF6FF] p-1.5 sm:hidden">
+      <div className="flex items-stretch gap-1 rounded-[12px] bg-[#EFF6FF] p-1.5 sm:hidden">
         {items.map((s, i) => (
           <button
             key={i}
@@ -235,7 +235,7 @@ function ServiceCard({
 
       {/* Title */}
       <h3
-        className="mt-4 text-[30px] sm:text-[38px] xl:text-[42px] font-light leading-[1.1] text-[#1C3C8C] break-words hyphens-auto"
+        className="mt-10 sm:mt-4 text-[30px] sm:text-[38px] xl:text-[42px] font-light leading-[1.1] text-[#1C3C8C] break-words hyphens-auto"
         style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
       >
         {service.title.replace(/\u00A0·\u00A0/g, " · ")}
