@@ -61,12 +61,12 @@ export function Education() {
       <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-5 items-stretch">
 
         {/* Left: photo + quote panel */}
-        <div className="relative rounded-[12px] overflow-hidden min-h-[420px] xl:min-h-0 xl:h-full">
+        <div className="relative rounded-[12px] overflow-hidden min-h-[420px] sm:min-h-[560px] xl:min-h-0 xl:h-full">
           <img
             src={tatianaPhoto.url}
             alt="Татьяна Злобина — мастер кабинета Седьмое небо"
             loading="lazy"
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover object-top sm:object-center"
           />
           <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5">
             <div className="rounded-[12px] bg-white p-5 sm:p-7 xl:p-6 flex items-center gap-4 sm:gap-6">
