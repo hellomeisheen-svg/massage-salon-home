@@ -179,8 +179,29 @@ function ServiceCard({
 
   return (
     <article className="rounded-[12px] border border-[#daebff] bg-white p-8 sm:p-10 transition-shadow duration-300 hover:shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)]">
-      {/* Sessions */}
-      <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-[16px] leading-[26px] text-[#8D9DC5]">
+      {/* Sessions — mobile: segmented pills */}
+      <div className="grid grid-cols-3 gap-2 sm:hidden">
+        {items.map((s, i) => (
+          <button
+            key={i}
+            type="button"
+            onClick={() => setActiveSession(i)}
+            className={`flex flex-col items-center justify-center rounded-[12px] border px-2 py-2.5 text-[14px] leading-[18px] transition-colors duration-300 ${
+              activeSession === i
+                ? "border-[#1C3C8C] bg-[#1C3C8C] text-white"
+                : "border-[#daebff] bg-[#F7FAFF] text-[#8D9DC5]"
+            }`}
+          >
+            <span className="whitespace-nowrap">{s.label}</span>
+            <span className={`text-[11px] leading-[14px] ${activeSession === i ? "text-white/70" : "text-[#8D9DC5]/70"}`}>
+              {s.discount ?? "\u00A0"}
+            </span>
+          </button>
+        ))}
+      </div>
+
+      {/* Sessions — tablet/desktop: inline list */}
+      <div className="hidden sm:flex flex-wrap items-center gap-x-3 gap-y-2 text-[16px] leading-[26px] text-[#8D9DC5]">
         {items.map((s, i) => (
           <div key={i} className="flex items-center gap-x-3">
             <button
@@ -201,6 +222,7 @@ function ServiceCard({
           </div>
         ))}
       </div>
+
 
       {/* Title */}
       <h3
