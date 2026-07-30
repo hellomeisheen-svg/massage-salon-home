@@ -66,8 +66,20 @@ export function Header() {
     document.documentElement.style.setProperty("--header-offset", offset);
   }, [pinned, visible]);
 
+  useEffect(() => {
+    const header = headerRef.current;
+    if (!header) return;
+    const setHeaderHeight = () => {
+      header.style.setProperty("--header-height", `${header.getBoundingClientRect().height}px`);
+    };
+    setHeaderHeight();
+    window.addEventListener("resize", setHeaderHeight);
+    return () => window.removeEventListener("resize", setHeaderHeight);
+  }, []);
+
   return (
     <header
+      ref={headerRef}
       className={`${pinned ? "fixed transition-transform duration-300 ease-out" : "fixed xl:absolute"} top-0 left-0 z-50 w-full bg-transparent pt-4 sm:pt-5 ${
         visible ? "translate-y-0" : "-translate-y-full"
       }`}
