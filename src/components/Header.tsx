@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const navigationItems: { label: string; href: string }[] = [
@@ -18,7 +18,6 @@ const logoStyle = {
 } as const;
 
 export function Header() {
-  const headerRef = useRef<HTMLElement>(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [visible, setVisible] = useState(true);
   const [pinned, setPinned] = useState(false);
@@ -66,20 +65,8 @@ export function Header() {
     document.documentElement.style.setProperty("--header-offset", offset);
   }, [pinned, visible]);
 
-  useEffect(() => {
-    const header = headerRef.current;
-    if (!header) return;
-    const setHeaderHeight = () => {
-      header.style.setProperty("--header-height", `${header.getBoundingClientRect().height}px`);
-    };
-    setHeaderHeight();
-    window.addEventListener("resize", setHeaderHeight);
-    return () => window.removeEventListener("resize", setHeaderHeight);
-  }, []);
-
   return (
     <header
-      ref={headerRef}
       className={`${pinned ? "fixed transition-transform duration-300 ease-out" : "fixed xl:absolute"} top-0 left-0 z-50 w-full bg-transparent pt-4 sm:pt-5 ${
         visible ? "translate-y-0" : "-translate-y-full"
       }`}
@@ -157,33 +144,31 @@ export function Header() {
 
       {/* Mobile menu panel */}
       {menuOpen && (
-        <div className="fixed inset-x-0 top-[var(--header-height)] z-40 h-[calc(100vh-var(--header-height))] w-full overflow-y-auto bg-[#EFF6FF] p-4 xl:hidden">
-          <div className="mx-auto flex min-h-full max-w-md flex-col justify-between">
-            <nav aria-label="Мобильная навигация" className="flex flex-1 flex-col justify-center gap-2">
-              <ul className="flex flex-col gap-1">
-                {navigationItems.map((item) => (
-                  <li key={item.label}>
-                    <a
-                      href={item.href}
-                      onClick={() => setMenuOpen(false)}
-                      className="block w-full rounded-lg px-3 py-3 text-center text-lg font-normal leading-[150%] text-[#1c3c8c] hover:bg-white transition-colors"
-                    >
-                      {item.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-            <a
-              href="https://n2418813.yclients.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setMenuOpen(false)}
-              className="btn-primary mt-6 w-full inline-flex items-center justify-center"
-            >
-              Онлайн запись
-            </a>
-          </div>
+        <div className="mt-2 rounded-[12px] border border-[#daebff] bg-white p-4 xl:hidden">
+          <nav aria-label="Мобильная навигация">
+            <ul className="flex flex-col gap-1">
+              {navigationItems.map((item) => (
+                <li key={item.label}>
+                  <a
+                    href={item.href}
+                    onClick={() => setMenuOpen(false)}
+                    className="block w-full rounded-lg px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <a
+            href="https://n2418813.yclients.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setMenuOpen(false)}
+            className="btn-primary mt-3 w-full inline-flex items-center justify-center"
+          >
+            Онлайн запись
+          </a>
         </div>
       )}
       </div>
