@@ -136,7 +136,7 @@ export function Footer() {
           <div className="mt-8 flex justify-end">
             <button
               type="button"
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              onClick={scrollToTop}
               aria-label="Наверх"
               className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-[#daebff] bg-[#EFF6FF] text-[#1c3c8c] hover:bg-[#DAEBFF] transition-colors shrink-0"
             >
