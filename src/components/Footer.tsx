@@ -21,6 +21,32 @@ const YANDEX_QUERY = encodeURIComponent(
   "Седьмое небо, Приморский край, посёлок Трудовое, улица Лермонтова, 46"
 );
 
+function scrollToTop() {
+  const start = window.scrollY || document.documentElement.scrollTop;
+  if (start === 0) return;
+
+  const prefersReduced = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+  if (prefersReduced) {
+    window.scrollTo(0, 0);
+    return;
+  }
+
+  const duration = Math.min(1200, Math.max(500, start * 0.5));
+  const startTime = performance.now();
+  const easeInOutCubic = (t: number) =>
+    t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+
+  const step = (now: number) => {
+    const progress = Math.min(1, (now - startTime) / duration);
+    window.scrollTo(0, start * (1 - easeInOutCubic(progress)));
+    if (progress < 1) requestAnimationFrame(step);
+  };
+
+  requestAnimationFrame(step);
+}
+
 export function Footer() {
   return (
     <footer id="contacts" className="bg-[#EFF6FF] pt-[60px] xl:pt-[140px] pb-8">
@@ -136,7 +162,7 @@ export function Footer() {
           <div className="mt-8 flex justify-end">
             <button
               type="button"
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              onClick={scrollToTop}
               aria-label="Наверх"
               className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-[#daebff] bg-[#EFF6FF] text-[#1c3c8c] hover:bg-[#DAEBFF] transition-colors shrink-0"
             >
