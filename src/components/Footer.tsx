@@ -79,7 +79,7 @@ export function Footer() {
               </p>
             </div>
 
-            <ul className="flex flex-col gap-5">
+            <ul className="flex flex-col gap-8 xl:gap-10">
               <li className="text-[#1c3c8c] leading-[150%] font-light">
                 <div className="text-[15px] xl:text-base text-[#1c3c8c]/70">Адрес</div>
                 <div className="text-[15px] xl:text-base">{ADDRESS}</div>
