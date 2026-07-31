@@ -31,15 +31,15 @@ function EduCard({ item }: { item: EduItem }) {
   const { name, city } = parseSchool(item.school);
   return (
     <div className="rounded-[12px] bg-white border border-[#daebff] px-6 sm:px-7 xl:px-8 py-[30px]">
-      <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 sm:gap-4">
+      <div className="flex flex-col gap-1.5">
         <h3
-          className="min-w-0 truncate text-[#1C3C8C] text-[20px] sm:text-[32px] xl:text-[26px] leading-[1.2]"
+          className="text-[#1C3C8C] text-[20px] sm:text-[32px] xl:text-[26px] leading-[1.2]"
           style={{ fontFamily: heading }}
         >
           {name}
         </h3>
         {city && (
-          <span className="shrink-0 inline-flex items-center rounded-full border border-[#daebff] bg-[#EFF6FF] px-2.5 py-1 text-[13px] sm:text-[14px] font-medium text-[#1C3C8C] leading-none">
+          <span className="self-start inline-flex items-center rounded-full border border-[#daebff] bg-[#EFF6FF] px-2.5 py-1 text-[13px] sm:text-[14px] font-medium text-[#1C3C8C] leading-none">
             {city}
           </span>
         )}
