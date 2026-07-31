@@ -35,13 +35,13 @@ export const RollingGallery: React.FC<RollingGalleryProps> = ({
 }) => {
   const galleryImages = images.length > 0 ? images : IMGS;
 
-  const [isScreenSizeSm, setIsScreenSizeSm] = useState(
-    typeof window !== "undefined" ? window.innerWidth <= 640 : false
-  );
+  const [isScreenSizeSm, setIsScreenSizeSm] = useState(false);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      const handleResize = () => setIsScreenSizeSm(window.innerWidth <= 640);
+      const check = () => setIsScreenSizeSm(window.innerWidth <= 640);
+      check();
+      const handleResize = () => check();
       window.addEventListener("resize", handleResize);
       return () => window.removeEventListener("resize", handleResize);
     }
