@@ -183,6 +183,14 @@ function formatDurationString(value: string, multiplier = 1) {
   return scaled.map((n) => formatDurationValue(n).text).join(", ");
 }
 
+function formatSessionLine(sessionCount: number, duration: string) {
+  if (sessionCount === 1) {
+    return `1 сеанс — ${duration}`;
+  }
+  const sessionWord = pluralize(sessionCount, ["сеанс", "сеанса", "сеансов"]);
+  return `В пакете: ${sessionCount}\u00A0${sessionWord} · ${duration}`;
+}
+
 function renderPrice(price: string) {
   const idx = price.indexOf("₽");
   if (idx === -1) return price;
