@@ -179,8 +179,8 @@ function ServiceCard({
 
   return (
     <article className="rounded-[12px] border border-[#daebff] bg-white p-8 sm:p-10 transition-shadow duration-300 hover:shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)]">
-      {/* Sessions — mobile: pill switcher with badges */}
-      <div className="flex items-stretch gap-1 rounded-[12px] bg-[#EFF6FF] p-1.5 sm:hidden">
+      {/* Sessions — pill switcher with badges */}
+      <div className="flex items-stretch gap-1 rounded-[12px] bg-[#EFF6FF] p-1.5">
         {items.map((s, i) => (
           <button
             key={i}
@@ -208,34 +208,9 @@ function ServiceCard({
         ))}
       </div>
 
-
-      {/* Sessions — tablet/desktop: inline list */}
-      <div className="hidden sm:flex flex-wrap items-center gap-x-3 gap-y-2 text-[16px] leading-[26px] text-[#8D9DC5]">
-        {items.map((s, i) => (
-          <div key={i} className="flex items-center gap-x-3">
-            <button
-              type="button"
-              onClick={() => setActiveSession(i)}
-              className={`transition-colors ${
-                activeSession === i ? "text-[#1C3C8C]" : "hover:text-[#1C3C8C]"
-              }`}
-            >
-              {s.label}
-              {s.discount && (
-                <sup className="ml-0.5 text-[11px] align-super"> {s.discount}</sup>
-              )}
-            </button>
-            {i < items.length - 1 && (
-              <span className="text-[#8D9DC5]">•</span>
-            )}
-          </div>
-        ))}
-      </div>
-
-
       {/* Title */}
       <h3
-        className="mt-10 sm:mt-4 text-[30px] sm:text-[38px] xl:text-[42px] font-light leading-[1.1] text-[#1C3C8C] break-words hyphens-auto"
+        className="mt-10 text-[30px] sm:text-[38px] xl:text-[42px] font-light leading-[1.1] text-[#1C3C8C] break-words hyphens-auto"
         style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
       >
         {service.title.replace(/\u00A0·\u00A0/g, " · ")}
