@@ -47,7 +47,9 @@ export const RollingGallery: React.FC<RollingGalleryProps> = ({
     }
   }, []);
 
-  const cylinderWidth: number = isScreenSizeSm ? 1600 : 2600;
+  const cylinderWidth: number = isScreenSizeSm ? 1100 : 2600;
+  const imgWidth: number = isScreenSizeSm ? 105 : 150;
+  const imgHeight: number = isScreenSizeSm ? 175 : 250;
   const faceCount: number = galleryImages.length;
   const faceWidth: number = (cylinderWidth / faceCount) * 1.5;
   const radius: number = cylinderWidth / (2 * Math.PI);
@@ -115,7 +117,7 @@ export const RollingGallery: React.FC<RollingGalleryProps> = ({
   };
 
   return (
-    <div className="relative h-[500px] w-full overflow-hidden">
+    <div className="relative h-[340px] sm:h-[500px] w-full overflow-hidden">
       <div
         className="absolute top-0 left-0 h-full w-[48px] z-10"
         style={{
@@ -162,7 +164,7 @@ export const RollingGallery: React.FC<RollingGalleryProps> = ({
                 src={url}
                 alt="gallery"
                 draggable={false}
-                style={{ width: 150, height: 250, flexShrink: 0, maxWidth: "none" }}
+                style={{ width: imgWidth, height: imgHeight, flexShrink: 0, maxWidth: "none" }}
                 className="pointer-events-none rounded-[12px] border border-[#daebff] object-cover"
               />
 
