@@ -281,6 +281,11 @@ function ServiceCard({
         {service.description}
       </p>
 
+      {/* Session info */}
+      <p className="mt-5 text-[13px] font-light leading-[1.5] tracking-wide text-[#8D9DC5]">
+        {sessionInfo}
+      </p>
+
       {/* Duration + price */}
       {service.tiers ? (
         <div
