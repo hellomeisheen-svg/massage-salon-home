@@ -243,7 +243,7 @@ function ServiceCard({
   return (
     <article className="rounded-[12px] border border-[#daebff] bg-white p-8 sm:p-10 transition-shadow duration-300 hover:shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)]">
       {/* Sessions — pill switcher */}
-      <div className="mt-1 flex items-stretch gap-1 rounded-[12px] bg-[#DAEBFF] p-1.5">
+      <div className="mt-1 flex items-stretch gap-1 rounded-[12px] bg-[#EFF6FF] p-1.5">
         {items.map((s, i) => (
           <button
             key={i}
