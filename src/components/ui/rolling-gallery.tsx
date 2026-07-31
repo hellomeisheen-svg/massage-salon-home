@@ -164,7 +164,7 @@ export const RollingGallery: React.FC<RollingGalleryProps> = ({
                 src={url}
                 alt="gallery"
                 draggable={false}
-                style={{ width: 150, height: 250, flexShrink: 0, maxWidth: "none" }}
+                style={{ width: imgWidth, height: imgHeight, flexShrink: 0, maxWidth: "none" }}
                 className="pointer-events-none rounded-[12px] border border-[#daebff] object-cover"
               />
 
