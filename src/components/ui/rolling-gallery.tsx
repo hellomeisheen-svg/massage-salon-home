@@ -35,21 +35,21 @@ export const RollingGallery: React.FC<RollingGalleryProps> = ({
 }) => {
   const galleryImages = images.length > 0 ? images : IMGS;
 
-  const [isScreenSizeSm, setIsScreenSizeSm] = useState(
-    typeof window !== "undefined" ? window.innerWidth <= 640 : false
-  );
+  const [isScreenSizeSm, setIsScreenSizeSm] = useState(false);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      const handleResize = () => setIsScreenSizeSm(window.innerWidth <= 640);
+      const check = () => setIsScreenSizeSm(window.innerWidth <= 640);
+      check();
+      const handleResize = () => check();
       window.addEventListener("resize", handleResize);
       return () => window.removeEventListener("resize", handleResize);
     }
   }, []);
 
   const cylinderWidth: number = isScreenSizeSm ? 1100 : 2600;
-  const imgWidth: number = isScreenSizeSm ? 105 : 150;
-  const imgHeight: number = isScreenSizeSm ? 175 : 250;
+  const imgWidth: number = isScreenSizeSm ? 80 : 150;
+  const imgHeight: number = isScreenSizeSm ? 133 : 250;
   const faceCount: number = galleryImages.length;
   const faceWidth: number = (cylinderWidth / faceCount) * 1.5;
   const radius: number = cylinderWidth / (2 * Math.PI);
@@ -117,7 +117,7 @@ export const RollingGallery: React.FC<RollingGalleryProps> = ({
   };
 
   return (
-    <div className="relative h-[340px] sm:h-[500px] w-full overflow-hidden">
+    <div className="relative h-[280px] sm:h-[500px] w-full overflow-hidden">
       <div
         className="absolute top-0 left-0 h-full w-[48px] z-10"
         style={{
@@ -154,10 +154,10 @@ export const RollingGallery: React.FC<RollingGalleryProps> = ({
           {galleryImages.map((url, i) => (
             <div
               key={i}
-              className="group absolute flex h-fit items-center justify-center p-[8%] [backface-visibility:hidden]"
+              className="group absolute left-1/2 top-1/2 flex h-fit items-center justify-center p-[8%] [backface-visibility:hidden]"
               style={{
                 width: `${faceWidth}px`,
-                transform: `rotateY(${(360 / faceCount) * i}deg) translateZ(${radius}px)`,
+                transform: `translateX(-50%) translateY(-50%) rotateY(${(360 / faceCount) * i}deg) translateZ(${radius}px)`,
               }}
             >
               <img
