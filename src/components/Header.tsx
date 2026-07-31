@@ -77,7 +77,8 @@ export function Header() {
   }, [pinned, visible]);
 
   return (
-    <header
+    <>
+      <header
       className={`${pinned ? "fixed transition-transform duration-300 ease-out" : "fixed xl:absolute"} top-0 left-0 z-50 w-full bg-transparent pt-4 sm:pt-5 ${
         visible ? "translate-y-0" : "-translate-y-full"
       }`}
