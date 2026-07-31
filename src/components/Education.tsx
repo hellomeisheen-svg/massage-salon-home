@@ -18,15 +18,30 @@ const extraEducation: EduItem[] = [
   { school: "Международная школа Бахолдиной, Москва", items: ["Баночный массаж"] },
 ];
 
+function parseSchool(school: string) {
+  const idx = school.indexOf(",");
+  if (idx === -1) return { name: school, city: "" };
+  return {
+    name: school.slice(0, idx).trim(),
+    city: school.slice(idx + 1).trim(),
+  };
+}
+
 function EduCard({ item }: { item: EduItem }) {
+  const { name, city } = parseSchool(item.school);
   return (
     <div className="rounded-[12px] bg-white border border-[#daebff] px-6 sm:px-7 xl:px-8 py-[30px]">
       <h3
         className="text-[#1C3C8C] text-[20px] sm:text-[32px] xl:text-[26px] leading-[1.2]"
         style={{ fontFamily: heading }}
       >
-        {item.school}
+        {name}
       </h3>
+      {city && (
+        <div className="mt-2 sm:hidden text-[15px] leading-[1.5] text-[#8D9DC5] font-light">
+          {city}
+        </div>
+      )}
       <ul className="mt-4 space-y-2 xl:space-y-1.5">
         {item.items.map((i) => (
           <li key={i} className="text-[#8D9DC5] text-[15px] sm:text-[16px] leading-[1.5] flex gap-2">
