@@ -61,12 +61,24 @@ export function Header() {
   }, []);
 
   useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
+  useEffect(() => {
     const offset = pinned && visible ? "100px" : "0px";
     document.documentElement.style.setProperty("--header-offset", offset);
   }, [pinned, visible]);
 
   return (
-    <header
+    <>
+      <header
       className={`${pinned ? "fixed transition-transform duration-300 ease-out" : "fixed xl:absolute"} top-0 left-0 z-50 w-full bg-transparent pt-4 sm:pt-5 ${
         visible ? "translate-y-0" : "-translate-y-full"
       }`}
@@ -141,11 +153,14 @@ export function Header() {
           {menuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
+      </div>
+    </header>
 
-      {/* Mobile menu panel */}
-      {menuOpen && (
-        <div className="mt-2 rounded-[12px] border border-[#daebff] bg-white p-4 xl:hidden">
-          <nav aria-label="Мобильная навигация">
+    {/* Mobile menu panel */}
+    {menuOpen && (
+      <div className="fixed inset-x-4 top-20 h-[calc(100dvh-80px)] z-40 xl:hidden">
+        <div className="flex h-full flex-col rounded-[12px] border border-[#daebff] bg-white p-4">
+          <nav className="flex-1 overflow-y-auto" aria-label="Мобильная навигация">
             <ul className="flex flex-col gap-1">
               {navigationItems.map((item) => (
                 <li key={item.label}>
@@ -170,8 +185,8 @@ export function Header() {
             Онлайн запись
           </a>
         </div>
-      )}
       </div>
-    </header>
-  );
+    )}
+  </>);
 }
+
