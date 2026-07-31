@@ -150,6 +150,7 @@ export const RollingGallery: React.FC<RollingGalleryProps> = ({
             transformStyle: "preserve-3d",
           }}
           className="flex min-h-[200px] cursor-grab items-center justify-center [transform-style:preserve-3d]"
+          data-sm={isScreenSizeSm ? "1" : "0"}
         >
           {galleryImages.map((url, i) => (
             <div
