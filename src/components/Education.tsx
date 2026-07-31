@@ -42,7 +42,7 @@ function EduCard({ item }: { item: EduItem }) {
 export function Education() {
   return (
     <section id="obrazovanie" className="bg-[#EFF6FF] py-[60px] xl:pt-[140px] xl:pb-0">
-      <div className="container-1900 mb-[60px] sm:mb-[70px] xl:mb-[140px] flex flex-col items-center text-center">
+      <div className="container-1900 mb-8 sm:mb-[70px] xl:mb-[140px] flex flex-col items-center text-center">
         <svg
           aria-hidden="true"
           viewBox="0 0 24 24"
@@ -61,15 +61,15 @@ export function Education() {
       <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-5 items-stretch">
 
         {/* Left: photo + quote panel */}
-        <div className="relative rounded-[12px] overflow-hidden min-h-[420px] sm:min-h-[800px] xl:min-h-0 xl:h-full">
+        <div className="relative rounded-[12px] overflow-hidden min-h-[480px] sm:min-h-[800px] xl:min-h-0 xl:h-full flex flex-col sm:block">
           <img
             src={tatianaPhoto.url}
             alt="Татьяна Злобина — мастер кабинета Седьмое небо"
             loading="lazy"
-            className="absolute inset-0 w-full h-full object-cover object-top sm:object-center"
+            className="w-full h-[480px] sm:absolute sm:inset-0 sm:h-full object-cover object-top sm:object-center"
           />
-          <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5">
-            <div className="rounded-[12px] bg-white p-5 sm:p-7 xl:p-6 flex items-center gap-4 sm:gap-6">
+          <div className="relative sm:absolute inset-x-0 bottom-0 p-4 sm:p-5 mt-4 sm:mt-0">
+            <div className="rounded-[12px] bg-white p-5 sm:p-7 xl:p-6 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
               <div className="flex-1">
                 <p className="text-[#1C3C8C] text-[15px] sm:text-[16px] leading-[1.5]">
                   «Я&nbsp;не&nbsp;обещаю мгновенных изменений. Я&nbsp;обещаю внимание, тишину и&nbsp;время, в&nbsp;котором не&nbsp;нужно никуда спешить.»
@@ -82,7 +82,7 @@ export function Education() {
                 src="/images/signature.svg"
                 alt=""
                 loading="lazy"
-                className="w-[180px] sm:w-[240px] xl:w-[260px] h-auto shrink-0"
+                className="w-[180px] sm:w-[240px] xl:w-[260px] h-auto shrink-0 self-end sm:self-auto"
               />
             </div>
           </div>
