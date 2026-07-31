@@ -220,9 +220,10 @@ function ServiceCard({
       )
     : service.price;
 
-  const computedDuration = dynamicPricing && multiplyDuration
-    ? service.duration.replace(/\d+/g, (n) => String(Number(n) * sessionCounts[activeSession]))
-    : service.duration;
+  const computedDuration = formatDurationString(
+    service.duration,
+    dynamicPricing && multiplyDuration ? sessionCounts[activeSession] : 1
+  );
 
   const items = sessions.map((s, i) => ({
     label: sessionLabels?.[i] ?? s.label,
