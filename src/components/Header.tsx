@@ -158,7 +158,7 @@ export function Header() {
 
     {/* Mobile menu panel */}
     {menuOpen && (
-      <div className="fixed inset-x-4 top-20 h-[calc(100dvh-80px)] z-40 xl:hidden">
+      <div className="fixed inset-x-4 top-[88px] bottom-4 z-40 xl:hidden">
         <div className="flex h-full flex-col rounded-[12px] border border-[#daebff] bg-white p-4">
           <nav className="flex-1 overflow-y-auto" aria-label="Мобильная навигация">
             <ul className="flex flex-col gap-1">
