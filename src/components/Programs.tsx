@@ -139,7 +139,7 @@ export function Programs() {
 
   return (
     <section id="programs" className="scroll-mt-[140px] bg-[#EFF6FF] py-[60px] sm:py-[70px] xl:pt-[140px] xl:pb-0">
-      <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-5 items-start">
+      <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-8 sm:gap-5 items-start">
         {/* Left column */}
         <div className="self-start flex flex-col items-center xl:items-start text-center xl:text-left">
           <span
@@ -188,7 +188,7 @@ export function Programs() {
         </div>
 
         {/* Right column — program card */}
-        <article className="rounded-[12px] border border-[#daebff] bg-white p-6 sm:p-8 transition-shadow duration-300 hover:shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)] flex flex-col sm:h-[680px] xl:h-[700px]">
+        <article className="rounded-[12px] border border-[#daebff] bg-white p-6 sm:p-8 transition-shadow duration-300 hover:shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)] flex flex-col h-[680px] xl:h-[700px]">
           <h3
             className="text-[30px] sm:text-[38px] xl:text-[42px] font-light leading-[1.1] text-[#1C3C8C]"
             style={{ fontFamily: heading }}
@@ -199,30 +199,33 @@ export function Programs() {
             {program.description}
           </p>
 
-          {/* Desktop / tablet: two-column table */}
-          <div className="hidden sm:block">
-            <div className="mt-8 grid grid-cols-[1.3fr_1fr] gap-6 pb-4 border-b border-[#daebff]">
-              <div className="text-[15px] font-semibold text-[#1C3C8C]">Что входит</div>
-              <div className="text-[15px] font-semibold text-[#1C3C8C]">Длительность</div>
+          {/* Program content: fills fixed card and scrolls if needed */}
+          <div className="flex-1 min-h-0 overflow-hidden">
+            {/* Desktop / tablet: two-column table */}
+            <div className="hidden sm:block h-full overflow-y-auto">
+              <div className="mt-8 grid grid-cols-[1.3fr_1fr] gap-6 pb-4 border-b border-[#daebff]">
+                <div className="text-[15px] font-semibold text-[#1C3C8C]">Что входит</div>
+                <div className="text-[15px] font-semibold text-[#1C3C8C]">Длительность</div>
+              </div>
+              <div className="divide-y divide-[#daebff]">
+                {computedItems.map((it, idx) => (
+                  <div key={idx} className="grid grid-cols-[1.3fr_1fr] gap-6 py-5">
+                    <div className="text-[16px] leading-[26px] text-[#8D9DC5]">{it.title}</div>
+                    <div className="text-[16px] leading-[26px] text-[#8D9DC5]">{it.duration}</div>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="divide-y divide-[#daebff]">
+
+            {/* Mobile: stacked blocks */}
+            <div className="sm:hidden h-full overflow-y-auto mt-6 border-t border-[#daebff] divide-y divide-[#daebff]">
               {computedItems.map((it, idx) => (
-                <div key={idx} className="grid grid-cols-[1.3fr_1fr] gap-6 py-5">
-                  <div className="text-[16px] leading-[26px] text-[#8D9DC5]">{it.title}</div>
-                  <div className="text-[16px] leading-[26px] text-[#8D9DC5]">{it.duration}</div>
+                <div key={idx} className="py-4">
+                  <div className="text-[16px] leading-[22px] text-[#1C3C8C]">{it.title}</div>
+                  <div className="mt-1 text-[13px] leading-[18px] text-[#8D9DC5]">{it.duration}</div>
                 </div>
               ))}
             </div>
-          </div>
-
-          {/* Mobile: stacked blocks */}
-          <div className="sm:hidden mt-6 border-t border-[#daebff] divide-y divide-[#daebff]">
-            {computedItems.map((it, idx) => (
-              <div key={idx} className="py-4">
-                <div className="text-[16px] leading-[22px] text-[#1C3C8C]">{it.title}</div>
-                <div className="mt-1 text-[13px] leading-[18px] text-[#8D9DC5]">{it.duration}</div>
-              </div>
-            ))}
           </div>
 
           <div
