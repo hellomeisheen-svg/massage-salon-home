@@ -61,6 +61,17 @@ export function Header() {
   }, []);
 
   useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
+  useEffect(() => {
     const offset = pinned && visible ? "100px" : "0px";
     document.documentElement.style.setProperty("--header-offset", offset);
   }, [pinned, visible]);
