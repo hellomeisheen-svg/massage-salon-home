@@ -144,8 +144,8 @@ export function Header() {
 
       {/* Mobile menu panel */}
       {menuOpen && (
-        <div className="fixed top-[80px] left-0 right-0 bottom-0 z-40 flex flex-col rounded-t-[12px] border border-[#daebff] bg-white p-4 xl:hidden">
-          <nav aria-label="Мобильная навигация" className="flex-1">
+        <div className="mt-2 rounded-[12px] border border-[#daebff] bg-white p-4 xl:hidden">
+          <nav aria-label="Мобильная навигация">
             <ul className="flex flex-col gap-1">
               {navigationItems.map((item) => (
                 <li key={item.label}>
