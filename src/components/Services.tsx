@@ -237,6 +237,7 @@ function ServiceCard({
 
   const items = sessions.map((s, i) => ({
     label: sessionLabels?.[i] ?? s.label,
+    discount: s.discount,
   }));
 
   return (
@@ -248,7 +249,7 @@ function ServiceCard({
             key={i}
             type="button"
             onClick={() => setActiveSession(i)}
-            className={`relative flex flex-1 items-center justify-center rounded-[10px] px-2 py-3.5 transition-all duration-300 ${
+            className={`relative flex flex-1 items-center justify-center gap-1.5 rounded-[10px] px-2 py-3.5 transition-all duration-300 ${
               activeSession === i
                 ? "bg-white shadow-[0_2px_8px_rgba(28,60,140,0.08)]"
                 : "bg-transparent"
@@ -261,6 +262,17 @@ function ServiceCard({
             >
               {s.label}
             </span>
+            {s.discount && (
+              <span
+                className={`inline-flex items-center rounded-[4px] px-1.5 py-0.5 text-[10px] font-medium leading-none transition-colors duration-300 ${
+                  activeSession === i
+                    ? "bg-[#1C3C8C] text-white"
+                    : "bg-[#DAEBFF] text-[#1C3C8C]"
+                }`}
+              >
+                {s.discount}
+              </span>
+            )}
           </button>
         ))}
       </div>
