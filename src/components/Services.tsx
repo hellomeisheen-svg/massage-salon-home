@@ -183,6 +183,14 @@ function formatDurationString(value: string, multiplier = 1) {
   return scaled.map((n) => formatDurationValue(n).text).join(", ");
 }
 
+function formatSessionLine(sessionCount: number, duration: string) {
+  if (sessionCount === 1) {
+    return `1 сеанс — ${duration}`;
+  }
+  const sessionWord = pluralize(sessionCount, ["сеанс", "сеанса", "сеансов"]);
+  return `В пакете: ${sessionCount}\u00A0${sessionWord} · ${duration}`;
+}
+
 function renderPrice(price: string) {
   const idx = price.indexOf("₽");
   if (idx === -1) return price;
@@ -225,14 +233,15 @@ function ServiceCard({
     dynamicPricing && multiplyDuration ? sessionCounts[activeSession] : 1
   );
 
+  const sessionInfo = formatSessionLine(sessionCounts[activeSession], computedDuration);
+
   const items = sessions.map((s, i) => ({
     label: sessionLabels?.[i] ?? s.label,
-    discount: s.discount,
   }));
 
   return (
     <article className="rounded-[12px] border border-[#daebff] bg-white p-8 sm:p-10 transition-shadow duration-300 hover:shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)]">
-      {/* Sessions — pill switcher with badges */}
+      {/* Sessions — pill switcher */}
       <div className="flex items-stretch gap-1 rounded-[12px] bg-[#EFF6FF] p-1.5">
         {items.map((s, i) => (
           <button
@@ -252,11 +261,6 @@ function ServiceCard({
             >
               {s.label}
             </span>
-            {s.discount && (
-              <span className="absolute -top-1 right-1 rounded-full bg-[#1C3C8C] px-1.5 py-0.5 text-[9px] font-semibold tracking-wide text-white">
-                {s.discount}
-              </span>
-            )}
           </button>
         ))}
       </div>
@@ -275,6 +279,11 @@ function ServiceCard({
       {/* Description */}
       <p className="mt-5 text-[16px] leading-[26px] text-[#8D9DC5]">
         {service.description}
+      </p>
+
+      {/* Session info */}
+      <p className="mt-5 text-[13px] font-light leading-[1.5] tracking-wide text-[#8D9DC5]">
+        {sessionInfo}
       </p>
 
       {/* Duration + price */}
