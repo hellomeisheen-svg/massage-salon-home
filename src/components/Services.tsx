@@ -243,13 +243,13 @@ function ServiceCard({
   return (
     <article className="rounded-[12px] border border-[#daebff] bg-white p-8 sm:p-10 transition-shadow duration-300 hover:shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)]">
       {/* Sessions — pill switcher */}
-      <div className="flex items-stretch gap-1 rounded-[12px] bg-[#EFF6FF] p-1.5">
+      <div className="mt-1 flex items-stretch gap-1 rounded-[12px] bg-[#DAEBFF] p-1.5">
         {items.map((s, i) => (
           <button
             key={i}
             type="button"
             onClick={() => setActiveSession(i)}
-            className={`relative flex flex-1 items-center justify-center gap-1.5 rounded-[10px] px-2 py-3.5 transition-all duration-300 ${
+            className={`relative flex flex-1 items-center justify-center rounded-[10px] px-2 py-3.5 transition-all duration-300 ${
               activeSession === i
                 ? "bg-white shadow-[0_2px_8px_rgba(28,60,140,0.08)]"
                 : "bg-transparent"
@@ -263,13 +263,7 @@ function ServiceCard({
               {s.label}
             </span>
             {s.discount && (
-              <span
-                className={`inline-flex items-center rounded-[4px] px-1.5 py-0.5 text-[10px] font-medium leading-none transition-colors duration-300 ${
-                  activeSession === i
-                    ? "bg-[#1C3C8C] text-white"
-                    : "bg-[#DAEBFF] text-[#1C3C8C]"
-                }`}
-              >
+              <span className="absolute -top-1 right-1 rounded-full bg-[#1C3C8C] px-1.5 py-0.5 text-[9px] font-semibold tracking-wide text-white">
                 {s.discount}
               </span>
             )}
