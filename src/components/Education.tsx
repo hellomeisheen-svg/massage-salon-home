@@ -66,7 +66,7 @@ export function Education() {
             src={tatianaPhoto.url}
             alt="Татьяна Злобина — мастер кабинета Седьмое небо"
             loading="lazy"
-            className="absolute inset-0 w-full h-full object-cover object-top sm:object-center"
+            className="w-full h-[480px] sm:absolute sm:inset-0 sm:h-full object-cover object-top sm:object-center"
           />
           <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5">
             <div className="rounded-[12px] bg-white p-5 sm:p-7 xl:p-6 flex items-center gap-4 sm:gap-6">
