@@ -154,38 +154,3 @@ export function Header() {
         </button>
       </div>
 
-      {/* Mobile menu panel */}
-      {menuOpen && (
-        <div className="fixed inset-x-4 top-20 bottom-0 z-40 xl:hidden">
-          <div className="flex h-full flex-col rounded-[12px] border border-[#daebff] bg-white p-4">
-            <nav className="flex-1 overflow-y-auto" aria-label="Мобильная навигация">
-              <ul className="flex flex-col gap-1">
-                {navigationItems.map((item) => (
-                  <li key={item.label}>
-                    <a
-                      href={item.href}
-                      onClick={() => setMenuOpen(false)}
-                      className="block w-full rounded-lg px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors"
-                    >
-                      {item.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-            <a
-              href="https://n2418813.yclients.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setMenuOpen(false)}
-              className="btn-primary mt-3 w-full inline-flex items-center justify-center"
-            >
-              Онлайн запись
-            </a>
-          </div>
-        </div>
-      )}
-      </div>
-    </header>
-  );
-}
