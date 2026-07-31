@@ -285,7 +285,7 @@ function ServiceCard({
         >
           {service.tiers.map((t, i) => (
             <div key={i} className="flex flex-wrap items-baseline gap-x-4">
-              <span>{t.duration}</span>
+              <span>{formatDurationString(t.duration)}</span>
               <span className="text-[#8D9DC5]">•</span>
               {t.note && <span>{t.note}</span>}
               {t.note && <span className="text-[#8D9DC5]">•</span>}
