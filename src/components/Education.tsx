@@ -61,15 +61,15 @@ export function Education() {
       <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-5 items-stretch">
 
         {/* Left: photo + quote panel */}
-        <div className="relative rounded-[12px] overflow-hidden min-h-[480px] sm:min-h-[800px] xl:min-h-0 xl:h-full flex flex-col sm:block">
+        <div className="relative rounded-[12px] min-h-[480px] sm:min-h-[800px] xl:min-h-0 xl:h-full flex flex-col sm:block">
           <img
             src={tatianaPhoto.url}
             alt="Татьяна Злобина — мастер кабинета Седьмое небо"
             loading="lazy"
-            className="w-full h-[480px] sm:absolute sm:inset-0 sm:h-full object-cover object-top sm:object-center"
+            className="w-full h-[480px] rounded-[12px] sm:absolute sm:inset-0 sm:h-full object-cover object-top sm:object-center"
           />
-          <div className="relative sm:absolute inset-x-0 bottom-0 p-4 sm:p-5 mt-4 sm:mt-0">
-            <div className="rounded-[12px] bg-white p-5 sm:p-7 xl:p-6 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
+          <div className="relative sm:absolute inset-x-0 bottom-0 mt-4 sm:mt-0">
+            <div className="rounded-[12px] bg-white border border-[#daebff] p-5 sm:p-7 xl:p-6 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
               <div className="flex-1">
                 <p className="text-[#1C3C8C] text-[15px] sm:text-[16px] leading-[1.5]">
                   «Я&nbsp;не&nbsp;обещаю мгновенных изменений. Я&nbsp;обещаю внимание, тишину и&nbsp;время, в&nbsp;котором не&nbsp;нужно никуда спешить.»
