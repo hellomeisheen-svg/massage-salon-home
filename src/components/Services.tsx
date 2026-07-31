@@ -131,6 +131,58 @@ function formatPrice(value: number) {
   return `${value.toLocaleString("ru-RU").replace(/\s/g, "\u00A0")}\u00A0₽`;
 }
 
+function pluralize(n: number, forms: [string, string, string]) {
+  const mod10 = n % 10;
+  const mod100 = n % 100;
+  if (mod10 === 1 && mod100 !== 11) return forms[0];
+  if (mod10 >= 2 && mod10 <= 4 && !(mod100 >= 12 && mod100 <= 14)) return forms[1];
+  return forms[2];
+}
+
+function formatDurationValue(min: number) {
+  const hours = Math.floor(min / 60);
+  const minutes = min % 60;
+  if (hours === 0) {
+    return {
+      text: `${min}\u00A0${pluralize(min, ["минута", "минуты", "минут"])}`,
+      amount: min,
+      unit: "min" as const,
+    };
+  }
+  if (minutes === 0) {
+    return {
+      text: `${hours}\u00A0${pluralize(hours, ["час", "часа", "часов"])}`,
+      amount: hours,
+      unit: "hour" as const,
+    };
+  }
+  return {
+    text: `${hours}\u00A0${pluralize(hours, ["час", "часа", "часов"])} ${minutes}\u00A0${pluralize(minutes, ["минута", "минуты", "минут"])}`,
+    amount: min,
+    unit: "mixed" as const,
+  };
+}
+
+function formatDurationString(value: string, multiplier = 1) {
+  const numbers = [...value.matchAll(/\d+/g)].map((m) => Number(m[0]));
+  if (!numbers.length) return value;
+  const scaled = numbers.map((n) => n * multiplier);
+  const isRange = scaled.length === 2 && /[\u2013\u2014-]/.test(value);
+  if (isRange) {
+    const a = formatDurationValue(scaled[0]);
+    const b = formatDurationValue(scaled[1]);
+    if (a.unit === b.unit && a.unit !== "mixed") {
+      const unitWord =
+        a.unit === "hour"
+          ? pluralize(Math.max(scaled[0], scaled[1]) / 60, ["час", "часа", "часов"])
+          : pluralize(Math.max(...scaled), ["минута", "минуты", "минут"]);
+      return `${a.amount}\u00A0–\u00A0${b.amount}\u00A0${unitWord}`;
+    }
+    return `${a.text}\u00A0–\u00A0${b.text}`;
+  }
+  return scaled.map((n) => formatDurationValue(n).text).join(", ");
+}
+
 function renderPrice(price: string) {
   const idx = price.indexOf("₽");
   if (idx === -1) return price;
