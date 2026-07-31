@@ -82,7 +82,7 @@ export function Education() {
                 src="/images/signature.svg"
                 alt=""
                 loading="lazy"
-                className="w-[180px] sm:w-[240px] xl:w-[260px] h-auto shrink-0"
+                className="w-[180px] sm:w-[240px] xl:w-[260px] h-auto shrink-0 self-end sm:self-auto"
               />
             </div>
           </div>
