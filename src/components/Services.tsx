@@ -233,9 +233,10 @@ function ServiceCard({
     dynamicPricing && multiplyDuration ? sessionCounts[activeSession] : 1
   );
 
+  const sessionInfo = formatSessionLine(sessionCounts[activeSession], computedDuration);
+
   const items = sessions.map((s, i) => ({
     label: sessionLabels?.[i] ?? s.label,
-    discount: s.discount,
   }));
 
   return (
