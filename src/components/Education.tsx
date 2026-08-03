@@ -33,7 +33,7 @@ function EduCard({ item }: { item: EduItem }) {
     <div className="rounded-[12px] bg-white border border-[#daebff] px-6 sm:px-7 xl:px-8 py-[30px]">
       <div className="flex flex-col gap-2.5">
         {city && (
-          <span className="self-start inline-flex items-center rounded-lg border border-[#daebff] bg-[#EFF6FF] px-2.5 py-1 text-[13px] sm:text-[14px] font-medium text-[#1C3C8C] leading-none">
+          <span className="self-start inline-flex items-center rounded-[8px] border border-[#daebff] bg-[#EFF6FF] px-2.5 py-1 text-[13px] sm:text-[14px] font-medium text-[#1C3C8C] leading-none">
             {city}
           </span>
         )}
