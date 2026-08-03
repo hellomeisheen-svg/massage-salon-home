@@ -32,7 +32,7 @@ function EduCard({ item }: { item: EduItem }) {
   return (
     <div className="relative rounded-[12px] bg-white border border-[#daebff] px-6 sm:px-7 xl:px-8 py-[30px]">
       {city && (
-        <span className="absolute top-4 sm:-top-3 right-4 rounded-full bg-[#EFF6FF] border border-[#daebff] px-3.5 py-1.5 text-[14px] font-semibold tracking-wide text-[#1C3C8C] leading-none">
+        <span className="absolute -top-3 right-4 rounded-full bg-[#EFF6FF] border border-[#daebff] px-3.5 py-1.5 text-[14px] font-semibold tracking-wide text-[#1C3C8C] leading-none">
           {city}
         </span>
       )}
