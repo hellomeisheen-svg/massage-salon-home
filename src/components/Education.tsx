@@ -30,21 +30,19 @@ function parseSchool(school: string) {
 function EduCard({ item }: { item: EduItem }) {
   const { name, city } = parseSchool(item.school);
   return (
-    <div className="rounded-[12px] bg-white border border-[#daebff] px-6 sm:px-7 xl:px-8 py-[30px]">
-      <div className="flex flex-col gap-2.5">
-        {city && (
-          <span className="self-start inline-flex items-center rounded-full bg-[#1C3C8C] px-3 py-1 text-[13px] sm:text-[14px] font-semibold text-white leading-none">
-            {city}
-          </span>
+    <div className="relative rounded-[12px] bg-white border border-[#daebff] px-6 sm:px-7 xl:px-8 py-[30px]">
+      {city && (
+        <span className="absolute -top-2 right-4 rounded-full bg-[#1C3C8C] px-2 py-0.5 text-[11px] font-semibold tracking-wide text-white leading-none">
+          {city}
+        </span>
+      )}
+      <h3
+        className="text-[#1C3C8C] text-[20px] sm:text-[32px] xl:text-[26px] leading-[1.2] pr-24"
+        style={{ fontFamily: heading }}
+      >
+        {name}
+      </h3>
 
-        )}
-        <h3
-          className="text-[#1C3C8C] text-[20px] sm:text-[32px] xl:text-[26px] leading-[1.2]"
-          style={{ fontFamily: heading }}
-        >
-          {name}
-        </h3>
-      </div>
       <ul className="mt-4 space-y-2 xl:space-y-1.5">
         {item.items.map((i) => (
           <li key={i} className="text-[#8D9DC5] text-[15px] sm:text-[16px] leading-[1.5] flex gap-2">
