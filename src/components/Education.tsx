@@ -37,7 +37,7 @@ function EduCard({ item }: { item: EduItem }) {
         </span>
       )}
       <h3
-        className="text-[#1C3C8C] text-[20px] sm:text-[32px] xl:text-[26px] leading-[1.2] pr-24"
+        className="text-[#1C3C8C] text-[18px] sm:text-[32px] xl:text-[26px] leading-[1.2] pr-0 sm:pr-24 whitespace-nowrap sm:whitespace-normal"
         style={{ fontFamily: heading }}
       >
         {name}
