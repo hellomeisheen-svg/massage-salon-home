@@ -257,7 +257,7 @@ function ServiceCard({
           >
             <span
               className={`whitespace-nowrap text-[13px] tracking-tight transition-colors duration-300 ${
-                activeSession === i ? "font-normal text-[#1C3C8C]" : "font-light text-[#8D9DC5]"
+                activeSession === i ? "font-medium text-[#1C3C8C]" : "font-light text-[#8D9DC5]"
               }`}
             >
               {s.label}
