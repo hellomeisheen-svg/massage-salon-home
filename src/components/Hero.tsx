@@ -61,15 +61,14 @@ function HeadlineBlock() {
 export function Hero() {
   return (
     <main className="bg-[#EFF6FF] py-4 sm:py-5">
-      <section className="container-1900 grid grid-cols-1 gap-4 sm:gap-5 xl:h-[calc(100vh-140px)] xl:min-h-[700px] xl:grid-cols-2">
+      <section className="container-1900 grid grid-cols-1 gap-4 sm:gap-5 xl:min-h-[calc(100vh-140px)] xl:grid-cols-2">
         {/* Content card */}
         <div className="flex min-h-0 flex-col rounded-[12px] border border-[#daebff] bg-white p-5 sm:min-h-[520px] sm:p-6 xl:min-h-0 xl:p-10">
           <SpecialistBlock />
-          <div className="mt-[60px] sm:mt-[140px] xl:mt-auto xl:pt-[clamp(40px,8vh,140px)]">
+          <div className="mt-[60px] pt-0 sm:mt-[140px] xl:mt-auto xl:pt-[140px]">
             <HeadlineBlock />
           </div>
         </div>
-
 
         {/* Hero image */}
         <div className="h-[420px] overflow-hidden rounded-[12px] border border-[#daebff] sm:h-[520px] xl:h-auto xl:min-h-0">
