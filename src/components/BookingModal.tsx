@@ -142,6 +142,23 @@ function BookingDialog({
               className="mt-6 flex flex-col gap-4"
               onSubmit={(e) => {
                 e.preventDefault();
+                const digits = phone.replace(/\D/g, "");
+                let ok = true;
+                if (digits.length !== 11) {
+                  setPhoneError("Введите номер телефона полностью");
+                  ok = false;
+                } else {
+                  setPhoneError(null);
+                }
+                if (!consent) {
+                  setConsentError(
+                    "Отметьте согласие с политикой конфиденциальности, чтобы отправить заявку",
+                  );
+                  ok = false;
+                } else {
+                  setConsentError(null);
+                }
+                if (!ok) return;
                 setSent(true);
               }}
             >
