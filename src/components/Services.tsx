@@ -340,34 +340,33 @@ function ServiceCard({
             {variant.subtitle}
           </p>
 
-          {/* Zone chips */}
+          {/* Zone — inline label + chips */}
           {hasZones && (
-            <div className="mt-5">
-              <p className="text-[12px] font-light uppercase tracking-[0.12em] text-[#B7C5E3]">
-                Зона
-              </p>
-              <div className="mt-2.5 flex flex-wrap gap-2">
-                {type.variants.map((v, i) => {
-                  const isActive = i === zoneIndex;
-                  return (
-                    <button
-                      key={v.zone}
-                      type="button"
-                      onClick={() => onZoneChange(i)}
-                      aria-pressed={isActive}
-                      className={`rounded-[8px] border px-3.5 py-2 text-[14px] leading-[20px] transition-all duration-300 ${
-                        isActive
-                          ? "border-[#88C1FF] bg-[#EFF6FF] font-medium text-[#1C3C8C]"
-                          : "border-[#DAEBFF] bg-white font-light text-[#8D9DC5] hover:border-[#88C1FF] hover:text-[#1C3C8C]"
-                      }`}
-                    >
-                      {v.zone}
-                    </button>
-                  );
-                })}
-              </div>
+            <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2">
+              <span className="text-[14px] font-light leading-[20px] text-[#8D9DC5]">
+                Зона:
+              </span>
+              {type.variants.map((v, i) => {
+                const isActive = i === zoneIndex;
+                return (
+                  <button
+                    key={v.zone}
+                    type="button"
+                    onClick={() => onZoneChange(i)}
+                    aria-pressed={isActive}
+                    className={`rounded-[8px] border px-3 py-1.5 text-[14px] leading-[20px] transition-all duration-300 ${
+                      isActive
+                        ? "border-[#88C1FF] bg-[#EFF6FF] font-medium text-[#1C3C8C]"
+                        : "border-[#DAEBFF] bg-white font-light text-[#8D9DC5] hover:border-[#88C1FF] hover:text-[#1C3C8C]"
+                    }`}
+                  >
+                    {v.zone}
+                  </button>
+                );
+              })}
             </div>
           )}
+
 
           {/* Description */}
           <p className="mt-5 text-[16px] leading-[26px] text-[#8D9DC5]">
