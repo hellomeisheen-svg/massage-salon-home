@@ -40,11 +40,6 @@ const decoImages = [
   },
 ];
 
-const sparkles = [
-  "absolute right-[8%] top-[40%] h-4 w-4 xl:h-5 xl:w-5 text-[#1C3C8C]",
-  "absolute left-[30%] bottom-[6%] h-3 w-3 xl:h-4 xl:w-4 text-[#1C3C8C]",
-  "absolute right-[32%] bottom-[4%] h-3 w-3 xl:h-4 xl:w-4 text-[#1C3C8C]",
-];
 
 export function QuoteBlock() {
   return (
