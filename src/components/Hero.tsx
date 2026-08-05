@@ -74,16 +74,15 @@ export function Hero() {
 
 
         {/* Hero image */}
-        <div className="h-[420px] overflow-hidden rounded-[12px] border border-[#daebff] sm:h-[520px] xl:h-full xl:min-h-0">
-
-
+        <div className="relative h-[420px] overflow-hidden rounded-[12px] border border-[#daebff] sm:h-[520px] xl:h-auto xl:min-h-0">
           <img
-            className="h-full w-full object-cover object-top sm:object-center"
+            className="absolute inset-0 h-full w-full object-cover object-top sm:object-center"
             style={{ transform: "scaleX(-1)" }}
             alt="Оздоровительные процедуры"
             src="/images/massazh-salon-glavnyi-ekran.jpg"
           />
         </div>
+
       </section>
     </main>
   );
