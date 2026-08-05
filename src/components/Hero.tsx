@@ -46,7 +46,7 @@ function HeadlineBlock() {
           href="https://n2418813.yclients.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="btn-primary w-full sm:w-[200px] xl:w-[250px] inline-flex items-center justify-center text-center"
+          className="btn-primary w-full sm:w-[280px] xl:w-[250px] inline-flex items-center justify-center text-center whitespace-nowrap"
         >
           Онлайн запись
         </a>
@@ -59,7 +59,7 @@ function HeadlineBlock() {
               "noopener,noreferrer"
             )
           }
-          className="btn-secondary w-full sm:w-[200px] xl:w-[250px]"
+          className="btn-secondary w-full sm:w-[280px] xl:w-[250px] whitespace-nowrap"
         >
           Получить консультацию
         </button>
