@@ -303,35 +303,11 @@ function ServiceCard({
             </p>
           )}
 
-          {/* Duration + price */}
-          {service.tiers ? (
-            <div
-              className="mt-8 flex flex-col gap-2 text-[26px] font-light text-[#1C3C8C]"
-              style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
-            >
-              {service.tiers.map((t, i) => (
-                <div key={i} className="flex flex-wrap items-baseline gap-x-4">
-                  <span>{formatDurationString(t.duration)}</span>
-                  <span className="text-[#8D9DC5]">•</span>
-                  {t.note && <span>{t.note}</span>}
-                  {t.note && <span className="text-[#8D9DC5]">•</span>}
-                  <span>{renderPrice(t.price)}</span>
-                </div>
-              ))}
-            </div>
-          ) : (
-            <div
-              className="mt-8 flex flex-wrap items-baseline gap-x-4 text-[26px] font-light text-[#1C3C8C]"
-              style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
-            >
-              <span>{computedDuration}</span>
-              <span className="text-[#8D9DC5]">•</span>
-              <span>{renderPrice(computedPrice)}</span>
-              {hasDiscount && (
-                <span className="text-[18px] text-[#8D9DC5] line-through">{renderPrice(originalPrice!)}</span>
-              )}
-            </div>
-          )}
+          {/* Duration */}
+          <div className="mt-8 text-[18px] font-light text-[#1C3C8C]">
+            {computedDuration}
+          </div>
+
         </div>
       </div>
 
