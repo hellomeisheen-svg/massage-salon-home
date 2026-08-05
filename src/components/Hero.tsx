@@ -1,6 +1,9 @@
+import { useBooking } from "@/components/BookingModal";
+
 const heroFont = {
   fontFamily: "'Roslindale Cyrillic Display Condensed', serif",
 } as const;
+
 
 function SpecialistBlock() {
   return (
@@ -28,6 +31,7 @@ function SpecialistBlock() {
 }
 
 function HeadlineBlock() {
+  const { openBooking } = useBooking();
   return (
     <div className="flex flex-col tablet-text-block xl:max-w-[640px]">
       <h1
@@ -43,27 +47,29 @@ function HeadlineBlock() {
       <div className="mt-[30px] flex flex-col gap-3 sm:flex-row sm:gap-4">
         <button
           type="button"
+          onClick={() => openBooking()}
           className="btn-primary w-full sm:w-[200px] xl:w-[250px]"
         >
           Записаться
         </button>
-        <button
-          type="button"
-          className="btn-secondary w-full sm:w-[200px] xl:w-[250px]"
+        <a
+          href="#programs"
+          className="btn-secondary w-full sm:w-[200px] xl:w-[250px] inline-flex items-center justify-center text-center"
         >
-          Узнать подробнее
-        </button>
+          Программы восстановления
+        </a>
       </div>
     </div>
   );
 }
 
+
 export function Hero() {
   return (
     <main className="bg-[#EFF6FF] py-4 sm:py-5 xl:pb-0">
-      <section className="container-1900 grid grid-cols-1 gap-4 sm:gap-5 xl:h-[calc(100vh-80px)] xl:grid-cols-2">
+      <section className="container-1900 grid grid-cols-1 gap-4 sm:gap-5 xl:min-h-[calc(100vh-100px)] xl:grid-cols-2">
         {/* Content card */}
-        <div className="flex flex-col rounded-[12px] border border-[#daebff] bg-white p-5 sm:h-[700px] sm:p-6 xl:h-full xl:p-10">
+        <div className="flex flex-col rounded-[12px] border border-[#daebff] bg-white p-5 sm:min-h-[700px] sm:p-6 xl:p-10">
           <SpecialistBlock />
           <div className="mt-[80px] sm:mt-auto xl:mt-auto xl:pt-[140px]">
             <HeadlineBlock />
@@ -71,7 +77,8 @@ export function Hero() {
         </div>
 
         {/* Hero image */}
-        <div className="h-[400px] overflow-hidden rounded-[12px] border border-[#daebff] sm:h-[700px] xl:h-full">
+        <div className="h-[400px] overflow-hidden rounded-[12px] border border-[#daebff] sm:h-[700px] xl:h-auto">
+
           <img
             className="h-full w-full object-cover object-top sm:object-center"
             style={{ transform: "scaleX(-1)" }}

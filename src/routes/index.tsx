@@ -13,6 +13,7 @@ import { Faq } from "@/components/Faq";
 import Gallery from "@/components/Gallery";
 import { GalleryIntro } from "@/components/GalleryIntro";
 import { Footer } from "@/components/Footer";
+import { BookingProvider } from "@/components/BookingModal";
 
 
 export const Route = createFileRoute("/")({
@@ -39,6 +40,7 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
+    <BookingProvider>
     <div className="relative min-h-screen bg-[#EFF6FF] pt-20 xl:pt-[100px]">
       <Header />
       <Hero />
@@ -60,5 +62,6 @@ function Index() {
 
 
     </div>
+    </BookingProvider>
   );
 }

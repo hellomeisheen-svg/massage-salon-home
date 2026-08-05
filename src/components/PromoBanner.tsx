@@ -1,4 +1,7 @@
+import { useBooking } from "@/components/BookingModal";
+
 export function PromoBanner() {
+  const { openBooking } = useBooking();
   return (
     <section className="bg-brand-surface py-[60px] sm:py-[70px] xl:pt-[140px] xl:pb-0">
       <div className="container-1900 px-5">
@@ -63,6 +66,7 @@ export function PromoBanner() {
             <div className="mt-8 w-full px-2 sm:mt-10 sm:w-auto sm:px-0">
               <button
                 type="button"
+                onClick={() => openBooking()}
                 className="btn-primary w-full sm:w-[250px]"
               >
                 Записаться
