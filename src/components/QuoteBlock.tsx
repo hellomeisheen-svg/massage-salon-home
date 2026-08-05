@@ -13,28 +13,28 @@ const decoImages = [
   {
     src: "/images/uslugi-limfodrenazhnyi-massazh.jpg",
     className:
-      "absolute left-[2%] top-[6%] sm:left-[4%] sm:top-[120px] xl:left-[6%] xl:top-[160px] h-[70px] w-[70px] sm:h-[80px] sm:w-[80px] xl:h-[90px] xl:w-[90px] rounded-2xl object-cover shadow-sm",
+      "absolute left-[2%] top-[6%] sm:left-[6%] sm:top-[80px] xl:left-[10%] xl:top-[110px] h-[70px] w-[70px] sm:h-[75px] sm:w-[75px] xl:h-[85px] xl:w-[85px] rounded-2xl object-cover shadow-sm",
     delay: "0s",
     rot: "-3deg",
   },
   {
     src: "/images/uslugi-massazh-golovy.jpg",
     className:
-      "absolute right-[2%] top-[5%] sm:right-[4%] sm:top-[120px] xl:right-[6%] xl:top-[160px] h-[70px] w-[70px] sm:h-[80px] sm:w-[80px] xl:h-[90px] xl:w-[90px] rounded-2xl object-cover shadow-sm",
+      "absolute right-[2%] top-[5%] sm:right-[6%] sm:top-[80px] xl:right-[10%] xl:top-[110px] h-[70px] w-[70px] sm:h-[75px] sm:w-[75px] xl:h-[85px] xl:w-[85px] rounded-2xl object-cover shadow-sm",
     delay: "0.2s",
     rot: "3deg",
   },
   {
     src: "/images/uslugi-massazh-spiny-i-shei.jpg",
     className:
-      "absolute left-[10%] bottom-[6%] sm:left-[12%] sm:bottom-[-40px] xl:left-[14%] xl:bottom-[-50px] h-[70px] w-[70px] sm:h-[80px] sm:w-[80px] xl:h-[90px] xl:w-[90px] rounded-2xl object-cover shadow-sm",
+      "absolute left-[10%] bottom-[6%] sm:left-[14%] sm:bottom-[-60px] xl:left-[18%] xl:bottom-[-80px] h-[70px] w-[70px] sm:h-[75px] sm:w-[75px] xl:h-[85px] xl:w-[85px] rounded-2xl object-cover shadow-sm",
     delay: "0.4s",
     rot: "2deg",
   },
   {
     src: "/images/uslugi-girudoterapiya.jpg",
     className:
-      "absolute right-[10%] bottom-[8%] sm:right-[12%] sm:bottom-[-40px] xl:right-[14%] xl:bottom-[-50px] h-[70px] w-[70px] sm:h-[80px] sm:w-[80px] xl:h-[90px] xl:w-[90px] rounded-2xl object-cover shadow-sm",
+      "absolute right-[10%] bottom-[8%] sm:right-[14%] sm:bottom-[-60px] xl:right-[18%] xl:bottom-[-80px] h-[70px] w-[70px] sm:h-[75px] sm:w-[75px] xl:h-[85px] xl:w-[85px] rounded-2xl object-cover shadow-sm",
     delay: "0.6s",
     rot: "-2deg",
   },
