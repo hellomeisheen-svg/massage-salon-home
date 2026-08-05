@@ -233,9 +233,29 @@
   border-color: transparent;
 }
 
+/* Ghost navigation arrows */
+@utility btn-nav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding-inline: 12px;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #8D9DC5;
+  background-color: transparent;
+  transition: color 0.35s ease, background-color 0.35s ease;
+}
+.btn-nav:hover {
+  color: #1C3C8C;
+  background-color: #EFF6FF;
+}
+
 /* Unified focus-visible ring for interactive elements */
 .btn-primary:focus-visible,
 .btn-secondary:focus-visible,
+.btn-nav:focus-visible,
 a:focus-visible,
 button:focus-visible {
   outline: 2px solid #5DAAFD;
