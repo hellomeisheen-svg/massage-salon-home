@@ -141,23 +141,17 @@ const serviceTypes: ServiceType[] = [
     ],
   },
   {
-    title: "Стихия Огонь",
+    title: "Банки",
     category: 1,
     variants: [
       {
         zone: "Стеклянные банки",
         subtitle: "Классическая интенсивная техника",
         description:
-          "Постановка стеклянных банок методом огня\u00A0— короткое прогревание воздуха создаёт глубокий вакуум. Банки фиксируются на\u00A0проблемных участках или\u00A0скользят по\u00A0коже, прорабатывая мышцы и\u00A0фасции на\u00A0большую глубину, чем «Воздух». Подходит тем, кто\u00A0уже знаком с\u00A0техникой и\u00A0хочет более насыщенной проработки.",
+          "Постановка стеклянных банок методом огня\u00A0— короткое прогревание воздуха создаёт глубокий вакуум. Банки фиксируются на\u00A0проблемных участках или\u00A0скользят по\u00A0коже, прорабатывая мышцы и\u00A0фасции на\u00A0большую глубину, чем\u00A0мягкие. Подходит тем, кто\u00A0уже знаком с\u00A0техникой и\u00A0хочет более насыщенной проработки.",
         duration: "10\u00A0минут",
         price: "2\u00A0000\u00A0₽",
       },
-    ],
-  },
-  {
-    title: "Стихия Воздух",
-    category: 1,
-    variants: [
       {
         zone: "Мягкие банки",
         subtitle: "Мягкая вакуумная техника",
@@ -168,6 +162,7 @@ const serviceTypes: ServiceType[] = [
       },
     ],
   },
+
 ];
 
 const categories = ["Массаж", "Оздоровительные процедуры"];
@@ -345,34 +340,33 @@ function ServiceCard({
             {variant.subtitle}
           </p>
 
-          {/* Zone chips */}
+          {/* Zone — inline label + chips */}
           {hasZones && (
-            <div className="mt-5">
-              <p className="text-[12px] font-light uppercase tracking-[0.12em] text-[#B7C5E3]">
-                Зона
-              </p>
-              <div className="mt-2.5 flex flex-wrap gap-2">
-                {type.variants.map((v, i) => {
-                  const isActive = i === zoneIndex;
-                  return (
-                    <button
-                      key={v.zone}
-                      type="button"
-                      onClick={() => onZoneChange(i)}
-                      aria-pressed={isActive}
-                      className={`rounded-[8px] border px-3.5 py-2 text-[14px] leading-[20px] transition-all duration-300 ${
-                        isActive
-                          ? "border-[#88C1FF] bg-[#EFF6FF] font-medium text-[#1C3C8C]"
-                          : "border-[#DAEBFF] bg-white font-light text-[#8D9DC5] hover:border-[#88C1FF] hover:text-[#1C3C8C]"
-                      }`}
-                    >
-                      {v.zone}
-                    </button>
-                  );
-                })}
-              </div>
+            <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2">
+              <span className="text-[14px] font-light leading-[20px] text-[#8D9DC5]">
+                Зона:
+              </span>
+              {type.variants.map((v, i) => {
+                const isActive = i === zoneIndex;
+                return (
+                  <button
+                    key={v.zone}
+                    type="button"
+                    onClick={() => onZoneChange(i)}
+                    aria-pressed={isActive}
+                    className={`rounded-[8px] border px-3 py-1.5 text-[14px] leading-[20px] transition-all duration-300 ${
+                      isActive
+                        ? "border-[#88C1FF] bg-[#EFF6FF] font-medium text-[#1C3C8C]"
+                        : "border-[#DAEBFF] bg-white font-light text-[#8D9DC5] hover:border-[#88C1FF] hover:text-[#1C3C8C]"
+                    }`}
+                  >
+                    {v.zone}
+                  </button>
+                );
+              })}
             </div>
           )}
+
 
           {/* Description */}
           <p className="mt-5 text-[16px] leading-[26px] text-[#8D9DC5]">
@@ -404,25 +398,29 @@ function ServiceCard({
       </div>
 
       {/* Bottom actions */}
-      <div className="mt-auto pt-8 flex flex-col sm:flex-row gap-3">
-        <button
-          type="button"
-          onClick={() => openBooking(bookingTitle)}
-          className="btn-primary w-full sm:flex-1"
-        >
-          Записаться
-        </button>
-        <a href="#programs" className="btn-secondary w-full sm:flex-1 inline-flex items-center justify-center text-center">
-          Узнать больше
-        </a>
-        <div className="grid grid-cols-2 gap-3 sm:contents">
+      <div className="mt-auto pt-8">
+        <div className="flex flex-col sm:flex-row gap-3">
+          <button
+            type="button"
+            onClick={() => openBooking(bookingTitle)}
+            className="btn-primary w-full sm:flex-1"
+          >
+            Записаться
+          </button>
+          <a href="#programs" className="btn-secondary w-full sm:flex-1 inline-flex items-center justify-center text-center">
+            Узнать больше
+          </a>
+        </div>
+
+        {/* Secondary navigation — under the buttons */}
+        <div className="mt-4 flex items-center justify-center gap-2">
           <button
             type="button"
             onClick={onPrev}
             aria-label="Предыдущая услуга"
-            className="btn-secondary sm:min-w-[80px] sm:flex-none flex items-center justify-center"
+            className="flex h-9 w-9 items-center justify-center rounded-[8px] border border-[#DAEBFF] bg-white text-[#8D9DC5] transition-colors duration-300 hover:border-[#88C1FF] hover:text-[#1C3C8C]"
           >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
               <path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
@@ -430,14 +428,15 @@ function ServiceCard({
             type="button"
             onClick={onNext}
             aria-label="Следующая услуга"
-            className="btn-secondary sm:min-w-[80px] sm:flex-none flex items-center justify-center"
+            className="flex h-9 w-9 items-center justify-center rounded-[8px] border border-[#DAEBFF] bg-white text-[#8D9DC5] transition-colors duration-300 hover:border-[#88C1FF] hover:text-[#1C3C8C]"
           >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
               <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
         </div>
       </div>
+
     </article>
   );
 }
@@ -452,95 +451,56 @@ const groups = categories.map((label, ci) => ({
 export function Services() {
   const [active, setActive] = useState(0);
   const [zone, setZone] = useState(0);
-  const [openGroup, setOpenGroup] = useState(0);
   const type = serviceTypes[active];
+
 
   const selectType = (i: number) => {
     setActive(i);
     setZone(0);
-    setOpenGroup(serviceTypes[i].category);
   };
+
 
   const prev = () => selectType((active - 1 + serviceTypes.length) % serviceTypes.length);
   const next = () => selectType((active + 1) % serviceTypes.length);
 
-  const toggleGroup = (gi: number) => setOpenGroup((cur) => (cur === gi ? -1 : gi));
-
-  const accordion = (
-    <div className="flex w-full flex-col divide-y divide-[#DAEBFF]">
-      {groups.map((g, gi) => {
-        const isOpen = openGroup === gi;
-        const hasActive = type.category === gi;
-        return (
-          <div key={g.label} className="w-full">
-            <button
-              type="button"
-              onClick={() => toggleGroup(gi)}
-              aria-expanded={isOpen}
-              className="flex w-full items-center justify-between gap-4 py-4 text-left"
-            >
-              <span
-                className={`text-[16px] leading-[24px] transition-colors duration-300 ${
-                  isOpen || hasActive ? "font-medium text-[#1C3C8C]" : "font-light text-[#8D9DC5]"
-                }`}
-              >
-                {g.label}
-              </span>
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                className={`shrink-0 text-[#8D9DC5] transition-transform duration-300 ${
-                  isOpen ? "rotate-180" : ""
-                }`}
-              >
-                <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
-
-            <div
-              className={`grid transition-all duration-300 ease-out ${
-                isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
-              }`}
-            >
-              <ul className="overflow-hidden flex flex-col">
-                {g.items.map((t, idx) => {
-                  const isActive = t.index === active;
-                  return (
-                    <li key={t.title} className={idx === 0 ? "pt-0.5" : ""}>
-                      <button
-                        type="button"
-                        onClick={() => selectType(t.index)}
-                        aria-current={isActive}
-                        className={`flex w-full items-center gap-3 rounded-[8px] px-3 py-2 text-left transition-colors duration-200 ${
-                          isActive ? "bg-white" : "bg-transparent hover:bg-white/60"
-                        }`}
-                      >
-                        <span
-                          className={`h-1.5 w-1.5 shrink-0 rounded-full transition-colors ${
-                            isActive ? "bg-[#1C3C8C]" : "bg-[#B7C5E3]"
-                          }`}
-                        />
-                        <span
-                          className={`text-[15px] leading-[22px] transition-colors ${
-                            isActive ? "font-medium text-[#1C3C8C]" : "font-light text-[#8D9DC5]"
-                          }`}
-                        >
-                          {clean(t.title)}
-                        </span>
-                      </button>
-                    </li>
-                  );
-                })}
-                <li className="h-4" aria-hidden="true" />
-              </ul>
-            </div>
-          </div>
-        );
-      })}
-    </div>
+  const nav = (
+    <nav className="flex w-full flex-col gap-6">
+      {groups.map((g) => (
+        <div key={g.label}>
+          <p className="text-[13px] font-light leading-[18px] text-[#B7C5E3]">{g.label}</p>
+          <ul className="mt-3 flex flex-col gap-3 items-start">
+            {g.items.map((t) => {
+              const isActive = t.index === active;
+              return (
+                <li key={t.title}>
+                  <button
+                    type="button"
+                    onClick={() => selectType(t.index)}
+                    aria-current={isActive}
+                    className="flex items-center gap-3 text-left"
+                  >
+                    <span
+                      className={`h-2 w-2 rounded-full transition-colors ${
+                        isActive ? "bg-[#1C3C8C]" : "bg-[#B7C5E3]"
+                      }`}
+                    />
+                    <span
+                      className={`text-[16px] transition-colors ${
+                        isActive ? "text-[#1C3C8C]" : "text-[#8D9DC5]"
+                      }`}
+                    >
+                      {clean(t.title)}
+                    </span>
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      ))}
+    </nav>
   );
+
 
   return (
     <section id="services" className="scroll-mt-[140px] bg-[#EFF6FF] py-[60px] sm:py-[70px] xl:pt-[140px] xl:pb-0">
@@ -563,16 +523,17 @@ export function Services() {
             Перед каждым визитом обсуждаем ваше состояние&nbsp;— и&nbsp;подбираем технику под&nbsp;него
           </h2>
 
-          {/* Desktop: compact accordion menu by category */}
-          <div className="mt-8 hidden xl:block w-full max-w-[520px] text-left">{accordion}</div>
+          {/* Desktop: compact category navigation */}
+          <div className="mt-8 hidden xl:block w-full max-w-[520px] text-left">{nav}</div>
         </div>
 
         {/* Right column — active service */}
         <div className="flex flex-col gap-4">
-          {/* Mobile / tablet: same accordion, compact */}
-          <div className="xl:hidden w-full text-left rounded-[12px] border border-[#DAEBFF] bg-white/50 px-4">
-            {accordion}
+          {/* Mobile / tablet: same navigation, compact */}
+          <div className="xl:hidden w-full text-left rounded-[12px] border border-[#DAEBFF] bg-white/50 px-5 py-5">
+            {nav}
           </div>
+
 
           <ServiceCard
             key={active}
