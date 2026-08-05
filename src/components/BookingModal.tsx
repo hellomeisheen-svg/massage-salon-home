@@ -25,16 +25,20 @@ export function useBooking() {
   return ctx;
 }
 
-const services = [
-  "Классический массаж",
-  "Массаж лица",
-  "Векторный массаж",
-  "Лимфодренажный массаж",
-  "Баночный массаж",
-  "Гирудотерапия",
-  "Программы восстановления",
-  "Не знаю — подберём вместе",
-];
+function formatPhone(raw: string) {
+  let digits = raw.replace(/\D/g, "");
+  if (digits.startsWith("8")) digits = "7" + digits.slice(1);
+  if (!digits.startsWith("7")) digits = "7" + digits;
+  digits = digits.slice(0, 11);
+  const rest = digits.slice(1);
+  let out = "+7";
+  if (rest.length > 0) out += ` (${rest.slice(0, 3)}`;
+  if (rest.length >= 3) out += ")";
+  if (rest.length > 3) out += ` ${rest.slice(3, 6)}`;
+  if (rest.length > 6) out += `-${rest.slice(6, 8)}`;
+  if (rest.length > 8) out += `-${rest.slice(8, 10)}`;
+  return out;
+}
 
 function BookingDialog({
   subject,
@@ -44,8 +48,13 @@ function BookingDialog({
   onClose: () => void;
 }) {
   const [sent, setSent] = useState(false);
+  const [phone, setPhone] = useState("");
+  const [phoneError, setPhoneError] = useState<string | null>(null);
+  const [consent, setConsent] = useState(false);
+  const [consentError, setConsentError] = useState<string | null>(null);
   const panelRef = useRef<HTMLDivElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
+
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -133,6 +142,23 @@ function BookingDialog({
               className="mt-6 flex flex-col gap-4"
               onSubmit={(e) => {
                 e.preventDefault();
+                const digits = phone.replace(/\D/g, "");
+                let ok = true;
+                if (digits.length !== 11) {
+                  setPhoneError("Введите номер телефона полностью");
+                  ok = false;
+                } else {
+                  setPhoneError(null);
+                }
+                if (!consent) {
+                  setConsentError(
+                    "Отметьте согласие с политикой конфиденциальности, чтобы отправить заявку",
+                  );
+                  ok = false;
+                } else {
+                  setConsentError(null);
+                }
+                if (!ok) return;
                 setSent(true);
               }}
             >
@@ -152,29 +178,17 @@ function BookingDialog({
                 <input
                   name="phone"
                   type="tel"
+                  inputMode="numeric"
                   required
                   autoComplete="tel"
-                  placeholder="+7 ___ ___ __ __"
+                  value={phone}
+                  onChange={(e) => setPhone(formatPhone(e.target.value))}
+                  placeholder="+7 (___) ___-__-__"
                   className="h-[52px] rounded-lg border border-[#daebff] bg-[#EFF6FF] px-4 text-[16px] text-[#1C3C8C] outline-none transition-colors placeholder:text-[#8D9DC5] focus:border-[#1C3C8C] focus:bg-white"
                 />
-              </label>
-
-              <label className="flex flex-col gap-2">
-                <span className="text-[14px] leading-[1.5] text-[#1C3C8C]">Услуга</span>
-                <select
-                  name="service"
-                  defaultValue={subject && services.includes(subject) ? subject : services[services.length - 1]}
-                  className="h-[52px] rounded-lg border border-[#daebff] bg-[#EFF6FF] px-4 text-[16px] text-[#1C3C8C] outline-none transition-colors focus:border-[#1C3C8C] focus:bg-white"
-                >
-                  {subject && !services.includes(subject) && (
-                    <option value={subject}>{subject}</option>
-                  )}
-                  {services.map((s) => (
-                    <option key={s} value={s}>
-                      {s}
-                    </option>
-                  ))}
-                </select>
+                {phoneError && (
+                  <span className="text-[13px] leading-[1.5] text-[#C0392B]">{phoneError}</span>
+                )}
               </label>
 
               <label className="flex flex-col gap-2">
@@ -187,17 +201,38 @@ function BookingDialog({
                 />
               </label>
 
+              <label className="flex items-start gap-3">
+                <input
+                  type="checkbox"
+                  name="consent"
+                  checked={consent}
+                  onChange={(e) => {
+                    setConsent(e.target.checked);
+                    if (e.target.checked) setConsentError(null);
+                  }}
+                  className="mt-0.5 h-5 w-5 shrink-0 cursor-pointer rounded-[6px] border border-[#daebff] accent-[#1C3C8C]"
+                />
+                <span className="text-[13px] leading-[1.5] text-[#8D9DC5]">
+                  Нажимая кнопку, вы соглашаетесь с{" "}
+                  <a
+                    href="/privacy-policy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    политикой конфиденциальности
+                  </a>
+                  .
+                </span>
+              </label>
+              {consentError && (
+                <p className="text-[13px] leading-[1.5] text-[#C0392B]">{consentError}</p>
+              )}
+
               <button type="submit" className="btn-primary mt-2 w-full">
                 Отправить заявку
               </button>
-
-              <p className="text-[13px] leading-[1.5] text-[#8D9DC5]">
-                Нажимая кнопку, вы соглашаетесь с{" "}
-                <a href="/privacy-policy" className="underline">
-                  политикой конфиденциальности
-                </a>
-                .
-              </p>
             </form>
           </>
         )}
