@@ -337,12 +337,13 @@ function ServiceCard({
           Записаться
         </button>
         <a href="#programs" className="btn-secondary flex-1 sm:min-w-[220px] inline-flex items-center justify-center text-center">
-          Программы восстановления
+          Узнать больше
         </a>
       </div>
     </article>
   );
 }
+
 
 export function Services() {
   const [activeCategory, setActiveCategory] = useState(0);
