@@ -63,13 +63,6 @@ export function QuoteBlock() {
         ))}
       </div>
 
-      {/* Decorative sparkles */}
-      <div className="pointer-events-none absolute inset-0 hidden sm:block">
-        {sparkles.map((cls, i) => (
-          <Sparkle key={i} className={cls} />
-        ))}
-      </div>
-
       <div className="container-1900 relative z-10 flex flex-col items-center sm:px-5 text-center">
         <Sparkle className="mb-8 sm:mb-10 xl:mb-12 h-6 w-6 sm:h-7 sm:w-7 text-[#1C3C8C]" />
         <h2
