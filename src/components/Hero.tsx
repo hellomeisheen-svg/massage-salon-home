@@ -52,12 +52,6 @@ function HeadlineBlock() {
         >
           Записаться
         </button>
-        <a
-          href="#programs"
-          className="btn-secondary w-full sm:w-[200px] xl:w-[250px] inline-flex items-center justify-center text-center"
-        >
-          Программы восстановления
-        </a>
       </div>
     </div>
   );

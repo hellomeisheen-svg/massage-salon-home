@@ -152,29 +152,17 @@ function BookingDialog({
                 <input
                   name="phone"
                   type="tel"
+                  inputMode="numeric"
                   required
                   autoComplete="tel"
-                  placeholder="+7 ___ ___ __ __"
+                  value={phone}
+                  onChange={(e) => setPhone(formatPhone(e.target.value))}
+                  placeholder="+7 (___) ___-__-__"
                   className="h-[52px] rounded-lg border border-[#daebff] bg-[#EFF6FF] px-4 text-[16px] text-[#1C3C8C] outline-none transition-colors placeholder:text-[#8D9DC5] focus:border-[#1C3C8C] focus:bg-white"
                 />
-              </label>
-
-              <label className="flex flex-col gap-2">
-                <span className="text-[14px] leading-[1.5] text-[#1C3C8C]">Услуга</span>
-                <select
-                  name="service"
-                  defaultValue={subject && services.includes(subject) ? subject : services[services.length - 1]}
-                  className="h-[52px] rounded-lg border border-[#daebff] bg-[#EFF6FF] px-4 text-[16px] text-[#1C3C8C] outline-none transition-colors focus:border-[#1C3C8C] focus:bg-white"
-                >
-                  {subject && !services.includes(subject) && (
-                    <option value={subject}>{subject}</option>
-                  )}
-                  {services.map((s) => (
-                    <option key={s} value={s}>
-                      {s}
-                    </option>
-                  ))}
-                </select>
+                {phoneError && (
+                  <span className="text-[13px] leading-[1.5] text-[#C0392B]">{phoneError}</span>
+                )}
               </label>
 
               <label className="flex flex-col gap-2">
@@ -187,17 +175,38 @@ function BookingDialog({
                 />
               </label>
 
+              <label className="flex items-start gap-3">
+                <input
+                  type="checkbox"
+                  name="consent"
+                  checked={consent}
+                  onChange={(e) => {
+                    setConsent(e.target.checked);
+                    if (e.target.checked) setConsentError(null);
+                  }}
+                  className="mt-0.5 h-5 w-5 shrink-0 cursor-pointer rounded-[6px] border border-[#daebff] accent-[#1C3C8C]"
+                />
+                <span className="text-[13px] leading-[1.5] text-[#8D9DC5]">
+                  Нажимая кнопку, вы соглашаетесь с{" "}
+                  <a
+                    href="/privacy-policy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    политикой конфиденциальности
+                  </a>
+                  .
+                </span>
+              </label>
+              {consentError && (
+                <p className="text-[13px] leading-[1.5] text-[#C0392B]">{consentError}</p>
+              )}
+
               <button type="submit" className="btn-primary mt-2 w-full">
                 Отправить заявку
               </button>
-
-              <p className="text-[13px] leading-[1.5] text-[#8D9DC5]">
-                Нажимая кнопку, вы соглашаетесь с{" "}
-                <a href="/privacy-policy" className="underline">
-                  политикой конфиденциальности
-                </a>
-                .
-              </p>
             </form>
           </>
         )}
