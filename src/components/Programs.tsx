@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useBooking } from "@/components/BookingModal";
 
 type ServiceInfo = {
   title: string;
@@ -188,7 +189,7 @@ export function Programs() {
         </div>
 
         {/* Right column — program card */}
-        <article className="rounded-[12px] border border-[#daebff] bg-white p-6 sm:p-8 transition-shadow duration-300 hover:shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)] flex flex-col h-[680px] xl:h-[700px]">
+        <article className="rounded-[12px] border border-[#daebff] bg-white p-6 sm:p-8 transition-shadow duration-300 hover:shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)] flex flex-col h-[680px] xl:h-auto xl:min-h-[700px]">
           <h3
             className="text-[30px] sm:text-[38px] xl:text-[42px] font-light leading-[1.1] text-[#1C3C8C]"
             style={{ fontFamily: heading }}
@@ -200,9 +201,9 @@ export function Programs() {
           </p>
 
           {/* Program content: fills fixed card and scrolls if needed */}
-          <div className="flex-1 min-h-0 overflow-hidden">
+          <div className="flex-1 min-h-0 xl:min-h-fit xl:overflow-visible overflow-hidden">
             {/* Desktop / tablet: two-column table */}
-            <div className="hidden sm:block h-full overflow-y-auto">
+            <div className="hidden sm:block h-full overflow-y-auto xl:h-auto xl:overflow-visible">
               <div className="mt-8 grid grid-cols-[1.3fr_1fr] gap-6 pb-4 border-b border-[#daebff]">
                 <div className="text-[15px] font-semibold text-[#1C3C8C]">Что входит</div>
                 <div className="text-[15px] font-semibold text-[#1C3C8C]">Длительность</div>
@@ -247,7 +248,11 @@ export function Programs() {
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row gap-3">
-            <button type="button" className="btn-primary w-full sm:flex-1">
+            <button
+              type="button"
+              onClick={() => openBooking(program.name)}
+              className="btn-primary w-full sm:flex-1"
+            >
               Записаться
             </button>
             <div className="grid grid-cols-2 gap-3 sm:contents">

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useBooking } from "@/components/BookingModal";
 
 type PriceRow = { duration: string; price: string; note?: string };
 
@@ -327,12 +328,16 @@ function ServiceCard({
 
       {/* Buttons */}
       <div className="mt-8 flex flex-col sm:flex-row gap-3">
-        <button type="button" className="btn-primary flex-1 sm:min-w-[220px]">
+        <button
+          type="button"
+          onClick={() => openBooking(service.title.replace(/\u00A0·\u00A0/g, " · "))}
+          className="btn-primary flex-1 sm:min-w-[220px]"
+        >
           Записаться
         </button>
-        <button type="button" className="btn-secondary flex-1 sm:min-w-[220px]">
-          Узнать подробнее
-        </button>
+        <a href="#programs" className="btn-secondary flex-1 sm:min-w-[220px] inline-flex items-center justify-center text-center">
+          Программы восстановления
+        </a>
       </div>
     </article>
   );
