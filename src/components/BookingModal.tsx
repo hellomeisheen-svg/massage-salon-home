@@ -25,12 +25,10 @@ export function useBooking() {
   return ctx;
 }
 
-// Из любого ввода достаём до 10 «абонентских» цифр (без кода страны)
+// Из любого ввода достаём до 10 «абонентских» цифр (без кода страны 7/8)
 function extractDigits(raw: string) {
   let digits = raw.replace(/\D/g, "");
-  if (digits.length > 10 && (digits.startsWith("7") || digits.startsWith("8"))) {
-    digits = digits.slice(1);
-  } else if (digits.startsWith("7") && raw.trim().startsWith("+")) {
+  if (digits.startsWith("7") || digits.startsWith("8")) {
     digits = digits.slice(1);
   }
   return digits.slice(0, 10);
@@ -45,6 +43,7 @@ function formatPhone(rest: string) {
   if (rest.length > 8) out += `-${rest.slice(8, 10)}`;
   return out;
 }
+
 
 
 function BookingDialog({
