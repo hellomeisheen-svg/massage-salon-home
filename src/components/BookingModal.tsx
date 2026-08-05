@@ -219,16 +219,24 @@ function BookingDialog({
               </label>
 
               <label className="flex items-start gap-3">
-                <input
-                  type="checkbox"
-                  name="consent"
-                  checked={consent}
-                  onChange={(e) => {
-                    setConsent(e.target.checked);
-                    if (e.target.checked) setConsentError(null);
-                  }}
-                  className="mt-0.5 h-5 w-5 shrink-0 cursor-pointer rounded-[6px] border border-[#daebff] accent-[#1C3C8C]"
-                />
+                <span className="relative mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center">
+                  <input
+                    type="checkbox"
+                    name="consent"
+                    checked={consent}
+                    onChange={(e) => {
+                      setConsent(e.target.checked);
+                      if (e.target.checked) setConsentError(null);
+                    }}
+                    className="peer h-5 w-5 shrink-0 cursor-pointer appearance-none rounded-[6px] border border-[#A2CFFE] bg-[#EFF6FF] transition-colors hover:border-[#5DAAFD] checked:border-[#88C1FF] checked:bg-[#88C1FF] checked:hover:bg-[#5DAAFD] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5DAAFD]"
+                  />
+                  <Check
+                    size={14}
+                    strokeWidth={3}
+                    className="pointer-events-none absolute text-white opacity-0 transition-opacity peer-checked:opacity-100"
+                  />
+                </span>
+
                 <span className="text-[13px] leading-[1.5] text-[#8D9DC5]">
                   Нажимая кнопку, вы соглашаетесь с{" "}
                   <a
