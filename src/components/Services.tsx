@@ -382,12 +382,107 @@ const groups = [
   { label: categories[1], from: HEALTH_START, to: services.length },
 ];
 
+function groupOf(index: number) {
+  return index < HEALTH_START ? 0 : 1;
+}
+
 export function Services() {
   const [active, setActive] = useState(0);
+  const [openGroup, setOpenGroup] = useState(0);
   const service = services[active];
 
-  const prev = () => setActive((i) => (i - 1 + services.length) % services.length);
-  const next = () => setActive((i) => (i + 1) % services.length);
+  const selectService = (i: number) => {
+    setActive(i);
+    setOpenGroup(groupOf(i));
+  };
+
+  const prev = () => {
+    const i = (active - 1 + services.length) % services.length;
+    selectService(i);
+  };
+  const next = () => {
+    const i = (active + 1) % services.length;
+    selectService(i);
+  };
+
+  const toggleGroup = (gi: number) => setOpenGroup((cur) => (cur === gi ? -1 : gi));
+
+  const accordion = (
+    <div className="flex w-full flex-col divide-y divide-[#DAEBFF]">
+      {groups.map((g, gi) => {
+        const isOpen = openGroup === gi;
+        const hasActive = groupOf(active) === gi;
+        return (
+          <div key={g.label} className="w-full">
+            <button
+              type="button"
+              onClick={() => toggleGroup(gi)}
+              aria-expanded={isOpen}
+              className="flex w-full items-center justify-between gap-4 py-4 text-left"
+            >
+              <span
+                className={`text-[16px] leading-[24px] transition-colors duration-300 ${
+                  isOpen || hasActive ? "font-medium text-[#1C3C8C]" : "font-light text-[#8D9DC5]"
+                }`}
+              >
+                {g.label}
+              </span>
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                className={`shrink-0 text-[#8D9DC5] transition-transform duration-300 ${
+                  isOpen ? "rotate-180" : ""
+                }`}
+              >
+                <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+
+            <div
+              className={`grid transition-all duration-300 ease-out ${
+                isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+              }`}
+            >
+              <ul className="overflow-hidden flex flex-col">
+                {services.slice(g.from, g.to).map((s, idx) => {
+                  const i = g.from + idx;
+                  const isActive = i === active;
+                  return (
+                    <li key={s.title} className={idx === 0 ? "pt-0.5" : ""}>
+                      <button
+                        type="button"
+                        onClick={() => selectService(i)}
+                        aria-current={isActive}
+                        className={`flex w-full items-center gap-3 rounded-[8px] px-3 py-2 text-left transition-colors duration-200 ${
+                          isActive ? "bg-white" : "bg-transparent hover:bg-white/60"
+                        }`}
+                      >
+                        <span
+                          className={`h-1.5 w-1.5 shrink-0 rounded-full transition-colors ${
+                            isActive ? "bg-[#1C3C8C]" : "bg-[#B7C5E3]"
+                          }`}
+                        />
+                        <span
+                          className={`text-[15px] leading-[22px] transition-colors ${
+                            isActive ? "font-medium text-[#1C3C8C]" : "font-light text-[#8D9DC5]"
+                          }`}
+                        >
+                          {s.title.replace(/\u00A0·\u00A0/g, " · ")}
+                        </span>
+                      </button>
+                    </li>
+                  );
+                })}
+                <li className="h-4" aria-hidden="true" />
+              </ul>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
 
   return (
     <section id="services" className="scroll-mt-[140px] bg-[#EFF6FF] py-[60px] sm:py-[70px] xl:pt-[140px] xl:pb-0">
@@ -410,67 +505,15 @@ export function Services() {
             Перед каждым визитом обсуждаем ваше состояние&nbsp;— и&nbsp;подбираем технику под&nbsp;него
           </h2>
 
-          {/* Desktop: full service menu grouped by category */}
-          <div className="mt-8 hidden xl:flex flex-col gap-7 items-start w-full max-w-[520px]">
-            {groups.map((g) => (
-              <div key={g.label} className="w-full">
-                <p className="text-[13px] font-medium uppercase tracking-[0.12em] text-[#B7C5E3]">
-                  {g.label}
-                </p>
-                <ul className="mt-3 flex flex-col gap-2.5 items-start">
-                  {services.slice(g.from, g.to).map((s, idx) => {
-                    const i = g.from + idx;
-                    const isActive = i === active;
-                    return (
-                      <li key={s.title}>
-                        <button
-                          type="button"
-                          onClick={() => setActive(i)}
-                          aria-current={isActive}
-                          className="flex items-center gap-3 text-left"
-                        >
-                          <span
-                            className={`h-2 w-2 shrink-0 rounded-full transition-colors ${
-                              isActive ? "bg-[#1C3C8C]" : "bg-[#B7C5E3]"
-                            }`}
-                          />
-                          <span
-                            className={`text-[16px] leading-[24px] transition-colors ${
-                              isActive ? "text-[#1C3C8C]" : "text-[#8D9DC5]"
-                            }`}
-                          >
-                            {s.title.replace(/\u00A0·\u00A0/g, " · ")}
-                          </span>
-                        </button>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-            ))}
-          </div>
+          {/* Desktop: compact accordion menu by category */}
+          <div className="mt-8 hidden xl:block w-full max-w-[520px] text-left">{accordion}</div>
         </div>
 
         {/* Right column — active service */}
         <div className="flex flex-col gap-4">
-          {/* Mobile / tablet: horizontal pill menu of all services */}
-          <div className="xl:hidden -mx-4 px-4 sm:mx-0 sm:px-0 overflow-x-auto scrollbar-none">
-            <div className="flex w-max gap-2">
-              {services.map((s, i) => (
-                <button
-                  key={s.title}
-                  type="button"
-                  onClick={() => setActive(i)}
-                  className={`whitespace-nowrap rounded-[10px] border px-4 py-2.5 text-[13px] transition-colors duration-300 ${
-                    i === active
-                      ? "border-transparent bg-white font-medium text-[#1C3C8C] shadow-[0_2px_8px_rgba(28,60,140,0.08)]"
-                      : "border-[#daebff] bg-transparent font-light text-[#8D9DC5]"
-                  }`}
-                >
-                  {s.title.replace(/\u00A0·\u00A0/g, " · ")}
-                </button>
-              ))}
-            </div>
+          {/* Mobile / tablet: same accordion, compact */}
+          <div className="xl:hidden w-full text-left rounded-[12px] border border-[#DAEBFF] bg-white/50 px-4">
+            {accordion}
           </div>
 
           <ServiceCard
@@ -494,6 +537,7 @@ export function Services() {
     </section>
   );
 }
+
 
 
 
