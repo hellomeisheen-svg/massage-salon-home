@@ -180,18 +180,18 @@ function BookingDialog({
               }}
             >
               <label className="flex flex-col gap-2">
-                <span className="text-[14px] leading-[1.5] text-[#1C3C8C]">Имя</span>
+                <span className="text-[14px] leading-[1.5] text-foreground">Имя</span>
                 <input
                   name="name"
                   required
                   autoComplete="name"
                   placeholder="Как к вам обращаться"
-                  className="h-[52px] rounded-lg border border-[#daebff] bg-[#EFF6FF] px-4 text-[16px] text-[#1C3C8C] outline-none transition-colors placeholder:text-[#8D9DC5] focus:border-[#1C3C8C] focus:bg-white"
+                  className="h-[52px] rounded-[0.5rem] border border-[#daebff] bg-[#EFF6FF] px-4 text-[16px] text-foreground outline-none transition-colors placeholder:text-[#8D9DC5] focus:border-[#1C3C8C] focus:bg-white"
                 />
               </label>
 
               <label className="flex flex-col gap-2">
-                <span className="text-[14px] leading-[1.5] text-[#1C3C8C]">Телефон</span>
+                <span className="text-[14px] leading-[1.5] text-foreground">Телефон</span>
                 <input
                   name="phone"
                   type="tel"
@@ -201,7 +201,7 @@ function BookingDialog({
                   value={formatPhone(phone)}
                   onChange={(e) => handlePhoneChange(e.target.value)}
                   placeholder="+7 (___) ___-__-__"
-                  className="h-[52px] rounded-lg border border-[#daebff] bg-[#EFF6FF] px-4 text-[16px] text-[#1C3C8C] outline-none transition-colors placeholder:text-[#8D9DC5] focus:border-[#1C3C8C] focus:bg-white"
+                  className="h-[52px] rounded-[0.5rem] border border-[#daebff] bg-[#EFF6FF] px-4 text-[16px] text-foreground outline-none transition-colors placeholder:text-[#8D9DC5] focus:border-[#1C3C8C] focus:bg-white"
                 />
                 {phoneError && (
                   <span className="text-[13px] leading-[1.5] text-[#C0392B]">{phoneError}</span>
@@ -209,12 +209,12 @@ function BookingDialog({
               </label>
 
               <label className="flex flex-col gap-2">
-                <span className="text-[14px] leading-[1.5] text-[#1C3C8C]">Комментарий</span>
+                <span className="text-[14px] leading-[1.5] text-foreground">Комментарий</span>
                 <textarea
                   name="comment"
                   rows={3}
                   placeholder="Самочувствие, пожелания, удобное время"
-                  className="rounded-lg border border-[#daebff] bg-[#EFF6FF] px-4 py-3 text-[16px] leading-[1.5] text-[#1C3C8C] outline-none transition-colors placeholder:text-[#8D9DC5] focus:border-[#1C3C8C] focus:bg-white"
+                  className="rounded-[0.5rem] border border-[#daebff] bg-[#EFF6FF] px-4 py-3 text-[16px] leading-[1.5] text-foreground outline-none transition-colors placeholder:text-[#8D9DC5] focus:border-[#1C3C8C] focus:bg-white"
                 />
               </label>
 
