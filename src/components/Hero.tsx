@@ -29,7 +29,6 @@ function SpecialistBlock() {
 }
 
 function HeadlineBlock() {
-  const { openBooking } = useBooking();
   return (
     <div className="flex flex-col tablet-text-block xl:max-w-[640px]">
       <h1
