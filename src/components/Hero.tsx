@@ -45,13 +45,14 @@ function HeadlineBlock() {
         Спокойный ритм и&nbsp;внимание к&nbsp;каждому состоянию.
       </p>
       <div className="mt-[30px] flex flex-col gap-3 sm:flex-row sm:gap-4">
-        <button
-          type="button"
-          onClick={() => openBooking()}
-          className="btn-primary w-full sm:w-[200px] xl:w-[250px]"
+        <a
+          href="https://n2418813.yclients.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-primary w-full sm:w-[200px] xl:w-[250px] inline-flex items-center justify-center text-center"
         >
           Онлайн запись
-        </button>
+        </a>
         <button
           type="button"
           onClick={() =>
