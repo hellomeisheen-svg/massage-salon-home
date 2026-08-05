@@ -410,30 +410,28 @@ function ServiceCard({
           <a href="#programs" className="btn-secondary w-full sm:flex-1 inline-flex items-center justify-center text-center">
             Узнать больше
           </a>
-        </div>
-
-        {/* Secondary navigation — under the buttons */}
-        <div className="mt-4 flex flex-col sm:flex-row gap-3">
-          <button
-            type="button"
-            onClick={onPrev}
-            aria-label="Предыдущая услуга"
-            className="btn-secondary flex items-center justify-center flex-1"
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-              <path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </button>
-          <button
-            type="button"
-            onClick={onNext}
-            aria-label="Следующая услуга"
-            className="btn-secondary flex items-center justify-center flex-1"
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-              <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </button>
+          <div className="grid grid-cols-2 gap-3 sm:contents">
+            <button
+              type="button"
+              onClick={onPrev}
+              aria-label="Предыдущая услуга"
+              className="btn-secondary flex items-center justify-center sm:min-w-[80px] sm:flex-none"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+            <button
+              type="button"
+              onClick={onNext}
+              aria-label="Следующая услуга"
+              className="btn-secondary flex items-center justify-center sm:min-w-[80px] sm:flex-none"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
 
