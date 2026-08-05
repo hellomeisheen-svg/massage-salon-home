@@ -8,7 +8,7 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { X } from "lucide-react";
+import { Check, X } from "lucide-react";
 
 const heading = "'Roslindale Cyrillic Display Condensed', serif";
 
