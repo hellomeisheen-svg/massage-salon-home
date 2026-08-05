@@ -31,6 +31,7 @@ function SpecialistBlock() {
 }
 
 function HeadlineBlock() {
+  const { openBooking } = useBooking();
   return (
     <div className="flex flex-col tablet-text-block xl:max-w-[640px]">
       <h1
@@ -46,20 +47,22 @@ function HeadlineBlock() {
       <div className="mt-[30px] flex flex-col gap-3 sm:flex-row sm:gap-4">
         <button
           type="button"
+          onClick={() => openBooking()}
           className="btn-primary w-full sm:w-[200px] xl:w-[250px]"
         >
           Записаться
         </button>
-        <button
-          type="button"
-          className="btn-secondary w-full sm:w-[200px] xl:w-[250px]"
+        <a
+          href="#programs"
+          className="btn-secondary w-full sm:w-[200px] xl:w-[250px] inline-flex items-center justify-center text-center"
         >
-          Узнать подробнее
-        </button>
+          Программы восстановления
+        </a>
       </div>
     </div>
   );
 }
+
 
 export function Hero() {
   return (
