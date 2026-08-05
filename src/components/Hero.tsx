@@ -54,7 +54,13 @@ function HeadlineBlock() {
         </button>
         <button
           type="button"
-          onClick={() => openBooking()}
+          onClick={() =>
+            window.open(
+              "https://max.ru/u/f9LHodD0cOLS1ZC9ThcQkVLRVzcK-MbYZ7JVAg8PC5Tx9LyihgOVdPnzaxM",
+              "_blank",
+              "noopener,noreferrer"
+            )
+          }
           className="btn-secondary w-full sm:w-[200px] xl:w-[250px]"
         >
           Получить консультацию
