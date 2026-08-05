@@ -127,7 +127,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Макс — мессенджер"
-                  className="flex h-10 w-10 items-center justify-center rounded-lg border border-[#daebff] bg-[#EFF6FF] text-[#1c3c8c] hover:bg-[#DAEBFF] transition-colors"
+                  className="flex h-10 w-10 items-center justify-center rounded-[0.5rem] border border-[#daebff] bg-[#EFF6FF] text-[#1c3c8c] hover:bg-[#DAEBFF] transition-colors"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -164,7 +164,7 @@ export function Footer() {
               type="button"
               onClick={scrollToTop}
               aria-label="Наверх"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-[#daebff] bg-[#EFF6FF] text-[#1c3c8c] hover:bg-[#DAEBFF] transition-colors shrink-0"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-[0.5rem] border border-[#daebff] bg-[#EFF6FF] text-[#1c3c8c] hover:bg-[#DAEBFF] transition-colors shrink-0"
             >
               <ArrowUp size={18} strokeWidth={2} />
             </button>
