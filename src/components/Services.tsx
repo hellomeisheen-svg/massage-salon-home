@@ -463,83 +463,44 @@ export function Services() {
   const prev = () => selectType((active - 1 + serviceTypes.length) % serviceTypes.length);
   const next = () => selectType((active + 1) % serviceTypes.length);
 
-  const toggleGroup = (gi: number) => setOpenGroup((cur) => (cur === gi ? -1 : gi));
-
-  const accordion = (
-    <div className="flex w-full flex-col divide-y divide-[#DAEBFF]">
-      {groups.map((g, gi) => {
-        const isOpen = openGroup === gi;
-        const hasActive = type.category === gi;
-        return (
-          <div key={g.label} className="w-full">
-            <button
-              type="button"
-              onClick={() => toggleGroup(gi)}
-              aria-expanded={isOpen}
-              className="flex w-full items-center justify-between gap-4 py-4 text-left"
-            >
-              <span
-                className={`text-[16px] leading-[24px] transition-colors duration-300 ${
-                  isOpen || hasActive ? "font-medium text-[#1C3C8C]" : "font-light text-[#8D9DC5]"
-                }`}
-              >
-                {g.label}
-              </span>
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                className={`shrink-0 text-[#8D9DC5] transition-transform duration-300 ${
-                  isOpen ? "rotate-180" : ""
-                }`}
-              >
-                <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
-
-            <div
-              className={`grid transition-all duration-300 ease-out ${
-                isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
-              }`}
-            >
-              <ul className="overflow-hidden flex flex-col">
-                {g.items.map((t, idx) => {
-                  const isActive = t.index === active;
-                  return (
-                    <li key={t.title} className={idx === 0 ? "pt-0.5" : ""}>
-                      <button
-                        type="button"
-                        onClick={() => selectType(t.index)}
-                        aria-current={isActive}
-                        className={`flex w-full items-center gap-3 rounded-[8px] px-3 py-2 text-left transition-colors duration-200 ${
-                          isActive ? "bg-white" : "bg-transparent hover:bg-white/60"
-                        }`}
-                      >
-                        <span
-                          className={`h-1.5 w-1.5 shrink-0 rounded-full transition-colors ${
-                            isActive ? "bg-[#1C3C8C]" : "bg-[#B7C5E3]"
-                          }`}
-                        />
-                        <span
-                          className={`text-[15px] leading-[22px] transition-colors ${
-                            isActive ? "font-medium text-[#1C3C8C]" : "font-light text-[#8D9DC5]"
-                          }`}
-                        >
-                          {clean(t.title)}
-                        </span>
-                      </button>
-                    </li>
-                  );
-                })}
-                <li className="h-4" aria-hidden="true" />
-              </ul>
-            </div>
-          </div>
-        );
-      })}
-    </div>
+  const nav = (
+    <nav className="flex w-full flex-col gap-6">
+      {groups.map((g) => (
+        <div key={g.label}>
+          <p className="text-[13px] font-light leading-[18px] text-[#B7C5E3]">{g.label}</p>
+          <ul className="mt-3 flex flex-col gap-3 items-start">
+            {g.items.map((t) => {
+              const isActive = t.index === active;
+              return (
+                <li key={t.title}>
+                  <button
+                    type="button"
+                    onClick={() => selectType(t.index)}
+                    aria-current={isActive}
+                    className="flex items-center gap-3 text-left"
+                  >
+                    <span
+                      className={`h-2 w-2 rounded-full transition-colors ${
+                        isActive ? "bg-[#1C3C8C]" : "bg-[#B7C5E3]"
+                      }`}
+                    />
+                    <span
+                      className={`text-[16px] transition-colors ${
+                        isActive ? "text-[#1C3C8C]" : "text-[#8D9DC5]"
+                      }`}
+                    >
+                      {clean(t.title)}
+                    </span>
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      ))}
+    </nav>
   );
+
 
   return (
     <section id="services" className="scroll-mt-[140px] bg-[#EFF6FF] py-[60px] sm:py-[70px] xl:pt-[140px] xl:pb-0">
