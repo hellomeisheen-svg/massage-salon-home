@@ -35,7 +35,15 @@ function HeadlineBlock() {
         className="text-[38px] font-light leading-[1.12] text-[#1C3C8C] sm:text-[58px] sm:leading-[1.15]"
         style={heroFont}
       >
-        Место, где&nbsp;можно замедлиться и&nbsp;вернуться к&nbsp;себе без&nbsp;спешки
+        Место, где&nbsp;можно{" "}
+        <span className="bg-gradient-to-r from-[#1C3C8C] via-[#4A7FD6] to-[#88C1FF] bg-clip-text text-transparent">
+          замедлиться
+        </span>{" "}
+        и{" "}
+        <span className="bg-gradient-to-r from-[#1C3C8C] via-[#4A7FD6] to-[#88C1FF] bg-clip-text text-transparent">
+          вернуться к&nbsp;себе
+        </span>{" "}
+        без&nbsp;спешки
       </h1>
       <p className="mt-4 text-[16px] font-light leading-[26px] text-[#8D9DC5]">
         Оздоровительные практики для&nbsp;тела: массаж, банки, гирудотерапия.
