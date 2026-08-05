@@ -50,7 +50,7 @@ function HeadlineBlock() {
           onClick={() => openBooking()}
           className="btn-primary w-full sm:w-[200px] xl:w-[250px]"
         >
-          Записаться
+          Онлайн запись
         </button>
       </div>
     </div>

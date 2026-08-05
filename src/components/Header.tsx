@@ -121,7 +121,7 @@ export function Header() {
           href="https://n2418813.yclients.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="btn-primary w-[250px] inline-flex items-center justify-center"
+          className="btn-secondary w-[250px] inline-flex items-center justify-center"
         >
           Онлайн запись
         </a>
@@ -178,7 +178,7 @@ export function Header() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMenuOpen(false)}
-              className="btn-primary mt-3 w-full inline-flex items-center justify-center"
+              className="btn-secondary mt-3 w-full inline-flex items-center justify-center"
             >
               Онлайн запись
             </a>
