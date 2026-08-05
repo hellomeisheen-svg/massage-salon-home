@@ -71,7 +71,7 @@ export function Hero() {
         </div>
 
         {/* Hero image */}
-        <div className="h-[320px] overflow-hidden rounded-[12px] border border-[#daebff] sm:h-[420px] xl:h-auto xl:min-h-0">
+        <div className="h-[320px] overflow-hidden rounded-[12px] border border-[#daebff] sm:h-[380px] xl:h-auto xl:min-h-0">
 
           <img
             className="h-full w-full object-cover object-top sm:object-center"
