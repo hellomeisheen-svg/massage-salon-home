@@ -523,16 +523,17 @@ export function Services() {
             Перед каждым визитом обсуждаем ваше состояние&nbsp;— и&nbsp;подбираем технику под&nbsp;него
           </h2>
 
-          {/* Desktop: compact accordion menu by category */}
-          <div className="mt-8 hidden xl:block w-full max-w-[520px] text-left">{accordion}</div>
+          {/* Desktop: compact category navigation */}
+          <div className="mt-8 hidden xl:block w-full max-w-[520px] text-left">{nav}</div>
         </div>
 
         {/* Right column — active service */}
         <div className="flex flex-col gap-4">
-          {/* Mobile / tablet: same accordion, compact */}
-          <div className="xl:hidden w-full text-left rounded-[12px] border border-[#DAEBFF] bg-white/50 px-4">
-            {accordion}
+          {/* Mobile / tablet: same navigation, compact */}
+          <div className="xl:hidden w-full text-left rounded-[12px] border border-[#DAEBFF] bg-white/50 px-5 py-5">
+            {nav}
           </div>
+
 
           <ServiceCard
             key={active}
