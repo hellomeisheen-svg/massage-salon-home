@@ -457,8 +457,8 @@ export function Services() {
   const selectType = (i: number) => {
     setActive(i);
     setZone(0);
-    setOpenGroup(serviceTypes[i].category);
   };
+
 
   const prev = () => selectType((active - 1 + serviceTypes.length) % serviceTypes.length);
   const next = () => selectType((active + 1) % serviceTypes.length);
