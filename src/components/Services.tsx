@@ -451,8 +451,8 @@ const groups = categories.map((label, ci) => ({
 export function Services() {
   const [active, setActive] = useState(0);
   const [zone, setZone] = useState(0);
-  const [openGroup, setOpenGroup] = useState(0);
   const type = serviceTypes[active];
+
 
   const selectType = (i: number) => {
     setActive(i);
