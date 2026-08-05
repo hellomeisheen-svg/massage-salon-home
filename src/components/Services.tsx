@@ -346,7 +346,19 @@ function ServiceCard({
           </button>
         </div>
       </div>
+
+      {/* Price */}
+      <div
+        className="mt-6 flex flex-wrap items-baseline justify-start sm:justify-end gap-x-4 text-[26px] font-light text-[#1C3C8C]"
+        style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
+      >
+        {hasDiscount && (
+          <span className="text-[18px] text-[#8D9DC5] line-through">{renderPrice(originalPrice!)}</span>
+        )}
+        <span>{renderPrice(computedPrice)}</span>
+      </div>
     </article>
+
   );
 }
 
