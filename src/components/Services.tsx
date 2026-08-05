@@ -284,8 +284,6 @@ function ServiceCard({
     variant.multiplyDuration === false ? 1 : sessionCounts[activeSession]
   );
 
-  const sessionInfo = formatSessionLine(sessionCounts[activeSession], computedDuration);
-
   const items = sessions.map((s, i) => ({
     label: variant.sessionLabels?.[i] ?? s.label,
     discount: s.discount,
@@ -295,16 +293,19 @@ function ServiceCard({
     ? `${clean(type.title)} · ${clean(variant.zone)}`
     : clean(type.title);
 
+  const sessionWord = pluralize(sessionCounts[activeSession], ["сеанс", "сеанса", "сеансов"]);
+  const selectedSummary = `${sessionCounts[activeSession]} ${sessionWord} · ${variant.zone} · ${computedDuration}`;
+
   return (
-    <article className="rounded-[12px] border border-[#daebff] bg-white p-8 sm:p-10 transition-shadow duration-300 hover:shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)] flex flex-col h-[680px] xl:h-auto xl:min-h-[700px]">
+    <article className="rounded-[12px] border border-[#daebff] bg-white p-6 sm:p-8 transition-shadow duration-300 hover:shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)] flex flex-col">
       {/* Sessions — pill switcher */}
-      <div className="mt-1 flex items-stretch gap-1 rounded-[12px] bg-[#EFF6FF] p-1.5">
+      <div className="flex items-stretch gap-1 rounded-[10px] bg-[#EFF6FF] p-1">
         {items.map((s, i) => (
           <button
             key={i}
             type="button"
             onClick={() => setActiveSession(i)}
-            className={`relative flex flex-1 items-center justify-center rounded-[10px] px-2 py-3.5 transition-all duration-300 ${
+            className={`relative flex flex-1 items-center justify-center rounded-[8px] px-2 py-2.5 transition-all duration-300 ${
               activeSession === i
                 ? "bg-white shadow-[0_2px_8px_rgba(28,60,140,0.08)]"
                 : "bg-transparent"
@@ -326,115 +327,115 @@ function ServiceCard({
         ))}
       </div>
 
-      {/* Scrollable content */}
-      <div className="flex-1 min-h-0 overflow-hidden mt-6">
-        <div className="h-full overflow-y-auto xl:h-auto xl:overflow-visible pb-2">
-          {/* Title */}
-          <h3
-            className="text-[30px] sm:text-[38px] xl:text-[42px] font-light leading-[1.1] text-[#1C3C8C] break-words hyphens-auto"
-            style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
-          >
-            {clean(type.title)}
-          </h3>
-          <p className="mt-3 italic text-[16px] leading-[26px] text-[#8D9DC5]">
-            {variant.subtitle}
-          </p>
+      {/* Title */}
+      <h3
+        className="mt-5 text-[28px] sm:text-[34px] xl:text-[38px] font-light leading-[1.1] text-[#1C3C8C] break-words hyphens-auto"
+        style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
+      >
+        {clean(type.title)}
+      </h3>
+      <p className="mt-2 italic text-[15px] leading-[24px] text-[#8D9DC5]">
+        {variant.subtitle}
+      </p>
 
-          {/* Zone — inline label + chips */}
-          {hasZones && (
-            <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2">
-              <span className="text-[14px] font-light leading-[20px] text-[#8D9DC5]">
-                Зона:
-              </span>
-              {type.variants.map((v, i) => {
-                const isActive = i === zoneIndex;
-                return (
-                  <button
-                    key={v.zone}
-                    type="button"
-                    onClick={() => onZoneChange(i)}
-                    aria-pressed={isActive}
-                    className={`rounded-[8px] border px-3 py-1.5 text-[14px] leading-[20px] transition-all duration-300 ${
-                      isActive
-                        ? "border-[#88C1FF] bg-[#EFF6FF] font-medium text-[#1C3C8C]"
-                        : "border-[#DAEBFF] bg-white font-light text-[#8D9DC5] hover:border-[#88C1FF] hover:text-[#1C3C8C]"
-                    }`}
-                  >
-                    {v.zone}
-                  </button>
-                );
-              })}
-            </div>
-          )}
-
-
-          {/* Description */}
-          <p className="mt-5 text-[16px] leading-[26px] text-[#8D9DC5]">
-            {variant.description}
-          </p>
-
-          {/* Session info */}
-          {sessionCounts[activeSession] > 1 && (
-            <p className="mt-5 text-[13px] font-light leading-[1.5] tracking-wide text-[#8D9DC5]">
-              {sessionInfo}
-            </p>
-          )}
-
-          {/* Duration + price */}
-          <div
-            className="mt-8 flex flex-wrap items-baseline gap-x-4 text-[26px] font-light text-[#1C3C8C]"
-            style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
-          >
-            <span>{computedDuration}</span>
-            <span className="text-[#8D9DC5]">•</span>
-            <span>{renderPrice(computedPrice)}</span>
-            {hasDiscount && (
-              <span className="text-[18px] text-[#8D9DC5] line-through">
-                {renderPrice(originalPrice)}
-              </span>
-            )}
-          </div>
+      {/* Zone chips */}
+      {hasZones && (
+        <div className="mt-4 flex flex-wrap items-center gap-2">
+          <span className="text-[13px] font-light leading-[20px] text-[#8D9DC5]">Зона:</span>
+          {type.variants.map((v, i) => {
+            const isActive = i === zoneIndex;
+            return (
+              <button
+                key={v.zone}
+                type="button"
+                onClick={() => onZoneChange(i)}
+                aria-pressed={isActive}
+                className={`rounded-[6px] px-2.5 py-1 text-[13px] leading-[18px] transition-all duration-300 ${
+                  isActive
+                    ? "bg-[#1C3C8C] font-medium text-white"
+                    : "border border-[#DAEBFF] bg-white font-light text-[#8D9DC5] hover:border-[#88C1FF] hover:text-[#1C3C8C]"
+                }`}
+              >
+                {v.zone}
+              </button>
+            );
+          })}
         </div>
-      </div>
+      )}
 
-      {/* Bottom actions */}
-      <div className="mt-auto pt-8">
-        <div className="flex flex-col sm:flex-row gap-3">
+      {/* Description */}
+      <p className="mt-4 text-[15px] leading-[24px] text-[#8D9DC5]">
+        {variant.description}
+      </p>
+
+      {/* Selected configuration summary */}
+      <p className="mt-4 text-[13px] font-light leading-[18px] tracking-wide text-[#B7C5E3]">
+        {selectedSummary}
+      </p>
+
+      {/* CTA block */}
+      <div className="mt-5 rounded-[10px] border border-[#DAEBFF] bg-[#F8FBFF] p-4 sm:p-5">
+        {/* Price row */}
+        <div className="flex items-baseline justify-between gap-4">
+          <div className="flex flex-col">
+            <span
+              className="text-[26px] font-light leading-[1.1] text-[#1C3C8C]"
+              style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
+            >
+              {renderPrice(computedPrice)}
+            </span>
+            <span className="text-[13px] font-light text-[#8D9DC5]">за сеанс</span>
+          </div>
+          {hasDiscount && (
+            <span
+              className="text-[17px] font-light leading-[1.2] text-[#8D9DC5] line-through"
+              style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
+            >
+              {renderPrice(originalPrice)}
+            </span>
+          )}
+        </div>
+
+        {/* Actions */}
+        <div className="mt-4 flex flex-col sm:flex-row gap-3">
           <button
             type="button"
             onClick={() => openBooking(bookingTitle)}
-            className="btn-primary w-full sm:flex-1"
+            className="btn-primary flex-1"
           >
             Записаться
           </button>
-          <a href="#programs" className="btn-secondary w-full sm:flex-1 inline-flex items-center justify-center text-center">
+          <a href="#programs" className="btn-secondary flex-1 inline-flex items-center justify-center text-center">
             Узнать больше
           </a>
-          <div className="grid grid-cols-2 gap-3 sm:contents">
-            <button
-              type="button"
-              onClick={onPrev}
-              aria-label="Предыдущая услуга"
-              className="btn-secondary flex items-center justify-center sm:min-w-[80px] sm:flex-none"
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                <path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
-            <button
-              type="button"
-              onClick={onNext}
-              aria-label="Следующая услуга"
-              className="btn-secondary flex items-center justify-center sm:min-w-[80px] sm:flex-none"
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
-          </div>
+        </div>
+
+        {/* Navigation arrows */}
+        <div className="mt-3 flex items-center justify-between gap-2">
+          <button
+            type="button"
+            onClick={onPrev}
+            aria-label="Предыдущая услуга"
+            className="btn-nav"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            <span className="ml-2 text-[13px] font-light">Назад</span>
+          </button>
+          <button
+            type="button"
+            onClick={onNext}
+            aria-label="Следующая услуга"
+            className="btn-nav"
+          >
+            <span className="mr-2 text-[13px] font-light">Далее</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
         </div>
       </div>
-
     </article>
   );
 }
