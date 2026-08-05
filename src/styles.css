@@ -173,6 +173,56 @@
   border-color: #A2CFFE;
 }
 
+@utility btn-header-cta {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 150%;
+  min-height: 60px;
+  color: #1c3c8c;
+  background-color: transparent;
+  border: 1px solid rgba(141, 157, 197, 0.5);
+  isolation: isolate;
+  overflow: hidden;
+  transition: color 0.5s ease, border-color 0.5s ease;
+}
+.btn-header-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to bottom, #A2CFFE, #88C1FF);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: -2;
+}
+.btn-header-cta::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #EFF6FF;
+  opacity: 0;
+  transition: opacity 0.35s ease, background-color 0.35s ease;
+  z-index: -1;
+}
+.btn-header-cta:hover::after {
+  opacity: 1;
+}
+.btn-header-cta-active::before {
+  opacity: 1;
+}
+.btn-header-cta-active::after {
+  background-color: #5DAAFD;
+}
+.btn-header-cta-active {
+  color: #fff;
+  border-color: transparent;
+}
+
 /* Unified focus-visible ring for interactive elements */
 .btn-primary:focus-visible,
 .btn-secondary:focus-visible,

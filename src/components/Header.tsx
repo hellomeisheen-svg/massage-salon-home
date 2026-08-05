@@ -19,45 +19,20 @@ const logoStyle = {
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [visible, setVisible] = useState(true);
-  const [pinned, setPinned] = useState(false);
+  const [heroPassed, setHeroPassed] = useState(false);
 
   useEffect(() => {
-    const isDesktop = () => window.matchMedia("(min-width: 1280px)").matches;
-    let lastY = window.scrollY;
-    const onScroll = () => {
-      if (!isDesktop()) {
-        setPinned(false);
-        setVisible(true);
-        lastY = window.scrollY;
-        return;
-      }
-      const y = window.scrollY;
-      const heroThreshold = window.innerHeight * 0.8;
-      const goingDown = y > lastY + 4;
-      const goingUp = y < lastY - 4;
-      if (y < heroThreshold) {
-        setPinned(false);
-        setVisible(true);
-      } else {
-        setPinned((wasPinned) => {
-          if (!wasPinned) {
-            // Only pin (start showing) when the user scrolls UP past the hero.
-            if (goingUp) {
-              setVisible(true);
-              return true;
-            }
-            return false;
-          }
-          if (goingDown) setVisible(false);
-          else if (goingUp) setVisible(true);
-          return true;
-        });
-      }
-      lastY = y;
+    const hero = document.getElementById("hero");
+    if (!hero) return;
+
+    const handleScroll = () => {
+      const rect = hero.getBoundingClientRect();
+      setHeroPassed(rect.bottom <= 0);
     };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
@@ -72,17 +47,12 @@ export function Header() {
   }, [menuOpen]);
 
   useEffect(() => {
-    const offset = pinned && visible ? "100px" : "0px";
-    document.documentElement.style.setProperty("--header-offset", offset);
-  }, [pinned, visible]);
+    document.documentElement.style.setProperty("--header-offset", "100px");
+  }, []);
 
   return (
     <>
-      <header
-      className={`${pinned ? "fixed transition-transform duration-300 ease-out" : "fixed xl:absolute"} top-0 left-0 z-50 w-full bg-transparent pt-4 sm:pt-5 ${
-        visible ? "translate-y-0" : "-translate-y-full"
-      }`}
-    >
+      <header className="fixed top-0 left-0 z-50 w-full bg-transparent pt-4 sm:pt-5">
 
       <div className="container-1900 relative">
       {/* Desktop header */}
@@ -121,7 +91,7 @@ export function Header() {
           href="https://n2418813.yclients.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="btn-secondary w-[250px] inline-flex items-center justify-center"
+          className={`btn-header-cta w-[250px] ${heroPassed ? "btn-header-cta-active" : ""}`}
         >
           Онлайн запись
         </a>
@@ -189,5 +159,3 @@ export function Header() {
     </header>
   </>);
 }
-
-
