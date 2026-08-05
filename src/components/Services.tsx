@@ -1,124 +1,174 @@
 import { useState } from "react";
 import { useBooking } from "@/components/BookingModal";
 
-type PriceRow = { duration: string; price: string; note?: string };
-
-type Service = {
-  title: string;
+type Variant = {
+  zone: string;
   subtitle: string;
   description: string;
   duration: string;
   price: string;
-  tiers?: PriceRow[];
+  sessionLabels?: string[];
+  multiplyDuration?: boolean;
 };
 
-const services: Service[] = [
+type ServiceType = {
+  title: string;
+  category: number;
+  variants: Variant[];
+};
+
+const serviceTypes: ServiceType[] = [
   {
     title: "Векторный",
-    subtitle: "Глубокая работа с\u00A0телом",
-    description:
-      "Комплексная работа с\u00A0телом для\u00A0глубокого расслабления и\u00A0восстановления баланса. Подходит, если хочется не\u00A0точечного сеанса, а\u00A0полноценной паузы: спокойного ритма, внимания к\u00A0деталям и\u00A0ощущения, что\u00A0тело наконец отпускает накопленное напряжение.",
-    duration: "120\u00A0минут",
-    price: "5\u00A0000\u00A0₽",
+    category: 0,
+    variants: [
+      {
+        zone: "Всё тело",
+        subtitle: "Глубокая работа с\u00A0телом",
+        description:
+          "Комплексная работа с\u00A0телом для\u00A0глубокого расслабления и\u00A0восстановления баланса. Подходит, если хочется не\u00A0точечного сеанса, а\u00A0полноценной паузы: спокойного ритма, внимания к\u00A0деталям и\u00A0ощущения, что\u00A0тело наконец отпускает накопленное напряжение.",
+        duration: "120\u00A0минут",
+        price: "5\u00A0000\u00A0₽",
+      },
+    ],
   },
   {
     title: "Лимфатический",
-    subtitle: "Мягкая поддержка тела",
-    description:
-      "Деликатная работа с\u00A0лимфатической системой и\u00A0общим состоянием тела. Помогает мягко поддержать естественные процессы восстановления и\u00A0почувствовать лёгкость. Подходит тем, кому важна спокойная техника, аккуратное прикосновение и\u00A0плавный, без\u00A0резких движений, ритм.",
-    duration: "120\u00A0минут",
-    price: "5\u00A0000\u00A0₽",
+    category: 0,
+    variants: [
+      {
+        zone: "Всё тело",
+        subtitle: "Мягкая поддержка тела",
+        description:
+          "Деликатная работа с\u00A0лимфатической системой и\u00A0общим состоянием тела. Помогает мягко поддержать естественные процессы восстановления и\u00A0почувствовать лёгкость. Подходит тем, кому важна спокойная техника, аккуратное прикосновение и\u00A0плавный, без\u00A0резких движений, ритм.",
+        duration: "120\u00A0минут",
+        price: "5\u00A0000\u00A0₽",
+      },
+    ],
   },
   {
     title: "Лимфодренажный",
-    subtitle: "Лёгкость и\u00A0мягкое восстановление",
-    description:
-      "Бережная техника для\u00A0поддержки лимфотока, уменьшения отёчности и\u00A0ощущения тяжести в\u00A0теле. Подходит при\u00A0сидячем образе жизни, сниженной активности и\u00A0усталости\u00A0— после сеанса в\u00A0теле обычно появляется ощущение лёгкости и\u00A0спокойного восстановления.",
-    duration: "120\u00A0минут",
-    price: "5\u00A0000\u00A0₽",
-  },
-  {
-    title: "Лимфодренажный\u00A0·\u00A0Лицо",
-    subtitle: "Мягкая работа с\u00A0тонусом и\u00A0лимфотоком кожи лица",
-    description:
-      "Деликатная техника для\u00A0уменьшения отёчности, поддержки овала и\u00A0ощущения свежести. Подходит после долгой работы за\u00A0компьютером, перелётов или\u00A0в\u00A0качестве регулярного ухода.",
-    duration: "40\u00A0минут",
-    price: "2\u00A0000\u00A0₽",
+    category: 0,
+    variants: [
+      {
+        zone: "Всё тело",
+        subtitle: "Лёгкость и\u00A0мягкое восстановление",
+        description:
+          "Бережная техника для\u00A0поддержки лимфотока, уменьшения отёчности и\u00A0ощущения тяжести в\u00A0теле. Подходит при\u00A0сидячем образе жизни, сниженной активности и\u00A0усталости\u00A0— после сеанса в\u00A0теле обычно появляется ощущение лёгкости и\u00A0спокойного восстановления.",
+        duration: "120\u00A0минут",
+        price: "5\u00A0000\u00A0₽",
+      },
+      {
+        zone: "Лицо",
+        subtitle: "Мягкая работа с\u00A0тонусом и\u00A0лимфотоком кожи лица",
+        description:
+          "Деликатная техника для\u00A0уменьшения отёчности, поддержки овала и\u00A0ощущения свежести. Подходит после долгой работы за\u00A0компьютером, перелётов или\u00A0в\u00A0качестве регулярного ухода.",
+        duration: "40\u00A0минут",
+        price: "2\u00A0000\u00A0₽",
+      },
+    ],
   },
   {
     title: "Классический",
-    subtitle: "Базовое расслабление и\u00A0восстановление",
-    description:
-      "Универсальный сеанс для\u00A0расслабления и\u00A0снятия мышечного напряжения. Хороший выбор для\u00A0первого визита: позволяет познакомиться с\u00A0кабинетом, мастером и\u00A0подходом, понять, что\u00A0вам ближе, и\u00A0затем спокойно выбрать другой формат, если он\u00A0будет нужен.",
-    duration: "60\u00A0минут",
-    price: "2\u00A0000\u00A0₽",
+    category: 0,
+    variants: [
+      {
+        zone: "Всё тело",
+        subtitle: "Базовое расслабление и\u00A0восстановление",
+        description:
+          "Универсальный сеанс для\u00A0расслабления и\u00A0снятия мышечного напряжения. Хороший выбор для\u00A0первого визита: позволяет познакомиться с\u00A0кабинетом, мастером и\u00A0подходом, понять, что\u00A0вам ближе, и\u00A0затем спокойно выбрать другой формат, если он\u00A0будет нужен.",
+        duration: "60\u00A0минут",
+        price: "2\u00A0000\u00A0₽",
+      },
+      {
+        zone: "Спина и\u00A0шея",
+        subtitle: "Для\u00A0тех, кто\u00A0много за\u00A0рулём и\u00A0за\u00A0компьютером",
+        description:
+          "Сфокусированный сеанс для\u00A0шеи, плеч и\u00A0верхней части спины. Помогает выдохнуть после рабочего дня и\u00A0снять напряжение от\u00A0длительной статичной позы.",
+        duration: "30\u00A0минут",
+        price: "1\u00A0500\u00A0₽",
+      },
+      {
+        zone: "Лицо",
+        subtitle: "Мягкое расслабление мышц лица",
+        description:
+          "Спокойная работа с\u00A0мимическими зонами, лбом и\u00A0линией челюсти. Подходит при\u00A0усталом виде, напряжении в\u00A0зоне лица и\u00A0желании просто отдохнуть.",
+        duration: "40\u00A0минут",
+        price: "2\u00A0000\u00A0₽",
+      },
+      {
+        zone: "Ноги и\u00A0стопы",
+        subtitle: "Лёгкость и\u00A0снятие усталости в\u00A0ногах",
+        description:
+          "Работа с\u00A0икрами, бёдрами и\u00A0стопами. Подходит после долгого дня на\u00A0ногах, тренировок или\u00A0длительной сидячей работы.",
+        duration: "60\u00A0минут",
+        price: "3\u00A0000\u00A0₽",
+      },
+      {
+        zone: "Голова",
+        subtitle: "Спокойствие и\u00A0снятие напряжения в\u00A0голове",
+        description:
+          "Мягкая работа с\u00A0зоной головы и\u00A0шейно-затылочной областью. Подходит при\u00A0усталости, тяжёлой голове и\u00A0желании отключиться от\u00A0внешнего шума.",
+        duration: "20\u00A0минут",
+        price: "1\u00A0000\u00A0₽",
+      },
+    ],
   },
   {
-    title: "Классический\u00A0·\u00A0Спина и\u00A0шея",
-    subtitle: "Для\u00A0тех, кто\u00A0много за\u00A0рулём и\u00A0за\u00A0компьютером",
-    description:
-      "Сфокусированный сеанс для\u00A0шеи, плеч и\u00A0верхней части спины. Помогает выдохнуть после рабочего дня и\u00A0снять напряжение от\u00A0длительной статичной позы.",
-    duration: "30\u00A0минут",
-    price: "1\u00A0500\u00A0₽",
+    title: "Гирудотерапия",
+    category: 1,
+    variants: [
+      {
+        zone: "Медицинские пиявки",
+        subtitle: "Оздоровительная практика",
+        description:
+          "Постановка медицинских пиявок на\u00A0выбранные зоны тела. В\u00A0процессе пиявка мягко воздействует на\u00A0кожу, способствуя локальному кровообращению и\u00A0разгрузке напряжённых участков. Используется в\u00A0рамках оздоровительных программ для\u00A0общего восстановления и\u00A0поддержки самочувствия.",
+        duration: "120\u00A0минут",
+        price: "4\u00A0800\u00A0₽",
+        sessionLabels: ["6\u00A0пиявок", "16\u00A0пиявок", "74\u00A0пиявки"],
+        multiplyDuration: false,
+      },
+      {
+        zone: "Косметические пиявки",
+        subtitle: "Мягкий уход и\u00A0забота о\u00A0коже",
+        description:
+          "Деликатная постановка пиявок с\u00A0акцентом на\u00A0зону лица или\u00A0локальные участки. Процедура направлена на\u00A0улучшение внешнего вида кожи, ощущение свежести и\u00A0лёгкости. Воздействие мягкое, с\u00A0акцентом на\u00A0эстетический эффект и\u00A0комфортные ощущения.",
+        duration: "120\u00A0минут",
+        price: "4\u00A0800\u00A0₽",
+        sessionLabels: ["6\u00A0пиявок", "10\u00A0пиявок", "20\u00A0пиявок"],
+        multiplyDuration: false,
+      },
+    ],
   },
   {
-    title: "Классический\u00A0·\u00A0Лицо",
-    subtitle: "Мягкое расслабление мышц лица",
-    description:
-      "Спокойная работа с\u00A0мимическими зонами, лбом и\u00A0линией челюсти. Подходит при\u00A0усталом виде, напряжении в\u00A0зоне лица и\u00A0желании просто отдохнуть.",
-    duration: "40\u00A0минут",
-    price: "2\u00A0000\u00A0₽",
+    title: "Стихия Огонь",
+    category: 1,
+    variants: [
+      {
+        zone: "Стеклянные банки",
+        subtitle: "Классическая интенсивная техника",
+        description:
+          "Постановка стеклянных банок методом огня\u00A0— короткое прогревание воздуха создаёт глубокий вакуум. Банки фиксируются на\u00A0проблемных участках или\u00A0скользят по\u00A0коже, прорабатывая мышцы и\u00A0фасции на\u00A0большую глубину, чем «Воздух». Подходит тем, кто\u00A0уже знаком с\u00A0техникой и\u00A0хочет более насыщенной проработки.",
+        duration: "10\u00A0минут",
+        price: "2\u00A0000\u00A0₽",
+      },
+    ],
   },
   {
-    title: "Классический\u00A0·\u00A0Ноги и\u00A0стопы",
-    subtitle: "Лёгкость и\u00A0снятие усталости в\u00A0ногах",
-    description:
-      "Работа с\u00A0икрами, бёдрами и\u00A0стопами. Подходит после долгого дня на\u00A0ногах, тренировок или\u00A0длительной сидячей работы.",
-    duration: "60\u00A0минут",
-    price: "3\u00A0000\u00A0₽",
-  },
-  {
-    title: "Классический\u00A0·\u00A0Голова",
-    subtitle: "Спокойствие и\u00A0снятие напряжения в\u00A0голове",
-    description:
-      "Мягкая работа с\u00A0зоной головы и\u00A0шейно-затылочной областью. Подходит при\u00A0усталости, тяжёлой голове и\u00A0желании отключиться от\u00A0внешнего шума.",
-    duration: "20\u00A0минут",
-    price: "1\u00A0000\u00A0₽",
-  },
-  {
-    title: "Гирудотерапия\u00A0·\u00A0Медицинские пиявки",
-    subtitle: "Оздоровительная практика",
-    description:
-      "Постановка медицинских пиявок на\u00A0выбранные зоны тела. В\u00A0процессе пиявка мягко воздействует на\u00A0кожу, способствуя локальному кровообращению и\u00A0разгрузке напряжённых участков. Используется в\u00A0рамках оздоровительных программ для\u00A0общего восстановления и\u00A0поддержки самочувствия.",
-    duration: "120\u00A0минут",
-    price: "4\u00A0800\u00A0₽",
-  },
-  {
-    title: "Гирудотерапия\u00A0·\u00A0Косметические пиявки",
-    subtitle: "Мягкий уход и\u00A0забота о\u00A0коже",
-    description:
-      "Деликатная постановка пиявок с\u00A0акцентом на\u00A0зону лица или\u00A0локальные участки. Процедура направлена на\u00A0улучшение внешнего вида кожи, ощущение свежести и\u00A0лёгкости. Воздействие мягкое, с\u00A0акцентом на\u00A0эстетический эффект и\u00A0комфортные ощущения.",
-    duration: "120\u00A0минут",
-    price: "4\u00A0800\u00A0₽",
-  },
-  {
-    title: "Стихия Огонь\u00A0·\u00A0Стеклянные банки",
-    subtitle: "Классическая интенсивная техника",
-    description:
-      "Постановка стеклянных банок методом огня\u00A0— короткое прогревание воздуха создаёт глубокий вакуум. Банки фиксируются на\u00A0проблемных участках или\u00A0скользят по\u00A0коже, прорабатывая мышцы и\u00A0фасции на\u00A0большую глубину, чем «Воздух». Подходит тем, кто\u00A0уже знаком с\u00A0техникой и\u00A0хочет более насыщенной проработки.",
-    duration: "10\u00A0минут",
-    price: "2\u00A0000\u00A0₽",
-  },
-  {
-    title: "Стихия Воздух\u00A0·\u00A0Мягкие банки",
-    subtitle: "Мягкая вакуумная техника",
-    description:
-      "Работа силиконовыми или\u00A0пластиковыми банками с\u00A0насосом\u00A0— мастер регулирует силу вакуума под\u00A0ваши ощущения. Банки скользят по\u00A0коже с\u00A0маслом, мягко прорабатывая напряжённые зоны спины, плеч, поясницы. Подходит для\u00A0первого знакомства и\u00A0для\u00A0тех, кто\u00A0предпочитает деликатный формат.",
-    duration: "10–25\u00A0минут",
-    price: "1\u00A0000\u00A0₽",
+    title: "Стихия Воздух",
+    category: 1,
+    variants: [
+      {
+        zone: "Мягкие банки",
+        subtitle: "Мягкая вакуумная техника",
+        description:
+          "Работа силиконовыми или\u00A0пластиковыми банками с\u00A0насосом\u00A0— мастер регулирует силу вакуума под\u00A0ваши ощущения. Банки скользят по\u00A0коже с\u00A0маслом, мягко прорабатывая напряжённые зоны спины, плеч, поясницы. Подходит для\u00A0первого знакомства и\u00A0для\u00A0тех, кто\u00A0предпочитает деликатный формат.",
+        duration: "10–25\u00A0минут",
+        price: "1\u00A0000\u00A0₽",
+      },
+    ],
   },
 ];
-
 
 const categories = ["Массаж", "Оздоровительные процедуры"];
 
@@ -203,48 +253,52 @@ function renderPrice(price: string) {
   );
 }
 
+function clean(value: string) {
+  return value.replace(/\u00A0/g, " ");
+}
+
 function ServiceCard({
-  service,
-  dynamicPricing = false,
-  basePrice = 5000,
-  sessionLabels,
-  multiplyDuration = true,
+  type,
+  zoneIndex,
+  onZoneChange,
   onPrev,
   onNext,
 }: {
-  service: Service;
-  dynamicPricing?: boolean;
-  basePrice?: number;
-  sessionLabels?: string[];
-  multiplyDuration?: boolean;
+  type: ServiceType;
+  zoneIndex: number;
+  onZoneChange: (i: number) => void;
   onPrev: () => void;
   onNext: () => void;
 }) {
   const { openBooking } = useBooking();
   const [activeSession, setActiveSession] = useState(0);
+  const variant = type.variants[zoneIndex] ?? type.variants[0];
+  const hasZones = type.variants.length > 1;
+
   const sessionCounts = [1, 3, 6];
   const discounts = [0, 0.1, 0.15];
-  const hasDiscount = dynamicPricing && discounts[activeSession] > 0;
-  const originalPrice = dynamicPricing
-    ? formatPrice(basePrice * sessionCounts[activeSession])
-    : null;
-  const computedPrice = dynamicPricing
-    ? formatPrice(
-        Math.round(basePrice * sessionCounts[activeSession] * (1 - discounts[activeSession]))
-      )
-    : service.price;
+  const basePrice = Number(variant.price.replace(/\D/g, "")) || 5000;
+  const hasDiscount = discounts[activeSession] > 0;
+  const originalPrice = formatPrice(basePrice * sessionCounts[activeSession]);
+  const computedPrice = formatPrice(
+    Math.round(basePrice * sessionCounts[activeSession] * (1 - discounts[activeSession]))
+  );
 
   const computedDuration = formatDurationString(
-    service.duration,
-    dynamicPricing && multiplyDuration ? sessionCounts[activeSession] : 1
+    variant.duration,
+    variant.multiplyDuration === false ? 1 : sessionCounts[activeSession]
   );
 
   const sessionInfo = formatSessionLine(sessionCounts[activeSession], computedDuration);
 
   const items = sessions.map((s, i) => ({
-    label: sessionLabels?.[i] ?? s.label,
+    label: variant.sessionLabels?.[i] ?? s.label,
     discount: s.discount,
   }));
+
+  const bookingTitle = hasZones
+    ? `${clean(type.title)} · ${clean(variant.zone)}`
+    : clean(type.title);
 
   return (
     <article className="rounded-[12px] border border-[#daebff] bg-white p-8 sm:p-10 transition-shadow duration-300 hover:shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)] flex flex-col h-[680px] xl:h-auto xl:min-h-[700px]">
@@ -285,15 +339,44 @@ function ServiceCard({
             className="text-[30px] sm:text-[38px] xl:text-[42px] font-light leading-[1.1] text-[#1C3C8C] break-words hyphens-auto"
             style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
           >
-            {service.title.replace(/\u00A0·\u00A0/g, " · ")}
+            {clean(type.title)}
           </h3>
           <p className="mt-3 italic text-[16px] leading-[26px] text-[#8D9DC5]">
-            {service.subtitle}
+            {variant.subtitle}
           </p>
+
+          {/* Zone chips */}
+          {hasZones && (
+            <div className="mt-5">
+              <p className="text-[12px] font-light uppercase tracking-[0.12em] text-[#B7C5E3]">
+                Зона
+              </p>
+              <div className="mt-2.5 flex flex-wrap gap-2">
+                {type.variants.map((v, i) => {
+                  const isActive = i === zoneIndex;
+                  return (
+                    <button
+                      key={v.zone}
+                      type="button"
+                      onClick={() => onZoneChange(i)}
+                      aria-pressed={isActive}
+                      className={`rounded-[8px] border px-3.5 py-2 text-[14px] leading-[20px] transition-all duration-300 ${
+                        isActive
+                          ? "border-[#88C1FF] bg-[#EFF6FF] font-medium text-[#1C3C8C]"
+                          : "border-[#DAEBFF] bg-white font-light text-[#8D9DC5] hover:border-[#88C1FF] hover:text-[#1C3C8C]"
+                      }`}
+                    >
+                      {v.zone}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          )}
 
           {/* Description */}
           <p className="mt-5 text-[16px] leading-[26px] text-[#8D9DC5]">
-            {service.description}
+            {variant.description}
           </p>
 
           {/* Session info */}
@@ -304,34 +387,19 @@ function ServiceCard({
           )}
 
           {/* Duration + price */}
-          {service.tiers ? (
-            <div
-              className="mt-8 flex flex-col gap-2 text-[26px] font-light text-[#1C3C8C]"
-              style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
-            >
-              {service.tiers.map((t, i) => (
-                <div key={i} className="flex flex-wrap items-baseline gap-x-4">
-                  <span>{formatDurationString(t.duration)}</span>
-                  <span className="text-[#8D9DC5]">•</span>
-                  {t.note && <span>{t.note}</span>}
-                  {t.note && <span className="text-[#8D9DC5]">•</span>}
-                  <span>{renderPrice(t.price)}</span>
-                </div>
-              ))}
-            </div>
-          ) : (
-            <div
-              className="mt-8 flex flex-wrap items-baseline gap-x-4 text-[26px] font-light text-[#1C3C8C]"
-              style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
-            >
-              <span>{computedDuration}</span>
-              <span className="text-[#8D9DC5]">•</span>
-              <span>{renderPrice(computedPrice)}</span>
-              {hasDiscount && (
-                <span className="text-[18px] text-[#8D9DC5] line-through">{renderPrice(originalPrice!)}</span>
-              )}
-            </div>
-          )}
+          <div
+            className="mt-8 flex flex-wrap items-baseline gap-x-4 text-[26px] font-light text-[#1C3C8C]"
+            style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
+          >
+            <span>{computedDuration}</span>
+            <span className="text-[#8D9DC5]">•</span>
+            <span>{renderPrice(computedPrice)}</span>
+            {hasDiscount && (
+              <span className="text-[18px] text-[#8D9DC5] line-through">
+                {renderPrice(originalPrice)}
+              </span>
+            )}
+          </div>
         </div>
       </div>
 
@@ -339,7 +407,7 @@ function ServiceCard({
       <div className="mt-auto pt-8 flex flex-col sm:flex-row gap-3">
         <button
           type="button"
-          onClick={() => openBooking(service.title.replace(/\u00A0·\u00A0/g, " · "))}
+          onClick={() => openBooking(bookingTitle)}
           className="btn-primary w-full sm:flex-1"
         >
           Записаться
@@ -374,36 +442,27 @@ function ServiceCard({
   );
 }
 
-
-const HEALTH_START = 9;
-
-const groups = [
-  { label: categories[0], from: 0, to: HEALTH_START },
-  { label: categories[1], from: HEALTH_START, to: services.length },
-];
-
-function groupOf(index: number) {
-  return index < HEALTH_START ? 0 : 1;
-}
+const groups = categories.map((label, ci) => ({
+  label,
+  items: serviceTypes
+    .map((t, i) => ({ ...t, index: i }))
+    .filter((t) => t.category === ci),
+}));
 
 export function Services() {
   const [active, setActive] = useState(0);
+  const [zone, setZone] = useState(0);
   const [openGroup, setOpenGroup] = useState(0);
-  const service = services[active];
+  const type = serviceTypes[active];
 
-  const selectService = (i: number) => {
+  const selectType = (i: number) => {
     setActive(i);
-    setOpenGroup(groupOf(i));
+    setZone(0);
+    setOpenGroup(serviceTypes[i].category);
   };
 
-  const prev = () => {
-    const i = (active - 1 + services.length) % services.length;
-    selectService(i);
-  };
-  const next = () => {
-    const i = (active + 1) % services.length;
-    selectService(i);
-  };
+  const prev = () => selectType((active - 1 + serviceTypes.length) % serviceTypes.length);
+  const next = () => selectType((active + 1) % serviceTypes.length);
 
   const toggleGroup = (gi: number) => setOpenGroup((cur) => (cur === gi ? -1 : gi));
 
@@ -411,7 +470,7 @@ export function Services() {
     <div className="flex w-full flex-col divide-y divide-[#DAEBFF]">
       {groups.map((g, gi) => {
         const isOpen = openGroup === gi;
-        const hasActive = groupOf(active) === gi;
+        const hasActive = type.category === gi;
         return (
           <div key={g.label} className="w-full">
             <button
@@ -446,14 +505,13 @@ export function Services() {
               }`}
             >
               <ul className="overflow-hidden flex flex-col">
-                {services.slice(g.from, g.to).map((s, idx) => {
-                  const i = g.from + idx;
-                  const isActive = i === active;
+                {g.items.map((t, idx) => {
+                  const isActive = t.index === active;
                   return (
-                    <li key={s.title} className={idx === 0 ? "pt-0.5" : ""}>
+                    <li key={t.title} className={idx === 0 ? "pt-0.5" : ""}>
                       <button
                         type="button"
-                        onClick={() => selectService(i)}
+                        onClick={() => selectType(t.index)}
                         aria-current={isActive}
                         className={`flex w-full items-center gap-3 rounded-[8px] px-3 py-2 text-left transition-colors duration-200 ${
                           isActive ? "bg-white" : "bg-transparent hover:bg-white/60"
@@ -469,7 +527,7 @@ export function Services() {
                             isActive ? "font-medium text-[#1C3C8C]" : "font-light text-[#8D9DC5]"
                           }`}
                         >
-                          {s.title.replace(/\u00A0·\u00A0/g, " · ")}
+                          {clean(t.title)}
                         </span>
                       </button>
                     </li>
@@ -518,17 +576,9 @@ export function Services() {
 
           <ServiceCard
             key={active}
-            service={service}
-            dynamicPricing
-            basePrice={Number(service.price.replace(/\D/g, "")) || 5000}
-            sessionLabels={
-              active === 9
-                ? ["6\u00A0пиявок", "16\u00A0пиявок", "74\u00A0пиявки"]
-                : active === 10
-                ? ["6\u00A0пиявок", "10\u00A0пиявок", "20\u00A0пиявок"]
-                : undefined
-            }
-            multiplyDuration={active !== 9 && active !== 10}
+            type={type}
+            zoneIndex={zone}
+            onZoneChange={setZone}
             onPrev={prev}
             onNext={next}
           />
@@ -537,7 +587,3 @@ export function Services() {
     </section>
   );
 }
-
-
-
-
