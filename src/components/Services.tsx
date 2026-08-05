@@ -216,6 +216,7 @@ function ServiceCard({
   sessionLabels?: string[];
   multiplyDuration?: boolean;
 }) {
+  const { openBooking } = useBooking();
   const [activeSession, setActiveSession] = useState(0);
   const sessionCounts = [1, 3, 6];
   const discounts = [0, 0.1, 0.15];

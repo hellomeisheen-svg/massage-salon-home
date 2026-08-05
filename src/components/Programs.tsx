@@ -129,6 +129,7 @@ function Ruble() {
 
 
 export function Programs() {
+  const { openBooking } = useBooking();
   const [active, setActive] = useState(0);
   const program = programs[active];
   const computedItems = program.items.map(computeItem);
