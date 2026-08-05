@@ -153,40 +153,41 @@ export function Header() {
           {menuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
+
+      {/* Mobile / tablet menu panel — same width as the header */}
+      {menuOpen && (
+        <div className="absolute left-0 right-0 top-[calc(100%+8px)] z-40 h-[calc(100dvh-104px)] sm:h-[calc(100dvh-108px)] xl:hidden">
+          <div className="flex h-full flex-col rounded-[12px] border border-[#daebff] bg-white p-4">
+            <nav className="flex-1 overflow-y-auto" aria-label="Мобильная навигация">
+              <ul className="flex flex-col gap-1">
+                {navigationItems.map((item) => (
+                  <li key={item.label}>
+                    <a
+                      href={item.href}
+                      onClick={() => setMenuOpen(false)}
+                      className="block w-full rounded-lg px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors"
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+            <a
+              href="https://n2418813.yclients.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMenuOpen(false)}
+              className="btn-primary mt-3 w-full inline-flex items-center justify-center"
+            >
+              Онлайн запись
+            </a>
+          </div>
+        </div>
+      )}
       </div>
     </header>
-
-    {/* Mobile menu panel */}
-    {menuOpen && (
-      <div className="fixed inset-x-4 top-[88px] bottom-4 z-40 xl:hidden">
-        <div className="flex h-full flex-col rounded-[12px] border border-[#daebff] bg-white p-4">
-          <nav className="flex-1 overflow-y-auto" aria-label="Мобильная навигация">
-            <ul className="flex flex-col gap-1">
-              {navigationItems.map((item) => (
-                <li key={item.label}>
-                  <a
-                    href={item.href}
-                    onClick={() => setMenuOpen(false)}
-                    className="block w-full rounded-lg px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors"
-                  >
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <a
-            href="https://n2418813.yclients.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => setMenuOpen(false)}
-            className="btn-primary mt-3 w-full inline-flex items-center justify-center"
-          >
-            Онлайн запись
-          </a>
-        </div>
-      </div>
-    )}
   </>);
 }
+
 
