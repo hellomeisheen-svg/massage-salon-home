@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { useBooking } from "@/components/BookingModal";
 
 type PriceRow = { duration: string; price: string; note?: string };
