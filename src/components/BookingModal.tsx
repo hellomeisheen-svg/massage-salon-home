@@ -25,12 +25,10 @@ export function useBooking() {
   return ctx;
 }
 
-// Из любого ввода достаём до 10 «абонентских» цифр (без кода страны)
+// Из любого ввода достаём до 10 «абонентских» цифр (без кода страны 7/8)
 function extractDigits(raw: string) {
   let digits = raw.replace(/\D/g, "");
-  if (digits.length > 10 && (digits.startsWith("7") || digits.startsWith("8"))) {
-    digits = digits.slice(1);
-  } else if (digits.startsWith("7") && raw.trim().startsWith("+")) {
+  if (digits.startsWith("7") || digits.startsWith("8")) {
     digits = digits.slice(1);
   }
   return digits.slice(0, 10);
@@ -47,6 +45,7 @@ function formatPhone(rest: string) {
 }
 
 
+
 function BookingDialog({
   subject,
   onClose,
@@ -56,15 +55,17 @@ function BookingDialog({
 }) {
   const [sent, setSent] = useState(false);
   const [phone, setPhone] = useState("");
-  const handlePhoneChange = (raw: string) => {
+  const handlePhoneInput = (e: React.FormEvent<HTMLInputElement>) => {
+    const native = e.nativeEvent as InputEvent;
+    const raw = (e.target as HTMLInputElement).value;
     let next = extractDigits(raw);
-    // Если пользователь стёр символ-разделитель, убираем последнюю цифру
-    if (raw.length < formatPhone(phone).length && next === phone) {
-      next = next.slice(0, -1);
-    }
+    const deleting = typeof native?.inputType === "string" && native.inputType.startsWith("delete");
+    // при удалении разделителя цифры не меняются — убираем последнюю цифру
+    if (deleting && next === phone) next = next.slice(0, -1);
     setPhone(next);
     if (next.length === 10) setPhoneError(null);
   };
+
 
   const [phoneError, setPhoneError] = useState<string | null>(null);
   const [consent, setConsent] = useState(false);
@@ -199,7 +200,7 @@ function BookingDialog({
                   required
                   autoComplete="tel"
                   value={formatPhone(phone)}
-                  onChange={(e) => handlePhoneChange(e.target.value)}
+                  onChange={handlePhoneInput}
                   placeholder="+7 (___) ___-__-__"
                   className="h-[52px] rounded-[0.5rem] border border-[#daebff] bg-[#EFF6FF] px-4 text-[16px] text-foreground outline-none transition-colors placeholder:text-[#8D9DC5] focus:border-[#1C3C8C] focus:bg-white"
                 />
