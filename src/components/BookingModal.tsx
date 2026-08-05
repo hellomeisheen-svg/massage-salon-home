@@ -55,15 +55,17 @@ function BookingDialog({
 }) {
   const [sent, setSent] = useState(false);
   const [phone, setPhone] = useState("");
-  const handlePhoneChange = (raw: string) => {
+  const handlePhoneInput = (e: React.FormEvent<HTMLInputElement>) => {
+    const native = e.nativeEvent as InputEvent;
+    const raw = (e.target as HTMLInputElement).value;
     let next = extractDigits(raw);
-    // Если пользователь стёр символ-разделитель, убираем последнюю цифру
-    if (raw.length < formatPhone(phone).length && next === phone) {
-      next = next.slice(0, -1);
-    }
+    const deleting = typeof native?.inputType === "string" && native.inputType.startsWith("delete");
+    // при удалении разделителя цифры не меняются — убираем последнюю цифру
+    if (deleting && next === phone) next = next.slice(0, -1);
     setPhone(next);
     if (next.length === 10) setPhoneError(null);
   };
+
 
   const [phoneError, setPhoneError] = useState<string | null>(null);
   const [consent, setConsent] = useState(false);
