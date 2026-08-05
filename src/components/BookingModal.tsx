@@ -200,7 +200,7 @@ function BookingDialog({
                   required
                   autoComplete="tel"
                   value={formatPhone(phone)}
-                  onChange={(e) => handlePhoneChange(e.target.value)}
+                  onChange={handlePhoneInput}
                   placeholder="+7 (___) ___-__-__"
                   className="h-[52px] rounded-[0.5rem] border border-[#daebff] bg-[#EFF6FF] px-4 text-[16px] text-foreground outline-none transition-colors placeholder:text-[#8D9DC5] focus:border-[#1C3C8C] focus:bg-white"
                 />
