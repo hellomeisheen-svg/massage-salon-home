@@ -1,5 +1,3 @@
-import { useBooking } from "@/components/BookingModal";
-
 const heroFont = {
   fontFamily: "'Roslindale Cyrillic Display Condensed', serif",
 } as const;
