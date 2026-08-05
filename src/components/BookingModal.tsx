@@ -108,7 +108,7 @@ function BookingDialog({
           type="button"
           onClick={onClose}
           aria-label="Закрыть окно записи"
-          className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-lg border border-[#daebff] bg-[#EFF6FF] text-[#1C3C8C] transition-colors hover:bg-white"
+          className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-[0.5rem] border border-[#daebff] bg-[#EFF6FF] text-[#1C3C8C] transition-colors hover:bg-white"
         >
           <X size={18} />
         </button>

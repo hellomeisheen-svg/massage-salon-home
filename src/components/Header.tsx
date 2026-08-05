@@ -148,7 +148,7 @@ export function Header() {
           aria-label={menuOpen ? "Закрыть меню" : "Открыть меню"}
           aria-expanded={menuOpen}
           onClick={() => setMenuOpen((v) => !v)}
-          className="flex h-10 w-10 items-center justify-center rounded-lg text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors"
+          className="flex h-10 w-10 items-center justify-center rounded-[0.5rem] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors"
         >
           {menuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
