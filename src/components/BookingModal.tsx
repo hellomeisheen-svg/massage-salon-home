@@ -8,7 +8,7 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { X } from "lucide-react";
+import { Check, X } from "lucide-react";
 
 const heading = "'Roslindale Cyrillic Display Condensed', serif";
 
@@ -25,20 +25,27 @@ export function useBooking() {
   return ctx;
 }
 
-function formatPhone(raw: string) {
+// Из любого ввода достаём до 10 «абонентских» цифр (без кода страны)
+function extractDigits(raw: string) {
   let digits = raw.replace(/\D/g, "");
-  if (digits.startsWith("8")) digits = "7" + digits.slice(1);
-  if (!digits.startsWith("7")) digits = "7" + digits;
-  digits = digits.slice(0, 11);
-  const rest = digits.slice(1);
-  let out = "+7";
-  if (rest.length > 0) out += ` (${rest.slice(0, 3)}`;
+  if (digits.length > 10 && (digits.startsWith("7") || digits.startsWith("8"))) {
+    digits = digits.slice(1);
+  } else if (digits.startsWith("7") && raw.trim().startsWith("+")) {
+    digits = digits.slice(1);
+  }
+  return digits.slice(0, 10);
+}
+
+function formatPhone(rest: string) {
+  if (!rest) return "";
+  let out = `+7 (${rest.slice(0, 3)}`;
   if (rest.length >= 3) out += ")";
   if (rest.length > 3) out += ` ${rest.slice(3, 6)}`;
   if (rest.length > 6) out += `-${rest.slice(6, 8)}`;
   if (rest.length > 8) out += `-${rest.slice(8, 10)}`;
   return out;
 }
+
 
 function BookingDialog({
   subject,
@@ -49,6 +56,16 @@ function BookingDialog({
 }) {
   const [sent, setSent] = useState(false);
   const [phone, setPhone] = useState("");
+  const handlePhoneChange = (raw: string) => {
+    let next = extractDigits(raw);
+    // Если пользователь стёр символ-разделитель, убираем последнюю цифру
+    if (raw.length < formatPhone(phone).length && next === phone) {
+      next = next.slice(0, -1);
+    }
+    setPhone(next);
+    if (next.length === 10) setPhoneError(null);
+  };
+
   const [phoneError, setPhoneError] = useState<string | null>(null);
   const [consent, setConsent] = useState(false);
   const [consentError, setConsentError] = useState<string | null>(null);
@@ -142,9 +159,9 @@ function BookingDialog({
               className="mt-6 flex flex-col gap-4"
               onSubmit={(e) => {
                 e.preventDefault();
-                const digits = phone.replace(/\D/g, "");
                 let ok = true;
-                if (digits.length !== 11) {
+                if (phone.length !== 10) {
+
                   setPhoneError("Введите номер телефона полностью");
                   ok = false;
                 } else {
@@ -181,8 +198,8 @@ function BookingDialog({
                   inputMode="numeric"
                   required
                   autoComplete="tel"
-                  value={phone}
-                  onChange={(e) => setPhone(formatPhone(e.target.value))}
+                  value={formatPhone(phone)}
+                  onChange={(e) => handlePhoneChange(e.target.value)}
                   placeholder="+7 (___) ___-__-__"
                   className="h-[52px] rounded-lg border border-[#daebff] bg-[#EFF6FF] px-4 text-[16px] text-[#1C3C8C] outline-none transition-colors placeholder:text-[#8D9DC5] focus:border-[#1C3C8C] focus:bg-white"
                 />
@@ -202,16 +219,24 @@ function BookingDialog({
               </label>
 
               <label className="flex items-start gap-3">
-                <input
-                  type="checkbox"
-                  name="consent"
-                  checked={consent}
-                  onChange={(e) => {
-                    setConsent(e.target.checked);
-                    if (e.target.checked) setConsentError(null);
-                  }}
-                  className="mt-0.5 h-5 w-5 shrink-0 cursor-pointer rounded-[6px] border border-[#daebff] accent-[#1C3C8C]"
-                />
+                <span className="relative mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center">
+                  <input
+                    type="checkbox"
+                    name="consent"
+                    checked={consent}
+                    onChange={(e) => {
+                      setConsent(e.target.checked);
+                      if (e.target.checked) setConsentError(null);
+                    }}
+                    className="peer h-5 w-5 shrink-0 cursor-pointer appearance-none rounded-[6px] border border-[#A2CFFE] bg-[#EFF6FF] transition-colors hover:border-[#5DAAFD] checked:border-[#88C1FF] checked:bg-[#88C1FF] checked:hover:bg-[#5DAAFD] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5DAAFD]"
+                  />
+                  <Check
+                    size={14}
+                    strokeWidth={3}
+                    className="pointer-events-none absolute text-white opacity-0 transition-opacity peer-checked:opacity-100"
+                  />
+                </span>
+
                 <span className="text-[13px] leading-[1.5] text-[#8D9DC5]">
                   Нажимая кнопку, вы соглашаетесь с{" "}
                   <a
