@@ -345,35 +345,25 @@ function ServiceCard({
 }
 
 
+const HEALTH_START = 9;
+
+const groups = [
+  { label: categories[0], from: 0, to: HEALTH_START },
+  { label: categories[1], from: HEALTH_START, to: services.length },
+];
+
 export function Services() {
-  const [activeCategory, setActiveCategory] = useState(0);
-  const [showAll, setShowAll] = useState(false);
-  const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
+  const [active, setActive] = useState(0);
+  const service = services[active];
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          const idx = Number((entry.target as HTMLElement).dataset.index);
-          setActiveCategory(idx >= 9 ? 1 : 0);
-        });
-      },
-      { rootMargin: "-45% 0px -45% 0px", threshold: 0 }
-    );
-
-    cardRefs.current.forEach((el) => el && observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
+  const prev = () => setActive((i) => (i - 1 + services.length) % services.length);
+  const next = () => setActive((i) => (i + 1) % services.length);
 
   return (
     <section id="services" className="scroll-mt-[140px] bg-[#EFF6FF] py-[60px] sm:py-[70px] xl:pt-[140px] xl:pb-0">
-      <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-8 sm:gap-5">
+      <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-8 sm:gap-5 items-start">
         {/* Left column */}
-        <div
-          className="xl:sticky self-start flex flex-col items-center xl:items-start text-center xl:text-left transition-[top] duration-300 ease-out"
-          style={{ top: "calc(var(--header-offset, 0px) + 20px)" }}
-        >
+        <div className="self-start flex flex-col items-center xl:items-start text-center xl:text-left">
           <span
             className="inline-flex items-center gap-2 px-4 py-1.5 text-[13px] font-medium tracking-wide text-white"
             style={{
@@ -390,76 +380,115 @@ export function Services() {
             Перед каждым визитом обсуждаем ваше состояние&nbsp;— и&nbsp;подбираем технику под&nbsp;него
           </h2>
 
-          <ul className="mt-8 hidden xl:flex flex-col gap-3 items-center xl:items-start">
-            {categories.map((c, i) => (
-              <li key={c}>
-                <button
-                  type="button"
-                  onClick={() => setActiveCategory(i)}
-                  className="flex items-center gap-3 text-left"
-                >
-                  <span
-                    className={`h-2 w-2 rounded-full transition-colors ${
-                      activeCategory === i ? "bg-[#1C3C8C]" : "bg-[#B7C5E3]"
-                    }`}
-                  />
-                  <span
-                    className={`text-[16px] transition-colors ${
-                      activeCategory === i ? "text-[#1C3C8C]" : "text-[#8D9DC5]"
-                    }`}
-                  >
-                    {c}
-                  </span>
-                </button>
-              </li>
+          {/* Desktop: full service menu grouped by category */}
+          <div className="mt-8 hidden xl:flex flex-col gap-7 items-start w-full max-w-[520px]">
+            {groups.map((g) => (
+              <div key={g.label} className="w-full">
+                <p className="text-[13px] font-medium uppercase tracking-[0.12em] text-[#B7C5E3]">
+                  {g.label}
+                </p>
+                <ul className="mt-3 flex flex-col gap-2.5 items-start">
+                  {services.slice(g.from, g.to).map((s, idx) => {
+                    const i = g.from + idx;
+                    const isActive = i === active;
+                    return (
+                      <li key={s.title}>
+                        <button
+                          type="button"
+                          onClick={() => setActive(i)}
+                          aria-current={isActive}
+                          className="flex items-center gap-3 text-left"
+                        >
+                          <span
+                            className={`h-2 w-2 shrink-0 rounded-full transition-colors ${
+                              isActive ? "bg-[#1C3C8C]" : "bg-[#B7C5E3]"
+                            }`}
+                          />
+                          <span
+                            className={`text-[16px] leading-[24px] transition-colors ${
+                              isActive ? "text-[#1C3C8C]" : "text-[#8D9DC5]"
+                            }`}
+                          >
+                            {s.title.replace(/\u00A0·\u00A0/g, " · ")}
+                          </span>
+                        </button>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
 
-        {/* Right column */}
-        <div className="relative flex flex-col gap-6">
-          {services.map((s, i) => {
-            const hiddenOnTablet = i >= 4 && !showAll;
-            return (
-              <div
-                key={i}
-                ref={(el) => {
-                  cardRefs.current[i] = el;
-                }}
-                data-index={i}
-                className={hiddenOnTablet ? "hidden xl:block" : ""}
-              >
-                <ServiceCard
-                  service={s}
-                  dynamicPricing
-                  basePrice={Number(s.price.replace(/\D/g, "")) || 5000}
-                  sessionLabels={
-                    i === 9
-                      ? ["6\u00A0пиявок", "16\u00A0пиявок", "74\u00A0пиявки"]
-                      : i === 10
-                      ? ["6\u00A0пиявок", "10\u00A0пиявок", "20\u00A0пиявок"]
-                      : undefined
-                  }
-                  multiplyDuration={i !== 9 && i !== 10}
-                />
-              </div>
-            );
-          })}
+        {/* Right column — active service */}
+        <div className="flex flex-col gap-4">
+          {/* Mobile / tablet: horizontal pill menu of all services */}
+          <div className="xl:hidden -mx-4 px-4 sm:mx-0 sm:px-0 overflow-x-auto scrollbar-none">
+            <div className="flex w-max gap-2">
+              {services.map((s, i) => (
+                <button
+                  key={s.title}
+                  type="button"
+                  onClick={() => setActive(i)}
+                  className={`whitespace-nowrap rounded-[10px] border px-4 py-2.5 text-[13px] transition-colors duration-300 ${
+                    i === active
+                      ? "border-transparent bg-white font-medium text-[#1C3C8C] shadow-[0_2px_8px_rgba(28,60,140,0.08)]"
+                      : "border-[#daebff] bg-transparent font-light text-[#8D9DC5]"
+                  }`}
+                >
+                  {s.title.replace(/\u00A0·\u00A0/g, " · ")}
+                </button>
+              ))}
+            </div>
+          </div>
 
-          {!showAll && (
+          <ServiceCard
+            key={active}
+            service={service}
+            dynamicPricing
+            basePrice={Number(service.price.replace(/\D/g, "")) || 5000}
+            sessionLabels={
+              active === 9
+                ? ["6\u00A0пиявок", "16\u00A0пиявок", "74\u00A0пиявки"]
+                : active === 10
+                ? ["6\u00A0пиявок", "10\u00A0пиявок", "20\u00A0пиявок"]
+                : undefined
+            }
+            multiplyDuration={active !== 9 && active !== 10}
+          />
+
+          {/* Prev / next navigation */}
+          <div className="flex items-center justify-between gap-3">
             <button
               type="button"
-              onClick={() => setShowAll(true)}
-              className="btn-secondary flex xl:hidden mt-2"
+              onClick={prev}
+              aria-label="Предыдущая услуга"
+              className="btn-secondary min-w-[80px] flex items-center justify-center"
             >
-              Показать больше
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
             </button>
-          )}
+            <span className="text-[13px] font-light text-[#8D9DC5]">
+              {active + 1} / {services.length}
+            </span>
+            <button
+              type="button"
+              onClick={next}
+              aria-label="Следующая услуга"
+              className="btn-secondary min-w-[80px] flex items-center justify-center"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+          </div>
         </div>
-
       </div>
     </section>
   );
 }
+
 
 
