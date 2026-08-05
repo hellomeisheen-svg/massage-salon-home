@@ -36,11 +36,11 @@ function HeadlineBlock() {
         style={heroFont}
       >
         Место, где&nbsp;можно{" "}
-        <span className="bg-gradient-to-r from-[#4A7FD6] to-[#88C1FF] bg-clip-text text-transparent">
+        <span className="text-[#1C3C8C]">
           замедлиться
         </span>{" "}
         и{" "}
-        <span className="bg-gradient-to-r from-[#4A7FD6] to-[#88C1FF] bg-clip-text text-transparent">
+        <span className="text-[#1C3C8C]">
           вернуться к&nbsp;себе
         </span>{" "}
         без&nbsp;спешки
