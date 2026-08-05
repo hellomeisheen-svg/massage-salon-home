@@ -63,15 +63,15 @@ export function Hero() {
     <main className="bg-[#EFF6FF] py-4 sm:py-5">
       <section className="container-1900 grid grid-cols-1 gap-4 sm:gap-5 xl:h-[calc(100vh-140px)] xl:grid-cols-2">
         {/* Content card */}
-        <div className="flex min-h-0 flex-col overflow-hidden rounded-[12px] border border-[#daebff] bg-white p-5 sm:min-h-[560px] sm:p-6 xl:min-h-0 xl:p-10">
+        <div className="flex min-h-0 flex-col overflow-hidden rounded-[12px] border border-[#daebff] bg-white p-5 sm:min-h-[520px] sm:p-6 xl:min-h-0 xl:p-10">
           <SpecialistBlock />
-          <div className="mt-[80px] sm:mt-auto xl:mt-auto xl:pt-10">
+          <div className="mt-[60px] sm:mt-auto sm:pt-8 xl:mt-auto xl:pt-10">
             <HeadlineBlock />
           </div>
         </div>
 
         {/* Hero image */}
-        <div className="h-[400px] overflow-hidden rounded-[12px] border border-[#daebff] sm:h-[560px] xl:h-auto xl:min-h-0">
+        <div className="h-[320px] overflow-hidden rounded-[12px] border border-[#daebff] sm:h-[420px] xl:h-auto xl:min-h-0">
 
           <img
             className="h-full w-full object-cover object-top sm:object-center"
