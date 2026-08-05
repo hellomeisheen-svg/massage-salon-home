@@ -65,13 +65,13 @@ export function Hero() {
         {/* Content card */}
         <div className="flex min-h-0 flex-col overflow-hidden rounded-[12px] border border-[#daebff] bg-white p-5 sm:min-h-[520px] sm:p-6 xl:min-h-0 xl:p-10">
           <SpecialistBlock />
-          <div className="mt-[60px] sm:mt-auto sm:pt-8 xl:mt-auto xl:pt-10">
+          <div className="mt-[60px] sm:mt-[140px] xl:mt-[140px]">
             <HeadlineBlock />
           </div>
         </div>
 
         {/* Hero image */}
-        <div className="h-[320px] overflow-hidden rounded-[12px] border border-[#daebff] sm:h-[380px] xl:h-auto xl:min-h-0">
+        <div className="h-[420px] overflow-hidden rounded-[12px] border border-[#daebff] sm:h-[520px] xl:h-auto xl:min-h-0">
 
           <img
             className="h-full w-full object-cover object-top sm:object-center"
