@@ -398,25 +398,29 @@ function ServiceCard({
       </div>
 
       {/* Bottom actions */}
-      <div className="mt-auto pt-8 flex flex-col sm:flex-row gap-3">
-        <button
-          type="button"
-          onClick={() => openBooking(bookingTitle)}
-          className="btn-primary w-full sm:flex-1"
-        >
-          Записаться
-        </button>
-        <a href="#programs" className="btn-secondary w-full sm:flex-1 inline-flex items-center justify-center text-center">
-          Узнать больше
-        </a>
-        <div className="grid grid-cols-2 gap-3 sm:contents">
+      <div className="mt-auto pt-8">
+        <div className="flex flex-col sm:flex-row gap-3">
+          <button
+            type="button"
+            onClick={() => openBooking(bookingTitle)}
+            className="btn-primary w-full sm:flex-1"
+          >
+            Записаться
+          </button>
+          <a href="#programs" className="btn-secondary w-full sm:flex-1 inline-flex items-center justify-center text-center">
+            Узнать больше
+          </a>
+        </div>
+
+        {/* Secondary navigation — under the buttons */}
+        <div className="mt-4 flex items-center justify-center gap-2">
           <button
             type="button"
             onClick={onPrev}
             aria-label="Предыдущая услуга"
-            className="btn-secondary sm:min-w-[80px] sm:flex-none flex items-center justify-center"
+            className="flex h-9 w-9 items-center justify-center rounded-[8px] border border-[#DAEBFF] bg-white text-[#8D9DC5] transition-colors duration-300 hover:border-[#88C1FF] hover:text-[#1C3C8C]"
           >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
               <path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
@@ -424,14 +428,15 @@ function ServiceCard({
             type="button"
             onClick={onNext}
             aria-label="Следующая услуга"
-            className="btn-secondary sm:min-w-[80px] sm:flex-none flex items-center justify-center"
+            className="flex h-9 w-9 items-center justify-center rounded-[8px] border border-[#DAEBFF] bg-white text-[#8D9DC5] transition-colors duration-300 hover:border-[#88C1FF] hover:text-[#1C3C8C]"
           >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
               <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
         </div>
       </div>
+
     </article>
   );
 }
