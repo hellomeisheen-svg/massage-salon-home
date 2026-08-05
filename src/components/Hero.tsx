@@ -52,6 +52,13 @@ function HeadlineBlock() {
         >
           Онлайн запись
         </button>
+        <button
+          type="button"
+          onClick={() => openBooking()}
+          className="btn-secondary w-full sm:w-[200px] xl:w-[250px]"
+        >
+          Получить консультацию
+        </button>
       </div>
     </div>
   );
