@@ -56,6 +56,16 @@ function BookingDialog({
 }) {
   const [sent, setSent] = useState(false);
   const [phone, setPhone] = useState("");
+  const handlePhoneChange = (raw: string) => {
+    let next = extractDigits(raw);
+    // Если пользователь стёр символ-разделитель, убираем последнюю цифру
+    if (raw.length < formatPhone(phone).length && next === phone) {
+      next = next.slice(0, -1);
+    }
+    setPhone(next);
+    if (next.length === 10) setPhoneError(null);
+  };
+
   const [phoneError, setPhoneError] = useState<string | null>(null);
   const [consent, setConsent] = useState(false);
   const [consentError, setConsentError] = useState<string | null>(null);
