@@ -486,34 +486,9 @@ export function Services() {
                 : undefined
             }
             multiplyDuration={active !== 9 && active !== 10}
+            onPrev={prev}
+            onNext={next}
           />
-
-          {/* Prev / next navigation */}
-          <div className="flex items-center justify-between gap-3">
-            <button
-              type="button"
-              onClick={prev}
-              aria-label="Предыдущая услуга"
-              className="btn-secondary min-w-[80px] flex items-center justify-center"
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                <path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
-            <span className="text-[13px] font-light text-[#8D9DC5]">
-              {active + 1} / {services.length}
-            </span>
-            <button
-              type="button"
-              onClick={next}
-              aria-label="Следующая услуга"
-              className="btn-secondary min-w-[80px] flex items-center justify-center"
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
-          </div>
         </div>
       </div>
     </section>
