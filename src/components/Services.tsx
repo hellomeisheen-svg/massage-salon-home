@@ -413,14 +413,14 @@ function ServiceCard({
         </div>
 
         {/* Secondary navigation — under the buttons */}
-        <div className="mt-4 flex items-center justify-center gap-3">
+        <div className="mt-4 grid grid-cols-2 gap-3 sm:flex sm:justify-center">
           <button
             type="button"
             onClick={onPrev}
             aria-label="Предыдущая услуга"
-            className="btn-secondary !p-0 h-[60px] w-[60px]"
+            className="btn-secondary flex items-center justify-center sm:min-w-[80px] sm:flex-none"
           >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
               <path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
@@ -428,9 +428,9 @@ function ServiceCard({
             type="button"
             onClick={onNext}
             aria-label="Следующая услуга"
-            className="btn-secondary !p-0 h-[60px] w-[60px]"
+            className="btn-secondary flex items-center justify-center sm:min-w-[80px] sm:flex-none"
           >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
               <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
