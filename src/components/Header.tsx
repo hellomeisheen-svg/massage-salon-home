@@ -91,7 +91,7 @@ export function Header() {
           href="https://n2418813.yclients.com"
           target="_blank"
           rel="noopener noreferrer"
-          className={`btn-header-cta w-[250px] ${heroPassed ? "btn-header-cta-active" : ""}`}
+          className={`btn-header-cta ${heroPassed ? "btn-header-cta-active" : ""}`}
         >
           Онлайн запись
         </a>
