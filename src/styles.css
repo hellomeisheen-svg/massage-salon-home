@@ -99,6 +99,16 @@
   }
 }
 
+@utility scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+
+
 @utility btn-base {
   display: inline-flex;
   align-items: center;
