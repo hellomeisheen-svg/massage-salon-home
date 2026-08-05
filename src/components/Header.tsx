@@ -91,7 +91,7 @@ export function Header() {
           href="https://n2418813.yclients.com"
           target="_blank"
           rel="noopener noreferrer"
-          className={`btn-header-cta ${heroPassed ? "btn-header-cta-active" : ""}`}
+          className={`btn-header-cta w-[250px] ${heroPassed ? "btn-header-cta-active" : ""}`}
         >
           Онлайн запись
         </a>
@@ -148,7 +148,7 @@ export function Header() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMenuOpen(false)}
-              className="btn-secondary mt-3 w-full inline-flex items-center justify-center"
+              className="btn-primary mt-3 w-full inline-flex items-center justify-center"
             >
               Онлайн запись
             </a>
