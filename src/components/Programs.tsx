@@ -231,14 +231,14 @@ export function Programs() {
           </div>
 
           <div
-            className="mt-auto pt-8 flex flex-wrap items-baseline justify-start sm:justify-end gap-x-4 text-[26px] font-light text-[#1C3C8C]"
+            className="mt-auto pt-8 flex flex-wrap items-center justify-start sm:justify-end gap-x-4 gap-y-2"
             style={{ fontFamily: heading }}
           >
-            <span className="text-[18px] text-[#8D9DC5] line-through">
+            <span className="text-[18px] sm:text-[20px] font-light text-[#8D9DC5] line-through">
               {formatPrice(originalPrice)}
               <Ruble />
             </span>
-            <span>
+            <span className="text-[30px] sm:text-[34px] font-light text-[#1C3C8C]">
               {formatPrice(price)}
               <Ruble />
             </span>
