@@ -396,7 +396,7 @@ function ServiceCard({
           >
             {renderPrice(computedPrice)}
           </span>
-          <span className="text-[13px] font-light text-[#8D9DC5]">за сеанс</span>
+          <span className="text-[13px] font-light text-[#8D9DC5]">{priceLabel}</span>
         </div>
       </div>
 
