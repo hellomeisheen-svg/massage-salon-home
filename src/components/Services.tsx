@@ -370,7 +370,7 @@ function ServiceCard({
         )}
 
         {/* Description */}
-        <p className="mt-4 text-[15px] leading-[24px] text-[#8D9DC5]">
+        <p className="mt-4 whitespace-pre-line text-[15px] leading-[24px] text-[#8D9DC5]">
           {variant.description}
         </p>
 
