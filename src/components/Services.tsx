@@ -373,63 +373,58 @@ function ServiceCard({
         {selectedSummary}
       </p>
 
-      {/* CTA block */}
-      <div className="mt-5 rounded-[10px] border border-[#DAEBFF] bg-[#F8FBFF] p-4 sm:p-5">
-        {/* Price row */}
-        <div className="flex items-baseline justify-between gap-4">
-          <div className="flex flex-col">
-            <span
-              className="text-[26px] font-light leading-[1.1] text-[#1C3C8C]"
-              style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
-            >
-              {renderPrice(computedPrice)}
-            </span>
-            <span className="text-[13px] font-light text-[#8D9DC5]">за сеанс</span>
-          </div>
-          {hasDiscount && (
-            <span
-              className="text-[17px] font-light leading-[1.2] text-[#8D9DC5] line-through"
-              style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
-            >
-              {renderPrice(originalPrice)}
-            </span>
-          )}
-        </div>
-
-        {/* Actions */}
-        <div className="mt-4 flex flex-col sm:flex-row gap-3">
-          <button
-            type="button"
-            onClick={() => openBooking(bookingTitle)}
-            className="btn-primary flex-1"
+      {/* Price */}
+      <div className="mt-5 flex items-baseline justify-between gap-4">
+        <div className="flex flex-col">
+          <span
+            className="text-[26px] font-light leading-[1.1] text-[#1C3C8C]"
+            style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
           >
-            Записаться
-          </button>
-          <a href="#programs" className="btn-secondary flex-1 inline-flex items-center justify-center text-center">
-            Узнать больше
-          </a>
+            {renderPrice(computedPrice)}
+          </span>
+          <span className="text-[13px] font-light text-[#8D9DC5]">за сеанс</span>
         </div>
+        {hasDiscount && (
+          <span
+            className="text-[17px] font-light leading-[1.2] text-[#8D9DC5] line-through"
+            style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
+          >
+            {renderPrice(originalPrice)}
+          </span>
+        )}
+      </div>
 
-        {/* Navigation arrows */}
-        <div className="mt-3 flex items-center justify-between gap-2">
+      {/* Actions */}
+      <div className="mt-4 flex flex-col sm:flex-row gap-3">
+        <button
+          type="button"
+          onClick={() => openBooking(bookingTitle)}
+          className="btn-primary flex-1"
+        >
+          Записаться
+        </button>
+        <a href="#programs" className="btn-secondary flex-1 inline-flex items-center justify-center text-center">
+          Узнать больше
+        </a>
+        <div className="grid grid-cols-2 gap-3 sm:contents">
           <button
             type="button"
             onClick={onPrev}
             aria-label="Предыдущая услуга"
-            className="btn-nav"
+            className="btn-secondary sm:min-w-[80px] sm:flex-none inline-flex items-center justify-center gap-2"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
               <path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-            <span className="ml-2 text-[13px] font-light">Назад</span>
+            <span className="text-[13px] font-light">Назад</span>
           </button>
           <button
             type="button"
             onClick={onNext}
             aria-label="Следующая услуга"
-            className="btn-nav"
+            className="btn-secondary sm:min-w-[80px] sm:flex-none inline-flex items-center justify-center gap-2"
           >
-            <span className="mr-2 text-[13px] font-light">Далее</span>
+            <span className="text-[13px] font-light">Далее</span>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
               <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
