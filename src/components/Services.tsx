@@ -373,7 +373,7 @@ function ServiceCard({
         </p>
 
         {/* Selected configuration summary */}
-        <p className="mt-4 text-[13px] font-light leading-[18px] tracking-wide text-[#B7C5E3]">
+        <p className="mt-4 text-[13px] font-medium leading-[18px] tracking-wide text-[#1C3C8C]">
           {selectedSummary}
         </p>
       </div>
