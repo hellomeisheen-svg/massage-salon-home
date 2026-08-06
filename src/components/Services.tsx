@@ -5,6 +5,7 @@ type Variant = {
   zone: string;
   subtitle: string;
   description: string;
+  mobileDescription?: string;
   duration: string;
   price: string;
   sessionLabels?: string[];
@@ -123,6 +124,8 @@ const serviceTypes: ServiceType[] = [
         subtitle: "Оздоровительная практика",
         description:
           "Бережная постановка медицинских пиявок на\u00A0выбранные зоны тела.\n\nПомогает мягко разогнать застой, улучшить локальное кровообращение и\u00A0разгрузить напряжённые участки.\n\nПодходит, если важно поддержать общее самочувствие, снизить тяжесть в\u00A0теле и\u00A0дать организму ресурс на\u00A0восстановление.",
+        mobileDescription:
+          "Бережная постановка медицинских пиявок на\u00A0выбранные зоны тела.\n\nМягко разгоняет застой, улучшает кровообращение и\u00A0разгружает напряжённые участки.\n\nПомогает поддержать общее самочувствие и\u00A0снизить чувство тяжести в\u00A0теле.",
         duration: "120\u00A0минут",
         price: "4\u00A0800\u00A0₽",
         sessionLabels: ["6\u00A0пиявок", "16\u00A0пиявок", "74\u00A0пиявки"],
@@ -370,7 +373,10 @@ function ServiceCard({
         )}
 
         {/* Description */}
-        <p className="mt-6 whitespace-pre-line text-[15px] leading-[24px] text-[#8D9DC5]">
+        <p className="mt-6 whitespace-pre-line text-[15px] leading-[24px] text-[#8D9DC5] xl:hidden">
+          {variant.mobileDescription || variant.description}
+        </p>
+        <p className="mt-6 hidden whitespace-pre-line text-[15px] leading-[24px] text-[#8D9DC5] xl:block">
           {variant.description}
         </p>
 
