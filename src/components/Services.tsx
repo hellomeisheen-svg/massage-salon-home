@@ -400,7 +400,7 @@ function ServiceCard({
                 ? "Тип банок:"
                 : "Зона:"}
             </span>
-            <div className="mt-2 flex flex-wrap items-center gap-2">
+            <div className="mt-2 flex flex-wrap items-stretch gap-1 rounded-[10px] bg-[#EFF6FF] p-1">
               {type.variants.map((v, i) => {
                 const isActive = i === zoneIndex;
                 const tabLabel = v.zoneShort || v.zone;
@@ -412,8 +412,8 @@ function ServiceCard({
                     aria-pressed={isActive}
                     className={`rounded-[0.5rem] px-3 py-1.5 text-[14px] leading-[20px] transition-all duration-300 ${
                       isActive
-                        ? "border border-[#A2CFFE] bg-[#DAEBFF] font-medium text-[#1C3C8C]"
-                        : "border border-[rgba(141,157,197,0.5)] bg-transparent font-medium text-[#1C3C8C] hover:border-[#A2CFFE] hover:bg-[#EFF6FF]"
+                        ? "bg-white shadow-[0_2px_8px_rgba(28,60,140,0.08)] font-medium text-[#1C3C8C]"
+                        : "bg-transparent font-medium text-[#8D9DC5] hover:bg-[#DAEBFF]"
                     }`}
                   >
                     {tabLabel}
@@ -557,7 +557,7 @@ export function Services() {
         return (
           <div key={g.label}>
             {showLabel && (
-              <p className="text-[13px] font-light leading-[18px] text-[#B7C5E3]">{g.label}</p>
+              <p className="text-[13px] font-light leading-[18px] text-[#8D9DC5]">{g.label}</p>
             )}
             <ul className={`flex flex-col gap-3 items-start ${showLabel ? "mt-3" : ""}`}>
               {g.items.map((t) => {
