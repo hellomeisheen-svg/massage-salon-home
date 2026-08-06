@@ -379,24 +379,24 @@ function ServiceCard({
 
 
       {/* Price */}
-      <div className="mt-5 flex items-baseline justify-between gap-4">
-        <div className="flex flex-col">
+      <div className="mt-5 flex items-center justify-end gap-4 sm:gap-5">
+        {hasDiscount && (
           <span
-            className="text-[26px] font-light leading-[1.1] text-[#1C3C8C]"
+            className="text-[17px] sm:text-[19px] font-light leading-[1.2] text-[#8D9DC5] line-through"
+            style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
+          >
+            {renderPrice(originalPrice)}
+          </span>
+        )}
+        <div className="flex flex-col items-end">
+          <span
+            className="text-[30px] sm:text-[34px] font-light leading-[1.1] text-[#1C3C8C]"
             style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
           >
             {renderPrice(computedPrice)}
           </span>
           <span className="text-[13px] font-light text-[#8D9DC5]">за сеанс</span>
         </div>
-        {hasDiscount && (
-          <span
-            className="text-[17px] font-light leading-[1.2] text-[#8D9DC5] line-through"
-            style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
-          >
-            {renderPrice(originalPrice)}
-          </span>
-        )}
       </div>
 
       {/* Actions */}
