@@ -620,10 +620,6 @@ export function Services() {
 
         {/* Right column — active service */}
         <div className="flex flex-col gap-4">
-          {/* Mobile / tablet: same navigation, compact */}
-          <div className="xl:hidden w-full text-left rounded-[12px] border border-[#DAEBFF] bg-white/50 px-5 py-5">
-            {renderNav(true)}
-          </div>
 
 
           <ServiceCard
