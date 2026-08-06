@@ -568,13 +568,38 @@ export function Services() {
                       type="button"
                       onClick={() => selectType(t.index)}
                       aria-current={isActive}
-                      className="flex items-center gap-3 text-left"
+                      className="group flex items-center gap-3 text-left"
                     >
-                      <span
-                        className={`h-2 w-2 rounded-full transition-colors ${
-                          isActive ? "bg-[#1C3C8C]" : "bg-[#B7C5E3]"
-                        }`}
-                      />
+                      <span className="relative flex h-6 w-6 shrink-0 items-center justify-center">
+                        {/* inactive dot */}
+                        <span
+                          className={`absolute h-2 w-2 rounded-full transition-all duration-300 ${
+                            isActive ? "scale-0 opacity-0" : "scale-100 opacity-100 bg-[#B7C5E3]"
+                          }`}
+                        />
+                        {/* active glow */}
+                        <span
+                          className={`absolute h-2.5 w-2.5 rounded-full bg-white transition-all duration-300 ${
+                            isActive ? "scale-100 opacity-100" : "scale-0 opacity-0"
+                          }`}
+                          style={{
+                            boxShadow: isActive
+                              ? "0 0 8px 2px rgba(136, 193, 255, 0.75), 0 0 18px 6px rgba(136, 193, 255, 0.35)"
+                              : "none",
+                          }}
+                        />
+                        {/* satellite dots */}
+                        <span
+                          className={`absolute left-1/2 top-1/2 h-[3px] w-[3px] -translate-y-1/2 rounded-full bg-[#88C1FF]/40 transition-all duration-300 ${
+                            isActive ? "-translate-x-[9px] opacity-100" : "-translate-x-1/2 opacity-0"
+                          }`}
+                        />
+                        <span
+                          className={`absolute left-1/2 top-1/2 h-[3px] w-[3px] -translate-y-1/2 rounded-full bg-[#88C1FF]/40 transition-all duration-300 ${
+                            isActive ? "translate-x-[6px] opacity-100" : "-translate-x-1/2 opacity-0"
+                          }`}
+                        />
+                      </span>
                       <span
                         className={`text-[16px] transition-colors ${
                           isActive ? "text-[#1C3C8C]" : "text-[#8D9DC5]"
