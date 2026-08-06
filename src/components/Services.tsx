@@ -165,7 +165,7 @@ const serviceTypes: ServiceType[] = [
 
 ];
 
-const categories = ["Массаж", "Оздоровительные процедуры"];
+const categories = ["Оздоровительные процедуры", "Массаж"];
 
 const sessions = [
   { label: "1 сеанс", discount: null },
