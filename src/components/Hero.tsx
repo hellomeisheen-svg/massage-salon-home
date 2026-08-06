@@ -36,11 +36,11 @@ function HeadlineBlock() {
         style={heroFont}
       >
         Место, где&nbsp;можно{" "}
-        <span className="inline-block rounded-[8px] bg-[#EFF6FF] px-2 py-1 text-[#1C3C8C]">
+        <span className="bg-[#DAEBFF] px-2 py-1 text-[#1C3C8C] box-decoration-clone rounded-[8px]">
           замедлиться
         </span>{" "}
         и{" "}
-        <span className="inline-block rounded-[8px] bg-[#EFF6FF] px-2 py-1 text-[#1C3C8C]">
+        <span className="bg-[#DAEBFF] px-2 py-1 text-[#1C3C8C] box-decoration-clone rounded-[8px]">
           вернуться к&nbsp;себе
         </span>{" "}
         без&nbsp;спешки
