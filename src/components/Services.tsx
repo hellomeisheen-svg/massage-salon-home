@@ -373,7 +373,10 @@ function ServiceCard({
         )}
 
         {/* Description */}
-        <p className="mt-6 whitespace-pre-line text-[15px] leading-[24px] text-[#8D9DC5]">
+        <p className="mt-6 whitespace-pre-line text-[15px] leading-[24px] text-[#8D9DC5] xl:hidden">
+          {variant.mobileDescription || variant.description}
+        </p>
+        <p className="mt-6 hidden whitespace-pre-line text-[15px] leading-[24px] text-[#8D9DC5] xl:block">
           {variant.description}
         </p>
 
