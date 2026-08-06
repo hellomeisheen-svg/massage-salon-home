@@ -327,51 +327,56 @@ function ServiceCard({
         ))}
       </div>
 
-      {/* Title */}
-      <h3
-        className="mt-5 text-[28px] sm:text-[34px] xl:text-[38px] font-light leading-[1.1] text-[#1C3C8C] break-words hyphens-auto"
-        style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
-      >
-        {clean(type.title)}
-      </h3>
-      <p className="mt-2 italic text-[15px] leading-[24px] text-[#8D9DC5]">
-        {variant.subtitle}
-      </p>
+      <div className="flex-1 min-h-0 overflow-y-auto">
+        {/* Title */}
+        <h3
+          className="mt-5 text-[28px] sm:text-[34px] xl:text-[38px] font-light leading-[1.1] text-[#1C3C8C] break-words hyphens-auto"
+          style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
+        >
+          {clean(type.title)}
+        </h3>
+        <p className="mt-2 italic text-[15px] leading-[24px] text-[#8D9DC5]">
+          {variant.subtitle}
+        </p>
 
-      {/* Zone chips */}
-      {hasZones && (
-        <div className="mt-4 flex flex-wrap items-center gap-2">
-          <span className="text-[13px] font-light leading-[20px] text-[#8D9DC5]">Зона:</span>
-          {type.variants.map((v, i) => {
-            const isActive = i === zoneIndex;
-            return (
-              <button
-                key={v.zone}
-                type="button"
-                onClick={() => onZoneChange(i)}
-                aria-pressed={isActive}
-                className={`rounded-[6px] px-2.5 py-1 text-[13px] leading-[18px] transition-all duration-300 ${
-                  isActive
-                    ? "bg-[#1C3C8C] font-medium text-white"
-                    : "border border-[#DAEBFF] bg-white font-light text-[#8D9DC5] hover:border-[#88C1FF] hover:text-[#1C3C8C]"
-                }`}
-              >
-                {v.zone}
-              </button>
-            );
-          })}
-        </div>
-      )}
+        {/* Zone chips */}
+        {hasZones && (
+          <div className="mt-4">
+            <span className="block text-[13px] font-light leading-[20px] text-[#8D9DC5]">Зона:</span>
+            <div className="mt-2 flex flex-wrap items-center gap-2">
+              {type.variants.map((v, i) => {
+                const isActive = i === zoneIndex;
+                return (
+                  <button
+                    key={v.zone}
+                    type="button"
+                    onClick={() => onZoneChange(i)}
+                    aria-pressed={isActive}
+                    className={`rounded-[0.5rem] px-3 py-1.5 text-[14px] leading-[20px] transition-all duration-300 ${
+                      isActive
+                        ? "border border-[#A2CFFE] bg-[#DAEBFF] font-medium text-[#1C3C8C]"
+                        : "border border-[rgba(141,157,197,0.5)] bg-transparent font-medium text-[#1C3C8C] hover:border-[#A2CFFE] hover:bg-[#EFF6FF]"
+                    }`}
+                  >
+                    {v.zone}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        )}
 
-      {/* Description */}
-      <p className="mt-4 text-[15px] leading-[24px] text-[#8D9DC5]">
-        {variant.description}
-      </p>
+        {/* Description */}
+        <p className="mt-4 text-[15px] leading-[24px] text-[#8D9DC5]">
+          {variant.description}
+        </p>
 
-      {/* Selected configuration summary */}
-      <p className="mt-4 text-[13px] font-light leading-[18px] tracking-wide text-[#B7C5E3]">
-        {selectedSummary}
-      </p>
+        {/* Selected configuration summary */}
+        <p className="mt-4 text-[13px] font-light leading-[18px] tracking-wide text-[#B7C5E3]">
+          {selectedSummary}
+        </p>
+      </div>
+
 
       {/* Price */}
       <div className="mt-5 flex items-baseline justify-between gap-4">
