@@ -340,10 +340,12 @@ function ServiceCard({
           {variant.subtitle}
         </p>
 
-        {/* Zone chips */}
+        {/* Zone / Type chips */}
         {hasZones && (
           <div className="mt-4">
-            <span className="block text-[13px] font-light leading-[20px] text-[#8D9DC5]">Зона:</span>
+            <span className="block text-[13px] font-light leading-[20px] text-[#8D9DC5]">
+              {clean(type.title) === "Гирудотерапия" ? "Тип процедуры:" : "Зона:"}
+            </span>
             <div className="mt-2 flex flex-wrap items-center gap-2">
               {type.variants.map((v, i) => {
                 const isActive = i === zoneIndex;
