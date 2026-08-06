@@ -472,7 +472,36 @@ function ServiceCard({
         <a href="#programs" className="btn-secondary flex-1 inline-flex items-center justify-center text-center">
           Узнать больше
         </a>
-        <div className="grid grid-cols-2 gap-3 sm:contents">
+
+        {/* Mobile / tablet: compact arrows with counter */}
+        <div className="flex items-center justify-between xl:hidden">
+          <button
+            type="button"
+            onClick={onPrev}
+            aria-label="Предыдущая услуга"
+            className="btn-secondary h-10 w-10 flex items-center justify-center p-0"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+          <span className="text-[14px] font-medium leading-[1] text-[#1C3C8C]">
+            {activeIndex + 1} / {totalCount}
+          </span>
+          <button
+            type="button"
+            onClick={onNext}
+            aria-label="Следующая услуга"
+            className="btn-secondary h-10 w-10 flex items-center justify-center p-0"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+        </div>
+
+        {/* Desktop: arrows */}
+        <div className="hidden xl:contents">
           <button
             type="button"
             onClick={onPrev}
