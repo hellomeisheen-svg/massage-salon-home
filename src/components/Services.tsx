@@ -20,7 +20,7 @@ type ServiceType = {
 const serviceTypes: ServiceType[] = [
   {
     title: "Векторный",
-    category: 0,
+    category: 1,
     variants: [
       {
         zone: "Всё тело",
@@ -34,7 +34,7 @@ const serviceTypes: ServiceType[] = [
   },
   {
     title: "Лимфатический",
-    category: 0,
+    category: 1,
     variants: [
       {
         zone: "Всё тело",
@@ -48,7 +48,7 @@ const serviceTypes: ServiceType[] = [
   },
   {
     title: "Лимфодренажный",
-    category: 0,
+    category: 1,
     variants: [
       {
         zone: "Всё тело",
@@ -70,7 +70,7 @@ const serviceTypes: ServiceType[] = [
   },
   {
     title: "Классический",
-    category: 0,
+    category: 1,
     variants: [
       {
         zone: "Всё тело",
@@ -116,7 +116,7 @@ const serviceTypes: ServiceType[] = [
   },
   {
     title: "Гирудотерапия",
-    category: 1,
+    category: 0,
     variants: [
       {
         zone: "Медицинские пиявки",
@@ -142,7 +142,7 @@ const serviceTypes: ServiceType[] = [
   },
   {
     title: "Банки",
-    category: 1,
+    category: 0,
     variants: [
       {
         zone: "Стеклянные банки",
@@ -165,7 +165,7 @@ const serviceTypes: ServiceType[] = [
 
 ];
 
-const categories = ["Массаж", "Оздоровительные процедуры"];
+const categories = ["Оздоровительные процедуры", "Массаж"];
 
 const sessions = [
   { label: "1 сеанс", discount: null },
