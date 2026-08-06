@@ -374,7 +374,7 @@ function ServiceCard({
         </p>
 
         {/* Zone / Type chips */}
-        {hasZones && (
+        {variant.zone && (
           <div className="mt-6">
             <span className="block text-[13px] font-light leading-[20px] text-[#8D9DC5]">
               {clean(type.title) === "Гирудотерапия"
