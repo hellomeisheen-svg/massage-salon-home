@@ -283,24 +283,41 @@ function ServiceCard({
   const variant = type.variants[zoneIndex] ?? type.variants[0];
   const hasZones = type.variants.length > 1;
 
+  const items = sessions.map((s, i) => ({
+    label: variant.sessionLabels?.[i] ?? s.label,
+    discount: s.discount,
+  }));
+
   const sessionCounts = [1, 3, 6];
   const discounts = [0, 0.1, 0.15];
-  const basePrice = Number(variant.price.replace(/\D/g, "")) || 5000;
+  const isCosmeticLeeches =
+    clean(type.title) === "Гирудотерапия" && variant.zone === "Косметические";
+  const leechCountMatch = items[activeSession].label.match(/\d+/);
+  const leechCount = leechCountMatch ? Number(leechCountMatch[0]) : 6;
+
+  let basePrice: number;
+  let originalPrice: string;
+  let computedPrice: string;
+  if (isCosmeticLeeches) {
+    basePrice = leechCount * 600;
+    const discount = discounts[activeSession];
+    originalPrice = formatPrice(basePrice);
+    computedPrice = formatPrice(Math.round(basePrice * (1 - discount)));
+  } else {
+    basePrice = Number(variant.price.replace(/\D/g, "")) || 5000;
+    originalPrice = formatPrice(basePrice * sessionCounts[activeSession]);
+    computedPrice = formatPrice(
+      Math.round(basePrice * sessionCounts[activeSession] * (1 - discounts[activeSession]))
+    );
+  }
+
   const hasDiscount = discounts[activeSession] > 0;
-  const originalPrice = formatPrice(basePrice * sessionCounts[activeSession]);
-  const computedPrice = formatPrice(
-    Math.round(basePrice * sessionCounts[activeSession] * (1 - discounts[activeSession]))
-  );
 
   const computedDuration = formatDurationString(
     variant.duration,
     variant.multiplyDuration === false ? 1 : sessionCounts[activeSession]
   );
 
-  const items = sessions.map((s, i) => ({
-    label: variant.sessionLabels?.[i] ?? s.label,
-    discount: s.discount,
-  }));
 
   const bookingTitle = hasZones
     ? `${clean(type.title)} · ${clean(variant.zone)}`
