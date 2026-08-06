@@ -385,9 +385,6 @@ function ServiceCard({
         >
           {clean(type.title)}
         </h3>
-        <p className="mt-2 italic text-[15px] leading-[24px] text-[#8D9DC5]">
-          {variant.subtitle}
-        </p>
 
         {/* Zone / Type chips */}
         {variant.zone && (
