@@ -474,7 +474,7 @@ function ServiceCard({
         </a>
 
         {/* Mobile: compact square arrows with counter */}
-        <div className="flex items-center justify-between lg:hidden">
+        <div className="flex items-center justify-between sm:hidden">
           <button
             type="button"
             onClick={onPrev}
@@ -501,7 +501,7 @@ function ServiceCard({
         </div>
 
         {/* Desktop / tablet: arrows */}
-        <div className="hidden lg:contents">
+        <div className="hidden sm:contents">
           <button
             type="button"
             onClick={onPrev}
