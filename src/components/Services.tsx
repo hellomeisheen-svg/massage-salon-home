@@ -357,11 +357,16 @@ function ServiceCard({
         {hasZones && (
           <div className="mt-6">
             <span className="block text-[13px] font-light leading-[20px] text-[#8D9DC5]">
-              {clean(type.title) === "Гирудотерапия" ? "Тип пиявок:" : "Зона:"}
+              {clean(type.title) === "Гирудотерапия"
+                ? "Тип пиявок:"
+                : clean(type.title) === "Банки"
+                ? "Тип банок:"
+                : "Зона:"}
             </span>
             <div className="mt-2 flex flex-wrap items-center gap-2">
               {type.variants.map((v, i) => {
                 const isActive = i === zoneIndex;
+                const tabLabel = v.zoneShort || v.zone;
                 return (
                   <button
                     key={v.zone}
@@ -374,7 +379,7 @@ function ServiceCard({
                         : "border border-[rgba(141,157,197,0.5)] bg-transparent font-medium text-[#1C3C8C] hover:border-[#A2CFFE] hover:bg-[#EFF6FF]"
                     }`}
                   >
-                    {v.zone}
+                    {tabLabel}
                   </button>
                 );
               })}
