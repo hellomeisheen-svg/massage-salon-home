@@ -287,12 +287,16 @@ function clean(value: string) {
 function ServiceCard({
   type,
   zoneIndex,
+  activeIndex,
+  totalCount,
   onZoneChange,
   onPrev,
   onNext,
 }: {
   type: ServiceType;
   zoneIndex: number;
+  activeIndex: number;
+  totalCount: number;
   onZoneChange: (i: number) => void;
   onPrev: () => void;
   onNext: () => void;
