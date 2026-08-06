@@ -550,44 +550,48 @@ export function Services() {
   const prev = () => selectType((active - 1 + serviceTypes.length) % serviceTypes.length);
   const next = () => selectType((active + 1) % serviceTypes.length);
 
-  const nav = (
+  const renderNav = (isMobile: boolean) => (
     <nav className="flex w-full flex-col gap-6">
-      {groups.map((g) => (
-        <div key={g.label}>
-          <p className="text-[13px] font-light leading-[18px] text-[#B7C5E3]">{g.label}</p>
-          <ul className="mt-3 flex flex-col gap-3 items-start">
-            {g.items.map((t) => {
-              const isActive = t.index === active;
-              return (
-                <li key={t.title}>
-                  <button
-                    type="button"
-                    onClick={() => selectType(t.index)}
-                    aria-current={isActive}
-                    className="flex items-center gap-3 text-left"
-                  >
-                    <span
-                      className={`h-2 w-2 rounded-full transition-colors ${
-                        isActive ? "bg-[#1C3C8C]" : "bg-[#B7C5E3]"
-                      }`}
-                    />
-                    <span
-                      className={`text-[16px] transition-colors ${
-                        isActive ? "text-[#1C3C8C]" : "text-[#8D9DC5]"
-                      }`}
+      {groups.map((g) => {
+        const showLabel = !(isMobile && g.label === "Оздоровительные процедуры");
+        return (
+          <div key={g.label}>
+            {showLabel && (
+              <p className="text-[13px] font-light leading-[18px] text-[#B7C5E3]">{g.label}</p>
+            )}
+            <ul className={`flex flex-col gap-3 items-start ${showLabel ? "mt-3" : ""}`}>
+              {g.items.map((t) => {
+                const isActive = t.index === active;
+                return (
+                  <li key={t.title}>
+                    <button
+                      type="button"
+                      onClick={() => selectType(t.index)}
+                      aria-current={isActive}
+                      className="flex items-center gap-3 text-left"
                     >
-                      {clean(t.title)}
-                    </span>
-                  </button>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      ))}
+                      <span
+                        className={`h-2 w-2 rounded-full transition-colors ${
+                          isActive ? "bg-[#1C3C8C]" : "bg-[#B7C5E3]"
+                        }`}
+                      />
+                      <span
+                        className={`text-[16px] transition-colors ${
+                          isActive ? "text-[#1C3C8C]" : "text-[#8D9DC5]"
+                        }`}
+                      >
+                        {clean(t.title)}
+                      </span>
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        );
+      })}
     </nav>
   );
-
 
   return (
     <section id="services" className="scroll-mt-[140px] bg-[#EFF6FF] py-[60px] sm:py-[70px] xl:pt-[140px] xl:pb-0">
@@ -611,14 +615,14 @@ export function Services() {
           </h2>
 
           {/* Desktop: compact category navigation */}
-          <div className="mt-8 hidden xl:block w-full max-w-[520px] text-left">{nav}</div>
+          <div className="mt-8 hidden xl:block w-full max-w-[520px] text-left">{renderNav(false)}</div>
         </div>
 
         {/* Right column — active service */}
         <div className="flex flex-col gap-4">
           {/* Mobile / tablet: same navigation, compact */}
           <div className="xl:hidden w-full text-left rounded-[12px] border border-[#DAEBFF] bg-white/50 px-5 py-5">
-            {nav}
+            {renderNav(true)}
           </div>
 
 
