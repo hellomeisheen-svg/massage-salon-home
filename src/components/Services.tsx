@@ -630,6 +630,8 @@ export function Services() {
             key={active}
             type={type}
             zoneIndex={zone}
+            activeIndex={active}
+            totalCount={serviceTypes.length}
             onZoneChange={setZone}
             onPrev={prev}
             onNext={next}
