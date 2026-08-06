@@ -344,7 +344,7 @@ function ServiceCard({
         {hasZones && (
           <div className="mt-6">
             <span className="block text-[13px] font-light leading-[20px] text-[#8D9DC5]">
-              {clean(type.title) === "Гирудотерапия" ? "Тип процедуры:" : "Зона:"}
+              {clean(type.title) === "Гирудотерапия" ? "Тип пиявок:" : "Зона:"}
             </span>
             <div className="mt-2 flex flex-wrap items-center gap-2">
               {type.variants.map((v, i) => {
