@@ -295,6 +295,7 @@ function ServiceCard({
 
   const sessionWord = pluralize(sessionCounts[activeSession], ["сеанс", "сеанса", "сеансов"]);
   const selectedSummary = `${sessionCounts[activeSession]} ${sessionWord} · ${variant.zone} · ${computedDuration}`;
+  const priceLabel = `за ${sessionCounts[activeSession]} ${sessionWord}`;
 
   return (
     <article className="rounded-[12px] border border-[#daebff] bg-white p-6 sm:p-8 transition-shadow duration-300 hover:shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)] flex flex-col h-[680px] xl:h-[700px]">
@@ -372,7 +373,7 @@ function ServiceCard({
         </p>
 
         {/* Selected configuration summary */}
-        <p className="mt-4 text-[13px] font-light leading-[18px] tracking-wide text-[#B7C5E3]">
+        <p className="mt-4 text-[13px] font-medium leading-[18px] tracking-wide text-[#1C3C8C]">
           {selectedSummary}
         </p>
       </div>
@@ -395,7 +396,7 @@ function ServiceCard({
           >
             {renderPrice(computedPrice)}
           </span>
-          <span className="text-[13px] font-light text-[#8D9DC5]">за сеанс</span>
+          <span className="text-[13px] font-light text-[#8D9DC5]">{priceLabel}</span>
         </div>
       </div>
 
