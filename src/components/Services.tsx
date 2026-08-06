@@ -400,7 +400,7 @@ function ServiceCard({
                 ? "Тип банок:"
                 : "Зона:"}
             </span>
-            <div className="mt-2 flex flex-wrap items-stretch gap-1 rounded-[10px] bg-[#EFF6FF] p-1">
+            <div className="mt-2 flex flex-wrap items-center gap-2">
               {type.variants.map((v, i) => {
                 const isActive = i === zoneIndex;
                 const tabLabel = v.zoneShort || v.zone;
@@ -412,8 +412,8 @@ function ServiceCard({
                     aria-pressed={isActive}
                     className={`rounded-[0.5rem] px-3 py-1.5 text-[14px] leading-[20px] transition-all duration-300 ${
                       isActive
-                        ? "bg-white shadow-[0_2px_8px_rgba(28,60,140,0.08)] font-medium text-[#1C3C8C]"
-                        : "bg-transparent font-medium text-[#8D9DC5] hover:bg-[#DAEBFF]"
+                        ? "border border-[#A2CFFE] bg-[#EFF6FF] font-medium text-[#1C3C8C]"
+                        : "border border-[rgba(141,157,197,0.5)] bg-transparent font-medium text-[#1C3C8C] hover:border-[#A2CFFE] hover:bg-[#EFF6FF]"
                     }`}
                   >
                     {tabLabel}
