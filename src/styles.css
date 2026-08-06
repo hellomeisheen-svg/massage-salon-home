@@ -162,7 +162,7 @@
   min-height: 60px;
   color: #1c3c8c;
   background-color: transparent;
-  border: 1px solid rgba(141, 157, 197, 0.5);
+  border: 1px solid #daebff;
   isolation: isolate;
   overflow: hidden;
   transition: border-color 0.35s ease, color 0.35s ease;
