@@ -313,16 +313,11 @@ function ServiceCard({
 
   const hasDiscount = discounts[activeSession] > 0;
 
-
   const computedDuration = formatDurationString(
     variant.duration,
     variant.multiplyDuration === false ? 1 : sessionCounts[activeSession]
   );
 
-  const items = sessions.map((s, i) => ({
-    label: variant.sessionLabels?.[i] ?? s.label,
-    discount: s.discount,
-  }));
 
   const bookingTitle = hasZones
     ? `${clean(type.title)} · ${clean(variant.zone)}`
