@@ -473,15 +473,15 @@ function ServiceCard({
           Узнать больше
         </a>
 
-        {/* Mobile / tablet: compact arrows with counter */}
-        <div className="flex items-center justify-between xl:hidden">
+        {/* Mobile: compact square arrows with counter */}
+        <div className="flex items-center justify-between lg:hidden">
           <button
             type="button"
             onClick={onPrev}
             aria-label="Предыдущая услуга"
-            className="btn-secondary h-10 w-10 flex items-center justify-center p-0"
+            className="btn-secondary h-12 w-12 min-h-0 flex items-center justify-center p-0"
           >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
               <path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
@@ -492,16 +492,16 @@ function ServiceCard({
             type="button"
             onClick={onNext}
             aria-label="Следующая услуга"
-            className="btn-secondary h-10 w-10 flex items-center justify-center p-0"
+            className="btn-secondary h-12 w-12 min-h-0 flex items-center justify-center p-0"
           >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
               <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
         </div>
 
-        {/* Desktop: arrows */}
-        <div className="hidden xl:contents">
+        {/* Desktop / tablet: arrows */}
+        <div className="hidden lg:contents">
           <button
             type="button"
             onClick={onPrev}
