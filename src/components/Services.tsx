@@ -5,6 +5,7 @@ type Variant = {
   zone: string;
   subtitle: string;
   description: string;
+  mobileDescription?: string;
   duration: string;
   price: string;
   sessionLabels?: string[];
