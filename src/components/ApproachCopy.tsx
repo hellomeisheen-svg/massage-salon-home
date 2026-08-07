@@ -39,7 +39,7 @@ const practicesRow2 = [
   "Банки",
 ];
 
-import { Sparkles, ShieldCheck, Droplets, Scissors, Leaf, type LucideIcon } from "lucide-react";
+import { Sparkles, ShieldCheck, Scissors, Leaf, type LucideIcon } from "lucide-react";
 
 const environmentItems: { Icon: LucideIcon; title: string; text: string }[] = [
   {
@@ -51,11 +51,6 @@ const environmentItems: { Icon: LucideIcon; title: string; text: string }[] = [
     Icon: ShieldCheck,
     title: "Одноразовые расходные материалы",
     text: "Все расходные материалы\u00A0— простыни, салфетки, перчатки\u00A0— одноразовые и\u00A0вскрываются при\u00A0вас для\u00A0чувства безопасности.",
-  },
-  {
-    Icon: Droplets,
-    title: "Сертифицированные масла и\u00A0кремы",
-    text: "Для\u00A0работы я\u00A0выбираю только сертифицированные масла и\u00A0кремы, мягкие к\u00A0коже и\u00A0подходящие даже при\u00A0повышенной чувствительности.",
   },
   {
     Icon: Scissors,
