@@ -481,9 +481,11 @@ function ServiceCard({
         >
           Записаться
         </button>
-        <a href="#programs" className="hidden sm:flex btn-secondary flex-1 inline-flex items-center justify-center text-center">
-          Узнать больше
-        </a>
+        <div className="hidden sm:flex flex-1">
+          <a href="#programs" className="btn-secondary w-full inline-flex items-center justify-center text-center">
+            Узнать больше
+          </a>
+        </div>
 
         {/* Mobile: one row with Узнать больше + arrows */}
         <div className="flex items-center gap-2 sm:hidden">
