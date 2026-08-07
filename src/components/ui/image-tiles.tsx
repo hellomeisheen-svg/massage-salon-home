@@ -11,18 +11,18 @@ export default function ImageReveal({
   rightImage,
 }: ImageRevealProps) {
   const tileBase =
-    "absolute overflow-hidden rounded-[16px]";
+    "absolute overflow-hidden rounded-[16px] border-2 border-[#88C1FF]";
 
   return (
-    <div className="relative h-[220px] w-[320px]">
-      {/* Left tile — back, landscape rectangle */}
+    <div className="relative h-[240px] w-[280px]">
+      {/* Left tile — back, portrait */}
       <div
-        className={`${tileBase} h-[120px] w-[180px]`}
+        className={`${tileBase} h-[170px] w-[120px]`}
         style={{
           zIndex: 10,
-          left: "10px",
-          top: "60px",
-          transform: "rotate(-10deg)",
+          left: "20px",
+          top: "40px",
+          transform: "rotate(-8deg)",
         }}
       >
         <img
@@ -33,13 +33,13 @@ export default function ImageReveal({
         />
       </div>
 
-      {/* Middle tile — middle, landscape rectangle */}
+      {/* Middle tile — middle, portrait */}
       <div
-        className={`${tileBase} h-[120px] w-[180px]`}
+        className={`${tileBase} h-[170px] w-[120px]`}
         style={{
           zIndex: 20,
-          left: "70px",
-          top: "40px",
+          left: "80px",
+          top: "30px",
           transform: "rotate(4deg)",
         }}
       >
@@ -51,14 +51,14 @@ export default function ImageReveal({
         />
       </div>
 
-      {/* Right tile — front, landscape rectangle */}
+      {/* Right tile — front, portrait */}
       <div
-        className={`${tileBase} h-[120px] w-[180px]`}
+        className={`${tileBase} h-[170px] w-[120px]`}
         style={{
           zIndex: 30,
-          left: "130px",
-          top: "60px",
-          transform: "rotate(10deg)",
+          left: "140px",
+          top: "40px",
+          transform: "rotate(8deg)",
         }}
       >
         <img
