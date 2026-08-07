@@ -53,6 +53,7 @@ function Index() {
       
       
       <Programs />
+      <PromoBanner />
       <Education />
       <GalleryIntro />
       <Gallery />
