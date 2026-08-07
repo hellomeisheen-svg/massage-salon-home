@@ -1,3 +1,4 @@
+import approachMasterAsset from "@/assets/approach-master.jpg.asset.json";
 const heading = "'Roslindale Cyrillic Display Condensed', serif";
 
 import { Sparkles, ShieldCheck, Scissors, Leaf, type LucideIcon } from "lucide-react";
