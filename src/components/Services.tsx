@@ -461,7 +461,7 @@ function ServiceCard({
       </div>
 
       {/* Actions */}
-      <div className="mt-4 flex flex-col sm:flex-row gap-3">
+      <div className="mt-auto flex flex-col sm:flex-row sm:justify-center sm:items-center gap-3">
         <button
           type="button"
           onClick={() => openBooking(bookingTitle)}
