@@ -68,6 +68,35 @@
   box-shadow: 0 12px 30px -8px rgba(28, 60, 140, 0.25);
 }
 
+@keyframes tile-appear {
+  from { opacity: 0; transform: translateY(20px) scale(0.92); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes tile-float {
+  0%, 100% { transform: translateY(0) rotate(var(--tile-rot, 0deg)); }
+  50% { transform: translateY(-10px) rotate(var(--tile-rot, 0deg)); }
+}
+.image-tile {
+  opacity: 0;
+  animation:
+    tile-appear 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards,
+    tile-float 6s ease-in-out infinite;
+  animation-delay: var(--tile-delay, 0s), calc(var(--tile-delay, 0s) + 0.8s);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  will-change: transform;
+}
+.image-tile:hover {
+  animation-play-state: paused, paused;
+  transform: scale(1.06) rotate(0deg);
+  box-shadow: 0 12px 30px -8px rgba(28, 60, 140, 0.18);
+}
+@media (prefers-reduced-motion: reduce) {
+  .image-tile {
+    opacity: 1;
+    animation: none;
+  }
+}
+
 @keyframes marquee-left {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
