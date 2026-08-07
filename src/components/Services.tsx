@@ -196,6 +196,7 @@ const serviceTypes: ServiceType[] = [
         price: "1\u00A0000\u00A0₽",
       },
     ],
+  },
 ];
 
 const categories = ["Оздоровительные процедуры", "Массаж"];
