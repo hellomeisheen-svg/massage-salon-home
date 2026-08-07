@@ -15,90 +15,15 @@ type Variant = {
 
 type ServiceType = {
   title: string;
-  mobileTitle?: string;
   category: number;
   variants: Variant[];
 };
 
 const serviceTypes: ServiceType[] = [
-const serviceTypes: ServiceType[] = [
   {
-    title: "Гирудотерапия",
-    mobileTitle: "Гирудотерапия",
-    title: "Гирудотерапия",
-    mobileTitle: "Гирудотерапия",
-    category: 0,
-    variants: [
-      {
-        zone: "Медицинские",
-        subtitle: "Оздоровительная практика",
-        description:
-          "Бережная постановка медицинских пиявок на\u00A0выбранные зоны тела.\n\nПомогает мягко разогнать застой, улучшить локальное кровообращение и\u00A0разгрузить напряжённые участки.\n\nПодходит, если важно поддержать общее самочувствие, снизить тяжесть в\u00A0теле и\u00A0дать организму ресурс на\u00A0восстановление.",
-        mobileDescription:
-          "Бережная постановка медицинских пиявок на\u00A0выбранные зоны тела.\n\nМягко разгоняет застой, улучшает кровообращение и\u00A0разгружает напряжённые участки.\n\nПомогает поддержать общее самочувствие и\u00A0снизить чувство тяжести в\u00A0теле.",
-        duration: "120\u00A0минут",
-        price: "4\u00A0800\u00A0₽",
-        sessionLabels: ["6\u00A0пиявок", "16\u00A0пиявок", "74\u00A0пиявки"],
-  {
-    title: "Банки",
-    mobileTitle: "Банки",
-    category: 0,
-    variants: [
-      zone: "Стеклянные банки",
-      zoneShort: "Стеклянные",
-      subtitle: "Стихия огонь",
-      description:
-        "Глубокое вакуумное воздействие стеклянными банками на\u00A0выбранные зоны тела.\n\nМягкое прогревание тканей разгоняет застой, снимает мышечное напряжение и\u00A0делает движения более свободными.\n\nПодходит, если важно уменьшить скованность, облегчить состояние после нагрузок и\u00A0вернуть телу ощущение тепла и\u00A0внутреннего движения.",
-      mobileDescription:
-        "Бережная постановка стеклянных вакуумных банок на\u00A0выбранные зоны тела.\n\nМягко прогревает ткани, разгоняет застой и\u00A0помогает расслабить напряжённые участки.\n\nПодходит, если нужно снять скованность и\u00A0вернуть телу ощущение тепла и\u00A0живой энергии.",
-    ],
-  },
-  {
-    title: "Банки",
-    mobileTitle: "Банки",
-      zone: "Косметические",
-      subtitle: "Мягкий уход и\u00A0забота о\u00A0коже",
-      description:
-        "Аккуратная постановка пиявок на\u00A0зону лица или\u00A0локальные участки.\n\nНаправлена на\u00A0улучшение цвета и\u00A0рельефа кожи, ощущение свежести и\u00A0лёгкости.\n\nПодходит, если важен мягкий эстетический эффект, более живой вид кожи и\u00A0комфортные ощущения без\u00A0агрессивных процедур.",
-      mobileDescription:
-        "Аккуратная постановка пиявок на\u00A0лицо и\u00A0локальные участки.\n\nМягко улучшает кровообращение, цвет и\u00A0рельеф кожи, дарит ощущение свежести и\u00A0лёгкости.\n\nПомогает придать коже более живой вид и\u00A0получить мягкий эстетический эффект без\u00A0агрессивных процедур.",
-      duration: "120\u00A0минут",
-      price: "4\u00A0800\u00A0₽",
-      sessionLabels: ["6\u00A0пиявок", "10\u00A0пиявок", "20\u00A0пиявок"],
-      multiplyDuration: false,
-    },
-    ],
-  },
-      },
-      {
-        zone: "Голова",
-        subtitle: "Мягкая работа с\u00A0областью, где собирается стресс",
-        description:
-          "Массаж головы и\u00A0шейно-воротниковой зоны — мягкая работа с\u00A0областью, которая часто собирает стресс и\u00A0переутомление.\n\nАккуратные надавливания и\u00A0растяжения помогают снять напряжение мышц, облегчить ощущение тяжести в\u00A0голове и\u00A0улучшить общее состояние.\n\nПодходит, если важно снизить уровень внутреннего напряжения, поддержать концентрацию и\u00A0дать нервной системе возможность выдохнуть.",
-        mobileDescription:
-          "Массаж головы и\u00A0шейно-воротниковой зоны мягко снимает накопленный стресс.\n\nПомогает расслабить мышцы, облегчить чувство тяжести и\u00A0улучшить общее самочувствие.\n\nПодходит при\u00A0усталости, повышенном напряжении и\u00A0перегрузке от\u00A0умственной работы.",
-        duration: "20\u00A0минут",
-        price: "1\u00A0000\u00A0₽",
-      },
-    ],
-  },
-      {
-        zone: "Мягкие банки",
-        zoneShort: "Мягкие",
-        subtitle: "Стихия воздух",
-        description:
-          "Массаж мягкими банками — деликатная работа с\u00A0поверхностными слоями тела.\n\nМягкий вакуум улучшает микроциркуляцию, помогает уменьшить отёчность и\u00A0вернуть тканям ощущение лёгкости и\u00A0подвижности.\n\nПодходит, если важно снизить тяжесть, поддержать комфорт в\u00A0теле и\u00A0мягко включить восстановительные процессы.",
-        mobileDescription:
-          "Массаж мягкими банками с\u00A0деликатным вакуумом на\u00A0нужных участках тела.\n\nУлучшает микроциркуляцию, помогает снизить отёчность и\u00A0возвращает тканям больше подвижности.\n\nПодходит, если хочется уменьшить чувство тяжести и\u00A0мягко поддержать естественное восстановление.",
-        duration: "10–25\u00A0минут",
-        price: "1\u00A0000\u00A0₽",
-      },
-    ],
-  },
     title: "Векторный",
-    mobileTitle: "Векторный массаж",
-    ],
-  },
+    category: 1,
+    variants: [
       {
         zone: "Всё тело",
         subtitle: "Точная ручная работа по анатомическим линиям",
@@ -110,13 +35,12 @@ const serviceTypes: ServiceType[] = [
         price: "5\u00A0000\u00A0₽",
       },
     ],
-    ],
   },
+
   {
     title: "Лимфатический",
-    mobileTitle: "Лимфатический массаж",
-    ],
-  },
+    category: 1,
+    variants: [
       {
         zone: "Всё тело",
         subtitle: "Мягкая работа с естественными путями оттока жидкости",
@@ -128,10 +52,9 @@ const serviceTypes: ServiceType[] = [
         price: "5\u00A0000\u00A0₽",
       },
     ],
-    ],
   },
+  {
     title: "Лимфодренажный",
-    mobileTitle: "Лимфодренажный массаж",
     category: 1,
     variants: [
       {
@@ -142,8 +65,8 @@ const serviceTypes: ServiceType[] = [
         mobileDescription:
           "Лимфодренажный массаж всего тела мягко активизирует лимфатическую систему.\n\nПомогает вывести лишнюю жидкость, уменьшить отёчность и\u00A0облегчить ощущение тяжести.\n\nПодходит, когда нужно поддержать лёгкость и\u00A0мягко поработать с\u00A0контурами тела.",
         duration: "120\u00A0минут",
-    ],
-  },
+        price: "5\u00A0000\u00A0₽",
+      },
       {
         zone: "Лицо",
         subtitle: "Деликатная работа с\u00A0оттоком жидкости и\u00A0тонусом кожи",
@@ -155,10 +78,9 @@ const serviceTypes: ServiceType[] = [
         price: "2\u00A0000\u00A0₽",
       },
     ],
-    ],
   },
+  {
     title: "Классический",
-    mobileTitle: "Классический массаж",
     category: 1,
     variants: [
       {
@@ -199,9 +121,82 @@ const serviceTypes: ServiceType[] = [
         mobileDescription:
           "Классический массаж ног и\u00A0стоп снимает накопившуюся нагрузку с\u00A0нижних конечностей.\n\nПомогает уменьшить тяжесть, улучшить кровообращение и\u00A0вернуть ногам чувство опоры и\u00A0лёгкости.\n\nПодходит при\u00A0усталости и\u00A0отёчности после активного дня.",
         duration: "60\u00A0минут",
+        price: "3\u00A0000\u00A0₽",
+      },
+      {
+        zone: "Голова",
+        subtitle: "Мягкая работа с\u00A0областью, где собирается стресс",
+        description:
+          "Массаж головы и\u00A0шейно-воротниковой зоны — мягкая работа с\u00A0областью, которая часто собирает стресс и\u00A0переутомление.\n\nАккуратные надавливания и\u00A0растяжения помогают снять напряжение мышц, облегчить ощущение тяжести в\u00A0голове и\u00A0улучшить общее состояние.\n\nПодходит, если важно снизить уровень внутреннего напряжения, поддержать концентрацию и\u00A0дать нервной системе возможность выдохнуть.",
+        mobileDescription:
+          "Массаж головы и\u00A0шейно-воротниковой зоны мягко снимает накопленный стресс.\n\nПомогает расслабить мышцы, облегчить чувство тяжести и\u00A0улучшить общее самочувствие.\n\nПодходит при\u00A0усталости, повышенном напряжении и\u00A0перегрузке от\u00A0умственной работы.",
+        duration: "20\u00A0минут",
+        price: "1\u00A0000\u00A0₽",
+      },
     ],
   },
+  {
+    title: "Гирудотерапия",
+    category: 0,
+    variants: [
+      {
+        zone: "Медицинские",
+        subtitle: "Оздоровительная практика",
+        description:
+          "Бережная постановка медицинских пиявок на\u00A0выбранные зоны тела.\n\nПомогает мягко разогнать застой, улучшить локальное кровообращение и\u00A0разгрузить напряжённые участки.\n\nПодходит, если важно поддержать общее самочувствие, снизить тяжесть в\u00A0теле и\u00A0дать организму ресурс на\u00A0восстановление.",
+        mobileDescription:
+          "Бережная постановка медицинских пиявок на\u00A0выбранные зоны тела.\n\nМягко разгоняет застой, улучшает кровообращение и\u00A0разгружает напряжённые участки.\n\nПомогает поддержать общее самочувствие и\u00A0снизить чувство тяжести в\u00A0теле.",
+        duration: "120\u00A0минут",
+        price: "4\u00A0800\u00A0₽",
+        sessionLabels: ["6\u00A0пиявок", "16\u00A0пиявок", "74\u00A0пиявки"],
+        multiplyDuration: false,
+      },
+      {
+        zone: "Косметические",
+        subtitle: "Мягкий уход и\u00A0забота о\u00A0коже",
+        description:
+          "Аккуратная постановка пиявок на\u00A0зону лица или\u00A0локальные участки.\n\nНаправлена на\u00A0улучшение цвета и\u00A0рельефа кожи, ощущение свежести и\u00A0лёгкости.\n\nПодходит, если важен мягкий эстетический эффект, более живой вид кожи и\u00A0комфортные ощущения без\u00A0агрессивных процедур.",
+        mobileDescription:
+          "Аккуратная постановка пиявок на\u00A0лицо и\u00A0локальные участки.\n\nМягко улучшает кровообращение, цвет и\u00A0рельеф кожи, дарит ощущение свежести и\u00A0лёгкости.\n\nПомогает придать коже более живой вид и\u00A0получить мягкий эстетический эффект без\u00A0агрессивных процедур.",
+        duration: "120\u00A0минут",
+        price: "4\u00A0800\u00A0₽",
+        sessionLabels: ["6\u00A0пиявок", "10\u00A0пиявок", "20\u00A0пиявок"],
+        multiplyDuration: false,
+      },
+    ],
+  },
+  {
+    title: "Банки",
+    category: 0,
+    variants: [
+      {
+        zone: "Стеклянные банки",
+        zoneShort: "Стеклянные",
+        subtitle: "Стихия огонь",
+        description:
+          "Глубокое вакуумное воздействие стеклянными банками на\u00A0выбранные зоны тела.\n\nМягкое прогревание тканей разгоняет застой, снимает мышечное напряжение и\u00A0делает движения более свободными.\n\nПодходит, если важно уменьшить скованность, облегчить состояние после нагрузок и\u00A0вернуть телу ощущение тепла и\u00A0внутреннего движения.",
+        mobileDescription:
+          "Бережная постановка стеклянных вакуумных банок на\u00A0выбранные зоны тела.\n\nМягко прогревает ткани, разгоняет застой и\u00A0помогает расслабить напряжённые участки.\n\nПодходит, если нужно снять скованность и\u00A0вернуть телу ощущение тепла и\u00A0живой энергии.",
+        duration: "10\u00A0минут",
+        price: "2\u00A0000\u00A0₽",
+      },
+      {
+        zone: "Мягкие банки",
+        zoneShort: "Мягкие",
+        subtitle: "Стихия воздух",
+        description:
+          "Массаж мягкими банками — деликатная работа с\u00A0поверхностными слоями тела.\n\nМягкий вакуум улучшает микроциркуляцию, помогает уменьшить отёчность и\u00A0вернуть тканям ощущение лёгкости и\u00A0подвижности.\n\nПодходит, если важно снизить тяжесть, поддержать комфорт в\u00A0теле и\u00A0мягко включить восстановительные процессы.",
+        mobileDescription:
+          "Массаж мягкими банками с\u00A0деликатным вакуумом на\u00A0нужных участках тела.\n\nУлучшает микроциркуляцию, помогает снизить отёчность и\u00A0возвращает тканям больше подвижности.\n\nПодходит, если хочется уменьшить чувство тяжести и\u00A0мягко поддержать естественное восстановление.",
+        duration: "10–25\u00A0минут",
+        price: "1\u00A0000\u00A0₽",
+      },
+    ],
+  },
+
+
 ];
+
 const categories = ["Оздоровительные процедуры", "Массаж"];
 
 const sessions = [
@@ -356,7 +351,7 @@ function ServiceCard({
   const priceLabel = `за ${sessionCounts[activeSession]} ${sessionWord}`;
 
   return (
-    <article className="rounded-[12px] border border-[#daebff] bg-white p-6 sm:p-8 transition-shadow duration-300 hover:shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)] flex flex-col h-auto sm:min-h-[700px]">
+    <article className="rounded-[12px] border border-[#daebff] bg-white p-6 sm:p-8 transition-shadow duration-300 hover:shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)] flex flex-col h-auto xl:min-h-[700px]">
       {/* Sessions — pill switcher */}
       <div className="flex items-stretch gap-1 rounded-[10px] bg-[#EFF6FF] p-1">
         {items.map((s, i) => (
@@ -386,88 +381,87 @@ function ServiceCard({
         ))}
       </div>
 
-      <div className="sm:flex-1 flex flex-col">
-        <div className="flex-1">
-          {/* Title */}
-          <h3
-            className="mt-5 text-[28px] sm:text-[34px] xl:text-[38px] font-light leading-[1.1] text-[#1C3C8C] break-words hyphens-auto"
+      <div className="xl:flex-1">
+        {/* Title */}
+        <h3
+          className="mt-5 text-[28px] sm:text-[34px] xl:text-[38px] font-light leading-[1.1] text-[#1C3C8C] break-words hyphens-auto"
+          style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
+        >
+          {clean(type.title)}
+        </h3>
+
+        {/* Zone / Type chips */}
+        {variant.zone && (
+          <div className="mt-6">
+            <span className="block text-[13px] font-light leading-[20px] text-[#8D9DC5]">
+              {clean(type.title) === "Гирудотерапия"
+                ? "Тип пиявок:"
+                : clean(type.title) === "Банки"
+                ? "Тип банок:"
+                : "Зона:"}
+            </span>
+            <div className="mt-2 flex flex-wrap items-stretch gap-1 rounded-[10px] bg-[#EFF6FF] p-1">
+              {type.variants.map((v, i) => {
+                const isActive = i === zoneIndex;
+                const tabLabel = v.zoneShort || v.zone;
+                return (
+                  <button
+                    key={v.zone}
+                    type="button"
+                    onClick={() => onZoneChange(i)}
+                    aria-pressed={isActive}
+                    className={`rounded-[0.5rem] px-3 py-1.5 text-[14px] leading-[20px] transition-all duration-300 ${
+                      isActive
+                        ? "bg-white shadow-[0_2px_8px_rgba(28,60,140,0.08)] font-medium text-[#1C3C8C]"
+                        : "bg-transparent font-medium text-[#8D9DC5] hover:bg-[#DAEBFF]"
+                    }`}
+                  >
+                    {tabLabel}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
+        {/* Description */}
+        <p className="mt-6 whitespace-pre-line text-[15px] leading-[24px] text-[#8D9DC5] xl:hidden">
+          {variant.mobileDescription || variant.description}
+        </p>
+        <p className="mt-6 hidden whitespace-pre-line text-[15px] leading-[24px] text-[#8D9DC5] xl:block">
+          {variant.description}
+        </p>
+
+        {/* Selected configuration summary */}
+        <p className="mt-6 text-[13px] font-medium leading-[18px] tracking-wide text-[#1C3C8C]">
+          {selectedSummary}
+        </p>
+      </div>
+
+
+      {/* Price */}
+      <div className="mt-5 flex items-center justify-end gap-4 sm:gap-5">
+        {hasDiscount && (
+          <span
+            className="text-[17px] sm:text-[19px] font-light leading-[1.2] text-[#8D9DC5] line-through"
             style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
           >
-            {clean(type.title)}
-          </h3>
-
-          {/* Zone / Type chips */}
-          {variant.zone && (
-            <div className="mt-6">
-              <span className="block text-[13px] font-light leading-[20px] text-[#8D9DC5]">
-                {clean(type.title) === "Гирудотерапия"
-                  ? "Тип пиявок:"
-                  : clean(type.title) === "Банки"
-                  ? "Тип банок:"
-                  : "Зона:"}
-              </span>
-              <div className="mt-2 flex flex-wrap items-center gap-2">
-                {type.variants.map((v, i) => {
-                  const isActive = i === zoneIndex;
-                  const tabLabel = v.zoneShort || v.zone;
-                  return (
-                    <button
-                      key={v.zone}
-                      type="button"
-                      onClick={() => onZoneChange(i)}
-                      aria-pressed={isActive}
-                      className={`rounded-[0.5rem] px-3 py-1.5 text-[14px] leading-[20px] transition-all duration-300 ${
-                        isActive
-                          ? "border border-[#A2CFFE] bg-[#EFF6FF] font-medium text-[#1C3C8C]"
-                          : "border border-[#DAEBFF] bg-transparent font-medium text-[#1C3C8C] hover:border-[#A2CFFE] hover:bg-[#EFF6FF]"
-                      }`}
-                    >
-                      {tabLabel}
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-          )}
-
-          {/* Description */}
-          <p className="mt-6 whitespace-pre-line text-[15px] leading-[24px] text-[#8D9DC5] xl:hidden">
-            {variant.mobileDescription || variant.description}
-          </p>
-          <p className="mt-6 hidden whitespace-pre-line text-[15px] leading-[24px] text-[#8D9DC5] xl:block">
-            {variant.description}
-          </p>
-
-          {/* Selected configuration summary */}
-          <p className="mt-6 text-[13px] font-medium leading-[18px] tracking-wide text-[#1C3C8C]">
-            {selectedSummary}
-          </p>
-        </div>
-
-        {/* Price */}
-        <div className="mt-5 flex items-center justify-end gap-4 sm:gap-5">
-          {hasDiscount && (
-            <span
-              className="text-[17px] sm:text-[19px] font-light leading-[1.2] text-[#8D9DC5] line-through"
-              style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
-            >
-              {renderPrice(originalPrice)}
-            </span>
-          )}
-          <div className="flex flex-col items-end">
-            <span
-              className="text-[30px] sm:text-[34px] font-light leading-[1.1] text-[#1C3C8C]"
-              style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
-            >
-              {renderPrice(computedPrice)}
-            </span>
-            <span className="text-[13px] font-light text-[#8D9DC5]">{priceLabel}</span>
-          </div>
+            {renderPrice(originalPrice)}
+          </span>
+        )}
+        <div className="flex flex-col items-end">
+          <span
+            className="text-[30px] sm:text-[34px] font-light leading-[1.1] text-[#1C3C8C]"
+            style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
+          >
+            {renderPrice(computedPrice)}
+          </span>
+          <span className="text-[13px] font-light text-[#8D9DC5]">{priceLabel}</span>
         </div>
       </div>
 
       {/* Actions */}
-      <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row sm:justify-center sm:items-center gap-3">
+      <div className="mt-4 flex flex-col sm:flex-row gap-3">
         <button
           type="button"
           onClick={() => openBooking(bookingTitle)}
@@ -574,13 +568,38 @@ export function Services() {
                       type="button"
                       onClick={() => selectType(t.index)}
                       aria-current={isActive}
-                      className="flex items-center gap-3 text-left"
+                      className="group flex items-center gap-3 text-left"
                     >
-                      <span
-                        className={`h-2 w-2 rounded-full transition-colors ${
-                          isActive ? "bg-[#1C3C8C]" : "bg-[#B7C5E3]"
-                        }`}
-                      />
+                      <span className="relative flex h-6 w-6 shrink-0 items-center justify-center">
+                        {/* inactive dot */}
+                        <span
+                          className={`absolute h-2 w-2 rounded-full transition-all duration-300 ${
+                            isActive ? "scale-0 opacity-0" : "scale-100 opacity-100 bg-[#B7C5E3]"
+                          }`}
+                        />
+                        {/* active glow */}
+                        <span
+                          className={`absolute h-2.5 w-2.5 rounded-full bg-white transition-all duration-300 ${
+                            isActive ? "scale-100 opacity-100" : "scale-0 opacity-0"
+                          }`}
+                          style={{
+                            boxShadow: isActive
+                              ? "0 0 8px 2px rgba(136, 193, 255, 0.75), 0 0 18px 6px rgba(136, 193, 255, 0.35)"
+                              : "none",
+                          }}
+                        />
+                        {/* satellite dots */}
+                        <span
+                          className={`absolute left-1/2 top-1/2 h-[3px] w-[3px] -translate-y-1/2 rounded-full bg-[#88C1FF]/40 transition-all duration-300 ${
+                            isActive ? "-translate-x-[9px] opacity-100" : "-translate-x-1/2 opacity-0"
+                          }`}
+                        />
+                        <span
+                          className={`absolute left-1/2 top-1/2 h-[3px] w-[3px] -translate-y-1/2 rounded-full bg-[#88C1FF]/40 transition-all duration-300 ${
+                            isActive ? "translate-x-[6px] opacity-100" : "-translate-x-1/2 opacity-0"
+                          }`}
+                        />
+                      </span>
                       <span
                         className={`text-[16px] transition-colors ${
                           isActive ? "text-[#1C3C8C]" : "text-[#8D9DC5]"
