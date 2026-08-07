@@ -9,49 +9,63 @@ export default function ImageReveal({
   leftImage,
   middleImage,
   rightImage,
-  spread = 150,
 }: ImageRevealProps) {
-  const tileClass =
-    "absolute h-40 w-40 overflow-hidden rounded-xl bg-white p-2 shadow-lg";
+  const tileBase =
+    "absolute overflow-hidden bg-white p-2";
 
   return (
-    <div
-      className="relative flex h-56 w-56 items-center justify-center"
-      style={{ width: `${spread * 2 + 160}px` }}
-    >
+    <div className="relative h-[230px] w-[320px]">
+      {/* Left tile — back, portrait, leaning left */}
       <div
-        className={`${tileClass} origin-bottom-right`}
-        style={{ zIndex: 30, transform: `rotate(-8deg) translateX(-${spread}px) translateY(10px)` }}
+        className={`${tileBase} h-[170px] w-[130px] rounded-[20px]`}
+        style={{
+          zIndex: 10,
+          left: "10px",
+          top: "30px",
+          transform: "rotate(-12deg)",
+        }}
       >
         <img
           src={leftImage}
           alt=""
           loading="lazy"
-          className="h-full w-full rounded-lg object-cover"
+          className="h-full w-full rounded-[12px] object-cover"
         />
       </div>
 
+      {/* Middle tile — middle, portrait, leaning right */}
       <div
-        className={`${tileClass} origin-bottom-left`}
-        style={{ zIndex: 20, transform: "rotate(6deg)" }}
+        className={`${tileBase} h-[170px] w-[130px] rounded-[20px]`}
+        style={{
+          zIndex: 20,
+          left: "90px",
+          top: "20px",
+          transform: "rotate(6deg)",
+        }}
       >
         <img
           src={middleImage}
           alt=""
           loading="lazy"
-          className="h-full w-full rounded-lg object-cover"
+          className="h-full w-full rounded-[12px] object-cover"
         />
       </div>
 
+      {/* Right tile — front, landscape, leaning right */}
       <div
-        className={`${tileClass} origin-bottom-right`}
-        style={{ zIndex: 10, transform: `rotate(-6deg) translateX(${spread}px) translateY(20px)` }}
+        className={`${tileBase} h-[130px] w-[190px] rounded-[20px]`}
+        style={{
+          zIndex: 30,
+          left: "130px",
+          top: "50px",
+          transform: "rotate(8deg)",
+        }}
       >
         <img
           src={rightImage}
           alt=""
           loading="lazy"
-          className="h-full w-full rounded-lg object-cover"
+          className="h-full w-full rounded-[12px] object-cover"
         />
       </div>
     </div>
