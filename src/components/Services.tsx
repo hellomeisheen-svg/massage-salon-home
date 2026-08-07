@@ -482,7 +482,7 @@ function ServiceCard({
           Записаться
         </button>
         <div className="hidden sm:flex flex-1">
-          <a href="#programs" className="btn-secondary w-full inline-flex items-center justify-center text-center">
+          <a href="#programs" className="btn-secondary w-full inline-flex items-center justify-center text-center whitespace-nowrap">
             Узнать больше
           </a>
         </div>
