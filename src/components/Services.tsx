@@ -15,6 +15,7 @@ type Variant = {
 
 type ServiceType = {
   title: string;
+  mobileTitle?: string;
   category: number;
   variants: Variant[];
 };
