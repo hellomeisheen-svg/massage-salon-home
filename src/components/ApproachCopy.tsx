@@ -83,53 +83,6 @@ export function ApproachCopy() {
             </p>
           </div>
 
-          {/* Палитра практик */}
-          <div className="relative rounded-[12px] border border-[#daebff] bg-white p-8 sm:p-10 xl:p-12 min-h-[420px] xl:min-h-0 xl:h-full overflow-hidden">
-            <h3
-              className="relative z-10 text-[30px] sm:text-[38px] xl:text-[44px] font-light leading-[1.1] text-[#1C3C8C]"
-              style={{ fontFamily: heading }}
-            >
-              Палитра практик
-            </h3>
-
-            <div className="absolute inset-0">
-              <img
-                src="/images/card.jpg"
-                alt=""
-                className="w-full h-full object-cover object-[38%_100%] sm:object-[66%_center]"
-              />
-              <div className="absolute inset-x-0 top-0 h-[70%] bg-gradient-to-b from-white/85 via-white/40 to-transparent sm:hidden" />
-              <div className="absolute inset-0 hidden sm:block bg-[radial-gradient(ellipse_60%_55%_at_0%_0%,rgba(255,255,255,0.95)_0%,rgba(255,255,255,0.75)_35%,rgba(255,255,255,0.25)_65%,transparent_85%)]" />
-            </div>
-
-
-            {/* Floating practice pills — two infinite marquee rows */}
-            <div className="absolute inset-x-0 bottom-6 flex flex-col gap-3 overflow-hidden">
-              <div className="marquee-track">
-                {[...practicesRow1, ...practicesRow1].map((p, i) => (
-                  <span
-                    key={`r1-${i}`}
-                    className="inline-flex min-h-[60px] w-[200px] sm:w-[250px] items-center justify-center whitespace-nowrap rounded-lg bg-white px-6 py-4 text-[20px] leading-[1.5] text-[#1C3C8C] shadow-[0_8px_20px_-8px_rgba(28,60,140,0.25)] shrink-0"
-                    style={{ fontFamily: heading }}
-                  >
-                    {p}
-                  </span>
-                ))}
-              </div>
-              <div className="marquee-track reverse">
-                {[...practicesRow2, ...practicesRow2].map((p, i) => (
-                  <span
-                    key={`r2-${i}`}
-                    className="inline-flex min-h-[60px] w-[200px] sm:w-[250px] items-center justify-center whitespace-nowrap rounded-lg bg-white px-6 py-4 text-[20px] leading-[1.5] text-[#1C3C8C] shadow-[0_8px_20px_-8px_rgba(28,60,140,0.25)] shrink-0"
-                    style={{ fontFamily: heading }}
-                  >
-                    {p}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
 
         {/* Right column — Среда вокруг */}
         <div className="rounded-[12px] border border-[#daebff] bg-white p-8 sm:p-10 xl:p-12">
