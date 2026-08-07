@@ -196,14 +196,14 @@ const serviceTypes: ServiceType[] = [
         price: "1\u00A0000\u00A0₽",
       },
     ],
-  },
+];
 
+const categories = ["Оздоровительные процедуры", "Массаж"];
+
+const sessions = [
   { label: "1 сеанс", discount: null },
-
   { label: "3 сеанса", discount: "-10%" },
-
   { label: "6 сеансов", discount: "-15%" },
-
 ];
 
 function formatPrice(value: number) {
