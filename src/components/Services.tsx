@@ -381,82 +381,83 @@ function ServiceCard({
         ))}
       </div>
 
-      <div className="sm:flex-1">
-        {/* Title */}
-        <h3
-          className="mt-5 text-[28px] sm:text-[34px] xl:text-[38px] font-light leading-[1.1] text-[#1C3C8C] break-words hyphens-auto"
-          style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
-        >
-          {clean(type.title)}
-        </h3>
+      <div className="sm:flex-1 flex flex-col">
+        <div className="flex-1">
+          {/* Title */}
+          <h3
+            className="mt-5 text-[28px] sm:text-[34px] xl:text-[38px] font-light leading-[1.1] text-[#1C3C8C] break-words hyphens-auto"
+            style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
+          >
+            {clean(type.title)}
+          </h3>
 
-        {/* Zone / Type chips */}
-        {variant.zone && (
-          <div className="mt-6">
-            <span className="block text-[13px] font-light leading-[20px] text-[#8D9DC5]">
-              {clean(type.title) === "Гирудотерапия"
-                ? "Тип пиявок:"
-                : clean(type.title) === "Банки"
-                ? "Тип банок:"
-                : "Зона:"}
-            </span>
-            <div className="mt-2 flex flex-wrap items-center gap-2">
-              {type.variants.map((v, i) => {
-                const isActive = i === zoneIndex;
-                const tabLabel = v.zoneShort || v.zone;
-                return (
-                  <button
-                    key={v.zone}
-                    type="button"
-                    onClick={() => onZoneChange(i)}
-                    aria-pressed={isActive}
-                    className={`rounded-[0.5rem] px-3 py-1.5 text-[14px] leading-[20px] transition-all duration-300 ${
-                      isActive
-                        ? "border border-[#A2CFFE] bg-[#EFF6FF] font-medium text-[#1C3C8C]"
-                        : "border border-[#DAEBFF] bg-transparent font-medium text-[#1C3C8C] hover:border-[#A2CFFE] hover:bg-[#EFF6FF]"
-                    }`}
-                  >
-                    {tabLabel}
-                  </button>
-                );
-              })}
+          {/* Zone / Type chips */}
+          {variant.zone && (
+            <div className="mt-6">
+              <span className="block text-[13px] font-light leading-[20px] text-[#8D9DC5]">
+                {clean(type.title) === "Гирудотерапия"
+                  ? "Тип пиявок:"
+                  : clean(type.title) === "Банки"
+                  ? "Тип банок:"
+                  : "Зона:"}
+              </span>
+              <div className="mt-2 flex flex-wrap items-center gap-2">
+                {type.variants.map((v, i) => {
+                  const isActive = i === zoneIndex;
+                  const tabLabel = v.zoneShort || v.zone;
+                  return (
+                    <button
+                      key={v.zone}
+                      type="button"
+                      onClick={() => onZoneChange(i)}
+                      aria-pressed={isActive}
+                      className={`rounded-[0.5rem] px-3 py-1.5 text-[14px] leading-[20px] transition-all duration-300 ${
+                        isActive
+                          ? "border border-[#A2CFFE] bg-[#EFF6FF] font-medium text-[#1C3C8C]"
+                          : "border border-[#DAEBFF] bg-transparent font-medium text-[#1C3C8C] hover:border-[#A2CFFE] hover:bg-[#EFF6FF]"
+                      }`}
+                    >
+                      {tabLabel}
+                    </button>
+                  );
+                })}
+              </div>
             </div>
+          )}
+
+          {/* Description */}
+          <p className="mt-6 whitespace-pre-line text-[15px] leading-[24px] text-[#8D9DC5] xl:hidden">
+            {variant.mobileDescription || variant.description}
+          </p>
+          <p className="mt-6 hidden whitespace-pre-line text-[15px] leading-[24px] text-[#8D9DC5] xl:block">
+            {variant.description}
+          </p>
+
+          {/* Selected configuration summary */}
+          <p className="mt-6 text-[13px] font-medium leading-[18px] tracking-wide text-[#1C3C8C]">
+            {selectedSummary}
+          </p>
+        </div>
+
+        {/* Price */}
+        <div className="mt-5 flex items-center justify-end gap-4 sm:gap-5">
+          {hasDiscount && (
+            <span
+              className="text-[17px] sm:text-[19px] font-light leading-[1.2] text-[#8D9DC5] line-through"
+              style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
+            >
+              {renderPrice(originalPrice)}
+            </span>
+          )}
+          <div className="flex flex-col items-end">
+            <span
+              className="text-[30px] sm:text-[34px] font-light leading-[1.1] text-[#1C3C8C]"
+              style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
+            >
+              {renderPrice(computedPrice)}
+            </span>
+            <span className="text-[13px] font-light text-[#8D9DC5]">{priceLabel}</span>
           </div>
-        )}
-
-        {/* Description */}
-        <p className="mt-6 whitespace-pre-line text-[15px] leading-[24px] text-[#8D9DC5] xl:hidden">
-          {variant.mobileDescription || variant.description}
-        </p>
-        <p className="mt-6 hidden whitespace-pre-line text-[15px] leading-[24px] text-[#8D9DC5] xl:block">
-          {variant.description}
-        </p>
-
-        {/* Selected configuration summary */}
-        <p className="mt-6 text-[13px] font-medium leading-[18px] tracking-wide text-[#1C3C8C]">
-          {selectedSummary}
-        </p>
-      </div>
-
-
-      {/* Price */}
-      <div className="mt-5 flex items-center justify-end gap-4 sm:gap-5">
-        {hasDiscount && (
-          <span
-            className="text-[17px] sm:text-[19px] font-light leading-[1.2] text-[#8D9DC5] line-through"
-            style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
-          >
-            {renderPrice(originalPrice)}
-          </span>
-        )}
-        <div className="flex flex-col items-end">
-          <span
-            className="text-[30px] sm:text-[34px] font-light leading-[1.1] text-[#1C3C8C]"
-            style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
-          >
-            {renderPrice(computedPrice)}
-          </span>
-          <span className="text-[13px] font-light text-[#8D9DC5]">{priceLabel}</span>
         </div>
       </div>
 
