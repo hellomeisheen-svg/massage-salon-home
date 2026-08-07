@@ -381,7 +381,7 @@ function ServiceCard({
         ))}
       </div>
 
-      <div className="xl:flex-1">
+      <div className="sm:flex-1">
         {/* Title */}
         <h3
           className="mt-5 text-[28px] sm:text-[34px] xl:text-[38px] font-light leading-[1.1] text-[#1C3C8C] break-words hyphens-auto"
@@ -461,7 +461,7 @@ function ServiceCard({
       </div>
 
       {/* Actions */}
-      <div className="mt-4 flex flex-col sm:flex-row gap-3">
+      <div className="mt-auto flex flex-col sm:flex-row sm:justify-center sm:items-center gap-3">
         <button
           type="button"
           onClick={() => openBooking(bookingTitle)}
