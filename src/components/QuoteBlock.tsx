@@ -1,4 +1,7 @@
+import ImageReveal from "@/components/ui/image-tiles";
+
 const Sparkle = ({ className }: { className?: string }) => (
+
   <svg
     className={className}
     viewBox="0 0 24 24"
@@ -71,7 +74,18 @@ export function QuoteBlock() {
         >
           Здесь можно выдохнуть и&nbsp;побыть в&nbsp;спокойном ритме. Работа с&nbsp;тем состоянием, в&nbsp;котором вы&nbsp;пришли&nbsp;— без&nbsp;шаблонов и&nbsp;без&nbsp;спешки
         </h2>
+
+        {/* Mobile-only photo tiles */}
+        <div className="mt-10 flex w-full justify-center overflow-hidden sm:hidden">
+          <ImageReveal
+            spread={95}
+            leftImage="/images/uslugi-limfodrenazhnyi-massazh.jpg"
+            middleImage="/images/uslugi-massazh-spiny-i-shei.jpg"
+            rightImage="/images/uslugi-massazh-golovy.jpg"
+          />
+        </div>
       </div>
+
     </section>
   );
 }
