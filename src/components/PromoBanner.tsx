@@ -3,17 +3,17 @@ import { useBooking } from "@/components/BookingModal";
 export function PromoBanner() {
   const { openBooking } = useBooking();
   return (
-    <section className="bg-brand-surface py-[60px] sm:py-[70px] xl:pt-[140px] xl:pb-0">
+    <section className="bg-brand-surface py-[60px] xl:pt-[140px] xl:pb-0">
       <div className="container-1900 px-5">
         <div
-          className="relative overflow-hidden rounded-[12px] border px-6 py-14 sm:px-12 sm:py-16 xl:px-24 xl:py-[60px]"
+          className="relative overflow-hidden rounded-[12px] border px-6 py-14 xl:px-24 xl:py-[60px]"
           style={{ backgroundColor: "#DAEBFF", borderColor: "#daebff" }}
         >
           <img
             src="/images/banner-clouds.svg"
             alt=""
             aria-hidden="true"
-            className="pointer-events-none absolute inset-x-0 top-0 z-0 w-full -translate-y-[10px] select-none sm:hidden xl:block"
+            className="pointer-events-none absolute inset-x-0 top-0 z-0 w-full -translate-y-[10px] select-none xl:hidden"
           />
 
           <img
@@ -26,18 +26,18 @@ export function PromoBanner() {
             src="/images/banner-ellipse.svg"
             alt=""
             aria-hidden="true"
-            className="pointer-events-none absolute left-1/2 top-0 z-[1] hidden h-full w-[140%] max-w-none -translate-x-1/2 select-none sm:block sm:w-[120%] xl:w-[995px]"
+            className="pointer-events-none absolute left-1/2 top-0 z-[1] hidden h-full w-[140%] max-w-none -translate-x-1/2 select-none xl:block xl:w-[995px]"
             style={{ objectFit: "fill" }}
           />
 
           {/* Decorative background sparkles */}
           {[
-            "absolute left-[6%] top-[18%] h-4 w-4 sm:h-5 sm:w-5",
-            "absolute left-[14%] bottom-[22%] h-3 w-3 sm:h-4 sm:w-4",
-            "absolute right-[8%] top-[24%] h-5 w-5 sm:h-6 sm:w-6",
-            "absolute right-[14%] bottom-[18%] h-3 w-3 sm:h-4 sm:w-4",
-            "absolute left-[42%] top-[10%] h-3 w-3 sm:h-4 sm:w-4",
-            "absolute right-[40%] bottom-[12%] h-4 w-4 sm:h-5 sm:w-5",
+            "absolute left-[6%] top-[18%] h-4 w-4 xl:h-5 xl:w-5",
+            "absolute left-[14%] bottom-[22%] h-3 w-3 xl:h-4 xl:w-4",
+            "absolute right-[8%] top-[24%] h-5 w-5 xl:h-6 xl:w-6",
+            "absolute right-[14%] bottom-[18%] h-3 w-3 xl:h-4 xl:w-4",
+            "absolute left-[42%] top-[10%] h-3 w-3 xl:h-4 xl:w-4",
+            "absolute right-[40%] bottom-[12%] h-4 w-4 xl:h-5 xl:w-5",
           ].map((cls, i) => (
             <svg
               key={i}
@@ -52,22 +52,22 @@ export function PromoBanner() {
 
           <div className="relative z-10 flex flex-col items-center text-center">
             <h2
-              className="text-[30px] font-light leading-[1.1] text-brand-ink sm:whitespace-nowrap sm:text-[32px] xl:text-[44px]"
+              className="text-[30px] font-light leading-[1.1] text-brand-ink xl:whitespace-nowrap xl:text-[44px]"
               style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
             >
               Знакомство с&nbsp;кабинетом по&nbsp;комфортной цене
             </h2>
 
-            <p className="mt-4 max-w-[600px] text-[15px] leading-[24px] text-brand-ink/60 sm:mt-5 sm:text-[16px] sm:leading-[26px]">
+            <p className="mt-4 max-w-[600px] text-[15px] leading-[24px] text-brand-ink/60 xl:mt-5 xl:text-[16px] xl:leading-[26px]">
               Первый визит со&nbsp;скидкой 20%. Подберём формат под&nbsp;ваше состояние
               и&nbsp;обсудим всё заранее&nbsp;— без&nbsp;спешки и&nbsp;шаблонов.
             </p>
 
-            <div className="mt-8 w-full px-2 sm:mt-10 sm:w-auto sm:px-0">
+            <div className="mt-8 w-full px-2 xl:mt-10 xl:w-auto xl:px-0">
               <button
                 type="button"
                 onClick={() => openBooking()}
-                className="btn-primary w-full sm:w-[250px]"
+                className="btn-primary w-full xl:w-[250px]"
               >
                 Записаться
               </button>
