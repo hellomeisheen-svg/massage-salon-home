@@ -46,7 +46,7 @@ export default function ImageReveal({
         }}
       >
         <img
-          src={middleImage}
+          src={rightImage}
           alt=""
           loading="lazy"
           className="h-full w-full object-cover"
@@ -65,7 +65,7 @@ export default function ImageReveal({
         }}
       >
         <img
-          src={rightImage}
+          src={middleImage}
           alt=""
           loading="lazy"
           className="h-full w-full object-cover"
