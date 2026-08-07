@@ -404,6 +404,8 @@ function ServiceCard({
               {type.variants.map((v, i) => {
                 const isActive = i === zoneIndex;
                 const tabLabel = v.zoneShort || v.zone;
+                const isMedical = v.zone === "Медицинские";
+                const isCosmetic = v.zone === "Косметические";
                 return (
                   <button
                     key={v.zone}
@@ -411,8 +413,14 @@ function ServiceCard({
                     onClick={() => onZoneChange(i)}
                     aria-pressed={isActive}
                     className={`rounded-[0.5rem] px-3 py-1.5 text-[14px] leading-[20px] transition-all duration-300 ${
-                      isActive
+                      isActive && isMedical
+                        ? "bg-[#EFF6FF] font-medium text-[#1C3C8C]"
+                        : isActive && isCosmetic
+                        ? "border border-[#DAEBFF] bg-[#EFF6FF] font-medium text-[#1C3C8C]"
+                        : isActive
                         ? "border border-[#A2CFFE] bg-[#EFF6FF] font-medium text-[#1C3C8C]"
+                        : isCosmetic
+                        ? "border border-[#DAEBFF] bg-transparent font-medium text-[#1C3C8C] hover:border-[#DAEBFF] hover:bg-[#EFF6FF]"
                         : "border border-[rgba(141,157,197,0.5)] bg-transparent font-medium text-[#1C3C8C] hover:border-[#A2CFFE] hover:bg-[#EFF6FF]"
                     }`}
                   >
