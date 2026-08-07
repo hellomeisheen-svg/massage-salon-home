@@ -413,7 +413,7 @@ function ServiceCard({
                     className={`rounded-[0.5rem] px-3 py-1.5 text-[14px] leading-[20px] transition-all duration-300 ${
                       isActive
                         ? "border border-[#A2CFFE] bg-[#EFF6FF] font-medium text-[#1C3C8C]"
-                        : "border border-[rgba(141,157,197,0.5)] bg-transparent font-medium text-[#1C3C8C] hover:border-[#A2CFFE] hover:bg-[#EFF6FF]"
+                        : "border border-[#DAEBFF] bg-transparent font-medium text-[#1C3C8C] hover:border-[#A2CFFE] hover:bg-[#EFF6FF]"
                     }`}
                   >
                     {tabLabel}
