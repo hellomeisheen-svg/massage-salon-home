@@ -32,16 +32,27 @@ export function ApproachCopy() {
         {/* Left column */}
         <div className="flex flex-col gap-6 xl:h-full">
           {/* Подход мастера */}
-          <div className="rounded-[12px] border border-[#daebff] bg-white p-8 sm:p-10 xl:p-12 min-h-[380px] xl:min-h-0 xl:h-full flex flex-col justify-between">
-            <h3
-              className="text-[30px] sm:text-[38px] xl:text-[44px] font-light leading-[1.1] text-[#1C3C8C]"
-              style={{ fontFamily: heading }}
-            >
-              Подход мастера
-            </h3>
-            <p className="mt-8 text-[16px] leading-[26px] text-[#8D9DC5] max-w-[440px]">
-              Каждый сеанс&nbsp;— это спокойный диалог с&nbsp;вашим телом. Я&nbsp;слушаю, что&nbsp;нужно сегодня, и&nbsp;подбираю технику под&nbsp;ваше состояние, а&nbsp;не&nbsp;наоборот.
-            </p>
+          <div className="relative rounded-[12px] border border-[#daebff] bg-white p-8 sm:p-10 xl:p-12 min-h-[380px] xl:min-h-0 xl:h-full flex flex-col justify-between overflow-hidden">
+            <img
+              src="/src/assets/approach-master.jpg"
+              alt="Уютный кабинет массажа с чистым бельём и расслабляющей атмосферой"
+              loading="lazy"
+              width={1024}
+              height={768}
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/70 to-white/30" />
+            <div className="relative z-10 flex flex-col justify-between h-full">
+              <h3
+                className="text-[30px] sm:text-[38px] xl:text-[44px] font-light leading-[1.1] text-[#1C3C8C]"
+                style={{ fontFamily: heading }}
+              >
+                Подход мастера
+              </h3>
+              <p className="mt-8 text-[16px] leading-[26px] text-[#1C3C8C]/80 max-w-[440px]">
+                Каждый сеанс&nbsp;— это спокойный диалог с&nbsp;вашим телом. Я&nbsp;слушаю, что&nbsp;нужно сегодня, и&nbsp;подбираю технику под&nbsp;ваше состояние, а&nbsp;не&nbsp;наоборот.
+              </p>
+            </div>
           </div>
         </div>
 
