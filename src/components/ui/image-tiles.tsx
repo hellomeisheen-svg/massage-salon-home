@@ -11,7 +11,7 @@ export default function ImageReveal({
   rightImage,
 }: ImageRevealProps) {
   const tileBase =
-    "absolute overflow-hidden rounded-[16px] border-2 border-[#88C1FF]";
+    "image-tile absolute overflow-hidden rounded-[12px] border border-[#DAEBFF] bg-white transition-shadow duration-300 hover:shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)]";
 
   return (
     <div className="relative h-[240px] w-[280px]">
@@ -22,7 +22,8 @@ export default function ImageReveal({
           zIndex: 10,
           left: "20px",
           top: "40px",
-          transform: "rotate(-8deg)",
+          ["--tile-rot" as string]: "-8deg",
+          ["--tile-delay" as string]: "0s",
         }}
       >
         <img
@@ -40,7 +41,8 @@ export default function ImageReveal({
           zIndex: 20,
           left: "80px",
           top: "30px",
-          transform: "rotate(4deg)",
+          ["--tile-rot" as string]: "4deg",
+          ["--tile-delay" as string]: "0.15s",
         }}
       >
         <img
@@ -58,7 +60,8 @@ export default function ImageReveal({
           zIndex: 30,
           left: "140px",
           top: "40px",
-          transform: "rotate(8deg)",
+          ["--tile-rot" as string]: "8deg",
+          ["--tile-delay" as string]: "0.3s",
         }}
       >
         <img
