@@ -467,7 +467,7 @@ function ServiceCard({
             >
               {renderPrice(computedPrice)}
             </span>
-            <span className="text-[13px] font-light text-[#8D9DC5]">{priceLabel}</span>
+            <span className="text-[13px] font-light text-[#8D9DC5] hidden sm:inline">{priceLabel}</span>
           </div>
         </div>
       </div>
