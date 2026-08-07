@@ -13,7 +13,7 @@ export function PromoBanner() {
             src="/images/banner-clouds.svg"
             alt=""
             aria-hidden="true"
-            className="pointer-events-none absolute inset-x-0 top-0 z-0 w-full -translate-y-[10px] select-none xl:hidden"
+            className="pointer-events-none absolute inset-x-0 top-0 z-0 w-full -translate-y-[10px] select-none"
           />
 
           <img
