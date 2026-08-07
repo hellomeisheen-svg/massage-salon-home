@@ -1,10 +1,7 @@
-import { motion, Variants } from "framer-motion";
-
 interface ImageRevealProps {
   leftImage: string;
   middleImage: string;
   rightImage: string;
-  /** horizontal spread in px (default 150/200) */
   spread?: number;
 }
 
@@ -14,50 +11,17 @@ export default function ImageReveal({
   rightImage,
   spread = 150,
 }: ImageRevealProps) {
-  const containerVariants: Variants = {
-    initial: { opacity: 0 },
-    animate: {
-      opacity: 1,
-      transition: { delay: 0.2, staggerChildren: 0.2 },
-    },
-  };
-
-  const spring = { type: "spring" as const, stiffness: 120, damping: 12 };
-  const springHover = { type: "spring" as const, stiffness: 200, damping: 15 };
-
-  const leftImageVariants: Variants = {
-    initial: { rotate: 0, x: 0, y: 0 },
-    animate: { rotate: -8, x: -spread, y: 10, transition: spring },
-    hover: { rotate: 1, x: -spread - 10, y: 0, transition: springHover },
-  };
-
-  const middleImageVariants: Variants = {
-    initial: { rotate: 0, x: 0, y: 0 },
-    animate: { rotate: 6, x: 0, y: 0, transition: spring },
-    hover: { rotate: 0, x: 0, y: -10, transition: springHover },
-  };
-
-  const rightImageVariants: Variants = {
-    initial: { rotate: 0, x: 0, y: 0 },
-    animate: { rotate: -6, x: spread, y: 20, transition: spring },
-    hover: { rotate: 3, x: spread, y: 10, transition: springHover },
-  };
-
   const tileClass =
     "absolute h-40 w-40 overflow-hidden rounded-xl bg-white p-2 shadow-lg";
 
   return (
-    <motion.div
+    <div
       className="relative flex h-56 w-56 items-center justify-center"
-      variants={containerVariants}
-      initial="initial"
-      animate="animate"
+      style={{ width: `${spread * 2 + 160}px` }}
     >
-      <motion.div
+      <div
         className={`${tileClass} origin-bottom-right`}
-        variants={leftImageVariants}
-        whileHover="hover"
-        style={{ zIndex: 30 }}
+        style={{ zIndex: 30, transform: `rotate(-8deg) translateX(-${spread}px) translateY(10px)` }}
       >
         <img
           src={leftImage}
@@ -65,13 +29,11 @@ export default function ImageReveal({
           loading="lazy"
           className="h-full w-full rounded-lg object-cover"
         />
-      </motion.div>
+      </div>
 
-      <motion.div
+      <div
         className={`${tileClass} origin-bottom-left`}
-        variants={middleImageVariants}
-        whileHover="hover"
-        style={{ zIndex: 20 }}
+        style={{ zIndex: 20, transform: "rotate(6deg)" }}
       >
         <img
           src={middleImage}
@@ -79,13 +41,11 @@ export default function ImageReveal({
           loading="lazy"
           className="h-full w-full rounded-lg object-cover"
         />
-      </motion.div>
+      </div>
 
-      <motion.div
+      <div
         className={`${tileClass} origin-bottom-right`}
-        variants={rightImageVariants}
-        whileHover="hover"
-        style={{ zIndex: 10 }}
+        style={{ zIndex: 10, transform: `rotate(-6deg) translateX(${spread}px) translateY(20px)` }}
       >
         <img
           src={rightImage}
@@ -93,7 +53,7 @@ export default function ImageReveal({
           loading="lazy"
           className="h-full w-full rounded-lg object-cover"
         />
-      </motion.div>
-    </motion.div>
+      </div>
+    </div>
   );
 }
