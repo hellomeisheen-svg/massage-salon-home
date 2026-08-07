@@ -285,6 +285,14 @@ function clean(value: string) {
   return value.replace(/\u00A0/g, " ");
 }
 
+function mobileTitle(title: string) {
+  const t = clean(title);
+  if (t === "Лимфатический" || t === "Лимфодренажный" || t === "Классический" || t === "Векторный") {
+    return t + " массаж";
+  }
+  return t;
+}
+
 function ServiceCard({
   type,
   zoneIndex,
