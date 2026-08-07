@@ -489,27 +489,24 @@ function ServiceCard({
 
         {/* Mobile: one row with Узнать больше + arrows */}
         <div className="flex items-center gap-2 sm:hidden">
-          <a href="#programs" className="btn-secondary flex-1 h-12 min-h-0 px-3 py-0 inline-flex items-center justify-center text-center">
+          <a href="#programs" className="btn-secondary flex-1 h-[60px] px-3 py-0 inline-flex items-center justify-center text-center">
             Узнать больше
           </a>
           <button
             type="button"
             onClick={onPrev}
             aria-label="Предыдущая услуга"
-            className="btn-secondary h-12 w-12 min-h-0 flex items-center justify-center p-0 shrink-0"
+            className="btn-secondary w-[60px] h-[60px] flex items-center justify-center p-0 shrink-0"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
               <path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
-          <span className="text-[14px] font-medium leading-[1] text-[#1C3C8C] shrink-0">
-            {activeIndex + 1} / {totalCount}
-          </span>
           <button
             type="button"
             onClick={onNext}
             aria-label="Следующая услуга"
-            className="btn-secondary h-12 w-12 min-h-0 flex items-center justify-center p-0 shrink-0"
+            className="btn-secondary w-[60px] h-[60px] flex items-center justify-center p-0 shrink-0"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
               <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
