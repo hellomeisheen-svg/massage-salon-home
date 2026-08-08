@@ -62,7 +62,7 @@ export function ApproachCopy() {
             Среда вокруг
           </h3>
 
-          <ul className="mt-[120px] sm:mt-[140px] xl:mt-[80px] flex flex-col gap-8 xl:gap-[40px]">
+          <ul className="mt-[120px] sm:mt-[140px] xl:mt-[140px] flex flex-col gap-8 xl:gap-[40px]">
             {environmentItems.map((item, i) => (
               <li key={i} className="group">
                 <div className="flex flex-col items-start gap-8 xl:grid xl:grid-cols-[auto_1fr] xl:gap-x-5 xl:gap-y-2">
