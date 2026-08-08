@@ -53,7 +53,10 @@ function Index() {
       
       
       <Programs />
-      <PromoBanner />
+      <PromoBanner
+        title="С 1 сентября часть курсов подорожает, а пока можно купить их по\u00A0прежней цене"
+        subtitle="До этой даты действует прежняя цена: можно купить курс сейчас и\u00A0приходить на\u00A0сеансы позже."
+      />
       <Education />
       <GalleryIntro />
       <Gallery />
