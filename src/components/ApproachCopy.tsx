@@ -59,7 +59,7 @@ export function ApproachCopy() {
             className="text-[30px] sm:text-[38px] xl:text-[44px] font-light leading-[1.1] text-[#1C3C8C]"
             style={{ fontFamily: heading }}
           >
-            Среда вокруг
+            Всё, чтобы вы чувствовали себя спокойно, безопасно и комфортно с первых минут
           </h3>
 
           <ul className="mt-[120px] sm:mt-[140px] xl:mt-[140px] flex flex-col gap-8 xl:gap-[40px]">
