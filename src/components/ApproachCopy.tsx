@@ -54,7 +54,7 @@ export function ApproachCopy() {
               <li key={i}>
                 <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-start sm:gap-5">
                   <div
-                    className="shrink-0 w-[40px] h-[40px] xl:w-[44px] xl:h-[44px] rounded-[0.5rem] bg-[#EFF6FF] border border-[#daebff] flex items-center justify-center text-[20px] xl:text-[22px] font-light leading-none text-[#1C3C8C]"
+                    className="shrink-0 w-[40px] h-[40px] xl:w-[44px] xl:h-[44px] flex items-center justify-center text-[20px] xl:text-[22px] font-light leading-none text-[#1C3C8C]"
                     style={{ fontFamily: heading }}
                   >
                     {i + 1}
