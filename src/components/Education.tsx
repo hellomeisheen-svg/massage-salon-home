@@ -45,7 +45,7 @@ function EduCard({ item }: { item: EduItem }) {
 
       <ul className="mt-4 space-y-2 xl:space-y-1.5">
         {item.items.map((i) => (
-          <li key={i} className="text-[#8D9DC5] text-[15px] sm:text-[16px] leading-[1.5] flex gap-2">
+          <li key={i} className="body-text text-[#8D9DC5] flex gap-2">
             <span aria-hidden>•</span>
             <span>{i}</span>
           </li>
@@ -90,7 +90,7 @@ export function Education() {
                 <p className="text-[#1C3C8C] text-[15px] sm:text-[16px] leading-[1.5]">
                   «Я&nbsp;не&nbsp;обещаю мгновенных изменений. Я&nbsp;обещаю внимание, тишину и&nbsp;время, в&nbsp;котором не&nbsp;нужно никуда спешить.»
                 </p>
-                <p className="mt-3 text-[#8D9DC5] text-[13px] sm:text-[14px] leading-[1.5]">
+                <p className="mt-3 body-text text-[#8D9DC5]">
                   Татьяна Злобина&nbsp;— Мастер кабинета, специалист по&nbsp;оздоровительным практикам
                 </p>
               </div>
