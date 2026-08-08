@@ -18,7 +18,7 @@ export function ApproachIntro() {
           className="max-w-none sm:max-w-[900px] xl:max-w-[1100px] text-[30px] font-light leading-[1.15] text-[#1C3C8C] sm:text-[38px] sm:leading-[1.18] xl:text-[54px] xl:leading-[1.15]"
           style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
         >
-          Всё, чтобы вы чувствовали себя спокойно, безопасно и комфортно с\u00A0первых минут
+          Всё, чтобы вы чувствовали себя спокойно, безопасно и комфортно с{'\u00A0'}первых минут
         </h2>
       </div>
     </section>
