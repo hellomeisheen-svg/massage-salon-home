@@ -21,14 +21,17 @@ const environmentItems: { title: string; text: string }[] = [
 ];
 
 const NumberBadge = ({ number }: { number: number }) => (
-  <div className="relative flex items-center justify-center w-[44px] h-[44px] xl:w-[48px] xl:h-[48px]">
-    <span
-      className="flex items-center justify-center w-full h-full rounded-full border border-[#88C1FF] text-[18px] xl:text-[20px] font-light leading-none text-[#1C3C8C]"
+  <div className="relative mt-1 flex shrink-0 items-center justify-center w-[44px] h-[44px] xl:w-[48px] xl:h-[48px]">
+    {/* Decorative outer ring */}
+    <span className="absolute -inset-2 rounded-full border border-[#88C1FF]/20" />
+    {/* Main badge ring */}
+    <span className="relative flex h-full w-full items-center justify-center rounded-full border border-[#88C1FF] bg-white text-[18px] xl:text-[20px] font-light leading-none text-[#1C3C8C]"
       style={{ fontFamily: heading }}
     >
       {number}
     </span>
-    <span className="absolute -bottom-0.5 -right-0.5 w-[7px] h-[7px] rounded-full bg-[#88C1FF]" />
+    {/* Accent dot with soft glow */}
+    <span className="absolute -bottom-0.5 -right-0.5 h-[7px] w-[7px] rounded-full bg-[#88C1FF] ring-[3px] ring-[#88C1FF]/20 shadow-[0_0_10px_rgba(136,193,255,0.55)]" />
   </div>
 );
 
