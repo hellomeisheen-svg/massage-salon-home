@@ -21,7 +21,7 @@ const environmentItems: { title: string; text: string }[] = [
 ];
 
 const NumberBadge = ({ number }: { number: number }) => (
-  <div className="relative mt-1 flex shrink-0 items-center justify-center w-[44px] h-[44px] xl:w-[48px] xl:h-[48px]">
+  <div className="relative flex shrink-0 items-center justify-center w-[44px] h-[44px] xl:w-[48px] xl:h-[48px]">
     {/* Decorative outer ring */}
     <span className="absolute -inset-2 rounded-[12px] border border-[#88C1FF]/20" />
     {/* Main badge ring */}
