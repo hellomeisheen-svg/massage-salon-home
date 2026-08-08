@@ -74,25 +74,25 @@ export function Footer() {
               >
                 Как найти кабинет
               </h2>
-              <p className="mt-4 xl:mt-5 text-[#1c3c8c]/70 text-[15px] xl:text-base leading-[150%] max-w-[440px] font-light">
+              <p className="mt-4 xl:mt-5 body-text text-[#1c3c8c]/70 max-w-[440px]">
                 Уютное пространство в центре города — приходите за пятнадцать минут до сеанса, чтобы спокойно выдохнуть.
               </p>
             </div>
 
             <ul className="flex flex-col gap-8 xl:gap-10">
               <li className="text-[#1c3c8c] leading-[150%] font-light">
-                <div className="text-[15px] xl:text-base text-[#1c3c8c]/70 mb-2">Адрес</div>
-                <div className="text-[15px] xl:text-base">{ADDRESS}</div>
+                <div className="body-text text-[#1c3c8c]/70 mb-2">Адрес</div>
+                <div className="body-text text-[#1c3c8c]">{ADDRESS}</div>
               </li>
               <li className="text-[#1c3c8c] leading-[150%] font-light">
-                <div className="text-[15px] xl:text-base text-[#1c3c8c]/70 mb-2">Телефон</div>
-                <a href="tel:+79242324611" className="text-[15px] xl:text-base hover:opacity-70 transition-opacity">
+                <div className="body-text text-[#1c3c8c]/70 mb-2">Телефон</div>
+                <a href="tel:+79242324611" className="body-text text-[#1c3c8c] hover:opacity-70 transition-opacity">
                   +7 924 232 46 11
                 </a>
               </li>
               <li className="text-[#1c3c8c] leading-[150%] font-light">
-                <div className="text-[15px] xl:text-base text-[#1c3c8c]/70 mb-2">Режим работы</div>
-                <div className="text-[15px] xl:text-base">пн-сб с 9:00 до 22:00</div>
+                <div className="body-text text-[#1c3c8c]/70 mb-2">Режим работы</div>
+                <div className="body-text text-[#1c3c8c]">пн-сб с 9:00 до 22:00</div>
               </li>
             </ul>
 
@@ -118,7 +118,7 @@ export function Footer() {
               >
                 Logo
               </span>
-              <p className="mt-4 text-[#1c3c8c]/70 leading-[150%] text-[15px] font-light max-w-[320px]">
+              <p className="mt-4 body-text text-[#1c3c8c]/70 max-w-[320px]">
                 Кабинет оздоровительных практик Татьяны Злобиной. Спокойный ритм и внимание к каждому состоянию.
               </p>
               <div className="mt-5 flex items-center gap-2">
@@ -149,7 +149,7 @@ export function Footer() {
                   <li key={item.label}>
                     <a
                       href={item.href}
-                      className="text-[15px] leading-[150%] text-[#1c3c8c] hover:opacity-70 transition-opacity font-light"
+                      className="body-text text-[#1c3c8c] hover:opacity-70 transition-opacity"
                     >
                       {item.label}
                     </a>

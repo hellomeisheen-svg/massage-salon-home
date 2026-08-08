@@ -56,7 +56,7 @@ export function ApproachCopy() {
         </div>
 
         {/* Right column — Среда вокруг */}
-        <div className="rounded-[12px] border border-[#daebff] bg-white p-8 sm:p-10 xl:p-12">
+        <div className="rounded-[12px] border border-[#daebff] bg-white p-6 sm:p-8 xl:p-12">
           <h3
             className="text-[30px] sm:text-[38px] xl:text-[44px] font-light leading-[1.1] text-[#1C3C8C]"
             style={{ fontFamily: heading }}
@@ -69,14 +69,14 @@ export function ApproachCopy() {
               <li key={i} className="group">
                 <div className="flex flex-col items-start gap-8 xl:flex-row xl:items-start xl:gap-5">
                   <NumberBadge number={i + 1} />
-                  <div className="flex-1">
+                  <div className="flex-1 w-full">
                     <h4
                       className="text-[22px] xl:text-[24px] font-normal leading-[1] text-[#1C3C8C]"
                       style={{ fontFamily: heading }}
                     >
                       {item.title}
                     </h4>
-                    <p className="mt-4 text-[16px] leading-[1.5] text-[#8D9DC5] sm:text-[13px] sm:leading-[1.35] sm:max-w-[460px] xl:max-w-[520px]">
+                    <p className="mt-4 body-text text-[#8D9DC5] xl:max-w-[520px]">
                       {item.text}
                     </p>
                   </div>

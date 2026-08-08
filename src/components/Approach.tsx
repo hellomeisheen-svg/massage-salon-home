@@ -86,7 +86,7 @@ export function Approach() {
             >
               Подход мастера
             </h3>
-            <p className="mt-8 text-[16px] leading-[26px] text-[#8D9DC5] max-w-[440px]">
+            <p className="mt-8 body-text text-[#8D9DC5] max-w-[440px]">
               Каждый сеанс&nbsp;— это спокойный диалог с&nbsp;вашим телом. Я&nbsp;слушаю, что&nbsp;нужно сегодня, и&nbsp;подбираю технику под&nbsp;ваше состояние, а&nbsp;не&nbsp;наоборот.
             </p>
           </div>
@@ -172,7 +172,7 @@ export function Approach() {
                     >
                       {item.title}
                     </h4>
-                    <p className="mt-4 text-[16px] leading-[1.5] text-[#8D9DC5] xl:max-w-[600px]">
+                    <p className="mt-4 body-text text-[#8D9DC5] xl:max-w-[600px]">
                       {item.text}
                     </p>
                   </div>

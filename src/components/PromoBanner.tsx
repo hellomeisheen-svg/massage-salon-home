@@ -73,7 +73,7 @@ export function PromoBanner({
               {title}
             </h2>
 
-            <p className="mt-4 max-w-[600px] text-[15px] leading-[24px] text-brand-ink/60 xl:mt-5 xl:text-[16px] xl:leading-[26px]">
+            <p className="mt-4 max-w-[600px] body-text text-brand-ink/60">
               {subtitle}
             </p>
 
