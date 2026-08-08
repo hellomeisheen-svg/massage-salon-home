@@ -52,14 +52,14 @@ export function ApproachCopy() {
           <ul className="mt-[120px] sm:mt-[140px] flex flex-col gap-8">
             {environmentItems.map((item, i) => (
               <li key={i} className="group">
-                <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-start sm:gap-5">
+                <div className="flex flex-col items-start gap-4 xl:flex-row xl:items-start xl:gap-5">
                   <div className="relative shrink-0 w-[40px] h-[40px] xl:w-[44px] xl:h-[44px] flex items-center justify-center">
                     {/* Large faded background number */}
                     <span
                       className="absolute -top-3 -left-2 text-[48px] xl:text-[52px] font-light leading-none text-[#88C1FF]/25 select-none pointer-events-none transition-opacity duration-500 group-hover:text-[#88C1FF]/35"
                       style={{ fontFamily: heading }}
                     >
-                      {String(i + 1).padStart(2, "0")}
+                      {i + 1}
                     </span>
                   </div>
                   <div className="flex-1">
