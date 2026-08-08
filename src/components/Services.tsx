@@ -361,7 +361,7 @@ function ServiceCard({
   const priceLabel = `за ${sessionCounts[activeSession]} ${sessionWord}`;
 
   return (
-    <article className="rounded-[12px] border border-[#daebff] bg-white p-6 sm:p-8 transition-shadow duration-300 hover:shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)] flex flex-col h-auto min-h-[640px] sm:min-h-[800px] xl:min-h-[700px]">
+    <article className="rounded-[12px] border border-[#daebff] bg-white p-6 sm:p-8 sm:pb-0 xl:pb-8 transition-shadow duration-300 hover:shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)] flex flex-col h-auto min-h-[640px] sm:min-h-0 xl:min-h-[700px]">
       {/* Sessions — pill switcher */}
       <div className="flex items-stretch gap-1 rounded-[10px] bg-[#EFF6FF] p-1">
         {items.map((s, i) => (
@@ -391,7 +391,7 @@ function ServiceCard({
         ))}
       </div>
 
-      <div className="flex-1 flex flex-col mb-6">
+      <div className="flex-1 flex flex-col mb-6 sm:flex-none sm:mb-0 xl:flex-1 xl:mb-6">
         <div className="flex-1 sm:flex-none xl:flex-1">
           {/* Title */}
           <h3
@@ -473,7 +473,7 @@ function ServiceCard({
       </div>
 
       {/* Actions */}
-      <div className="mt-auto flex flex-col sm:flex-row sm:justify-center sm:items-center gap-3">
+      <div className="mt-auto flex flex-col sm:mt-5 sm:flex-row sm:justify-center sm:items-center gap-3 xl:mt-auto">
         <button
           type="button"
           onClick={() => openBooking(bookingTitle)}
