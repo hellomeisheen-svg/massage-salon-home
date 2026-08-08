@@ -59,7 +59,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
         }`}
       >
         <div className="overflow-hidden">
-          <p className="px-5 sm:px-6 xl:px-7 pb-5 sm:pb-6 xl:pb-7 text-[#1C3C8C] text-[15px] sm:text-[16px] leading-[1.5] max-w-[720px]">
+          <p className="px-5 sm:px-6 xl:px-7 pb-5 sm:pb-6 xl:pb-7 body-text text-[#1C3C8C] max-w-[720px]">
             {a}
           </p>
         </div>
@@ -102,10 +102,10 @@ export function Faq() {
             >
               Татьяна Злобина
             </h3>
-            <p className="mt-3 text-[#8D9DC5] text-[15px] sm:text-[16px] leading-[1.5]">
+            <p className="mt-3 body-text text-[#8D9DC5]">
               Мастер кабинета, специалист по&nbsp;оздоровительным практикам
             </p>
-            <p className="mt-6 text-[#1C3C8C] text-[15px] sm:text-[16px] leading-[1.5]">
+            <p className="mt-6 body-text text-[#1C3C8C]">
               Остались вопросы? Напишите мне&nbsp;— я&nbsp;всё подробно расскажу.
             </p>
             <a

@@ -197,7 +197,7 @@ export function Programs() {
           >
             {program.name}
           </h3>
-          <p className="mt-3 text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-[#8D9DC5]">
+          <p className="mt-3 body-text text-[#8D9DC5]">
             {program.description}
           </p>
 
@@ -212,8 +212,8 @@ export function Programs() {
               <div className="divide-y divide-[#daebff]">
                 {computedItems.map((it, idx) => (
                   <div key={idx} className="grid grid-cols-[1.3fr_1fr] gap-6 py-5">
-                    <div className="text-[16px] leading-[26px] text-[#8D9DC5]">{it.title}</div>
-                    <div className="text-[16px] leading-[26px] text-[#8D9DC5]">{it.duration}</div>
+                    <div className="body-text text-[#8D9DC5]">{it.title}</div>
+                    <div className="body-text text-[#8D9DC5]">{it.duration}</div>
                   </div>
                 ))}
               </div>
