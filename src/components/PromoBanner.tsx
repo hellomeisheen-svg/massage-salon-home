@@ -1,8 +1,9 @@
 import { useBooking } from "@/components/BookingModal";
+import type { ReactNode } from "react";
 
 interface PromoBannerProps {
-  title?: string;
-  subtitle?: string;
+  title?: ReactNode;
+  subtitle?: ReactNode;
   buttonText?: string;
 }
 
