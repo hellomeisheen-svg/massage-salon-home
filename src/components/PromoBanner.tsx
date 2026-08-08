@@ -1,6 +1,20 @@
 import { useBooking } from "@/components/BookingModal";
 
-export function PromoBanner() {
+interface PromoBannerProps {
+  title?: string;
+  subtitle?: string;
+  buttonText?: string;
+}
+
+const defaultTitle = "Знакомство с\u00A0кабинетом по\u00A0комфортной цене";
+const defaultSubtitle =
+  "Первый визит со\u00A0скидкой 20%. Подберём формат под\u00A0ваше состояние и\u00A0обсудим всё заранее\u00A0— без\u00A0спешки и\u00A0шаблонов.";
+
+export function PromoBanner({
+  title = defaultTitle,
+  subtitle = defaultSubtitle,
+  buttonText = "Записаться",
+}: PromoBannerProps) {
   const { openBooking } = useBooking();
   return (
     <section className="bg-brand-surface py-[60px] xl:pt-[140px] xl:pb-0">
@@ -52,15 +66,14 @@ export function PromoBanner() {
 
           <div className="relative z-10 flex flex-col items-center text-center">
             <h2
-              className="text-[30px] font-light leading-[1.1] text-brand-ink xl:whitespace-nowrap xl:text-[44px]"
+              className="text-[30px] font-light leading-[1.1] text-brand-ink xl:text-[44px]"
               style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
             >
-              Знакомство с&nbsp;кабинетом по&nbsp;комфортной цене
+              {title}
             </h2>
 
             <p className="mt-4 max-w-[600px] text-[15px] leading-[24px] text-brand-ink/60 xl:mt-5 xl:text-[16px] xl:leading-[26px]">
-              Первый визит со&nbsp;скидкой 20%. Подберём формат под&nbsp;ваше состояние
-              и&nbsp;обсудим всё заранее&nbsp;— без&nbsp;спешки и&nbsp;шаблонов.
+              {subtitle}
             </p>
 
             <div className="mt-8 w-full px-2 sm:mt-10 sm:w-auto sm:px-0">
@@ -69,7 +82,7 @@ export function PromoBanner() {
                 onClick={() => openBooking()}
                 className="btn-primary w-full sm:w-[250px]"
               >
-                Записаться
+                {buttonText}
               </button>
             </div>
           </div>
