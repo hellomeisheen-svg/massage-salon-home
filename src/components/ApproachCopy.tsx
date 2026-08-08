@@ -21,18 +21,16 @@ const environmentItems: { title: string; text: string }[] = [
 ];
 
 const NumberBadge = ({ number }: { number: number }) => (
-  <div className="relative flex shrink-0 items-center justify-center w-[44px] h-[44px] xl:w-[48px] xl:h-[48px]">
+  <div className="relative flex shrink-0 items-center justify-center w-[44px] h-[44px] xl:w-[40px] xl:h-[40px]">
     {/* Decorative outer ring */}
     <span className="absolute -inset-2 rounded-[12px] border border-[#88C1FF]/20" />
     {/* Main badge ring */}
     <span
-      className="relative flex h-full w-full items-center justify-center rounded-[12px] border border-[#88C1FF] bg-white text-[18px] xl:text-[20px] font-light leading-none text-[#1C3C8C]"
+      className="relative flex h-full w-full items-center justify-center rounded-[12px] border border-[#88C1FF] bg-white text-[18px] xl:text-[16px] font-light leading-none text-[#1C3C8C]"
       style={{ fontFamily: heading }}
     >
       {number}
     </span>
-    {/* Accent dot with soft glow */}
-    <span className="absolute -bottom-0.5 -right-0.5 h-[7px] w-[7px] rounded-full bg-[#88C1FF] ring-[3px] ring-[#88C1FF]/20 shadow-[0_0_10px_rgba(136,193,255,0.55)]" />
   </div>
 );
 
@@ -64,10 +62,10 @@ export function ApproachCopy() {
             Среда вокруг
           </h3>
 
-          <ul className="mt-[120px] sm:mt-[140px] flex flex-col gap-8">
+          <ul className="mt-[120px] sm:mt-[140px] xl:mt-[80px] flex flex-col gap-8 xl:gap-[40px]">
             {environmentItems.map((item, i) => (
               <li key={i} className="group">
-                <div className="flex flex-col items-start gap-8 xl:grid xl:grid-cols-[auto_1fr] xl:gap-x-5 xl:gap-y-1">
+                <div className="flex flex-col items-start gap-8 xl:grid xl:grid-cols-[auto_1fr] xl:gap-x-5 xl:gap-y-2">
                   <div className="xl:row-span-2">
                     <NumberBadge number={i + 1} />
                   </div>
@@ -77,7 +75,7 @@ export function ApproachCopy() {
                   >
                     {item.title}
                   </h4>
-                  <p className="mt-4 body-text text-[#8D9DC5] xl:mt-0 xl:max-w-[520px]">
+                  <p className="mt-4 body-text text-[#8D9DC5] xl:mt-0">
                     {item.text}
                   </p>
                 </div>
