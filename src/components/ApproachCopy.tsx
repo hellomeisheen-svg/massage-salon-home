@@ -64,17 +64,7 @@ export function ApproachCopy() {
             {environmentItems.map((item, i) => (
               <li key={i} className="group">
                 <div className="flex flex-col items-start gap-4 xl:flex-row xl:items-start xl:gap-5">
-                  <div className="relative shrink-0 w-[40px] h-[40px] xl:w-[44px] xl:h-[44px] flex items-center justify-center">
-                    {/* Large faded background number */}
-                    <span
-                      className="absolute -top-3 -left-2 text-[48px] xl:text-[52px] font-light leading-none text-[#88C1FF]/25 select-none pointer-events-none transition-opacity duration-500 group-hover:text-[#88C1FF]/35"
-                      style={{ fontFamily: heading }}
-                    >
-                      {i + 1}
-                    </span>
-                    {/* Decorative accent */}
-                    {Decorations[i]}
-                  </div>
+                  <NumberBadge number={i + 1} />
                   <div className="flex-1">
                     <h4
                       className="text-[22px] xl:text-[24px] font-normal leading-[1] text-[#1C3C8C]"
