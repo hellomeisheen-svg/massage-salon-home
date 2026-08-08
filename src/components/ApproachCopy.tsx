@@ -1,30 +1,25 @@
 import approachMasterAsset from "@/assets/approach-master.jpg.asset.json";
 const heading = "'Roslindale Cyrillic Display Condensed', serif";
 
-import { Sparkles, ShieldCheck, Scissors, Leaf, type LucideIcon } from "lucide-react";
-
-const environmentItems: { Icon: LucideIcon; title: string; text: string }[] = [
+const environmentItems: { title: string; text: string }[] = [
   {
-    Icon: Sparkles,
     title: "Свежее бельё",
     text: "На каждый сеанс я застилаю свежее, выглаженное бельё, чтобы вам было приятно и спокойно с первых минут.",
   },
   {
-    Icon: ShieldCheck,
     title: "Одноразовые материалы",
     text: "Все расходные материалы — простыни, салфетки, перчатки — одноразовые и вскрываются при вас для чувства безопасности.",
   },
   {
-    Icon: Scissors,
     title: "Стерильные инструменты",
     text: "Все инструменты проходят стерильную обработку по стандартам гигиены, чтобы вы могли полностью довериться процессу.",
   },
   {
-    Icon: Leaf,
     title: "Расслабляющая атмосфера",
     text: "В кабинете всегда тихо, без лишних звуков и отвлекающих факторов, чтобы вы могли полностью переключиться и отдохнуть.",
   },
 ];
+
 
 export function ApproachCopy() {
   return (
