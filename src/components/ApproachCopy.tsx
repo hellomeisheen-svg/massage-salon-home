@@ -56,22 +56,11 @@ export function ApproachCopy() {
                   <div className="relative shrink-0 w-[40px] h-[40px] xl:w-[44px] xl:h-[44px] flex items-center justify-center">
                     {/* Large faded background number */}
                     <span
-                      className="absolute -top-4 -left-2 text-[48px] xl:text-[52px] font-light leading-none text-[#88C1FF]/20 select-none pointer-events-none transition-opacity duration-500 group-hover:text-[#88C1FF]/30"
+                      className="absolute -top-3 -left-2 text-[48px] xl:text-[52px] font-light leading-none text-[#88C1FF]/25 select-none pointer-events-none transition-opacity duration-500 group-hover:text-[#88C1FF]/35"
                       style={{ fontFamily: heading }}
                     >
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    {/* Circle border with number */}
-                    <div className="relative z-10 w-full h-full rounded-full border border-[#DAEBFF] bg-white flex items-center justify-center shadow-sm">
-                      <span
-                        className="text-[16px] xl:text-[18px] font-light leading-none text-[#1C3C8C]"
-                        style={{ fontFamily: heading }}
-                      >
-                        {i + 1}
-                      </span>
-                    </div>
-                    {/* Small accent dot */}
-                    <div className="absolute -bottom-1 -right-1 z-20 w-[10px] h-[10px] xl:w-[12px] xl:h-[12px] rounded-full bg-[#88C1FF] border-2 border-white"></div>
                   </div>
                   <div className="flex-1">
                     <h4
