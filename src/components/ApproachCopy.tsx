@@ -43,7 +43,7 @@ export function ApproachCopy() {
         {/* Left column */}
         <div className="flex flex-col gap-6 xl:h-full">
           {/* Подход мастера */}
-          <div className="relative rounded-[12px] border border-[#daebff] bg-white min-h-[380px] sm:min-h-0 sm:aspect-[896/1200] xl:aspect-auto xl:h-full overflow-hidden">
+          <div className="relative rounded-[12px] border border-[#daebff] bg-white min-h-[380px] sm:min-h-0 sm:aspect-[4/5] xl:aspect-auto xl:h-full overflow-hidden">
             <img
               src={approachMasterAsset.url}
               alt="Татьяна работает с клиенткой в светлом массажном кабинете"
