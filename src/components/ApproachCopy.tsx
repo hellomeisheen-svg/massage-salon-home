@@ -69,7 +69,7 @@ export function ApproachCopy() {
               <li key={i} className="group">
                 <div className="flex flex-col items-start gap-8 xl:flex-row xl:items-start xl:gap-5">
                   <NumberBadge number={i + 1} />
-                  <div className="flex-1">
+                  <div className="flex-1 w-full">
                     <h4
                       className="text-[22px] xl:text-[24px] font-normal leading-[1] text-[#1C3C8C]"
                       style={{ fontFamily: heading }}
