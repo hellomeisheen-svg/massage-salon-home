@@ -48,9 +48,9 @@ export function ApproachCopy() {
               src={approachMasterAsset.url}
               alt="Татьяна работает с клиенткой в светлом массажном кабинете"
               loading="lazy"
-              width={1024}
-              height={1024}
-              className="absolute inset-0 w-full h-full object-cover"
+              width={896}
+              height={1200}
+              className="absolute inset-0 w-full h-full object-contain p-3 sm:p-5"
             />
           </div>
         </div>
