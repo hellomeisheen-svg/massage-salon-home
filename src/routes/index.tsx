@@ -49,7 +49,7 @@ function Index() {
       <Services />
       <PromoBanner />
       <ApproachIntro />
-      
+      <StatsSection />
       <ApproachCopy />
       
       
