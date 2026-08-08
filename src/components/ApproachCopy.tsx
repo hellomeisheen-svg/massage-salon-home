@@ -51,7 +51,7 @@ export function ApproachCopy() {
 
           <ul className="mt-[120px] sm:mt-[140px] flex flex-col gap-8">
             {environmentItems.map((item, i) => (
-              <li key={i}>
+              <li key={i} className="group">
                 <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-start sm:gap-5">
                   <div className="relative shrink-0 w-[40px] h-[40px] xl:w-[44px] xl:h-[44px] flex items-center justify-center">
                     {/* Large faded background number */}
