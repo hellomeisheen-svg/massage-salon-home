@@ -392,7 +392,7 @@ function ServiceCard({
       </div>
 
       <div className="flex-1 flex flex-col mb-6">
-        <div className="flex-1 sm:flex-none">
+        <div className="flex-1 sm:flex-none xl:flex-1">
           {/* Title */}
           <h3
             className="mt-5 text-[28px] sm:text-[34px] xl:text-[38px] font-light leading-[1.1] text-[#1C3C8C] break-words hyphens-auto"
