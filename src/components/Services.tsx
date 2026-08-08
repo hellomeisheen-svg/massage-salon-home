@@ -361,7 +361,7 @@ function ServiceCard({
   const priceLabel = `за ${sessionCounts[activeSession]} ${sessionWord}`;
 
   return (
-    <article className="rounded-[12px] border border-[#daebff] bg-white p-6 sm:p-8 transition-shadow duration-300 hover:shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)] flex flex-col h-auto min-h-[640px] sm:min-h-[700px]">
+    <article className="rounded-[12px] border border-[#daebff] bg-white p-6 sm:p-8 transition-shadow duration-300 hover:shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)] flex flex-col h-auto min-h-[640px] sm:min-h-[800px] xl:min-h-[700px]">
       {/* Sessions — pill switcher */}
       <div className="flex items-stretch gap-1 rounded-[10px] bg-[#EFF6FF] p-1">
         {items.map((s, i) => (
@@ -392,7 +392,7 @@ function ServiceCard({
       </div>
 
       <div className="flex-1 flex flex-col mb-6">
-        <div className="flex-1">
+        <div className="flex-1 sm:flex-none xl:flex-1">
           {/* Title */}
           <h3
             className="mt-5 text-[28px] sm:text-[34px] xl:text-[38px] font-light leading-[1.1] text-[#1C3C8C] break-words hyphens-auto"
@@ -451,7 +451,7 @@ function ServiceCard({
         </div>
 
         {/* Price */}
-        <div className="mt-5 flex items-center justify-end gap-4 sm:gap-5">
+        <div className="mt-5 sm:mt-[120px] xl:mt-5 flex items-center justify-end gap-4 sm:gap-5">
           {hasDiscount && (
             <span
               className="text-[17px] sm:text-[19px] font-light leading-[1.2] text-[#8D9DC5] line-through"
