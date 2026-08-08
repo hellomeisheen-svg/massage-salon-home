@@ -391,7 +391,7 @@ function ServiceCard({
         ))}
       </div>
 
-      <div className="flex-1 flex flex-col mb-6">
+      <div className="flex-1 flex flex-col mb-6 sm:flex-none sm:mb-0 xl:flex-1 xl:mb-6">
         <div className="flex-1 sm:flex-none xl:flex-1">
           {/* Title */}
           <h3
