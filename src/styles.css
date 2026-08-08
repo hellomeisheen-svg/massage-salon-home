@@ -109,6 +109,13 @@
   }
 }
 
+@utility body-text {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 26px;
+}
+
+
 @utility scrollbar-none {
   scrollbar-width: none;
   -ms-overflow-style: none;
