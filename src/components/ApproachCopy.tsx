@@ -67,7 +67,7 @@ export function ApproachCopy() {
           <ul className="mt-[120px] sm:mt-[140px] flex flex-col gap-8">
             {environmentItems.map((item, i) => (
               <li key={i} className="group">
-                <div className="flex flex-col items-start gap-6 xl:flex-row xl:items-start xl:gap-5">
+                <div className="flex flex-col items-start gap-8 xl:flex-row xl:items-start xl:gap-5">
                   <NumberBadge number={i + 1} />
                   <div className="flex-1">
                     <h4
