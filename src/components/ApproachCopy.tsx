@@ -21,7 +21,7 @@ const environmentItems: { title: string; text: string }[] = [
 ];
 
 const NumberBadge = ({ number }: { number: number }) => (
-  <div className="relative mt-1 flex shrink-0 items-center justify-center w-[44px] h-[44px] xl:w-[48px] xl:h-[48px]">
+  <div className="relative flex shrink-0 items-center justify-center w-[44px] h-[44px] xl:w-[48px] xl:h-[48px]">
     {/* Decorative outer ring */}
     <span className="absolute -inset-2 rounded-[12px] border border-[#88C1FF]/20" />
     {/* Main badge ring */}
@@ -67,19 +67,19 @@ export function ApproachCopy() {
           <ul className="mt-[120px] sm:mt-[140px] flex flex-col gap-8">
             {environmentItems.map((item, i) => (
               <li key={i} className="group">
-                <div className="flex flex-col items-start gap-8 xl:flex-row xl:items-start xl:gap-5">
-                  <NumberBadge number={i + 1} />
-                  <div className="flex-1 w-full">
-                    <h4
-                      className="text-[22px] xl:text-[24px] font-normal leading-[1] text-[#1C3C8C]"
-                      style={{ fontFamily: heading }}
-                    >
-                      {item.title}
-                    </h4>
-                    <p className="mt-4 body-text text-[#8D9DC5] xl:max-w-[520px]">
-                      {item.text}
-                    </p>
+                <div className="grid grid-cols-[auto_1fr] gap-x-5 gap-y-1">
+                  <div className="row-span-2">
+                    <NumberBadge number={i + 1} />
                   </div>
+                  <h4
+                    className="text-[22px] xl:text-[24px] font-normal leading-[1] text-[#1C3C8C]"
+                    style={{ fontFamily: heading }}
+                  >
+                    {item.title}
+                  </h4>
+                  <p className="body-text text-[#8D9DC5] xl:max-w-[520px]">
+                    {item.text}
+                  </p>
                 </div>
               </li>
             ))}
