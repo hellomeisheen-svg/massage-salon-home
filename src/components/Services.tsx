@@ -451,7 +451,7 @@ function ServiceCard({
         </div>
 
         {/* Price */}
-        <div className="mt-5 flex items-center justify-end gap-4 sm:gap-5">
+        <div className="mt-5 sm:mt-[120px] flex items-center justify-end gap-4 sm:gap-5">
           {hasDiscount && (
             <span
               className="text-[17px] sm:text-[19px] font-light leading-[1.2] text-[#8D9DC5] line-through"
