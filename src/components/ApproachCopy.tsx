@@ -50,7 +50,7 @@ export function ApproachCopy() {
               loading="lazy"
               width={896}
               height={1200}
-              className="absolute inset-0 w-full h-full object-contain p-3 sm:p-5"
+              className="absolute inset-0 w-full h-full object-cover"
             />
           </div>
         </div>
