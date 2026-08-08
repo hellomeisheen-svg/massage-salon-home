@@ -56,7 +56,7 @@ export function ApproachCopy() {
         </div>
 
         {/* Right column — Среда вокруг */}
-        <div className="rounded-[12px] border border-[#daebff] bg-white p-8 sm:p-10 xl:p-12">
+        <div className="rounded-[12px] border border-[#daebff] bg-white p-6 sm:p-8 xl:p-12">
           <h3
             className="text-[30px] sm:text-[38px] xl:text-[44px] font-light leading-[1.1] text-[#1C3C8C]"
             style={{ fontFamily: heading }}
