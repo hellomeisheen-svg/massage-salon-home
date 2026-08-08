@@ -56,7 +56,7 @@ export function ApproachCopy() {
         </div>
 
         {/* Right column — Среда вокруг */}
-        <div className="rounded-[12px] border border-[#daebff] bg-white p-6 sm:p-8 xl:pt-12 xl:px-12 xl:pb-[128px] flex flex-col xl:justify-between">
+        <div className="rounded-[12px] border border-[#daebff] bg-white p-6 sm:p-8 xl:pt-12 xl:px-12 xl:pb-[128px]">
           <h3
             className="text-[30px] sm:text-[38px] xl:text-[44px] font-light leading-[1.1] text-[#1C3C8C]"
             style={{ fontFamily: heading }}
@@ -64,7 +64,7 @@ export function ApproachCopy() {
             Среда вокруг
           </h3>
 
-          <ul className="mt-[120px] sm:mt-[140px] xl:mt-0 flex flex-col gap-8">
+          <ul className="mt-[120px] sm:mt-[140px] flex flex-col gap-8">
             {environmentItems.map((item, i) => (
               <li key={i} className="group">
                 <div className="flex flex-col items-start gap-8 xl:flex-row xl:items-start xl:gap-5">
