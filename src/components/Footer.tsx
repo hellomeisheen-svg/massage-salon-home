@@ -77,16 +77,6 @@ export function Footer() {
               <p className="mt-4 xl:mt-5 body-text text-[#1c3c8c]/70 max-w-[440px]">
                 Уютное пространство в центре посёлка Трудового, где можно прийти чуть раньше, выдохнуть и спокойно настроиться на сеанс.
               </p>
-              <div className="mt-4 xl:mt-5">
-                <iframe
-                  src="https://yandex.ru/sprav/widget/rating-badge/130811843218?type=rating"
-                  width="150"
-                  height="50"
-                  title="Рейтинг Яндекс Справочника"
-                  className="border-0"
-                  loading="lazy"
-                />
-              </div>
             </div>
 
             <ul className="flex flex-col gap-5 xl:gap-6">
@@ -103,6 +93,17 @@ export function Footer() {
               <li className="text-[#1c3c8c] leading-[150%] font-light">
                 <div className="body-text text-[#1c3c8c]/70 mb-1">Режим работы</div>
                 <div className="body-text text-[#1c3c8c]">пн-сб с 9:00 до 22:00</div>
+              </li>
+              <li className="text-[#1c3c8c] leading-[150%] font-light">
+                <div className="body-text text-[#1c3c8c]/70 mb-1">Рейтинг в Яндекс Справочнике</div>
+                <iframe
+                  src="https://yandex.ru/sprav/widget/rating-badge/130811843218?type=rating"
+                  width="150"
+                  height="50"
+                  title="Рейтинг Яндекс Справочника"
+                  className="border-0"
+                  loading="lazy"
+                />
               </li>
             </ul>
 
