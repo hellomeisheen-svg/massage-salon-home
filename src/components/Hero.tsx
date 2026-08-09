@@ -1,4 +1,4 @@
-import heroImageAsset from "@/assets/hero-portrait-color-matched.jpg.asset.json";
+import heroImageAsset from "@/assets/hero-portrait-solid.jpg.asset.json";
 
 const heroFont = {
   fontFamily: "'Roslindale Cyrillic Display Condensed', serif",
