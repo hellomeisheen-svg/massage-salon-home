@@ -43,7 +43,6 @@ function Index() {
     <div className="relative min-h-screen bg-[#EFF6FF] pt-20 xl:pt-[100px]">
       <Header />
       <Hero />
-      <QuoteBlock />
       <Services />
       <PromoBanner />
       <ApproachIntro />
