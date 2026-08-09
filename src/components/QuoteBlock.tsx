@@ -1,5 +1,3 @@
-import ImageReveal from "@/components/ui/image-tiles";
-
 const Sparkle = ({ className }: { className?: string }) => (
 
   <svg
