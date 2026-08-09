@@ -85,7 +85,7 @@ export function Education() {
             loading="lazy"
             className="w-full h-[480px] rounded-[12px] sm:absolute sm:inset-0 sm:h-full object-cover object-top sm:object-center"
           />
-          <div className="relative sm:absolute inset-x-0 bottom-0 mt-4 sm:mt-0">
+          <div className="relative sm:absolute inset-x-0 bottom-0 mt-4 sm:mt-0 xl:px-8 xl:pb-8">
             <div className="rounded-[12px] bg-white border border-[#daebff] p-5 sm:p-7 xl:p-8 flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
               <div className="flex-1">
                 <p className="text-[#1C3C8C] text-[15px] sm:text-[18px] xl:text-[20px] leading-[1.5]">
