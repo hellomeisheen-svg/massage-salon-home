@@ -125,7 +125,7 @@ function formatSessionLine(sessionCount: number, duration: string) {
     return `1 сеанс — ${duration}`;
   }
   const sessionWord = pluralize(sessionCount, ["сеанс", "сеанса", "сеансов"]);
-  return `В пакете: ${sessionCount}\u00A0${sessionWord} · ${duration}`;
+  return `${sessionCount}\u00A0${sessionWord} · ${duration}`;
 }
 
 function computeItem(it: ProgramItem) {
