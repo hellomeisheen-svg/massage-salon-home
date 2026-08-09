@@ -97,10 +97,12 @@ export function Education() {
                 </blockquote>
 
                 <p
-                  className="text-[16px] font-light leading-[1.5] text-[#8D9DC5]"
+                  className="text-[16px] font-light leading-[1.5] text-[#8D9DC5] xl:max-w-[400px]"
                   style={{ fontFamily: "'Inter', sans-serif" }}
                 >
-                  Татьяна Злобина — Мастер кабинета, специалист по оздоровительным практикам
+                  Татьяна Злобина
+                  <br className="hidden xl:inline" />
+                  {" "}— Мастер кабинета, специалист по оздоровительным практикам
                 </p>
               </div>
 
