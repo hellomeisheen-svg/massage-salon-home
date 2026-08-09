@@ -570,8 +570,8 @@ img[data-reveal-zoom] {
     opacity: 1 !important;
     transform: none !important;
   }
-  [data-reveal="zoom"][data-revealed="true"] [data-reveal-zoom] img,
-  [data-reveal="zoom"][data-revealed="true"] img[data-reveal-zoom] {
+  [data-revealed="true"] [data-reveal-zoom] img,
+  [data-revealed="true"] img[data-reveal-zoom] {
     transform: none !important;
   }
   .card-lift:hover,
