@@ -239,7 +239,7 @@ export function Programs() {
             </div>
 
             {/* Mobile: stacked blocks */}
-            <div className="sm:hidden h-full overflow-y-auto mt-6 border-t border-[#daebff] divide-y divide-[#daebff]">
+            <div className="sm:hidden mt-6 border-t border-[#daebff] divide-y divide-[#daebff]">
               {computedItems.map((it, idx) => (
                 <div key={idx} className="py-4">
                   <div className="text-[16px] leading-[22px] text-[#1C3C8C]">{it.title}</div>
