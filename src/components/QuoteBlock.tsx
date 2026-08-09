@@ -72,7 +72,10 @@ export function QuoteBlock() {
           className="max-w-none sm:max-w-[900px] xl:max-w-[1100px] text-[30px] font-light leading-[1.15] text-[#1C3C8C] sm:text-[38px] sm:leading-[1.18] xl:text-[54px] xl:leading-[1.15]"
           style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
         >
-          Здесь можно выдохнуть и&nbsp;побыть в&nbsp;спокойном ритме. Работа с&nbsp;тем состоянием, в&nbsp;котором вы&nbsp;пришли&nbsp;— без&nbsp;шаблонов и&nbsp;без&nbsp;спешки
+          Регулярная забота о теле —<br />
+          спокойная привычка, которая помогает<br />
+          сохранять внутреннюю опору<br />
+          и больше лёгкости в повседневной жизни.
         </h2>
 
         {/* Mobile-only photo tiles */}
