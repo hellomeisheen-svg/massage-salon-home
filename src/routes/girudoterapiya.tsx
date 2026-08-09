@@ -110,77 +110,104 @@ function GirudoterapiyaPage() {
   );
 }
 
-function PageHero() {
-  const { openBooking } = useBooking();
+const heroFont = {
+  fontFamily: "'Roslindale Cyrillic Display Condensed', serif",
+} as const;
+
+function SpecialistBlock() {
   return (
-    <section className="container-1900 grid grid-cols-1 gap-4 sm:gap-5 xl:grid-cols-2 xl:items-stretch">
-      <div className="flex flex-col ds-card px-6 py-10 sm:px-8 sm:py-12 xl:px-[60px] xl:py-[70px]">
-        <nav aria-label="Хлебные крошки" className="text-[14px] text-[#6B7BA8]">
-          <Link to="/" className="hover:opacity-70 transition-opacity">
-            Главная
-          </Link>
-          <span className="px-2">/</span>
-          <span className="text-[#1C3C8C]">Гирудотерапия</span>
-        </nav>
-
-        <span
-          className="mt-8 inline-flex w-fit items-center gap-2 px-4 py-1.5 ds-label text-white"
-          style={{ borderRadius: "4px", backgroundImage: "linear-gradient(to bottom, #A2CFFE, #88C1FF)" }}
+    <div className="flex flex-col items-start gap-3 sm:gap-4">
+      <img
+        className="h-[90px] w-[70px] rounded-lg object-cover xl:h-[110px] xl:w-[85px]"
+        alt="Татьяна Злобина"
+        src="/images/tatyana-photo.jpg"
+      />
+      <div className="flex flex-col gap-1">
+        <h2
+          className="text-[22px] font-light leading-[1.2] text-[#1c3c8c] sm:text-[24px] xl:text-[28px]"
+          style={heroFont}
         >
-          Услуга
-        </span>
-
-        <h1
-          className="mt-6 ds-h1 text-[#1C3C8C]"
-          style={{ fontFamily: heading }}
-        >
-          Гирудотерапия&nbsp;— спокойная работа с&nbsp;
-          <span className="bg-gradient-to-r from-[#4A7FD6] to-[#88C1FF] bg-clip-text text-transparent">
-            самочувствием
-          </span>
-        </h1>
-
-        <p className="mt-6 body-text max-w-[560px] text-[#6B7BA8]">
-          Медицинские и&nbsp;косметические пиявки в&nbsp;тихом кабинете: без спешки, с&nbsp;понятным
-          объяснением каждого шага и&nbsp;вниманием к&nbsp;вашему состоянию до&nbsp;и&nbsp;после сеанса.
+          Татьяна&nbsp;Злобина
+        </h2>
+        <p className="text-[16px] font-light leading-[26px] text-[#6B7BA8]">
+          Мастер кабинета, специалист
+          <br />
+          по&nbsp;оздоровительным практикам
         </p>
-
-        <ul className="mt-8 flex flex-wrap gap-2">
-          {badges.map((b) => (
-            <li
-              key={b}
-              className="rounded-[8px] border border-[#daebff] bg-[#EFF6FF] px-3 py-2 text-[14px] text-[#1C3C8C]"
-            >
-              {b}
-            </li>
-          ))}
-        </ul>
-
-        <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-          <button type="button" onClick={() => openBooking()} className="btn-primary sm:w-[250px]">
-            Записаться
-          </button>
-          <a
-            href="https://max.ru/u/f9LHodD0cOLS1ZC9ThcQkVLRVzcK-MbYZ7JVAg8PC5Tx9LyihgOVdPnzaxM"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-secondary inline-flex items-center justify-center sm:w-[250px]"
-          >
-            Получить консультацию
-          </a>
-        </div>
       </div>
-
-      <div className="overflow-hidden ds-card">
-        <img
-          src="/images/uslugi-girudoterapiya.jpg"
-          alt="Гирудотерапия в кабинете Татьяны Злобиной"
-          className="h-[320px] w-full object-cover sm:h-[460px] xl:h-full"
-        />
-      </div>
-    </section>
+    </div>
   );
 }
+
+function PageHero() {
+  return (
+    <main className="bg-[#EFF6FF] py-4 sm:py-5">
+      <section className="container-1900 grid grid-cols-1 gap-4 sm:gap-5 xl:min-h-[calc(100vh-160px)] xl:grid-cols-2">
+        <div className="flex min-h-0 flex-col ds-card p-5 sm:min-h-[520px] sm:p-6 xl:min-h-0 xl:p-10">
+          <nav aria-label="Хлебные крошки" className="text-[14px] text-[#6B7BA8]">
+            <Link to="/" className="hover:opacity-70 transition-opacity">
+              Главная
+            </Link>
+            <span className="px-2">/</span>
+            <span className="text-[#1C3C8C]">Гирудотерапия</span>
+          </nav>
+
+          <div className="mt-6 sm:mt-8">
+            <SpecialistBlock />
+          </div>
+
+          <div className="mt-[60px] pt-0 sm:mt-[140px] xl:mt-auto xl:pt-[140px]">
+            <div className="flex flex-col tablet-text-block xl:max-w-[640px]">
+              <h1
+                className="text-[38px] font-light leading-[1.12] text-[#1C3C8C] sm:text-[58px] sm:leading-[1.15]"
+                style={heroFont}
+              >
+                Гирудотерапия&nbsp;— спокойная работа с&nbsp;самочувствием
+              </h1>
+              <p className="mt-4 text-[16px] font-light leading-[26px] text-[#6B7BA8]">
+                Медицинские и&nbsp;косметические пиявки в&nbsp;тихом кабинете: без спешки,
+                с&nbsp;понятным объяснением каждого шага и&nbsp;вниманием к&nbsp;вашему состоянию
+                до&nbsp;и&nbsp;после сеанса.
+              </p>
+              <div className="mt-[30px] flex flex-col gap-3 sm:flex-row sm:gap-4">
+                <a
+                  href="https://n2418813.yclients.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary w-full sm:w-[280px] xl:w-[250px] inline-flex items-center justify-center text-center whitespace-nowrap"
+                >
+                  Онлайн запись
+                </a>
+                <button
+                  type="button"
+                  onClick={() =>
+                    window.open(
+                      "https://max.ru/u/f9LHodD0cOLS1ZC9ThcQkVLRVzcK-MbYZ7JVAg8PC5Tx9LyihgOVdPnzaxM",
+                      "_blank",
+                      "noopener,noreferrer"
+                    )
+                  }
+                  className="btn-secondary w-full sm:w-[280px] xl:w-[250px] whitespace-nowrap"
+                >
+                  Получить консультацию
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="relative h-[420px] overflow-hidden rounded-[12px] border border-[#daebff] sm:h-[520px] xl:h-auto xl:min-h-0">
+          <img
+            className="absolute inset-0 h-full w-full object-cover object-top sm:object-center"
+            alt="Гирудотерапия в кабинете Татьяны Злобиной"
+            src="/images/uslugi-girudoterapiya.jpg"
+          />
+        </div>
+      </section>
+    </main>
+  );
+}
+
 
 function Benefits() {
   return (
