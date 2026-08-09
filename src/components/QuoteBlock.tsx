@@ -72,10 +72,11 @@ export function QuoteBlock() {
           className="max-w-none sm:max-w-[900px] xl:max-w-[1100px] text-[30px] font-light leading-[1.15] text-[#1C3C8C] sm:text-[38px] sm:leading-[1.18] xl:text-[54px] xl:leading-[1.15]"
           style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
         >
-          Забота о теле начинается<br />
-          с простого внимания к себе —<br />
-          к своим ощущениям, усталости<br />
-          и потребности восстановить силы.
+          Регулярная забота о теле —<br />
+          <br />
+          спокойная привычка, которая помогает сохранять<br />
+          <br />
+          внутреннюю опору и лёгкость в повседневной жизни
         </h2>
 
         {/* Mobile-only photo tiles */}
