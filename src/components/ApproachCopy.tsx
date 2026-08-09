@@ -75,7 +75,7 @@ export function ApproachCopy() {
                     >
                       {item.title}
                     </h4>
-                    <p className="body-text text-[#8D9DC5]">
+                    <p className="body-text text-[#8D9DC5] sm:max-w-[560px] xl:max-w-none">
                       {item.text}
                     </p>
                   </div>
