@@ -1,3 +1,5 @@
+import ImageReveal from "@/components/ui/image-tiles";
+
 const Sparkle = ({ className }: { className?: string }) => (
 
   <svg
@@ -73,13 +75,13 @@ export function QuoteBlock() {
           Регулярная забота о&nbsp;теле — спокойная привычка, которая помогает сохранять внутреннюю опору и&nbsp;лёгкость в&nbsp;повседневной жизни
         </h2>
 
-        {/* Mobile-only photo */}
+        {/* Mobile-only photo tiles with subtle animation */}
         <div className="mt-10 flex w-full justify-center overflow-hidden sm:hidden">
-          <img
-            src="/images/uslugi-massazh-spiny-i-shei.jpg"
-            alt="Массаж спины в мягком свете кабинета"
-            loading="lazy"
-            className="h-[200px] w-[280px] rounded-[24px] border border-[#DAEBFF] object-cover shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)]"
+          <ImageReveal
+            spread={95}
+            leftImage="/images/uslugi-limfodrenazhnyi-massazh.jpg"
+            middleImage="/images/uslugi-massazh-spiny-i-shei.jpg"
+            rightImage="/images/uslugi-massazh-golovy.jpg"
           />
         </div>
       </div>
