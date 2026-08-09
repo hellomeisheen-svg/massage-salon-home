@@ -75,23 +75,23 @@ export function Footer() {
                 Как найти кабинет
               </h2>
               <p className="mt-4 xl:mt-5 body-text text-[#1c3c8c]/70 max-w-[440px]">
-                Уютное пространство в центре города — приходите за пятнадцать минут до сеанса, чтобы спокойно выдохнуть.
+                Уютное пространство в центре посёлка Трудового, где можно прийти чуть раньше, выдохнуть и спокойно настроиться на сеанс.
               </p>
             </div>
 
-            <ul className="flex flex-col gap-8 xl:gap-10">
+            <ul className="flex flex-col gap-5 xl:gap-6">
               <li className="text-[#1c3c8c] leading-[150%] font-light">
-                <div className="body-text text-[#1c3c8c]/70 mb-2">Адрес</div>
+                <div className="body-text text-[#1c3c8c]/70 mb-1">Адрес</div>
                 <div className="body-text text-[#1c3c8c]">{ADDRESS}</div>
               </li>
               <li className="text-[#1c3c8c] leading-[150%] font-light">
-                <div className="body-text text-[#1c3c8c]/70 mb-2">Телефон</div>
+                <div className="body-text text-[#1c3c8c]/70 mb-1">Телефон</div>
                 <a href="tel:+79242324611" className="body-text text-[#1c3c8c] hover:opacity-70 transition-opacity">
                   +7 924 232 46 11
                 </a>
               </li>
               <li className="text-[#1c3c8c] leading-[150%] font-light">
-                <div className="body-text text-[#1c3c8c]/70 mb-2">Режим работы</div>
+                <div className="body-text text-[#1c3c8c]/70 mb-1">Режим работы</div>
                 <div className="body-text text-[#1c3c8c]">пн-сб с 9:00 до 22:00</div>
               </li>
             </ul>
