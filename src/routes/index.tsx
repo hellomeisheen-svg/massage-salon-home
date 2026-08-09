@@ -6,7 +6,6 @@ import { Services } from "@/components/Services";
 
 import { ApproachCopy } from "@/components/ApproachCopy";
 import { PromoBanner } from "@/components/PromoBanner";
-import { ApproachIntro } from "@/components/ApproachIntro";
 import { StatsSection } from "@/components/StatsSection";
 import { Programs } from "@/components/Programs";
 import { Education } from "@/components/Education";
@@ -48,7 +47,7 @@ function Index() {
       <QuoteBlock />
       <Services />
       <PromoBanner />
-      <ApproachIntro />
+      
       <StatsSection />
       <ApproachCopy />
       
