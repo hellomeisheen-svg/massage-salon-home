@@ -86,8 +86,8 @@ export function Education() {
             className="w-full h-[480px] rounded-[12px] sm:absolute sm:inset-0 sm:h-full object-cover object-top sm:object-center"
           />
           <div className="relative sm:absolute inset-x-0 bottom-0 mt-4 sm:mt-0 xl:px-8 xl:pb-8">
-            <div className="rounded-[12px] border border-[#DAEBFF] bg-white p-8 sm:p-12 xl:p-10 shadow-[0_20px_50px_-12px_rgba(74,127,214,0.08)] flex flex-col xl:flex-row xl:items-end justify-between gap-6 xl:gap-8">
-              <div className="flex flex-col gap-3 sm:gap-4">
+            <div className="relative rounded-[12px] border border-[#DAEBFF] bg-white p-8 sm:p-12 xl:p-10 shadow-[0_20px_50px_-12px_rgba(74,127,214,0.08)] flex flex-col xl:flex-row xl:items-end justify-between gap-6 xl:gap-8">
+              <div className="flex flex-col gap-3 sm:gap-4 xl:w-[760px] xl:shrink-0">
                 <blockquote
                   className="text-[20px] font-normal leading-[1.4] text-[#1C3C8C] sm:text-[22px] xl:text-[24px] xl:max-w-[760px]"
                   style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
@@ -109,7 +109,7 @@ export function Education() {
                 alt="Подпись Татьяны Злобиной"
                 width={240}
                 height={97}
-                className="h-auto w-[160px] sm:w-[200px] xl:w-[100px] shrink-0 self-end xl:self-auto xl:scale-[1.35] xl:origin-top-left"
+                className="h-auto w-[160px] sm:w-[200px] xl:w-[180px] shrink-0 self-end xl:absolute xl:bottom-[-50px] xl:right-[-10px]"
                 loading="lazy"
               />
             </div>
