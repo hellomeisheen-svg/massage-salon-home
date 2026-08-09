@@ -108,7 +108,7 @@ export function Education() {
                 alt="Подпись Татьяны Злобиной"
                 width={240}
                 height={97}
-                className="h-auto w-[160px] sm:w-[200px] xl:w-[180px] shrink-0 self-end xl:self-auto"
+                className="h-auto w-[160px] sm:w-[200px] xl:w-[150px] shrink-0 self-end xl:self-auto"
                 loading="lazy"
               />
             </div>
