@@ -43,10 +43,10 @@ export function StatsSection() {
             </span>
 
             <h2
-              className="mt-6 text-[30px] sm:text-[38px] xl:text-[44px] font-light leading-[1.15] text-[#1C3C8C]"
+              className="mt-6 text-[30px] sm:text-[38px] xl:text-[44px] font-light leading-[1.15] text-[#1C3C8C] max-w-[520px]"
               style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
             >
-              Бережная работа с телом, в которой важны опыт, понятный диалог и внимание к вашему запросу.
+              Бережная работа с телом, в которой важны опыт, понятный диалог и внимание к вашему запросу
             </h2>
           </div>
 
