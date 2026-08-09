@@ -482,3 +482,103 @@ button:focus-visible {
     font-family: var(--font-heading);
   }
 }
+
+/* ============ Gentle motion layer ============ */
+
+[data-reveal] {
+  transition:
+    opacity 600ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+[data-reveal="rise"][data-revealed="false"] {
+  opacity: 0;
+  transform: translate3d(0, 20px, 0);
+}
+[data-reveal="fade"][data-revealed="false"] {
+  opacity: 0;
+}
+[data-reveal="zoom"][data-revealed="false"] {
+  opacity: 0;
+  transform: scale(0.985);
+}
+[data-reveal][data-revealed="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+/* Very slow, subtle zoom for large photos when they appear */
+[data-reveal-zoom] img,
+img[data-reveal-zoom] {
+  transition: transform 1400ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+[data-revealed="false"] [data-reveal-zoom] img,
+[data-revealed="false"] img[data-reveal-zoom] {
+  transform: scale(1);
+}
+[data-revealed="true"] [data-reveal-zoom] img,
+[data-revealed="true"] img[data-reveal-zoom] {
+  transform: scale(1.03);
+}
+
+/* Card hover lift — pointer devices only */
+@utility card-lift {
+  transition:
+    transform 300ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+@media (hover: hover) and (pointer: fine) {
+  .card-lift:hover {
+    transform: translate3d(0, -5px, 0);
+    box-shadow: 0 24px 56px -28px rgba(28, 60, 140, 0.22);
+  }
+}
+
+/* Buttons: soft lift + slight brightening on hover, settle on press */
+.btn-primary,
+.btn-secondary,
+.btn-header-cta {
+  transition:
+    transform 260ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 260ms ease-out,
+    color 0.35s ease,
+    border-color 0.35s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .btn-primary:hover,
+  .btn-secondary:hover,
+  .btn-header-cta:hover {
+    transform: translate3d(0, -2px, 0);
+    filter: brightness(1.03);
+  }
+}
+.btn-primary:active,
+.btn-secondary:active,
+.btn-header-cta:active {
+  transform: translate3d(0, 0, 0);
+  filter: none;
+  transition-duration: 140ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal],
+  [data-reveal] * {
+    transition: none !important;
+    animation: none !important;
+  }
+  [data-reveal][data-revealed="false"] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  [data-revealed="true"] [data-reveal-zoom] img,
+  [data-revealed="true"] img[data-reveal-zoom] {
+    transform: none !important;
+  }
+  .card-lift:hover,
+  .btn-primary:hover,
+  .btn-secondary:hover,
+  .btn-header-cta:hover {
+    transform: none !important;
+    filter: none !important;
+  }
+}
