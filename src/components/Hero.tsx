@@ -89,7 +89,7 @@ export function Hero() {
         {/* Hero image */}
         <div className="relative h-[420px] overflow-hidden rounded-[12px] border border-[#daebff] sm:h-[520px] xl:h-auto xl:min-h-0">
           <img
-            className="absolute inset-0 h-full w-full object-cover object-top sm:object-center"
+            className="absolute inset-0 h-full w-full scale-x-[-1] object-cover object-top sm:object-center"
             alt="Оздоровительные процедуры"
             src={heroImageAsset.url}
           />
