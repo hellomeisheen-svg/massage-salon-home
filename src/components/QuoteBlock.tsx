@@ -1,5 +1,17 @@
 import ImageReveal from "@/components/ui/image-tiles";
 
+const Sparkle = ({ className }: { className?: string }) => (
+
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    aria-hidden="true"
+  >
+    <path d="M12 0 L13.2 10.8 L24 12 L13.2 13.2 L12 24 L10.8 13.2 L0 12 L10.8 10.8 Z" />
+  </svg>
+);
+
 const decoImages = [
   {
     src: "/images/uslugi-limfodrenazhnyi-massazh.jpg",
@@ -31,9 +43,10 @@ const decoImages = [
   },
 ];
 
+
 export function QuoteBlock() {
   return (
-    <section className="relative bg-[#EFF6FF] py-[120px] sm:py-[140px] xl:py-[180px]">
+    <section className="relative bg-[#EFF6FF] pt-[60px] pb-[60px] sm:pt-[140px] sm:pb-[180px] xl:pt-[180px] xl:pb-[140px]">
       {/* Decorative photos — hidden on very small screens to avoid clutter */}
       <div className="absolute inset-0 hidden sm:block">
         {decoImages.map((img, i) => (
@@ -53,39 +66,20 @@ export function QuoteBlock() {
         ))}
       </div>
 
-      <div className="container-1900 relative z-10">
-        <div className="mx-auto max-w-[1100px] rounded-[32px] border border-[#DAEBFF] bg-white p-8 sm:p-12 xl:p-16 shadow-[0_20px_50px_-12px_rgba(74,127,214,0.08)]">
-          <div className="flex flex-col xl:flex-row xl:items-end gap-8 xl:gap-12">
-            <div className="flex-1">
-              <blockquote
-                className="text-[22px] font-normal leading-[1.4] text-[#1C3C8C] sm:text-[24px] xl:text-[28px]"
-                style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
-              >
-                «Я не обещаю мгновенных изменений. Я обещаю внимание, тишину и время, в котором не нужно никуда спешить.»
-              </blockquote>
-
-              <p className="mt-6 text-[16px] font-light leading-[1.5] text-[#88C1FF] sm:mt-8"
-                style={{ fontFamily: "'Inter', sans-serif" }}
-              >
-                Татьяна Злобина — Мастер кабинета, специалист по оздоровительным практикам
-              </p>
-            </div>
-
-            <div className="w-[200px] sm:w-[240px] xl:w-[280px] flex-shrink-0 xl:self-end">
-              <img
-                src="/images/signature.svg"
-                alt="Подпись Татьяны Злобиной"
-                width={280}
-                height={113}
-                className="h-auto w-full"
-                loading="lazy"
-              />
-            </div>
-          </div>
-        </div>
+      <div className="container-1900 relative z-10 flex flex-col items-center sm:px-5 text-center">
+        <Sparkle className="mb-8 sm:mb-10 xl:mb-12 h-6 w-6 sm:h-7 sm:w-7 text-[#1C3C8C]" />
+        <h2
+          className="max-w-none sm:max-w-[900px] xl:max-w-[1100px] text-[30px] font-light leading-[1.15] text-[#1C3C8C] sm:text-[38px] sm:leading-[1.18] xl:text-[54px] xl:leading-[1.15]"
+          style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
+        >
+          Забота о теле начинается<br />
+          с простого внимания к себе —<br />
+          к своим ощущениям, усталости<br />
+          и потребности восстановить силы.
+        </h2>
 
         {/* Mobile-only photo tiles */}
-        <div className="mt-12 flex w-full justify-center overflow-hidden sm:hidden">
+        <div className="mt-10 flex w-full justify-center overflow-hidden sm:hidden">
           <ImageReveal
             spread={95}
             leftImage="/images/uslugi-limfodrenazhnyi-massazh.jpg"
@@ -94,6 +88,7 @@ export function QuoteBlock() {
           />
         </div>
       </div>
+
     </section>
   );
 }
