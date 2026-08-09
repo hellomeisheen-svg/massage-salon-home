@@ -209,19 +209,24 @@ export function Programs() {
         </div>
 
         {/* Right column — program card */}
-        <article className="rounded-[12px] border border-[#daebff] bg-white p-6 sm:p-8 transition-shadow duration-300 hover:shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)] flex flex-col h-[651px] xl:h-auto xl:min-h-[700px]">
-          <h3
-            className="text-[30px] sm:text-[38px] xl:text-[42px] font-light leading-[1.1] text-[#1C3C8C]"
-            style={{ fontFamily: heading }}
-          >
-            {program.name}
-          </h3>
-          <p className="mt-3 body-text text-[#8D9DC5]">
-            {program.description}
-          </p>
+        <article className="rounded-[12px] border border-[#daebff] bg-white p-6 sm:p-8 transition-shadow duration-300 hover:shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)] flex flex-col h-[640px] sm:h-[651px] xl:h-auto xl:min-h-[700px]">
+          <div className="h-[126px] sm:h-auto flex flex-col flex-none">
+            <h3
+              className="text-[30px] sm:text-[38px] xl:text-[42px] font-light leading-[1.1] text-[#1C3C8C]"
+              style={{ fontFamily: heading }}
+            >
+              {program.name}
+            </h3>
+            <p className="mt-3 body-text text-[#8D9DC5]">
+              {program.description}
+            </p>
+          </div>
+
+          {/* Mobile: pushes the content wrapper to the bottom of the available space */}
+          <div className="flex-1 sm:hidden min-h-0" />
 
           {/* Program content: fills fixed card and scrolls if needed */}
-          <div className="flex-1 min-h-0 xl:min-h-fit xl:overflow-visible overflow-hidden">
+          <div className="max-sm:h-auto sm:flex-1 sm:min-h-0 xl:min-h-fit xl:overflow-visible overflow-hidden">
             {/* Desktop / tablet: two-column table */}
             <div className="hidden sm:block h-full overflow-y-auto xl:h-auto xl:overflow-visible">
               <div className="mt-8 grid grid-cols-[1.3fr_1fr] gap-6 pb-4 border-b border-[#daebff]">
