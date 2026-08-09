@@ -600,45 +600,58 @@ button:focus-visible {
   justify-content: center;
   background-color: #eff6ff;
   opacity: 1;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.35s ease;
 }
 .preloader-leaving {
   opacity: 0;
   pointer-events: none;
 }
+.preloader-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+}
 @keyframes preloader-star-in {
   0% { opacity: 0; transform: scale(1); }
-  55% { opacity: 1; transform: scale(1.05); }
   100% { opacity: 1; transform: scale(1); }
+}
+@keyframes preloader-star-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
 }
 .preloader-star {
   opacity: 0;
-  animation: preloader-star-in 700ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-.preloader-percent {
-  margin-top: 12px;
-  font-size: 13px;
-  font-weight: 300;
-  line-height: 1;
-  color: #6b7ba8;
-  font-variant-numeric: tabular-nums;
-  letter-spacing: 0.04em;
+  animation:
+    preloader-star-in 600ms cubic-bezier(0.22, 1, 0.36, 1) forwards,
+    preloader-star-pulse 1.8s ease-in-out infinite;
+  animation-delay: 0ms, 600ms;
 }
 .preloader-track {
-  margin-top: 12px;
   width: 120px;
-  height: 1px;
+  height: 2px;
+  border-radius: 999px;
   overflow: hidden;
   background-color: #daebff;
+}
+@media (min-width: 640px) {
+  .preloader-track {
+    width: 150px;
+  }
 }
 .preloader-bar {
   display: block;
   height: 100%;
   width: 100%;
-  background-color: #a2cffe;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #5DAAFD 0%, #88C1FF 100%);
   transform-origin: left center;
   transform: scaleX(0);
-  transition: transform 0.2s ease;
+  animation: preloader-bar-fill 1.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+@keyframes preloader-bar-fill {
+  0% { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -648,6 +661,7 @@ button:focus-visible {
   }
   .preloader-bar {
     animation: none;
-    transform: none;
+    transform: scaleX(1);
   }
 }
+
