@@ -109,7 +109,7 @@ export function Faq() {
               Остались вопросы? Напишите мне&nbsp;— я&nbsp;всё подробно расскажу.
             </p>
             <a
-              href="https://n2418813.yclients.com"
+              href="https://max.ru/u/f9LHodD0cOLS1ZC9ThcQkVLRVzcK-MbYZ7JVAg8PC5Tx9LyihgOVdPnzaxM"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary mt-6 w-full inline-flex items-center justify-center"
