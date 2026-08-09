@@ -101,7 +101,7 @@ function BookingDialog({
         role="dialog"
         aria-modal="true"
         aria-labelledby="booking-title"
-        className="relative my-auto w-full max-w-[560px] rounded-[12px] border border-[#daebff] bg-white p-5 sm:p-8 xl:p-10"
+        className="relative my-auto w-full max-w-[560px] ds-card p-5 sm:p-8 xl:p-10"
       >
         <button
           ref={closeRef}
@@ -122,7 +122,7 @@ function BookingDialog({
             >
               Заявка отправлена
             </h2>
-            <p className="mt-4 text-[15px] leading-[1.5] text-[#8D9DC5] sm:text-[16px]">
+            <p className="mt-4 text-[15px] leading-[1.5] text-[#6B7BA8] sm:text-[16px]">
               Я&nbsp;свяжусь с&nbsp;вами, чтобы подобрать удобное время. Если хочется
               выбрать слот прямо сейчас&nbsp;— воспользуйтесь онлайн-записью.
             </p>
@@ -150,7 +150,7 @@ function BookingDialog({
               >
                 Записаться на&nbsp;сеанс
               </h2>
-              <p className="mt-3 text-[15px] leading-[1.5] text-[#8D9DC5] sm:text-[16px]">
+              <p className="mt-3 text-[15px] leading-[1.5] text-[#6B7BA8] sm:text-[16px]">
                 Оставьте контакты&nbsp;— подберём формат под&nbsp;ваше состояние
                 и&nbsp;согласуем время без&nbsp;спешки.
               </p>
@@ -187,7 +187,7 @@ function BookingDialog({
                   required
                   autoComplete="name"
                   placeholder="Как к вам обращаться"
-                  className="h-[52px] rounded-[0.5rem] border border-[#daebff] bg-[#EFF6FF] px-4 text-[16px] text-foreground outline-none transition-colors placeholder:text-[#8D9DC5] focus:border-[#1C3C8C] focus:bg-white"
+                  className="h-[52px] rounded-[0.5rem] border border-[#daebff] bg-[#EFF6FF] px-4 text-[16px] text-foreground outline-none transition-colors placeholder:text-[#6B7BA8] focus:border-[#1C3C8C] focus:bg-white"
                 />
               </label>
 
@@ -202,7 +202,7 @@ function BookingDialog({
                   value={formatPhone(phone)}
                   onChange={handlePhoneInput}
                   placeholder="+7 (___) ___-__-__"
-                  className="h-[52px] rounded-[0.5rem] border border-[#daebff] bg-[#EFF6FF] px-4 text-[16px] text-foreground outline-none transition-colors placeholder:text-[#8D9DC5] focus:border-[#1C3C8C] focus:bg-white"
+                  className="h-[52px] rounded-[0.5rem] border border-[#daebff] bg-[#EFF6FF] px-4 text-[16px] text-foreground outline-none transition-colors placeholder:text-[#6B7BA8] focus:border-[#1C3C8C] focus:bg-white"
                 />
                 {phoneError && (
                   <span className="text-[13px] leading-[1.5] text-[#C0392B]">{phoneError}</span>
@@ -215,7 +215,7 @@ function BookingDialog({
                   name="comment"
                   rows={3}
                   placeholder="Самочувствие, пожелания, удобное время"
-                  className="rounded-[0.5rem] border border-[#daebff] bg-[#EFF6FF] px-4 py-3 text-[16px] leading-[1.5] text-foreground outline-none transition-colors placeholder:text-[#8D9DC5] focus:border-[#1C3C8C] focus:bg-white"
+                  className="rounded-[0.5rem] border border-[#daebff] bg-[#EFF6FF] px-4 py-3 text-[16px] leading-[1.5] text-foreground outline-none transition-colors placeholder:text-[#6B7BA8] focus:border-[#1C3C8C] focus:bg-white"
                 />
               </label>
 
@@ -238,7 +238,7 @@ function BookingDialog({
                   />
                 </span>
 
-                <span className="text-[13px] leading-[1.5] text-[#8D9DC5]">
+                <span className="text-[13px] leading-[1.5] text-[#6B7BA8]">
                   Нажимая кнопку, вы соглашаетесь с{" "}
                   <a
                     href="/privacy-policy"

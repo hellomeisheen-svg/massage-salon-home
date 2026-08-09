@@ -263,7 +263,7 @@
   border-radius: 0.5rem;
   font-size: 0.875rem;
   font-weight: 400;
-  color: #8D9DC5;
+  color: #6B7BA8;
   background-color: transparent;
   transition: color 0.35s ease, background-color 0.35s ease;
 }
@@ -410,7 +410,7 @@ button:focus-visible {
   --brand-blue-tint: #A2CFFE;
   --brand-surface: #EFF6FF;
   --brand-border: #DAEBFF;
-  --brand-muted: #8D9DC5;
+  --brand-muted: #6B7BA8;
 }
 
 .dark {
@@ -480,5 +480,112 @@ button:focus-visible {
   h5,
   h6 {
     font-family: var(--font-heading);
+  }
+}
+
+/* ===== Design system: typography, spacing, cards ===== */
+@utility ds-section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  @media (min-width: 640px) {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+  @media (min-width: 1280px) {
+    padding-top: 140px;
+    padding-bottom: 0;
+  }
+}
+
+@utility ds-h1 {
+  font-family: var(--font-heading);
+  font-weight: 300;
+  font-size: 30px;
+  line-height: 1.15;
+  @media (min-width: 640px) {
+    font-size: 38px;
+    line-height: 1.18;
+  }
+  @media (min-width: 1280px) {
+    font-size: 54px;
+    line-height: 1.15;
+  }
+}
+
+@utility ds-h2 {
+  font-family: var(--font-heading);
+  font-weight: 300;
+  font-size: 30px;
+  line-height: 1.15;
+  @media (min-width: 640px) {
+    font-size: 38px;
+  }
+  @media (min-width: 1280px) {
+    font-size: 44px;
+  }
+}
+
+@utility ds-h2-card {
+  font-family: var(--font-heading);
+  font-weight: 300;
+  font-size: 28px;
+  line-height: 1.1;
+  @media (min-width: 640px) {
+    font-size: 34px;
+  }
+  @media (min-width: 1280px) {
+    font-size: 38px;
+  }
+}
+
+@utility ds-h3 {
+  font-family: var(--font-heading);
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 1.15;
+  @media (min-width: 640px) {
+    font-size: 28px;
+  }
+}
+
+@utility ds-h4 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.25;
+  @media (min-width: 640px) {
+    font-size: 22px;
+  }
+  @media (min-width: 1280px) {
+    font-size: 24px;
+  }
+}
+
+@utility ds-price {
+  font-family: var(--font-heading);
+  font-weight: 300;
+  font-size: 30px;
+  line-height: 1;
+  @media (min-width: 640px) {
+    font-size: 34px;
+  }
+}
+
+@utility ds-label {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.025em;
+  line-height: 1.2;
+}
+
+@utility ds-card {
+  border-radius: 12px;
+  border: 1px solid #daebff;
+  background-color: #fff;
+  transition: box-shadow 0.3s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .ds-card-hover:hover {
+    box-shadow: 0 20px 50px -24px rgba(28, 60, 140, 0.18);
   }
 }

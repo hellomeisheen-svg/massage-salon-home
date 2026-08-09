@@ -20,7 +20,7 @@ function SpecialistBlock() {
         >
           Татьяна&nbsp;Злобина
         </h2>
-        <p className="text-[16px] font-light leading-[26px] text-[#8D9DC5]">
+        <p className="text-[16px] font-light leading-[26px] text-[#6B7BA8]">
           Мастер кабинета, специалист
           <br />
           по&nbsp;оздоровительным практикам
@@ -39,7 +39,7 @@ function HeadlineBlock() {
       >
         Место, где&nbsp;можно замедлиться и&nbsp;вернуться к&nbsp;себе без&nbsp;спешки
       </h1>
-      <p className="mt-4 text-[16px] font-light leading-[26px] text-[#8D9DC5]">
+      <p className="mt-4 text-[16px] font-light leading-[26px] text-[#6B7BA8]">
         Оздоровительные практики для&nbsp;тела: массаж, банки, гирудотерапия.
         Спокойный ритм и&nbsp;внимание к&nbsp;каждому состоянию.
       </p>
@@ -76,7 +76,7 @@ export function Hero() {
     <main className="bg-[#EFF6FF] py-4 sm:py-5">
       <section id="hero" className="container-1900 grid grid-cols-1 gap-4 sm:gap-5 xl:min-h-[calc(100vh-160px)] xl:grid-cols-2">
         {/* Content card */}
-        <div className="flex min-h-0 flex-col rounded-[12px] border border-[#daebff] bg-white p-5 sm:min-h-[520px] sm:p-6 xl:min-h-0 xl:p-10">
+        <div className="flex min-h-0 flex-col ds-card p-5 sm:min-h-[520px] sm:p-6 xl:min-h-0 xl:p-10">
 
 
           <SpecialistBlock />

@@ -33,7 +33,7 @@ const heading = "'Roslindale Cyrillic Display Condensed', serif";
 function FaqItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="rounded-[12px] border border-[#daebff] bg-white">
+    <div className="ds-card">
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
@@ -70,12 +70,12 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 
 export function Faq() {
   return (
-    <section id="faq" className="scroll-mt-[120px] bg-[#EFF6FF] py-[60px] sm:py-[70px] xl:pt-[140px] xl:pb-0">
+    <section id="faq" className="scroll-mt-[120px] bg-[#EFF6FF] ds-section">
       <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-5 items-stretch">
         {/* Left column */}
         <div className="flex flex-col items-center xl:items-start text-center xl:text-left h-full">
           <span
-            className="inline-flex items-center gap-2 px-4 py-1.5 text-[13px] font-medium tracking-wide text-white"
+            className="inline-flex items-center gap-2 px-4 py-1.5 ds-label text-white"
             style={{
               borderRadius: "4px",
               backgroundImage: "linear-gradient(to bottom, #A2CFFE, #88C1FF)",
@@ -84,13 +84,13 @@ export function Faq() {
             FAQs
           </span>
           <h2
-            className="mt-6 text-[30px] sm:text-[38px] xl:text-[44px] font-light leading-[1.15] text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0"
+            className="mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0"
             style={{ fontFamily: heading }}
           >
             Отвечаю на&nbsp;самые важные вопросы
           </h2>
 
-          <div className="mt-8 xl:mt-auto rounded-[12px] border border-[#daebff] bg-white p-6 sm:p-7 w-full xl:w-1/2 mx-auto xl:mx-0 text-left">
+          <div className="mt-8 xl:mt-auto ds-card p-6 sm:p-7 w-full xl:w-1/2 mx-auto xl:mx-0 text-left">
             <img
               src="/images/tatyana-photo.jpg"
               alt="Татьяна Злобина"
@@ -102,7 +102,7 @@ export function Faq() {
             >
               Татьяна Злобина
             </h3>
-            <p className="mt-3 body-text text-[#8D9DC5]">
+            <p className="mt-3 body-text text-[#6B7BA8]">
               Мастер кабинета, специалист по&nbsp;оздоровительным практикам
             </p>
             <p className="mt-6 body-text text-[#1C3C8C]">

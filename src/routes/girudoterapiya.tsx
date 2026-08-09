@@ -114,8 +114,8 @@ function PageHero() {
   const { openBooking } = useBooking();
   return (
     <section className="container-1900 grid grid-cols-1 gap-4 sm:gap-5 xl:grid-cols-2 xl:items-stretch">
-      <div className="flex flex-col rounded-[12px] border border-[#daebff] bg-white px-6 py-10 sm:px-8 sm:py-12 xl:px-[60px] xl:py-[70px]">
-        <nav aria-label="Хлебные крошки" className="text-[14px] text-[#8D9DC5]">
+      <div className="flex flex-col ds-card px-6 py-10 sm:px-8 sm:py-12 xl:px-[60px] xl:py-[70px]">
+        <nav aria-label="Хлебные крошки" className="text-[14px] text-[#6B7BA8]">
           <Link to="/" className="hover:opacity-70 transition-opacity">
             Главная
           </Link>
@@ -124,14 +124,14 @@ function PageHero() {
         </nav>
 
         <span
-          className="mt-8 inline-flex w-fit items-center gap-2 px-4 py-1.5 text-[13px] font-medium tracking-wide text-white"
+          className="mt-8 inline-flex w-fit items-center gap-2 px-4 py-1.5 ds-label text-white"
           style={{ borderRadius: "4px", backgroundImage: "linear-gradient(to bottom, #A2CFFE, #88C1FF)" }}
         >
           Услуга
         </span>
 
         <h1
-          className="mt-6 text-[30px] font-light leading-[1.15] text-[#1C3C8C] sm:text-[38px] xl:text-[54px]"
+          className="mt-6 ds-h1 text-[#1C3C8C]"
           style={{ fontFamily: heading }}
         >
           Гирудотерапия&nbsp;— спокойная работа с&nbsp;
@@ -140,7 +140,7 @@ function PageHero() {
           </span>
         </h1>
 
-        <p className="mt-6 body-text max-w-[560px] text-[#8D9DC5]">
+        <p className="mt-6 body-text max-w-[560px] text-[#6B7BA8]">
           Медицинские и&nbsp;косметические пиявки в&nbsp;тихом кабинете: без спешки, с&nbsp;понятным
           объяснением каждого шага и&nbsp;вниманием к&nbsp;вашему состоянию до&nbsp;и&nbsp;после сеанса.
         </p>
@@ -171,7 +171,7 @@ function PageHero() {
         </div>
       </div>
 
-      <div className="overflow-hidden rounded-[12px] border border-[#daebff] bg-white">
+      <div className="overflow-hidden ds-card">
         <img
           src="/images/uslugi-girudoterapiya.jpg"
           alt="Гирудотерапия в кабинете Татьяны Злобиной"
@@ -184,11 +184,11 @@ function PageHero() {
 
 function Benefits() {
   return (
-    <section className="bg-[#EFF6FF] py-[60px] sm:py-[70px] xl:pt-[140px] xl:pb-0">
+    <section className="bg-[#EFF6FF] ds-section">
       <div className="container-1900">
         <div className="text-center sm:text-left">
           <span
-            className="inline-flex items-center gap-2 px-4 py-1.5 text-[13px] font-medium tracking-wide text-white"
+            className="inline-flex items-center gap-2 px-4 py-1.5 ds-label text-white"
             style={{ borderRadius: "4px", backgroundImage: "linear-gradient(to bottom, #A2CFFE, #88C1FF)" }}
           >
             Что даёт процедура
@@ -203,14 +203,14 @@ function Benefits() {
 
         <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
           {benefits.map((b) => (
-            <article key={b.title} className="rounded-[12px] border border-[#daebff] bg-white p-6 sm:p-8">
+            <article key={b.title} className="ds-card p-6 sm:p-8">
               <h3
-                className="text-[24px] font-light leading-[1.15] text-[#1C3C8C] sm:text-[28px]"
+                className="ds-h3 text-[#1C3C8C]"
                 style={{ fontFamily: heading }}
               >
                 {b.title}
               </h3>
-              <p className="mt-4 body-text text-[#8D9DC5]">{b.text}</p>
+              <p className="mt-4 body-text text-[#6B7BA8]">{b.text}</p>
             </article>
           ))}
         </div>
@@ -221,7 +221,7 @@ function Benefits() {
 
 function Steps() {
   return (
-    <section className="bg-[#EFF6FF] py-[60px] sm:py-[70px] xl:pt-[140px] xl:pb-0">
+    <section className="bg-[#EFF6FF] ds-section">
       <div className="container-1900 grid grid-cols-1 gap-4 sm:gap-5 xl:grid-cols-2 xl:items-start">
         <div className="text-center xl:text-left">
           <h2
@@ -230,7 +230,7 @@ function Steps() {
           >
             Как проходит сеанс
           </h2>
-          <p className="mx-auto mt-6 body-text max-w-[520px] text-[#8D9DC5] xl:mx-0">
+          <p className="mx-auto mt-6 body-text max-w-[520px] text-[#6B7BA8] xl:mx-0">
             Всё по шагам и в понятном темпе&nbsp;— вы всегда знаете, что&nbsp;будет дальше.
           </p>
           <img
@@ -240,7 +240,7 @@ function Steps() {
           />
         </div>
 
-        <ol className="divide-y divide-[#daebff] overflow-hidden rounded-[12px] border border-[#daebff] bg-white">
+        <ol className="divide-y divide-[#daebff] overflow-hidden ds-card">
           {steps.map((s) => (
             <li key={s.n} className="flex gap-5 p-6 sm:p-8">
               <span
@@ -251,12 +251,12 @@ function Steps() {
               </span>
               <div>
                 <h3
-                  className="text-[22px] font-light leading-[1.15] text-[#1C3C8C] sm:text-[26px]"
+                  className="ds-h4 text-[#1C3C8C]"
                   style={{ fontFamily: heading }}
                 >
                   {s.title}
                 </h3>
-                <p className="mt-3 body-text text-[#8D9DC5]">{s.text}</p>
+                <p className="mt-3 body-text text-[#6B7BA8]">{s.text}</p>
               </div>
             </li>
           ))}
@@ -269,10 +269,10 @@ function Steps() {
 function Prices() {
   const { openBooking } = useBooking();
   return (
-    <section className="bg-[#EFF6FF] py-[60px] sm:py-[70px] xl:pt-[140px] xl:pb-0">
+    <section className="bg-[#EFF6FF] ds-section">
       <div className="container-1900">
         <h2
-          className="text-center text-[30px] font-light leading-[1.15] text-[#1C3C8C] sm:text-left sm:text-[38px] xl:text-[44px]"
+          className="text-center ds-h2 text-[#1C3C8C]"
           style={{ fontFamily: heading }}
         >
           Форматы и&nbsp;стоимость
@@ -282,15 +282,15 @@ function Prices() {
           {prices.map((p) => (
             <article
               key={p.zone}
-              className="flex flex-col rounded-[12px] border border-[#daebff] bg-white p-6 sm:p-8 xl:p-10"
+              className="flex flex-col ds-card p-6 sm:p-8 xl:p-10"
             >
               <h3
-                className="text-[26px] font-light leading-[1.1] text-[#1C3C8C] sm:text-[30px]"
+                className="ds-h3 text-[#1C3C8C]"
                 style={{ fontFamily: heading }}
               >
                 {p.zone}
               </h3>
-              <p className="mt-3 body-text text-[#8D9DC5]">{p.subtitle}</p>
+              <p className="mt-3 body-text text-[#6B7BA8]">{p.subtitle}</p>
 
               <ul className="mt-6 flex flex-wrap gap-2">
                 {p.items.map((i) => (
@@ -305,9 +305,9 @@ function Prices() {
 
               <div className="mt-8 flex items-end justify-between gap-4 border-t border-[#daebff] pt-6">
                 <div>
-                  <p className="text-[14px] text-[#8D9DC5]">{p.session}</p>
+                  <p className="text-[14px] text-[#6B7BA8]">{p.session}</p>
                   <p
-                    className="mt-2 text-[28px] font-light leading-none text-[#1C3C8C] sm:text-[32px]"
+                    className="mt-2 ds-price text-[#1C3C8C]"
                     style={{ fontFamily: heading }}
                   >
                     от {p.price}
@@ -328,11 +328,11 @@ function Prices() {
 
 function Faq() {
   return (
-    <section className="bg-[#EFF6FF] py-[60px] sm:py-[70px] xl:pt-[140px] xl:pb-0">
+    <section className="bg-[#EFF6FF] ds-section">
       <div className="container-1900 grid grid-cols-1 gap-4 sm:gap-5 xl:grid-cols-2 xl:items-start">
         <div className="text-center xl:text-left">
           <span
-            className="inline-flex items-center gap-2 px-4 py-1.5 text-[13px] font-medium tracking-wide text-white"
+            className="inline-flex items-center gap-2 px-4 py-1.5 ds-label text-white"
             style={{ borderRadius: "4px", backgroundImage: "linear-gradient(to bottom, #A2CFFE, #88C1FF)" }}
           >
             FAQs
@@ -345,11 +345,11 @@ function Faq() {
           </h2>
         </div>
 
-        <div className="divide-y divide-[#daebff] overflow-hidden rounded-[12px] border border-[#daebff] bg-white">
+        <div className="divide-y divide-[#daebff] overflow-hidden ds-card">
           {faq.map((f) => (
             <div key={f.q} className="p-6 sm:p-7">
               <h3 className="body-text font-medium text-[#1C3C8C]">{f.q}</h3>
-              <p className="mt-3 body-text text-[#8D9DC5]">{f.a}</p>
+              <p className="mt-3 body-text text-[#6B7BA8]">{f.a}</p>
             </div>
           ))}
         </div>
