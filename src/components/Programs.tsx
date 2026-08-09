@@ -244,7 +244,7 @@ export function Programs() {
             </div>
 
             {/* Mobile: stacked blocks */}
-            <div className="sm:hidden pt-6 border-t border-[#daebff] divide-y divide-[#daebff] h-full overflow-y-auto">
+            <div className="sm:hidden pt-6 border-t border-[#daebff] divide-y divide-[#daebff] h-auto">
               {computedItems.map((it, idx) => (
                 <div key={idx} className="py-4">
                   <div className="text-[16px] leading-[22px] text-[#1C3C8C]">{it.title}</div>
@@ -254,11 +254,11 @@ export function Programs() {
             </div>
           </div>
 
-          {/* Mobile: mirror the gap between the service summary and the price in Services */}
-          <div className="h-[20px] sm:hidden" />
+          {/* Mobile: same gap between the service list and the price as in the Services card */}
+          <div className="h-[45px] sm:hidden" />
 
           <div
-            className="mt-auto pt-8 flex flex-wrap items-center justify-start sm:justify-end gap-x-4 gap-y-2"
+            className="mt-0 sm:mt-auto pt-0 sm:pt-8 flex flex-wrap items-center justify-start sm:justify-end gap-x-4 gap-y-2"
             style={{ fontFamily: heading }}
           >
             <span className="text-[18px] sm:text-[20px] font-light text-[#8D9DC5] line-through">
