@@ -37,11 +37,8 @@ export default function ImageReveal({
             rotate: tile.rot,
           }}
         >
-          <motion.img
-            src={tile.src}
-            alt=""
-            loading="lazy"
-            className="h-full w-full object-cover"
+          <motion.div
+            className="h-[calc(100%+12px)] w-full"
             animate={{ y: [0, -6, 0] }}
             transition={{
               duration: 4,
@@ -49,7 +46,14 @@ export default function ImageReveal({
               ease: "easeInOut",
               delay: tile.delay,
             }}
-          />
+          >
+            <img
+              src={tile.src}
+              alt=""
+              loading="lazy"
+              className="h-full w-full object-cover"
+            />
+          </motion.div>
         </motion.div>
       ))}
     </div>
