@@ -7,13 +7,10 @@ const Star = ({ className }: { className?: string }) => (
 );
 
 export function Preloader() {
-  const [mounted, setMounted] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [leaving, setLeaving] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
-
     let removeTimer: ReturnType<typeof setTimeout>;
     const finish = () => {
       setLeaving(true);
@@ -32,7 +29,7 @@ export function Preloader() {
     };
   }, []);
 
-  if (!mounted || hidden) return null;
+  if (hidden) return null;
 
   return (
     <div
