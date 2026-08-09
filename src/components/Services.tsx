@@ -153,7 +153,7 @@ const serviceTypes: ServiceType[] = [
         mobileDescription:
           "Комплексная проработка тела помогает снять напряжение, глубже расслабиться и\u00A0восстановить силы.",
         duration: "60\u00A0минут",
-        price: "2\u00A0000\u00A0₽",
+        price: "3\u00A0000\u00A0₽",
       },
       {
         zone: "Голова",
