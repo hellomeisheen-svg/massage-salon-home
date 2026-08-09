@@ -83,10 +83,10 @@ export function Education() {
             src={tatianaPhoto.url}
             alt="Татьяна Злобина — мастер кабинета Седьмое небо"
             loading="lazy"
-            className="w-full h-[480px] rounded-[12px] sm:absolute sm:inset-0 sm:h-full object-cover object-top sm:object-center xl:hidden"
+            className="w-full h-[480px] rounded-[12px] sm:absolute sm:inset-0 sm:h-full object-cover object-top sm:object-center"
           />
-          <div className="relative sm:absolute inset-x-0 bottom-0 mt-4 sm:mt-0 xl:static xl:flex-1 xl:flex xl:flex-col">
-            <div className="rounded-[12px] bg-white border border-[#daebff] p-5 sm:p-7 xl:p-10 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 xl:items-start xl:justify-between xl:flex-1">
+          <div className="relative sm:absolute inset-x-0 bottom-0 mt-4 sm:mt-0">
+            <div className="rounded-[12px] bg-white border border-[#daebff] p-5 sm:p-7 xl:p-8 flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
               <div className="flex-1">
                 <p className="text-[#1C3C8C] text-[15px] sm:text-[18px] xl:text-[20px] leading-[1.5]">
                   «Я&nbsp;не&nbsp;обещаю мгновенных изменений. Я&nbsp;обещаю внимание, тишину и&nbsp;время, в&nbsp;котором не&nbsp;нужно никуда спешить.»
@@ -99,7 +99,7 @@ export function Education() {
                 src="/images/signature.svg"
                 alt=""
                 loading="lazy"
-                className="w-[180px] sm:w-[240px] xl:w-[280px] h-auto shrink-0 self-end sm:self-auto"
+                className="w-[180px] sm:w-[240px] xl:w-[260px] h-auto shrink-0 self-end sm:self-auto"
               />
             </div>
           </div>
