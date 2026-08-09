@@ -249,6 +249,9 @@ export function Programs() {
             </div>
           </div>
 
+          {/* Mobile: mirror the gap between the service summary and the price in Services */}
+          <div className="h-[20px] sm:hidden" />
+
           <div
             className="mt-auto pt-8 flex flex-wrap items-center justify-start sm:justify-end gap-x-4 gap-y-2"
             style={{ fontFamily: heading }}
