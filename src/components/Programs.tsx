@@ -159,12 +159,12 @@ export function Programs() {
   const next = () => setActive((i) => (i + 1) % programs.length);
 
   return (
-    <section id="programs" className="scroll-mt-[140px] bg-[#EFF6FF] py-[60px] sm:py-[70px] xl:pt-[140px] xl:pb-0">
+    <section id="programs" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section">
       <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-8 sm:gap-5 items-start">
         {/* Left column */}
         <div className="self-start flex flex-col items-center xl:items-start text-center xl:text-left">
           <span
-            className="inline-flex items-center gap-2 px-4 py-1.5 text-[13px] font-medium tracking-wide text-white"
+            className="inline-flex items-center gap-2 px-4 py-1.5 ds-label text-white"
             style={{
               borderRadius: "4px",
               backgroundImage: "linear-gradient(to bottom, #A2CFFE, #88C1FF)",
@@ -173,7 +173,7 @@ export function Programs() {
             Программы восстановления
           </span>
           <h2
-            className="mt-6 text-[30px] sm:text-[38px] xl:text-[44px] font-light leading-[1.15] text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0"
+            className="mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0"
             style={{ fontFamily: heading }}
           >
             Программы из&nbsp;нескольких процедур&nbsp;— для глубокой работы с&nbsp;конкретным состоянием
@@ -196,7 +196,7 @@ export function Programs() {
                     />
                     <span
                       className={`text-[16px] transition-colors ${
-                        isActive ? "text-[#1C3C8C]" : "text-[#8D9DC5]"
+                        isActive ? "text-[#1C3C8C]" : "text-[#6B7BA8]"
                       }`}
                     >
                       {p.name}
@@ -209,14 +209,14 @@ export function Programs() {
         </div>
 
         {/* Right column — program card */}
-        <article className="rounded-[12px] border border-[#daebff] bg-white p-6 sm:p-8 transition-shadow duration-300 hover:shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)] flex flex-col h-[671px] xl:h-auto xl:min-h-[700px]">
+        <article className="ds-card ds-card-hover p-6 sm:p-8 flex flex-col h-[671px] xl:h-auto xl:min-h-[700px]">
           <h3
-            className="text-[30px] sm:text-[38px] xl:text-[42px] font-light leading-[1.1] text-[#1C3C8C]"
+            className="ds-h2-card text-[#1C3C8C]"
             style={{ fontFamily: heading }}
           >
             {program.name}
           </h3>
-          <p className="mt-3 body-text text-[#8D9DC5]">
+          <p className="mt-3 body-text text-[#6B7BA8]">
             {program.description}
           </p>
 
@@ -231,8 +231,8 @@ export function Programs() {
               <div className="divide-y divide-[#daebff]">
                 {computedItems.map((it, idx) => (
                   <div key={idx} className="grid grid-cols-[1.3fr_1fr] gap-6 py-5">
-                    <div className="body-text text-[#8D9DC5]">{it.title}</div>
-                    <div className="body-text text-[#8D9DC5]">{it.duration}</div>
+                    <div className="body-text text-[#6B7BA8]">{it.title}</div>
+                    <div className="body-text text-[#6B7BA8]">{it.duration}</div>
                   </div>
                 ))}
               </div>
@@ -243,7 +243,7 @@ export function Programs() {
               {computedItems.map((it, idx) => (
                 <div key={idx} className="py-4">
                   <div className="text-[16px] leading-[22px] text-[#1C3C8C]">{it.title}</div>
-                  <div className="mt-1 text-[13px] leading-[18px] text-[#8D9DC5]">{it.duration}</div>
+                  <div className="mt-1 text-[13px] leading-[18px] text-[#6B7BA8]">{it.duration}</div>
                 </div>
               ))}
             </div>
@@ -253,17 +253,17 @@ export function Programs() {
             className="mt-auto pt-8 flex flex-wrap items-center justify-start sm:justify-end gap-x-4 gap-y-2"
             style={{ fontFamily: heading }}
           >
-            <span className="text-[18px] sm:text-[20px] font-light text-[#8D9DC5] line-through">
+            <span className="text-[18px] sm:text-[20px] font-light text-[#6B7BA8] line-through">
               {formatPrice(originalPrice)}
               <Ruble />
             </span>
-            <span className="text-[30px] sm:text-[34px] font-light text-[#1C3C8C]">
+            <span className="ds-price text-[#1C3C8C]">
               {formatPrice(price)}
               <Ruble />
             </span>
           </div>
 
-          <p className="hidden sm:block mt-6 text-[13px] leading-[18px] sm:text-[15px] sm:leading-normal text-[#8D9DC5]">
+          <p className="hidden sm:block mt-6 text-[13px] leading-[18px] sm:text-[15px] sm:leading-normal text-[#6B7BA8]">
             Срок использования: {program.validity}
           </p>
 

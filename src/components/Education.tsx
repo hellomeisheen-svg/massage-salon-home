@@ -46,7 +46,7 @@ function EduCard({ item }: { item: EduItem }) {
 
       <ul className="mt-4 space-y-2 xl:space-y-1.5">
         {item.items.map((i) => (
-          <li key={i} className="body-text text-[#8D9DC5] flex gap-2">
+          <li key={i} className="body-text text-[#6B7BA8] flex gap-2">
             <span aria-hidden>•</span>
             <span>{i}</span>
           </li>
@@ -58,7 +58,7 @@ function EduCard({ item }: { item: EduItem }) {
 
 export function Education() {
   return (
-    <section id="obrazovanie" className="scroll-mt-[120px] bg-[#EFF6FF] py-[60px] xl:pt-[140px] xl:pb-0">
+    <section id="obrazovanie" className="scroll-mt-[120px] bg-[#EFF6FF] ds-section">
       <div className="container-1900 mb-8 sm:mb-[70px] xl:mb-[140px] flex flex-col items-center text-center">
         <svg
           aria-hidden="true"
@@ -69,7 +69,7 @@ export function Education() {
           <path d="M12 0 L13.2 10.8 L24 12 L13.2 13.2 L12 24 L10.8 13.2 L0 12 L10.8 10.8 Z" />
         </svg>
         <h2
-          className="max-w-none sm:max-w-[900px] xl:max-w-[1100px] text-[30px] font-light leading-[1.15] text-[#1C3C8C] sm:text-[38px] sm:leading-[1.18] xl:text-[54px] xl:leading-[1.15]"
+          className="max-w-none sm:max-w-[900px] xl:max-w-[1100px] ds-h1 text-[#1C3C8C]"
           style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
         >
           За&nbsp;плечами&nbsp;— годы ежедневной практики, регулярное обучение и&nbsp;спокойный подход к&nbsp;работе с&nbsp;телом
@@ -97,7 +97,7 @@ export function Education() {
                 </blockquote>
 
                 <p
-                  className="text-[16px] font-light leading-[1.5] text-[#8D9DC5] xl:max-w-[480px]"
+                  className="text-[16px] font-light leading-[1.5] text-[#6B7BA8] xl:max-w-[480px]"
                   style={{ fontFamily: "'Inter', sans-serif" }}
                 >
                   Татьяна Злобина — Мастер кабинета,
@@ -120,13 +120,13 @@ export function Education() {
 
         {/* Right: education lists */}
         <div className="flex flex-col gap-6 xl:gap-3">
-          <div className="px-2 text-[#8D9DC5] text-[14px] sm:text-[15px]">Основное образование</div>
+          <div className="px-2 text-[#6B7BA8] text-[14px] sm:text-[15px]">Основное образование</div>
           <div className="flex flex-col gap-6 xl:gap-3">
             {mainEducation.map((e) => (
               <EduCard key={e.school} item={e} />
             ))}
           </div>
-          <div className="px-2 mt-2 xl:mt-1 text-[#8D9DC5] text-[14px] sm:text-[15px]">Дополнительное образование</div>
+          <div className="px-2 mt-2 xl:mt-1 text-[#6B7BA8] text-[14px] sm:text-[15px]">Дополнительное образование</div>
           <div className="flex flex-col gap-6 xl:gap-3">
             {extraEducation.map((e) => (
               <EduCard key={e.school} item={e} />

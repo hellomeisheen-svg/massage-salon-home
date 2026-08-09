@@ -41,7 +41,7 @@ export function ApproachCopy() {
         {/* Left column */}
         <div className="flex flex-col gap-6 xl:h-full">
           {/* Подход мастера */}
-          <div className="relative h-[420px] sm:h-[720px] xl:h-full rounded-[12px] border border-[#daebff] bg-white overflow-hidden">
+          <div className="relative h-[420px] sm:h-[720px] xl:h-full ds-card overflow-hidden">
             <img
               src={approachMasterAsset.url}
               alt="Татьяна работает с клиенткой в светлом массажном кабинете"
@@ -54,9 +54,9 @@ export function ApproachCopy() {
         </div>
 
         {/* Right column — Среда вокруг */}
-        <div className="rounded-[12px] border border-[#daebff] bg-white p-6 sm:p-8 xl:p-12">
+        <div className="ds-card p-6 sm:p-8 xl:p-12">
           <h3
-            className="text-[30px] font-light leading-[1.1] text-[#1C3C8C] sm:text-left sm:text-[38px] xl:text-[44px]"
+            className="ds-h2 text-[#1C3C8C] sm:text-left"
             style={{ fontFamily: heading }}
           >
             Всё, чтобы вы чувствовали себя спокойно, безопасно и комфортно с первых минут
@@ -75,7 +75,7 @@ export function ApproachCopy() {
                     >
                       {item.title}
                     </h4>
-                    <p className="body-text text-[#8D9DC5] sm:max-w-[560px] xl:max-w-none">
+                    <p className="body-text text-[#6B7BA8] sm:max-w-[560px] xl:max-w-none">
                       {item.text}
                     </p>
                   </div>

@@ -361,7 +361,7 @@ function ServiceCard({
   const priceLabel = `за ${sessionCounts[activeSession]} ${sessionWord}`;
 
   return (
-    <article className="rounded-[12px] border border-[#daebff] bg-white p-6 sm:p-8 sm:pb-8 xl:pb-8 transition-shadow duration-300 hover:shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)] flex flex-col h-auto min-h-[640px] sm:min-h-0 xl:min-h-[700px]">
+    <article className="ds-card ds-card-hover p-6 sm:p-8 flex flex-col h-auto min-h-[640px] sm:min-h-0 xl:min-h-[700px]">
       {/* Sessions — pill switcher */}
       <div className="flex items-stretch gap-1 rounded-[10px] bg-[#EFF6FF] p-1">
         {items.map((s, i) => (
@@ -377,7 +377,7 @@ function ServiceCard({
           >
             <span
               className={`whitespace-nowrap text-[13px] tracking-tight transition-colors duration-300 ${
-                activeSession === i ? "font-medium text-[#1C3C8C]" : "font-light text-[#8D9DC5]"
+                activeSession === i ? "font-medium text-[#1C3C8C]" : "font-light text-[#6B7BA8]"
               }`}
             >
               {s.label}
@@ -395,7 +395,7 @@ function ServiceCard({
         <div className="flex-1 sm:flex-none xl:flex-1">
           {/* Title */}
           <h3
-            className="mt-5 text-[28px] sm:text-[34px] xl:text-[38px] font-light leading-[1.1] text-[#1C3C8C] break-words hyphens-auto"
+            className="mt-5 ds-h2-card text-[#1C3C8C] break-words hyphens-auto"
             style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
           >
             <span className="xl:hidden">{mobileTitle(type.title)}</span>
@@ -405,7 +405,7 @@ function ServiceCard({
           {/* Zone / Type chips */}
           {variant.zone && (
             <div className="mt-6">
-              <span className="block text-[13px] font-light leading-[20px] text-[#8D9DC5]">
+              <span className="block text-[13px] font-light leading-[20px] text-[#6B7BA8]">
                 {clean(type.title) === "Гирудотерапия"
                   ? "Тип пиявок:"
                   : clean(type.title) === "Банки"
@@ -437,10 +437,10 @@ function ServiceCard({
           )}
 
           {/* Description */}
-          <p className="mt-6 whitespace-pre-line body-text text-[#8D9DC5] sm:hidden">
+          <p className="mt-6 whitespace-pre-line body-text text-[#6B7BA8] sm:hidden">
             {variant.mobileDescription || variant.description}
           </p>
-          <p className="mt-6 hidden whitespace-pre-line body-text text-[#8D9DC5] sm:block">
+          <p className="mt-6 hidden whitespace-pre-line body-text text-[#6B7BA8] sm:block">
             {variant.description}
           </p>
 
@@ -454,7 +454,7 @@ function ServiceCard({
         <div className="mt-5 sm:mt-[120px] xl:mt-5 flex items-center justify-end gap-4 sm:gap-5">
           {hasDiscount && (
             <span
-              className="text-[17px] sm:text-[19px] font-light leading-[1.2] text-[#8D9DC5] line-through"
+              className="text-[17px] sm:text-[19px] font-light leading-[1.2] text-[#6B7BA8] line-through"
               style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
             >
               {renderPrice(originalPrice)}
@@ -462,12 +462,12 @@ function ServiceCard({
           )}
           <div className="flex flex-col items-end">
             <span
-              className="text-[30px] sm:text-[34px] font-light leading-[1.1] text-[#1C3C8C]"
+              className="ds-price text-[#1C3C8C]"
               style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
             >
               {renderPrice(computedPrice)}
             </span>
-            <span className="text-[13px] font-light text-[#8D9DC5] hidden sm:inline">{priceLabel}</span>
+            <span className="text-[13px] font-light text-[#6B7BA8] hidden sm:inline">{priceLabel}</span>
           </div>
         </div>
       </div>
@@ -571,7 +571,7 @@ export function Services() {
         return (
           <div key={g.label}>
             {showLabel && (
-              <p className="text-[13px] font-light leading-[18px] text-[#8D9DC5]">{g.label}</p>
+              <p className="text-[13px] font-light leading-[18px] text-[#6B7BA8]">{g.label}</p>
             )}
             <ul className={`flex flex-col gap-3 items-start ${showLabel ? "mt-3" : ""}`}>
               {g.items.map((t) => {
@@ -591,7 +591,7 @@ export function Services() {
                       />
                       <span
                         className={`text-[16px] transition-colors ${
-                          isActive ? "text-[#1C3C8C]" : "text-[#8D9DC5]"
+                          isActive ? "text-[#1C3C8C]" : "text-[#6B7BA8]"
                         }`}
                       >
                         {clean(t.title)}
@@ -608,12 +608,12 @@ export function Services() {
   );
 
   return (
-    <section id="services" className="scroll-mt-[140px] bg-[#EFF6FF] py-[60px] sm:py-[70px] xl:pt-[140px] xl:pb-0">
+    <section id="services" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section">
       <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-8 sm:gap-5 items-start">
         {/* Left column */}
         <div className="self-start flex flex-col items-center xl:items-start text-center xl:text-left">
           <span
-            className="inline-flex items-center gap-2 px-4 py-1.5 text-[13px] font-medium tracking-wide text-white"
+            className="inline-flex items-center gap-2 px-4 py-1.5 ds-label text-white"
             style={{
               borderRadius: "4px",
               backgroundImage: "linear-gradient(to bottom, #A2CFFE, #88C1FF)",
@@ -622,7 +622,7 @@ export function Services() {
             Услуги
           </span>
           <h2
-            className="mt-6 text-[30px] sm:text-[38px] xl:text-[44px] font-light leading-[1.15] text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0"
+            className="mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0"
             style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
           >
             Перед каждым визитом обсуждаем ваше состояние&nbsp;— и&nbsp;подбираем технику под&nbsp;него

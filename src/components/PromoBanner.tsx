@@ -18,7 +18,7 @@ export function PromoBanner({
 }: PromoBannerProps) {
   const { openBooking } = useBooking();
   return (
-    <section className="bg-brand-surface py-[60px] xl:pt-[140px] xl:pb-0">
+    <section className="bg-brand-surface ds-section">
       <div className="container-1900 px-5">
         <div
           className="relative overflow-hidden rounded-[12px] border px-6 py-14 xl:px-24 xl:py-[60px]"
@@ -67,7 +67,7 @@ export function PromoBanner({
 
           <div className="relative z-10 flex flex-col items-center text-center">
             <h2
-              className="text-[30px] font-light leading-[1.1] text-brand-ink xl:text-[44px]"
+              className="ds-h2 text-brand-ink"
               style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
             >
               {title}

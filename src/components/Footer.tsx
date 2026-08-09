@@ -66,7 +66,7 @@ export function Footer() {
           </div>
 
           {/* Contacts */}
-          <div className="flex flex-col justify-between gap-8 rounded-[12px] border border-[#daebff] bg-white p-5 xl:p-[30px]">
+          <div className="flex flex-col justify-between gap-8 ds-card p-5 xl:p-[30px]">
             <div>
               <h2
                 className="text-[30px] xl:text-[44px] leading-[1.1]"
@@ -119,7 +119,7 @@ export function Footer() {
         </div>
 
         {/* Bottom band */}
-        <div className="mt-5 rounded-[12px] border border-[#daebff] bg-white p-5 xl:p-[30px]">
+        <div className="mt-5 ds-card p-5 xl:p-[30px]">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Brand */}
             <div>

@@ -56,7 +56,7 @@ export function Header() {
 
       <div className="container-1900 relative">
       {/* Desktop header */}
-      <div className="hidden h-20 w-full items-center justify-between rounded-[12px] border border-[#daebff] bg-white px-5 py-2.5 xl:flex xl:px-[30px]">
+      <div className="hidden h-20 w-full items-center justify-between ds-card px-5 py-2.5 xl:flex xl:px-[30px]">
         {/* Logo */}
         <div className="flex h-10 w-20 items-center">
           <span
@@ -98,7 +98,7 @@ export function Header() {
       </div>
 
       {/* Mobile / tablet header */}
-      <div className="flex h-16 w-full items-center justify-between rounded-[12px] border border-[#daebff] bg-white px-4 py-2.5 xl:hidden">
+      <div className="flex h-16 w-full items-center justify-between ds-card px-4 py-2.5 xl:hidden">
         {/* Logo */}
         <div className="flex h-8 items-center">
           <span
@@ -127,7 +127,7 @@ export function Header() {
       {/* Mobile / tablet menu panel — same width as the header */}
       {menuOpen && (
         <div className="absolute inset-x-4 sm:inset-x-5 top-[calc(100%+8px)] z-40 h-[calc(100dvh-104px)] sm:h-[calc(100dvh-108px)] xl:hidden">
-          <div className="flex h-full flex-col rounded-[12px] border border-[#daebff] bg-white p-4">
+          <div className="flex h-full flex-col ds-card p-4">
             <nav className="flex-1 overflow-y-auto" aria-label="Мобильная навигация">
               <ul className="flex flex-col gap-1">
                 {navigationItems.map((item) => (
