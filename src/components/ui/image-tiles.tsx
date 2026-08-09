@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 interface ImageRevealProps {
   leftImage: string;
   middleImage: string;
@@ -11,66 +13,45 @@ export default function ImageReveal({
   rightImage,
 }: ImageRevealProps) {
   const tileBase =
-    "image-tile absolute overflow-hidden rounded-[12px] border border-[#DAEBFF] bg-white transition-shadow duration-300 hover:shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)]";
+    "absolute overflow-hidden rounded-[24px] border border-[#DAEBFF] bg-white shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)]";
+
+  const tiles = [
+    { src: leftImage, zIndex: 10, left: "20px", top: "40px", rot: "-8deg", delay: 0 },
+    { src: middleImage, zIndex: 20, left: "80px", top: "30px", rot: "4deg", delay: 0.15 },
+    { src: rightImage, zIndex: 30, left: "140px", top: "40px", rot: "8deg", delay: 0.3 },
+  ];
 
   return (
     <div className="relative h-[240px] w-[280px]">
-      {/* Left tile — back, portrait */}
-      <div
-        className={`${tileBase} h-[170px] w-[120px]`}
-        style={{
-          zIndex: 10,
-          left: "20px",
-          top: "40px",
-          ["--tile-rot" as string]: "-8deg",
-          ["--tile-delay" as string]: "0s",
-        }}
-      >
-        <img
-          src={leftImage}
-          alt=""
-          loading="lazy"
-          className="h-full w-full object-cover"
-        />
-      </div>
-
-      {/* Middle tile — middle, portrait */}
-      <div
-        className={`${tileBase} h-[170px] w-[120px]`}
-        style={{
-          zIndex: 20,
-          left: "80px",
-          top: "30px",
-          ["--tile-rot" as string]: "4deg",
-          ["--tile-delay" as string]: "0.15s",
-        }}
-      >
-        <img
-          src={rightImage}
-          alt=""
-          loading="lazy"
-          className="h-full w-full object-cover"
-        />
-      </div>
-
-      {/* Right tile — front, portrait */}
-      <div
-        className={`${tileBase} h-[170px] w-[120px]`}
-        style={{
-          zIndex: 30,
-          left: "140px",
-          top: "40px",
-          ["--tile-rot" as string]: "8deg",
-          ["--tile-delay" as string]: "0.3s",
-        }}
-      >
-        <img
-          src={middleImage}
-          alt=""
-          loading="lazy"
-          className="h-full w-full object-cover"
-        />
-      </div>
+      {tiles.map((tile, i) => (
+        <motion.div
+          key={i}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: tile.delay, ease: "easeOut" }}
+          className={`${tileBase} h-[170px] w-[120px]`}
+          style={{
+            zIndex: tile.zIndex,
+            left: tile.left,
+            top: tile.top,
+            rotate: tile.rot,
+          }}
+        >
+          <motion.img
+            src={tile.src}
+            alt=""
+            loading="lazy"
+            className="h-full w-full object-cover"
+            animate={{ y: [0, -6, 0] }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: tile.delay,
+            }}
+          />
+        </motion.div>
+      ))}
     </div>
   );
 }
