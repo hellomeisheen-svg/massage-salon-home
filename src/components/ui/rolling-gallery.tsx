@@ -167,7 +167,7 @@ export const RollingGallery: React.FC<RollingGalleryProps> = ({
                 alt="gallery"
                 draggable={false}
                 style={{ width: imgWidth, height: imgHeight, flexShrink: 0, maxWidth: "none" }}
-                className={`pointer-events-none rounded-[12px] border border-[#daebff] ${
+                className={`pointer-events-none rounded-[12px] shadow-[0_8px_24px_rgba(28,60,140,0.12)] ${
                   isScreenSizeSm ? "object-contain" : "object-cover"
                 }`}
               />
