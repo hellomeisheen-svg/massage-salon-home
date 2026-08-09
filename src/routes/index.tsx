@@ -1,9 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
-import { QuoteBlock } from "@/components/QuoteBlock";
 import { Services } from "@/components/Services";
-
 import { ApproachCopy } from "@/components/ApproachCopy";
 import { PromoBanner } from "@/components/PromoBanner";
 import { ApproachIntro } from "@/components/ApproachIntro";
@@ -45,7 +43,6 @@ function Index() {
     <div className="relative min-h-screen bg-[#EFF6FF] pt-20 xl:pt-[100px]">
       <Header />
       <Hero />
-      <QuoteBlock />
       <Services />
       <PromoBanner />
       <ApproachIntro />
