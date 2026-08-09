@@ -615,16 +615,21 @@ button:focus-visible {
   opacity: 0;
   animation: preloader-star-in 700ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
+.preloader-percent {
+  margin-top: 12px;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1;
+  color: #6b7ba8;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+}
 .preloader-track {
-  margin-top: 20px;
+  margin-top: 12px;
   width: 120px;
   height: 1px;
   overflow: hidden;
   background-color: #daebff;
-}
-@keyframes preloader-bar-fill {
-  from { transform: scaleX(0); }
-  to { transform: scaleX(1); }
 }
 .preloader-bar {
   display: block;
@@ -632,8 +637,10 @@ button:focus-visible {
   width: 100%;
   background-color: #a2cffe;
   transform-origin: left center;
-  animation: preloader-bar-fill 800ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
 }
+
 @media (prefers-reduced-motion: reduce) {
   .preloader-star {
     opacity: 1;
