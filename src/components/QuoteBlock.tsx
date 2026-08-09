@@ -72,7 +72,7 @@ export function QuoteBlock() {
           className="max-w-none sm:max-w-[900px] text-center xl:w-[min(calc(100%-160px),1250px)] xl:max-w-[1250px] xl:mx-auto text-[30px] font-light leading-[1.15] text-[#1C3C8C] sm:text-[38px] sm:leading-[1.18] xl:text-[54px] xl:leading-[1.15]"
           style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
         >
-          Регулярная забота о теле — спокойная привычка, которая помогает сохранять внутреннюю опору и лёгкость в повседневной жизни.
+          Регулярная забота о&nbsp;теле — спокойная привычка, которая помогает сохранять внутреннюю опору и&nbsp;лёгкость в&nbsp;повседневной жизни
         </h2>
 
         {/* Mobile-only photo tiles */}
