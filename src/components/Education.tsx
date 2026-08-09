@@ -78,14 +78,14 @@ export function Education() {
       <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-5 items-stretch">
 
         {/* Left: photo + quote panel */}
-        <div className="relative rounded-[12px] border border-[#DAEBFF] min-h-[480px] sm:min-h-[800px] xl:min-h-0 xl:h-full flex flex-col sm:block">
+        <div className="relative rounded-[12px] border border-[#DAEBFF] min-h-[480px] xl:min-h-0 xl:h-full flex flex-col xl:block">
           <img
             src={tatianaPhoto.url}
             alt="Татьяна Злобина — мастер кабинета Седьмое небо"
             loading="lazy"
-            className="w-full h-[480px] rounded-[12px] sm:absolute sm:inset-0 sm:h-full object-cover object-top sm:object-center"
+            className="w-full h-[480px] sm:h-[640px] rounded-[12px] xl:absolute xl:inset-0 xl:h-full object-cover object-top sm:object-center"
           />
-          <div className="relative sm:absolute inset-x-0 bottom-0 mt-4 sm:mt-0 xl:px-8 xl:pb-8">
+          <div className="relative mt-4 xl:absolute xl:inset-x-0 xl:bottom-0 xl:mt-0 xl:px-8 xl:pb-8">
             <div className="relative rounded-[12px] border border-[#DAEBFF] bg-white p-8 sm:p-12 xl:p-10 shadow-[0_20px_50px_-12px_rgba(74,127,214,0.08)] flex flex-col xl:flex-row xl:items-end justify-between gap-6 xl:gap-8">
               <div className="flex flex-col gap-3 sm:gap-4 xl:w-[760px] xl:shrink-0">
                 <blockquote
@@ -111,7 +111,7 @@ export function Education() {
                 alt="Подпись Татьяны Злобиной"
                 width={240}
                 height={97}
-                className="h-auto w-[160px] sm:w-[200px] xl:w-[225px] shrink-0 self-end xl:absolute xl:bottom-[40px] xl:right-[30px]"
+                className="h-auto w-[160px] sm:hidden xl:block xl:w-[225px] shrink-0 self-end xl:absolute xl:bottom-[40px] xl:right-[30px]"
                 loading="lazy"
               />
             </div>
@@ -119,15 +119,15 @@ export function Education() {
         </div>
 
         {/* Right: education lists */}
-        <div className="flex flex-col gap-6 sm:gap-4 xl:gap-3">
+        <div className="flex flex-col gap-6 xl:gap-3">
           <div className="px-2 text-[#8D9DC5] text-[14px] sm:text-[15px]">Основное образование</div>
-          <div className="flex flex-col gap-6 sm:gap-4 xl:gap-3">
+          <div className="flex flex-col gap-6 xl:gap-3">
             {mainEducation.map((e) => (
               <EduCard key={e.school} item={e} />
             ))}
           </div>
           <div className="px-2 mt-2 xl:mt-1 text-[#8D9DC5] text-[14px] sm:text-[15px]">Дополнительное образование</div>
-          <div className="flex flex-col gap-6 sm:gap-4 xl:gap-3">
+          <div className="flex flex-col gap-6 xl:gap-3">
             {extraEducation.map((e) => (
               <EduCard key={e.school} item={e} />
             ))}
