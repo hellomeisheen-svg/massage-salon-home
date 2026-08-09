@@ -73,10 +73,8 @@ export function QuoteBlock() {
           style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
         >
           Регулярная забота о теле —<br />
-          спокойная привычка, которая помогает<br />
-          сохранять внутреннюю опору и лёгкость{' '}
-          <br className="xl:hidden" />
-          в повседневной жизни
+          привычка сохранять внутреннюю опору<br />
+          и больше лёгкости в повседневной жизни
         </h2>
 
         {/* Mobile-only photo tiles */}
