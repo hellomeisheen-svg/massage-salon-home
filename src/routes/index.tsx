@@ -47,7 +47,7 @@ function Index() {
       <QuoteBlock />
       <Services />
       <PromoBanner />
-      <ApproachIntro />
+      
       <StatsSection />
       <ApproachCopy />
       
