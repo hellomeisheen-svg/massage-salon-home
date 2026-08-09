@@ -209,7 +209,7 @@ export function Programs() {
         </div>
 
         {/* Right column — program card */}
-        <article className="rounded-[12px] border border-[#daebff] bg-white p-6 sm:p-8 transition-shadow duration-300 hover:shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)] flex flex-col h-[680px] xl:h-auto xl:min-h-[700px]">
+        <article className="rounded-[12px] border border-[#daebff] bg-white p-6 sm:p-8 transition-shadow duration-300 hover:shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)] flex flex-col h-auto xl:min-h-[700px]">
           <h3
             className="text-[30px] sm:text-[38px] xl:text-[42px] font-light leading-[1.1] text-[#1C3C8C]"
             style={{ fontFamily: heading }}
@@ -239,7 +239,7 @@ export function Programs() {
             </div>
 
             {/* Mobile: stacked blocks */}
-            <div className="sm:hidden h-full overflow-y-auto mt-6 border-t border-[#daebff] divide-y divide-[#daebff]">
+            <div className="sm:hidden mt-6 border-t border-[#daebff] divide-y divide-[#daebff]">
               {computedItems.map((it, idx) => (
                 <div key={idx} className="py-4">
                   <div className="text-[16px] leading-[22px] text-[#1C3C8C]">{it.title}</div>
@@ -263,7 +263,7 @@ export function Programs() {
             </span>
           </div>
 
-          <p className="mt-6 text-[13px] leading-[18px] sm:text-[15px] sm:leading-normal text-[#8D9DC5]">
+          <p className="hidden sm:block mt-6 text-[13px] leading-[18px] sm:text-[15px] sm:leading-normal text-[#8D9DC5]">
             Срок использования: {program.validity}
           </p>
 
