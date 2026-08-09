@@ -8,20 +8,21 @@ import {
 } from "framer-motion";
 
 const IMGS: string[] = [
-  "/images/uslugi-girudoterapiya.jpg",
-  "/images/uslugi-girudoterapiya-litsa.jpg",
   "/images/uslugi-klassicheskii-massazh.jpg",
   "/images/uslugi-atmosfera-dekor-white.jpg",
-  "/images/uslugi-limfodrenazhnyi-massazh.jpg",
-  "/images/uslugi-massazh-golovy.jpg",
+  "/images/uslugi-girudoterapiya-litsa.jpg",
   "/images/uslugi-atmosfera-polotenca-white.jpg",
-  "/images/uslugi-massazh-litsa.jpg",
-  "/images/uslugi-massazh-nog.jpg",
-  "/images/uslugi-atmosfera-ruki-maslo-white.jpg",
-  "/images/uslugi-atmosfera-chai-white.jpg",
-  "/images/uslugi-massazh-spiny-i-shei.jpg",
   "/images/uslugi-massazh-vorotnikovoi-zony.jpg",
+  "/images/uslugi-atmosfera-ruki-maslo-white.jpg",
+  "/images/uslugi-massazh-nog.jpg",
+  "/images/uslugi-atmosfera-chai-white.jpg",
+  "/images/uslugi-girudoterapiya.jpg",
+  "/images/uslugi-massazh-golovy.jpg",
+  "/images/uslugi-limfodrenazhnyi-massazh.jpg",
+  "/images/uslugi-massazh-litsa.jpg",
+  "/images/uslugi-massazh-spiny-i-shei.jpg",
 ];
+
 
 interface RollingGalleryProps {
   autoplay?: boolean;
