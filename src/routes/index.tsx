@@ -14,7 +14,6 @@ import Gallery from "@/components/Gallery";
 import { GalleryIntro } from "@/components/GalleryIntro";
 import { Footer } from "@/components/Footer";
 import { BookingProvider } from "@/components/BookingModal";
-import { Reveal } from "@/components/Reveal";
 
 
 export const Route = createFileRoute("/")({
@@ -45,16 +44,16 @@ function Index() {
     <div className="relative min-h-screen bg-[#EFF6FF] pt-20 xl:pt-[100px]">
       <Header />
       <Hero />
-      <Reveal><QuoteBlock /></Reveal>
-      <Reveal><Services /></Reveal>
-      <Reveal><PromoBanner /></Reveal>
+      <QuoteBlock />
+      <Services />
+      <PromoBanner />
       
-      <Reveal><StatsSection /></Reveal>
-      <Reveal><ApproachCopy /></Reveal>
+      <StatsSection />
+      <ApproachCopy />
       
       
-      <Reveal><Programs /></Reveal>
-      <Reveal><PromoBanner
+      <Programs />
+      <PromoBanner
         title={
           <>
             С 1 сентября часть курсов подорожает, а пока
@@ -70,11 +69,10 @@ function Index() {
           </>
         }
       />
-      </Reveal>
-      <Reveal><Education /></Reveal>
-      <Reveal><GalleryIntro /></Reveal>
-      <Reveal><Gallery /></Reveal>
-      <Reveal><Faq /></Reveal>
+      <Education />
+      <GalleryIntro />
+      <Gallery />
+      <Faq />
       <Footer />
 
 
