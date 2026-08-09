@@ -20,7 +20,6 @@ const IMGS: string[] = [
   "/images/uslugi-limfodrenazhnyi-massazh.jpg",
   "/images/uslugi-massazh-litsa.jpg",
   "/images/uslugi-atmosfera-polotenca-white.jpg",
-  "/images/uslugi-massazh-spiny-i-shei.jpg",
 ];
 
 
