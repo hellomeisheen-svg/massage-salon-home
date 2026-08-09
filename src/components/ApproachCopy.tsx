@@ -56,16 +56,16 @@ export function ApproachCopy() {
         {/* Right column — Среда вокруг */}
         <div className="rounded-[12px] border border-[#daebff] bg-white p-6 sm:p-8 xl:p-12">
           <h3
-            className="text-center text-[30px] font-light leading-[1.1] text-[#1C3C8C] sm:text-left sm:text-[38px] xl:text-[44px]"
+            className="text-[30px] font-light leading-[1.1] text-[#1C3C8C] sm:text-left sm:text-[38px] xl:text-[44px]"
             style={{ fontFamily: heading }}
           >
             Всё, чтобы вы чувствовали себя спокойно, безопасно и комфортно с первых минут
           </h3>
 
-          <ul className="mt-[120px] flex flex-col gap-8 text-center sm:mt-[140px] sm:text-left xl:mt-[140px] xl:gap-[40px]">
+          <ul className="mt-[120px] flex flex-col gap-8 sm:mt-[140px] sm:text-left xl:mt-[140px] xl:gap-[40px]">
             {environmentItems.map((item, i) => (
               <li key={i} className="group">
-                  <div className="flex flex-col items-center gap-4 text-center sm:grid sm:grid-cols-[auto_1fr] sm:items-start sm:gap-x-6 sm:gap-y-2 sm:text-left">
+                  <div className="flex flex-col gap-4 sm:grid sm:grid-cols-[auto_1fr] sm:items-start sm:gap-x-6 sm:gap-y-2 sm:text-left">
                     <div className="pb-2 sm:row-span-2 sm:pb-0">
                       <NumberBadge number={i + 1} />
                     </div>
