@@ -134,7 +134,7 @@ export function Footer() {
               </p>
               <div className="mt-5 flex items-center gap-2">
                 <a
-                  href="https://maks.ru"
+                  href="https://max.ru/u/f9LHodD0cOLS1ZC9ThcQkVLRVzcK-MbYZ7JVAg8PC5Tx9LyihgOVdPnzaxM"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Макс — мессенджер"
