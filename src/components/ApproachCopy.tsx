@@ -65,20 +65,20 @@ export function ApproachCopy() {
           <ul className="mt-[120px] sm:mt-[140px] xl:mt-[140px] flex flex-col gap-8 xl:gap-[40px]">
             {environmentItems.map((item, i) => (
               <li key={i} className="group">
-                <div className="flex flex-col items-start gap-8 xl:grid xl:grid-cols-[auto_1fr] xl:gap-x-5 xl:gap-y-2">
-                  <div className="xl:row-span-2">
-                    <NumberBadge number={i + 1} />
+                  <div className="flex flex-col items-start gap-4 xl:grid xl:grid-cols-[auto_1fr] xl:gap-x-5 xl:gap-y-2">
+                    <div className="xl:row-span-2">
+                      <NumberBadge number={i + 1} />
+                    </div>
+                    <h4
+                      className="text-[22px] xl:text-[24px] font-normal leading-[1] text-[#1C3C8C]"
+                      style={{ fontFamily: heading }}
+                    >
+                      {item.title}
+                    </h4>
+                    <p className="body-text text-[#8D9DC5]">
+                      {item.text}
+                    </p>
                   </div>
-                  <h4
-                    className="text-[22px] xl:text-[24px] font-normal leading-[1] text-[#1C3C8C]"
-                    style={{ fontFamily: heading }}
-                  >
-                    {item.title}
-                  </h4>
-                  <p className="mt-4 body-text text-[#8D9DC5] xl:mt-0">
-                    {item.text}
-                  </p>
-                </div>
               </li>
             ))}
           </ul>
