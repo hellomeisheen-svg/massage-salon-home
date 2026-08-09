@@ -83,7 +83,7 @@ export function Education() {
             src={tatianaPhoto.url}
             alt="Татьяна Злобина — мастер кабинета Седьмое небо"
             loading="lazy"
-            className="w-full h-[480px] sm:h-[640px] xl:absolute xl:inset-0 xl:h-full object-cover object-top sm:object-center"
+            className="w-full h-[480px] sm:h-[640px] rounded-[12px] xl:absolute xl:inset-0 xl:h-full object-cover object-top sm:object-center"
           />
           <div className="relative mt-4 xl:absolute xl:inset-x-0 xl:bottom-0 xl:mt-0 xl:px-8 xl:pb-8">
             <div className="relative rounded-[12px] border border-[#DAEBFF] bg-white p-8 sm:p-12 xl:p-10 shadow-[0_20px_50px_-12px_rgba(74,127,214,0.08)] flex flex-col xl:flex-row xl:items-end justify-between gap-6 xl:gap-8">
