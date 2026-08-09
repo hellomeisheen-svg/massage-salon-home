@@ -170,11 +170,11 @@ export function Footer() {
             </button>
           </div>
 
-          <div className="mt-5 pt-5 border-t border-[#daebff] flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
+          <div className="mt-5 pt-5 border-t border-[#daebff] flex flex-col xl:flex-row items-start xl:items-center justify-between gap-3">
             <p className="text-[13px] text-[#1c3c8c]/60 font-light">
               © {new Date().getFullYear()} Седьмое небо. Все права защищены.
             </p>
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6">
+            <div className="flex flex-col xl:flex-row items-start xl:items-center gap-3 xl:gap-6">
               <a
                 href="/privacy-policy"
                 className="text-[13px] text-[#1c3c8c]/60 hover:text-[#1c3c8c] transition-colors font-light"
