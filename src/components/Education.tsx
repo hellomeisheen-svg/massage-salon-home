@@ -100,9 +100,9 @@ export function Education() {
                   className="text-[16px] font-light leading-[1.5] text-[#8D9DC5] xl:max-w-[480px]"
                   style={{ fontFamily: "'Inter', sans-serif" }}
                 >
-                  Татьяна Злобина —
+                  Татьяна Злобина — Мастер кабинета,
                   <br className="hidden xl:inline" />
-                  Мастер кабинета, специалист по оздоровительным практикам
+                  специалист по оздоровительным практикам
                 </p>
               </div>
 
