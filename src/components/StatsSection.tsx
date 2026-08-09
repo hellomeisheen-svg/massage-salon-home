@@ -25,8 +25,8 @@ const stats = [
 export function StatsSection() {
   return (
     <section
-      id="stats"
-      className="bg-[#EFF6FF] pt-[60px] pb-0 sm:pt-[70px] sm:pb-0 xl:pt-[140px] xl:pb-0"
+      id="advantages"
+      className="scroll-mt-[120px] bg-[#EFF6FF] pt-[60px] pb-0 sm:pt-[70px] sm:pb-0 xl:pt-[140px] xl:pb-0"
     >
       <div className="container-1900">
         <div className="flex flex-col gap-10 xl:grid xl:grid-cols-2 xl:gap-5 xl:items-start">
