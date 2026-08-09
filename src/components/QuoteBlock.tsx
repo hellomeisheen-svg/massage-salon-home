@@ -72,9 +72,7 @@ export function QuoteBlock() {
           className="max-w-none sm:max-w-[900px] xl:max-w-[1100px] text-[30px] font-light leading-[1.15] text-[#1C3C8C] sm:text-[38px] sm:leading-[1.18] xl:text-[54px] xl:leading-[1.15]"
           style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
         >
-          Ваше самочувствие&nbsp;— главный ориентир.
-          <br />
-          Формат, длительность и интенсивность практики подбираются под вас.
+          Здесь можно выдохнуть и&nbsp;побыть в&nbsp;спокойном ритме. Работа с&nbsp;тем состоянием, в&nbsp;котором вы&nbsp;пришли&nbsp;— без&nbsp;шаблонов и&nbsp;без&nbsp;спешки
         </h2>
 
         {/* Mobile-only photo tiles */}
