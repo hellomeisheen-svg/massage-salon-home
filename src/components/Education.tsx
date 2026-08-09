@@ -97,10 +97,12 @@ export function Education() {
                 </blockquote>
 
                 <p
-                  className="text-[16px] font-light leading-[1.5] text-[#8D9DC5]"
+                  className="text-[16px] font-light leading-[1.5] text-[#8D9DC5] xl:max-w-[400px]"
                   style={{ fontFamily: "'Inter', sans-serif" }}
                 >
-                  Татьяна Злобина — Мастер кабинета, специалист по оздоровительным практикам
+                  Татьяна Злобина —
+                  <br className="hidden xl:inline" />
+                  Мастер кабинета, специалист по оздоровительным практикам
                 </p>
               </div>
 
@@ -109,7 +111,7 @@ export function Education() {
                 alt="Подпись Татьяны Злобиной"
                 width={240}
                 height={97}
-                className="h-auto w-[160px] sm:w-[200px] xl:w-[180px] shrink-0 self-end xl:absolute xl:bottom-[-50px] xl:right-[-10px]"
+                className="h-auto w-[160px] sm:w-[200px] xl:w-[180px] shrink-0 self-end xl:absolute xl:bottom-[-20px] xl:right-[-10px]"
                 loading="lazy"
               />
             </div>
