@@ -512,12 +512,12 @@ button:focus-visible {
 img[data-reveal-zoom] {
   transition: transform 1400ms cubic-bezier(0.22, 1, 0.36, 1);
 }
-[data-reveal="zoom"][data-revealed="false"] [data-reveal-zoom] img,
-[data-reveal="zoom"][data-revealed="false"] img[data-reveal-zoom] {
+[data-revealed="false"] [data-reveal-zoom] img,
+[data-revealed="false"] img[data-reveal-zoom] {
   transform: scale(1);
 }
-[data-reveal="zoom"][data-revealed="true"] [data-reveal-zoom] img,
-[data-reveal="zoom"][data-revealed="true"] img[data-reveal-zoom] {
+[data-revealed="true"] [data-reveal-zoom] img,
+[data-revealed="true"] img[data-reveal-zoom] {
   transform: scale(1.03);
 }
 

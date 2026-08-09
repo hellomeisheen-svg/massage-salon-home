@@ -48,6 +48,7 @@ export function ApproachCopy() {
               loading="lazy"
               width={896}
               height={1200}
+              data-reveal-zoom
               className="absolute inset-0 w-full h-full object-cover"
             />
           </div>

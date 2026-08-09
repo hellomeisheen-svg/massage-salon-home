@@ -83,6 +83,7 @@ export function Education() {
             src={tatianaPhoto.url}
             alt="Татьяна Злобина — мастер кабинета Седьмое небо"
             loading="lazy"
+            data-reveal-zoom
             className="w-full h-[480px] sm:h-[720px] rounded-[12px] border border-[#DAEBFF] xl:border-0 xl:absolute xl:inset-0 xl:h-full object-cover object-top sm:object-center"
           />
           <div className="relative mt-4 xl:absolute xl:inset-x-0 xl:bottom-0 xl:mt-0 xl:px-8 xl:pb-8">
