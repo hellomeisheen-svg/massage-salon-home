@@ -9,10 +9,11 @@ import {
 
 const IMGS: string[] = [
   "/images/uslugi-klassicheskii-massazh.jpg",
-  "/images/uslugi-girudoterapiya-litsa.jpg",
   "/images/uslugi-massazh-vorotnikovoi-zony.jpg",
+  "/images/uslugi-girudoterapiya-litsa.jpg",
   "/images/uslugi-atmosfera-ruki-maslo-white.jpg",
   "/images/uslugi-massazh-nog.jpg",
+
   "/images/uslugi-atmosfera-chai-white.jpg",
   "/images/uslugi-massazh-golovy.jpg",
   "/images/uslugi-girudoterapiya.jpg",
