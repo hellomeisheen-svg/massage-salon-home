@@ -122,7 +122,7 @@ function formatDurationValue(min: number) {
 
 function formatSessionLine(sessionCount: number, duration: string) {
   if (sessionCount === 1) {
-    return `1 сеанс — ${duration}`;
+    return `1 сеанс · ${duration}`;
   }
   const sessionWord = pluralize(sessionCount, ["сеанс", "сеанса", "сеансов"]);
   return `${sessionCount}\u00A0${sessionWord} · ${duration}`;
