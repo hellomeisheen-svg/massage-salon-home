@@ -89,10 +89,10 @@ export function Education() {
             <div className="rounded-[12px] border border-[#DAEBFF] bg-white p-8 sm:p-12 xl:p-10 shadow-[0_20px_50px_-12px_rgba(74,127,214,0.08)] flex flex-col xl:flex-row xl:items-end justify-between gap-6 xl:gap-10">
               <div className="flex flex-col gap-3 sm:gap-4">
                 <blockquote
-                  className="text-[22px] font-normal leading-[1.4] text-[#1C3C8C] sm:text-[24px] xl:text-[28px]"
+                  className="text-[20px] font-normal leading-[1.4] text-[#1C3C8C] sm:text-[22px] xl:text-[24px]"
                   style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
                 >
-                  «Я не обещаю мгновенных изменений. Я обещаю внимание, тишину и время, в котором не нужно никуда спешить.»
+                  «Иногда достаточно тишины, бережного внимания и времени, чтобы почувствовать себя лучше.»
                 </blockquote>
 
                 <p
