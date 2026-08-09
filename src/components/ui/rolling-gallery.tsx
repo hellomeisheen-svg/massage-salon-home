@@ -16,12 +16,17 @@ const IMGS: string[] = [
   "/images/uslugi-atmosfera-ruki-maslo-white.jpg",
   "/images/uslugi-massazh-nog.jpg",
   "/images/uslugi-atmosfera-chai-white.jpg",
-  "/images/uslugi-girudoterapiya.jpg",
   "/images/uslugi-massazh-golovy.jpg",
+  "/images/uslugi-atmosfera-stones-white.jpg",
+  "/images/uslugi-girudoterapiya.jpg",
+  "/images/uslugi-atmosfera-oil-white.jpg",
   "/images/uslugi-limfodrenazhnyi-massazh.jpg",
+  "/images/uslugi-atmosfera-towels-white.jpg",
   "/images/uslugi-massazh-litsa.jpg",
+  "/images/uslugi-atmosfera-couch-white.jpg",
   "/images/uslugi-massazh-spiny-i-shei.jpg",
 ];
+
 
 
 interface RollingGalleryProps {
