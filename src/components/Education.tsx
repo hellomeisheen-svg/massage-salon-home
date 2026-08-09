@@ -86,7 +86,7 @@ export function Education() {
             className="w-full h-[480px] rounded-[12px] sm:absolute sm:inset-0 sm:h-full object-cover object-top sm:object-center"
           />
           <div className="relative sm:absolute inset-x-0 bottom-0 mt-4 sm:mt-0 xl:px-8 xl:pb-8">
-            <div className="rounded-[12px] border border-[#DAEBFF] bg-white p-8 sm:p-12 xl:p-10 shadow-[0_20px_50px_-12px_rgba(74,127,214,0.08)] flex flex-col gap-6 sm:gap-8">
+            <div className="rounded-[12px] border border-[#DAEBFF] bg-white p-8 sm:p-12 xl:p-10 shadow-[0_20px_50px_-12px_rgba(74,127,214,0.08)] flex flex-col gap-4 sm:gap-6">
               <blockquote
                 className="text-[22px] font-normal leading-[1.4] text-[#1C3C8C] sm:text-[24px] xl:text-[28px]"
                 style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
