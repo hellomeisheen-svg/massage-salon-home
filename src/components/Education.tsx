@@ -86,30 +86,31 @@ export function Education() {
             className="w-full h-[480px] rounded-[12px] sm:absolute sm:inset-0 sm:h-full object-cover object-top sm:object-center"
           />
           <div className="relative sm:absolute inset-x-0 bottom-0 mt-4 sm:mt-0 xl:px-8 xl:pb-8">
-            <div className="rounded-[12px] border border-[#DAEBFF] bg-white p-8 sm:p-12 xl:p-10 shadow-[0_20px_50px_-12px_rgba(74,127,214,0.08)] flex flex-col gap-4 sm:gap-6">
-              <blockquote
-                className="text-[22px] font-normal leading-[1.4] text-[#1C3C8C] sm:text-[24px] xl:text-[28px]"
-                style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
-              >
-                «Я не обещаю мгновенных изменений. Я обещаю внимание, тишину и время, в котором не нужно никуда спешить.»
-              </blockquote>
+            <div className="relative rounded-[12px] border border-[#DAEBFF] bg-white p-8 sm:p-12 xl:p-10 shadow-[0_20px_50px_-12px_rgba(74,127,214,0.08)]">
+              <div className="flex flex-col gap-3 sm:gap-4">
+                <blockquote
+                  className="text-[22px] font-normal leading-[1.4] text-[#1C3C8C] sm:text-[24px] xl:text-[28px]"
+                  style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
+                >
+                  «Я не обещаю мгновенных изменений. Я обещаю внимание, тишину и время, в котором не нужно никуда спешить.»
+                </blockquote>
 
-              <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 sm:gap-8">
                 <p
                   className="text-[16px] font-light leading-[1.5] text-[#8D9DC5]"
                   style={{ fontFamily: "'Inter', sans-serif" }}
                 >
                   Татьяна Злобина — Мастер кабинета, специалист по оздоровительным практикам
                 </p>
-                <img
-                  src="/images/signature.svg"
-                  alt="Подпись Татьяны Злобиной"
-                  width={240}
-                  height={97}
-                  className="h-auto w-[180px] sm:w-[220px] xl:w-[240px] shrink-0 self-end sm:self-auto"
-                  loading="lazy"
-                />
               </div>
+
+              <img
+                src="/images/signature.svg"
+                alt="Подпись Татьяны Злобиной"
+                width={240}
+                height={97}
+                className="h-auto w-[160px] sm:w-[200px] xl:w-[240px] mt-6 sm:mt-8 ml-auto"
+                loading="lazy"
+              />
             </div>
           </div>
         </div>
