@@ -97,7 +97,7 @@ export function Education() {
                 </blockquote>
 
                 <p
-                  className="text-[16px] font-light leading-[1.5] text-[#8D9DC5] xl:max-w-[480px]"
+                  className="text-[16px] font-light leading-[1.5] text-[#8D9DC5] xl:max-w-[400px]"
                   style={{ fontFamily: "'Inter', sans-serif" }}
                 >
                   Татьяна Злобина —
