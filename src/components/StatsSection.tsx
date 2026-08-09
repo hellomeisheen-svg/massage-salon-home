@@ -6,7 +6,7 @@ const stats = [
     description: "Снова выбрали кабинет для заботы о себе",
   },
   {
-    value: "10+",
+    value: "5+",
     label: "Лет практики",
     description: "Работа с телом, банками и гирудотерапией",
   },
@@ -63,7 +63,7 @@ export function StatsSection() {
                 <span className="mt-2 text-[15px] font-medium leading-[1.3] text-[#1C3C8C] sm:text-[16px]">
                   {stat.label}
                 </span>
-                <span className="mt-1 text-[14px] font-light leading-[1.35] text-[#4A7FD6] sm:text-[15px]">
+                <span className="mt-1 text-[14px] font-light leading-[1.35] text-[#8D9DC5] sm:text-[15px]">
                   {stat.description}
                 </span>
               </div>
