@@ -92,8 +92,7 @@ export function Education() {
                   className="text-[20px] font-normal leading-[1.4] text-[#1C3C8C] sm:text-[22px] xl:text-[24px]"
                   style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
                 >
-                  «Иногда достаточно тишины, бережного внимания и времени,
-                  <br className="hidden xl:inline" /> чтобы почувствовать себя лучше.»
+                  «Иногда достаточно тишины, бережного внимания и времени, чтобы почувствовать себя лучше.»
                 </blockquote>
 
                 <p
