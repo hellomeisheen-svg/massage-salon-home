@@ -49,7 +49,7 @@ function scrollToTop() {
 
 export function Footer() {
   return (
-    <footer id="contacts" className="bg-[#EFF6FF] pt-[60px] xl:pt-[140px] pb-8">
+    <footer id="contacts" className="scroll-mt-[120px] bg-[#EFF6FF] pt-[60px] xl:pt-[140px] pb-8">
       <div className="container-1900">
         {/* Top card: map + contacts */}
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-5">
