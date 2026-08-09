@@ -43,7 +43,7 @@ export function StatsSection() {
             </span>
 
             <h2
-              className="mt-6 text-[30px] font-light leading-[1.1] text-[#1C3C8C] sm:text-[38px] xl:text-[54px] xl:leading-[1.08]"
+              className="mt-6 text-[30px] sm:text-[38px] xl:text-[44px] font-light leading-[1.15] text-[#1C3C8C]"
               style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
             >
               Бережная работа с телом, в которой важны опыт, понятный диалог и внимание к вашему запросу.
