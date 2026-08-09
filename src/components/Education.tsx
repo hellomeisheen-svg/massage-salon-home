@@ -32,7 +32,7 @@ function EduCard({ item }: { item: EduItem }) {
   return (
     <div className="relative rounded-[12px] bg-white border border-[#daebff] px-6 sm:px-7 xl:px-8 py-[30px]">
       {city && (
-        <span className="absolute -top-3 right-4 rounded-full bg-[#EFF6FF] border border-[#daebff] px-3.5 py-1.5 text-[14px] font-medium tracking-wide text-[#1C3C8C] leading-none">
+        <span className="absolute -top-3 right-4 rounded-full bg-[#EFF6FF] border border-[#daebff] px-3.5 py-1.5 text-[14px] font-medium tracking-wide text-[#1C3C8C] leading-none xl:hidden">
           {city}
         </span>
       )}
@@ -40,7 +40,8 @@ function EduCard({ item }: { item: EduItem }) {
         className="text-[#1C3C8C] text-[20px] sm:text-[32px] xl:text-[26px] leading-[1.2] pr-0 sm:pr-24 whitespace-nowrap sm:whitespace-normal"
         style={{ fontFamily: heading }}
       >
-        {name}
+        <span className="xl:hidden">{name}</span>
+        <span className="hidden xl:inline">{item.school}</span>
       </h3>
 
       <ul className="mt-4 space-y-2 xl:space-y-1.5">
