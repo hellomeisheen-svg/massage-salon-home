@@ -157,7 +157,7 @@ function PageHero() {
         </ul>
 
         <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-          <button type="button" onClick={openBooking} className="btn-primary sm:w-[250px]">
+          <button type="button" onClick={() => openBooking()} className="btn-primary sm:w-[250px]">
             Записаться
           </button>
           <a
@@ -315,7 +315,7 @@ function Prices() {
                 </div>
               </div>
 
-              <button type="button" onClick={openBooking} className="btn-primary mt-8 w-full">
+              <button type="button" onClick={() => openBooking()} className="btn-primary mt-8 w-full">
                 Записаться
               </button>
             </article>
