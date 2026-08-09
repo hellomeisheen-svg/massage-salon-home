@@ -10,7 +10,6 @@ import {
 const IMGS: string[] = [
   "/images/uslugi-klassicheskii-massazh.jpg",
   "/images/uslugi-girudoterapiya-litsa.jpg",
-  "/images/uslugi-atmosfera-polotenca-white.jpg",
   "/images/uslugi-massazh-vorotnikovoi-zony.jpg",
   "/images/uslugi-atmosfera-ruki-maslo-white.jpg",
   "/images/uslugi-massazh-nog.jpg",
@@ -19,7 +18,6 @@ const IMGS: string[] = [
   "/images/uslugi-girudoterapiya.jpg",
   "/images/uslugi-atmosfera-oil-white.jpg",
   "/images/uslugi-limfodrenazhnyi-massazh.jpg",
-  "/images/uslugi-atmosfera-towels-white.jpg",
   "/images/uslugi-massazh-litsa.jpg",
   "/images/uslugi-massazh-spiny-i-shei.jpg",
 ];
