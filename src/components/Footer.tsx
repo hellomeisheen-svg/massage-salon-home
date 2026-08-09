@@ -94,6 +94,17 @@ export function Footer() {
                 <div className="body-text text-[#1c3c8c]/70 mb-1">Режим работы</div>
                 <div className="body-text text-[#1c3c8c]">пн-сб с 9:00 до 22:00</div>
               </li>
+              <li className="text-[#1c3c8c] leading-[150%] font-light">
+                <div className="body-text text-[#1c3c8c]/70 mb-1">Рейтинг в Яндекс Справочнике</div>
+                <iframe
+                  src="https://yandex.ru/sprav/widget/rating-badge/130811843218?type=rating"
+                  width="150"
+                  height="50"
+                  title="Рейтинг Яндекс Справочника"
+                  className="border-0"
+                  loading="lazy"
+                />
+              </li>
             </ul>
 
             <a
