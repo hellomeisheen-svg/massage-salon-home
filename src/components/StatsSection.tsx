@@ -1,13 +1,3 @@
-const Sparkle = ({ className }: { className?: string }) => (
-  <svg
-    className={className}
-    viewBox="0 0 24 24"
-    fill="currentColor"
-    aria-hidden="true"
-  >
-    <path d="M12 0 L13.2 10.8 L24 12 L13.2 13.2 L12 24 L10.8 13.2 L0 12 L10.8 10.8 Z" />
-  </svg>
-);
 
 const stats = [
   {
@@ -42,22 +32,21 @@ export function StatsSection() {
         <div className="flex flex-col gap-10 xl:grid xl:grid-cols-2 xl:gap-5 xl:items-start">
           {/* Left: label + heading */}
           <div>
-            <div className="flex items-center gap-3 mb-6 sm:mb-8">
-              <Sparkle className="h-6 w-6 text-[#1C3C8C]" />
-              <span className="text-sm sm:text-base font-light text-[#1C3C8C] tracking-[-0.02em]">
-                Внимание к каждому состоянию и мягкая забота на каждом сеансе
-              </span>
-            </div>
+            <span
+              className="inline-flex items-center gap-2 px-4 py-1.5 text-[13px] font-medium tracking-wide text-white"
+              style={{
+                borderRadius: "4px",
+                backgroundImage: "linear-gradient(to bottom, #A2CFFE, #88C1FF)",
+              }}
+            >
+              Преимущества
+            </span>
 
             <h2
-              className="text-[30px] font-light leading-[1.1] text-[#1C3C8C] sm:text-[38px] xl:text-[54px] xl:leading-[1.08]"
+              className="mt-6 text-[30px] font-light leading-[1.1] text-[#1C3C8C] sm:text-[38px] xl:text-[54px] xl:leading-[1.08]"
               style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
             >
-              Кабинет, где забота о теле переплетается с вниманием к состоянию, а{"\u00A0"}
-              каждый визит помогает{"\u00A0"}
-              <span className="bg-gradient-to-r from-[#4A7FD6] to-[#88C1FF] bg-clip-text text-transparent">
-                вернуться к себе
-              </span>
+              Бережная работа с телом, в которой важны опыт, понятный диалог и внимание к вашему запросу.
             </h2>
           </div>
 
