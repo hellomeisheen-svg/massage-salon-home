@@ -96,16 +96,6 @@ function pluralize(n: number, forms: [string, string, string]) {
   return forms[2];
 }
 
-const unitForms: Record<ServiceInfo["unit"], [string, string, string]> = {
-  "сеанс": ["сеанс", "сеанса", "сеансов"],
-  "постановка": ["постановка", "постановки", "постановок"],
-  "банка": ["банка", "банки", "банок"],
-};
-
-function formatSessions(n: number, unit: ServiceInfo["unit"]) {
-  return `${n}\u00A0${pluralize(n, unitForms[unit])}`;
-}
-
 function formatDurationValue(min: number) {
   const hours = Math.floor(min / 60);
   const minutes = min % 60;
