@@ -39,7 +39,7 @@ export function StatsSection() {
       className="bg-[#EFF6FF] pt-[60px] pb-0 sm:pt-[70px] sm:pb-0 xl:pt-[140px] xl:pb-0"
     >
       <div className="container-1900">
-        <div className="flex flex-col gap-10 xl:grid xl:grid-cols-2 xl:gap-5 xl:items-start px-4 sm:px-5 xl:px-0">
+        <div className="flex flex-col gap-10 xl:grid xl:grid-cols-2 xl:gap-5 xl:items-start">
           {/* Left: label + heading */}
           <div>
             <div className="flex items-center gap-3 mb-6 sm:mb-8">
