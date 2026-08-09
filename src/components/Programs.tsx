@@ -106,8 +106,36 @@ function formatSessions(n: number, unit: ServiceInfo["unit"]) {
   return `${n}\u00A0${pluralize(n, unitForms[unit])}`;
 }
 
-function formatDuration(totalMin: number) {
-  return `${totalMin}\u00A0${pluralize(totalMin, ["минута", "минуты", "минут"])}`;
+function formatDurationValue(min: number) {
+  const hours = Math.floor(min / 60);
+  const minutes = min % 60;
+  if (hours === 0) {
+    return {
+      text: `${min}\u00A0${pluralize(min, ["минута", "минуты", "минут"])}`,
+      amount: min,
+      unit: "min" as const,
+    };
+  }
+  if (minutes === 0) {
+    return {
+      text: `${hours}\u00A0${pluralize(hours, ["час", "часа", "часов"])}`,
+      amount: hours,
+      unit: "hour" as const,
+    };
+  }
+  return {
+    text: `${hours}\u00A0${pluralize(hours, ["час", "часа", "часов"])} ${minutes}\u00A0${pluralize(minutes, ["минута", "минуты", "минут"])}`,
+    amount: min,
+    unit: "mixed" as const,
+  };
+}
+
+function formatSessionLine(sessionCount: number, duration: string) {
+  if (sessionCount === 1) {
+    return `1 сеанс — ${duration}`;
+  }
+  const sessionWord = pluralize(sessionCount, ["сеанс", "сеанса", "сеансов"]);
+  return `В пакете: ${sessionCount}\u00A0${sessionWord} · ${duration}`;
 }
 
 function computeItem(it: ProgramItem) {
@@ -115,9 +143,10 @@ function computeItem(it: ProgramItem) {
   const isHirudo = it.key === "hirudoMed" || it.key === "hirudoCosm";
   const totalMin = isHirudo ? 120 : info.durationMin * it.sessions;
   const subtotal = info.priceMin * it.sessions;
+  const durationText = formatDurationValue(totalMin).text;
   return {
     title: info.title,
-    duration: `${formatSessions(it.sessions, info.unit)}  •  ${formatDuration(totalMin)}`,
+    duration: formatSessionLine(it.sessions, durationText),
     subtotal,
   };
 }
