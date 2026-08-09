@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const Star = ({ className }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -9,13 +9,32 @@ const Star = ({ className }: { className?: string }) => (
 export function Preloader() {
   const [hidden, setHidden] = useState(false);
   const [leaving, setLeaving] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const loadedRef = useRef(false);
 
   useEffect(() => {
+    let progressInterval: ReturnType<typeof setInterval>;
     let removeTimer: ReturnType<typeof setTimeout>;
+
     const finish = () => {
+      if (loadedRef.current) return;
+      loadedRef.current = true;
+      clearInterval(progressInterval);
+      setProgress(100);
       setLeaving(true);
       removeTimer = setTimeout(() => setHidden(true), 500);
     };
+
+    const tick = () => {
+      setProgress((prev) => {
+        if (prev >= 90) return prev;
+        const remaining = 100 - prev;
+        const step = Math.max(1, Math.floor(remaining * 0.08));
+        return Math.min(prev + step, 90);
+      });
+    };
+
+    progressInterval = setInterval(tick, 120);
 
     if (document.readyState === "complete") {
       finish();
@@ -24,6 +43,7 @@ export function Preloader() {
     }
 
     return () => {
+      clearInterval(progressInterval);
       clearTimeout(removeTimer);
       window.removeEventListener("load", finish);
     };
@@ -34,14 +54,22 @@ export function Preloader() {
   return (
     <div
       className={`preloader ${leaving ? "preloader-leaving" : ""}`}
-      role="status"
-      aria-live="polite"
+      role="progressbar"
       aria-label="Загрузка"
+      aria-valuemin={0}
+      aria-valuemax={100}
+      aria-valuenow={progress}
     >
       <div className="flex flex-col items-center">
         <Star className="preloader-star h-6 w-6 text-[#1C3C8C]" />
+        <span className="preloader-percent" aria-hidden="true">
+          {progress}%
+        </span>
         <div className="preloader-track">
-          <span className="preloader-bar" />
+          <span
+            className="preloader-bar"
+            style={{ transform: `scaleX(${progress / 100})` }}
+          />
         </div>
       </div>
     </div>
