@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as GirudoterapiyaRouteImport } from './routes/girudoterapiya'
 import { Route as IndexRouteImport } from './routes/index'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -23,6 +24,11 @@ const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
   path: '/privacy-policy',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GirudoterapiyaRoute = GirudoterapiyaRouteImport.update({
+  id: '/girudoterapiya',
+  path: '/girudoterapiya',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -31,30 +37,34 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/girudoterapiya': typeof GirudoterapiyaRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/girudoterapiya': typeof GirudoterapiyaRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/girudoterapiya': typeof GirudoterapiyaRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/privacy-policy' | '/sitemap.xml'
+  fullPaths: '/' | '/girudoterapiya' | '/privacy-policy' | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/privacy-policy' | '/sitemap.xml'
-  id: '__root__' | '/' | '/privacy-policy' | '/sitemap.xml'
+  to: '/' | '/girudoterapiya' | '/privacy-policy' | '/sitemap.xml'
+  id: '__root__' | '/' | '/girudoterapiya' | '/privacy-policy' | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  GirudoterapiyaRoute: typeof GirudoterapiyaRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
@@ -75,6 +85,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivacyPolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/girudoterapiya': {
+      id: '/girudoterapiya'
+      path: '/girudoterapiya'
+      fullPath: '/girudoterapiya'
+      preLoaderRoute: typeof GirudoterapiyaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -87,9 +104,20 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  GirudoterapiyaRoute: GirudoterapiyaRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
