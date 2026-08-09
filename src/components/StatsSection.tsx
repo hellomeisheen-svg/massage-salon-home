@@ -38,10 +38,10 @@ export function StatsSection() {
       id="stats"
       className="bg-[#EFF6FF] pt-[60px] pb-0 sm:pt-[70px] sm:pb-0 xl:pt-[140px] xl:pb-0"
     >
-      <div className="container-1900 px-4 sm:px-5 xl:px-8">
-        <div className="flex flex-col gap-10 xl:flex-row xl:gap-16 xl:items-start">
+      <div className="container-1900">
+        <div className="flex flex-col gap-10 xl:grid xl:grid-cols-2 xl:gap-5 xl:items-start px-4 sm:px-5 xl:px-0">
           {/* Left: label + heading */}
-          <div className="xl:w-[55%]">
+          <div>
             <div className="flex items-center gap-3 mb-6 sm:mb-8">
               <Sparkle className="h-6 w-6 text-[#1C3C8C]" />
               <span className="text-sm sm:text-base font-light text-[#1C3C8C] tracking-[-0.02em]">
@@ -62,7 +62,7 @@ export function StatsSection() {
           </div>
 
           {/* Right: stats grid */}
-          <div className="grid grid-cols-2 gap-x-6 gap-y-8 sm:gap-x-10 sm:gap-y-12 xl:w-[45%] xl:pt-2">
+          <div className="grid grid-cols-2 gap-x-6 gap-y-8 sm:gap-x-10 sm:gap-y-12 xl:pt-2">
             {stats.map((stat, i) => (
               <div key={i} className="flex flex-col">
                 <span
