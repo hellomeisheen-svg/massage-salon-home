@@ -1,4 +1,5 @@
 import tatianaPhoto from "@/assets/tatiana-zlobina.jpg.asset.json";
+import tatianaSignature from "@/assets/tatiana-signature.svg.asset.json";
 
 const heading = "'Roslindale Cyrillic Display Condensed', serif";
 
@@ -107,10 +108,10 @@ export function Education() {
               </div>
 
               <img
-                src="/images/signature.svg"
+                src={tatianaSignature.url}
                 alt="Подпись Татьяны Злобиной"
-                width={240}
-                height={97}
+                width={295}
+                height={113}
                 className="h-auto w-[160px] sm:hidden xl:block xl:w-[225px] shrink-0 self-end xl:absolute xl:bottom-[40px] xl:right-[30px]"
                 loading="lazy"
               />
