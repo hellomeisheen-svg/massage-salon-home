@@ -69,6 +69,8 @@ const prices = [
     base: 4800,
     perLeech: false,
     items: ["6\u00A0пиявок", "16\u00A0пиявок", "74\u00A0пиявки"],
+    sessionCounts: [1, 3, 6],
+    discounts: [0, 0.1, 0.15],
   },
   {
     zone: "Косметические пиявки",
@@ -76,7 +78,10 @@ const prices = [
     duration: "2\u00A0часа",
     base: 600,
     perLeech: true,
-    items: ["6\u00A0пиявок", "10\u00A0пиявок", "20\u00A0пиявок"],
+    items: ["3\u00A0сеанса", "6\u00A0сеансов"],
+    sessionCounts: [3, 6],
+    leechesPerSession: 6,
+    discounts: [0, 0.15],
   },
 ];
 
