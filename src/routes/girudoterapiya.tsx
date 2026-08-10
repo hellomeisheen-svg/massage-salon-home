@@ -615,6 +615,9 @@ function Faq() {
           {faq.map((f) => (
             <FaqItem key={f.q} q={f.q} a={f.a} />
           ))}
+          <p className="body-text text-[#6B7BA8] italic mt-2">
+            Имеются противопоказания. Необходима предварительная консультация специалиста.
+          </p>
         </div>
       </div>
     </section>
