@@ -162,12 +162,10 @@ function PageHero() {
                 className="text-[38px] font-light leading-[1.12] text-[#1C3C8C] sm:text-[58px] sm:leading-[1.15]"
                 style={heroFont}
               >
-                Гирудотерапия&nbsp;— спокойная работа с&nbsp;самочувствием
+                Гирудотерапия
               </h1>
               <p className="mt-4 text-[16px] font-light leading-[26px] text-[#6B7BA8]">
-                Медицинские и&nbsp;косметические пиявки в&nbsp;тихом кабинете: без спешки,
-                с&nbsp;понятным объяснением каждого шага и&nbsp;вниманием к&nbsp;вашему состоянию
-                до&nbsp;и&nbsp;после сеанса.
+                Бережная практика с использованием медицинских пиявок — для поддержки самочувствия, ощущения лёгкости и более внимательного контакта с телом.
               </p>
               <div className="mt-[30px] flex flex-col gap-3 sm:flex-row sm:gap-4">
                 <a
