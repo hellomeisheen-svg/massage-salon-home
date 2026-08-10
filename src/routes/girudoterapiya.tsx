@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { PromoBanner } from "@/components/PromoBanner";
+import { useState } from "react";
 import { BookingProvider, useBooking } from "@/components/BookingModal";
 import { ServiceCard, serviceTypes } from "@/components/Services";
 
