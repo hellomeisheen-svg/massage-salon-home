@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useBooking } from "@/components/BookingModal";
 
-type Variant = {
+export type Variant = {
   zone: string;
   zoneShort?: string;
   subtitle: string;
@@ -13,13 +13,13 @@ type Variant = {
   multiplyDuration?: boolean;
 };
 
-type ServiceType = {
+export type ServiceType = {
   title: string;
   category: number;
   variants: Variant[];
 };
 
-const serviceTypes: ServiceType[] = [
+export const serviceTypes: ServiceType[] = [
   {
     title: "Гирудотерапия",
     category: 0,
