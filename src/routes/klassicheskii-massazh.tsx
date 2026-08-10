@@ -37,6 +37,7 @@ const content: ServicePageContent = {
   ),
   bookingPrefix: "Классический массаж",
   prioritizeKeys: ["classic", "classicFace"],
+  pricesStyle: "table",
   sections: [
     {
       label: "Об услуге",
