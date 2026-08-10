@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as VektornyiMassazhRouteImport } from './routes/vektornyi-massazh'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as MassazhRouteImport } from './routes/massazh'
@@ -16,6 +17,11 @@ import { Route as GirudoterapiyaRouteImport } from './routes/girudoterapiya'
 import { Route as BankiRouteImport } from './routes/banki'
 import { Route as IndexRouteImport } from './routes/index'
 
+const VektornyiMassazhRoute = VektornyiMassazhRouteImport.update({
+  id: '/vektornyi-massazh',
+  path: '/vektornyi-massazh',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
@@ -54,6 +60,7 @@ export interface FileRoutesByFullPath {
   '/massazh': typeof MassazhRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/vektornyi-massazh': typeof VektornyiMassazhRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -62,6 +69,7 @@ export interface FileRoutesByTo {
   '/massazh': typeof MassazhRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/vektornyi-massazh': typeof VektornyiMassazhRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -71,6 +79,7 @@ export interface FileRoutesById {
   '/massazh': typeof MassazhRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/vektornyi-massazh': typeof VektornyiMassazhRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -81,6 +90,7 @@ export interface FileRouteTypes {
     | '/massazh'
     | '/privacy-policy'
     | '/sitemap.xml'
+    | '/vektornyi-massazh'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -89,6 +99,7 @@ export interface FileRouteTypes {
     | '/massazh'
     | '/privacy-policy'
     | '/sitemap.xml'
+    | '/vektornyi-massazh'
   id:
     | '__root__'
     | '/'
@@ -97,6 +108,7 @@ export interface FileRouteTypes {
     | '/massazh'
     | '/privacy-policy'
     | '/sitemap.xml'
+    | '/vektornyi-massazh'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -106,10 +118,18 @@ export interface RootRouteChildren {
   MassazhRoute: typeof MassazhRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  VektornyiMassazhRoute: typeof VektornyiMassazhRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/vektornyi-massazh': {
+      id: '/vektornyi-massazh'
+      path: '/vektornyi-massazh'
+      fullPath: '/vektornyi-massazh'
+      preLoaderRoute: typeof VektornyiMassazhRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
@@ -162,6 +182,7 @@ const rootRouteChildren: RootRouteChildren = {
   MassazhRoute: MassazhRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  VektornyiMassazhRoute: VektornyiMassazhRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
