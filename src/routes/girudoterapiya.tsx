@@ -241,54 +241,17 @@ function GirudoterapiyaServices() {
 
         <div className="flex flex-col gap-4">
           <div className="ds-card p-6 sm:p-8 xl:p-10 overflow-hidden">
-            <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 xl:gap-10">
-              {/* Left: service info */}
-              <div className="xl:col-span-4 flex flex-col gap-4">
-                <h3
-                  className="text-[22px] sm:text-[26px] font-light leading-[1.2] text-[#1C3C8C]"
-                  style={{ fontFamily: heading }}
-                >
-                  {type.title}
-                </h3>
-                <div className="flex items-center gap-2 text-[#6B7BA8]">
-                  <span className="text-sm font-medium">Длительность</span>
-                  <span className="text-sm">{variantData.duration}</span>
-                </div>
-                <div className="text-[28px] sm:text-[32px] font-light text-[#1C3C8C]">
-                  {variantData.price}
-                </div>
-                <div className="text-sm text-[#6B7BA8]">
-                  1 сеанс — {variantData.duration}
-                </div>
-                <button
-                  onClick={() => openBooking("Гирудотерапия")}
-                  className="btn-primary mt-4 w-full"
-                >
-                  Записаться
-                </button>
-              </div>
-
-              {/* Right: variant toggles + content */}
-              <div className="xl:col-span-8">
-                {/* Variant tabs */}
-                <div className="flex gap-2 mb-6">
-                  {type.variants.map((v, i) => (
-                    <button
-                      key={i}
-                      onClick={() => setVariant(i)}
-                      className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                        i === variant
-                          ? "bg-[#1C3C8C] text-white"
-                          : "bg-[#DAEBFF] text-[#1C3C8C] hover:bg-[#A2CFFE]"
-                      }`}
-                    >
-                      {v.zone}
-                    </button>
-                  ))}
-                </div>
-
+            <div>
+              <div className="w-full">
                 {/* Detailed content */}
                 <div className="text-[#6B7BA8] space-y-6 text-[15px] leading-[1.6]">
+                  <h3
+                    className="text-[22px] sm:text-[26px] font-light leading-[1.2] text-[#1C3C8C]"
+                    style={{ fontFamily: heading }}
+                  >
+                    {type.title}
+                  </h3>
+
                   <h4 className="text-[16px] font-medium text-[#1C3C8C]">Об услуге</h4>
                   <p>Гирудотерапия — процедура с использованием медицинских пиявок, которая проводится после предварительной консультации специалиста. На встрече учитываются жалобы, индивидуальные особенности организма, хронические состояния и принимаемые препараты.</p>
                   <p>Специалист подбирает зоны постановки, количество пиявок и периодичность сеансов индивидуально. Процедура не заменяет диагностику и лечение, назначенное врачом.</p>
