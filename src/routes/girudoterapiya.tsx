@@ -571,7 +571,7 @@ function Faq() {
             className="mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0"
             style={{ fontFamily: heading }}
           >
-            Частые вопросы о&nbsp;гирудотерапии
+            Отвечаю на&nbsp;самые важные вопросы
           </h2>
 
           <div className="mt-8 xl:mt-auto ds-card p-6 sm:p-7 w-full xl:w-1/2 mx-auto xl:mx-0 text-left">
@@ -607,9 +607,6 @@ function Faq() {
           {faq.map((f) => (
             <FaqItem key={f.q} q={f.q} a={f.a} />
           ))}
-          <p className="body-text text-[#6B7BA8] italic mt-2">
-            Имеются противопоказания. Необходима предварительная консультация специалиста.
-          </p>
         </div>
       </div>
     </section>
