@@ -252,7 +252,7 @@ function GirudoterapiyaServices() {
 function Prices() {
   const { openBooking } = useBooking();
   return (
-    <section className="bg-[#EFF6FF] ds-section">
+    <section id="programs" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section">
       <div className="container-1900">
         <h2
           className="text-center ds-h2 text-[#1C3C8C]"
