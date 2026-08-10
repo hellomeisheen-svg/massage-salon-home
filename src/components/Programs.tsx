@@ -147,16 +147,29 @@ function Ruble() {
 
 
 
-export function Programs() {
+type ProgramsProps = {
+  prioritizeKeys?: string[];
+};
+
+export function Programs({ prioritizeKeys }: ProgramsProps = {}) {
   const { openBooking } = useBooking();
   const [active, setActive] = useState(0);
-  const program = programs[active];
+
+  const orderedPrograms = prioritizeKeys
+    ? [...programs].sort((a, b) => {
+        const aHas = a.items.some((i) => prioritizeKeys.includes(i.key));
+        const bHas = b.items.some((i) => prioritizeKeys.includes(i.key));
+        return Number(bHas) - Number(aHas);
+      })
+    : programs;
+
+  const program = orderedPrograms[active];
   const computedItems = program.items.map(computeItem);
   const originalPrice = computedItems.reduce((s, i) => s + i.subtotal, 0);
   const price = Math.round(originalPrice * (1 - DISCOUNT));
 
-  const prev = () => setActive((i) => (i - 1 + programs.length) % programs.length);
-  const next = () => setActive((i) => (i + 1) % programs.length);
+  const prev = () => setActive((i) => (i - 1 + orderedPrograms.length) % orderedPrograms.length);
+  const next = () => setActive((i) => (i + 1) % orderedPrograms.length);
 
   return (
     <section id="programs" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section">
@@ -180,7 +193,7 @@ export function Programs() {
           </h2>
 
           <ul className="mt-8 hidden xl:flex flex-col gap-3 items-start">
-            {programs.map((p, i) => {
+            {orderedPrograms.map((p, i) => {
               const isActive = i === active;
               return (
                 <li key={p.name}>

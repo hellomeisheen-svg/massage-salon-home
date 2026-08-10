@@ -132,7 +132,7 @@ function GirudoterapiyaPage() {
         <GirudoterapiyaServices />
         <Prices />
         <PromoBanner />
-        <Programs />
+        <Programs prioritizeKeys={["hirudoMed", "hirudoCosm"]} />
         <PromoBanner
           title={
             <>
