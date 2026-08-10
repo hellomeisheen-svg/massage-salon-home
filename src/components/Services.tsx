@@ -294,7 +294,7 @@ function mobileTitle(title: string) {
   return t;
 }
 
-function ServiceCard({
+export function ServiceCard({
   type,
   zoneIndex,
   activeIndex,
