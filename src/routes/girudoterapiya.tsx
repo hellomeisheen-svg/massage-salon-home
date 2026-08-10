@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import { Plus } from "lucide-react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
