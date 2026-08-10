@@ -5,6 +5,8 @@ import { Link } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { PromoBanner } from "@/components/PromoBanner";
+import { Programs } from "@/components/Programs";
+import { Education } from "@/components/Education";
 import { BookingProvider, useBooking } from "@/components/BookingModal";
 import { formatPrice, pluralize, renderPrice } from "@/components/Services";
 
@@ -130,6 +132,24 @@ function GirudoterapiyaPage() {
         <GirudoterapiyaServices />
         <Prices />
         <PromoBanner />
+        <Programs />
+        <PromoBanner
+          title={
+            <>
+              С 1 сентября часть курсов подорожает, а пока
+              <br />
+              можно купить их по прежней цене
+            </>
+          }
+          subtitle={
+            <>
+              До этой даты действует прежняя цена: можно купить курс сейчас
+              <br />
+              и приходить на сеансы позже.
+            </>
+          }
+        />
+        <Education />
         <Faq />
         <Footer />
       </div>
