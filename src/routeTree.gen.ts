@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as MassazhRouteImport } from './routes/massazh'
 import { Route as GirudoterapiyaRouteImport } from './routes/girudoterapiya'
 import { Route as BankiRouteImport } from './routes/banki'
 import { Route as IndexRouteImport } from './routes/index'
@@ -23,6 +24,11 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
 const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
   id: '/privacy-policy',
   path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MassazhRoute = MassazhRouteImport.update({
+  id: '/massazh',
+  path: '/massazh',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GirudoterapiyaRoute = GirudoterapiyaRouteImport.update({
@@ -45,6 +51,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/banki': typeof BankiRoute
   '/girudoterapiya': typeof GirudoterapiyaRoute
+  '/massazh': typeof MassazhRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
@@ -52,6 +59,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/banki': typeof BankiRoute
   '/girudoterapiya': typeof GirudoterapiyaRoute
+  '/massazh': typeof MassazhRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
@@ -60,6 +68,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/banki': typeof BankiRoute
   '/girudoterapiya': typeof GirudoterapiyaRoute
+  '/massazh': typeof MassazhRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
@@ -69,15 +78,23 @@ export interface FileRouteTypes {
     | '/'
     | '/banki'
     | '/girudoterapiya'
+    | '/massazh'
     | '/privacy-policy'
     | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/banki' | '/girudoterapiya' | '/privacy-policy' | '/sitemap.xml'
+  to:
+    | '/'
+    | '/banki'
+    | '/girudoterapiya'
+    | '/massazh'
+    | '/privacy-policy'
+    | '/sitemap.xml'
   id:
     | '__root__'
     | '/'
     | '/banki'
     | '/girudoterapiya'
+    | '/massazh'
     | '/privacy-policy'
     | '/sitemap.xml'
   fileRoutesById: FileRoutesById
@@ -86,6 +103,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BankiRoute: typeof BankiRoute
   GirudoterapiyaRoute: typeof GirudoterapiyaRoute
+  MassazhRoute: typeof MassazhRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
@@ -104,6 +122,13 @@ declare module '@tanstack/react-router' {
       path: '/privacy-policy'
       fullPath: '/privacy-policy'
       preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/massazh': {
+      id: '/massazh'
+      path: '/massazh'
+      fullPath: '/massazh'
+      preLoaderRoute: typeof MassazhRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/girudoterapiya': {
@@ -134,6 +159,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BankiRoute: BankiRoute,
   GirudoterapiyaRoute: GirudoterapiyaRoute,
+  MassazhRoute: MassazhRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
