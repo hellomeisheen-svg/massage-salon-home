@@ -209,14 +209,7 @@ function PageHero() {
 
 
 function GirudoterapiyaServices() {
-  const { openBooking } = useBooking();
-  const [variant, setVariant] = useState(0);
   const type = serviceTypes[0];
-  const variantData = type.variants[variant];
-  const totalVariants = type.variants.length;
-
-  const goPrev = () => setVariant((v) => (v === 0 ? totalVariants - 1 : v - 1));
-  const goNext = () => setVariant((v) => (v === totalVariants - 1 ? 0 : v + 1));
 
   return (
     <section id="services" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section">
@@ -258,7 +251,7 @@ function GirudoterapiyaServices() {
 
                   <h4 className="text-[16px] font-medium text-[#1C3C8C]">Медицинские пиявки</h4>
                   <p>В работе используются только сертифицированные медицинские пиявки, выращенные в специализированных биофабриках в контролируемых условиях. Они применяются однократно: после процедуры пиявки не используются повторно для других пациентов.</p>
-                  <p>Медицинские пиявки относятся к определённым видам, используемым в медицинской практике, включая <em>Hirudo medicinalis</em>. Не используются пиявки, собранные в природных водоёмах, или пиявки неизвестного происхождения. <a href="https://www.nrmed.ru/services/girudoterapiya-v-kosmetologii" target="_blank" rel="noopener noreferrer" className="text-[#4A7FD6] underline">nrmed</a></p>
+                  <p>Медицинские пиявки относятся к определённым видам, используемым в медицинской практике, включая <em>Hirudo medicinalis</em>. Не используются пиявки, собранные в природных водоёмах, или пиявки неизвестного происхождения.</p>
 
                   <h4 className="text-[16px] font-medium text-[#1C3C8C]">Косметические пиявки</h4>
                   <p>Косметические пиявки — это небольшие медицинские пиявки, которые применяются в деликатной эстетической работе, в том числе в области лица. Термин описывает формат и область использования, а не отдельный вид пиявок.</p>
@@ -288,7 +281,7 @@ function GirudoterapiyaServices() {
                     <li>Повреждения, воспаления или инфекции кожи в предполагаемой зоне постановки</li>
                     <li>Онкологические заболевания — только после согласования с лечащим врачом</li>
                   </ul>
-                  <p>Основные противопоказания включают нарушения свёртываемости, анемию, аллергию, низкое давление, беременность и приём антикоагулянтов. <a href="https://www.nrmed.ru/services/girudoterapiya-v-kosmetologii" target="_blank" rel="noopener noreferrer" className="text-[#4A7FD6] underline">nrmed</a></p>
+                  <p>Основные противопоказания включают нарушения свёртываемости, анемию, аллергию, низкое давление, беременность и приём антикоагулянтов.</p>
 
                   <p className="text-sm italic text-[#8D9DC5] mt-4">
                     Имеются противопоказания. Необходима предварительная консультация специалиста.
