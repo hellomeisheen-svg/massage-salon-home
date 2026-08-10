@@ -198,7 +198,7 @@ function PageHero() {
           <img
             className="absolute inset-0 h-full w-full object-cover object-top sm:object-center"
             alt="Гирудотерапия в кабинете Татьяны Злобиной"
-            src="/images/uslugi-girudoterapiya.jpg"
+            src="/images/uslugi-girudoterapiya-litsa.jpg"
           />
         </div>
       </section>
