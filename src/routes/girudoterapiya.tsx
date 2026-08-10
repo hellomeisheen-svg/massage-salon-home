@@ -424,8 +424,10 @@ function PriceCard({ p }: { p: (typeof prices)[number] }) {
   const hasDiscount = discount > 0;
 
   const sessionWord = pluralize(sessionCounts[active], ["сеанс", "сеанса", "сеансов"]);
+  const leechSessionMap = [1, 3, 6];
+  const leechSessionWord = pluralize(leechSessionMap[active], ["сеанс", "сеанса", "сеансов"]);
   const summary = p.perLeech
-    ? `1 сеанс · ${p.items[active]} · ${p.duration}`
+    ? `${leechSessionMap[active]} ${leechSessionWord} · ${p.items[active]} · ${p.duration}`
     : `${sessionCounts[active]} ${sessionWord} · ${p.items[active]} · ${p.duration}`;
 
   return (
