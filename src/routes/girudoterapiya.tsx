@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
@@ -281,7 +281,7 @@ function GirudoterapiyaServices() {
     const onScroll = () => {
       const anchor = window.innerHeight * 0.35;
       let current = 0;
-      refs.current.forEach((el, i) => {
+      refs.current.forEach((el: HTMLDivElement | null, i: number) => {
         if (el && el.getBoundingClientRect().top <= anchor) current = i;
       });
       setActive(current);
