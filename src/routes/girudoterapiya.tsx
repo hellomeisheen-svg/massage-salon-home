@@ -440,29 +440,34 @@ function PriceCard({ p }: { p: (typeof prices)[number] }) {
     <article className="flex flex-col ds-card p-6 sm:p-8 xl:p-10">
       {/* Tabs */}
       <div className="flex items-stretch gap-1 rounded-[10px] bg-[#EFF6FF] p-1">
-        {p.items.map((label, i) => (
-          <button
-            key={label}
-            type="button"
-            onClick={() => setActive(i)}
-            className={`relative flex flex-1 items-center justify-center rounded-[8px] px-2 py-2.5 transition-all duration-300 ${
-              active === i ? "bg-white shadow-[0_2px_8px_rgba(28,60,140,0.08)]" : "bg-transparent"
-            }`}
-          >
-            <span
-              className={`whitespace-nowrap text-[13px] tracking-tight transition-colors duration-300 ${
-                active === i ? "font-medium text-[#1C3C8C]" : "font-light text-[#6B7BA8]"
+        {p.items.map((label, i) => {
+          const tabLabel = p.perLeech
+            ? label
+            : `${sessionCounts[i]} ${pluralize(sessionCounts[i], ["сеанс", "сеанса", "сеансов"])}`;
+          return (
+            <button
+              key={label}
+              type="button"
+              onClick={() => setActive(i)}
+              className={`relative flex flex-1 items-center justify-center rounded-[8px] px-2 py-2.5 transition-all duration-300 ${
+                active === i ? "bg-white shadow-[0_2px_8px_rgba(28,60,140,0.08)]" : "bg-transparent"
               }`}
             >
-              {label}
-            </span>
-            {sessionDiscounts[i] && (
-              <span className="absolute -top-1 right-1 rounded-full bg-[#1C3C8C] px-1.5 py-0.5 text-[9px] font-semibold tracking-wide text-white">
-                {sessionDiscounts[i]}
+              <span
+                className={`whitespace-nowrap text-[13px] tracking-tight transition-colors duration-300 ${
+                  active === i ? "font-medium text-[#1C3C8C]" : "font-light text-[#6B7BA8]"
+                }`}
+              >
+                {tabLabel}
               </span>
-            )}
-          </button>
-        ))}
+              {sessionDiscounts[i] && (
+                <span className="absolute -top-1 right-1 rounded-full bg-[#1C3C8C] px-1.5 py-0.5 text-[9px] font-semibold tracking-wide text-white">
+                  {sessionDiscounts[i]}
+                </span>
+              )}
+            </button>
+          );
+        })}
       </div>
 
       <h3 className="mt-5 ds-h3 text-[#1C3C8C]" style={{ fontFamily: heading }}>
