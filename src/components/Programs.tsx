@@ -193,7 +193,7 @@ export function Programs({ prioritizeKeys }: ProgramsProps = {}) {
           </h2>
 
           <ul className="mt-8 hidden xl:flex flex-col gap-3 items-start">
-            {programs.map((p, i) => {
+            {orderedPrograms.map((p, i) => {
               const isActive = i === active;
               return (
                 <li key={p.name}>
