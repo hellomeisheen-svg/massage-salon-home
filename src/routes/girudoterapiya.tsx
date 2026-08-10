@@ -132,6 +132,24 @@ function GirudoterapiyaPage() {
         <GirudoterapiyaServices />
         <Prices />
         <PromoBanner />
+        <Programs />
+        <PromoBanner
+          title={
+            <>
+              С 1 сентября часть курсов подорожает, а пока
+              <br />
+              можно купить их по прежней цене
+            </>
+          }
+          subtitle={
+            <>
+              До этой даты действует прежняя цена: можно купить курс сейчас
+              <br />
+              и приходить на сеансы позже.
+            </>
+          }
+        />
+        <Education />
         <Faq />
         <Footer />
       </div>
