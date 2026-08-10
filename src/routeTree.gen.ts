@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as GirudoterapiyaRouteImport } from './routes/girudoterapiya'
+import { Route as BankiRouteImport } from './routes/banki'
 import { Route as IndexRouteImport } from './routes/index'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -29,6 +30,11 @@ const GirudoterapiyaRoute = GirudoterapiyaRouteImport.update({
   path: '/girudoterapiya',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BankiRoute = BankiRouteImport.update({
+  id: '/banki',
+  path: '/banki',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -37,12 +43,14 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/banki': typeof BankiRoute
   '/girudoterapiya': typeof GirudoterapiyaRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/banki': typeof BankiRoute
   '/girudoterapiya': typeof GirudoterapiyaRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -50,20 +58,33 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/banki': typeof BankiRoute
   '/girudoterapiya': typeof GirudoterapiyaRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/girudoterapiya' | '/privacy-policy' | '/sitemap.xml'
+  fullPaths:
+    | '/'
+    | '/banki'
+    | '/girudoterapiya'
+    | '/privacy-policy'
+    | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/girudoterapiya' | '/privacy-policy' | '/sitemap.xml'
-  id: '__root__' | '/' | '/girudoterapiya' | '/privacy-policy' | '/sitemap.xml'
+  to: '/' | '/banki' | '/girudoterapiya' | '/privacy-policy' | '/sitemap.xml'
+  id:
+    | '__root__'
+    | '/'
+    | '/banki'
+    | '/girudoterapiya'
+    | '/privacy-policy'
+    | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BankiRoute: typeof BankiRoute
   GirudoterapiyaRoute: typeof GirudoterapiyaRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -92,6 +113,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GirudoterapiyaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/banki': {
+      id: '/banki'
+      path: '/banki'
+      fullPath: '/banki'
+      preLoaderRoute: typeof BankiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -104,6 +132,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BankiRoute: BankiRoute,
   GirudoterapiyaRoute: GirudoterapiyaRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
