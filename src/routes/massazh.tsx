@@ -36,7 +36,7 @@ const content: ServicePageContent = {
     </>
   ),
   bookingPrefix: "Массаж",
-  prioritizeKeys: ["classic", "vector", "lymphatic", "lymphdrainage"],
+  prioritizeKeys: ["classic", "lymphatic", "lymphdrainage"],
   sections: [
     {
       label: "Об услуге",

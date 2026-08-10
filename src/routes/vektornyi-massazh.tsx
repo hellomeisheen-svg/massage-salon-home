@@ -36,7 +36,7 @@ const content: ServicePageContent = {
     </>
   ),
   bookingPrefix: "Векторный массаж",
-  prioritizeKeys: ["vector", "classic"],
+  prioritizeKeys: ["classic", "lymphdrainage"],
   sections: [
     {
       label: "Об услуге",
