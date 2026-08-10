@@ -492,7 +492,7 @@ function PriceCard({ p }: { p: (typeof prices)[number] }) {
             {renderPrice(computedPrice)}
           </span>
           <span className="text-[13px] font-light text-[#6B7BA8]">
-            за {sessions}\u00A0{sessionWord}
+            {`за ${sessions}\u00A0${sessionWord}`}
           </span>
         </div>
       </div>
