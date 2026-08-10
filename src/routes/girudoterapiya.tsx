@@ -3,7 +3,9 @@ import { Link } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { PromoBanner } from "@/components/PromoBanner";
+import { useState } from "react";
 import { BookingProvider, useBooking } from "@/components/BookingModal";
+import { ServiceCard, serviceTypes } from "@/components/Services";
 
 const heading = "'Roslindale Cyrillic Display Condensed', serif";
 
@@ -99,8 +101,7 @@ function GirudoterapiyaPage() {
       <div className="relative min-h-screen bg-[#EFF6FF] pt-20 xl:pt-[100px]">
         <Header />
         <PageHero />
-        <Benefits />
-        <Steps />
+        <GirudoterapiyaServices />
         <Prices />
         <PromoBanner />
         <Faq />
@@ -207,85 +208,42 @@ function PageHero() {
 }
 
 
-function Benefits() {
+function GirudoterapiyaServices() {
+  const [zone, setZone] = useState(0);
+  const type = serviceTypes[0];
   return (
-    <section className="bg-[#EFF6FF] ds-section">
-      <div className="container-1900">
-        <div className="text-center sm:text-left">
+    <section id="services" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section">
+      <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-8 sm:gap-5 items-start">
+        <div className="self-start flex flex-col items-center xl:items-start text-center xl:text-left">
           <span
             className="inline-flex items-center gap-2 px-4 py-1.5 ds-label text-white"
-            style={{ borderRadius: "4px", backgroundImage: "linear-gradient(to bottom, #A2CFFE, #88C1FF)" }}
+            style={{
+              borderRadius: "4px",
+              backgroundImage: "linear-gradient(to bottom, #A2CFFE, #88C1FF)",
+            }}
           >
-            Что даёт процедура
+            Услуги
           </span>
           <h2
-            className="mx-auto mt-6 max-w-[900px] text-[30px] font-light leading-[1.15] text-[#1C3C8C] sm:mx-0 sm:text-[38px] xl:text-[44px]"
+            className="mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0"
             style={{ fontFamily: heading }}
           >
-            Мягкий формат, в&nbsp;котором тело успевает расслабиться
+            Перед каждым визитом обсуждаем ваше состояние&nbsp;— и&nbsp;подбираем технику под&nbsp;него
           </h2>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
-          {benefits.map((b) => (
-            <article key={b.title} className="ds-card p-6 sm:p-8">
-              <h3
-                className="ds-h3 text-[#1C3C8C]"
-                style={{ fontFamily: heading }}
-              >
-                {b.title}
-              </h3>
-              <p className="mt-4 body-text text-[#6B7BA8]">{b.text}</p>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Steps() {
-  return (
-    <section className="bg-[#EFF6FF] ds-section">
-      <div className="container-1900 grid grid-cols-1 gap-4 sm:gap-5 xl:grid-cols-2 xl:items-start">
-        <div className="text-center xl:text-left">
-          <h2
-            className="mx-auto max-w-[560px] text-[30px] font-light leading-[1.15] text-[#1C3C8C] sm:text-[38px] xl:mx-0 xl:text-[44px]"
-            style={{ fontFamily: heading }}
-          >
-            Как проходит сеанс
-          </h2>
-          <p className="mx-auto mt-6 body-text max-w-[520px] text-[#6B7BA8] xl:mx-0">
-            Всё по шагам и в понятном темпе&nbsp;— вы всегда знаете, что&nbsp;будет дальше.
-          </p>
-          <img
-            src="/images/uslugi-girudoterapiya-litsa.jpg"
-            alt="Подготовка к процедуре гирудотерапии"
-            className="mt-8 hidden h-[380px] w-full rounded-[12px] border border-[#daebff] object-cover xl:block"
+        <div className="flex flex-col gap-4">
+          <ServiceCard
+            key={0}
+            type={type}
+            zoneIndex={zone}
+            activeIndex={0}
+            totalCount={1}
+            onZoneChange={setZone}
+            onPrev={() => {}}
+            onNext={() => {}}
           />
         </div>
-
-        <ol className="divide-y divide-[#daebff] overflow-hidden ds-card">
-          {steps.map((s) => (
-            <li key={s.n} className="flex gap-5 p-6 sm:p-8">
-              <span
-                className="text-[22px] font-light leading-none text-[#88C1FF] sm:text-[26px]"
-                style={{ fontFamily: heading }}
-              >
-                {s.n}
-              </span>
-              <div>
-                <h3
-                  className="ds-h4 text-[#1C3C8C]"
-                  style={{ fontFamily: heading }}
-                >
-                  {s.title}
-                </h3>
-                <p className="mt-3 body-text text-[#6B7BA8]">{s.text}</p>
-              </div>
-            </li>
-          ))}
-        </ol>
       </div>
     </section>
   );
@@ -294,7 +252,7 @@ function Steps() {
 function Prices() {
   const { openBooking } = useBooking();
   return (
-    <section className="bg-[#EFF6FF] ds-section">
+    <section id="programs" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section">
       <div className="container-1900">
         <h2
           className="text-center ds-h2 text-[#1C3C8C]"

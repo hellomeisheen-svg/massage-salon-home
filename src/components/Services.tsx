@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useBooking } from "@/components/BookingModal";
 
-type Variant = {
+export type Variant = {
   zone: string;
   zoneShort?: string;
   subtitle: string;
@@ -13,13 +13,13 @@ type Variant = {
   multiplyDuration?: boolean;
 };
 
-type ServiceType = {
+export type ServiceType = {
   title: string;
   category: number;
   variants: Variant[];
 };
 
-const serviceTypes: ServiceType[] = [
+export const serviceTypes: ServiceType[] = [
   {
     title: "Гирудотерапия",
     category: 0,
@@ -201,17 +201,17 @@ const serviceTypes: ServiceType[] = [
 
 const categories = ["Оздоровительные процедуры", "Массаж"];
 
-const sessions = [
+export const sessions = [
   { label: "1 сеанс", discount: null },
   { label: "3 сеанса", discount: "-10%" },
   { label: "6 сеансов", discount: "-15%" },
 ];
 
-function formatPrice(value: number) {
+export function formatPrice(value: number) {
   return `${value.toLocaleString("ru-RU").replace(/\s/g, "\u00A0")}\u00A0₽`;
 }
 
-function pluralize(n: number, forms: [string, string, string]) {
+export function pluralize(n: number, forms: [string, string, string]) {
   const mod10 = n % 10;
   const mod100 = n % 100;
   if (mod10 === 1 && mod100 !== 11) return forms[0];
@@ -219,7 +219,7 @@ function pluralize(n: number, forms: [string, string, string]) {
   return forms[2];
 }
 
-function formatDurationValue(min: number) {
+export function formatDurationValue(min: number) {
   const hours = Math.floor(min / 60);
   const minutes = min % 60;
   if (hours === 0) {
@@ -243,7 +243,7 @@ function formatDurationValue(min: number) {
   };
 }
 
-function formatDurationString(value: string, multiplier = 1) {
+export function formatDurationString(value: string, multiplier = 1) {
   const numbers = [...value.matchAll(/\d+/g)].map((m) => Number(m[0]));
   if (!numbers.length) return value;
   const scaled = numbers.map((n) => n * multiplier);
@@ -263,7 +263,7 @@ function formatDurationString(value: string, multiplier = 1) {
   return scaled.map((n) => formatDurationValue(n).text).join(", ");
 }
 
-function formatSessionLine(sessionCount: number, duration: string) {
+export function formatSessionLine(sessionCount: number, duration: string) {
   if (sessionCount === 1) {
     return `1 сеанс — ${duration}`;
   }
@@ -271,7 +271,7 @@ function formatSessionLine(sessionCount: number, duration: string) {
   return `В пакете: ${sessionCount}\u00A0${sessionWord} · ${duration}`;
 }
 
-function renderPrice(price: string) {
+export function renderPrice(price: string) {
   const idx = price.indexOf("₽");
   if (idx === -1) return price;
   return (
@@ -282,11 +282,11 @@ function renderPrice(price: string) {
   );
 }
 
-function clean(value: string) {
+export function clean(value: string) {
   return value.replace(/\u00A0/g, " ");
 }
 
-function mobileTitle(title: string) {
+export function mobileTitle(title: string) {
   const t = clean(title);
   if (t === "Лимфатический" || t === "Лимфодренажный" || t === "Классический" || t === "Векторный") {
     return t + " массаж";
@@ -294,7 +294,7 @@ function mobileTitle(title: string) {
   return t;
 }
 
-function ServiceCard({
+export function ServiceCard({
   type,
   zoneIndex,
   activeIndex,
@@ -492,51 +492,57 @@ function ServiceCard({
           <a href="#programs" className="btn-secondary flex-1 h-[60px] px-3 py-0 inline-flex items-center justify-center text-center">
             Узнать больше
           </a>
-          <button
-            type="button"
-            onClick={onPrev}
-            aria-label="Предыдущая услуга"
-            className="btn-secondary w-[60px] h-[60px] flex items-center justify-center p-0 shrink-0"
-          >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-              <path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </button>
-          <button
-            type="button"
-            onClick={onNext}
-            aria-label="Следующая услуга"
-            className="btn-secondary w-[60px] h-[60px] flex items-center justify-center p-0 shrink-0"
-          >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-              <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </button>
+          {totalCount > 1 && (
+            <>
+              <button
+                type="button"
+                onClick={onPrev}
+                aria-label="Предыдущая услуга"
+                className="btn-secondary w-[60px] h-[60px] flex items-center justify-center p-0 shrink-0"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+              <button
+                type="button"
+                onClick={onNext}
+                aria-label="Следующая услуга"
+                className="btn-secondary w-[60px] h-[60px] flex items-center justify-center p-0 shrink-0"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+            </>
+          )}
         </div>
 
         {/* Desktop / tablet: arrows */}
-        <div className="hidden sm:contents">
-          <button
-            type="button"
-            onClick={onPrev}
-            aria-label="Предыдущая услуга"
-            className="btn-secondary sm:min-w-[80px] sm:flex-none flex items-center justify-center"
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-              <path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </button>
-          <button
-            type="button"
-            onClick={onNext}
-            aria-label="Следующая услуга"
-            className="btn-secondary sm:min-w-[80px] sm:flex-none flex items-center justify-center"
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-              <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </button>
-        </div>
+        {totalCount > 1 && (
+          <div className="hidden sm:contents">
+            <button
+              type="button"
+              onClick={onPrev}
+              aria-label="Предыдущая услуга"
+              className="btn-secondary sm:min-w-[80px] sm:flex-none flex items-center justify-center"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+            <button
+              type="button"
+              onClick={onNext}
+              aria-label="Следующая услуга"
+              className="btn-secondary sm:min-w-[80px] sm:flex-none flex items-center justify-center"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+          </div>
+        )}
       </div>
     </article>
   );
