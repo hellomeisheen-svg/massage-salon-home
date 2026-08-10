@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
@@ -275,9 +275,28 @@ const girudoSections: { label: string; content: React.ReactNode }[] = [
 
 function GirudoterapiyaServices() {
   const [active, setActive] = useState(0);
-  const section = girudoSections[active];
-  const prev = () => setActive((active - 1 + girudoSections.length) % girudoSections.length);
-  const next = () => setActive((active + 1) % girudoSections.length);
+  const refs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const anchor = window.innerHeight * 0.35;
+      let current = 0;
+      refs.current.forEach((el: HTMLDivElement | null, i: number) => {
+        if (el && el.getBoundingClientRect().top <= anchor) current = i;
+      });
+      setActive(current);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const goTo = (i: number) => {
+    const el = refs.current[i];
+    if (!el) return;
+    const top = el.getBoundingClientRect().top + window.scrollY - 140;
+    window.scrollTo({ top, behavior: "smooth" });
+  };
 
   const nav = (
     <nav className="flex w-full flex-col gap-3 items-start">
@@ -287,7 +306,7 @@ function GirudoterapiyaServices() {
           <button
             key={s.label}
             type="button"
-            onClick={() => setActive(i)}
+            onClick={() => goTo(i)}
             aria-current={isActive}
             className="flex items-center gap-3 text-left"
           >
@@ -312,7 +331,7 @@ function GirudoterapiyaServices() {
   return (
     <section id="services" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section">
       <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-8 sm:gap-5 items-start">
-        <div className="self-start flex flex-col items-center xl:items-start text-center xl:text-left">
+        <div className="self-start xl:sticky xl:top-[140px] flex flex-col items-center xl:items-start text-center xl:text-left">
           <span
             className="inline-flex items-center gap-2 px-4 py-1.5 ds-label text-white"
             style={{
@@ -333,40 +352,27 @@ function GirudoterapiyaServices() {
         </div>
 
         <div className="flex flex-col gap-4">
-          <div className="ds-card p-6 sm:p-8 xl:p-10 overflow-hidden">
-            <div className="w-full">
-              <h3
-                className="text-[26px] sm:text-[32px] font-light leading-[1.15] text-[#1C3C8C]"
-                style={{ fontFamily: heading }}
-              >
-                {section.label}
-              </h3>
-              <div className="mt-5 text-[#6B7BA8] space-y-4 text-[15px] leading-[1.6]">
-                {section.content}
-              </div>
-            </div>
-
-            <div className="mt-8 flex items-center gap-2 xl:hidden">
-              <button
-                type="button"
-                onClick={prev}
-                aria-label="Предыдущий раздел"
-                className="btn-secondary w-[60px] h-[60px] flex items-center justify-center p-0 shrink-0"
-              >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                  <path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-              <button
-                type="button"
-                onClick={next}
-                aria-label="Следующий раздел"
-                className="btn-secondary w-[60px] h-[60px] flex items-center justify-center p-0 shrink-0"
-              >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                  <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
+          <div className="ds-card p-6 sm:p-8 xl:p-10">
+            <div className="flex flex-col gap-10 sm:gap-12">
+              {girudoSections.map((s, i) => (
+                <div
+                  key={s.label}
+                  ref={(el) => {
+                    refs.current[i] = el;
+                  }}
+                  className="scroll-mt-[140px]"
+                >
+                  <h3
+                    className="text-[26px] sm:text-[32px] font-light leading-[1.15] text-[#1C3C8C]"
+                    style={{ fontFamily: heading }}
+                  >
+                    {s.label}
+                  </h3>
+                  <div className="mt-5 text-[#6B7BA8] space-y-4 text-[15px] leading-[1.6]">
+                    {s.content}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
