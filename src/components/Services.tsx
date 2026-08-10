@@ -492,51 +492,57 @@ export function ServiceCard({
           <a href="#programs" className="btn-secondary flex-1 h-[60px] px-3 py-0 inline-flex items-center justify-center text-center">
             Узнать больше
           </a>
-          <button
-            type="button"
-            onClick={onPrev}
-            aria-label="Предыдущая услуга"
-            className="btn-secondary w-[60px] h-[60px] flex items-center justify-center p-0 shrink-0"
-          >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-              <path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </button>
-          <button
-            type="button"
-            onClick={onNext}
-            aria-label="Следующая услуга"
-            className="btn-secondary w-[60px] h-[60px] flex items-center justify-center p-0 shrink-0"
-          >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-              <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </button>
+          {totalCount > 1 && (
+            <>
+              <button
+                type="button"
+                onClick={onPrev}
+                aria-label="Предыдущая услуга"
+                className="btn-secondary w-[60px] h-[60px] flex items-center justify-center p-0 shrink-0"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+              <button
+                type="button"
+                onClick={onNext}
+                aria-label="Следующая услуга"
+                className="btn-secondary w-[60px] h-[60px] flex items-center justify-center p-0 shrink-0"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+            </>
+          )}
         </div>
 
         {/* Desktop / tablet: arrows */}
-        <div className="hidden sm:contents">
-          <button
-            type="button"
-            onClick={onPrev}
-            aria-label="Предыдущая услуга"
-            className="btn-secondary sm:min-w-[80px] sm:flex-none flex items-center justify-center"
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-              <path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </button>
-          <button
-            type="button"
-            onClick={onNext}
-            aria-label="Следующая услуга"
-            className="btn-secondary sm:min-w-[80px] sm:flex-none flex items-center justify-center"
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-              <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </button>
-        </div>
+        {totalCount > 1 && (
+          <div className="hidden sm:contents">
+            <button
+              type="button"
+              onClick={onPrev}
+              aria-label="Предыдущая услуга"
+              className="btn-secondary sm:min-w-[80px] sm:flex-none flex items-center justify-center"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+            <button
+              type="button"
+              onClick={onNext}
+              aria-label="Следующая услуга"
+              className="btn-secondary sm:min-w-[80px] sm:flex-none flex items-center justify-center"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+          </div>
+        )}
       </div>
     </article>
   );
