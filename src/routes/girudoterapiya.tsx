@@ -384,8 +384,95 @@ function GirudoterapiyaServices() {
   );
 }
 
-function Prices() {
+const sessionDiscounts = [null, "-10%", "-15%"] as const;
+const discountValues = [0, 0.1, 0.15];
+const sessionCounts = [1, 3, 6];
+
+function PriceCard({ p }: { p: (typeof prices)[number] }) {
   const { openBooking } = useBooking();
+  const [active, setActive] = useState(0);
+
+  const leechCount = Number(p.items[active].match(/\d+/)?.[0] ?? 6);
+  const discount = discountValues[active];
+  const base = p.perLeech ? leechCount * p.base : p.base * sessionCounts[active];
+  const originalPrice = formatPrice(base);
+  const computedPrice = formatPrice(Math.round(base * (1 - discount)));
+  const hasDiscount = discount > 0;
+
+  const sessionWord = pluralize(sessionCounts[active], ["сеанс", "сеанса", "сеансов"]);
+  const summary = p.perLeech
+    ? `${p.items[active]} · ${p.duration}`
+    : `${sessionCounts[active]} ${sessionWord} · ${p.items[active]} · ${p.duration}`;
+
+  return (
+    <article className="flex flex-col ds-card p-6 sm:p-8 xl:p-10">
+      {/* Tabs */}
+      <div className="flex items-stretch gap-1 rounded-[10px] bg-[#EFF6FF] p-1">
+        {p.items.map((label, i) => (
+          <button
+            key={label}
+            type="button"
+            onClick={() => setActive(i)}
+            className={`relative flex flex-1 items-center justify-center rounded-[8px] px-2 py-2.5 transition-all duration-300 ${
+              active === i ? "bg-white shadow-[0_2px_8px_rgba(28,60,140,0.08)]" : "bg-transparent"
+            }`}
+          >
+            <span
+              className={`whitespace-nowrap text-[13px] tracking-tight transition-colors duration-300 ${
+                active === i ? "font-medium text-[#1C3C8C]" : "font-light text-[#6B7BA8]"
+              }`}
+            >
+              {label}
+            </span>
+            {sessionDiscounts[i] && (
+              <span className="absolute -top-1 right-1 rounded-full bg-[#1C3C8C] px-1.5 py-0.5 text-[9px] font-semibold tracking-wide text-white">
+                {sessionDiscounts[i]}
+              </span>
+            )}
+          </button>
+        ))}
+      </div>
+
+      <h3 className="mt-5 ds-h3 text-[#1C3C8C]" style={{ fontFamily: heading }}>
+        {p.zone}
+      </h3>
+      <p className="mt-3 body-text text-[#6B7BA8]">{p.subtitle}</p>
+
+      <p className="mt-6 text-[13px] font-medium leading-[18px] tracking-wide text-[#1C3C8C]">
+        {summary}
+      </p>
+
+      <div className="mt-6 flex items-center justify-end gap-4 sm:gap-5">
+        {hasDiscount && (
+          <span
+            className="text-[17px] sm:text-[19px] font-light leading-[1.2] text-[#6B7BA8] line-through"
+            style={{ fontFamily: heading }}
+          >
+            {renderPrice(originalPrice)}
+          </span>
+        )}
+        <div className="flex flex-col items-end">
+          <span className="ds-price text-[#1C3C8C]" style={{ fontFamily: heading }}>
+            {renderPrice(computedPrice)}
+          </span>
+          <span className="text-[13px] font-light text-[#6B7BA8]">
+            {p.perLeech ? `за ${p.items[active]}` : `за ${sessionCounts[active]} ${sessionWord}`}
+          </span>
+        </div>
+      </div>
+
+      <button
+        type="button"
+        onClick={() => openBooking(`Гирудотерапия · ${p.zone}`)}
+        className="btn-primary mt-8 w-full"
+      >
+        Записаться
+      </button>
+    </article>
+  );
+}
+
+function Prices() {
   return (
     <section id="programs" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section">
       <div className="container-1900">
@@ -398,51 +485,14 @@ function Prices() {
 
         <div className="mt-10 grid grid-cols-1 gap-4 sm:gap-5 xl:grid-cols-2">
           {prices.map((p) => (
-            <article
-              key={p.zone}
-              className="flex flex-col ds-card p-6 sm:p-8 xl:p-10"
-            >
-              <h3
-                className="ds-h3 text-[#1C3C8C]"
-                style={{ fontFamily: heading }}
-              >
-                {p.zone}
-              </h3>
-              <p className="mt-3 body-text text-[#6B7BA8]">{p.subtitle}</p>
-
-              <ul className="mt-6 flex flex-wrap gap-2">
-                {p.items.map((i) => (
-                  <li
-                    key={i}
-                    className="rounded-[8px] border border-[#daebff] bg-[#EFF6FF] px-3 py-2 text-[14px] text-[#1C3C8C]"
-                  >
-                    {i}
-                  </li>
-                ))}
-              </ul>
-
-              <div className="mt-8 flex items-end justify-between gap-4 border-t border-[#daebff] pt-6">
-                <div>
-                  <p className="text-[14px] text-[#6B7BA8]">{p.session}</p>
-                  <p
-                    className="mt-2 ds-price text-[#1C3C8C]"
-                    style={{ fontFamily: heading }}
-                  >
-                    от {p.price}
-                  </p>
-                </div>
-              </div>
-
-              <button type="button" onClick={() => openBooking()} className="btn-primary mt-8 w-full">
-                Записаться
-              </button>
-            </article>
+            <PriceCard key={p.zone} p={p} />
           ))}
         </div>
       </div>
     </section>
   );
 }
+
 
 function Faq() {
   return (
