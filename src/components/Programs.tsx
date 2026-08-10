@@ -209,14 +209,14 @@ export function Programs() {
         </div>
 
         {/* Right column — program card */}
-        <article className="ds-card ds-card-hover p-6 sm:p-8 flex flex-col h-[671px] xl:h-auto xl:min-h-[700px]">
+        <article className="ds-card ds-card-hover p-5 sm:p-8 flex flex-col h-[671px] xl:h-auto xl:min-h-[700px]">
           <h3
             className="ds-h2-card text-[#1C3C8C]"
             style={{ fontFamily: heading }}
           >
             {program.name}
           </h3>
-          <p className="mt-3 body-text text-[#6B7BA8]">
+          <p className="mt-2 sm:mt-3 body-text text-[#6B7BA8]">
             {program.description}
           </p>
 
@@ -239,9 +239,9 @@ export function Programs() {
             </div>
 
             {/* Mobile: stacked blocks */}
-            <div className="sm:hidden pt-3 divide-y divide-[#daebff] h-full overflow-y-auto">
+            <div className="sm:hidden pt-2 divide-y divide-[#daebff] h-full overflow-y-auto">
               {computedItems.map((it, idx) => (
-                <div key={idx} className="py-4">
+                <div key={idx} className="py-3">
                   <div className="text-[16px] leading-[22px] text-[#1C3C8C]">{it.title}</div>
                   <div className="mt-1 text-[13px] leading-[18px] text-[#6B7BA8]">{it.duration}</div>
                 </div>
@@ -250,7 +250,7 @@ export function Programs() {
           </div>
 
           <div
-            className="mt-auto pt-8 flex flex-wrap items-center justify-start sm:justify-end gap-x-4 gap-y-2"
+            className="mt-auto pt-6 sm:pt-8 flex flex-wrap items-center justify-start sm:justify-end gap-x-4 gap-y-2"
             style={{ fontFamily: heading }}
           >
             <span className="text-[18px] sm:text-[20px] font-light text-[#6B7BA8] line-through">
@@ -267,7 +267,7 @@ export function Programs() {
             Срок использования: {program.validity}
           </p>
 
-          <div className="mt-8 flex flex-col sm:flex-row gap-3">
+          <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3">
             <button
               type="button"
               onClick={() => openBooking(program.name)}
