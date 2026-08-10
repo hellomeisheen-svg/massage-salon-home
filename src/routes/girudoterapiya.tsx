@@ -297,29 +297,8 @@ function GirudoterapiyaServices() {
               </div>
             </div>
 
-            {/* Side arrows for variant switching */}
-            <div className="flex items-center justify-between mt-8 pt-6 border-t border-[#DAEBFF]">
-              <button
-                type="button"
-                onClick={goPrev}
-                className="btn-secondary flex items-center gap-2"
-              >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                  <path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-                {type.variants[(variant === 0 ? totalVariants - 1 : variant - 1)].zone}
-              </button>
-              <button
-                type="button"
-                onClick={goNext}
-                className="btn-secondary flex items-center gap-2"
-              >
-                {type.variants[(variant === totalVariants - 1 ? 0 : variant + 1)].zone}
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                  <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-            </div>
+
+
           </div>
         </div>
       </div>
