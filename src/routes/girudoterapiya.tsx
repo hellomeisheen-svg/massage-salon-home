@@ -3,7 +3,6 @@ import { Link } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { PromoBanner } from "@/components/PromoBanner";
-import { useState } from "react";
 import { BookingProvider, useBooking } from "@/components/BookingModal";
 import { serviceTypes } from "@/components/Services";
 
@@ -209,14 +208,7 @@ function PageHero() {
 
 
 function GirudoterapiyaServices() {
-  const { openBooking } = useBooking();
-  const [variant, setVariant] = useState(0);
   const type = serviceTypes[0];
-  const variantData = type.variants[variant];
-  const totalVariants = type.variants.length;
-
-  const goPrev = () => setVariant((v) => (v === 0 ? totalVariants - 1 : v - 1));
-  const goNext = () => setVariant((v) => (v === totalVariants - 1 ? 0 : v + 1));
 
   return (
     <section id="services" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section">
@@ -241,61 +233,24 @@ function GirudoterapiyaServices() {
 
         <div className="flex flex-col gap-4">
           <div className="ds-card p-6 sm:p-8 xl:p-10 overflow-hidden">
-            <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 xl:gap-10">
-              {/* Left: service info */}
-              <div className="xl:col-span-4 flex flex-col gap-4">
-                <h3
-                  className="text-[22px] sm:text-[26px] font-light leading-[1.2] text-[#1C3C8C]"
-                  style={{ fontFamily: heading }}
-                >
-                  {type.title}
-                </h3>
-                <div className="flex items-center gap-2 text-[#6B7BA8]">
-                  <span className="text-sm font-medium">Длительность</span>
-                  <span className="text-sm">{variantData.duration}</span>
-                </div>
-                <div className="text-[28px] sm:text-[32px] font-light text-[#1C3C8C]">
-                  {variantData.price}
-                </div>
-                <div className="text-sm text-[#6B7BA8]">
-                  1 сеанс — {variantData.duration}
-                </div>
-                <button
-                  onClick={() => openBooking("Гирудотерапия")}
-                  className="btn-primary mt-4 w-full"
-                >
-                  Записаться
-                </button>
-              </div>
-
-              {/* Right: variant toggles + content */}
-              <div className="xl:col-span-8">
-                {/* Variant tabs */}
-                <div className="flex gap-2 mb-6">
-                  {type.variants.map((v, i) => (
-                    <button
-                      key={i}
-                      onClick={() => setVariant(i)}
-                      className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                        i === variant
-                          ? "bg-[#1C3C8C] text-white"
-                          : "bg-[#DAEBFF] text-[#1C3C8C] hover:bg-[#A2CFFE]"
-                      }`}
-                    >
-                      {v.zone}
-                    </button>
-                  ))}
-                </div>
-
+            <div>
+              <div className="w-full">
                 {/* Detailed content */}
                 <div className="text-[#6B7BA8] space-y-6 text-[15px] leading-[1.6]">
+                  <h3
+                    className="text-[22px] sm:text-[26px] font-light leading-[1.2] text-[#1C3C8C]"
+                    style={{ fontFamily: heading }}
+                  >
+                    {type.title}
+                  </h3>
+
                   <h4 className="text-[16px] font-medium text-[#1C3C8C]">Об услуге</h4>
                   <p>Гирудотерапия — процедура с использованием медицинских пиявок, которая проводится после предварительной консультации специалиста. На встрече учитываются жалобы, индивидуальные особенности организма, хронические состояния и принимаемые препараты.</p>
                   <p>Специалист подбирает зоны постановки, количество пиявок и периодичность сеансов индивидуально. Процедура не заменяет диагностику и лечение, назначенное врачом.</p>
 
                   <h4 className="text-[16px] font-medium text-[#1C3C8C]">Медицинские пиявки</h4>
                   <p>В работе используются только сертифицированные медицинские пиявки, выращенные в специализированных биофабриках в контролируемых условиях. Они применяются однократно: после процедуры пиявки не используются повторно для других пациентов.</p>
-                  <p>Медицинские пиявки относятся к определённым видам, используемым в медицинской практике, включая <em>Hirudo medicinalis</em>. Не используются пиявки, собранные в природных водоёмах, или пиявки неизвестного происхождения. <a href="https://www.nrmed.ru/services/girudoterapiya-v-kosmetologii" target="_blank" rel="noopener noreferrer" className="text-[#4A7FD6] underline">nrmed</a></p>
+                  <p>Медицинские пиявки относятся к определённым видам, используемым в медицинской практике, включая <em>Hirudo medicinalis</em>. Не используются пиявки, собранные в природных водоёмах, или пиявки неизвестного происхождения.</p>
 
                   <h4 className="text-[16px] font-medium text-[#1C3C8C]">Косметические пиявки</h4>
                   <p>Косметические пиявки — это небольшие медицинские пиявки, которые применяются в деликатной эстетической работе, в том числе в области лица. Термин описывает формат и область использования, а не отдельный вид пиявок.</p>
@@ -325,7 +280,7 @@ function GirudoterapiyaServices() {
                     <li>Повреждения, воспаления или инфекции кожи в предполагаемой зоне постановки</li>
                     <li>Онкологические заболевания — только после согласования с лечащим врачом</li>
                   </ul>
-                  <p>Основные противопоказания включают нарушения свёртываемости, анемию, аллергию, низкое давление, беременность и приём антикоагулянтов. <a href="https://www.nrmed.ru/services/girudoterapiya-v-kosmetologii" target="_blank" rel="noopener noreferrer" className="text-[#4A7FD6] underline">nrmed</a></p>
+                  <p>Основные противопоказания включают нарушения свёртываемости, анемию, аллергию, низкое давление, беременность и приём антикоагулянтов.</p>
 
                   <p className="text-sm italic text-[#8D9DC5] mt-4">
                     Имеются противопоказания. Необходима предварительная консультация специалиста.
@@ -334,29 +289,8 @@ function GirudoterapiyaServices() {
               </div>
             </div>
 
-            {/* Side arrows for variant switching */}
-            <div className="flex items-center justify-between mt-8 pt-6 border-t border-[#DAEBFF]">
-              <button
-                type="button"
-                onClick={goPrev}
-                className="btn-secondary flex items-center gap-2"
-              >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                  <path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-                {type.variants[(variant === 0 ? totalVariants - 1 : variant - 1)].zone}
-              </button>
-              <button
-                type="button"
-                onClick={goNext}
-                className="btn-secondary flex items-center gap-2"
-              >
-                {type.variants[(variant === totalVariants - 1 ? 0 : variant + 1)].zone}
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                  <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-            </div>
+
+
           </div>
         </div>
       </div>
