@@ -421,25 +421,24 @@ function GirudoterapiyaServices() {
   );
 }
 
-const sessionDiscounts = [null, "-10%", "-15%"] as const;
-const discountValues = [0, 0.1, 0.15];
-const sessionCounts = [1, 3, 6];
-
 function PriceCard({ p }: { p: (typeof prices)[number] }) {
   const { openBooking } = useBooking();
   const [active, setActive] = useState(0);
 
-  const leechCount = Number(p.items[active].match(/\d+/)?.[0] ?? 6);
-  const discount = discountValues[active];
-  const base = p.perLeech ? leechCount * p.base : p.base * sessionCounts[active];
+  const sessions = p.sessionCounts[active];
+  const leechCount = p.perLeech
+    ? (p.leechesPerSession ?? 6) * sessions
+    : Number(p.items[active].match(/\d+/)?.[0] ?? 6);
+  const discount = p.discounts[active];
+  const base = p.perLeech ? p.base * leechCount : p.base * sessions;
   const originalPrice = formatPrice(base);
   const computedPrice = formatPrice(Math.round(base * (1 - discount)));
   const hasDiscount = discount > 0;
 
-  const sessionWord = pluralize(sessionCounts[active], ["сеанс", "сеанса", "сеансов"]);
-  const summary = p.perLeech
-    ? `1 сеанс · ${p.items[active]} · ${p.duration}`
-    : `${sessionCounts[active]} ${sessionWord} · ${p.items[active]} · ${p.duration}`;
+  const sessionWord = pluralize(sessions, ["сеанс", "сеанса", "сеансов"]);
+  const leechDisplay = p.perLeech ? p.leechesPerSession ?? 6 : leechCount;
+  const leechWord = pluralize(leechDisplay, ["пиявка", "пиявки", "пиявок"]);
+  const summary = `${sessions}\u00A0${sessionWord} · ${leechDisplay}\u00A0${leechWord} · ${p.duration}`;
 
   return (
     <article className="flex flex-col ds-card p-6 sm:p-8 xl:p-10">
@@ -461,9 +460,9 @@ function PriceCard({ p }: { p: (typeof prices)[number] }) {
             >
               {label}
             </span>
-            {sessionDiscounts[i] && (
+            {p.discounts[i] > 0 && (
               <span className="absolute -top-1 right-1 rounded-full bg-[#1C3C8C] px-1.5 py-0.5 text-[9px] font-semibold tracking-wide text-white">
-                {sessionDiscounts[i]}
+                -{Math.round(p.discounts[i] * 100)}%
               </span>
             )}
           </button>
@@ -493,7 +492,7 @@ function PriceCard({ p }: { p: (typeof prices)[number] }) {
             {renderPrice(computedPrice)}
           </span>
           <span className="text-[13px] font-light text-[#6B7BA8]">
-            {p.perLeech ? `за ${p.items[active]}` : `за ${sessionCounts[active]} ${sessionWord}`}
+            за {sessions}\u00A0{sessionWord}
           </span>
         </div>
       </div>
