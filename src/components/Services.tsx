@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { useBooking } from "@/components/BookingModal";
 
 export type Variant = {
@@ -482,16 +483,34 @@ export function ServiceCard({
           Записаться
         </button>
         <div className="hidden sm:flex flex-1">
-          <a href="#programs" className="btn-secondary w-full inline-flex items-center justify-center text-center whitespace-nowrap">
-            Узнать больше
-          </a>
+          {clean(type.title) === "Гирудотерапия" ? (
+            <Link
+              to="/girudoterapiya"
+              className="btn-secondary w-full inline-flex items-center justify-center text-center whitespace-nowrap"
+            >
+              Узнать больше
+            </Link>
+          ) : (
+            <a href="#programs" className="btn-secondary w-full inline-flex items-center justify-center text-center whitespace-nowrap">
+              Узнать больше
+            </a>
+          )}
         </div>
 
         {/* Mobile: one row with Узнать больше + arrows */}
         <div className="flex items-center gap-2 sm:hidden">
-          <a href="#programs" className="btn-secondary flex-1 h-[60px] px-3 py-0 inline-flex items-center justify-center text-center">
-            Узнать больше
-          </a>
+          {clean(type.title) === "Гирудотерапия" ? (
+            <Link
+              to="/girudoterapiya"
+              className="btn-secondary flex-1 h-[60px] px-3 py-0 inline-flex items-center justify-center text-center"
+            >
+              Узнать больше
+            </Link>
+          ) : (
+            <a href="#programs" className="btn-secondary flex-1 h-[60px] px-3 py-0 inline-flex items-center justify-center text-center">
+              Узнать больше
+            </a>
+          )}
           {totalCount > 1 && (
             <>
               <button
