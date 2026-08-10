@@ -295,6 +295,16 @@ export function mobileTitle(title: string) {
   return t;
 }
 
+
+export const servicePageLinks: Record<string, string> = {
+  "Гирудотерапия": "/girudoterapiya",
+  "Банки": "/banki",
+  "Векторный": "/vektornyi-massazh",
+  "Лимфатический": "/limfaticheskii-massazh",
+  "Лимфодренажный": "/limfodrenazhnyi-massazh",
+  "Классический": "/klassicheskii-massazh",
+};
+
 export function ServiceCard({
   type,
   zoneIndex,
@@ -483,9 +493,9 @@ export function ServiceCard({
           Записаться
         </button>
         <div className="hidden sm:flex flex-1">
-          {clean(type.title) === "Гирудотерапия" ? (
+          {servicePageLinks[clean(type.title)] ? (
             <Link
-              to="/girudoterapiya"
+              to={servicePageLinks[clean(type.title)]}
               className="btn-secondary w-full inline-flex items-center justify-center text-center whitespace-nowrap"
             >
               Узнать больше
@@ -499,9 +509,9 @@ export function ServiceCard({
 
         {/* Mobile: one row with Узнать больше + arrows */}
         <div className="flex items-center gap-2 sm:hidden">
-          {clean(type.title) === "Гирудотерапия" ? (
+          {servicePageLinks[clean(type.title)] ? (
             <Link
-              to="/girudoterapiya"
+              to={servicePageLinks[clean(type.title)]}
               className="btn-secondary flex-1 h-[60px] px-3 py-0 inline-flex items-center justify-center text-center"
             >
               Узнать больше

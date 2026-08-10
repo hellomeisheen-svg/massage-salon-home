@@ -9,11 +9,22 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as VektornyiMassazhRouteImport } from './routes/vektornyi-massazh'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as MassazhRouteImport } from './routes/massazh'
+import { Route as LimfodrenazhnyiMassazhRouteImport } from './routes/limfodrenazhnyi-massazh'
+import { Route as LimfaticheskiiMassazhRouteImport } from './routes/limfaticheskii-massazh'
+import { Route as KlassicheskiiMassazhRouteImport } from './routes/klassicheskii-massazh'
 import { Route as GirudoterapiyaRouteImport } from './routes/girudoterapiya'
+import { Route as BankiRouteImport } from './routes/banki'
 import { Route as IndexRouteImport } from './routes/index'
 
+const VektornyiMassazhRoute = VektornyiMassazhRouteImport.update({
+  id: '/vektornyi-massazh',
+  path: '/vektornyi-massazh',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
@@ -24,9 +35,34 @@ const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
   path: '/privacy-policy',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MassazhRoute = MassazhRouteImport.update({
+  id: '/massazh',
+  path: '/massazh',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LimfodrenazhnyiMassazhRoute = LimfodrenazhnyiMassazhRouteImport.update({
+  id: '/limfodrenazhnyi-massazh',
+  path: '/limfodrenazhnyi-massazh',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LimfaticheskiiMassazhRoute = LimfaticheskiiMassazhRouteImport.update({
+  id: '/limfaticheskii-massazh',
+  path: '/limfaticheskii-massazh',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KlassicheskiiMassazhRoute = KlassicheskiiMassazhRouteImport.update({
+  id: '/klassicheskii-massazh',
+  path: '/klassicheskii-massazh',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const GirudoterapiyaRoute = GirudoterapiyaRouteImport.update({
   id: '/girudoterapiya',
   path: '/girudoterapiya',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BankiRoute = BankiRouteImport.update({
+  id: '/banki',
+  path: '/banki',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -37,40 +73,102 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/banki': typeof BankiRoute
   '/girudoterapiya': typeof GirudoterapiyaRoute
+  '/klassicheskii-massazh': typeof KlassicheskiiMassazhRoute
+  '/limfaticheskii-massazh': typeof LimfaticheskiiMassazhRoute
+  '/limfodrenazhnyi-massazh': typeof LimfodrenazhnyiMassazhRoute
+  '/massazh': typeof MassazhRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/vektornyi-massazh': typeof VektornyiMassazhRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/banki': typeof BankiRoute
   '/girudoterapiya': typeof GirudoterapiyaRoute
+  '/klassicheskii-massazh': typeof KlassicheskiiMassazhRoute
+  '/limfaticheskii-massazh': typeof LimfaticheskiiMassazhRoute
+  '/limfodrenazhnyi-massazh': typeof LimfodrenazhnyiMassazhRoute
+  '/massazh': typeof MassazhRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/vektornyi-massazh': typeof VektornyiMassazhRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/banki': typeof BankiRoute
   '/girudoterapiya': typeof GirudoterapiyaRoute
+  '/klassicheskii-massazh': typeof KlassicheskiiMassazhRoute
+  '/limfaticheskii-massazh': typeof LimfaticheskiiMassazhRoute
+  '/limfodrenazhnyi-massazh': typeof LimfodrenazhnyiMassazhRoute
+  '/massazh': typeof MassazhRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/vektornyi-massazh': typeof VektornyiMassazhRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/girudoterapiya' | '/privacy-policy' | '/sitemap.xml'
+  fullPaths:
+    | '/'
+    | '/banki'
+    | '/girudoterapiya'
+    | '/klassicheskii-massazh'
+    | '/limfaticheskii-massazh'
+    | '/limfodrenazhnyi-massazh'
+    | '/massazh'
+    | '/privacy-policy'
+    | '/sitemap.xml'
+    | '/vektornyi-massazh'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/girudoterapiya' | '/privacy-policy' | '/sitemap.xml'
-  id: '__root__' | '/' | '/girudoterapiya' | '/privacy-policy' | '/sitemap.xml'
+  to:
+    | '/'
+    | '/banki'
+    | '/girudoterapiya'
+    | '/klassicheskii-massazh'
+    | '/limfaticheskii-massazh'
+    | '/limfodrenazhnyi-massazh'
+    | '/massazh'
+    | '/privacy-policy'
+    | '/sitemap.xml'
+    | '/vektornyi-massazh'
+  id:
+    | '__root__'
+    | '/'
+    | '/banki'
+    | '/girudoterapiya'
+    | '/klassicheskii-massazh'
+    | '/limfaticheskii-massazh'
+    | '/limfodrenazhnyi-massazh'
+    | '/massazh'
+    | '/privacy-policy'
+    | '/sitemap.xml'
+    | '/vektornyi-massazh'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BankiRoute: typeof BankiRoute
   GirudoterapiyaRoute: typeof GirudoterapiyaRoute
+  KlassicheskiiMassazhRoute: typeof KlassicheskiiMassazhRoute
+  LimfaticheskiiMassazhRoute: typeof LimfaticheskiiMassazhRoute
+  LimfodrenazhnyiMassazhRoute: typeof LimfodrenazhnyiMassazhRoute
+  MassazhRoute: typeof MassazhRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  VektornyiMassazhRoute: typeof VektornyiMassazhRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/vektornyi-massazh': {
+      id: '/vektornyi-massazh'
+      path: '/vektornyi-massazh'
+      fullPath: '/vektornyi-massazh'
+      preLoaderRoute: typeof VektornyiMassazhRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
@@ -85,11 +183,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivacyPolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/massazh': {
+      id: '/massazh'
+      path: '/massazh'
+      fullPath: '/massazh'
+      preLoaderRoute: typeof MassazhRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/limfodrenazhnyi-massazh': {
+      id: '/limfodrenazhnyi-massazh'
+      path: '/limfodrenazhnyi-massazh'
+      fullPath: '/limfodrenazhnyi-massazh'
+      preLoaderRoute: typeof LimfodrenazhnyiMassazhRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/limfaticheskii-massazh': {
+      id: '/limfaticheskii-massazh'
+      path: '/limfaticheskii-massazh'
+      fullPath: '/limfaticheskii-massazh'
+      preLoaderRoute: typeof LimfaticheskiiMassazhRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/klassicheskii-massazh': {
+      id: '/klassicheskii-massazh'
+      path: '/klassicheskii-massazh'
+      fullPath: '/klassicheskii-massazh'
+      preLoaderRoute: typeof KlassicheskiiMassazhRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/girudoterapiya': {
       id: '/girudoterapiya'
       path: '/girudoterapiya'
       fullPath: '/girudoterapiya'
       preLoaderRoute: typeof GirudoterapiyaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/banki': {
+      id: '/banki'
+      path: '/banki'
+      fullPath: '/banki'
+      preLoaderRoute: typeof BankiRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -104,9 +237,15 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BankiRoute: BankiRoute,
   GirudoterapiyaRoute: GirudoterapiyaRoute,
+  KlassicheskiiMassazhRoute: KlassicheskiiMassazhRoute,
+  LimfaticheskiiMassazhRoute: LimfaticheskiiMassazhRoute,
+  LimfodrenazhnyiMassazhRoute: LimfodrenazhnyiMassazhRoute,
+  MassazhRoute: MassazhRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  VektornyiMassazhRoute: VektornyiMassazhRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
