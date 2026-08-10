@@ -433,7 +433,7 @@ function PriceCard({ p }: { p: (typeof prices)[number] }) {
 
   const sessionWord = pluralize(sessionCounts[active], ["сеанс", "сеанса", "сеансов"]);
   const summary = p.perLeech
-    ? `${p.items[active]} · ${p.duration}`
+    ? `1 сеанс · ${p.items[active]} · ${p.duration}`
     : `${sessionCounts[active]} ${sessionWord} · ${p.items[active]} · ${p.duration}`;
 
   return (
