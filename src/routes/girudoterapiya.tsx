@@ -261,7 +261,7 @@ function GirudoterapiyaServices() {
                   1 сеанс — {variantData.duration}
                 </div>
                 <button
-                  onClick={openBooking}
+                  onClick={() => openBooking("Гирудотерапия")}
                   className="btn-primary mt-4 w-full"
                 >
                   Записаться
