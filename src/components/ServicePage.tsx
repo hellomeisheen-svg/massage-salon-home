@@ -76,7 +76,7 @@ function SpecialistBlock() {
   return (
     <div className="flex flex-col items-start gap-3 sm:gap-4">
       <img
-        className="h-[90px] w-[70px] rounded-lg object-cover xl:h-[110px] xl:w-[85px]"
+        className="h-[90px] w-[70px] rounded-lg border border-[#daebff] object-cover xl:h-[110px] xl:w-[85px]"
         alt="Татьяна Злобина"
         src={tatyanaPhotoAsset.url}
 
@@ -449,7 +449,7 @@ function Faq({ content }: { content: ServicePageContent }) {
             <img
               src={tatyanaPhotoAsset.url}
               alt="Татьяна Злобина"
-              className="h-[90px] w-[70px] xl:h-[110px] xl:w-[85px] rounded-lg object-cover"
+              className="h-[90px] w-[70px] xl:h-[110px] xl:w-[85px] rounded-lg border border-[#daebff] object-cover"
             />
             <h3
               className="mt-6 text-[#1C3C8C] text-[26px] sm:text-[30px] leading-[1.1] font-light"
