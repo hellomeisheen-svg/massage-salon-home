@@ -29,6 +29,7 @@ export function Header({ items }: { items?: NavItem[] } = {}) {
   const navigationItems = items ?? defaultNavigationItems;
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const [menuOpen, setMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
   const [heroPassed, setHeroPassed] = useState(false);
 
   useEffect(() => {
