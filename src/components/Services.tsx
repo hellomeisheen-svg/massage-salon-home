@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { useBooking } from "@/components/BookingModal";
 import { applyTypography } from "@/lib/typography";
@@ -627,20 +627,34 @@ const groups = categories.map((label, ci) => ({
     .filter((t) => t.category === ci),
 }));
 
+// Порядок карточек на десктопе (по категориям), на мобильных — порядок массива
+const desktopOrder = groups.flatMap((g) => g.items.map((t) => t.index));
+
 export function Services() {
   const [active, setActive] = useState(0);
   const [zone, setZone] = useState(0);
+  const [isDesktop, setIsDesktop] = useState(false);
   const type = serviceTypes[active];
 
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1280px)");
+    const update = () => setIsDesktop(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
 
   const selectType = (i: number) => {
     setActive(i);
     setZone(0);
   };
 
+  const order = isDesktop ? desktopOrder : serviceTypes.map((_, i) => i);
+  const pos = Math.max(0, order.indexOf(active));
 
-  const prev = () => selectType((active - 1 + serviceTypes.length) % serviceTypes.length);
-  const next = () => selectType((active + 1) % serviceTypes.length);
+  const prev = () => selectType(order[(pos - 1 + order.length) % order.length]);
+  const next = () => selectType(order[(pos + 1) % order.length]);
+
 
   const renderNav = (isMobile: boolean) => (
     <nav className="flex w-full flex-col gap-6">
