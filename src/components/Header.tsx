@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import logo from "@/assets/logo-wide.png";
 
