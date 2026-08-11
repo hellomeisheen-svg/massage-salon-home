@@ -3,6 +3,7 @@ import { Plus } from "lucide-react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
+import { servicePageNav } from "@/components/ServicePage";
 import { Footer } from "@/components/Footer";
 import { PromoBanner } from "@/components/PromoBanner";
 import { Programs } from "@/components/Programs";
@@ -127,7 +128,7 @@ function GirudoterapiyaPage() {
   return (
     <BookingProvider>
       <div className="relative min-h-screen bg-[#EFF6FF] pt-20 xl:pt-[100px]">
-        <Header />
+        <Header items={servicePageNav} />
         <PageHero />
         <GirudoterapiyaServices />
         <Prices />

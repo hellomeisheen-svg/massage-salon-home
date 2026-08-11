@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 
-const navigationItems: { label: string; href: string }[] = [
+type NavItem = { label: string; href: string };
+
+const defaultNavigationItems: NavItem[] = [
   { label: "Услуги", href: "#services" },
   { label: "Преимущества", href: "#advantages" },
   { label: "Программы", href: "#programs" },
@@ -17,7 +20,8 @@ const logoStyle = {
   letterSpacing: "0.01em",
 } as const;
 
-export function Header() {
+export function Header({ items }: { items?: NavItem[] } = {}) {
+  const navigationItems = items ?? defaultNavigationItems;
   const [menuOpen, setMenuOpen] = useState(false);
   const [heroPassed, setHeroPassed] = useState(false);
 
@@ -58,7 +62,7 @@ export function Header() {
       {/* Desktop header */}
       <div className="hidden h-20 w-full items-center justify-between ds-card px-5 py-2.5 xl:flex xl:px-[30px]">
         {/* Logo */}
-        <div className="flex h-10 w-20 items-center">
+        <Link to="/" aria-label="На главную" className="flex h-10 w-20 items-center hover:opacity-70 transition-opacity">
           <span
             className="text-[28px] leading-none font-bold italic"
             style={{
@@ -68,7 +72,7 @@ export function Header() {
           >
             Logo
           </span>
-        </div>
+        </Link>
 
         {/* Navigation */}
         <nav aria-label="Основная навигация">
@@ -100,7 +104,7 @@ export function Header() {
       {/* Mobile / tablet header */}
       <div className="flex h-16 w-full items-center justify-between ds-card px-4 py-2.5 xl:hidden">
         {/* Logo */}
-        <div className="flex h-8 items-center">
+        <Link to="/" aria-label="На главную" onClick={() => setMenuOpen(false)} className="flex h-8 items-center hover:opacity-70 transition-opacity">
           <span
             className="text-[24px] leading-none font-bold italic"
             style={{
@@ -110,7 +114,7 @@ export function Header() {
           >
             Logo
           </span>
-        </div>
+        </Link>
 
         {/* Hamburger */}
         <button
