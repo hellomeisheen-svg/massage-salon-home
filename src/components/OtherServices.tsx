@@ -145,7 +145,7 @@ export function OtherServices({ exclude }: { exclude?: string }) {
                 >
                   {service.title}
                 </h3>
-                <p className="mt-2 body-text text-[#4A5C85]">
+                <p className="mt-2 body-text text-[#566A93]">
                   {service.description}
                 </p>
               </div>

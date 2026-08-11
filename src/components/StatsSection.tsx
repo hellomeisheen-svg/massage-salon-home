@@ -63,7 +63,7 @@ export function StatsSection() {
                 <span className="mt-2 text-[15px] font-medium leading-[1.3] text-[#1C3C8C] sm:text-[16px]">
                   {stat.label}
                 </span>
-                <span className="mt-1 text-[14px] font-light leading-[1.35] text-[#4A5C85] sm:text-[15px]">
+                <span className="mt-1 text-[14px] font-light leading-[1.35] text-[#566A93] sm:text-[15px]">
                   {stat.description}
                 </span>
               </div>

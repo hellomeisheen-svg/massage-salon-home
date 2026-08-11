@@ -71,7 +71,7 @@ export function PriceTable({ prices }: { prices: ServicePrice[] }) {
           </div>
         </div>
 
-        <p className="mt-6 text-center text-[14px] font-light text-[#4A5C85]">
+        <p className="mt-6 text-center text-[14px] font-light text-[#566A93]">
           Цены указаны с учётом скидки при покупке курса. Оплатить можно на месте.
         </p>
       </div>
@@ -91,13 +91,13 @@ function PriceTableMobileRow({ p }: { p: ServicePrice }) {
         >
           {p.zone}
         </div>
-        <div className="mt-1 text-[13px] font-light leading-[18px] text-[#4A5C85]">
+        <div className="mt-1 text-[13px] font-light leading-[18px] text-[#566A93]">
           {p.duration}
         </div>
       </div>
       <div className="mt-4 grid grid-cols-3 gap-2">
         <div>
-          <div className="text-[11px] font-medium text-[#4A5C85]">1 сеанс</div>
+          <div className="text-[11px] font-medium text-[#566A93]">1 сеанс</div>
           <div
             className="mt-1 text-[15px] font-light text-[#1C3C8C]"
             style={{ fontFamily: heading }}
@@ -106,7 +106,7 @@ function PriceTableMobileRow({ p }: { p: ServicePrice }) {
           </div>
         </div>
         <div>
-          <div className="text-[11px] font-medium text-[#4A5C85]">
+          <div className="text-[11px] font-medium text-[#566A93]">
             3 сеанса
             <span className="ml-1 rounded-full bg-[#1C3C8C] px-1.5 py-0.5 text-[9px] font-semibold text-white">
               -10%
@@ -118,12 +118,12 @@ function PriceTableMobileRow({ p }: { p: ServicePrice }) {
           >
             {renderPrice(formatPrice(price3))}
           </div>
-          <div className="text-[11px] font-light text-[#4A5C85] line-through">
+          <div className="text-[11px] font-light text-[#566A93] line-through">
             {renderPrice(formatPrice(p.base * 3))}
           </div>
         </div>
         <div>
-          <div className="text-[11px] font-medium text-[#4A5C85]">
+          <div className="text-[11px] font-medium text-[#566A93]">
             6 сеансов
             <span className="ml-1 rounded-full bg-[#1C3C8C] px-1.5 py-0.5 text-[9px] font-semibold text-white">
               -15%
@@ -135,7 +135,7 @@ function PriceTableMobileRow({ p }: { p: ServicePrice }) {
           >
             {renderPrice(formatPrice(price6))}
           </div>
-          <div className="text-[11px] font-light text-[#4A5C85] line-through">
+          <div className="text-[11px] font-light text-[#566A93] line-through">
             {renderPrice(formatPrice(p.base * 6))}
           </div>
         </div>
@@ -154,11 +154,11 @@ function PriceTableRow({ p }: { p: ServicePrice }) {
         >
           {p.zone}
         </div>
-        <div className="mt-1 text-[13px] font-light leading-[18px] text-[#4A5C85] sm:hidden">
+        <div className="mt-1 text-[13px] font-light leading-[18px] text-[#566A93] sm:hidden">
           {p.subtitle}
         </div>
       </td>
-      <td className="px-4 py-5 text-[15px] xl:text-[18px] font-light text-[#4A5C85] xl:px-8">
+      <td className="px-4 py-5 text-[15px] xl:text-[18px] font-light text-[#566A93] xl:px-8">
         {p.duration}
       </td>
       <td
@@ -190,7 +190,7 @@ function PriceTableCell({
   const current = Math.round(total * (1 - discount));
   return (
     <div className="flex items-center gap-2">
-      <span className="text-[13px] xl:text-[15px] font-light text-[#4A5C85] line-through">
+      <span className="text-[13px] xl:text-[15px] font-light text-[#566A93] line-through">
         {renderPrice(formatPrice(total))}
       </span>
       <span
