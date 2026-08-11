@@ -63,14 +63,23 @@ const steps = [
   { n: "04", title: "После сеанса", text: "Накладываю стерильную повязку и подробно рассказываю, как ухаживать за зонами." },
 ];
 
-const prices = [
+type HirudoRow = {
+  zone: string;
+  subtitle: string;
+  duration: string;
+  base: number;
+  perLeech: boolean;
+  leechCounts: number[];
+};
+
+const hirudoRows: HirudoRow[] = [
   {
     zone: "Медицинские пиявки",
     subtitle: "Оздоровительная практика",
     duration: "2\u00A0часа",
     base: 4800,
     perLeech: false,
-    items: ["6\u00A0пиявок", "16\u00A0пиявок", "74\u00A0пиявки"],
+    leechCounts: [6, 16, 74],
   },
   {
     zone: "Косметические пиявки",
@@ -78,7 +87,7 @@ const prices = [
     duration: "2\u00A0часа",
     base: 600,
     perLeech: true,
-    items: ["6\u00A0пиявок", "10\u00A0пиявок", "20\u00A0пиявок"],
+    leechCounts: [6, 10, 20],
   },
 ];
 
