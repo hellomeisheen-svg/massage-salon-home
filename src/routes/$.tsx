@@ -53,8 +53,6 @@ function NotFoundPage() {
             </div>
           </div>
         </main>
-
-        <Footer />
       </div>
     </BookingProvider>
   );
