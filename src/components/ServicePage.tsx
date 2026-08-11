@@ -375,7 +375,7 @@ function PriceCards({ content }: { content: ServicePageContent }) {
 
 function Prices({ content }: { content: ServicePageContent }) {
   if (content.pricesStyle === "table") {
-    return <PriceTable content={content} />;
+    return <PriceTable prices={content.prices} />;
   }
   return <PriceCards content={content} />;
 }
