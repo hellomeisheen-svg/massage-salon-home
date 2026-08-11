@@ -429,113 +429,183 @@ const sessionDiscounts = [null, "-10%", "-15%"] as const;
 const discountValues = [0, 0.1, 0.15];
 const sessionCounts = [1, 3, 6];
 
-function PriceCard({ p }: { p: (typeof prices)[number] }) {
-  const { openBooking } = useBooking();
-  const [active, setActive] = useState(0);
-
-  const leechCount = Number(p.items[active].match(/\d+/)?.[0] ?? 6);
-  const discount = discountValues[active];
-  const base = p.perLeech ? leechCount * p.base : p.base * sessionCounts[active];
-  const originalPrice = formatPrice(base);
-  const computedPrice = formatPrice(Math.round(base * (1 - discount)));
-  const hasDiscount = discount > 0;
-
-  const sessionWord = pluralize(sessionCounts[active], ["сеанс", "сеанса", "сеансов"]);
-  const leechSessionMap = [1, 3, 6];
-  const leechSessionWord = pluralize(leechSessionMap[active], ["сеанс", "сеанса", "сеансов"]);
-  const summary = p.perLeech
-    ? `${leechSessionMap[active]} ${leechSessionWord} · ${p.items[active]} · ${p.duration}`
-    : `${sessionCounts[active]} ${sessionWord} · ${p.items[active]} · ${p.duration}`;
-
+function HirudoPriceCell({ p, index }: { p: HirudoRow; index: number }) {
+  const sessions = sessionCounts[index];
+  const discount = discountValues[index];
+  const leechCount = p.leechCounts[index];
+  const total = p.perLeech ? leechCount * p.base : sessions * p.base;
+  const current = Math.round(total * (1 - discount));
+  const leechWord = pluralize(leechCount, ["пиявка", "пиявки", "пиявок"]);
   return (
-    <article className="flex flex-col ds-card p-6 sm:p-8 xl:p-10">
-      {/* Tabs */}
-      <div className="flex items-stretch gap-1 rounded-[10px] bg-[#EFF6FF] p-1">
-        {p.items.map((label, i) => (
-          <button
-            key={label}
-            type="button"
-            onClick={() => setActive(i)}
-            className={`relative flex flex-1 items-center justify-center rounded-[8px] px-2 py-2.5 transition-all duration-300 ${
-              active === i ? "bg-white shadow-[0_2px_8px_rgba(28,60,140,0.08)]" : "bg-transparent"
-            }`}
-          >
-            <span
-              className={`whitespace-nowrap text-[13px] tracking-tight transition-colors duration-300 ${
-                active === i ? "font-medium text-[#1C3C8C]" : "font-light text-[#6B7BA8]"
-              }`}
-            >
-              {label}
-            </span>
-            {sessionDiscounts[i] && (
-              <span className="absolute -top-1 right-1 rounded-full bg-[#1C3C8C] px-1.5 py-0.5 text-[9px] font-semibold tracking-wide text-white">
-                {sessionDiscounts[i]}
-              </span>
-            )}
-          </button>
-        ))}
-      </div>
-
-      <h3 className="mt-5 ds-h3 text-[#1C3C8C]" style={{ fontFamily: heading }}>
-        {p.zone}
-      </h3>
-      <p className="mt-3 body-text text-[#6B7BA8]">{p.subtitle}</p>
-
-      <p className="mt-6 text-[13px] font-medium leading-[18px] tracking-wide text-[#1C3C8C]">
-        {summary}
-      </p>
-
-      <div className="mt-6 flex items-center justify-end gap-4 sm:gap-5">
-        {hasDiscount && (
-          <span
-            className="text-[17px] sm:text-[19px] font-light leading-[1.2] text-[#6B7BA8] line-through"
-            style={{ fontFamily: heading }}
-          >
-            {renderPrice(originalPrice)}
+    <div className="flex flex-col gap-0.5">
+      <div className="flex items-center gap-2">
+        {discount > 0 && (
+          <span className="text-[13px] font-light text-[#6B7BA8] line-through">
+            {renderPrice(formatPrice(total))}
           </span>
         )}
-        <div className="flex flex-col items-end">
-          <span className="ds-price text-[#1C3C8C]" style={{ fontFamily: heading }}>
-            {renderPrice(computedPrice)}
-          </span>
-          <span className="text-[13px] font-light text-[#6B7BA8]">
-            {p.perLeech ? `за ${p.items[active]}` : `за ${sessionCounts[active]} ${sessionWord}`}
-          </span>
+        <span
+          className="text-[18px] font-light text-[#1C3C8C]"
+          style={{ fontFamily: heading }}
+        >
+          {renderPrice(formatPrice(current))}
+        </span>
+      </div>
+      <span className="text-[12px] font-light text-[#6B7BA8]">
+        {leechCount} {leechWord}
+      </span>
+    </div>
+  );
+}
+
+function HirudoPriceTableRow({ p }: { p: HirudoRow }) {
+  return (
+    <tr className="group transition-colors hover:bg-[#F7FBFF]">
+      <td className="px-4 py-5 xl:px-8">
+        <div
+          className="text-[18px] font-light leading-[1.25] text-[#1C3C8C]"
+          style={{ fontFamily: heading }}
+        >
+          {p.zone}
+        </div>
+        <div className="mt-1 text-[13px] font-light leading-[18px] text-[#6B7BA8] sm:hidden">
+          {p.subtitle}
+        </div>
+      </td>
+      <td className="px-4 py-5 text-[15px] font-light text-[#6B7BA8] xl:px-8">
+        {p.duration}
+      </td>
+      {[0, 1, 2].map((i) => (
+        <td key={i} className="px-4 py-5 xl:px-8">
+          <HirudoPriceCell p={p} index={i} />
+        </td>
+      ))}
+    </tr>
+  );
+}
+
+function HirudoPriceTableMobileRow({ p }: { p: HirudoRow }) {
+  const tableLabels = ["1 сеанс", "3 сеанса", "6 сеансов"];
+  return (
+    <div className="px-4 py-5">
+      <div className="min-w-0">
+        <div
+          className="text-[18px] font-light leading-[1.25] text-[#1C3C8C]"
+          style={{ fontFamily: heading }}
+        >
+          {p.zone}
+        </div>
+        <div className="mt-1 text-[13px] font-light leading-[18px] text-[#6B7BA8]">
+          {p.duration}
         </div>
       </div>
-
-      <button
-        type="button"
-        onClick={() => openBooking(`Гирудотерапия · ${p.zone}`)}
-        className="btn-primary mt-8 w-full"
-      >
-        Записаться
-      </button>
-    </article>
+      <div className="mt-4 grid grid-cols-3 gap-2">
+        {[0, 1, 2].map((i) => {
+          const sessions = sessionCounts[i];
+          const discount = discountValues[i];
+          const leechCount = p.leechCounts[i];
+          const total = p.perLeech ? leechCount * p.base : sessions * p.base;
+          const current = Math.round(total * (1 - discount));
+          const leechWord = pluralize(leechCount, ["пиявка", "пиявки", "пиявок"]);
+          return (
+            <div key={i}>
+              <div className="text-[11px] font-medium text-[#6B7BA8]">
+                {tableLabels[i]}
+                {discount > 0 && (
+                  <span className="ml-1 rounded-full bg-[#1C3C8C] px-1.5 py-0.5 text-[9px] font-semibold text-white">
+                    {sessionDiscounts[i]}
+                  </span>
+                )}
+              </div>
+              <div
+                className="mt-1 text-[15px] font-light text-[#1C3C8C]"
+                style={{ fontFamily: heading }}
+              >
+                {renderPrice(formatPrice(current))}
+              </div>
+              {discount > 0 && (
+                <div className="text-[11px] font-light text-[#6B7BA8] line-through">
+                  {renderPrice(formatPrice(total))}
+                </div>
+              )}
+              <div className="text-[11px] font-light text-[#6B7BA8]">
+                {leechCount} {leechWord}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
   );
 }
 
 function Prices() {
   return (
-    <section id="programs" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section">
+    <section id="prices" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section">
       <div className="container-1900">
         <h2
           className="text-center ds-h2 text-[#1C3C8C]"
           style={{ fontFamily: heading }}
         >
-          Форматы и&nbsp;стоимость
+          Форматы и стоимость
         </h2>
 
-        <div className="mt-10 grid grid-cols-1 gap-4 sm:gap-5 xl:grid-cols-2">
-          {prices.map((p) => (
-            <PriceCard key={p.zone} p={p} />
-          ))}
+        <div className="mt-8 sm:mt-10 ds-card overflow-hidden">
+          {/* Desktop */}
+          <div className="hidden sm:block overflow-x-auto scrollbar-none">
+            <table className="w-full text-left">
+              <thead>
+                <tr className="bg-[#EFF6FF]">
+                  <th className="px-4 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
+                    Формат
+                  </th>
+                  <th className="px-4 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
+                    Длительность
+                  </th>
+                  <th className="px-4 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
+                    1 сеанс
+                  </th>
+                  <th className="px-4 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
+                    <span className="flex items-center gap-2">
+                      3 сеанса
+                      <span className="rounded-full bg-[#1C3C8C] px-2 py-0.5 text-[10px] font-semibold text-white">
+                        -10%
+                      </span>
+                    </span>
+                  </th>
+                  <th className="px-4 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
+                    <span className="flex items-center gap-2">
+                      6 сеансов
+                      <span className="rounded-full bg-[#1C3C8C] px-2 py-0.5 text-[10px] font-semibold text-white">
+                        -15%
+                      </span>
+                    </span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-[#daebff]">
+                {hirudoRows.map((p) => (
+                  <HirudoPriceTableRow key={p.zone} p={p} />
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          {/* Mobile */}
+          <div className="sm:hidden divide-y divide-[#daebff]">
+            {hirudoRows.map((p) => (
+              <HirudoPriceTableMobileRow key={p.zone} p={p} />
+            ))}
+          </div>
         </div>
+
+        <p className="mt-6 text-center text-[14px] font-light text-[#6B7BA8]">
+          Цены указаны с учётом скидки при покупке курса. Оплатить можно на месте.
+        </p>
       </div>
     </section>
   );
 }
-
 
 function FaqItem({ q, a }: { q: string; a: React.ReactNode }) {
   const [open, setOpen] = useState(false);
