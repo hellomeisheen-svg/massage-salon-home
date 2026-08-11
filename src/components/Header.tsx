@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 
-const navigationItems: { label: string; href: string }[] = [
+type NavItem = { label: string; href: string };
+
+const defaultNavigationItems: NavItem[] = [
   { label: "Услуги", href: "#services" },
   { label: "Преимущества", href: "#advantages" },
   { label: "Программы", href: "#programs" },
@@ -17,7 +20,8 @@ const logoStyle = {
   letterSpacing: "0.01em",
 } as const;
 
-export function Header() {
+export function Header({ items }: { items?: NavItem[] } = {}) {
+  const navigationItems = items ?? defaultNavigationItems;
   const [menuOpen, setMenuOpen] = useState(false);
   const [heroPassed, setHeroPassed] = useState(false);
 
