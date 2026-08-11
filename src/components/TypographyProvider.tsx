@@ -4,7 +4,10 @@ import { typographyPass } from "@/lib/typography";
 
 /**
  * Применяет русскую типографику ко всему тексту страницы
- * и следит за изменениями DOM (React-рендеры, анимации, модалки).
+ * и следит за появлением новых элементов в DOM (модалки, динамический контент).
+ *
+ * Первый проход запускается с небольшой задержкой после гидратации,
+ * чтобы не вызывать mismatch между серверным HTML и клиентским React-деревом.
  */
 export function TypographyProvider() {
   useEffect(() => {
@@ -18,18 +21,20 @@ export function TypographyProvider() {
       observer?.observe(document.body, {
         childList: true,
         subtree: true,
-        characterData: true,
       });
     };
 
-    const schedule = () => {
+    const schedule = (delay = 0) => {
       if (scheduled) return;
       scheduled = true;
-      setTimeout(() => requestAnimationFrame(run), 0);
+      setTimeout(
+        () => requestAnimationFrame(run),
+        delay,
+      );
     };
 
-    observer = new MutationObserver(schedule);
-    schedule();
+    observer = new MutationObserver(() => schedule(0));
+    schedule(150);
 
     return () => {
       observer?.disconnect();
@@ -39,3 +44,4 @@ export function TypographyProvider() {
 
   return null;
 }
+
