@@ -32,6 +32,7 @@ export type ServicePageContent = {
   slug: string;
   breadcrumb: string;
   title: string;
+  hit?: boolean;
   heroText: React.ReactNode;
   heroImage: string;
   heroImageAlt: string;
