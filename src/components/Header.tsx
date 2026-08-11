@@ -151,15 +151,31 @@ export function Header({ items }: { items?: NavItem[] } = {}) {
                 )}
                 {navigationItems.map((item) => (
                   <li key={item.label}>
-                    <a
-                      href={item.href}
-                      onClick={() => setMenuOpen(false)}
-                      className="block w-full rounded-lg px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors"
-                    >
-                      {item.label}
-                    </a>
-                    {!items && item.href === "#services" && (
-                      <ul className="mb-1 flex flex-col gap-0.5 border-l border-[#daebff] pl-3 ml-3">
+                    <div className="flex items-center">
+                      <a
+                        href={item.href}
+                        onClick={() => setMenuOpen(false)}
+                        className="block flex-1 rounded-lg px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors"
+                      >
+                        {item.label}
+                      </a>
+                      {!items && item.href === "#services" && (
+                        <button
+                          type="button"
+                          onClick={() => setServicesOpen((v) => !v)}
+                          aria-expanded={servicesOpen}
+                          aria-label="Показать список услуг"
+                          className="flex h-9 w-9 items-center justify-center rounded-lg text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors"
+                        >
+                          <ChevronDown
+                            size={18}
+                            className={`transition-transform duration-300 ${servicesOpen ? "rotate-180" : ""}`}
+                          />
+                        </button>
+                      )}
+                    </div>
+                    {!items && item.href === "#services" && servicesOpen && (
+                      <ul className="mb-1 ml-3 flex flex-col gap-0.5 border-l border-[#daebff] pl-3">
                         {servicePages.map((service) => (
                           <li key={service.to}>
                             <Link
@@ -178,25 +194,36 @@ export function Header({ items }: { items?: NavItem[] } = {}) {
               </ul>
 
               {items && (
-                <div className="mt-4 border-t border-[#daebff] pt-3">
-                  <p className="px-3 pb-1 text-[13px] uppercase tracking-[0.08em] text-[#566A93]">
+                <div className="mt-3 border-t border-[#daebff] pt-2">
+                  <button
+                    type="button"
+                    onClick={() => setServicesOpen((v) => !v)}
+                    aria-expanded={servicesOpen}
+                    className="flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors"
+                  >
                     Другие услуги
-                  </p>
-                  <ul className="flex flex-col gap-0.5">
-                    {servicePages
-                      .filter((service) => service.to !== pathname)
-                      .map((service) => (
-                        <li key={service.to}>
-                          <Link
-                            to={service.to}
-                            onClick={() => setMenuOpen(false)}
-                            className="block w-full rounded-lg px-3 py-2 text-left text-[15px] font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors"
-                          >
-                            {service.label}
-                          </Link>
-                        </li>
-                      ))}
-                  </ul>
+                    <ChevronDown
+                      size={18}
+                      className={`transition-transform duration-300 ${servicesOpen ? "rotate-180" : ""}`}
+                    />
+                  </button>
+                  {servicesOpen && (
+                    <ul className="ml-3 flex flex-col gap-0.5 border-l border-[#daebff] pl-3">
+                      {servicePages
+                        .filter((service) => service.to !== pathname)
+                        .map((service) => (
+                          <li key={service.to}>
+                            <Link
+                              to={service.to}
+                              onClick={() => setMenuOpen(false)}
+                              className="block w-full rounded-lg px-3 py-2 text-left text-[15px] font-normal leading-[150%] text-[#566A93] hover:bg-[#EFF6FF] transition-colors"
+                            >
+                              {service.label}
+                            </Link>
+                          </li>
+                        ))}
+                    </ul>
+                  )}
                 </div>
               )}
             </nav>
