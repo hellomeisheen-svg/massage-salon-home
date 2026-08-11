@@ -73,8 +73,8 @@ export function OtherServices({ exclude }: { exclude?: string }) {
   return (
     <section className="bg-[#EFF6FF] ds-section">
       <div className="container-1900">
-        <div className="flex flex-col items-center text-center xl:items-start xl:text-left">
-          <div className="flex flex-col items-center xl:items-start">
+        <div className="flex flex-col items-center text-center">
+          <div className="flex flex-col items-center">
             <span
               className="inline-flex items-center gap-2 px-4 py-1.5 ds-label text-white"
               style={{
@@ -112,7 +112,7 @@ export function OtherServices({ exclude }: { exclude?: string }) {
                 >
                   {service.title}
                 </h3>
-                <p className="mt-2 line-clamp-2 text-[13px] font-light leading-[1.4] text-[#6B7BA8]">
+                <p className="mt-2 line-clamp-2 body-text text-[#6B7BA8]">
                   {service.description}
                 </p>
               </div>
