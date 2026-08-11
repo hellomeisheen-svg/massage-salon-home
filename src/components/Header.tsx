@@ -15,12 +15,6 @@ const defaultNavigationItems: NavItem[] = [
 ];
 
 
-const logoStyle = {
-  fontFamily: "'Roslindale Cyrillic Display Condensed', serif",
-  color: "#1c3c8c",
-  letterSpacing: "0.01em",
-} as const;
-
 export function Header({ items }: { items?: NavItem[] } = {}) {
   const navigationItems = items ?? defaultNavigationItems;
   const [menuOpen, setMenuOpen] = useState(false);
