@@ -1,4 +1,8 @@
 import { ArrowUp } from "lucide-react";
+import { Link } from "@tanstack/react-router";
+
+export type FooterNavItem = { label: string; href?: string; to?: string };
+
 
 const headingStyle = {
   fontFamily: "'Roslindale Cyrillic Display Condensed', serif",
