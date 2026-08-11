@@ -104,7 +104,7 @@ export function Faq() {
             >
               Татьяна Злобина
             </h3>
-            <p className="mt-3 body-text text-[#6B7BA8]">
+            <p className="mt-3 body-text text-[#4A5C85]">
               Мастер кабинета, специалист по&nbsp;оздоровительным практикам
             </p>
             <p className="mt-6 body-text text-[#1C3C8C]">

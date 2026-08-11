@@ -47,7 +47,7 @@ function EduCard({ item }: { item: EduItem }) {
 
       <ul className="mt-4 space-y-2 xl:space-y-1.5">
         {item.items.map((i) => (
-          <li key={i} className="body-text text-[#6B7BA8] flex gap-2">
+          <li key={i} className="body-text text-[#4A5C85] flex gap-2">
             <span aria-hidden>•</span>
             <span>{i}</span>
           </li>
@@ -98,7 +98,7 @@ export function Education() {
                 </blockquote>
 
                 <p
-                  className="text-[16px] font-light leading-[1.5] text-[#6B7BA8] xl:max-w-[480px]"
+                  className="text-[16px] font-light leading-[1.5] text-[#4A5C85] xl:max-w-[480px]"
                   style={{ fontFamily: "'Inter', sans-serif" }}
                 >
                   Татьяна Злобина — Мастер кабинета,
@@ -121,13 +121,13 @@ export function Education() {
 
         {/* Right: education lists */}
         <div className="flex flex-col gap-6 xl:gap-3">
-          <div className="px-2 text-[#6B7BA8] text-[14px] sm:text-[15px]">Основное образование</div>
+          <div className="px-2 text-[#4A5C85] text-[14px] sm:text-[15px]">Основное образование</div>
           <div className="flex flex-col gap-6 xl:gap-3">
             {mainEducation.map((e) => (
               <EduCard key={e.school} item={e} />
             ))}
           </div>
-          <div className="px-2 mt-2 xl:mt-1 text-[#6B7BA8] text-[14px] sm:text-[15px]">Дополнительное образование</div>
+          <div className="px-2 mt-2 xl:mt-1 text-[#4A5C85] text-[14px] sm:text-[15px]">Дополнительное образование</div>
           <div className="flex flex-col gap-6 xl:gap-3">
             {extraEducation.map((e) => (
               <EduCard key={e.school} item={e} />

@@ -85,7 +85,7 @@ export function ApproachRedesign() {
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12">
             {/* Left: heading + quote */}
             <div className="flex flex-col gap-8 lg:col-span-5">
-              <p className="max-w-lg text-xl leading-[1.5] text-[#6B7BA8] lg:text-2xl">
+              <p className="max-w-lg text-xl leading-[1.5] text-[#4A5C85] lg:text-2xl">
                 «Каждый сеанс&nbsp;— это спокойный диалог с&nbsp;вашим телом...»
               </p>
               <h2
