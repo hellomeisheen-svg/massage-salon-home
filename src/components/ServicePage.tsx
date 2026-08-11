@@ -8,6 +8,7 @@ import { Programs } from "@/components/Programs";
 import { Education } from "@/components/Education";
 import { BookingProvider, useBooking } from "@/components/BookingModal";
 import { formatPrice, pluralize, renderPrice } from "@/components/Services";
+import { PriceTable, type ServicePrice } from "@/components/PriceTable";
 
 const heading = "'Roslindale Cyrillic Display Condensed', serif";
 const heroFont = { fontFamily: heading } as const;
