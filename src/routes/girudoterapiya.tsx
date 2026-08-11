@@ -475,7 +475,7 @@ function HirudoPriceTableRow({ p }: { p: HirudoRow }) {
     <tr className="group transition-colors hover:bg-[#F7FBFF]">
       <td className="px-4 py-5 xl:px-8">
         <div
-          className="text-[18px] font-light leading-[1.25] text-[#1C3C8C]"
+          className="text-[18px] xl:text-[28px] font-light leading-[1.25] text-[#1C3C8C]"
           style={{ fontFamily: heading }}
         >
           {p.zone}
