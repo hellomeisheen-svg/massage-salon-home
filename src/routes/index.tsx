@@ -19,13 +19,13 @@ import { BookingProvider } from "@/components/BookingModal";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Татьяна Злобина — оздоровительные практики" },
+      { title: "Седьмое небо — массаж и гирудотерапия, Владивосток" },
       {
         name: "description",
         content:
-          "Кабинет оздоровительных практик Татьяны Злобиной: массаж, банки, гирудотерапия. Спокойный ритм и внимание к каждому состоянию.",
+          "Кабинет оздоровительных практик Татьяны Злобиной: массаж, банки, гирудотерапия, акупунктурный кетгут. Посёлок Трудовое, Владивосток. Запись онлайн.",
       },
-      { property: "og:title", content: "Татьяна Злобина — оздоровительные практики" },
+      { property: "og:title", content: "Седьмое небо — массаж и гирудотерапия, Владивосток" },
       {
         property: "og:description",
         content:
@@ -36,9 +36,38 @@ export const Route = createFileRoute("/")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "https://7heavenmassage.ru/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "HealthAndBeautyBusiness",
+          name: "Седьмое небо",
+          description:
+            "Кабинет оздоровительных практик Татьяны Злобиной: массаж, банки, гирудотерапия, акупунктурный кетгут.",
+          url: "https://7heavenmassage.ru/",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "посёлок Трудовое, Владивосток",
+            addressCountry: "RU",
+          },
+          areaServed: "Владивосток",
+          makesOffer: [
+            "Гирудотерапия",
+            "Акупунктурный кетгут",
+            "Массаж банками",
+            "Классический массаж",
+            "Лимфатический массаж",
+            "Лимфодренажный массаж",
+            "Векторный массаж",
+          ].map((name) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name } })),
+        }),
+      },
+    ],
   }),
   component: Index,
 });
+
 
 function Index() {
   return (
