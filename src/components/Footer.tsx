@@ -80,7 +80,7 @@ export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
               >
                 Как найти кабинет
               </h2>
-              <p className="mt-4 xl:mt-5 body-text text-[#1c3c8c] max-w-[440px]">
+              <p className="mt-4 xl:mt-5 body-text text-[#566A93] max-w-[440px]">
                 Уютное пространство в центре посёлка Трудового, где можно прийти чуть раньше, выдохнуть и спокойно настроиться на сеанс.
               </p>
             </div>
