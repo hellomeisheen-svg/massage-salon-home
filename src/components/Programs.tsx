@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useBooking } from "@/components/BookingModal";
-import { applyTypography } from "@/lib/typography";
 
 type ServiceInfo = {
   title: string;
