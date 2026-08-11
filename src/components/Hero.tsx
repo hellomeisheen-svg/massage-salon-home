@@ -1,4 +1,6 @@
 import heroImageAsset from "@/assets/hero-portrait-solid.jpg.asset.json";
+import tatyanaPhotoAsset from "@/assets/tatyana-photo.png.asset.json";
+
 
 const heroFont = {
   fontFamily: "'Roslindale Cyrillic Display Condensed', serif",
@@ -11,7 +13,7 @@ function SpecialistBlock() {
       <img
         className="h-[90px] w-[70px] rounded-lg object-cover xl:h-[110px] xl:w-[85px]"
         alt="Татьяна Злобина"
-        src="/images/tatyana-photo.jpg"
+        src={tatyanaPhotoAsset.url}
       />
       <div className="flex flex-col gap-1">
         <h2
