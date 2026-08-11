@@ -18,6 +18,7 @@ export type Variant = {
 export type ServiceType = {
   title: string;
   category: number;
+  hit?: boolean;
   variants: Variant[];
 };
 
