@@ -186,19 +186,8 @@ const Logo = ({ className, title = "Седьмое небо" }: LogoProps) => (
 <path d="M9145 460 c-12 -20 7 -30 61 -30 55 0 64 6 42 28 -14 14 -94 16 -103
 2z"/>
     </g>
-    <text
-      x="690"
-      y="1030"
-      textAnchor="middle"
-      fill="#1C3C8C"
-      fontFamily='"Roslindale Cyrillic Display Condensed", "Times New Roman", serif'
-      fontWeight="500"
-      fontSize="265"
-      letterSpacing="2"
-    >
-      седьмое небо
-    </text>
   </svg>
+
 );
 
 export default Logo;
