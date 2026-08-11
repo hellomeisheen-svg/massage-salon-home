@@ -162,7 +162,7 @@ function PriceTableRow({ p }: { p: ServicePrice }) {
         {p.duration}
       </td>
       <td
-        className="px-4 py-5 text-[18px] xl:text-[28px] font-light text-[#1C3C8C] xl:px-8"
+        className="px-4 py-5 text-[18px] xl:text-[24px] font-light text-[#1C3C8C] xl:px-8"
         style={{ fontFamily: heading }}
       >
         {renderPrice(formatPrice(p.base))}
@@ -194,7 +194,7 @@ function PriceTableCell({
         {renderPrice(formatPrice(total))}
       </span>
       <span
-        className="text-[18px] xl:text-[28px] font-light text-[#1C3C8C]"
+        className="text-[18px] xl:text-[24px] font-light text-[#1C3C8C]"
         style={{ fontFamily: heading }}
       >
         {renderPrice(formatPrice(current))}
