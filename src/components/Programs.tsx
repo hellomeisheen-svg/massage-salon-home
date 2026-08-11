@@ -278,7 +278,7 @@ export function Programs({ prioritizeKeys }: ProgramsProps = {}) {
           </div>
 
           <p className="hidden sm:block mt-6 text-[13px] leading-[18px] sm:text-[15px] sm:leading-normal text-[#6B7BA8]">
-            Срок использования: {applyTypography(program.validity)}
+            Срок использования: {program.validity}
           </p>
 
           <div className="mt-4 sm:mt-8 flex flex-col sm:flex-row gap-3">
