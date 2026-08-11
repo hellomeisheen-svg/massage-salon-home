@@ -75,28 +75,28 @@ export function Footer() {
               >
                 Как найти кабинет
               </h2>
-              <p className="mt-4 xl:mt-5 body-text text-[#1c3c8c]/70 max-w-[440px]">
+              <p className="mt-4 xl:mt-5 body-text text-[#1c3c8c] max-w-[440px]">
                 Уютное пространство в центре посёлка Трудового, где можно прийти чуть раньше, выдохнуть и спокойно настроиться на сеанс.
               </p>
             </div>
 
             <ul className="flex flex-col gap-5 xl:gap-6">
               <li className="text-[#1c3c8c] leading-[150%] font-light">
-                <div className="body-text text-[#1c3c8c]/70 mb-2">Адрес</div>
+                <div className="body-text text-[#1c3c8c] mb-2">Адрес</div>
                 <div className="body-text text-[#1c3c8c]">{ADDRESS}</div>
               </li>
               <li className="text-[#1c3c8c] leading-[150%] font-light">
-                <div className="body-text text-[#1c3c8c]/70 mb-2">Телефон</div>
+                <div className="body-text text-[#1c3c8c] mb-2">Телефон</div>
                 <a href="tel:+79242324611" className="body-text text-[#1c3c8c] hover:opacity-70 transition-opacity">
                   +7 924 232 46 11
                 </a>
               </li>
               <li className="text-[#1c3c8c] leading-[150%] font-light">
-                <div className="body-text text-[#1c3c8c]/70 mb-2">Режим работы</div>
+                <div className="body-text text-[#1c3c8c] mb-2">Режим работы</div>
                 <div className="body-text text-[#1c3c8c]">пн-сб с 9:00 до 22:00</div>
               </li>
               <li className="text-[#1c3c8c] leading-[150%] font-light">
-                <div className="body-text text-[#1c3c8c]/70 mb-2">Рейтинг в Яндекс Справочнике</div>
+                <div className="body-text text-[#1c3c8c] mb-2">Рейтинг в Яндекс Справочнике</div>
                 <iframe
                   src="https://yandex.ru/sprav/widget/rating-badge/130811843218?type=rating"
                   width="150"
@@ -130,7 +130,7 @@ export function Footer() {
               >
                 Logo
               </span>
-              <p className="mt-4 body-text text-[#1c3c8c]/70 max-w-[320px]">
+              <p className="mt-4 body-text text-[#1c3c8c] max-w-[320px]">
                 Кабинет оздоровительных практик Татьяны Злобиной. Спокойный ритм и внимание к каждому состоянию.
               </p>
               <div className="mt-5 flex items-center gap-2">
@@ -183,17 +183,17 @@ export function Footer() {
           </div>
 
           <div className="mt-5 pt-5 border-t border-[#daebff] flex flex-col xl:flex-row items-start xl:items-center justify-between gap-3">
-            <p className="text-[13px] text-[#1c3c8c]/60 font-light">
+            <p className="text-[13px] text-[#1c3c8c] font-light">
               © {new Date().getFullYear()} Седьмое небо. Все права защищены.
             </p>
             <div className="flex flex-col xl:flex-row items-start xl:items-center gap-3 xl:gap-6">
               <a
                 href="/privacy-policy"
-                className="text-[13px] text-[#1c3c8c]/60 hover:text-[#1c3c8c] transition-colors font-light"
+                className="text-[13px] text-[#1c3c8c] hover:text-[#1c3c8c] transition-colors font-light"
               >
                 Политика конфиденциальности
               </a>
-              <p className="text-[13px] text-[#1c3c8c]/60 font-light">
+              <p className="text-[13px] text-[#1c3c8c] font-light">
                 Информация не является публичной офертой
               </p>
             </div>

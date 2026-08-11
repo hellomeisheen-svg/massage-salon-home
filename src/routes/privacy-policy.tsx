@@ -35,7 +35,7 @@ function PrivacyPolicy() {
       <div className="container-1900 max-w-[760px] mx-auto">
         <Link
           to="/"
-          className="inline-flex items-center text-[#1c3c8c]/70 hover:text-[#1c3c8c] text-[15px] font-light transition-colors"
+          className="inline-flex items-center text-[#1c3c8c] hover:text-[#1c3c8c] text-[15px] font-light transition-colors"
         >
           ← На главную
         </Link>
@@ -47,7 +47,7 @@ function PrivacyPolicy() {
           Политика конфиденциальности
         </h1>
 
-        <p className="mt-4 text-[#1c3c8c]/70 text-[15px] xl:text-base leading-[150%] font-light">
+        <p className="mt-4 text-[#1c3c8c] text-[15px] xl:text-base leading-[150%] font-light">
           Эта страница поддерживается владельцем приложения «Седьмое небо» и содержит общие
           сведения о подходе к персональным данным. Конкретные практики обработки данных,
           сроки хранения и используемые интеграции уточняйте непосредственно у владельца.
@@ -101,7 +101,7 @@ function PrivacyPolicy() {
           </p>
         </section>
 
-        <p className="mt-12 text-[13px] text-[#1c3c8c]/60 font-light">
+        <p className="mt-12 text-[13px] text-[#1c3c8c] font-light">
           Информация на странице не является публичной офертой и может обновляться.
         </p>
       </div>
