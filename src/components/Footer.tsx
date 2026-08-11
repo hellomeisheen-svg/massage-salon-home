@@ -52,7 +52,7 @@ function scrollToTop() {
   requestAnimationFrame(step);
 }
 
-export function Footer() {
+export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
   return (
     <>
       <footer id="contacts" className="scroll-mt-[120px] bg-[#EFF6FF] pt-[60px] xl:pt-[140px] pb-8">
