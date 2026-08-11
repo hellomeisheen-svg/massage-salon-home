@@ -15,6 +15,7 @@ import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as LimfodrenazhnyiMassazhRouteImport } from './routes/limfodrenazhnyi-massazh'
 import { Route as LimfaticheskiiMassazhRouteImport } from './routes/limfaticheskii-massazh'
 import { Route as KlassicheskiiMassazhRouteImport } from './routes/klassicheskii-massazh'
+import { Route as KetgutRouteImport } from './routes/ketgut'
 import { Route as GirudoterapiyaRouteImport } from './routes/girudoterapiya'
 import { Route as BankiRouteImport } from './routes/banki'
 import { Route as SplatRouteImport } from './routes/$'
@@ -50,6 +51,11 @@ const KlassicheskiiMassazhRoute = KlassicheskiiMassazhRouteImport.update({
   path: '/klassicheskii-massazh',
   getParentRoute: () => rootRouteImport,
 } as any)
+const KetgutRoute = KetgutRouteImport.update({
+  id: '/ketgut',
+  path: '/ketgut',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const GirudoterapiyaRoute = GirudoterapiyaRouteImport.update({
   id: '/girudoterapiya',
   path: '/girudoterapiya',
@@ -76,6 +82,7 @@ export interface FileRoutesByFullPath {
   '/$': typeof SplatRoute
   '/banki': typeof BankiRoute
   '/girudoterapiya': typeof GirudoterapiyaRoute
+  '/ketgut': typeof KetgutRoute
   '/klassicheskii-massazh': typeof KlassicheskiiMassazhRoute
   '/limfaticheskii-massazh': typeof LimfaticheskiiMassazhRoute
   '/limfodrenazhnyi-massazh': typeof LimfodrenazhnyiMassazhRoute
@@ -88,6 +95,7 @@ export interface FileRoutesByTo {
   '/$': typeof SplatRoute
   '/banki': typeof BankiRoute
   '/girudoterapiya': typeof GirudoterapiyaRoute
+  '/ketgut': typeof KetgutRoute
   '/klassicheskii-massazh': typeof KlassicheskiiMassazhRoute
   '/limfaticheskii-massazh': typeof LimfaticheskiiMassazhRoute
   '/limfodrenazhnyi-massazh': typeof LimfodrenazhnyiMassazhRoute
@@ -101,6 +109,7 @@ export interface FileRoutesById {
   '/$': typeof SplatRoute
   '/banki': typeof BankiRoute
   '/girudoterapiya': typeof GirudoterapiyaRoute
+  '/ketgut': typeof KetgutRoute
   '/klassicheskii-massazh': typeof KlassicheskiiMassazhRoute
   '/limfaticheskii-massazh': typeof LimfaticheskiiMassazhRoute
   '/limfodrenazhnyi-massazh': typeof LimfodrenazhnyiMassazhRoute
@@ -115,6 +124,7 @@ export interface FileRouteTypes {
     | '/$'
     | '/banki'
     | '/girudoterapiya'
+    | '/ketgut'
     | '/klassicheskii-massazh'
     | '/limfaticheskii-massazh'
     | '/limfodrenazhnyi-massazh'
@@ -127,6 +137,7 @@ export interface FileRouteTypes {
     | '/$'
     | '/banki'
     | '/girudoterapiya'
+    | '/ketgut'
     | '/klassicheskii-massazh'
     | '/limfaticheskii-massazh'
     | '/limfodrenazhnyi-massazh'
@@ -139,6 +150,7 @@ export interface FileRouteTypes {
     | '/$'
     | '/banki'
     | '/girudoterapiya'
+    | '/ketgut'
     | '/klassicheskii-massazh'
     | '/limfaticheskii-massazh'
     | '/limfodrenazhnyi-massazh'
@@ -152,6 +164,7 @@ export interface RootRouteChildren {
   SplatRoute: typeof SplatRoute
   BankiRoute: typeof BankiRoute
   GirudoterapiyaRoute: typeof GirudoterapiyaRoute
+  KetgutRoute: typeof KetgutRoute
   KlassicheskiiMassazhRoute: typeof KlassicheskiiMassazhRoute
   LimfaticheskiiMassazhRoute: typeof LimfaticheskiiMassazhRoute
   LimfodrenazhnyiMassazhRoute: typeof LimfodrenazhnyiMassazhRoute
@@ -204,6 +217,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof KlassicheskiiMassazhRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ketgut': {
+      id: '/ketgut'
+      path: '/ketgut'
+      fullPath: '/ketgut'
+      preLoaderRoute: typeof KetgutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/girudoterapiya': {
       id: '/girudoterapiya'
       path: '/girudoterapiya'
@@ -240,6 +260,7 @@ const rootRouteChildren: RootRouteChildren = {
   SplatRoute: SplatRoute,
   BankiRoute: BankiRoute,
   GirudoterapiyaRoute: GirudoterapiyaRoute,
+  KetgutRoute: KetgutRoute,
   KlassicheskiiMassazhRoute: KlassicheskiiMassazhRoute,
   LimfaticheskiiMassazhRoute: LimfaticheskiiMassazhRoute,
   LimfodrenazhnyiMassazhRoute: LimfodrenazhnyiMassazhRoute,
