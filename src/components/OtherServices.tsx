@@ -140,7 +140,7 @@ export function OtherServices({ exclude }: { exclude?: string }) {
             >
               <div>
                 <h3
-                  className="text-[20px] font-light leading-[1.25] text-[#1C3C8C]"
+                  className="text-[20px] sm:text-[24px] xl:text-[28px] font-light leading-[1.2] text-[#1C3C8C]"
                   style={{ fontFamily: heading }}
                 >
                   {service.title}
