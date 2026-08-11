@@ -37,6 +37,7 @@ const content: ServicePageContent = {
   ),
   bookingPrefix: "Банки",
   prioritizeKeys: ["fireGlass", "airSoft"],
+  pricesStyle: "table",
   sections: [
     {
       label: "Об услуге",
