@@ -135,7 +135,7 @@ export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
               >
                 Logo
               </span>
-              <p className="mt-4 body-text text-[#1c3c8c] max-w-[320px]">
+              <p className="mt-4 body-text text-[#566A93] max-w-[320px]">
                 Кабинет оздоровительных практик Татьяны Злобиной. Спокойный ритм и внимание к каждому состоянию.
               </p>
               <div className="mt-5 flex items-center gap-2">
@@ -198,17 +198,17 @@ export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
           </div>
 
           <div className="mt-5 pt-5 border-t border-[#daebff] flex flex-col xl:flex-row items-start xl:items-center justify-between gap-3">
-            <p className="text-[13px] text-[#1c3c8c] font-light">
+            <p className="text-[13px] text-[#566A93] font-light">
               © {new Date().getFullYear()} Седьмое небо. Все права защищены.
             </p>
             <div className="flex flex-col xl:flex-row items-start xl:items-center gap-3 xl:gap-6">
               <a
                 href="/privacy-policy"
-                className="text-[13px] text-[#1c3c8c] hover:text-[#1c3c8c] transition-colors font-light"
+                className="text-[13px] text-[#566A93] hover:opacity-70 transition-opacity font-light"
               >
                 Политика конфиденциальности
               </a>
-              <p className="text-[13px] text-[#1c3c8c] font-light">
+              <p className="text-[13px] text-[#566A93] font-light">
                 Информация не является публичной офертой
               </p>
             </div>
