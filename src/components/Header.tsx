@@ -127,6 +127,17 @@ export function Header({ items }: { items?: NavItem[] } = {}) {
           <div className="flex h-full flex-col ds-card p-4">
             <nav className="flex-1 overflow-y-auto" aria-label="Мобильная навигация">
               <ul className="flex flex-col gap-1">
+                {items && (
+                  <li>
+                    <Link
+                      to="/"
+                      onClick={() => setMenuOpen(false)}
+                      className="block w-full rounded-lg px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors"
+                    >
+                      Главная
+                    </Link>
+                  </li>
+                )}
                 {navigationItems.map((item) => (
                   <li key={item.label}>
                     <a
