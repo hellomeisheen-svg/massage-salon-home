@@ -30,7 +30,7 @@ const content: ServicePageContent = {
   title: "Лимфодренажный массаж",
   heroText:
     "Последовательная работа с лимфатической системой от стоп до плеч — для разгрузки тканей, уменьшения отёчности и лёгкости в привычном движении.",
-  heroImage: "/images/uslugi-limfodrenazhnyi-massazh.jpg",
+  heroImage: "/images/uslugi-massazh-nog.jpg",
   heroImageAlt: "Лимфодренажный массаж в кабинете Татьяны Злобиной",
   aboutHeading: (
     <>
