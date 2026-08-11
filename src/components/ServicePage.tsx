@@ -18,6 +18,7 @@ export type ServiceSection = { label: string; content: React.ReactNode };
 
 
 export type ServicePageContent = {
+  slug: string;
   breadcrumb: string;
   title: string;
   heroText: React.ReactNode;
