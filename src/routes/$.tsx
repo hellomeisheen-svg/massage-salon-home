@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { BookingProvider } from "@/components/BookingModal";
 
 export const Route = createFileRoute("/$")({
