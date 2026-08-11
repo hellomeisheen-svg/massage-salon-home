@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { Link, useRouterState } from "@tanstack/react-router";
-import logo from "@/assets/logo-wide.png";
+import Logo from "@/components/Logo";
 
 type NavItem = { label: string; href: string };
 
@@ -70,14 +70,7 @@ export function Header({ items }: { items?: NavItem[] } = {}) {
       <div className="hidden h-20 w-full items-center justify-between ds-card px-5 py-2.5 xl:flex xl:px-[30px]">
         {/* Logo */}
         <Link to="/" aria-label="На главную" className="flex h-11 items-center hover:opacity-70 transition-opacity">
-          <img
-            src={logo}
-            alt="Седьмое небо"
-            width={1536}
-            height={512}
-            loading="eager"
-            className="h-full w-auto"
-          />
+          <Logo className="h-full w-auto" />
         </Link>
 
         {/* Navigation */}
@@ -111,14 +104,7 @@ export function Header({ items }: { items?: NavItem[] } = {}) {
       <div className="flex h-16 w-full items-center justify-between ds-card px-4 py-2.5 xl:hidden">
         {/* Logo */}
         <Link to="/" aria-label="На главную" onClick={() => setMenuOpen(false)} className="flex h-9 items-center hover:opacity-70 transition-opacity">
-          <img
-            src={logo}
-            alt="Седьмое небо"
-            width={1536}
-            height={512}
-            loading="eager"
-            className="h-full w-auto"
-          />
+          <Logo className="h-full w-auto" />
         </Link>
 
         {/* Hamburger */}
