@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { useRef, useState, useEffect } from "react";
 
 const heading = "'Roslindale Cyrillic Display Condensed', serif";
 
@@ -43,34 +44,119 @@ export const otherServices = [
 
 export function OtherServices({ exclude }: { exclude?: string }) {
   const items = otherServices.filter((s) => s.slug !== exclude);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [canPrev, setCanPrev] = useState(false);
+  const [canNext, setCanNext] = useState(false);
+
+  const updateArrows = () => {
+    const el = trackRef.current;
+    if (!el) return;
+    setCanPrev(el.scrollLeft > 1);
+    setCanNext(el.scrollLeft + el.clientWidth < el.scrollWidth - 1);
+  };
+
+  useEffect(() => {
+    updateArrows();
+    const el = trackRef.current;
+    if (!el) return;
+    const onResize = () => updateArrows();
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, [items.length]);
+
+  const scroll = (dir: number) => {
+    const el = trackRef.current;
+    const card = el?.firstElementChild as HTMLElement | undefined;
+    if (!el || !card) return;
+    const step = card.offsetWidth + 12; // gap-3
+    el.scrollBy({ left: dir * step, behavior: "smooth" });
+  };
+
+  const cardClass =
+    "group flex flex-col justify-between ds-card ds-card-hover p-4 sm:p-5";
 
   return (
     <section className="bg-[#EFF6FF] ds-section">
       <div className="container-1900">
-        <div className="flex flex-col items-center text-center">
-          <span
-            className="inline-flex items-center gap-2 px-4 py-1.5 ds-label text-white"
-            style={{
-              borderRadius: "4px",
-              backgroundImage: "linear-gradient(to bottom, #A2CFFE, #88C1FF)",
-            }}
-          >
-            Смотрите также
-          </span>
-          <h2
-            className="mt-6 ds-h2 text-[#1C3C8C] max-w-[520px]"
-            style={{ fontFamily: heading }}
-          >
-            Другие услуги
-          </h2>
+        <div className="flex flex-col items-center text-center xl:flex-row xl:items-end xl:justify-between xl:text-left">
+          <div className="flex flex-col items-center xl:items-start">
+            <span
+              className="inline-flex items-center gap-2 px-4 py-1.5 ds-label text-white"
+              style={{
+                borderRadius: "4px",
+                backgroundImage: "linear-gradient(to bottom, #A2CFFE, #88C1FF)",
+              }}
+            >
+              Смотрите также
+            </span>
+            <h2
+              className="mt-6 ds-h2 text-[#1C3C8C] max-w-[520px]"
+              style={{ fontFamily: heading }}
+            >
+              Другие услуги
+            </h2>
+          </div>
+
+          <div className="hidden xl:flex items-center gap-2 mt-6 xl:mt-0">
+            <button
+              type="button"
+              onClick={() => scroll(-1)}
+              disabled={!canPrev}
+              aria-label="Предыдущие услуги"
+              className="h-12 w-12 rounded-full border border-[#daebff] bg-white flex items-center justify-center text-[#1C3C8C] transition-colors hover:bg-[#EFF6FF] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-white"
+            >
+              <ChevronLeft className="h-5 w-5" />
+            </button>
+            <button
+              type="button"
+              onClick={() => scroll(1)}
+              disabled={!canNext}
+              aria-label="Следующие услуги"
+              className="h-12 w-12 rounded-full border border-[#daebff] bg-white flex items-center justify-center text-[#1C3C8C] transition-colors hover:bg-[#EFF6FF] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-white"
+            >
+              <ChevronRight className="h-5 w-5" />
+            </button>
+          </div>
         </div>
 
-        <div className="mt-8 sm:mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-4">
+        {/* Mobile / tablet grid */}
+        <div className="mt-8 sm:mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 xl:hidden">
           {items.map((service) => (
             <Link
               key={service.slug}
               to={`/${service.slug}`}
-              className="group flex flex-col justify-between ds-card ds-card-hover p-4 sm:p-5"
+              className={cardClass}
+            >
+              <div>
+                <h3
+                  className="text-[18px] font-light leading-[1.25] text-[#1C3C8C] sm:text-[20px]"
+                  style={{ fontFamily: heading }}
+                >
+                  {service.title}
+                </h3>
+                <p className="mt-2 line-clamp-2 text-[13px] font-light leading-[1.4] text-[#6B7BA8]">
+                  {service.description}
+                </p>
+              </div>
+              <div className="mt-4 inline-flex items-center gap-1.5 text-[14px] font-medium text-[#1C3C8C] transition-colors group-hover:text-[#4A7FD6]">
+                Подробнее
+                <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+              </div>
+            </Link>
+          ))}
+        </div>
+
+        {/* Desktop carousel */}
+        <div
+          ref={trackRef}
+          onScroll={updateArrows}
+          className="mt-10 hidden xl:flex gap-3 overflow-hidden scroll-smooth"
+        >
+          {items.map((service) => (
+            <Link
+              key={service.slug}
+              to={`/${service.slug}`}
+              className={`${cardClass} flex-[0_0_calc((100%-3*0.75rem)/4)] snap-start`}
             >
               <div>
                 <h3
