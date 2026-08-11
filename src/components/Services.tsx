@@ -26,6 +26,7 @@ export const serviceTypes: ServiceType[] = [
   {
     title: "Гирудотерапия",
     category: 0,
+    hit: true,
     variants: [
       {
         zone: "Медицинские",
@@ -86,6 +87,7 @@ export const serviceTypes: ServiceType[] = [
   {
     title: "Векторный",
     category: 1,
+    hit: true,
     variants: [
       {
         zone: "Всё тело",
@@ -204,6 +206,7 @@ export const serviceTypes: ServiceType[] = [
   {
     title: "Акупунктурный кетгут",
     category: 0,
+    hit: true,
     variants: [
       {
         zone: "Все тело",
