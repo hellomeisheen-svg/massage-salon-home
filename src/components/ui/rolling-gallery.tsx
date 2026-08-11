@@ -16,7 +16,7 @@ const IMGS: string[] = [
   "/images/uslugi-atmosfera-chai-white.jpg",
   "/images/uslugi-massazh-golovy.jpg",
   "/images/uslugi-girudoterapiya.jpg",
-  "/images/uslugi-atmosfera-oil-white.jpg",
+  "/images/uslugi-ketgut.jpg",
   "/images/uslugi-limfodrenazhnyi-massazh.jpg",
   "/images/uslugi-massazh-litsa.jpg",
   "/images/uslugi-atmosfera-polotenca-white.jpg",
