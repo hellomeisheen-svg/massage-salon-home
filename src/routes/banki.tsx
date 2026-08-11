@@ -30,7 +30,7 @@ const content: ServicePageContent = {
   title: "Банки",
   heroText:
     "Вакуумный массаж стеклянными и мягкими банками — для мягкого прогревания тканей, снятия скованности и возвращения телу лёгкости в движении.",
-  heroImage: "/images/uslugi-steklyannye-banki.jpg",
+  heroImage: "/images/uslugi-myagkie-banki.jpg",
   heroImageAlt: "Массаж банками в кабинете Татьяны Злобиной",
   aboutHeading: (
     <>
