@@ -426,31 +426,21 @@ function PriceTable({ content }: { content: ServicePageContent }) {
   );
 }
 
-function PriceTableMobileRow({ p, prefix }: { p: ServicePrice; prefix: string }) {
-  const { openBooking } = useBooking();
+function PriceTableMobileRow({ p }: { p: ServicePrice }) {
   const price3 = Math.round(p.base * 3 * (1 - 0.1));
   const price6 = Math.round(p.base * 6 * (1 - 0.15));
   return (
     <div className="px-4 py-5">
-      <div className="flex items-start justify-between gap-3">
-        <div className="min-w-0">
-          <div
-            className="text-[18px] font-light leading-[1.25] text-[#1C3C8C]"
-            style={{ fontFamily: heading }}
-          >
-            {p.zone}
-          </div>
-          <div className="mt-1 text-[13px] font-light leading-[18px] text-[#6B7BA8]">
-            {p.duration}
-          </div>
-        </div>
-        <button
-          type="button"
-          onClick={() => openBooking(`${prefix} · ${p.zone}`)}
-          className="btn-primary h-[40px] min-h-0 shrink-0 whitespace-nowrap px-4 py-1.5 text-[14px] text-white"
+      <div className="min-w-0">
+        <div
+          className="text-[18px] font-light leading-[1.25] text-[#1C3C8C]"
+          style={{ fontFamily: heading }}
         >
-          Записаться
-        </button>
+          {p.zone}
+        </div>
+        <div className="mt-1 text-[13px] font-light leading-[18px] text-[#6B7BA8]">
+          {p.duration}
+        </div>
       </div>
       <div className="mt-4 grid grid-cols-3 gap-2">
         <div>
@@ -501,8 +491,7 @@ function PriceTableMobileRow({ p, prefix }: { p: ServicePrice; prefix: string })
   );
 }
 
-function PriceTableRow({ p, prefix }: { p: ServicePrice; prefix: string }) {
-  const { openBooking } = useBooking();
+function PriceTableRow({ p }: { p: ServicePrice }) {
   return (
     <tr className="group transition-colors hover:bg-[#F7FBFF]">
       <td className="px-4 py-5 xl:px-8">
@@ -531,15 +520,6 @@ function PriceTableRow({ p, prefix }: { p: ServicePrice; prefix: string }) {
       <td className="px-4 py-5 xl:px-8">
         <PriceTableCell base={p.base} count={6} discount={0.15} />
       </td>
-      <td className="px-4 py-5 xl:px-8">
-        <button
-          type="button"
-          onClick={() => openBooking(`${prefix} · ${p.zone}`)}
-          className="btn-primary h-[44px] min-h-0 whitespace-nowrap px-4 py-2 text-[14px]"
-        >
-          Записаться
-        </button>
-      </td>
     </tr>
   );
 }
@@ -548,12 +528,12 @@ function PriceTableCell({ base, count, discount }: { base: number; count: number
   const total = base * count;
   const current = Math.round(total * (1 - discount));
   return (
-    <div className="flex flex-col items-start gap-0.5">
-      <span className="text-[18px] font-light text-[#1C3C8C]" style={{ fontFamily: heading }}>
-        {renderPrice(formatPrice(current))}
-      </span>
+    <div className="flex items-center gap-2">
       <span className="text-[13px] font-light text-[#6B7BA8] line-through">
         {renderPrice(formatPrice(total))}
+      </span>
+      <span className="text-[18px] font-light text-[#1C3C8C]" style={{ fontFamily: heading }}>
+        {renderPrice(formatPrice(current))}
       </span>
     </div>
   );
