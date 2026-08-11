@@ -389,7 +389,7 @@ function GirudoterapiyaServices() {
             className="mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0"
             style={{ fontFamily: heading }}
           >
-            Перед каждым сеансом обсуждаем ваше состояние и подбираем схему постановки пиявок
+            Перед каждым визитом обсуждаем ваше состояние&nbsp;— и&nbsp;подбираем технику под&nbsp;него
           </h2>
 
           <div className="mt-8 hidden xl:block w-full max-w-[520px] text-left">{nav}</div>
