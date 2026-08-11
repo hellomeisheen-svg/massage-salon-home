@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Plus } from "lucide-react";
+import tatyanaPhotoAsset from "@/assets/tatyana-photo.png.asset.json";
+
 
 const items = [
   {
@@ -92,7 +94,7 @@ export function Faq() {
 
           <div className="mt-8 xl:mt-auto ds-card p-6 sm:p-7 w-full xl:w-1/2 mx-auto xl:mx-0 text-left">
             <img
-              src="/images/tatyana-photo.jpg"
+              src={tatyanaPhotoAsset.url}
               alt="Татьяна Злобина"
               className="h-[90px] w-[70px] xl:h-[110px] xl:w-[85px] rounded-lg object-cover"
             />
