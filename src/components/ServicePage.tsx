@@ -98,7 +98,7 @@ function SpecialistBlock() {
         >
           Татьяна&nbsp;Злобина
         </h2>
-        <p className="text-[16px] font-light leading-[26px] text-[#6B7BA8]">
+        <p className="text-[16px] font-light leading-[26px] text-[#4A5C85]">
           Мастер кабинета, специалист
           <br />
           по&nbsp;оздоровительным практикам
@@ -113,7 +113,7 @@ function PageHero({ content }: { content: ServicePageContent }) {
     <main className="bg-[#EFF6FF] py-4 sm:py-5">
       <section id="hero" className="container-1900 grid grid-cols-1 gap-4 sm:gap-5 xl:min-h-[calc(100vh-160px)] xl:grid-cols-2">
         <div className="flex min-h-0 flex-col ds-card p-5 sm:min-h-[520px] sm:p-6 xl:min-h-0 xl:p-10">
-          <nav aria-label="Хлебные крошки" className="text-[14px] text-[#6B7BA8]">
+          <nav aria-label="Хлебные крошки" className="text-[14px] text-[#4A5C85]">
             <Link to="/" className="hover:opacity-70 transition-opacity">
               Главная
             </Link>
@@ -140,7 +140,7 @@ function PageHero({ content }: { content: ServicePageContent }) {
                   </span>
                 )}
               </div>
-              <p className="mt-4 text-[16px] font-light leading-[26px] text-[#6B7BA8]">
+              <p className="mt-4 text-[16px] font-light leading-[26px] text-[#4A5C85]">
                 {content.heroText}
               </p>
               <div className="mt-[30px] flex flex-col gap-3 sm:flex-row sm:gap-4">
@@ -227,7 +227,7 @@ function AboutService({ content }: { content: ServicePageContent }) {
             />
             <span
               className={`text-[16px] transition-colors ${
-                isActive ? "text-[#1C3C8C]" : "text-[#6B7BA8]"
+                isActive ? "text-[#1C3C8C]" : "text-[#4A5C85]"
               }`}
             >
               {s.label}
@@ -278,7 +278,7 @@ function AboutService({ content }: { content: ServicePageContent }) {
                   >
                     {s.label}
                   </h3>
-                  <div className="mt-5 text-[#6B7BA8] space-y-4 text-[15px] leading-[1.6]">
+                  <div className="mt-5 text-[#4A5C85] space-y-4 text-[15px] leading-[1.6]">
                     {s.content}
                   </div>
                 </div>
@@ -324,7 +324,7 @@ function PriceCard({ p, prefix }: { p: ServicePrice; prefix: string }) {
           >
             <span
               className={`whitespace-nowrap text-[13px] tracking-tight transition-colors duration-300 ${
-                active === i ? "font-medium text-[#1C3C8C]" : "font-light text-[#6B7BA8]"
+                active === i ? "font-medium text-[#1C3C8C]" : "font-light text-[#4A5C85]"
               }`}
             >
               {label}
@@ -341,7 +341,7 @@ function PriceCard({ p, prefix }: { p: ServicePrice; prefix: string }) {
       <h3 className="mt-5 ds-h3 text-[#1C3C8C]" style={{ fontFamily: heading }}>
         {p.zone}
       </h3>
-      <p className="mt-3 body-text text-[#6B7BA8]">{p.subtitle}</p>
+      <p className="mt-3 body-text text-[#4A5C85]">{p.subtitle}</p>
 
       <p className="mt-6 text-[13px] font-medium leading-[18px] tracking-wide text-[#1C3C8C]">
         {summary}
@@ -350,7 +350,7 @@ function PriceCard({ p, prefix }: { p: ServicePrice; prefix: string }) {
       <div className="mt-6 flex items-center justify-end gap-4 sm:gap-5">
         {hasDiscount && (
           <span
-            className="text-[17px] sm:text-[19px] font-light leading-[1.2] text-[#6B7BA8] line-through"
+            className="text-[17px] sm:text-[19px] font-light leading-[1.2] text-[#4A5C85] line-through"
             style={{ fontFamily: heading }}
           >
             {renderPrice(originalPrice)}
@@ -360,7 +360,7 @@ function PriceCard({ p, prefix }: { p: ServicePrice; prefix: string }) {
           <span className="ds-price text-[#1C3C8C]" style={{ fontFamily: heading }}>
             {renderPrice(computedPrice)}
           </span>
-          <span className="text-[13px] font-light text-[#6B7BA8]">
+          <span className="text-[13px] font-light text-[#4A5C85]">
             за {count} {sessionWord}
           </span>
         </div>
@@ -474,7 +474,7 @@ function Faq({ content }: { content: ServicePageContent }) {
             >
               Татьяна Злобина
             </h3>
-            <p className="mt-3 body-text text-[#6B7BA8]">
+            <p className="mt-3 body-text text-[#4A5C85]">
               Мастер кабинета, специалист по&nbsp;оздоровительным практикам
             </p>
             <p className="mt-6 body-text text-[#1C3C8C]">

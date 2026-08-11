@@ -210,7 +210,7 @@ export function Programs({ prioritizeKeys }: ProgramsProps = {}) {
                     />
                     <span
                       className={`text-[16px] transition-colors ${
-                        isActive ? "text-[#1C3C8C]" : "text-[#6B7BA8]"
+                        isActive ? "text-[#1C3C8C]" : "text-[#4A5C85]"
                       }`}
                     >
                       {p.name}
@@ -230,7 +230,7 @@ export function Programs({ prioritizeKeys }: ProgramsProps = {}) {
           >
             {program.name}
           </h3>
-          <p className="mt-2 sm:mt-3 body-text text-[#6B7BA8]">
+          <p className="mt-2 sm:mt-3 body-text text-[#4A5C85]">
             {program.description}
           </p>
 
@@ -245,8 +245,8 @@ export function Programs({ prioritizeKeys }: ProgramsProps = {}) {
               <div className="divide-y divide-[#daebff]">
                 {computedItems.map((it, idx) => (
                   <div key={idx} className="grid grid-cols-[1.3fr_1fr] gap-6 py-5">
-                    <div className="body-text text-[#6B7BA8]">{it.title}</div>
-                    <div className="body-text text-[#6B7BA8]">{it.duration}</div>
+                    <div className="body-text text-[#4A5C85]">{it.title}</div>
+                    <div className="body-text text-[#4A5C85]">{it.duration}</div>
                   </div>
                 ))}
               </div>
@@ -257,7 +257,7 @@ export function Programs({ prioritizeKeys }: ProgramsProps = {}) {
               {computedItems.map((it, idx) => (
                 <div key={idx} className="py-3">
                   <div className="text-[16px] leading-[22px] text-[#1C3C8C]">{it.title}</div>
-                  <div className="mt-1 text-[13px] leading-[18px] text-[#6B7BA8]">{it.duration}</div>
+                  <div className="mt-1 text-[13px] leading-[18px] text-[#4A5C85]">{it.duration}</div>
                 </div>
               ))}
             </div>
@@ -267,7 +267,7 @@ export function Programs({ prioritizeKeys }: ProgramsProps = {}) {
             className="mt-auto pt-4 sm:pt-8 flex flex-wrap items-center justify-start sm:justify-end gap-x-4 gap-y-2"
             style={{ fontFamily: heading }}
           >
-            <span className="text-[18px] sm:text-[20px] font-light text-[#6B7BA8] line-through">
+            <span className="text-[18px] sm:text-[20px] font-light text-[#4A5C85] line-through">
               {formatPrice(originalPrice)}
               <Ruble />
             </span>
@@ -277,7 +277,7 @@ export function Programs({ prioritizeKeys }: ProgramsProps = {}) {
             </span>
           </div>
 
-          <p className="hidden sm:block mt-6 text-[13px] leading-[18px] sm:text-[15px] sm:leading-normal text-[#6B7BA8]">
+          <p className="hidden sm:block mt-6 text-[13px] leading-[18px] sm:text-[15px] sm:leading-normal text-[#4A5C85]">
             Срок использования: {program.validity}
           </p>
 

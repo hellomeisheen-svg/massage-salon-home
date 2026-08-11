@@ -415,7 +415,7 @@ export function ServiceCard({
           >
             <span
               className={`whitespace-nowrap text-[13px] tracking-tight transition-colors duration-300 ${
-                activeSession === i ? "font-medium text-[#1C3C8C]" : "font-light text-[#6B7BA8]"
+                activeSession === i ? "font-medium text-[#1C3C8C]" : "font-light text-[#4A5C85]"
               }`}
             >
               {s.label}
@@ -450,7 +450,7 @@ export function ServiceCard({
           {/* Zone / Type chips */}
           {variant.zone && (
             <div className="mt-6">
-              <span className="block text-[13px] font-light leading-[20px] text-[#6B7BA8]">
+              <span className="block text-[13px] font-light leading-[20px] text-[#4A5C85]">
                 {clean(type.title) === "Гирудотерапия"
                   ? "Тип пиявок:"
                   : clean(type.title) === "Банки"
@@ -482,10 +482,10 @@ export function ServiceCard({
           )}
 
           {/* Description */}
-          <p className="mt-6 whitespace-pre-line body-text text-[#6B7BA8] sm:hidden">
+          <p className="mt-6 whitespace-pre-line body-text text-[#4A5C85] sm:hidden">
             {variant.mobileDescription || variant.description}
           </p>
-          <p className="mt-6 hidden whitespace-pre-line body-text text-[#6B7BA8] sm:block xl:max-w-[540px]">
+          <p className="mt-6 hidden whitespace-pre-line body-text text-[#4A5C85] sm:block xl:max-w-[540px]">
             {variant.description}
           </p>
 
@@ -499,7 +499,7 @@ export function ServiceCard({
         <div className="mt-5 sm:mt-[120px] xl:mt-5 flex items-center justify-end gap-4 sm:gap-5">
           {hasDiscount && (
             <span
-              className="text-[17px] sm:text-[19px] font-light leading-[1.2] text-[#6B7BA8] line-through"
+              className="text-[17px] sm:text-[19px] font-light leading-[1.2] text-[#4A5C85] line-through"
               style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
             >
               {renderPrice(originalPrice)}
@@ -512,7 +512,7 @@ export function ServiceCard({
             >
               {renderPrice(computedPrice)}
             </span>
-            <span className="text-[13px] font-light text-[#6B7BA8] hidden sm:inline">{priceLabel}</span>
+            <span className="text-[13px] font-light text-[#4A5C85] hidden sm:inline">{priceLabel}</span>
           </div>
         </div>
       </div>
@@ -643,7 +643,7 @@ export function Services() {
         return (
           <div key={g.label}>
             {showLabel && (
-              <p className="text-[13px] font-light leading-[18px] text-[#6B7BA8]">{g.label}</p>
+              <p className="text-[13px] font-light leading-[18px] text-[#4A5C85]">{g.label}</p>
             )}
             <ul className={`flex flex-col gap-3 items-start ${showLabel ? "mt-3" : ""}`}>
               {g.items.map((t) => {
@@ -663,7 +663,7 @@ export function Services() {
                       />
                       <span
                         className={`text-[16px] transition-colors ${
-                          isActive ? "text-[#1C3C8C]" : "text-[#6B7BA8]"
+                          isActive ? "text-[#1C3C8C]" : "text-[#4A5C85]"
                         }`}
                       >
                         {clean(t.title)}

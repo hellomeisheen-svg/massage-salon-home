@@ -31,7 +31,7 @@ function NotFoundComponent() {
           Страница не найдена
         </h1>
 
-        <p className="body-text mx-auto mt-4 max-w-[400px] text-[#6B7BA8]">
+        <p className="body-text mx-auto mt-4 max-w-[400px] text-[#4A5C85]">
           Запрашиваемая страница не существует или была перемещена. Проверьте адрес или вернитесь на главную.
         </p>
 
