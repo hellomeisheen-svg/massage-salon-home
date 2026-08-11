@@ -9,14 +9,15 @@ interface LogoProps {
  */
 const Logo = ({ className, title = "Седьмое небо" }: LogoProps) => (
   <svg
-    viewBox="60 60 1260 1010"
+    viewBox="60 70 1260 660"
     role="img"
     aria-label={title}
     className={className}
     xmlns="http://www.w3.org/2000/svg"
   >
     <title>{title}</title>
-    <g transform="translate(0,750) scale(0.1,-0.1)" fill="#E9DBC3" stroke="none">
+    <g transform="translate(0,750) scale(0.1,-0.1)" fill="#1C3C8C" stroke="none">
+
 <path d="M6545 6540 c-103 -6 -160 -15 -215 -33 -41 -14 -104 -28 -140 -32
 -36 -3 -85 -15 -110 -26 -25 -10 -67 -23 -95 -29 -27 -6 -63 -19 -80 -30 -16
 -10 -52 -24 -80 -31 -27 -6 -57 -18 -66 -25 -9 -8 -38 -21 -65 -30 -27 -9 -56
@@ -185,19 +186,8 @@ const Logo = ({ className, title = "Седьмое небо" }: LogoProps) => (
 <path d="M9145 460 c-12 -20 7 -30 61 -30 55 0 64 6 42 28 -14 14 -94 16 -103
 2z"/>
     </g>
-    <text
-      x="690"
-      y="1030"
-      textAnchor="middle"
-      fill="#1C3C8C"
-      fontFamily='"Roslindale Cyrillic Display Condensed", "Times New Roman", serif'
-      fontWeight="500"
-      fontSize="265"
-      letterSpacing="2"
-    >
-      седьмое небо
-    </text>
   </svg>
+
 );
 
 export default Logo;
