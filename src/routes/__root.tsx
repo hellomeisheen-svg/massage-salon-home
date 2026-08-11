@@ -17,8 +17,8 @@ import { TypographyProvider } from "@/components/TypographyProvider";
 
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-[#EFF6FF] px-4 py-24">
-      <div className="ds-card ds-card-hover w-full max-w-[560px] px-6 py-10 text-center sm:px-10 sm:py-14">
+    <div className="flex min-h-screen items-start justify-center bg-[#EFF6FF] px-4 pb-24 pt-36 sm:px-5 sm:pt-44">
+      <div className="w-full max-w-[560px] px-6 py-10 text-center sm:px-10 sm:py-14">
         <span
           className="block text-[80px] font-light leading-none tracking-tight text-[#1C3C8C] sm:text-[120px]"
           style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
@@ -34,19 +34,12 @@ function NotFoundComponent() {
           Запрашиваемая страница не существует или была перемещена. Проверьте адрес или вернитесь на главную.
         </p>
 
-        <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <div className="mt-8 flex justify-center">
           <Link
             to="/"
             className="btn-primary w-full sm:w-auto"
           >
             На главную
-          </Link>
-          <Link
-            to="/"
-            hash="services"
-            className="btn-secondary w-full sm:w-auto"
-          >
-            Услуги
           </Link>
         </div>
       </div>
