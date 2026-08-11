@@ -10,14 +10,14 @@ export const Route = createFileRoute("/$")({
       {
         name: "description",
         content:
-          "Запрашиваемая страница не существует или была перемещена. Вернитесь на главную или выберите одну из услуг кабинета Татьяны Злобиной.",
+          "Запрашиваемая страница не существует или была перемещена. Вернитесь на главную кабинета Татьяны Злобиной.",
       },
       { name: "robots", content: "noindex, nofollow" },
       { property: "og:title", content: "404 — Страница не найдена" },
       {
         property: "og:description",
         content:
-          "Запрашиваемая страница не существует или была перемещена. Вернитесь на главную или выберите одну из услуг.",
+          "Запрашиваемая страница не существует или была перемещена. Вернитесь на главную.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
@@ -32,8 +32,8 @@ function NotFoundPage() {
       <div className="relative flex min-h-screen flex-col bg-[#EFF6FF]">
         <Header />
 
-        <main className="flex flex-1 items-center justify-center px-4 py-24 sm:px-5">
-          <div className="ds-card ds-card-hover w-full max-w-[560px] px-6 py-10 text-center sm:px-10 sm:py-14">
+        <main className="flex flex-1 items-start justify-center px-4 pb-24 pt-36 sm:px-5 sm:pt-44">
+          <div className="w-full max-w-[560px] px-6 py-10 text-center sm:px-10 sm:py-14">
             <span
               className="block text-[80px] font-light leading-none tracking-tight text-[#1C3C8C] sm:text-[120px]"
               style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
@@ -47,12 +47,9 @@ function NotFoundPage() {
               Запрашиваемая страница не существует или была перемещена. Проверьте адрес или вернитесь на главную.
             </p>
 
-            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <div className="mt-8 flex justify-center">
               <Link to="/" className="btn-primary w-full sm:w-auto">
                 На главную
-              </Link>
-              <Link to="/" hash="services" className="btn-secondary w-full sm:w-auto">
-                Услуги
               </Link>
             </div>
           </div>
