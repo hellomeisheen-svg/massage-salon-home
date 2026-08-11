@@ -10,6 +10,8 @@ import { Education } from "@/components/Education";
 import { OtherServices } from "@/components/OtherServices";
 import { BookingProvider } from "@/components/BookingModal";
 import { formatPrice, pluralize, renderPrice } from "@/components/Services";
+import tatyanaPhotoAsset from "@/assets/tatyana-photo.png.asset.json";
+
 
 
 const heading = "'Roslindale Cyrillic Display Condensed', serif";
