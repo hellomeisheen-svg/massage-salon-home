@@ -484,26 +484,54 @@ export function ServiceCard({
       </div>
 
       {/* Actions */}
-      <div className="mt-auto flex flex-col sm:mt-5 sm:flex-row sm:justify-center sm:items-center gap-3 xl:mt-auto">
-        <button
-          type="button"
-          onClick={() => openBooking(bookingTitle)}
-          className="btn-primary flex-1"
-        >
-          Записаться
-        </button>
-        <div className="hidden sm:flex flex-1">
+      <div className="mt-auto flex flex-col gap-3 sm:mt-5 xl:mt-auto">
+        {/* Desktop / tablet */}
+        <div className="hidden sm:flex items-center gap-3">
+          <button
+            type="button"
+            onClick={() => openBooking(bookingTitle)}
+            className="btn-primary flex-1"
+          >
+            Записаться
+          </button>
           {servicePageLinks[clean(type.title)] ? (
             <Link
               to={servicePageLinks[clean(type.title)]}
-              className="btn-secondary w-full inline-flex items-center justify-center text-center whitespace-nowrap"
+              className="btn-secondary flex-1 inline-flex items-center justify-center text-center whitespace-nowrap"
             >
               Узнать больше
             </Link>
           ) : (
-            <a href="#programs" className="btn-secondary w-full inline-flex items-center justify-center text-center whitespace-nowrap">
+            <a
+              href="#programs"
+              className="btn-secondary flex-1 inline-flex items-center justify-center text-center whitespace-nowrap"
+            >
               Узнать больше
             </a>
+          )}
+          {totalCount > 1 && (
+            <div className="flex items-center gap-3">
+              <button
+                type="button"
+                onClick={onPrev}
+                aria-label="Предыдущая услуга"
+                className="btn-secondary w-[80px] h-[60px] flex items-center justify-center p-0 shrink-0"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+              <button
+                type="button"
+                onClick={onNext}
+                aria-label="Следующая услуга"
+                className="btn-secondary w-[80px] h-[60px] flex items-center justify-center p-0 shrink-0"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+            </div>
           )}
         </div>
 
@@ -546,33 +574,8 @@ export function ServiceCard({
             </>
           )}
         </div>
-
-        {/* Desktop / tablet: arrows */}
-        {totalCount > 1 && (
-          <div className="hidden sm:contents">
-            <button
-              type="button"
-              onClick={onPrev}
-              aria-label="Предыдущая услуга"
-              className="btn-secondary sm:min-w-[80px] sm:flex-none flex items-center justify-center"
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                <path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
-            <button
-              type="button"
-              onClick={onNext}
-              aria-label="Следующая услуга"
-              className="btn-secondary sm:min-w-[80px] sm:flex-none flex items-center justify-center"
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
-          </div>
-        )}
       </div>
+
     </article>
   );
 }
