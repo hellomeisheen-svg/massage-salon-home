@@ -79,7 +79,7 @@ const practiceSequence = [
 export function ApproachRedesign() {
   return (
     <section className="bg-white py-[70px]">
-      <div className="container-1900 px-5">
+      <div className="container-1900 px-4 sm:px-5">
         <div className="flex flex-col gap-16 xl:gap-24">
           {/* Environment */}
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12">

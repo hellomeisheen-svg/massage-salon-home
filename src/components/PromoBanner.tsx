@@ -19,7 +19,7 @@ export function PromoBanner({
   const { openBooking } = useBooking();
   return (
     <section className="bg-brand-surface ds-section">
-      <div className="container-1900 px-5">
+      <div className="container-1900 px-4 sm:px-5">
         <div
           className="relative overflow-hidden rounded-[12px] border px-6 py-14 xl:px-24 xl:py-[60px]"
           style={{ backgroundColor: "#DAEBFF", borderColor: "#daebff" }}
