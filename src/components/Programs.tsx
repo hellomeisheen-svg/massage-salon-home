@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useBooking } from "@/components/BookingModal";
+import { applyTypography } from "@/lib/typography";
 
 type ServiceInfo = {
   title: string;
@@ -231,7 +232,7 @@ export function Programs({ prioritizeKeys }: ProgramsProps = {}) {
             {program.name}
           </h3>
           <p className="mt-2 sm:mt-3 body-text text-[#6B7BA8]">
-            {program.description}
+            {applyTypography(program.description)}
           </p>
 
           {/* Program content: fills fixed card and scrolls if needed */}
@@ -278,7 +279,7 @@ export function Programs({ prioritizeKeys }: ProgramsProps = {}) {
           </div>
 
           <p className="hidden sm:block mt-6 text-[13px] leading-[18px] sm:text-[15px] sm:leading-normal text-[#6B7BA8]">
-            Срок использования: {program.validity}
+            Срок использования: {applyTypography(program.validity)}
           </p>
 
           <div className="mt-4 sm:mt-8 flex flex-col sm:flex-row gap-3">

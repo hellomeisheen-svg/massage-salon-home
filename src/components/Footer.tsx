@@ -49,7 +49,8 @@ function scrollToTop() {
 
 export function Footer() {
   return (
-    <footer id="contacts" className="scroll-mt-[120px] bg-[#EFF6FF] pt-[60px] xl:pt-[140px] pb-8">
+    <>
+      <footer id="contacts" className="scroll-mt-[120px] bg-[#EFF6FF] pt-[60px] xl:pt-[140px] pb-8">
       <div className="container-1900">
         {/* Top card: map + contacts */}
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-5">
@@ -104,17 +105,6 @@ export function Footer() {
                   className="border-0"
                   loading="lazy"
                 />
-                <p className="mt-3 text-[13px] text-[#1c3c8c]/80 font-light">
-                  Сайт разработан —{" "}
-                  <a
-                    href="https://t.me/ksenny_designer"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#1c3c8c]/80 hover:text-[#1c3c8c] transition-colors font-light"
-                  >
-                    CUBIK
-                  </a>
-                </p>
               </li>
             </ul>
 
@@ -211,7 +201,24 @@ export function Footer() {
 
         </div>
       </div>
-    </footer>
+      </footer>
+
+      <div className="bg-[#EFF6FF] border-t border-[#daebff] py-5">
+        <div className="container-1900 flex justify-start xl:justify-end">
+          <p className="text-[13px] text-[#1c3c8c]/80 font-light">
+            Сайт разработан —{" "}
+            <a
+              href="https://t.me/ksenny_designer"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#1c3c8c]/80 hover:text-[#1c3c8c] transition-colors font-light"
+            >
+              CUBIK
+            </a>
+          </p>
+        </div>
+      </div>
+    </>
   );
 }
 
