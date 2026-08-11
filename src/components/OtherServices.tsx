@@ -35,7 +35,13 @@ export const otherServices = [
     title: "Классический массаж",
     description: "Комплексная проработка тела",
   },
+  {
+    slug: "ketgut",
+    title: "Кетгут",
+    description: "Мягкое армирование рассасывающимися нитями",
+  },
 ] as const;
+
 
 export function OtherServices({ exclude }: { exclude?: string }) {
   const items = otherServices.filter((s) => s.slug !== exclude);
