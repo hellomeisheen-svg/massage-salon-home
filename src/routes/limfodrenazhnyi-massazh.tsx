@@ -5,7 +5,6 @@ export const Route = createFileRoute("/limfodrenazhnyi-massazh")({
   head: () => ({
     meta: [
       { title: "Лимфодренажный массаж во Владивостоке — кабинет Татьяны Злобиной" },
-      { name: "robots", content: "noindex, nofollow" },
       {
         name: "description",
         content:
@@ -18,8 +17,10 @@ export const Route = createFileRoute("/limfodrenazhnyi-massazh")({
           "Мягкие ритмичные движения поддерживают лимфоток, помогают разгрузить ткани и уменьшить отёчность.",
       },
       { property: "og:type", content: "article" },
+      { property: "og:url", content: "https://7heavenmassage.ru/limfodrenazhnyi-massazh" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "https://7heavenmassage.ru/limfodrenazhnyi-massazh" }],
   }),
   component: LimfodrenazhnyiPage,
 });

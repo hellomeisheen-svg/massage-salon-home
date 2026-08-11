@@ -5,7 +5,6 @@ export const Route = createFileRoute("/vektornyi-massazh")({
   head: () => ({
     meta: [
       { title: "Векторный массаж во Владивостоке — кабинет Татьяны Злобиной" },
-      { name: "robots", content: "noindex, nofollow" },
       {
         name: "description",
         content:
@@ -18,8 +17,10 @@ export const Route = createFileRoute("/vektornyi-massazh")({
           "Точная работа по естественным линиям тела: освобождение глубоких зажимов и возвращение движениям свободы.",
       },
       { property: "og:type", content: "article" },
+      { property: "og:url", content: "https://7heavenmassage.ru/vektornyi-massazh" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "https://7heavenmassage.ru/vektornyi-massazh" }],
   }),
   component: VektornyiPage,
 });

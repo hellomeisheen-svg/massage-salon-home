@@ -10,7 +10,6 @@ export const Route = createFileRoute("/privacy-policy")({
   head: () => ({
     meta: [
       { title: "Политика конфиденциальности — Седьмое небо" },
-      { name: "robots", content: "noindex, nofollow" },
       {
         name: "description",
         content:
@@ -23,8 +22,10 @@ export const Route = createFileRoute("/privacy-policy")({
           "Какие данные собираются, как они используются и как связаться с нами по вопросам конфиденциальности.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://7heavenmassage.ru/privacy-policy" },
       { name: "twitter:card", content: "summary" },
     ],
+    links: [{ rel: "canonical", href: "https://7heavenmassage.ru/privacy-policy" }],
   }),
   component: PrivacyPolicy,
 });

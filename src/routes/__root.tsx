@@ -91,23 +91,23 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { name: "robots", content: "noindex, nofollow" },
-      { title: "AURA — массажный салон" },
+      { title: "Седьмое небо — кабинет оздоровительных практик" },
       {
         name: "description",
         content:
-          "Массажный салон AURA: классический и СПА-массаж, расслабляющие ритуалы и индивидуальный подход в умиротворяющей атмосфере.",
+          "Кабинет оздоровительных практик «Седьмое небо»: массаж, банки, гирудотерапия, акупунктурный кетгут. Посёлок Трудовое, Владивосток.",
       },
-      { name: "author", content: "AURA" },
-      { property: "og:title", content: "AURA — массажный салон" },
+      { name: "author", content: "Седьмое небо" },
+      { property: "og:title", content: "Седьмое небо — кабинет оздоровительных практик" },
       {
         property: "og:description",
         content:
-          "Массажный салон AURA: классический и СПА-массаж, расслабляющие ритуалы и индивидуальный подход в умиротворяющей атмосфере.",
+          "Кабинет оздоровительных практик «Седьмое небо»: массаж, банки, гирудотерапия, акупунктурный кетгут. Посёлок Трудовое, Владивосток.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@aura_massage" },
+      { property: "og:site_name", content: "Седьмое небо" },
+      { property: "og:locale", content: "ru_RU" },
     ],
     links: [
       {

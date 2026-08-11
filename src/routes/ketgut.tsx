@@ -5,7 +5,6 @@ export const Route = createFileRoute("/ketgut")({
   head: () => ({
     meta: [
       { title: "Акупунктурный кетгут — постановка нитей во Владивостоке | Татьяна Злобина" },
-      { name: "robots", content: "noindex, nofollow" },
       {
         name: "description",
         content:
@@ -18,8 +17,10 @@ export const Route = createFileRoute("/ketgut")({
           "Постановка 30 саморассасывающихся нитей в акупунктурные точки для мягкой, длительной поддержки тела.",
       },
       { property: "og:type", content: "article" },
+      { property: "og:url", content: "https://7heavenmassage.ru/ketgut" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "https://7heavenmassage.ru/ketgut" }],
   }),
   component: KetgutPage,
 });

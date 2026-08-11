@@ -5,7 +5,6 @@ export const Route = createFileRoute("/klassicheskii-massazh")({
   head: () => ({
     meta: [
       { title: "Классический массаж во Владивостоке — кабинет Татьяны Злобиной" },
-      { name: "robots", content: "noindex, nofollow" },
       {
         name: "description",
         content:
@@ -18,8 +17,10 @@ export const Route = createFileRoute("/klassicheskii-massazh")({
           "Комплексная проработка тела в спокойном ритме: снятие напряжения, глубокое расслабление и восстановление сил.",
       },
       { property: "og:type", content: "article" },
+      { property: "og:url", content: "https://7heavenmassage.ru/klassicheskii-massazh" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "https://7heavenmassage.ru/klassicheskii-massazh" }],
   }),
   component: KlassicheskiiPage,
 });
