@@ -204,7 +204,7 @@ export function Footer() {
       </footer>
 
       <div className="bg-[#EFF6FF] border-t border-[#daebff] py-5">
-        <div className="container-1900 flex justify-start xl:justify-end">
+        <div className="container-1900 flex justify-center">
           <p className="text-[13px] text-[#1c3c8c]/80 font-light">
             Сайт разработан —{" "}
             <a
