@@ -10,7 +10,6 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as VektornyiMassazhRouteImport } from './routes/vektornyi-massazh'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as LimfodrenazhnyiMassazhRouteImport } from './routes/limfodrenazhnyi-massazh'
 import { Route as LimfaticheskiiMassazhRouteImport } from './routes/limfaticheskii-massazh'
@@ -24,11 +23,6 @@ import { Route as IndexRouteImport } from './routes/index'
 const VektornyiMassazhRoute = VektornyiMassazhRouteImport.update({
   id: '/vektornyi-massazh',
   path: '/vektornyi-massazh',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
@@ -87,7 +81,6 @@ export interface FileRoutesByFullPath {
   '/limfaticheskii-massazh': typeof LimfaticheskiiMassazhRoute
   '/limfodrenazhnyi-massazh': typeof LimfodrenazhnyiMassazhRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/vektornyi-massazh': typeof VektornyiMassazhRoute
 }
 export interface FileRoutesByTo {
@@ -100,7 +93,6 @@ export interface FileRoutesByTo {
   '/limfaticheskii-massazh': typeof LimfaticheskiiMassazhRoute
   '/limfodrenazhnyi-massazh': typeof LimfodrenazhnyiMassazhRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/vektornyi-massazh': typeof VektornyiMassazhRoute
 }
 export interface FileRoutesById {
@@ -114,7 +106,6 @@ export interface FileRoutesById {
   '/limfaticheskii-massazh': typeof LimfaticheskiiMassazhRoute
   '/limfodrenazhnyi-massazh': typeof LimfodrenazhnyiMassazhRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/vektornyi-massazh': typeof VektornyiMassazhRoute
 }
 export interface FileRouteTypes {
@@ -129,7 +120,6 @@ export interface FileRouteTypes {
     | '/limfaticheskii-massazh'
     | '/limfodrenazhnyi-massazh'
     | '/privacy-policy'
-    | '/sitemap.xml'
     | '/vektornyi-massazh'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -142,7 +132,6 @@ export interface FileRouteTypes {
     | '/limfaticheskii-massazh'
     | '/limfodrenazhnyi-massazh'
     | '/privacy-policy'
-    | '/sitemap.xml'
     | '/vektornyi-massazh'
   id:
     | '__root__'
@@ -155,7 +144,6 @@ export interface FileRouteTypes {
     | '/limfaticheskii-massazh'
     | '/limfodrenazhnyi-massazh'
     | '/privacy-policy'
-    | '/sitemap.xml'
     | '/vektornyi-massazh'
   fileRoutesById: FileRoutesById
 }
@@ -169,7 +157,6 @@ export interface RootRouteChildren {
   LimfaticheskiiMassazhRoute: typeof LimfaticheskiiMassazhRoute
   LimfodrenazhnyiMassazhRoute: typeof LimfodrenazhnyiMassazhRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
-  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   VektornyiMassazhRoute: typeof VektornyiMassazhRoute
 }
 
@@ -180,13 +167,6 @@ declare module '@tanstack/react-router' {
       path: '/vektornyi-massazh'
       fullPath: '/vektornyi-massazh'
       preLoaderRoute: typeof VektornyiMassazhRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy-policy': {
@@ -265,7 +245,6 @@ const rootRouteChildren: RootRouteChildren = {
   LimfaticheskiiMassazhRoute: LimfaticheskiiMassazhRoute,
   LimfodrenazhnyiMassazhRoute: LimfodrenazhnyiMassazhRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
-  SitemapDotxmlRoute: SitemapDotxmlRoute,
   VektornyiMassazhRoute: VektornyiMassazhRoute,
 }
 export const routeTree = rootRouteImport
