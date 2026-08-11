@@ -16,7 +16,7 @@ const Logo = ({ className, title = "Седьмое небо" }: LogoProps) => (
     xmlns="http://www.w3.org/2000/svg"
   >
     <title>{title}</title>
-    <g transform="translate(0,750) scale(0.1,-0.1)" fill="#E8D6B8" stroke="none">
+    <g transform="translate(0,750) scale(0.1,-0.1)" fill="#E9DBC3" stroke="none">
 <path d="M6545 6540 c-103 -6 -160 -15 -215 -33 -41 -14 -104 -28 -140 -32
 -36 -3 -85 -15 -110 -26 -25 -10 -67 -23 -95 -29 -27 -6 -63 -19 -80 -30 -16
 -10 -52 -24 -80 -31 -27 -6 -57 -18 -66 -25 -9 -8 -38 -21 -65 -30 -27 -9 -56
