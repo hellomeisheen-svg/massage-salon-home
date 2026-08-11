@@ -35,7 +35,7 @@ export const otherServices = [
     title: "Классический массаж",
     description: "Комплексная проработка тела",
   },
-];
+] as const;
 
 export function OtherServices({ exclude }: { exclude?: string }) {
   const items = otherServices.filter((s) => s.slug !== exclude);
