@@ -7,51 +7,37 @@ export const otherServices = [
   {
     slug: "girudoterapiya",
     title: "Гирудотерапия",
-    description: "Бережная практика с медицинскими пиявками для поддержки самочувствия и ощущения лёгкости.",
-    image: "/images/uslugi-girudoterapiya-litsa.jpg",
-    imageAlt: "Гирудотерапия в кабинете Татьяны Злобиной",
+    description: "Бережная работа с медицинскими пиявками",
   },
   {
     slug: "banki",
     title: "Банки",
-    description: "Вакуумный массаж стеклянными и мягкими банками для мягкого прогревания и снятия скованности.",
-    image: "/images/uslugi-steklyannye-banki.jpg",
-    imageAlt: "Массаж банками в кабинете Татьяны Злобиной",
+    description: "Вакуумный массаж стеклянными и мягкими банками",
   },
   {
     slug: "vektornyi-massazh",
     title: "Векторный массаж",
-    description: "Точная ручная работа с мышцами и фасциями по естественным линиям тела.",
-    image: "/images/uslugi-massazh-spiny-i-shei.jpg",
-    imageAlt: "Векторный массаж в кабинете Татьяны Злобиной",
+    description: "Точная работа с мышцами и фасциями",
   },
   {
     slug: "limfaticheskii-massazh",
     title: "Лимфатический массаж",
-    description: "Мягкая работа со всем телом для уменьшения отёчности и внутренней лёгкости.",
-    image: "/images/uslugi-limfodrenazhnyi-massazh.jpg",
-    imageAlt: "Лимфатический массаж в кабинете Татьяны Злобиной",
+    description: "Мягкая работа для уменьшения отёчности",
   },
   {
     slug: "limfodrenazhnyi-massazh",
     title: "Лимфодренажный массаж",
-    description: "Последовательная работа с лимфатической системой от стоп до плеч.",
-    image: "/images/uslugi-limfodrenazhnyi-massazh.jpg",
-    imageAlt: "Лимфодренажный массаж в кабинете Татьяны Злобиной",
+    description: "Последовательная работа от стоп до плеч",
   },
   {
     slug: "klassicheskii-massazh",
     title: "Классический массаж",
-    description: "Комплексная проработка тела в спокойном ритме для снятия напряжения и восстановления сил.",
-    image: "/images/uslugi-klassicheskii-massazh.jpg",
-    imageAlt: "Классический массаж в кабинете Татьяны Злобиной",
+    description: "Комплексная проработка тела",
   },
   {
     slug: "massazh",
     title: "Массаж",
-    description: "Ручная работа с телом в спокойном ритме, техника подбирается под ваше состояние.",
-    image: "/images/uslugi-klassicheskii-massazh.jpg",
-    imageAlt: "Массаж в кабинете Татьяны Злобиной",
+    description: "Ручная работа в спокойном ритме",
   },
 ];
 
@@ -79,34 +65,27 @@ export function OtherServices({ exclude }: { exclude?: string }) {
           </h2>
         </div>
 
-        <div className="mt-8 sm:mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-8 sm:mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-4">
           {items.map((service) => (
             <Link
               key={service.slug}
               to={`/${service.slug}`}
-              className="group flex flex-col ds-card ds-card-hover overflow-hidden"
+              className="group flex flex-col justify-between ds-card ds-card-hover p-4 sm:p-5"
             >
-              <div className="relative h-[200px] overflow-hidden sm:h-[220px]">
-                <img
-                  src={service.image}
-                  alt={service.imageAlt}
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                />
-              </div>
-              <div className="flex flex-1 flex-col p-5 sm:p-6">
+              <div>
                 <h3
-                  className="text-[22px] font-light leading-[1.2] text-[#1C3C8C] sm:text-[24px]"
+                  className="text-[18px] font-light leading-[1.25] text-[#1C3C8C] sm:text-[20px]"
                   style={{ fontFamily: heading }}
                 >
                   {service.title}
                 </h3>
-                <p className="mt-3 flex-1 text-[15px] font-light leading-[1.5] text-[#6B7BA8]">
+                <p className="mt-2 line-clamp-2 text-[13px] font-light leading-[1.4] text-[#6B7BA8]">
                   {service.description}
                 </p>
-                <div className="mt-5 inline-flex items-center gap-2 text-[15px] font-medium text-[#1C3C8C] transition-colors group-hover:text-[#4A7FD6]">
-                  Подробнее
-                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                </div>
+              </div>
+              <div className="mt-4 inline-flex items-center gap-1.5 text-[14px] font-medium text-[#1C3C8C] transition-colors group-hover:text-[#4A7FD6]">
+                Подробнее
+                <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
               </div>
             </Link>
           ))}
