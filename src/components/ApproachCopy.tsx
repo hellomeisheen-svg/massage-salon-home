@@ -44,7 +44,7 @@ export function ApproachCopy() {
           <div className="relative h-[420px] sm:h-[720px] xl:h-full ds-card overflow-hidden">
             <img
               src={approachMasterAsset.url}
-              alt="Татьяна Злобина — мастер кабинета"
+              alt="Татьяна работает с клиенткой в светлом массажном кабинете"
               width={1024}
               height={1024}
               className="absolute inset-0 w-full h-full object-cover"
