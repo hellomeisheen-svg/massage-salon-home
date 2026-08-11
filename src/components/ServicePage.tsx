@@ -27,6 +27,12 @@ export const servicePageNav = [
   { label: "Контакты", href: "#contacts" },
 ];
 
+export const servicePageFooterNav = [
+  { label: "Главная", to: "/" },
+  ...servicePageNav.filter((i) => i.label !== "Контакты"),
+];
+
+
 
 export type ServicePageContent = {
   slug: string;
@@ -76,7 +82,7 @@ export function ServicePage({ content }: { content: ServicePageContent }) {
         <Education />
         <Faq content={content} />
         <OtherServices exclude={content.slug} />
-        <Footer />
+        <Footer items={servicePageFooterNav} />
       </div>
     </BookingProvider>
   );

@@ -1,4 +1,8 @@
 import { ArrowUp } from "lucide-react";
+import { Link } from "@tanstack/react-router";
+
+export type FooterNavItem = { label: string; href?: string; to?: string };
+
 
 const headingStyle = {
   fontFamily: "'Roslindale Cyrillic Display Condensed', serif",
@@ -6,13 +10,14 @@ const headingStyle = {
   letterSpacing: "0.01em",
 } as const;
 
-const navItems = [
+const navItems: FooterNavItem[] = [
   { label: "Услуги", href: "#services" },
   { label: "Преимущества", href: "#advantages" },
   { label: "Программы", href: "#programs" },
   { label: "Образование", href: "#obrazovanie" },
   { label: "Вопросы", href: "#faq" },
 ];
+
 
 
 const ADDRESS =
@@ -47,7 +52,7 @@ function scrollToTop() {
   requestAnimationFrame(step);
 }
 
-export function Footer() {
+export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
   return (
     <>
       <footer id="contacts" className="scroll-mt-[120px] bg-[#EFF6FF] pt-[60px] xl:pt-[140px] pb-8">
@@ -157,16 +162,26 @@ export function Footer() {
             <div>
               
               <ul className="mt-4 flex flex-col gap-2.5">
-                {navItems.map((item) => (
+                {items.map((item) => (
                   <li key={item.label}>
-                    <a
-                      href={item.href}
-                      className="body-text text-[#1c3c8c] hover:opacity-70 transition-opacity"
-                    >
-                      {item.label}
-                    </a>
+                    {item.to ? (
+                      <Link
+                        to={item.to}
+                        className="body-text text-[#1c3c8c] hover:opacity-70 transition-opacity"
+                      >
+                        {item.label}
+                      </Link>
+                    ) : (
+                      <a
+                        href={item.href}
+                        className="body-text text-[#1c3c8c] hover:opacity-70 transition-opacity"
+                      >
+                        {item.label}
+                      </a>
+                    )}
                   </li>
                 ))}
+
               </ul>
             </div>
           </div>
