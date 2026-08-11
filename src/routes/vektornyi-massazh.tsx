@@ -28,6 +28,8 @@ const content: ServicePageContent = {
   slug: "vektornyi-massazh",
   breadcrumb: "Векторный массаж",
   title: "Векторный массаж",
+  hit: true,
+
   heroText:
     "Точная ручная работа с мышцами и фасциями по естественным линиям тела — для освобождения глубоких зажимов и возвращения движениям свободы.",
   heroImage: "/images/uslugi-massazh-spiny-i-shei.jpg",

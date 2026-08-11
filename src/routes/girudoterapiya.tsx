@@ -209,12 +209,17 @@ function PageHero() {
 
           <div className="mt-[60px] pt-0 sm:mt-[140px] xl:mt-auto xl:pt-[140px]">
             <div className="flex flex-col tablet-text-block xl:max-w-[640px]">
-              <h1
-                className="text-[38px] font-light leading-[1.12] text-[#1C3C8C] sm:text-[58px] sm:leading-[1.15]"
-                style={heroFont}
-              >
-                Гирудотерапия
-              </h1>
+              <div className="flex flex-wrap items-center gap-3">
+                <h1
+                  className="text-[38px] font-light leading-[1.12] text-[#1C3C8C] sm:text-[58px] sm:leading-[1.15]"
+                  style={heroFont}
+                >
+                  Гирудотерапия
+                </h1>
+                <span className="inline-flex items-center rounded-[4px] bg-gradient-to-b from-[#A2CFFE] to-[#88C1FF] px-2 py-1 text-[11px] font-semibold uppercase tracking-wider text-white">
+                  Хит
+                </span>
+              </div>
               <p className="mt-4 text-[16px] font-light leading-[26px] text-[#6B7BA8]">
                 Бережная практика с использованием медицинских пиявок — для поддержки самочувствия, ощущения лёгкости и более внимательного контакта с телом.
               </p>
