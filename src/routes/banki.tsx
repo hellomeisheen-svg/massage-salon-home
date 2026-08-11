@@ -5,7 +5,6 @@ export const Route = createFileRoute("/banki")({
   head: () => ({
     meta: [
       { title: "Массаж банками во Владивостоке — кабинет Татьяны Злобиной" },
-      { name: "robots", content: "noindex, nofollow" },
       {
         name: "description",
         content:
@@ -18,8 +17,10 @@ export const Route = createFileRoute("/banki")({
           "Стеклянные и мягкие банки: бережное вакуумное воздействие, спокойный ритм сеанса и внимательное сопровождение.",
       },
       { property: "og:type", content: "article" },
+      { property: "og:url", content: "https://7heavenmassage.ru/banki" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "https://7heavenmassage.ru/banki" }],
   }),
   component: BankiPage,
 });

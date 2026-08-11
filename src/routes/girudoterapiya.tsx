@@ -21,7 +21,6 @@ export const Route = createFileRoute("/girudoterapiya")({
   head: () => ({
     meta: [
       { title: "Гирудотерапия во Владивостоке — кабинет Татьяны Злобиной" },
-      { name: "robots", content: "noindex, nofollow" },
       {
         name: "description",
         content:
@@ -34,8 +33,10 @@ export const Route = createFileRoute("/girudoterapiya")({
           "Медицинские и косметические пиявки: мягкая процедура, стерильные материалы, внимательное сопровождение до и после сеанса.",
       },
       { property: "og:type", content: "article" },
+      { property: "og:url", content: "https://7heavenmassage.ru/girudoterapiya" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "https://7heavenmassage.ru/girudoterapiya" }],
   }),
   component: GirudoterapiyaPage,
 });

@@ -5,7 +5,6 @@ export const Route = createFileRoute("/limfaticheskii-massazh")({
   head: () => ({
     meta: [
       { title: "Лимфатический массаж во Владивостоке — кабинет Татьяны Злобиной" },
-      { name: "robots", content: "noindex, nofollow" },
       {
         name: "description",
         content:
@@ -18,8 +17,10 @@ export const Route = createFileRoute("/limfaticheskii-massazh")({
           "Мягкая работа со всем телом: уменьшение отёчности, снятие ощущения тяжести и возвращение внутренней лёгкости.",
       },
       { property: "og:type", content: "article" },
+      { property: "og:url", content: "https://7heavenmassage.ru/limfaticheskii-massazh" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "https://7heavenmassage.ru/limfaticheskii-massazh" }],
   }),
   component: LimfaticheskiiPage,
 });

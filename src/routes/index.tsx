@@ -20,7 +20,6 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Татьяна Злобина — оздоровительные практики" },
-      { name: "robots", content: "noindex, nofollow" },
       {
         name: "description",
         content:
@@ -33,8 +32,10 @@ export const Route = createFileRoute("/")({
           "Массаж, банки, гирудотерапия. Место, где можно замедлиться и вернуться к себе без спешки.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://7heavenmassage.ru/" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "https://7heavenmassage.ru/" }],
   }),
   component: Index,
 });
