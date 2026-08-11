@@ -682,7 +682,18 @@ button:focus-visible {
 .accent-noto-serif .ds-h4,
 .accent-noto-serif .ds-price,
 .accent-noto-serif .font-heading {
-  font-family: "Noto Serif Display", "Times New Roman", serif !important;
+  font-family: "Noto Serif Display", serif !important;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
   font-stretch: condensed;
+  font-variation-settings: "wdth" 62.5;
+}
+
+.noto-serif-display-accent {
+  font-family: "Noto Serif Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
   font-variation-settings: "wdth" 62.5;
 }
