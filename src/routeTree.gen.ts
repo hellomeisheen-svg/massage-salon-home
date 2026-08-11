@@ -17,6 +17,7 @@ import { Route as LimfaticheskiiMassazhRouteImport } from './routes/limfatichesk
 import { Route as KlassicheskiiMassazhRouteImport } from './routes/klassicheskii-massazh'
 import { Route as GirudoterapiyaRouteImport } from './routes/girudoterapiya'
 import { Route as BankiRouteImport } from './routes/banki'
+import { Route as SplatRouteImport } from './routes/$'
 import { Route as IndexRouteImport } from './routes/index'
 
 const VektornyiMassazhRoute = VektornyiMassazhRouteImport.update({
@@ -59,6 +60,11 @@ const BankiRoute = BankiRouteImport.update({
   path: '/banki',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SplatRoute = SplatRouteImport.update({
+  id: '/$',
+  path: '/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -67,6 +73,7 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/$': typeof SplatRoute
   '/banki': typeof BankiRoute
   '/girudoterapiya': typeof GirudoterapiyaRoute
   '/klassicheskii-massazh': typeof KlassicheskiiMassazhRoute
@@ -78,6 +85,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/$': typeof SplatRoute
   '/banki': typeof BankiRoute
   '/girudoterapiya': typeof GirudoterapiyaRoute
   '/klassicheskii-massazh': typeof KlassicheskiiMassazhRoute
@@ -90,6 +98,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/$': typeof SplatRoute
   '/banki': typeof BankiRoute
   '/girudoterapiya': typeof GirudoterapiyaRoute
   '/klassicheskii-massazh': typeof KlassicheskiiMassazhRoute
@@ -103,6 +112,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/$'
     | '/banki'
     | '/girudoterapiya'
     | '/klassicheskii-massazh'
@@ -114,6 +124,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/$'
     | '/banki'
     | '/girudoterapiya'
     | '/klassicheskii-massazh'
@@ -125,6 +136,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/$'
     | '/banki'
     | '/girudoterapiya'
     | '/klassicheskii-massazh'
@@ -137,6 +149,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  SplatRoute: typeof SplatRoute
   BankiRoute: typeof BankiRoute
   GirudoterapiyaRoute: typeof GirudoterapiyaRoute
   KlassicheskiiMassazhRoute: typeof KlassicheskiiMassazhRoute
@@ -205,6 +218,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BankiRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/$': {
+      id: '/$'
+      path: '/$'
+      fullPath: '/$'
+      preLoaderRoute: typeof SplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -217,6 +237,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  SplatRoute: SplatRoute,
   BankiRoute: BankiRoute,
   GirudoterapiyaRoute: GirudoterapiyaRoute,
   KlassicheskiiMassazhRoute: KlassicheskiiMassazhRoute,

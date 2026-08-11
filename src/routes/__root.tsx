@@ -17,21 +17,36 @@ import { TypographyProvider } from "@/components/TypographyProvider";
 
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="font-heading text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 font-heading text-xl font-semibold text-foreground">
+    <div className="flex min-h-screen items-center justify-center bg-[#EFF6FF] px-4 py-24">
+      <div className="ds-card ds-card-hover w-full max-w-[560px] px-6 py-10 text-center sm:px-10 sm:py-14">
+        <span
+          className="block text-[80px] font-light leading-none tracking-tight text-[#1C3C8C] sm:text-[120px]"
+          style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
+        >
+          404
+        </span>
+
+        <h1 className="font-heading mt-6 text-[30px] font-light leading-[1.15] text-[#1C3C8C] sm:text-[38px] xl:text-[44px]">
           Страница не найдена
-        </h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          Запрашиваемая страница не существует или была перемещена.
+        </h1>
+
+        <p className="body-text mx-auto mt-4 max-w-[400px] text-[#6B7BA8]">
+          Запрашиваемая страница не существует или была перемещена. Проверьте адрес или вернитесь на главную.
         </p>
-        <div className="mt-6">
+
+        <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Link
             to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="btn-primary w-full sm:w-auto"
           >
             На главную
+          </Link>
+          <Link
+            to="/"
+            hash="services"
+            className="btn-secondary w-full sm:w-auto"
+          >
+            Услуги
           </Link>
         </div>
       </div>
