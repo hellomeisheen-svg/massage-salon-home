@@ -175,6 +175,29 @@ export function Header({ items }: { items?: NavItem[] } = {}) {
                   </li>
                 ))}
               </ul>
+
+              {items && (
+                <div className="mt-4 border-t border-[#daebff] pt-3">
+                  <p className="px-3 pb-1 text-[13px] uppercase tracking-[0.08em] text-[#566A93]">
+                    Другие услуги
+                  </p>
+                  <ul className="flex flex-col gap-0.5">
+                    {servicePages
+                      .filter((service) => service.to !== pathname)
+                      .map((service) => (
+                        <li key={service.to}>
+                          <Link
+                            to={service.to}
+                            onClick={() => setMenuOpen(false)}
+                            className="block w-full rounded-lg px-3 py-2 text-left text-[15px] font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors"
+                          >
+                            {service.label}
+                          </Link>
+                        </li>
+                      ))}
+                  </ul>
+                </div>
+              )}
             </nav>
             <div className="mt-3 flex items-center gap-3 border-t border-[#daebff] pt-3">
               <a
