@@ -444,7 +444,8 @@ export function ServiceCard({
               style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
             >
               <span className="xl:hidden">{mobileTitle(type.title)}</span>
-              <span className="hidden xl:block">{clean(type.title)}</span>
+              <span className="hidden xl:block">{mobileTitle(type.title)}</span>
+
             </h3>
             {type.hit && (
               <span className="inline-flex items-center rounded-[4px] bg-gradient-to-b from-[#A2CFFE] to-[#88C1FF] px-2 py-1 text-[11px] font-semibold uppercase tracking-wider text-white">
