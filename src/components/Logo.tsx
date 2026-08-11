@@ -9,7 +9,7 @@ interface LogoProps {
  */
 const Logo = ({ className, title = "Седьмое небо" }: LogoProps) => (
   <svg
-    viewBox="60 70 1260 660"
+    viewBox="84 85 1151 675"
     role="img"
     aria-label={title}
     className={className}
