@@ -104,6 +104,17 @@ export function Footer() {
                   className="border-0"
                   loading="lazy"
                 />
+                <p className="mt-3 text-[13px] text-[#1c3c8c]/80 font-light">
+                  Сайт разработан —{" "}
+                  <a
+                    href="https://t.me/ksenny_designer"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#1c3c8c]/80 hover:text-[#1c3c8c] transition-colors font-light"
+                  >
+                    CUBIK
+                  </a>
+                </p>
               </li>
             </ul>
 
@@ -198,19 +209,6 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="mt-3 flex justify-start xl:justify-end">
-            <p className="text-[13px] text-[#1c3c8c]/60 font-light">
-              сайт разработан —{" "}
-              <a
-                href="https://t.me/ksenny_designer"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#1c3c8c]/60 hover:text-[#1c3c8c] transition-colors font-light"
-              >
-                CUBIK
-              </a>
-            </p>
-          </div>
         </div>
       </div>
     </footer>
