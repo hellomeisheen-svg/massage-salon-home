@@ -192,7 +192,7 @@ const Logo = ({ className, title = "Седьмое небо" }: LogoProps) => (
       fill="#1C3C8C"
       fontFamily='"Roslindale Cyrillic Display Condensed", "Times New Roman", serif'
       fontWeight="500"
-      fontSize="330"
+      fontSize="265"
       letterSpacing="2"
     >
       седьмое небо
