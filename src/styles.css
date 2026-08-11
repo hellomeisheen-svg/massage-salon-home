@@ -667,3 +667,17 @@ button:focus-visible {
   }
 }
 
+
+/* Акцентный шрифт главной страницы: Noto Serif Display */
+.accent-noto-serif {
+  --font-heading: "Noto Serif Display", "Times New Roman", serif;
+}
+
+.accent-noto-serif h1,
+.accent-noto-serif h2,
+.accent-noto-serif h3,
+.accent-noto-serif h4,
+.accent-noto-serif [style*="--font-heading"],
+.accent-noto-serif .font-heading {
+  font-variation-settings: "wdth" 66;
+}
