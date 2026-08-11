@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Link } from "@tanstack/react-router";
+import logo from "@/assets/logo-wide.png";
 
 type NavItem = { label: string; href: string };
 
@@ -13,12 +14,6 @@ const defaultNavigationItems: NavItem[] = [
   { label: "Контакты", href: "#contacts" },
 ];
 
-
-const logoStyle = {
-  fontFamily: "'Roslindale Cyrillic Display Condensed', serif",
-  color: "#1c3c8c",
-  letterSpacing: "0.01em",
-} as const;
 
 export function Header({ items }: { items?: NavItem[] } = {}) {
   const navigationItems = items ?? defaultNavigationItems;
@@ -62,16 +57,15 @@ export function Header({ items }: { items?: NavItem[] } = {}) {
       {/* Desktop header */}
       <div className="hidden h-20 w-full items-center justify-between ds-card px-5 py-2.5 xl:flex xl:px-[30px]">
         {/* Logo */}
-        <Link to="/" aria-label="На главную" className="flex h-10 w-20 items-center hover:opacity-70 transition-opacity">
-          <span
-            className="text-[28px] leading-none font-bold italic"
-            style={{
-              fontFamily: "'Dancing Script', cursive",
-              color: "#1c3c8c",
-            }}
-          >
-            Logo
-          </span>
+        <Link to="/" aria-label="На главную" className="flex h-11 items-center hover:opacity-70 transition-opacity">
+          <img
+            src={logo}
+            alt="Седьмое небо"
+            width={1536}
+            height={512}
+            loading="eager"
+            className="h-full w-auto"
+          />
         </Link>
 
         {/* Navigation */}
@@ -104,16 +98,15 @@ export function Header({ items }: { items?: NavItem[] } = {}) {
       {/* Mobile / tablet header */}
       <div className="flex h-16 w-full items-center justify-between ds-card px-4 py-2.5 xl:hidden">
         {/* Logo */}
-        <Link to="/" aria-label="На главную" onClick={() => setMenuOpen(false)} className="flex h-8 items-center hover:opacity-70 transition-opacity">
-          <span
-            className="text-[24px] leading-none font-bold italic"
-            style={{
-              fontFamily: "'Dancing Script', cursive",
-              color: "#1c3c8c",
-            }}
-          >
-            Logo
-          </span>
+        <Link to="/" aria-label="На главную" onClick={() => setMenuOpen(false)} className="flex h-9 items-center hover:opacity-70 transition-opacity">
+          <img
+            src={logo}
+            alt="Седьмое небо"
+            width={1536}
+            height={512}
+            loading="eager"
+            className="h-full w-auto"
+          />
         </Link>
 
         {/* Hamburger */}
