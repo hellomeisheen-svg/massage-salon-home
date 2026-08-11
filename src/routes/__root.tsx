@@ -12,6 +12,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Preloader } from "@/components/Preloader";
+import { TypographyProvider } from "@/components/TypographyProvider";
 
 
 
@@ -155,6 +156,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <Preloader />
+      <TypographyProvider />
 
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
