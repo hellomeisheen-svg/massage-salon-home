@@ -191,7 +191,7 @@ function SpecialistBlock() {
 function PageHero() {
   return (
     <main className="bg-[#EFF6FF] py-4 sm:py-5">
-      <section className="container-1900 grid grid-cols-1 gap-4 sm:gap-5 xl:min-h-[calc(100vh-160px)] xl:grid-cols-2">
+      <section id="hero" className="container-1900 grid grid-cols-1 gap-4 sm:gap-5 xl:min-h-[calc(100vh-160px)] xl:grid-cols-2">
         <div className="flex min-h-0 flex-col ds-card p-5 sm:min-h-[520px] sm:p-6 xl:min-h-0 xl:p-10">
           <nav aria-label="Хлебные крошки" className="text-[14px] text-[#6B7BA8]">
             <Link to="/" className="hover:opacity-70 transition-opacity">
