@@ -129,7 +129,7 @@ export function OtherServices({ exclude }: { exclude?: string }) {
             <Link
               key={service.slug}
               to={`/${service.slug}`}
-              className={`${cardClass} flex-[0_0_calc((100%-0.75rem)/2)] xl:flex-[0_0_calc((100%-3*0.75rem)/4)] snap-start`}
+              className={`${cardClass} flex-[0_0_100%] sm:flex-[0_0_calc((100%-0.75rem)/2)] xl:flex-[0_0_calc((100%-3*0.75rem)/4)] snap-start`}
             >
               <div>
                 <h3
