@@ -7,6 +7,7 @@ import { Footer } from "@/components/Footer";
 import { PromoBanner } from "@/components/PromoBanner";
 import { Programs } from "@/components/Programs";
 import { Education } from "@/components/Education";
+import { OtherServices } from "@/components/OtherServices";
 import { BookingProvider } from "@/components/BookingModal";
 import { formatPrice, pluralize, renderPrice } from "@/components/Services";
 
@@ -148,6 +149,7 @@ function GirudoterapiyaPage() {
         />
         <Education />
         <Faq />
+        <OtherServices exclude="girudoterapiya" />
         <Footer />
       </div>
     </BookingProvider>

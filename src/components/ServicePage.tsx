@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { PromoBanner } from "@/components/PromoBanner";
 import { Programs } from "@/components/Programs";
 import { Education } from "@/components/Education";
+import { OtherServices } from "@/components/OtherServices";
 import { BookingProvider, useBooking } from "@/components/BookingModal";
 import { formatPrice, pluralize, renderPrice } from "@/components/Services";
 import { PriceTable, type ServicePrice } from "@/components/PriceTable";
@@ -17,6 +18,7 @@ export type ServiceSection = { label: string; content: React.ReactNode };
 
 
 export type ServicePageContent = {
+  slug: string;
   breadcrumb: string;
   title: string;
   heroText: React.ReactNode;
@@ -61,6 +63,7 @@ export function ServicePage({ content }: { content: ServicePageContent }) {
         />
         <Education />
         <Faq content={content} />
+        <OtherServices exclude={content.slug} />
         <Footer />
       </div>
     </BookingProvider>
