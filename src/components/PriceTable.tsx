@@ -190,11 +190,11 @@ function PriceTableCell({
   const current = Math.round(total * (1 - discount));
   return (
     <div className="flex items-center gap-2">
-      <span className="text-[13px] font-light text-[#4A5C85] line-through">
+      <span className="text-[13px] xl:text-[15px] font-light text-[#4A5C85] line-through">
         {renderPrice(formatPrice(total))}
       </span>
       <span
-        className="text-[18px] font-light text-[#1C3C8C]"
+        className="text-[18px] xl:text-[28px] font-light text-[#1C3C8C]"
         style={{ fontFamily: heading }}
       >
         {renderPrice(formatPrice(current))}
