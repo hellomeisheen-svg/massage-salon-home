@@ -231,7 +231,7 @@ export function Programs({ prioritizeKeys }: ProgramsProps = {}) {
             {program.name}
           </h3>
           <p className="mt-2 sm:mt-3 body-text text-[#6B7BA8]">
-            {applyTypography(program.description)}
+            {program.description}
           </p>
 
           {/* Program content: fills fixed card and scrolls if needed */}
