@@ -25,7 +25,7 @@ export function TypographyProvider() {
     const schedule = () => {
       if (scheduled) return;
       scheduled = true;
-      requestAnimationFrame(run);
+      setTimeout(() => requestAnimationFrame(run), 0);
     };
 
     observer = new MutationObserver(schedule);
