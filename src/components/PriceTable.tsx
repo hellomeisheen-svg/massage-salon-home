@@ -158,11 +158,11 @@ function PriceTableRow({ p }: { p: ServicePrice }) {
           {p.subtitle}
         </div>
       </td>
-      <td className="px-4 py-5 text-[15px] font-light text-[#4A5C85] xl:px-8">
+      <td className="px-4 py-5 text-[15px] xl:text-[18px] font-light text-[#4A5C85] xl:px-8">
         {p.duration}
       </td>
       <td
-        className="px-4 py-5 text-[18px] font-light text-[#1C3C8C] xl:px-8"
+        className="px-4 py-5 text-[18px] xl:text-[28px] font-light text-[#1C3C8C] xl:px-8"
         style={{ fontFamily: heading }}
       >
         {renderPrice(formatPrice(p.base))}
