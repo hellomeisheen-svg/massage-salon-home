@@ -162,16 +162,26 @@ export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
             <div>
               
               <ul className="mt-4 flex flex-col gap-2.5">
-                {navItems.map((item) => (
+                {items.map((item) => (
                   <li key={item.label}>
-                    <a
-                      href={item.href}
-                      className="body-text text-[#1c3c8c] hover:opacity-70 transition-opacity"
-                    >
-                      {item.label}
-                    </a>
+                    {item.to ? (
+                      <Link
+                        to={item.to}
+                        className="body-text text-[#1c3c8c] hover:opacity-70 transition-opacity"
+                      >
+                        {item.label}
+                      </Link>
+                    ) : (
+                      <a
+                        href={item.href}
+                        className="body-text text-[#1c3c8c] hover:opacity-70 transition-opacity"
+                      >
+                        {item.label}
+                      </a>
+                    )}
                   </li>
                 ))}
+
               </ul>
             </div>
           </div>
