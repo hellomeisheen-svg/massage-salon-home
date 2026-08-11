@@ -149,6 +149,7 @@ function GirudoterapiyaPage() {
         />
         <Education />
         <Faq />
+        <OtherServices exclude="girudoterapiya" />
         <Footer />
       </div>
     </BookingProvider>
