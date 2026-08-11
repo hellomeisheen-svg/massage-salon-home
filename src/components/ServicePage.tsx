@@ -15,14 +15,6 @@ const heroFont = { fontFamily: heading } as const;
 
 export type ServiceSection = { label: string; content: React.ReactNode };
 
-export type ServicePrice = {
-  zone: string;
-  subtitle: string;
-  /** Длительность одного сеанса, например «2 часа» */
-  duration: string;
-  /** Цена одного сеанса */
-  base: number;
-};
 
 export type ServicePageContent = {
   breadcrumb: string;
