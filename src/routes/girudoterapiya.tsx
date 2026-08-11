@@ -168,7 +168,8 @@ function SpecialistBlock() {
       <img
         className="h-[90px] w-[70px] rounded-lg object-cover xl:h-[110px] xl:w-[85px]"
         alt="Татьяна Злобина"
-        src="/images/tatyana-photo.jpg"
+        src={tatyanaPhotoAsset.url}
+
       />
       <div className="flex flex-col gap-1">
         <h2
@@ -669,7 +670,7 @@ function Faq() {
 
           <div className="mt-8 xl:mt-auto ds-card p-6 sm:p-7 w-full xl:w-1/2 mx-auto xl:mx-0 text-left">
             <img
-              src="/images/tatyana-photo.jpg"
+              src={tatyanaPhotoAsset.url}
               alt="Татьяна Злобина"
               className="h-[90px] w-[70px] xl:h-[110px] xl:w-[85px] rounded-lg object-cover"
             />
