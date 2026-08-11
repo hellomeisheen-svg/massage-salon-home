@@ -18,6 +18,15 @@ const heroFont = { fontFamily: heading } as const;
 
 export type ServiceSection = { label: string; content: React.ReactNode };
 
+export const servicePageNav = [
+  { label: "Об услуге", href: "#services" },
+  { label: "Стоимость", href: "#prices" },
+  { label: "Программы", href: "#programs" },
+  { label: "Обо мне", href: "#obrazovanie" },
+  { label: "Вопросы", href: "#faq" },
+  { label: "Контакты", href: "#contacts" },
+];
+
 
 export type ServicePageContent = {
   slug: string;
@@ -41,7 +50,7 @@ export function ServicePage({ content }: { content: ServicePageContent }) {
   return (
     <BookingProvider>
       <div className="relative min-h-screen bg-[#EFF6FF] pt-20 xl:pt-[100px]">
-        <Header />
+        <Header items={servicePageNav} />
         <PageHero content={content} />
         <AboutService content={content} />
         <Prices content={content} />
@@ -363,7 +372,7 @@ function PriceCard({ p, prefix }: { p: ServicePrice; prefix: string }) {
 
 function PriceCards({ content }: { content: ServicePageContent }) {
   return (
-    <section id="programs" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section">
+    <section id="prices" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section">
       <div className="container-1900">
         <h2 className="text-center ds-h2 text-[#1C3C8C]" style={{ fontFamily: heading }}>
           Форматы и&nbsp;стоимость
