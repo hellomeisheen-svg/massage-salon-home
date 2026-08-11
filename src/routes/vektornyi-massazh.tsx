@@ -24,6 +24,7 @@ export const Route = createFileRoute("/vektornyi-massazh")({
 });
 
 const content: ServicePageContent = {
+  slug: "vektornyi-massazh",
   breadcrumb: "Векторный массаж",
   title: "Векторный массаж",
   heroText:

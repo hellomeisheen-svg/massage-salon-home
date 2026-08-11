@@ -24,6 +24,7 @@ export const Route = createFileRoute("/limfaticheskii-massazh")({
 });
 
 const content: ServicePageContent = {
+  slug: "limfaticheskii-massazh",
   breadcrumb: "Лимфатический массаж",
   title: "Лимфатический массаж",
   heroText:

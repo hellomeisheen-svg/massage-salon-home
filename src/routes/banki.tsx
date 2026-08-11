@@ -24,6 +24,7 @@ export const Route = createFileRoute("/banki")({
 });
 
 const content: ServicePageContent = {
+  slug: "banki",
   breadcrumb: "Банки",
   title: "Банки",
   heroText:
