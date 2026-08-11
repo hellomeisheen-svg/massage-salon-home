@@ -700,5 +700,6 @@ button:focus-visible {
 .accent-noto-serif .ds-price,
 .accent-noto-serif .font-heading {
   font-family: "Noto Serif Display", "Times New Roman", serif !important;
-  font-variation-settings: "wdth" 66;
+  font-variation-settings: "wdth" 60;
+
 }
