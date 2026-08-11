@@ -63,6 +63,7 @@ export function ServicePage({ content }: { content: ServicePageContent }) {
         />
         <Education />
         <Faq content={content} />
+        <OtherServices exclude={content.slug} />
         <Footer />
       </div>
     </BookingProvider>
