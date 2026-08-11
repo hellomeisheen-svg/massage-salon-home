@@ -111,8 +111,8 @@ const content: ServicePageContent = {
   ],
   prices: [
     {
-      zone: "Лицо и\u00A0шея",
-      subtitle: "Мягкое армирование рассасывающимися нитями",
+      zone: "Все тело",
+      subtitle: "30 нитей",
       duration: "1\u00A0час",
       base: 20000,
     },
