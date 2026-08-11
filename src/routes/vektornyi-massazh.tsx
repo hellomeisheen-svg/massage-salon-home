@@ -37,6 +37,7 @@ const content: ServicePageContent = {
   ),
   bookingPrefix: "Векторный массаж",
   prioritizeKeys: ["classic", "lymphdrainage"],
+  pricesStyle: "table",
   sections: [
     {
       label: "Об услуге",

@@ -37,6 +37,7 @@ const content: ServicePageContent = {
   ),
   bookingPrefix: "Лимфатический массаж",
   prioritizeKeys: ["lymphatic", "lymphdrainage"],
+  pricesStyle: "table",
   sections: [
     {
       label: "Об услуге",
