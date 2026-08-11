@@ -14,6 +14,16 @@ const defaultNavigationItems: NavItem[] = [
   { label: "Контакты", href: "#contacts" },
 ];
 
+const servicePages = [
+  { label: "Гирудотерапия", to: "/girudoterapiya" },
+  { label: "Акупунктурный кетгут", to: "/ketgut" },
+  { label: "Банки", to: "/banki" },
+  { label: "Классический массаж", to: "/klassicheskii-massazh" },
+  { label: "Лимфатический массаж", to: "/limfaticheskii-massazh" },
+  { label: "Лимфодренажный массаж", to: "/limfodrenazhnyi-massazh" },
+  { label: "Векторный массаж", to: "/vektornyi-massazh" },
+] as const;
+
 
 export function Header({ items }: { items?: NavItem[] } = {}) {
   const navigationItems = items ?? defaultNavigationItems;
@@ -147,6 +157,21 @@ export function Header({ items }: { items?: NavItem[] } = {}) {
                     >
                       {item.label}
                     </a>
+                    {!items && item.href === "#services" && (
+                      <ul className="mb-1 flex flex-col gap-0.5 border-l border-[#daebff] pl-3 ml-3">
+                        {servicePages.map((service) => (
+                          <li key={service.to}>
+                            <Link
+                              to={service.to}
+                              onClick={() => setMenuOpen(false)}
+                              className="block w-full rounded-lg px-3 py-2 text-left text-[15px] font-normal leading-[150%] text-[#566A93] hover:bg-[#EFF6FF] transition-colors"
+                            >
+                              {service.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </li>
                 ))}
               </ul>
