@@ -5,6 +5,7 @@ export const Route = createFileRoute("/ketgut")({
   head: () => ({
     meta: [
       { title: "Акупунктурный кетгут — постановка нитей во Владивостоке | Татьяна Злобина" },
+      { name: "robots", content: "noindex, nofollow" },
       {
         name: "description",
         content:

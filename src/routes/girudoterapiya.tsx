@@ -21,6 +21,7 @@ export const Route = createFileRoute("/girudoterapiya")({
   head: () => ({
     meta: [
       { title: "Гирудотерапия во Владивостоке — кабинет Татьяны Злобиной" },
+      { name: "robots", content: "noindex, nofollow" },
       {
         name: "description",
         content:

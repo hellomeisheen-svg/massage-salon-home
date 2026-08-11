@@ -5,6 +5,7 @@ export const Route = createFileRoute("/vektornyi-massazh")({
   head: () => ({
     meta: [
       { title: "Векторный массаж во Владивостоке — кабинет Татьяны Злобиной" },
+      { name: "robots", content: "noindex, nofollow" },
       {
         name: "description",
         content:

@@ -10,6 +10,7 @@ export const Route = createFileRoute("/privacy-policy")({
   head: () => ({
     meta: [
       { title: "Политика конфиденциальности — Седьмое небо" },
+      { name: "robots", content: "noindex, nofollow" },
       {
         name: "description",
         content:

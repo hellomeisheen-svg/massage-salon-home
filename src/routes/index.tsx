@@ -20,6 +20,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Татьяна Злобина — оздоровительные практики" },
+      { name: "robots", content: "noindex, nofollow" },
       {
         name: "description",
         content:

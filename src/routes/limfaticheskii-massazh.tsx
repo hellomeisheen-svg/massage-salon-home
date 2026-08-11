@@ -5,6 +5,7 @@ export const Route = createFileRoute("/limfaticheskii-massazh")({
   head: () => ({
     meta: [
       { title: "Лимфатический массаж во Владивостоке — кабинет Татьяны Злобиной" },
+      { name: "robots", content: "noindex, nofollow" },
       {
         name: "description",
         content:

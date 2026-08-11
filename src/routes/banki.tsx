@@ -5,6 +5,7 @@ export const Route = createFileRoute("/banki")({
   head: () => ({
     meta: [
       { title: "Массаж банками во Владивостоке — кабинет Татьяны Злобиной" },
+      { name: "robots", content: "noindex, nofollow" },
       {
         name: "description",
         content:
