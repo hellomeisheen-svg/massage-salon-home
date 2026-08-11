@@ -392,7 +392,7 @@ export function ServiceCard({
 
   const sessionWord = pluralize(sessionCounts[activeSession], ["сеанс", "сеанса", "сеансов"]);
   const selectedSummary = `${sessionCounts[activeSession]} ${sessionWord} · ${variant.zone} · ${computedDuration}`;
-  const priceLabel = `за ${sessionCounts[activeSession]} ${sessionWord}`;
+  const priceLabel = applyTypography(`за ${sessionCounts[activeSession]} ${sessionWord}`);
 
   return (
     <article className="ds-card ds-card-hover p-6 sm:p-8 flex flex-col h-auto min-h-[640px] sm:min-h-0 xl:min-h-[700px]">
