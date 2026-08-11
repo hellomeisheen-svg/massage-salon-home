@@ -10,13 +10,14 @@ const headingStyle = {
   letterSpacing: "0.01em",
 } as const;
 
-const navItems = [
+const navItems: FooterNavItem[] = [
   { label: "Услуги", href: "#services" },
   { label: "Преимущества", href: "#advantages" },
   { label: "Программы", href: "#programs" },
   { label: "Образование", href: "#obrazovanie" },
   { label: "Вопросы", href: "#faq" },
 ];
+
 
 
 const ADDRESS =
