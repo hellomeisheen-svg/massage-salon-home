@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { useBooking } from "@/components/BookingModal";
+import { applyTypography } from "@/lib/typography";
 
 export type Variant = {
   zone: string;
