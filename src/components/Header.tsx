@@ -14,6 +14,16 @@ const defaultNavigationItems: NavItem[] = [
   { label: "Контакты", href: "#contacts" },
 ];
 
+const servicePages = [
+  { label: "Гирудотерапия", to: "/girudoterapiya" },
+  { label: "Акупунктурный кетгут", to: "/ketgut" },
+  { label: "Банки", to: "/banki" },
+  { label: "Классический массаж", to: "/klassicheskii-massazh" },
+  { label: "Лимфатический массаж", to: "/limfaticheskii-massazh" },
+  { label: "Лимфодренажный массаж", to: "/limfodrenazhnyi-massazh" },
+  { label: "Векторный массаж", to: "/vektornyi-massazh" },
+] as const;
+
 
 export function Header({ items }: { items?: NavItem[] } = {}) {
   const navigationItems = items ?? defaultNavigationItems;
