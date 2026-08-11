@@ -149,7 +149,7 @@ function PriceTableRow({ p }: { p: ServicePrice }) {
     <tr className="group transition-colors hover:bg-[#F7FBFF]">
       <td className="px-4 py-5 xl:px-8">
         <div
-          className="text-[18px] font-light leading-[1.25] text-[#1C3C8C]"
+          className="text-[18px] xl:text-[28px] font-light leading-[1.25] text-[#1C3C8C]"
           style={{ fontFamily: heading }}
         >
           {p.zone}
@@ -158,11 +158,11 @@ function PriceTableRow({ p }: { p: ServicePrice }) {
           {p.subtitle}
         </div>
       </td>
-      <td className="px-4 py-5 text-[15px] font-light text-[#4A5C85] xl:px-8">
+      <td className="px-4 py-5 text-[15px] xl:text-[18px] font-light text-[#4A5C85] xl:px-8">
         {p.duration}
       </td>
       <td
-        className="px-4 py-5 text-[18px] font-light text-[#1C3C8C] xl:px-8"
+        className="px-4 py-5 text-[18px] xl:text-[28px] font-light text-[#1C3C8C] xl:px-8"
         style={{ fontFamily: heading }}
       >
         {renderPrice(formatPrice(p.base))}
@@ -190,11 +190,11 @@ function PriceTableCell({
   const current = Math.round(total * (1 - discount));
   return (
     <div className="flex items-center gap-2">
-      <span className="text-[13px] font-light text-[#4A5C85] line-through">
+      <span className="text-[13px] xl:text-[15px] font-light text-[#4A5C85] line-through">
         {renderPrice(formatPrice(total))}
       </span>
       <span
-        className="text-[18px] font-light text-[#1C3C8C]"
+        className="text-[18px] xl:text-[28px] font-light text-[#1C3C8C]"
         style={{ fontFamily: heading }}
       >
         {renderPrice(formatPrice(current))}
