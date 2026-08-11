@@ -70,6 +70,29 @@ export function OtherServices({ exclude }: { exclude?: string }) {
   const cardClass =
     "group flex flex-col justify-between ds-card ds-card-hover p-4 sm:p-5";
 
+  const Controls = ({ className }: { className: string }) => (
+    <div className={className}>
+      <button
+        type="button"
+        onClick={() => scroll(-1)}
+        disabled={!canPrev}
+        aria-label="Предыдущие услуги"
+        className="h-12 w-12 rounded-[0.5rem] border border-[#daebff] bg-white flex items-center justify-center text-[#1C3C8C] transition-colors hover:bg-[#EFF6FF] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-white"
+      >
+        <ChevronLeft className="h-5 w-5" />
+      </button>
+      <button
+        type="button"
+        onClick={() => scroll(1)}
+        disabled={!canNext}
+        aria-label="Следующие услуги"
+        className="h-12 w-12 rounded-[0.5rem] border border-[#daebff] bg-white flex items-center justify-center text-[#1C3C8C] transition-colors hover:bg-[#EFF6FF] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-white"
+      >
+        <ChevronRight className="h-5 w-5" />
+      </button>
+    </div>
+  );
+
   return (
     <section className="bg-[#EFF6FF] ds-section">
       <div className="container-1900">
@@ -93,11 +116,14 @@ export function OtherServices({ exclude }: { exclude?: string }) {
           </div>
         </div>
 
+        {/* Desktop arrows above the carousel */}
+        <Controls className="hidden xl:flex justify-end gap-2 mt-6" />
+
         {/* Carousel */}
         <div
           ref={trackRef}
           onScroll={updateArrows}
-          className="mt-8 sm:mt-10 flex gap-3 overflow-hidden scroll-smooth"
+          className="mt-4 xl:mt-4 flex gap-3 overflow-hidden scroll-smooth"
         >
           {items.map((service) => (
             <Link
@@ -124,26 +150,8 @@ export function OtherServices({ exclude }: { exclude?: string }) {
           ))}
         </div>
 
-        <div className="flex items-center justify-center gap-2 mt-6 xl:justify-end xl:mt-[-72px] xl:relative xl:z-10">
-          <button
-            type="button"
-            onClick={() => scroll(-1)}
-            disabled={!canPrev}
-            aria-label="Предыдущие услуги"
-            className="h-12 w-12 rounded-[0.5rem] border border-[#daebff] bg-white flex items-center justify-center text-[#1C3C8C] transition-colors hover:bg-[#EFF6FF] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-white"
-          >
-            <ChevronLeft className="h-5 w-5" />
-          </button>
-          <button
-            type="button"
-            onClick={() => scroll(1)}
-            disabled={!canNext}
-            aria-label="Следующие услуги"
-            className="h-12 w-12 rounded-[0.5rem] border border-[#daebff] bg-white flex items-center justify-center text-[#1C3C8C] transition-colors hover:bg-[#EFF6FF] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-white"
-          >
-            <ChevronRight className="h-5 w-5" />
-          </button>
-        </div>
+        {/* Mobile/tablet arrows below the carousel */}
+        <Controls className="flex xl:hidden justify-center gap-2 mt-6" />
       </div>
     </section>
   );
