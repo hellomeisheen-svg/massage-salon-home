@@ -188,8 +188,9 @@ export function Programs({ prioritizeKeys }: ProgramsProps = {}) {
           <h2
             className="mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0"
             style={{ fontFamily: heading }}
+            data-no-typo
           >
-            Программы из&nbsp;нескольких процедур&nbsp;— для глубокой работы с&nbsp;конкретным состоянием
+            Программы из&nbsp;нескольких процедур&nbsp;— для&nbsp;глубокой работы с&nbsp;конкретным состоянием
           </h2>
 
           <ul className="mt-8 hidden xl:flex flex-col gap-3 items-start">
