@@ -400,12 +400,11 @@ function PriceTable({ content }: { content: ServicePageContent }) {
                       </span>
                     </span>
                   </th>
-                  <th className="px-4 py-4 xl:px-8" />
                 </tr>
               </thead>
               <tbody className="divide-y divide-[#daebff]">
                 {content.prices.map((p) => (
-                  <PriceTableRow key={p.zone} p={p} prefix={content.bookingPrefix} />
+                  <PriceTableRow key={p.zone} p={p} />
                 ))}
               </tbody>
             </table>
@@ -414,13 +413,13 @@ function PriceTable({ content }: { content: ServicePageContent }) {
           {/* Mobile */}
           <div className="sm:hidden divide-y divide-[#daebff]">
             {content.prices.map((p) => (
-              <PriceTableMobileRow key={p.zone} p={p} prefix={content.bookingPrefix} />
+              <PriceTableMobileRow key={p.zone} p={p} />
             ))}
           </div>
         </div>
 
         <p className="mt-6 text-center text-[14px] font-light text-[#6B7BA8]">
-          Цены указаны с учётом скидки при покупке курса. Оплатить можно на месте или онлайн.
+          Цены указаны с учётом скидки при покупке курса. Оплатить можно на месте.
         </p>
       </div>
     </section>
