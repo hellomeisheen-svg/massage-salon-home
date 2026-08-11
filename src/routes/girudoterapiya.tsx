@@ -180,7 +180,7 @@ function SpecialistBlock() {
         >
           Татьяна&nbsp;Злобина
         </h2>
-        <p className="text-[16px] font-light leading-[26px] text-[#4A5C85]">
+        <p className="text-[16px] font-light leading-[26px] text-[#566A93]">
           Мастер кабинета, специалист
           <br />
           по&nbsp;оздоровительным практикам
@@ -195,7 +195,7 @@ function PageHero() {
     <main className="bg-[#EFF6FF] py-4 sm:py-5">
       <section id="hero" className="container-1900 grid grid-cols-1 gap-4 sm:gap-5 xl:min-h-[calc(100vh-160px)] xl:grid-cols-2">
         <div className="flex min-h-0 flex-col ds-card p-5 sm:min-h-[520px] sm:p-6 xl:min-h-0 xl:p-10">
-          <nav aria-label="Хлебные крошки" className="text-[14px] text-[#4A5C85]">
+          <nav aria-label="Хлебные крошки" className="text-[14px] text-[#566A93]">
             <Link to="/" className="hover:opacity-70 transition-opacity">
               Главная
             </Link>
@@ -220,7 +220,7 @@ function PageHero() {
                   Хит
                 </span>
               </div>
-              <p className="mt-4 text-[16px] font-light leading-[26px] text-[#4A5C85]">
+              <p className="mt-4 text-[16px] font-light leading-[26px] text-[#566A93]">
                 Бережная практика с использованием медицинских пиявок — для поддержки самочувствия, ощущения лёгкости и более внимательного контакта с телом.
               </p>
               <div className="mt-[30px] flex flex-col gap-3 sm:flex-row sm:gap-4">
@@ -373,7 +373,7 @@ function GirudoterapiyaServices() {
             />
             <span
               className={`text-[16px] transition-colors ${
-                isActive ? "text-[#1C3C8C]" : "text-[#4A5C85]"
+                isActive ? "text-[#1C3C8C]" : "text-[#566A93]"
               }`}
             >
               {s.label}
@@ -424,7 +424,7 @@ function GirudoterapiyaServices() {
                   >
                     {s.label}
                   </h3>
-                  <div className="mt-5 text-[#4A5C85] space-y-4 text-[15px] leading-[1.6]">
+                  <div className="mt-5 text-[#566A93] space-y-4 text-[15px] leading-[1.6]">
                     {s.content}
                   </div>
                 </div>
@@ -452,7 +452,7 @@ function HirudoPriceCell({ p, index }: { p: HirudoRow; index: number }) {
     <div className="flex flex-col gap-0.5">
       <div className="flex items-center gap-2">
         {discount > 0 && (
-          <span className="text-[13px] font-light text-[#4A5C85] line-through">
+          <span className="text-[13px] font-light text-[#566A93] line-through">
             {renderPrice(formatPrice(total))}
           </span>
         )}
@@ -463,7 +463,7 @@ function HirudoPriceCell({ p, index }: { p: HirudoRow; index: number }) {
           {renderPrice(formatPrice(current))}
         </span>
       </div>
-      <span className="text-[12px] font-light text-[#4A5C85]">
+      <span className="text-[12px] font-light text-[#566A93]">
         {leechCount} {leechWord}
       </span>
     </div>
@@ -480,11 +480,11 @@ function HirudoPriceTableRow({ p }: { p: HirudoRow }) {
         >
           {p.zone}
         </div>
-        <div className="mt-1 text-[13px] font-light leading-[18px] text-[#4A5C85] sm:hidden">
+        <div className="mt-1 text-[13px] font-light leading-[18px] text-[#566A93] sm:hidden">
           {p.subtitle}
         </div>
       </td>
-      <td className="px-4 py-5 text-[15px] font-light text-[#4A5C85] xl:px-8">
+      <td className="px-4 py-5 text-[15px] font-light text-[#566A93] xl:px-8">
         {p.duration}
       </td>
       {[0, 1, 2].map((i) => (
@@ -507,7 +507,7 @@ function HirudoPriceTableMobileRow({ p }: { p: HirudoRow }) {
         >
           {p.zone}
         </div>
-        <div className="mt-1 text-[13px] font-light leading-[18px] text-[#4A5C85]">
+        <div className="mt-1 text-[13px] font-light leading-[18px] text-[#566A93]">
           {p.duration}
         </div>
       </div>
@@ -521,7 +521,7 @@ function HirudoPriceTableMobileRow({ p }: { p: HirudoRow }) {
           const leechWord = pluralize(leechCount, ["пиявка", "пиявки", "пиявок"]);
           return (
             <div key={i}>
-              <div className="text-[11px] font-medium text-[#4A5C85]">
+              <div className="text-[11px] font-medium text-[#566A93]">
                 {tableLabels[i]}
                 {discount > 0 && (
                   <span className="ml-1 rounded-full bg-[#1C3C8C] px-1.5 py-0.5 text-[9px] font-semibold text-white">
@@ -536,11 +536,11 @@ function HirudoPriceTableMobileRow({ p }: { p: HirudoRow }) {
                 {renderPrice(formatPrice(current))}
               </div>
               {discount > 0 && (
-                <div className="text-[11px] font-light text-[#4A5C85] line-through">
+                <div className="text-[11px] font-light text-[#566A93] line-through">
                   {renderPrice(formatPrice(total))}
                 </div>
               )}
-              <div className="text-[11px] font-light text-[#4A5C85]">
+              <div className="text-[11px] font-light text-[#566A93]">
                 {leechCount} {leechWord}
               </div>
             </div>
@@ -611,7 +611,7 @@ function Prices() {
           </div>
         </div>
 
-        <p className="mt-6 text-center text-[14px] font-light text-[#4A5C85]">
+        <p className="mt-6 text-center text-[14px] font-light text-[#566A93]">
           Цены указаны с учётом скидки при покупке курса. Оплатить можно на месте.
         </p>
       </div>
@@ -648,7 +648,7 @@ function FaqItem({ q, a }: { q: string; a: React.ReactNode }) {
         }`}
       >
         <div className="overflow-hidden">
-          <p className="px-5 sm:px-6 xl:px-7 pb-5 sm:pb-6 xl:pb-7 body-text text-[#4A5C85] max-w-[720px]">
+          <p className="px-5 sm:px-6 xl:px-7 pb-5 sm:pb-6 xl:pb-7 body-text text-[#566A93] max-w-[720px]">
             {a}
           </p>
         </div>
@@ -687,7 +687,7 @@ function Faq() {
             >
               Татьяна Злобина
             </h3>
-            <p className="mt-3 body-text text-[#4A5C85]">
+            <p className="mt-3 body-text text-[#566A93]">
               Мастер кабинета, специалист по&nbsp;оздоровительным практикам
             </p>
             <p className="mt-6 body-text text-[#1C3C8C]">

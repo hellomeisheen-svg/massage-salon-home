@@ -42,7 +42,7 @@ function NotFoundPage() {
 
             <h1 className="ds-h2 mt-6 text-[#1C3C8C]">Страница не найдена</h1>
 
-            <p className="body-text mx-auto mt-4 max-w-[400px] text-[#4A5C85]">
+            <p className="body-text mx-auto mt-4 max-w-[400px] text-[#566A93]">
               Запрашиваемая страница не существует или была перемещена. Проверьте адрес или вернитесь на главную.
             </p>
 
