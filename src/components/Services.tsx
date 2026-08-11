@@ -321,6 +321,8 @@ export const servicePageLinks: Record<string, string> = {
   "Лимфатический": "/limfaticheskii-massazh",
   "Лимфодренажный": "/limfodrenazhnyi-massazh",
   "Классический": "/klassicheskii-massazh",
+  "Кетгут": "/ketgut",
+
 };
 
 export function ServiceCard({
