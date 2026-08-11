@@ -82,21 +82,21 @@ export function Footer() {
 
             <ul className="flex flex-col gap-5 xl:gap-6">
               <li className="text-[#1c3c8c] leading-[150%] font-light">
-                <div className="body-text text-[#1c3c8c] mb-2">Адрес</div>
+                <div className="body-text text-[#566A93] mb-2">Адрес</div>
                 <div className="body-text text-[#1c3c8c]">{ADDRESS}</div>
               </li>
               <li className="text-[#1c3c8c] leading-[150%] font-light">
-                <div className="body-text text-[#1c3c8c] mb-2">Телефон</div>
+                <div className="body-text text-[#566A93] mb-2">Телефон</div>
                 <a href="tel:+79242324611" className="body-text text-[#1c3c8c] hover:opacity-70 transition-opacity">
                   +7 924 232 46 11
                 </a>
               </li>
               <li className="text-[#1c3c8c] leading-[150%] font-light">
-                <div className="body-text text-[#1c3c8c] mb-2">Режим работы</div>
+                <div className="body-text text-[#566A93] mb-2">Режим работы</div>
                 <div className="body-text text-[#1c3c8c]">пн-сб с 9:00 до 22:00</div>
               </li>
               <li className="text-[#1c3c8c] leading-[150%] font-light">
-                <div className="body-text text-[#1c3c8c] mb-2">Рейтинг в Яндекс Справочнике</div>
+                <div className="body-text text-[#566A93] mb-2">Рейтинг в Яндекс Справочнике</div>
                 <iframe
                   src="https://yandex.ru/sprav/widget/rating-badge/130811843218?type=rating"
                   width="150"
