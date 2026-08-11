@@ -18,6 +18,7 @@ export type Variant = {
 export type ServiceType = {
   title: string;
   category: number;
+  hit?: boolean;
   variants: Variant[];
 };
 
@@ -25,6 +26,7 @@ export const serviceTypes: ServiceType[] = [
   {
     title: "Гирудотерапия",
     category: 0,
+    hit: true,
     variants: [
       {
         zone: "Медицинские",
@@ -85,6 +87,7 @@ export const serviceTypes: ServiceType[] = [
   {
     title: "Векторный",
     category: 1,
+    hit: true,
     variants: [
       {
         zone: "Всё тело",
@@ -203,6 +206,7 @@ export const serviceTypes: ServiceType[] = [
   {
     title: "Акупунктурный кетгут",
     category: 0,
+    hit: true,
     variants: [
       {
         zone: "Все тело",
@@ -428,13 +432,20 @@ export function ServiceCard({
       <div className="flex-1 flex flex-col mb-6 sm:flex-none sm:mb-0 xl:flex-1 xl:mb-6">
         <div className="flex-1 sm:flex-none xl:flex-1">
           {/* Title */}
-          <h3
-            className="mt-5 ds-h2-card text-[#1C3C8C] break-words hyphens-auto"
-            style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
-          >
-            <span className="xl:hidden">{mobileTitle(type.title)}</span>
-            <span className="hidden xl:block">{clean(type.title)}</span>
-          </h3>
+          <div className="mt-5 flex flex-wrap items-center gap-3">
+            <h3
+              className="ds-h2-card text-[#1C3C8C] break-words hyphens-auto"
+              style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
+            >
+              <span className="xl:hidden">{mobileTitle(type.title)}</span>
+              <span className="hidden xl:block">{clean(type.title)}</span>
+            </h3>
+            {type.hit && (
+              <span className="inline-flex items-center rounded-[4px] bg-[#E85D4C] px-2 py-1 text-[11px] font-semibold uppercase tracking-wider text-white">
+                Хит
+              </span>
+            )}
+          </div>
 
           {/* Zone / Type chips */}
           {variant.zone && (
