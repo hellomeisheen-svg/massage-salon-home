@@ -31,7 +31,7 @@ function NotFoundPage() {
       <div className="relative flex min-h-screen flex-col bg-[#EFF6FF]">
         <Header />
 
-        <main className="flex flex-1 items-start justify-center px-4 pb-24 pt-36 sm:px-5 sm:pt-44">
+        <main className="flex min-h-[calc(100vh-64px)] xl:min-h-[calc(100vh-80px)] items-center justify-center px-4 sm:px-5">
           <div className="w-full max-w-[560px] px-6 py-10 text-center sm:px-10 sm:py-14">
             <span
               className="block text-[80px] font-light leading-none tracking-tight text-[#1C3C8C] sm:text-[120px]"
