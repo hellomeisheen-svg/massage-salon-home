@@ -73,7 +73,7 @@ export function OtherServices({ exclude }: { exclude?: string }) {
   return (
     <section className="bg-[#EFF6FF] ds-section">
       <div className="container-1900">
-        <div className="flex flex-col items-center text-center xl:flex-row xl:items-end xl:justify-between xl:text-left">
+        <div className="flex flex-col items-center text-center xl:items-start xl:text-left">
           <div className="flex flex-col items-center xl:items-start">
             <span
               className="inline-flex items-center gap-2 px-4 py-1.5 ds-label text-white"
@@ -90,27 +90,6 @@ export function OtherServices({ exclude }: { exclude?: string }) {
             >
               Другие услуги
             </h2>
-          </div>
-
-          <div className="flex items-center gap-2 mt-6 xl:mt-0">
-            <button
-              type="button"
-              onClick={() => scroll(-1)}
-              disabled={!canPrev}
-              aria-label="Предыдущие услуги"
-              className="h-12 w-12 rounded-[4px] border border-[#daebff] bg-white flex items-center justify-center text-[#1C3C8C] transition-colors hover:bg-[#EFF6FF] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-white"
-            >
-              <ChevronLeft className="h-5 w-5" />
-            </button>
-            <button
-              type="button"
-              onClick={() => scroll(1)}
-              disabled={!canNext}
-              aria-label="Следующие услуги"
-              className="h-12 w-12 rounded-[4px] border border-[#daebff] bg-white flex items-center justify-center text-[#1C3C8C] transition-colors hover:bg-[#EFF6FF] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-white"
-            >
-              <ChevronRight className="h-5 w-5" />
-            </button>
           </div>
         </div>
 
@@ -137,12 +116,33 @@ export function OtherServices({ exclude }: { exclude?: string }) {
                   {service.description}
                 </p>
               </div>
-              <div className="mt-4 inline-flex items-center gap-1.5 text-[14px] font-medium text-[#1C3C8C] transition-colors group-hover:text-[#4A7FD6]">
+              <div className="mt-4 inline-flex items-center gap-1.5 text-[14px] font-medium text-[#1C3C8C] transition-opacity group-hover:opacity-70">
                 Подробнее
                 <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
               </div>
             </Link>
           ))}
+        </div>
+
+        <div className="flex items-center justify-center gap-2 mt-6 xl:justify-end xl:mt-[-72px] xl:relative xl:z-10">
+          <button
+            type="button"
+            onClick={() => scroll(-1)}
+            disabled={!canPrev}
+            aria-label="Предыдущие услуги"
+            className="h-12 w-12 rounded-[0.5rem] border border-[#daebff] bg-white flex items-center justify-center text-[#1C3C8C] transition-colors hover:bg-[#EFF6FF] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-white"
+          >
+            <ChevronLeft className="h-5 w-5" />
+          </button>
+          <button
+            type="button"
+            onClick={() => scroll(1)}
+            disabled={!canNext}
+            aria-label="Следующие услуги"
+            className="h-12 w-12 rounded-[0.5rem] border border-[#daebff] bg-white flex items-center justify-center text-[#1C3C8C] transition-colors hover:bg-[#EFF6FF] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-white"
+          >
+            <ChevronRight className="h-5 w-5" />
+          </button>
         </div>
       </div>
     </section>
