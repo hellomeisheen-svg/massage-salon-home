@@ -35,11 +35,6 @@ export const otherServices = [
     title: "Классический массаж",
     description: "Комплексная проработка тела",
   },
-  {
-    slug: "massazh",
-    title: "Массаж",
-    description: "Ручная работа в спокойном ритме",
-  },
 ];
 
 export function OtherServices({ exclude }: { exclude?: string }) {
@@ -97,13 +92,13 @@ export function OtherServices({ exclude }: { exclude?: string }) {
             </h2>
           </div>
 
-          <div className="hidden xl:flex items-center gap-2 mt-6 xl:mt-0">
+          <div className="flex items-center gap-2 mt-6 xl:mt-0">
             <button
               type="button"
               onClick={() => scroll(-1)}
               disabled={!canPrev}
               aria-label="Предыдущие услуги"
-              className="h-12 w-12 rounded-full border border-[#daebff] bg-white flex items-center justify-center text-[#1C3C8C] transition-colors hover:bg-[#EFF6FF] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-white"
+              className="h-12 w-12 rounded-[4px] border border-[#daebff] bg-white flex items-center justify-center text-[#1C3C8C] transition-colors hover:bg-[#EFF6FF] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-white"
             >
               <ChevronLeft className="h-5 w-5" />
             </button>
@@ -112,51 +107,24 @@ export function OtherServices({ exclude }: { exclude?: string }) {
               onClick={() => scroll(1)}
               disabled={!canNext}
               aria-label="Следующие услуги"
-              className="h-12 w-12 rounded-full border border-[#daebff] bg-white flex items-center justify-center text-[#1C3C8C] transition-colors hover:bg-[#EFF6FF] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-white"
+              className="h-12 w-12 rounded-[4px] border border-[#daebff] bg-white flex items-center justify-center text-[#1C3C8C] transition-colors hover:bg-[#EFF6FF] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-white"
             >
               <ChevronRight className="h-5 w-5" />
             </button>
           </div>
         </div>
 
-        {/* Mobile / tablet grid */}
-        <div className="mt-8 sm:mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 xl:hidden">
-          {items.map((service) => (
-            <Link
-              key={service.slug}
-              to={`/${service.slug}`}
-              className={cardClass}
-            >
-              <div>
-                <h3
-                  className="text-[18px] font-light leading-[1.25] text-[#1C3C8C] sm:text-[20px]"
-                  style={{ fontFamily: heading }}
-                >
-                  {service.title}
-                </h3>
-                <p className="mt-2 line-clamp-2 text-[13px] font-light leading-[1.4] text-[#6B7BA8]">
-                  {service.description}
-                </p>
-              </div>
-              <div className="mt-4 inline-flex items-center gap-1.5 text-[14px] font-medium text-[#1C3C8C] transition-colors group-hover:text-[#4A7FD6]">
-                Подробнее
-                <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
-              </div>
-            </Link>
-          ))}
-        </div>
-
-        {/* Desktop carousel */}
+        {/* Carousel */}
         <div
           ref={trackRef}
           onScroll={updateArrows}
-          className="mt-10 hidden xl:flex gap-3 overflow-hidden scroll-smooth"
+          className="mt-8 sm:mt-10 flex gap-3 overflow-hidden scroll-smooth"
         >
           {items.map((service) => (
             <Link
               key={service.slug}
               to={`/${service.slug}`}
-              className={`${cardClass} flex-[0_0_calc((100%-3*0.75rem)/4)] snap-start`}
+              className={`${cardClass} flex-[0_0_calc((100%-0.75rem)/2)] xl:flex-[0_0_calc((100%-3*0.75rem)/4)] snap-start`}
             >
               <div>
                 <h3
