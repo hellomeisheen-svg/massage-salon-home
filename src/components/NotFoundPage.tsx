@@ -28,7 +28,7 @@ export function NotFoundPage() {
   return (
     <BookingProvider>
       <div className="relative flex min-h-screen flex-col bg-[#EFF6FF]">
-        <Header />
+        <Header items={[]} showServicesMenu={false} />
 
         <main className="flex min-h-[calc(100vh-64px)] xl:min-h-[calc(100vh-80px)] items-center justify-center px-4 sm:px-5">
           <div className="w-full max-w-[640px] px-6 py-10 text-center sm:px-10 sm:py-14">
