@@ -541,6 +541,15 @@ function PrivacyPolicy() {
               .
             </p>
           </section>
+
+          <div className="pt-6">
+            <Link
+              to="/"
+              className="btn-primary w-full sm:w-[280px] xl:w-[250px] inline-flex items-center justify-center text-center whitespace-nowrap"
+            >
+              На главную
+            </Link>
+          </div>
         </div>
       </main>
       </div>
