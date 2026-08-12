@@ -5,7 +5,7 @@ import { BookingProvider } from "@/components/BookingModal";
 export const notFoundMeta = {
   title: "404 — Страница не найдена",
   description:
-    "Запрашиваемая страница не существует или была перемещена. Вернитесь на главную кабинета Татьяны Злобиной.",
+    "Запрашиваемая страница не существует или была перемещена. Вернитесь на главную Седьмого неба.",
 };
 
 export const notFoundHead = () => ({
