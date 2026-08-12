@@ -399,7 +399,7 @@ function FaqItem({ q, a }: { q: string; a: React.ReactNode }) {
         onClick={() => setOpen((v) => !v)}
         className="w-full flex items-center justify-between gap-4 p-5 sm:p-6 xl:p-7 text-left"
       >
-        <span className="font-noto-serif-narrow text-[#1C3C8C] text-[20px] sm:text-[24px] xl:text-[28px] leading-[1.2]">
+        <span className="font-noto-serif-narrow text-[#1C3C8C] ds-h4">
           {q}
         </span>
         <span
@@ -449,7 +449,7 @@ function Faq({ content }: { content: ServicePageContent }) {
               alt="Татьяна Злобина"
               className="h-[90px] w-[70px] xl:h-[110px] xl:w-[85px] rounded-lg border border-[#daebff] object-cover"
             />
-            <h3 className="font-noto-serif-narrow mt-6 text-[#1C3C8C] text-[26px] sm:text-[30px] leading-[1.1] font-light">
+            <h3 className="font-noto-serif-narrow mt-6 ds-h4 text-[#1C3C8C]">
               Татьяна Злобина
             </h3>
             <p className="mt-3 body-text text-[#566A93]">
