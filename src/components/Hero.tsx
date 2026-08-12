@@ -30,7 +30,7 @@ function HeadlineBlock() {
       <h1 className="font-noto-serif-narrow text-[38px] font-light leading-[1.12] text-[#1C3C8C] sm:text-[58px] sm:leading-[1.15]">
         Место, где&nbsp;можно замедлиться и&nbsp;вернуться к&nbsp;себе без&nbsp;спешки
       </h1>
-      <p className="mt-4 text-[16px] font-light leading-[26px] text-[#566A93]">
+      <p className="mt-4 text-[16px] font-light leading-[26px] text-[#566A93] xl:max-w-[540px]">
         Оздоровительные практики для&nbsp;тела: массаж, банки, гирудотерапия.
         Спокойный ритм и&nbsp;внимание к&nbsp;каждому состоянию.
       </p>
