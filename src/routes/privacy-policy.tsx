@@ -545,7 +545,7 @@ function PrivacyPolicy() {
           <div className="pt-6">
             <Link
               to="/"
-              className="inline-flex items-center gap-2 text-[15px] xl:text-base font-medium text-[#1c3c8c] hover:text-[#5DAAFD] transition-colors group"
+              className="inline-flex items-center gap-2 text-[15px] xl:text-base font-medium text-[#1c3c8c] hover:opacity-70 transition-opacity group"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
