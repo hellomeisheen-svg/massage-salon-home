@@ -2,11 +2,6 @@ import heroImageAsset from "@/assets/hero-portrait-solid.jpg.asset.json";
 import tatyanaPhotoAsset from "@/assets/tatyana-photo.png.asset.json";
 
 
-const heroFont = {
-  fontFamily: "'Roslindale Cyrillic Display Condensed', serif",
-} as const;
-
-
 function SpecialistBlock() {
   return (
     <div className="flex flex-col items-start gap-3 sm:gap-4">
