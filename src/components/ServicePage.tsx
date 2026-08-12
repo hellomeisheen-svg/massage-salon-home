@@ -247,10 +247,7 @@ function AboutService({ content }: { content: ServicePageContent }) {
           >
             Об услуге
           </span>
-          <h2
-            className="mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0"
-            style={{ fontFamily: heading }}
-          >
+          <h2 className="font-noto-serif-narrow mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0">
             {content.aboutHeading}
           </h2>
 
@@ -268,10 +265,7 @@ function AboutService({ content }: { content: ServicePageContent }) {
                   }}
                   className="scroll-mt-[140px]"
                 >
-                  <h3
-                    className="text-[26px] sm:text-[32px] font-light leading-[1.15] text-[#1C3C8C]"
-                    style={{ fontFamily: heading }}
-                  >
+                  <h3 className="font-noto-serif-narrow text-[26px] sm:text-[32px] font-light leading-[1.15] text-[#1C3C8C]">
                     {s.label}
                   </h3>
                   <div className="mt-5 text-[#566A93] space-y-4 text-[15px] leading-[1.6]">
@@ -334,7 +328,7 @@ function PriceCard({ p, prefix }: { p: ServicePrice; prefix: string }) {
         ))}
       </div>
 
-      <h3 className="mt-5 ds-h3 text-[#1C3C8C]" style={{ fontFamily: heading }}>
+      <h3 className="font-noto-serif-narrow mt-5 ds-h3 text-[#1C3C8C]">
         {p.zone}
       </h3>
       <p className="mt-3 body-text text-[#566A93]">{p.subtitle}</p>
@@ -345,15 +339,12 @@ function PriceCard({ p, prefix }: { p: ServicePrice; prefix: string }) {
 
       <div className="mt-6 flex items-center justify-end gap-4 sm:gap-5">
         {hasDiscount && (
-          <span
-            className="text-[17px] sm:text-[19px] font-light leading-[1.2] text-[#566A93] line-through"
-            style={{ fontFamily: heading }}
-          >
+          <span className="font-noto-serif-narrow text-[17px] sm:text-[19px] font-light leading-[1.2] text-[#566A93] line-through">
             {renderPrice(originalPrice)}
           </span>
         )}
         <div className="flex flex-col items-end">
-          <span className="ds-price text-[#1C3C8C]" style={{ fontFamily: heading }}>
+          <span className="font-noto-serif-narrow ds-price text-[#1C3C8C]">
             {renderPrice(computedPrice)}
           </span>
           <span className="text-[13px] font-light text-[#566A93]">
@@ -378,7 +369,7 @@ function PriceCards({ content }: { content: ServicePageContent }) {
   return (
     <section id="prices" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section">
       <div className="container-1900">
-        <h2 className="text-center ds-h2 text-[#1C3C8C]" style={{ fontFamily: heading }}>
+        <h2 className="font-noto-serif-narrow text-center ds-h2 text-[#1C3C8C]">
           Форматы и&nbsp;стоимость
         </h2>
 
@@ -408,10 +399,7 @@ function FaqItem({ q, a }: { q: string; a: React.ReactNode }) {
         onClick={() => setOpen((v) => !v)}
         className="w-full flex items-center justify-between gap-4 p-5 sm:p-6 xl:p-7 text-left"
       >
-        <span
-          className="text-[#1C3C8C] text-[20px] sm:text-[24px] xl:text-[28px] leading-[1.2]"
-          style={{ fontFamily: heading }}
-        >
+        <span className="font-noto-serif-narrow text-[#1C3C8C] text-[20px] sm:text-[24px] xl:text-[28px] leading-[1.2]">
           {q}
         </span>
         <span
@@ -451,10 +439,7 @@ function Faq({ content }: { content: ServicePageContent }) {
           >
             FAQs
           </span>
-          <h2
-            className="mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0"
-            style={{ fontFamily: heading }}
-          >
+          <h2 className="font-noto-serif-narrow mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0">
             Отвечаю на&nbsp;самые важные вопросы
           </h2>
 
@@ -464,10 +449,7 @@ function Faq({ content }: { content: ServicePageContent }) {
               alt="Татьяна Злобина"
               className="h-[90px] w-[70px] xl:h-[110px] xl:w-[85px] rounded-lg border border-[#daebff] object-cover"
             />
-            <h3
-              className="mt-6 text-[#1C3C8C] text-[26px] sm:text-[30px] leading-[1.1] font-light"
-              style={{ fontFamily: heading }}
-            >
+            <h3 className="font-noto-serif-narrow mt-6 text-[#1C3C8C] text-[26px] sm:text-[30px] leading-[1.1] font-light">
               Татьяна Злобина
             </h3>
             <p className="mt-3 body-text text-[#566A93]">
