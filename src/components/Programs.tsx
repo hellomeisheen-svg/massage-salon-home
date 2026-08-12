@@ -184,7 +184,7 @@ export function Programs({ prioritizeKeys }: ProgramsProps = {}) {
             Программы восстановления
           </span>
           <h2 className="font-noto-serif-narrow mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0" data-no-typo>
-            Программы из&nbsp;нескольких процедур&nbsp;— для&nbsp;глубокой работы с&nbsp;конкретным состоянием
+            Программы из нескольких процедур — для глубокой работы с состоянием.
           </h2>
 
           <ul className="mt-8 hidden xl:flex flex-col gap-3 items-start">
