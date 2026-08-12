@@ -83,8 +83,6 @@ const programs: Program[] = [
   },
 ];
 
-const heading = "'Roslindale Cyrillic Display Condensed', serif";
-
 const formatPrice = (v: number) =>
   `${v.toLocaleString("ru-RU").replace(/\s/g, "\u00A0")}\u00A0`;
 
@@ -205,7 +203,7 @@ export function Programs({ prioritizeKeys }: ProgramsProps = {}) {
                       }`}
                     />
                     <span
-                      className={`text-[16px] transition-colors ${
+                      className={`font-noto-serif-narrow text-[16px] transition-colors ${
                         isActive ? "text-[#1C3C8C]" : "text-[#566A93]"
                       }`}
                     >
@@ -220,10 +218,7 @@ export function Programs({ prioritizeKeys }: ProgramsProps = {}) {
 
         {/* Right column — program card */}
         <article className="ds-card ds-card-hover p-5 sm:p-8 flex flex-col h-[620px] sm:h-[671px] xl:h-auto xl:min-h-[700px]">
-          <h3
-            className="ds-h2-card text-[#1C3C8C]"
-            style={{ fontFamily: heading }}
-          >
+          <h3 className="font-noto-serif-narrow ds-h2-card text-[#1C3C8C]">
             {program.name}
           </h3>
           <p className="mt-2 sm:mt-3 body-text text-[#566A93]">
@@ -259,15 +254,12 @@ export function Programs({ prioritizeKeys }: ProgramsProps = {}) {
             </div>
           </div>
 
-          <div
-            className="mt-auto pt-4 sm:pt-8 flex flex-wrap items-center justify-start sm:justify-end gap-x-4 gap-y-2"
-            style={{ fontFamily: heading }}
-          >
-            <span className="text-[18px] sm:text-[20px] font-light text-[#566A93] line-through">
+          <div className="mt-auto pt-4 sm:pt-8 flex flex-wrap items-center justify-start sm:justify-end gap-x-4 gap-y-2">
+            <span className="font-noto-serif-narrow text-[18px] sm:text-[20px] font-light text-[#566A93] line-through">
               {formatPrice(originalPrice)}
               <Ruble />
             </span>
-            <span className="ds-price text-[#1C3C8C]">
+            <span className="font-noto-serif-narrow ds-price text-[#1C3C8C]">
               {formatPrice(price)}
               <Ruble />
             </span>
