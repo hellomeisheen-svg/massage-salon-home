@@ -51,13 +51,10 @@ export function StatsSection() {
           <div className="grid grid-cols-2 gap-x-6 gap-y-8 sm:gap-x-10 sm:gap-y-12 xl:pt-2">
             {stats.map((stat, i) => (
               <div key={i} className="flex flex-col">
-                <span
-                  className="text-[48px] font-light leading-[1] tracking-[-0.04em] text-[#1C3C8C] sm:text-[56px] xl:text-[72px]"
-                  style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
-                >
+                <span className="font-noto-serif-narrow text-[48px] font-light leading-[1] tracking-[-0.04em] text-[#1C3C8C] sm:text-[56px] xl:text-[72px]">
                   {stat.value}
                 </span>
-                <span className="mt-2 text-[15px] font-medium leading-[1.3] text-[#1C3C8C] sm:text-[16px]">
+                <span className="font-noto-serif-narrow mt-2 text-[15px] font-medium leading-[1.3] text-[#1C3C8C] sm:text-[16px]">
                   {stat.label}
                 </span>
                 <span className="mt-1 text-[14px] font-light leading-[1.35] text-[#566A93] sm:text-[15px]">
