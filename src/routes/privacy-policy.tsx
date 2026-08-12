@@ -37,8 +37,7 @@ function PrivacyPolicy() {
         </Link>
 
         <h1
-          className="mt-8 text-[30px] xl:text-[44px] leading-[1.1]"
-          className="font-noto-serif-narrow text-[#1c3c8c]"
+          className="font-noto-serif-narrow mt-8 text-[30px] leading-[1.1] text-[#1c3c8c] xl:text-[44px]"
         >
           Политика в отношении обработки персональных данных
         </h1>
