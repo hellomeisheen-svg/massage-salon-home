@@ -108,7 +108,7 @@ export function ApproachRedesign() {
                   <div className="flex h-12 w-12 items-center justify-center rounded-full border border-[#1C3C8C]/20 text-[#1C3C8C]">
                     {item.icon}
                   </div>
-                  <p className="text-[18px] leading-snug text-[#1C3C8C] xl:text-[34px]">
+                  <p className="text-[18px] leading-snug text-[#1C3C8C] xl:text-[20px]">
                     {item.title}
                   </p>
                 </div>
