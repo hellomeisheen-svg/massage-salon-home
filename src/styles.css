@@ -478,6 +478,9 @@ button:focus-visible {
   font-weight: 300;
   font-size: 30px;
   line-height: 1.15;
+  @media (max-width: 639px) {
+    font-weight: 500;
+  }
   @media (min-width: 640px) {
     font-size: 38px;
     line-height: 1.18;
@@ -493,6 +496,9 @@ button:focus-visible {
   font-weight: 300;
   font-size: 30px;
   line-height: 1.15;
+  @media (max-width: 639px) {
+    font-weight: 500;
+  }
   @media (min-width: 640px) {
     font-size: 36px;
   }
@@ -507,6 +513,9 @@ button:focus-visible {
   font-weight: 300;
   font-size: 24px;
   line-height: 1.15;
+  @media (max-width: 639px) {
+    font-weight: 500;
+  }
   @media (min-width: 640px) {
     font-size: 28px;
   }
@@ -520,6 +529,9 @@ button:focus-visible {
   font-weight: 400;
   font-size: 20px;
   line-height: 1.25;
+  @media (max-width: 639px) {
+    font-weight: 500;
+  }
   @media (min-width: 940px) {
     font-size: 24px;
   }
@@ -530,6 +542,9 @@ button:focus-visible {
   font-weight: 300;
   font-size: 24px;
   line-height: 1;
+  @media (max-width: 639px) {
+    font-weight: 500;
+  }
   @media (min-width: 640px) {
     font-size: 28px;
   }
