@@ -29,6 +29,7 @@ function parseSchool(school: string) {
 
 function EduCard({ item }: { item: EduItem }) {
   const { name, city } = parseSchool(item.school);
+  const mobileName = item.mobileName ?? name;
   return (
     <div className="relative rounded-[12px] bg-white border border-[#daebff] px-6 sm:px-7 xl:px-8 py-[30px]">
       {city && (
