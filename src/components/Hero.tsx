@@ -36,7 +36,7 @@ function HeadlineBlock() {
   return (
     <div className="flex flex-col tablet-text-block xl:max-w-[640px]">
       <h1
-        className="text-[38px] font-light leading-[1.12] text-[#1C3C8C] sm:text-[58px] sm:leading-[1.15]"
+        className="font-noto-serif-narrow text-[38px] font-light leading-[1.12] text-[#1C3C8C] sm:text-[58px] sm:leading-[1.15]"
         style={heroFont}
       >
         Место, где&nbsp;можно замедлиться и&nbsp;вернуться к&nbsp;себе без&nbsp;спешки
