@@ -37,7 +37,9 @@ function NotFoundPage() {
               404
             </span>
 
-            <h1 className="ds-h2 mt-6 text-[#1C3C8C]">Страница не найдена</h1>
+            <h1 className="font-noto-serif-narrow mt-6 text-[30px] font-light leading-[1.15] text-[#1C3C8C] sm:text-[38px] xl:text-[44px]">
+              Страница не найдена
+            </h1>
 
             <p className="body-text mx-auto mt-4 max-w-[400px] text-[#566A93]">
               Запрашиваемая страница не существует или была перемещена. Проверьте адрес или вернитесь на главную.
