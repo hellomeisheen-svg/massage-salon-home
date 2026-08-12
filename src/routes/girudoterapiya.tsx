@@ -478,10 +478,7 @@ function HirudoPriceTableMobileRow({ p }: { p: HirudoRow }) {
   return (
     <div className="px-4 py-5">
       <div className="min-w-0">
-        <div
-          className="text-[18px] font-light leading-[1.25] text-[#1C3C8C]"
-          style={{ fontFamily: heading }}
-        >
+        <div className="font-noto-serif-narrow text-[18px] font-light leading-[1.25] text-[#1C3C8C]">
           {p.zone}
         </div>
         <div className="mt-1 text-[13px] font-light leading-[18px] text-[#566A93]">
@@ -506,10 +503,7 @@ function HirudoPriceTableMobileRow({ p }: { p: HirudoRow }) {
                   </span>
                 )}
               </div>
-              <div
-                className="mt-1 text-[15px] font-light text-[#1C3C8C]"
-                style={{ fontFamily: heading }}
-              >
+              <div className="font-noto-serif-narrow mt-1 text-[15px] font-light text-[#1C3C8C]">
                 {renderPrice(formatPrice(current))}
               </div>
               {discount > 0 && (
@@ -532,10 +526,7 @@ function Prices() {
   return (
     <section id="prices" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section">
       <div className="container-1900">
-        <h2
-          className="text-center ds-h2 text-[#1C3C8C]"
-          style={{ fontFamily: heading }}
-        >
+        <h2 className="font-noto-serif-narrow text-center ds-h2 text-[#1C3C8C]">
           Форматы и стоимость
         </h2>
 
@@ -605,10 +596,7 @@ function FaqItem({ q, a }: { q: string; a: React.ReactNode }) {
         onClick={() => setOpen((v) => !v)}
         className="w-full flex items-center justify-between gap-4 p-5 sm:p-6 xl:p-7 text-left"
       >
-        <span
-          className="text-[#1C3C8C] text-[20px] sm:text-[24px] xl:text-[28px] leading-[1.2]"
-          style={{ fontFamily: heading }}
-        >
+        <span className="font-noto-serif-narrow text-[#1C3C8C] text-[20px] sm:text-[24px] xl:text-[28px] leading-[1.2]">
           {q}
         </span>
         <span
@@ -645,10 +633,7 @@ function Faq() {
           >
             FAQs
           </span>
-          <h2
-            className="mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0"
-            style={{ fontFamily: heading }}
-          >
+          <h2 className="font-noto-serif-narrow mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0">
             Отвечаю на&nbsp;самые важные вопросы
           </h2>
 
@@ -658,10 +643,7 @@ function Faq() {
               alt="Татьяна Злобина"
               className="h-[90px] w-[70px] xl:h-[110px] xl:w-[85px] rounded-lg border border-[#daebff] object-cover"
             />
-            <h3
-              className="mt-6 text-[#1C3C8C] text-[26px] sm:text-[30px] leading-[1.1] font-light"
-              style={{ fontFamily: heading }}
-            >
+            <h3 className="font-noto-serif-narrow mt-6 text-[#1C3C8C] text-[26px] sm:text-[30px] leading-[1.1] font-light">
               Татьяна Злобина
             </h3>
             <p className="mt-3 body-text text-[#566A93]">
