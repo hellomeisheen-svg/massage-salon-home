@@ -714,10 +714,7 @@ export function Services() {
           >
             Услуги
           </span>
-          <h2
-            className="font-noto-serif-narrow mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0"
-            style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
-          >
+          <h2 className="font-noto-serif-narrow mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0">
             Перед каждым визитом обсуждаем ваше состояние&nbsp;— и&nbsp;подбираем технику под&nbsp;него
           </h2>
 
