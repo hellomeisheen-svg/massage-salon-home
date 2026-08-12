@@ -35,7 +35,7 @@ function EduCard({ item }: { item: EduItem }) {
           {city}
         </span>
       )}
-      <h3 className="font-noto-serif-narrow ds-h4 text-[#1C3C8C] pr-0 sm:pr-24 whitespace-nowrap sm:whitespace-normal xl:text-[28px]">
+      <h3 className="font-noto-serif-narrow ds-h4 text-[#1C3C8C] pr-0 sm:pr-24 whitespace-nowrap sm:whitespace-normal sm:text-[28px] xl:text-[28px]">
         <span className="xl:hidden">{name}</span>
         <span className="hidden xl:inline">{item.school}</span>
       </h3>
