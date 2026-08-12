@@ -2,6 +2,28 @@ import { Link } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
 import { BookingProvider } from "@/components/BookingModal";
 
+export const notFoundMeta = {
+  title: "404 — Страница не найдена",
+  description:
+    "Запрашиваемая страница не существует или была перемещена. Вернитесь на главную кабинета Татьяны Злобиной.",
+};
+
+export const notFoundHead = () => ({
+  meta: [
+    { title: notFoundMeta.title },
+    { name: "description", content: notFoundMeta.description },
+    { name: "robots", content: "noindex, nofollow" },
+    { property: "og:title", content: notFoundMeta.title },
+    {
+      property: "og:description",
+      content:
+        "Запрашиваемая страница не существует или была перемещена. Вернитесь на главную.",
+    },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary" },
+  ],
+});
+
 export function NotFoundPage() {
   return (
     <BookingProvider>
