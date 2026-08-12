@@ -1,4 +1,4 @@
-import logoAsset from "@/assets/logo-sedmoe-nebo.png.asset.json";
+import logoSvg from "@/assets/logo-sedmoe-nebo.svg";
 
 interface LogoProps {
   className?: string;
@@ -6,17 +6,11 @@ interface LogoProps {
 }
 
 /**
- * Логотип «Седьмое небо»: голубой контур облака, синяя семёрка внутри
- * и надпись «небо» акцентным шрифтом.
+ * Логотип «Седьмое небо» (SVG): голубой контур облака, синяя семёрка
+ * и надпись «небо».
  */
 const Logo = ({ className, title = "Седьмое небо" }: LogoProps) => (
-  <img
-    src={logoAsset.url}
-    alt={title}
-    className={className}
-    width={1024}
-    height={1024}
-  />
+  <img src={logoSvg} alt={title} className={className} width={696} height={484} />
 );
 
 export default Logo;
