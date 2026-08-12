@@ -24,7 +24,7 @@ const NumberBadge = ({ number }: { number: number }) => (
     {/* Decorative outer ring */}
     <span className="absolute -inset-2 rounded-[12px] border border-[#88C1FF]/20" />
     {/* Main badge ring */}
-    <span className="font-noto-serif-narrow relative flex h-full w-full items-center justify-center rounded-[12px] border border-[#88C1FF] bg-white text-[18px] xl:text-[16px] font-light leading-none text-[#1C3C8C]">
+    <span className="ds-counter relative flex h-full w-full items-center justify-center rounded-[12px] border border-[#88C1FF] bg-white text-[#1C3C8C]">
       {number}
     </span>
   </div>
@@ -61,7 +61,7 @@ export function ApproachCopy() {
                     <div className="pb-2 sm:row-span-2 sm:pb-0">
                       <NumberBadge number={i + 1} />
                     </div>
-                    <h4 className="font-noto-serif-narrow text-[20px] font-normal leading-[1] text-[#1C3C8C] sm:text-[32px] xl:text-[26px]">
+                    <h4 className="font-noto-serif-narrow ds-h4 text-[#1C3C8C]">
                       {item.title}
                     </h4>
                     <p className="body-text text-[#566A93] sm:max-w-[560px] xl:max-w-none">

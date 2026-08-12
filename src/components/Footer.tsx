@@ -67,7 +67,7 @@ export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
           {/* Contacts */}
           <div className="flex flex-col justify-between gap-8 ds-card p-5 xl:p-[30px]">
             <div>
-              <h2 className="font-noto-serif-narrow text-[30px] xl:text-[44px] leading-[1.1] text-[#1c3c8c] tracking-[0.01em]">
+              <h2 className="font-noto-serif-narrow ds-h2 text-[#1c3c8c] tracking-[0.01em]">
                 Как найти кабинет
               </h2>
               <p className="mt-4 xl:mt-5 body-text text-[#566A93] max-w-[440px]">

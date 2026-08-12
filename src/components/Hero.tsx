@@ -11,7 +11,7 @@ function SpecialistBlock() {
         src={tatyanaPhotoAsset.url}
       />
       <div className="flex flex-col gap-1">
-        <div className="font-noto-serif-narrow text-[22px] font-light leading-[1.2] text-[#1c3c8c] sm:text-[24px] xl:text-[28px]">
+        <div className="font-noto-serif-narrow ds-h4 text-[#1c3c8c]">
           Татьяна&nbsp;Злобина
         </div>
         <p className="text-[16px] font-light leading-[26px] text-[#566A93]">
@@ -27,7 +27,7 @@ function SpecialistBlock() {
 function HeadlineBlock() {
   return (
     <div className="flex flex-col tablet-text-block xl:max-w-[640px]">
-      <h1 className="font-noto-serif-narrow text-[38px] font-light leading-[1.12] text-[#1C3C8C] sm:text-[58px] sm:leading-[1.15]">
+      <h1 className="font-noto-serif-narrow ds-h1 text-[#1C3C8C]">
         Место, где&nbsp;можно замедлиться и&nbsp;вернуться к&nbsp;себе без&nbsp;спешки
       </h1>
       <p className="mt-4 text-[16px] font-light leading-[26px] text-[#566A93] xl:max-w-[540px]">

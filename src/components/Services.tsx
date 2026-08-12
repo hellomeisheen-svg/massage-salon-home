@@ -439,7 +439,7 @@ export function ServiceCard({
         <div className="flex-1 sm:flex-none xl:flex-1">
           {/* Title */}
           <div className="mt-5 flex flex-wrap items-center gap-3">
-            <h3 className="font-noto-serif-narrow ds-h2-card text-[#1C3C8C] break-words hyphens-auto">
+            <h3 className="font-noto-serif-narrow ds-h3 text-[#1C3C8C] break-words hyphens-auto">
               <span className="xl:hidden">{mobileTitle(type.title)}</span>
               <span className="hidden xl:block">{mobileTitle(type.title)}</span>
             </h3>
@@ -501,7 +501,7 @@ export function ServiceCard({
         {/* Price */}
         <div className="mt-5 sm:mt-[120px] xl:mt-5 flex items-center justify-end gap-4 sm:gap-5">
           {hasDiscount && (
-            <span className="font-noto-serif-narrow text-[17px] sm:text-[19px] font-light leading-[1.2] text-[#566A93] line-through">
+            <span className="ds-price-old">
               {renderPrice(originalPrice)}
             </span>
           )}
