@@ -81,7 +81,7 @@ export function Education() {
           <div className="relative mt-4 xl:absolute xl:inset-x-0 xl:bottom-0 xl:mt-0 xl:px-8 xl:pb-8">
             <div className="relative rounded-[12px] border border-[#DAEBFF] bg-white xl:bg-[#EFF6FF] p-8 sm:p-12 xl:p-10 shadow-[0_20px_50px_-12px_rgba(74,127,214,0.08)] flex flex-col xl:flex-row xl:items-end justify-between gap-6 xl:gap-8">
               <div className="flex flex-col gap-3 sm:gap-4 xl:w-[760px] xl:shrink-0">
-                <blockquote className="font-noto-serif-narrow ds-h4 text-[#1C3C8C] xl:max-w-[760px]">
+                <blockquote className="font-noto-serif-narrow ds-h4 text-[#1C3C8C] sm:text-[28px] xl:max-w-[760px]">
                   «Иногда достаточно тишины, бережного внимания,<br className="hidden xl:inline" />{" "}
                   и времени, чтобы почувствовать себя лучше.»
                 </blockquote>
