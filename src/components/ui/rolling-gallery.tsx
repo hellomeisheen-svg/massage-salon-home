@@ -24,10 +24,12 @@ const IMGS: { url: string; alt: string }[] = [
 
 
 
+type GalleryImage = { url: string; alt: string };
+
 interface RollingGalleryProps {
   autoplay?: boolean;
   pauseOnHover?: boolean;
-  images?: string[];
+  images?: string[] | GalleryImage[];
 }
 
 export const RollingGallery: React.FC<RollingGalleryProps> = ({
@@ -35,7 +37,12 @@ export const RollingGallery: React.FC<RollingGalleryProps> = ({
   pauseOnHover = false,
   images = [],
 }) => {
-  const galleryImages = images.length > 0 ? images : IMGS;
+  const galleryImages: GalleryImage[] =
+    images.length > 0
+      ? images.map((img) =>
+          typeof img === "string" ? { url: img, alt: "gallery" } : img
+        )
+      : IMGS;
 
   const [isScreenSizeSm, setIsScreenSizeSm] = useState(false);
 
@@ -153,7 +160,7 @@ export const RollingGallery: React.FC<RollingGalleryProps> = ({
           }}
           className="flex min-h-[200px] cursor-grab items-center justify-center [transform-style:preserve-3d]"
         >
-          {galleryImages.map((url, i) => (
+          {galleryImages.map(({ url, alt }, i) => (
             <div
               key={i}
               className="group absolute left-1/2 top-1/2 flex h-fit items-center justify-center p-[8%] [backface-visibility:hidden]"
@@ -164,7 +171,7 @@ export const RollingGallery: React.FC<RollingGalleryProps> = ({
             >
               <img
                 src={url}
-                alt="gallery"
+                alt={alt}
                 draggable={false}
                 style={{ width: imgWidth, height: imgHeight, flexShrink: 0, maxWidth: "none" }}
                 className={`pointer-events-none rounded-[12px] shadow-[0_8px_24px_rgba(28,60,140,0.12)] object-cover`}
