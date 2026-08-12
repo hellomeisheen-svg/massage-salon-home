@@ -505,7 +505,7 @@ button:focus-visible {
     font-size: 28px;
   }
   @media (min-width: 1280px) {
-    font-size: 32px;
+    font-size: 36px;
   }
 }
 
@@ -528,7 +528,7 @@ button:focus-visible {
     font-size: 28px;
   }
   @media (min-width: 1280px) {
-    font-size: 32px;
+    font-size: 36px;
   }
 }
 

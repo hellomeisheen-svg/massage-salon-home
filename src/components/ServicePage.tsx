@@ -265,7 +265,7 @@ function AboutService({ content }: { content: ServicePageContent }) {
                   }}
                   className="scroll-mt-[140px]"
                 >
-                  <h3 className="font-noto-serif-narrow text-[26px] sm:text-[32px] font-light leading-[1.15] text-[#1C3C8C]">
+                  <h3 className="font-noto-serif-narrow text-[26px] sm:text-[36px] font-light leading-[1.15] text-[#1C3C8C]">
                     {s.label}
                   </h3>
                   <div className="mt-5 text-[#566A93] space-y-4 text-[15px] leading-[1.6]">
