@@ -1,10 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 
-const headingStyle = {
-  fontFamily: "'Roslindale Cyrillic Display Condensed', serif",
-  color: "#1c3c8c",
-  letterSpacing: "0.01em",
-} as const;
 
 export const Route = createFileRoute("/privacy-policy")({
   head: () => ({
@@ -42,15 +37,14 @@ function PrivacyPolicy() {
         </Link>
 
         <h1
-          className="mt-8 text-[30px] xl:text-[44px] leading-[1.1]"
-          style={headingStyle}
+          className="font-noto-serif-narrow mt-8 text-[30px] leading-[1.1] text-[#1c3c8c] xl:text-[44px]"
         >
           Политика в отношении обработки персональных данных
         </h1>
 
         <div className="mt-10 space-y-8 text-[15px] xl:text-base leading-[150%] font-light text-[#1c3c8c]">
           <section>
-            <h2 className="text-[20px] xl:text-[24px] font-light" style={headingStyle}>
+            <h2 className="text-[20px] xl:text-[24px] font-light font-noto-serif-narrow text-[#1c3c8c]">
               1. Общие положения
             </h2>
             <p className="mt-3">
@@ -74,7 +68,7 @@ function PrivacyPolicy() {
           </section>
 
           <section>
-            <h2 className="text-[20px] xl:text-[24px] font-light" style={headingStyle}>
+            <h2 className="text-[20px] xl:text-[24px] font-light font-noto-serif-narrow text-[#1c3c8c]">
               2. Основные понятия, используемые в Политике
             </h2>
             <p className="mt-3">
@@ -157,7 +151,7 @@ function PrivacyPolicy() {
           </section>
 
           <section>
-            <h2 className="text-[20px] xl:text-[24px] font-light" style={headingStyle}>
+            <h2 className="text-[20px] xl:text-[24px] font-light font-noto-serif-narrow text-[#1c3c8c]">
               3. Основные права и обязанности Оператора
             </h2>
             <p className="mt-3">3.1. Оператор имеет право:</p>
@@ -221,7 +215,7 @@ function PrivacyPolicy() {
           </section>
 
           <section>
-            <h2 className="text-[20px] xl:text-[24px] font-light" style={headingStyle}>
+            <h2 className="text-[20px] xl:text-[24px] font-light font-noto-serif-narrow text-[#1c3c8c]">
               4. Основные права и обязанности субъектов персональных данных
             </h2>
             <p className="mt-3">4.1. Субъекты персональных данных имеют право:</p>
@@ -271,7 +265,7 @@ function PrivacyPolicy() {
           </section>
 
           <section>
-            <h2 className="text-[20px] xl:text-[24px] font-light" style={headingStyle}>
+            <h2 className="text-[20px] xl:text-[24px] font-light font-noto-serif-narrow text-[#1c3c8c]">
               5. Принципы обработки персональных данных
             </h2>
             <p className="mt-3">
@@ -313,7 +307,7 @@ function PrivacyPolicy() {
           </section>
 
           <section>
-            <h2 className="text-[20px] xl:text-[24px] font-light" style={headingStyle}>
+            <h2 className="text-[20px] xl:text-[24px] font-light font-noto-serif-narrow text-[#1c3c8c]">
               6. Цели обработки персональных данных
             </h2>
             <div className="overflow-x-auto mt-4">
@@ -350,7 +344,7 @@ function PrivacyPolicy() {
           </section>
 
           <section>
-            <h2 className="text-[20px] xl:text-[24px] font-light" style={headingStyle}>
+            <h2 className="text-[20px] xl:text-[24px] font-light font-noto-serif-narrow text-[#1c3c8c]">
               7. Условия обработки персональных данных
             </h2>
             <p className="mt-3">
@@ -391,7 +385,7 @@ function PrivacyPolicy() {
           </section>
 
           <section>
-            <h2 className="text-[20px] xl:text-[24px] font-light" style={headingStyle}>
+            <h2 className="text-[20px] xl:text-[24px] font-light font-noto-serif-narrow text-[#1c3c8c]">
               8. Порядок сбора, хранения, передачи и других видов обработки персональных данных
             </h2>
             <p className="mt-3">
@@ -473,7 +467,7 @@ function PrivacyPolicy() {
           </section>
 
           <section>
-            <h2 className="text-[20px] xl:text-[24px] font-light" style={headingStyle}>
+            <h2 className="text-[20px] xl:text-[24px] font-light font-noto-serif-narrow text-[#1c3c8c]">
               9. Перечень действий, производимых Оператором с полученными персональными данными
             </h2>
             <p className="mt-3">
@@ -490,7 +484,7 @@ function PrivacyPolicy() {
           </section>
 
           <section>
-            <h2 className="text-[20px] xl:text-[24px] font-light" style={headingStyle}>
+            <h2 className="text-[20px] xl:text-[24px] font-light font-noto-serif-narrow text-[#1c3c8c]">
               10. Трансграничная передача персональных данных
             </h2>
             <p className="mt-3">
@@ -509,7 +503,7 @@ function PrivacyPolicy() {
           </section>
 
           <section>
-            <h2 className="text-[20px] xl:text-[24px] font-light" style={headingStyle}>
+            <h2 className="text-[20px] xl:text-[24px] font-light font-noto-serif-narrow text-[#1c3c8c]">
               11. Конфиденциальность персональных данных
             </h2>
             <p className="mt-3">
@@ -520,7 +514,7 @@ function PrivacyPolicy() {
           </section>
 
           <section>
-            <h2 className="text-[20px] xl:text-[24px] font-light" style={headingStyle}>
+            <h2 className="text-[20px] xl:text-[24px] font-light font-noto-serif-narrow text-[#1c3c8c]">
               12. Заключительные положения
             </h2>
             <p className="mt-3">
