@@ -252,7 +252,7 @@ button:focus-visible {
 .tablet-text-block {
   width: 100%;
 }
-@media (min-width: 640px) and (max-width: 1279px) {
+@media (min-width: 640px) and (max-width: 939px) {
   .tablet-text-block {
     max-width: 550px;
   }
@@ -467,7 +467,7 @@ button:focus-visible {
     padding-top: 70px;
     padding-bottom: 70px;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 940px) {
     padding-top: 140px;
     padding-bottom: 0;
   }
@@ -482,7 +482,7 @@ button:focus-visible {
     font-size: 38px;
     line-height: 1.18;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 940px) {
     font-size: 54px;
     line-height: 1.15;
   }
@@ -496,7 +496,7 @@ button:focus-visible {
   @media (min-width: 640px) {
     font-size: 36px;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 940px) {
     font-size: 44px;
   }
 }
@@ -510,7 +510,7 @@ button:focus-visible {
   @media (min-width: 640px) {
     font-size: 28px;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 940px) {
     font-size: 36px;
   }
 }
@@ -520,7 +520,7 @@ button:focus-visible {
   font-weight: 400;
   font-size: 20px;
   line-height: 1.25;
-  @media (min-width: 1280px) {
+  @media (min-width: 940px) {
     font-size: 24px;
   }
 }
@@ -533,7 +533,7 @@ button:focus-visible {
   @media (min-width: 640px) {
     font-size: 28px;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 940px) {
     font-size: 36px;
   }
 }
