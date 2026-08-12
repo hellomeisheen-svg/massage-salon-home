@@ -39,7 +39,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
         onClick={() => setOpen((v) => !v)}
         className="w-full flex items-center justify-between gap-4 p-5 sm:p-6 xl:p-7 text-left"
       >
-        <span className="font-noto-serif-narrow ds-h4 text-[#1C3C8C]">
+        <span className="font-noto-serif-narrow ds-h4 xl:text-[34px] text-[#1C3C8C]">
           {q}
         </span>
         <span
