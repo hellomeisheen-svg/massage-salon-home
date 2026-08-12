@@ -545,8 +545,24 @@ function PrivacyPolicy() {
           <div className="pt-6">
             <Link
               to="/"
-              className="btn-primary w-full sm:w-[280px] xl:w-[250px] inline-flex items-center justify-center text-center whitespace-nowrap"
+              className="inline-flex items-center gap-2 text-[15px] xl:text-base font-medium text-[#1c3c8c] hover:text-[#5DAAFD] transition-colors group"
             >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="transition-transform group-hover:-translate-x-1"
+                aria-hidden="true"
+              >
+                <path d="m12 19-7-7 7-7" />
+                <path d="M19 12H5" />
+              </svg>
               На главную
             </Link>
           </div>
