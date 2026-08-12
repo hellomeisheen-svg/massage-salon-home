@@ -435,8 +435,8 @@ export function ServiceCard({
         ))}
       </div>
 
-      <div className="flex-none flex flex-col mb-6 sm:mb-0 xl:flex-1 xl:mb-6">
-        <div className="flex-none xl:flex-1">
+      <div className="flex-1 flex flex-col mb-6 sm:flex-none sm:mb-0 xl:flex-1 xl:mb-6">
+        <div className="flex-1 sm:flex-none xl:flex-1">
           {/* Title */}
           <div className="mt-5 flex flex-wrap items-center gap-3">
             <h3 className="font-noto-serif-narrow ds-h3 text-[#1C3C8C] break-words hyphens-auto">
