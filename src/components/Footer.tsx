@@ -1,5 +1,6 @@
 import { ArrowUp } from "lucide-react";
 import { Link } from "@tanstack/react-router";
+import Logo from "@/components/Logo";
 
 export type FooterNavItem = { label: string; href?: string; to?: string };
 
@@ -119,12 +120,9 @@ export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Brand */}
             <div>
-              <span
-                className="text-[28px] leading-none italic"
-                style={{ fontFamily: "'Dancing Script', cursive", color: "#1c3c8c" }}
-              >
-                Logo
-              </span>
+              <Link to="/" aria-label="На главную" className="inline-flex h-12 items-center hover:opacity-70 transition-opacity">
+                <Logo className="h-full w-auto" />
+              </Link>
               <p className="mt-4 body-text text-[#566A93] max-w-[320px]">
                 Кабинет оздоровительных практик Татьяны Злобиной. Спокойный ритм и внимание к каждому состоянию.
               </p>
