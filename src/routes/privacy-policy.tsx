@@ -32,7 +32,7 @@ function PrivacyPolicy() {
       <div className="relative min-h-screen bg-[#EFF6FF] pb-16">
         <Header items={[]} showServicesMenu={false} />
 
-        <main className="container-1900 max-w-[760px] mx-auto pt-28 xl:pt-32">
+        <main className="container-1900 max-w-[760px] mx-auto pt-36 xl:pt-44">
           <h1
             className="font-noto-serif-narrow text-[30px] leading-[1.1] text-[#1c3c8c] xl:text-[44px]"
           >
