@@ -628,7 +628,7 @@ export function Services() {
   const type = serviceTypes[active];
 
   useEffect(() => {
-    const mq = window.matchMedia("(min-width: 1280px)");
+    const mq = window.matchMedia("(min-width: 940px)");
     const update = () => setIsDesktop(mq.matches);
     update();
     mq.addEventListener("change", update);
