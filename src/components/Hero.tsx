@@ -11,9 +11,9 @@ function SpecialistBlock() {
         src={tatyanaPhotoAsset.url}
       />
       <div className="flex flex-col gap-1">
-        <h2 className="font-noto-serif-narrow text-[22px] font-light leading-[1.2] text-[#1c3c8c] sm:text-[24px] xl:text-[28px]">
+        <div className="font-noto-serif-narrow text-[22px] font-light leading-[1.2] text-[#1c3c8c] sm:text-[24px] xl:text-[28px]">
           Татьяна&nbsp;Злобина
-        </h2>
+        </div>
         <p className="text-[16px] font-light leading-[26px] text-[#566A93]">
           Мастер кабинета, специалист
           <br />
