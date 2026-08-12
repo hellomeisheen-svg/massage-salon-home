@@ -9,7 +9,7 @@ interface LogoProps {
  */
 const Logo = ({ className, title = "Седьмое небо" }: LogoProps) => (
   <svg
-    viewBox="84 85 1151 675"
+    viewBox="84 85 1151 1010"
     role="img"
     aria-label={title}
     className={className}
@@ -186,6 +186,18 @@ const Logo = ({ className, title = "Седьмое небо" }: LogoProps) => (
 <path d="M9145 460 c-12 -20 7 -30 61 -30 55 0 64 6 42 28 -14 14 -94 16 -103
 2z"/>
     </g>
+    <text
+      x="660"
+      y="1030"
+      textAnchor="middle"
+      fill="#1C3C8C"
+      fontFamily="'Noto Serif Display', serif"
+      fontWeight={400}
+      fontSize="300"
+      style={{ fontVariationSettings: '"wdth" 62.5' }}
+    >
+      небо
+    </text>
   </svg>
 
 );
