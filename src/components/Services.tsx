@@ -499,7 +499,7 @@ export function ServiceCard({
         </div>
 
         {/* Price */}
-        <div className="mt-5 sm:mt-[120px] xl:mt-5 flex items-center justify-end gap-4 sm:gap-5">
+        <div className="mt-2 sm:mt-[120px] xl:mt-5 flex items-center justify-end gap-4 sm:gap-5">
           {hasDiscount && (
             <span className="ds-price-old">
               {renderPrice(originalPrice)}
