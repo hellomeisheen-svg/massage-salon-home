@@ -254,7 +254,7 @@ export function Programs({ prioritizeKeys }: ProgramsProps = {}) {
             </div>
           </div>
 
-          <div className="mt-auto pt-4 sm:pt-8 flex flex-wrap items-center justify-start sm:justify-end gap-x-4 gap-y-2">
+          <div className="mt-auto pt-4 sm:pt-8 flex flex-wrap items-center justify-end gap-x-4 gap-y-2">
             <span className="ds-price-old">
               {formatPrice(originalPrice)}
               <Ruble />
