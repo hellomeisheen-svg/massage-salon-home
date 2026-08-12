@@ -115,7 +115,7 @@ function BookingDialog({
           <div className="pr-12">
             <h2
               id="booking-title"
-              className="font-noto-serif-narrow text-[26px] font-light leading-[1.15] text-[#1C3C8C] sm:text-[32px]"
+              className="font-noto-serif-narrow ds-h3 text-[#1C3C8C]"
             >
               Заявка отправлена
             </h2>
@@ -142,7 +142,7 @@ function BookingDialog({
             <div className="pr-12">
               <h2
                 id="booking-title"
-                className="font-noto-serif-narrow text-[26px] font-light leading-[1.15] text-[#1C3C8C] sm:text-[32px]"
+                className="font-noto-serif-narrow ds-h3 text-[#1C3C8C]"
               >
                 Записаться на&nbsp;сеанс
               </h2>
