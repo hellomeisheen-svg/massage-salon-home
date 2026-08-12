@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { NotFoundPage } from "@/components/NotFoundPage";
 
-export const Route = createFileRoute("/$")({
+export const Route = createFileRoute("/not-found")({
   head: () => ({
     meta: [
       { title: "404 — Страница не найдена" },
