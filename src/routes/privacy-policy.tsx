@@ -543,6 +543,7 @@ function PrivacyPolicy() {
           </section>
         </div>
       </main>
+      </div>
     </BookingProvider>
   );
 }
