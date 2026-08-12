@@ -12,10 +12,6 @@ import { formatPrice, pluralize, renderPrice } from "@/components/Services";
 import { PriceTable, type ServicePrice } from "@/components/PriceTable";
 import tatyanaPhotoAsset from "@/assets/tatyana-photo.png.asset.json";
 
-
-const heading = "'Roslindale Cyrillic Display Condensed', serif";
-const heroFont = { fontFamily: heading } as const;
-
 export type ServiceSection = { label: string; content: React.ReactNode };
 
 export const servicePageNav = [
@@ -98,10 +94,7 @@ function SpecialistBlock() {
 
       />
       <div className="flex flex-col gap-1">
-        <h2
-          className="text-[22px] font-light leading-[1.2] text-[#1c3c8c] sm:text-[24px] xl:text-[28px]"
-          style={heroFont}
-        >
+        <h2 className="font-noto-serif-narrow text-[22px] font-light leading-[1.2] text-[#1c3c8c] sm:text-[24px] xl:text-[28px]">
           Татьяна&nbsp;Злобина
         </h2>
         <p className="text-[16px] font-light leading-[26px] text-[#566A93]">
@@ -134,10 +127,7 @@ function PageHero({ content }: { content: ServicePageContent }) {
           <div className="mt-[60px] pt-0 sm:mt-[140px] xl:mt-auto xl:pt-[140px]">
             <div className="flex flex-col tablet-text-block xl:max-w-[640px]">
               <div className="flex flex-wrap items-center gap-3">
-                <h1
-                  className="text-[38px] font-light leading-[1.12] text-[#1C3C8C] sm:text-[58px] sm:leading-[1.15]"
-                  style={heroFont}
-                >
+                <h1 className="font-noto-serif-narrow text-[38px] font-light leading-[1.12] text-[#1C3C8C] sm:text-[58px] sm:leading-[1.15]">
                   {content.title}
                 </h1>
                 {content.hit && (
