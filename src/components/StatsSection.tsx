@@ -43,7 +43,7 @@ export function StatsSection() {
             </span>
 
             <h2 className="font-noto-serif-narrow mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto sm:mx-0">
-              Бережная работа с телом, в которой важны опыт, понятный диалог и внимание к вашему запросу
+              Бережная работа с телом: опыт, диалог, внимание к запросу
             </h2>
           </div>
 
