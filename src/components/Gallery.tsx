@@ -1,6 +1,6 @@
 import { RollingGallery } from "@/components/ui/rolling-gallery";
 
-const heading = "'Roslindale Cyrillic', 'Roslindale', Georgia, serif";
+const heading = "'Noto Serif Display', Georgia, serif";
 
 export default function Gallery() {
   return (
