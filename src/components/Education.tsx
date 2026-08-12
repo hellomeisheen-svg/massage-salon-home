@@ -1,7 +1,7 @@
 import tatianaPhoto from "@/assets/tatiana-zlobina.jpg.asset.json";
 import tatianaSignature from "@/assets/tatiana-signature.svg.asset.json";
 
-type EduItem = { school: string; items: string[] };
+type EduItem = { school: string; items: string[]; mobileName?: string };
 
 const mainEducation: EduItem[] = [
   { school: "Школа «Магнат», Владивосток", items: ["Классический массаж"] },
