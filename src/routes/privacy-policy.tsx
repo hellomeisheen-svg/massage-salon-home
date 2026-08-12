@@ -42,7 +42,7 @@ function PrivacyPolicy() {
           Политика в отношении обработки персональных данных
         </h1>
 
-        <div className="mt-10 space-y-8 text-[15px] xl:text-base leading-[150%] font-light text-[#1c3c8c]">
+        <div className="mt-10 space-y-8 text-[15px] xl:text-base leading-[150%] font-light text-[#566A93]">
           <section>
             <h2 className="text-[20px] xl:text-[24px] font-light font-noto-serif-narrow text-[#1c3c8c]">
               1. Общие положения
