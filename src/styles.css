@@ -495,19 +495,6 @@ button:focus-visible {
   }
 }
 
-/* Deprecated alias: kept mapping to ds-h3 scale */
-@utility ds-h2-card {
-  font-family: var(--font-heading);
-  font-weight: 300;
-  font-size: 24px;
-  line-height: 1.15;
-  @media (min-width: 640px) {
-    font-size: 28px;
-  }
-  @media (min-width: 1280px) {
-    font-size: 32px;
-  }
-}
 
 @utility ds-h3 {
   font-family: var(--font-heading);
