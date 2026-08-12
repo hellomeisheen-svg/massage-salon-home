@@ -1,5 +1,6 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-
+import { createFileRoute } from "@tanstack/react-router";
+import { Header } from "@/components/Header";
+import { BookingProvider } from "@/components/BookingModal";
 
 export const Route = createFileRoute("/privacy-policy")({
   head: () => ({
@@ -27,20 +28,16 @@ export const Route = createFileRoute("/privacy-policy")({
 
 function PrivacyPolicy() {
   return (
-    <div className="relative min-h-screen bg-[#EFF6FF] pt-8 pb-16">
-      <div className="container-1900 max-w-[760px] mx-auto">
-        <Link
-          to="/"
-          className="inline-flex items-center text-[#1c3c8c] hover:text-[#1c3c8c] text-[15px] font-light transition-colors"
-        >
-          ← На главную
-        </Link>
+    <BookingProvider>
+      <div className="relative min-h-screen bg-[#EFF6FF] pb-16">
+        <Header items={[]} showServicesMenu={false} />
 
-        <h1
-          className="font-noto-serif-narrow mt-8 text-[30px] leading-[1.1] text-[#1c3c8c] xl:text-[44px]"
-        >
-          Политика в отношении обработки персональных данных
-        </h1>
+        <main className="container-1900 max-w-[760px] mx-auto pt-28 xl:pt-32">
+          <h1
+            className="font-noto-serif-narrow text-[30px] leading-[1.1] text-[#1c3c8c] xl:text-[44px]"
+          >
+            Политика в отношении обработки персональных данных
+          </h1>
 
         <div className="mt-10 space-y-8 text-[15px] xl:text-base leading-[150%] font-light text-[#566A93]">
           <section>
@@ -545,8 +542,9 @@ function PrivacyPolicy() {
             </p>
           </section>
         </div>
+      </main>
       </div>
-    </div>
+    </BookingProvider>
   );
 }
 
