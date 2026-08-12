@@ -104,7 +104,7 @@ function PriceTableMobileRow({ p }: { p: ServicePrice }) {
           <div className="font-noto-serif-narrow mt-1 text-[15px] font-light text-[#1C3C8C]">
             {renderPrice(formatPrice(price3))}
           </div>
-          <div className="text-[11px] font-light text-[#566A93] line-through">
+          <div className="font-noto-serif-narrow text-[11px] font-light text-[#566A93] line-through">
             {renderPrice(formatPrice(p.base * 3))}
           </div>
         </div>
@@ -118,7 +118,7 @@ function PriceTableMobileRow({ p }: { p: ServicePrice }) {
           <div className="font-noto-serif-narrow mt-1 text-[15px] font-light text-[#1C3C8C]">
             {renderPrice(formatPrice(price6))}
           </div>
-          <div className="text-[11px] font-light text-[#566A93] line-through">
+          <div className="font-noto-serif-narrow text-[11px] font-light text-[#566A93] line-through">
             {renderPrice(formatPrice(p.base * 6))}
           </div>
         </div>
@@ -167,7 +167,7 @@ function PriceTableCell({
   const current = Math.round(total * (1 - discount));
   return (
     <div className="flex items-center gap-2">
-      <span className="text-[13px] xl:text-[15px] font-light text-[#566A93] line-through">
+      <span className="font-noto-serif-narrow text-[13px] xl:text-[15px] font-light text-[#566A93] line-through">
         {renderPrice(formatPrice(total))}
       </span>
       <span className="font-noto-serif-narrow text-[18px] xl:text-[24px] font-light text-[#1C3C8C]">

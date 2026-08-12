@@ -435,7 +435,7 @@ function HirudoPriceCell({ p, index }: { p: HirudoRow; index: number }) {
     <div className="flex flex-col gap-0.5">
       <div className="flex items-center gap-2">
         {discount > 0 && (
-          <span className="text-[13px] font-light text-[#566A93] line-through">
+          <span className="font-noto-serif-narrow text-[13px] font-light text-[#566A93] line-through">
             {renderPrice(formatPrice(total))}
           </span>
         )}
@@ -507,7 +507,7 @@ function HirudoPriceTableMobileRow({ p }: { p: HirudoRow }) {
                 {renderPrice(formatPrice(current))}
               </div>
               {discount > 0 && (
-                <div className="text-[11px] font-light text-[#566A93] line-through">
+                <div className="font-noto-serif-narrow text-[11px] font-light text-[#566A93] line-through">
                   {renderPrice(formatPrice(total))}
                 </div>
               )}
