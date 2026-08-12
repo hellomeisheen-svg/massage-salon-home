@@ -186,7 +186,7 @@ export function Header({
                 ))}
               </ul>
 
-              {items && (
+              {items && showServicesMenu && (
                 <div className="mt-3 border-t border-[#daebff] pt-2">
                   <button
                     type="button"
