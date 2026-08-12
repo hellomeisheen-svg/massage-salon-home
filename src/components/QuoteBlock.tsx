@@ -69,7 +69,12 @@ export function QuoteBlock() {
       <div className="container-1900 relative z-10 flex flex-col items-center sm:px-5 text-center">
         <Sparkle className="mb-8 sm:mb-10 xl:mb-12 h-6 w-6 sm:h-7 sm:w-7 text-[#1C3C8C]" />
         <h2 className="font-noto-serif-narrow max-w-none sm:max-w-[900px] text-center xl:w-[min(calc(100%-160px),1250px)] xl:max-w-[1250px] xl:mx-auto ds-h1 text-[#1C3C8C]">
-          Регулярная забота о&nbsp;теле — спокойная привычка, которая помогает сохранять внутреннюю опору и&nbsp;лёгкость в&nbsp;повседневной жизни
+          <span className="hidden xl:inline">
+            Регулярная забота о&nbsp;теле — спокойная привычка, которая помогает сохранять внутреннюю опору и&nbsp;лёгкость в&nbsp;повседневной жизни
+          </span>
+          <span className="xl:hidden">
+            Регулярная забота о&nbsp;теле — спокойная привычка, которая помогает сохранять лёгкость в&nbsp;повседневной жизни
+          </span>
         </h2>
 
         {/* Mobile-only photo tiles with subtle animation */}
