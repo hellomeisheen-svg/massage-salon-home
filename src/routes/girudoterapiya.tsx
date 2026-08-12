@@ -15,8 +15,6 @@ import tatyanaPhotoAsset from "@/assets/tatyana-photo.png.asset.json";
 
 
 
-const heading = "'Roslindale Cyrillic Display Condensed', serif";
-
 export const Route = createFileRoute("/girudoterapiya")({
   head: () => ({
     meta: [
@@ -161,10 +159,6 @@ function GirudoterapiyaPage() {
   );
 }
 
-const heroFont = {
-  fontFamily: "'Roslindale Cyrillic Display Condensed', serif",
-} as const;
-
 function SpecialistBlock() {
   return (
     <div className="flex flex-col items-start gap-3 sm:gap-4">
@@ -175,10 +169,7 @@ function SpecialistBlock() {
 
       />
       <div className="flex flex-col gap-1">
-        <h2
-          className="text-[22px] font-light leading-[1.2] text-[#1c3c8c] sm:text-[24px] xl:text-[28px]"
-          style={heroFont}
-        >
+        <h2 className="font-noto-serif-narrow text-[22px] font-light leading-[1.2] text-[#1c3c8c] sm:text-[24px] xl:text-[28px]">
           Татьяна&nbsp;Злобина
         </h2>
         <p className="text-[16px] font-light leading-[26px] text-[#566A93]">
@@ -211,10 +202,7 @@ function PageHero() {
           <div className="mt-[60px] pt-0 sm:mt-[140px] xl:mt-auto xl:pt-[140px]">
             <div className="flex flex-col tablet-text-block xl:max-w-[640px]">
               <div className="flex flex-wrap items-center gap-3">
-                <h1
-                  className="text-[38px] font-light leading-[1.12] text-[#1C3C8C] sm:text-[58px] sm:leading-[1.15]"
-                  style={heroFont}
-                >
+                <h1 className="font-noto-serif-narrow text-[38px] font-light leading-[1.12] text-[#1C3C8C] sm:text-[58px] sm:leading-[1.15]">
                   Гирудотерапия
                 </h1>
                 <span className="inline-flex items-center rounded-[4px] bg-gradient-to-b from-[#A2CFFE] to-[#88C1FF] px-2 py-1 text-[11px] font-semibold uppercase tracking-wider text-white">
@@ -398,10 +386,7 @@ function GirudoterapiyaServices() {
           >
             Об услуге
           </span>
-          <h2
-            className="mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0"
-            style={{ fontFamily: heading }}
-          >
+          <h2 className="font-noto-serif-narrow mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0">
             Перед каждым визитом обсуждаем ваше состояние&nbsp;— и&nbsp;подбираем технику под&nbsp;него
           </h2>
 
@@ -419,10 +404,7 @@ function GirudoterapiyaServices() {
                   }}
                   className="scroll-mt-[140px]"
                 >
-                  <h3
-                    className="text-[26px] sm:text-[32px] font-light leading-[1.15] text-[#1C3C8C]"
-                    style={{ fontFamily: heading }}
-                  >
+                  <h3 className="font-noto-serif-narrow text-[26px] sm:text-[32px] font-light leading-[1.15] text-[#1C3C8C]">
                     {s.label}
                   </h3>
                   <div className="mt-5 text-[#566A93] space-y-4 text-[15px] leading-[1.6]">
@@ -457,10 +439,7 @@ function HirudoPriceCell({ p, index }: { p: HirudoRow; index: number }) {
             {renderPrice(formatPrice(total))}
           </span>
         )}
-        <span
-          className="text-[18px] font-light text-[#1C3C8C]"
-          style={{ fontFamily: heading }}
-        >
+        <span className="font-noto-serif-narrow text-[18px] font-light text-[#1C3C8C]">
           {renderPrice(formatPrice(current))}
         </span>
       </div>
@@ -475,10 +454,7 @@ function HirudoPriceTableRow({ p }: { p: HirudoRow }) {
   return (
     <tr className="group transition-colors hover:bg-[#F7FBFF]">
       <td className="px-4 py-5 xl:px-8">
-        <div
-          className="text-[18px] xl:text-[24px] font-light leading-[1.25] text-[#1C3C8C]"
-          style={{ fontFamily: heading }}
-        >
+        <div className="font-noto-serif-narrow text-[18px] xl:text-[24px] font-light leading-[1.25] text-[#1C3C8C]">
           {p.zone}
         </div>
         <div className="mt-1 text-[13px] font-light leading-[18px] text-[#566A93] sm:hidden">
