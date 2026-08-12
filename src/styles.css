@@ -715,10 +715,10 @@ button:focus-visible {
   font-variation-settings: "wdth" 62.5;
 }
 
-/* На мобильных акцентный шрифт делаем medium, кроме зачёркнутых старых цен */
+/* На мобильных акцентный шрифт делаем regular, кроме зачёркнутых старых цен */
 @media (max-width: 639px) {
   .font-noto-serif-narrow:not(.line-through) {
-    font-weight: 500 !important;
+    font-weight: 400 !important;
   }
 }
 
