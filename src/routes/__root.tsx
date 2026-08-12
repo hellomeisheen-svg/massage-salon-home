@@ -21,8 +21,7 @@ function NotFoundComponent() {
     <div className="flex min-h-screen items-start justify-center bg-[#EFF6FF] px-4 pb-24 pt-36 sm:px-5 sm:pt-44">
       <div className="w-full max-w-[560px] px-6 py-10 text-center sm:px-10 sm:py-14">
         <span
-          className="block text-[80px] font-light leading-none tracking-tight text-[#1C3C8C] sm:text-[120px]"
-          style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
+          className="font-noto-serif-narrow block text-[80px] font-light leading-none tracking-tight text-[#1C3C8C] sm:text-[120px]"
         >
           404
         </span>

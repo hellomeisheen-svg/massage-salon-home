@@ -1,4 +1,4 @@
-const heading = "'Roslindale Cyrillic Display Condensed', serif";
+const heading = "'Noto Serif Display', serif";
 
 const environmentItems = [
   {
