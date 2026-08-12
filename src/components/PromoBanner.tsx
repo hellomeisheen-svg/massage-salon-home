@@ -66,10 +66,7 @@ export function PromoBanner({
           ))}
 
           <div className="relative z-10 flex flex-col items-center text-center">
-            <h2
-              className="font-noto-serif-narrow ds-h2 text-brand-ink"
-              style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
-            >
+            <h2 className="font-noto-serif-narrow ds-h2 text-brand-ink">
               {title}
             </h2>
 
