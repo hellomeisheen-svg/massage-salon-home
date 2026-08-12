@@ -10,8 +10,6 @@ import {
 } from "react";
 import { Check, X } from "lucide-react";
 
-const heading = "'Roslindale Cyrillic Display Condensed', serif";
-
 type BookingContextValue = {
   openBooking: (subject?: string) => void;
   closeBooking: () => void;
