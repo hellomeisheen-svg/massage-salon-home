@@ -55,7 +55,7 @@ export function ApproachCopy() {
         {/* Right column — Среда вокруг */}
         <div className="ds-card p-6 sm:p-8 xl:p-12">
           <h3
-            className="ds-h2 text-[#1C3C8C] sm:text-left"
+            className="font-noto-serif-narrow ds-h2 text-[#1C3C8C] sm:text-left"
             style={{ fontFamily: heading }}
           >
             Всё, чтобы вы чувствовали себя спокойно, безопасно и комфортно с первых минут
