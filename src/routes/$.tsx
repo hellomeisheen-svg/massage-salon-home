@@ -32,7 +32,7 @@ function NotFoundPage() {
         <Header />
 
         <main className="flex min-h-[calc(100vh-64px)] xl:min-h-[calc(100vh-80px)] items-center justify-center px-4 sm:px-5">
-          <div className="w-full max-w-[560px] px-6 py-10 text-center sm:px-10 sm:py-14">
+          <div className="w-full max-w-[640px] px-6 py-10 text-center sm:px-10 sm:py-14">
             <span className="font-noto-serif-narrow block text-[80px] font-light leading-none tracking-tight text-[#1C3C8C] sm:text-[120px]">
               404
             </span>
@@ -41,12 +41,12 @@ function NotFoundPage() {
               Страница не найдена
             </h1>
 
-            <p className="body-text mx-auto mt-4 max-w-[400px] text-[#566A93]">
+            <p className="body-text mx-auto mt-4 max-w-[480px] text-[#566A93]">
               Запрашиваемая страница не существует или была перемещена. Проверьте адрес или вернитесь на главную.
             </p>
 
             <div className="mt-8 flex justify-center">
-              <Link to="/" className="btn-primary w-full sm:w-auto">
+              <Link to="/" className="btn-primary w-full sm:w-[280px] xl:w-[250px] inline-flex items-center justify-center text-center whitespace-nowrap">
                 На главную
               </Link>
             </div>
