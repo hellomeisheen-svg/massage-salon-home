@@ -670,8 +670,10 @@ button:focus-visible {
 
 @font-face {
   font-family: "Noto Serif Display";
-  src: url("/__l5e/assets-v1/885d4815-f524-4f05-a662-cf2542c1e794/NotoSerifDisplay-VariableFont_wdth_wght.woff") format("woff");
+  src: url("/__l5e/assets-v1/bae3d3e4-9307-44ac-8adf-777f752b6a9b/NotoSerifDisplay-Variable.woff") format("woff-variations"),
+       url("/__l5e/assets-v1/bae3d3e4-9307-44ac-8adf-777f752b6a9b/NotoSerifDisplay-Variable.woff") format("woff");
   font-weight: 100 900;
+  font-stretch: 62.5% 100%;
   font-style: normal;
   font-display: swap;
 }
