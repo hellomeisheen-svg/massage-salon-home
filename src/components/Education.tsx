@@ -1,8 +1,6 @@
 import tatianaPhoto from "@/assets/tatiana-zlobina.jpg.asset.json";
 import tatianaSignature from "@/assets/tatiana-signature.svg.asset.json";
 
-const heading = "'Roslindale Cyrillic Display Condensed', serif";
-
 type EduItem = { school: string; items: string[] };
 
 const mainEducation: EduItem[] = [
@@ -37,10 +35,7 @@ function EduCard({ item }: { item: EduItem }) {
           {city}
         </span>
       )}
-      <h3
-        className="text-[#1C3C8C] text-[20px] sm:text-[32px] xl:text-[26px] leading-[1.2] pr-0 sm:pr-24 whitespace-nowrap sm:whitespace-normal"
-        style={{ fontFamily: heading }}
-      >
+      <h3 className="font-noto-serif-narrow text-[#1C3C8C] text-[20px] sm:text-[32px] xl:text-[26px] leading-[1.2] pr-0 sm:pr-24 whitespace-nowrap sm:whitespace-normal">
         <span className="xl:hidden">{name}</span>
         <span className="hidden xl:inline">{item.school}</span>
       </h3>
@@ -86,18 +81,12 @@ export function Education() {
           <div className="relative mt-4 xl:absolute xl:inset-x-0 xl:bottom-0 xl:mt-0 xl:px-8 xl:pb-8">
             <div className="relative rounded-[12px] border border-[#DAEBFF] bg-white xl:bg-[#EFF6FF] p-8 sm:p-12 xl:p-10 shadow-[0_20px_50px_-12px_rgba(74,127,214,0.08)] flex flex-col xl:flex-row xl:items-end justify-between gap-6 xl:gap-8">
               <div className="flex flex-col gap-3 sm:gap-4 xl:w-[760px] xl:shrink-0">
-                <blockquote
-                  className="text-[20px] font-normal leading-[1.4] text-[#1C3C8C] sm:text-[22px] xl:text-[24px] xl:max-w-[760px]"
-                  style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
-                >
+                <blockquote className="font-noto-serif-narrow text-[20px] font-normal leading-[1.4] text-[#1C3C8C] sm:text-[22px] xl:text-[24px] xl:max-w-[760px]">
                   «Иногда достаточно тишины, бережного внимания,<br className="hidden xl:inline" />{" "}
                   и времени, чтобы почувствовать себя лучше.»
                 </blockquote>
 
-                <p
-                  className="text-[16px] font-light leading-[1.5] text-[#566A93] xl:max-w-[480px]"
-                  style={{ fontFamily: "'Inter', sans-serif" }}
-                >
+                <p className="text-[16px] font-light leading-[1.5] text-[#566A93] xl:max-w-[480px]">
                   Татьяна Злобина — Мастер кабинета,
                   <br className="hidden xl:inline" />
                   специалист по оздоровительным практикам
