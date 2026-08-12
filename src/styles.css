@@ -488,23 +488,24 @@ button:focus-visible {
   font-size: 30px;
   line-height: 1.15;
   @media (min-width: 640px) {
-    font-size: 38px;
+    font-size: 36px;
   }
   @media (min-width: 1280px) {
     font-size: 44px;
   }
 }
 
+/* Deprecated alias: kept mapping to ds-h3 scale */
 @utility ds-h2-card {
   font-family: var(--font-heading);
   font-weight: 300;
-  font-size: 28px;
-  line-height: 1.1;
+  font-size: 24px;
+  line-height: 1.15;
   @media (min-width: 640px) {
-    font-size: 34px;
+    font-size: 28px;
   }
   @media (min-width: 1280px) {
-    font-size: 38px;
+    font-size: 32px;
   }
 }
 
@@ -516,6 +517,9 @@ button:focus-visible {
   @media (min-width: 640px) {
     font-size: 28px;
   }
+  @media (min-width: 1280px) {
+    font-size: 32px;
+  }
 }
 
 @utility ds-h4 {
@@ -523,9 +527,6 @@ button:focus-visible {
   font-weight: 400;
   font-size: 20px;
   line-height: 1.25;
-  @media (min-width: 640px) {
-    font-size: 22px;
-  }
   @media (min-width: 1280px) {
     font-size: 24px;
   }
@@ -534,11 +535,41 @@ button:focus-visible {
 @utility ds-price {
   font-family: var(--font-heading);
   font-weight: 300;
-  font-size: 30px;
+  font-size: 24px;
   line-height: 1;
   @media (min-width: 640px) {
-    font-size: 34px;
+    font-size: 28px;
   }
+  @media (min-width: 1280px) {
+    font-size: 32px;
+  }
+}
+
+/* Вспомогательный текст: старая (зачёркнутая) цена */
+@utility ds-price-old {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.2;
+  text-decoration: line-through;
+  color: color-mix(in srgb, #566a93 60%, transparent);
+}
+
+/* Служебные лейблы и счётчики (Inter) */
+@utility ds-eyebrow {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+@utility ds-counter {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
 }
 
 @utility ds-label {
