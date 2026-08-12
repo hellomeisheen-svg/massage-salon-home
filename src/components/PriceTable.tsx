@@ -1,7 +1,5 @@
 import { formatPrice, renderPrice } from "@/components/Services";
 
-const heading = "'Roslindale Cyrillic Display Condensed', serif";
-
 export type ServicePrice = {
   zone: string;
   subtitle: string;
@@ -15,10 +13,7 @@ export function PriceTable({ prices }: { prices: ServicePrice[] }) {
   return (
     <section id="prices" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section">
       <div className="container-1900">
-        <h2
-          className="text-center ds-h2 text-[#1C3C8C]"
-          style={{ fontFamily: heading }}
-        >
+        <h2 className="font-noto-serif-narrow text-center ds-h2 text-[#1C3C8C]">
           Форматы и стоимость
         </h2>
 
@@ -85,10 +80,7 @@ function PriceTableMobileRow({ p }: { p: ServicePrice }) {
   return (
     <div className="px-4 py-5">
       <div className="min-w-0">
-        <div
-          className="text-[18px] font-light leading-[1.25] text-[#1C3C8C]"
-          style={{ fontFamily: heading }}
-        >
+        <div className="font-noto-serif-narrow text-[18px] font-light leading-[1.25] text-[#1C3C8C]">
           {p.zone}
         </div>
         <div className="mt-1 text-[13px] font-light leading-[18px] text-[#566A93]">
@@ -98,10 +90,7 @@ function PriceTableMobileRow({ p }: { p: ServicePrice }) {
       <div className="mt-4 grid grid-cols-3 gap-2">
         <div>
           <div className="text-[11px] font-medium text-[#566A93]">1 сеанс</div>
-          <div
-            className="mt-1 text-[15px] font-light text-[#1C3C8C]"
-            style={{ fontFamily: heading }}
-          >
+          <div className="font-noto-serif-narrow mt-1 text-[15px] font-light text-[#1C3C8C]">
             {renderPrice(formatPrice(p.base))}
           </div>
         </div>
@@ -112,10 +101,7 @@ function PriceTableMobileRow({ p }: { p: ServicePrice }) {
               -10%
             </span>
           </div>
-          <div
-            className="mt-1 text-[15px] font-light text-[#1C3C8C]"
-            style={{ fontFamily: heading }}
-          >
+          <div className="font-noto-serif-narrow mt-1 text-[15px] font-light text-[#1C3C8C]">
             {renderPrice(formatPrice(price3))}
           </div>
           <div className="text-[11px] font-light text-[#566A93] line-through">
@@ -129,10 +115,7 @@ function PriceTableMobileRow({ p }: { p: ServicePrice }) {
               -15%
             </span>
           </div>
-          <div
-            className="mt-1 text-[15px] font-light text-[#1C3C8C]"
-            style={{ fontFamily: heading }}
-          >
+          <div className="font-noto-serif-narrow mt-1 text-[15px] font-light text-[#1C3C8C]">
             {renderPrice(formatPrice(price6))}
           </div>
           <div className="text-[11px] font-light text-[#566A93] line-through">
@@ -148,10 +131,7 @@ function PriceTableRow({ p }: { p: ServicePrice }) {
   return (
     <tr className="group transition-colors hover:bg-[#F7FBFF]">
       <td className="px-4 py-5 xl:px-8">
-        <div
-          className="text-[18px] xl:text-[24px] font-light leading-[1.25] text-[#1C3C8C]"
-          style={{ fontFamily: heading }}
-        >
+        <div className="font-noto-serif-narrow text-[18px] xl:text-[24px] font-light leading-[1.25] text-[#1C3C8C]">
           {p.zone}
         </div>
         <div className="mt-1 text-[13px] font-light leading-[18px] text-[#566A93] sm:hidden">
@@ -161,10 +141,7 @@ function PriceTableRow({ p }: { p: ServicePrice }) {
       <td className="px-4 py-5 text-[15px] xl:text-[18px] font-light text-[#566A93] xl:px-8">
         {p.duration}
       </td>
-      <td
-        className="px-4 py-5 text-[18px] xl:text-[24px] font-light text-[#1C3C8C] xl:px-8"
-        style={{ fontFamily: heading }}
-      >
+      <td className="font-noto-serif-narrow px-4 py-5 text-[18px] xl:text-[24px] font-light text-[#1C3C8C] xl:px-8">
         {renderPrice(formatPrice(p.base))}
       </td>
       <td className="px-4 py-5 xl:px-8">
@@ -193,10 +170,7 @@ function PriceTableCell({
       <span className="text-[13px] xl:text-[15px] font-light text-[#566A93] line-through">
         {renderPrice(formatPrice(total))}
       </span>
-      <span
-        className="text-[18px] xl:text-[24px] font-light text-[#1C3C8C]"
-        style={{ fontFamily: heading }}
-      >
+      <span className="font-noto-serif-narrow text-[18px] xl:text-[24px] font-light text-[#1C3C8C]">
         {renderPrice(formatPrice(current))}
       </span>
     </div>
