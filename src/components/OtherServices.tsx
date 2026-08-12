@@ -2,8 +2,6 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { useRef, useState, useEffect } from "react";
 
-const heading = "'Roslindale Cyrillic Display Condensed', serif";
-
 export const otherServices = [
   {
     slug: "girudoterapiya",
@@ -114,10 +112,7 @@ export function OtherServices({ exclude }: { exclude?: string }) {
             >
               Смотрите также
             </span>
-            <h2
-              className="mt-6 ds-h2 text-[#1C3C8C] max-w-[520px]"
-              style={{ fontFamily: heading }}
-            >
+            <h2 className="font-noto-serif-narrow mt-6 ds-h2 text-[#1C3C8C] max-w-[520px]">
               Другие услуги
             </h2>
           </div>
@@ -139,10 +134,7 @@ export function OtherServices({ exclude }: { exclude?: string }) {
               className={`${cardClass} flex-[0_0_100%] sm:flex-[0_0_calc((100%-0.75rem)/2)] xl:flex-[0_0_calc((100%-3*0.75rem)/4)] snap-start`}
             >
               <div>
-                <h3
-                  className="text-[20px] sm:text-[24px] xl:text-[28px] font-light leading-[1.2] text-[#1C3C8C]"
-                  style={{ fontFamily: heading }}
-                >
+                <h3 className="font-noto-serif-narrow text-[20px] sm:text-[24px] xl:text-[28px] font-light leading-[1.2] text-[#1C3C8C]">
                   {service.title}
                 </h3>
                 <p className="mt-2 body-text text-[#566A93]">

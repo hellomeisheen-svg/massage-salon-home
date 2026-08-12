@@ -439,13 +439,9 @@ export function ServiceCard({
         <div className="flex-1 sm:flex-none xl:flex-1">
           {/* Title */}
           <div className="mt-5 flex flex-wrap items-center gap-3">
-            <h3
-              className="ds-h2-card text-[#1C3C8C] break-words hyphens-auto"
-              style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
-            >
+            <h3 className="font-noto-serif-narrow ds-h2-card text-[#1C3C8C] break-words hyphens-auto">
               <span className="xl:hidden">{mobileTitle(type.title)}</span>
               <span className="hidden xl:block">{mobileTitle(type.title)}</span>
-
             </h3>
             {type.hit && (
               <span className="inline-flex items-center rounded-[4px] bg-gradient-to-b from-[#A2CFFE] to-[#88C1FF] px-2 py-1 text-[11px] font-semibold uppercase tracking-wider text-white">
@@ -505,18 +501,12 @@ export function ServiceCard({
         {/* Price */}
         <div className="mt-5 sm:mt-[120px] xl:mt-5 flex items-center justify-end gap-4 sm:gap-5">
           {hasDiscount && (
-            <span
-              className="text-[17px] sm:text-[19px] font-light leading-[1.2] text-[#566A93] line-through"
-              style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
-            >
+            <span className="font-noto-serif-narrow text-[17px] sm:text-[19px] font-light leading-[1.2] text-[#566A93] line-through">
               {renderPrice(originalPrice)}
             </span>
           )}
           <div className="flex flex-col items-end">
-            <span
-              className="ds-price text-[#1C3C8C]"
-              style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
-            >
+            <span className="font-noto-serif-narrow ds-price text-[#1C3C8C]">
               {renderPrice(computedPrice)}
             </span>
             <span className="text-[13px] font-light text-[#566A93] hidden sm:inline">{priceLabel}</span>
@@ -714,10 +704,7 @@ export function Services() {
           >
             Услуги
           </span>
-          <h2
-            className="font-noto-serif-narrow mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0"
-            style={{ fontFamily: "'Roslindale Cyrillic Display Condensed', serif" }}
-          >
+          <h2 className="font-noto-serif-narrow mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0">
             Перед каждым визитом обсуждаем ваше состояние&nbsp;— и&nbsp;подбираем технику под&nbsp;него
           </h2>
 

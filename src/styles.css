@@ -700,6 +700,10 @@ button:focus-visible {
 
 /* Узкий вариант Noto Serif Display через ось ширины */
 .font-noto-serif-narrow {
+  font-family: "Noto Serif Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
   font-stretch: condensed;
   font-variation-settings: "wdth" 62.5;
 }
