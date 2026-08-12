@@ -61,7 +61,7 @@ export function ApproachCopy() {
                     <div className="pb-2 sm:row-span-2 sm:pb-0">
                       <NumberBadge number={i + 1} />
                     </div>
-                    <h4 className="font-noto-serif-narrow text-[22px] font-normal leading-[1] text-[#1C3C8C] xl:text-[24px]">
+                    <h4 className="font-noto-serif-narrow text-[20px] font-normal leading-[1] text-[#1C3C8C] sm:text-[32px] xl:text-[26px]">
                       {item.title}
                     </h4>
                     <p className="body-text text-[#566A93] sm:max-w-[560px] xl:max-w-none">
