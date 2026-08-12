@@ -27,11 +27,8 @@ function SpecialistBlock() {
 function HeadlineBlock() {
   return (
     <div className="flex flex-col tablet-text-block xl:max-w-[640px]">
-      <h1 className="font-noto-serif-narrow ds-h1 flex flex-wrap items-center gap-2 text-[#1C3C8C]">
-        <span>Седьмое небо — массаж, гирудотерапия и&nbsp;банки во&nbsp;Владивостоке</span>
-        <span className="inline-flex items-center rounded-[4px] bg-gradient-to-b from-[#A2CFFE] to-[#88C1FF] px-2 py-1 text-[11px] font-semibold uppercase tracking-wider text-white">
-          Здесь классно
-        </span>
+      <h1 className="font-noto-serif-narrow ds-h1 text-[#1C3C8C]">
+        Седьмое небо — массаж, гирудотерапия и&nbsp;банки во&nbsp;Владивостоке
       </h1>
       <p className="mt-4 text-[16px] font-light leading-[26px] text-[#566A93] xl:max-w-[540px]">
         Убираем напряжение, отёки и&nbsp;боли, возвращаем лёгкость движений — первый эффект уже после 1–2 сеансов.
