@@ -35,8 +35,9 @@ function PrivacyPolicy() {
         <main className="container-1900 max-w-[760px] mx-auto pt-28 xl:pt-32">
           <h1
             className="font-noto-serif-narrow text-[30px] leading-[1.1] text-[#1c3c8c] xl:text-[44px]"
-          Политика в отношении обработки персональных данных
-        </h1>
+          >
+            Политика в отношении обработки персональных данных
+          </h1>
 
         <div className="mt-10 space-y-8 text-[15px] xl:text-base leading-[150%] font-light text-[#566A93]">
           <section>
