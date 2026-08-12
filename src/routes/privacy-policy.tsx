@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
 import { BookingProvider } from "@/components/BookingModal";
 
@@ -32,7 +32,7 @@ function PrivacyPolicy() {
       <div className="relative min-h-screen bg-[#EFF6FF] pb-16">
         <Header items={[]} showServicesMenu={false} />
 
-        <main className="container-1900 max-w-[760px] mx-auto pt-28 xl:pt-32">
+        <main className="container-1900 max-w-[760px] mx-auto pt-36 xl:pt-44">
           <h1
             className="font-noto-serif-narrow text-[30px] leading-[1.1] text-[#1c3c8c] xl:text-[44px]"
           >
@@ -541,6 +541,15 @@ function PrivacyPolicy() {
               .
             </p>
           </section>
+
+          <div className="pt-6">
+            <Link
+              to="/"
+              className="btn-primary w-full sm:w-[280px] xl:w-[250px] inline-flex items-center justify-center text-center whitespace-nowrap"
+            >
+              На главную
+            </Link>
+          </div>
         </div>
       </main>
       </div>
