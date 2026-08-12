@@ -218,7 +218,7 @@ export function Programs({ prioritizeKeys }: ProgramsProps = {}) {
 
         {/* Right column — program card */}
         <article className="ds-card ds-card-hover p-5 sm:p-8 flex flex-col h-[620px] sm:h-[671px] xl:h-auto xl:min-h-[700px]">
-          <h3 className="ds-h2-card text-[#1C3C8C]">
+          <h3 className="font-noto-serif-narrow ds-h2-card text-[#1C3C8C]">
             {program.name}
           </h3>
           <p className="mt-2 sm:mt-3 body-text text-[#566A93]">
