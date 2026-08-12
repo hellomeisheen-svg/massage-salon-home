@@ -115,8 +115,7 @@ function BookingDialog({
           <div className="pr-12">
             <h2
               id="booking-title"
-              className="text-[26px] font-light leading-[1.15] text-[#1C3C8C] sm:text-[32px]"
-              style={{ fontFamily: heading }}
+              className="font-noto-serif-narrow text-[26px] font-light leading-[1.15] text-[#1C3C8C] sm:text-[32px]"
             >
               Заявка отправлена
             </h2>
