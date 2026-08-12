@@ -62,7 +62,7 @@ export function ServicePage({ content }: { content: ServicePageContent }) {
         <PromoBanner
           title={
             <>
-              <span className="xl:hidden">До&nbsp;1&nbsp;сентября&nbsp;— по&nbsp;старой цене</span>
+              <span className="xl:hidden">До&nbsp;1&nbsp;сентября покупайте программы по&nbsp;прежней цене</span>
               <span className="hidden xl:inline">
                 С&nbsp;1&nbsp;сентября часть курсов подорожает, а&nbsp;пока
                 <br />
