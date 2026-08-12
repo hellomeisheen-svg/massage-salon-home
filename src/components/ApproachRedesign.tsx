@@ -120,7 +120,7 @@ export function ApproachRedesign() {
           <div className="flex flex-col gap-8 overflow-hidden xl:gap-10">
             <div className="flex items-center gap-6">
               <h3
-                className="whitespace-nowrap text-[32px] font-light text-[#1C3C8C] xl:text-[40px]"
+                className="whitespace-nowrap text-[36px] font-light text-[#1C3C8C] xl:text-[40px]"
                 style={{ fontFamily: heading }}
               >
                 Палитра практик
