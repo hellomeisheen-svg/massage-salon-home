@@ -28,7 +28,7 @@ function HeadlineBlock() {
   return (
     <div className="flex flex-col tablet-text-block xl:max-w-[640px]">
       <h1 className="font-noto-serif-narrow ds-h1 text-[#1C3C8C]">
-        Место, где&nbsp;можно замедлиться и&nbsp;вернуться к&nbsp;себе без&nbsp;спешки
+        Седьмое небо — массаж и&nbsp;гирудотерапия во&nbsp;Владивостоке
       </h1>
       <p className="mt-4 text-[16px] font-light leading-[26px] text-[#566A93] xl:max-w-[540px]">
         Оздоровительные практики для&nbsp;тела: массаж, банки, гирудотерапия.
