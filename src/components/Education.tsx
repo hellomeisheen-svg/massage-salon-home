@@ -1,13 +1,14 @@
 import tatianaPhoto from "@/assets/tatiana-zlobina.jpg.asset.json";
 import tatianaSignature from "@/assets/tatiana-signature.svg.asset.json";
 
-type EduItem = { school: string; items: string[] };
+type EduItem = { school: string; items: string[]; mobileName?: string };
 
 const mainEducation: EduItem[] = [
   { school: "Школа «Магнат», Владивосток", items: ["Классический массаж"] },
   { school: "Школа мастеров массажа, Москва", items: ["Массаж лица"] },
   {
     school: "Школа векторного массажа и\u00A0соматики, Москва",
+    mobileName: "Школа векторного массажа",
     items: ["Векторный массаж", "Лимфатический массаж", "Лимфадренажный массаж"],
   },
   { school: "Академия гирудотерапии, Челябинск", items: ["Гирудотерапия"] },
@@ -28,6 +29,7 @@ function parseSchool(school: string) {
 
 function EduCard({ item }: { item: EduItem }) {
   const { name, city } = parseSchool(item.school);
+  const mobileName = item.mobileName ?? name;
   return (
     <div className="relative rounded-[12px] bg-white border border-[#daebff] px-6 sm:px-7 xl:px-8 py-[30px]">
       {city && (
@@ -36,7 +38,7 @@ function EduCard({ item }: { item: EduItem }) {
         </span>
       )}
       <h3 className="font-noto-serif-narrow ds-h4 text-[#1C3C8C] text-[24px] pr-0 sm:pr-24 whitespace-nowrap sm:whitespace-normal sm:text-[28px] xl:text-[28px]">
-        <span className="xl:hidden">{name}</span>
+        <span className="xl:hidden">{mobileName}</span>
         <span className="hidden xl:inline">{item.school}</span>
       </h3>
 
