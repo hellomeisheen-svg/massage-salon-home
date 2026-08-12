@@ -25,7 +25,13 @@ const servicePages = [
 ] as const;
 
 
-export function Header({ items }: { items?: NavItem[] } = {}) {
+export function Header({
+  items,
+  showServicesMenu = true,
+}: {
+  items?: NavItem[];
+  showServicesMenu?: boolean;
+} = {}) {
   const navigationItems = items ?? defaultNavigationItems;
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const [menuOpen, setMenuOpen] = useState(false);
