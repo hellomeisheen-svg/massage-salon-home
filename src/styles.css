@@ -715,6 +715,13 @@ button:focus-visible {
   font-variation-settings: "wdth" 62.5;
 }
 
+/* На мобильных акцентный шрифт делаем medium, кроме зачёркнутых старых цен */
+@media (max-width: 639px) {
+  .font-noto-serif-narrow:not(.line-through) {
+    font-weight: 500 !important;
+  }
+}
+
 .noto-serif-display-accent {
   font-family: "Noto Serif Display", serif;
   font-optical-sizing: auto;
