@@ -90,7 +90,7 @@ function PriceTableMobileRow({ p }: { p: ServicePrice }) {
       <div className="mt-4 grid grid-cols-3 gap-2">
         <div>
           <div className="text-[11px] font-medium text-[#566A93]">1 сеанс</div>
-          <div className="font-noto-serif-narrow mt-1 text-[15px] font-light text-[#1C3C8C]">
+          <div className="font-noto-serif-narrow mt-1 text-[24px] font-light text-[#1C3C8C]">
             {renderPrice(formatPrice(p.base))}
           </div>
         </div>
