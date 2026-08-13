@@ -142,18 +142,37 @@ export function Header({
                     </a>
                   </li>
                 ))}
-                <li>
-                  <a
-                    href="/#services"
-                    onClick={() => {
-                      setMenuOpen(false);
-                      setServicesOpen(false);
-                    }}
-                    className="block w-full rounded-lg px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors"
-                  >
-                    Все услуги
-                  </a>
-                </li>
+                
+                {pathname === "/" && (
+                  <>
+                    <li className="my-1 border-t border-[#daebff]" />
+                    <li>
+                      <button
+                        type="button"
+                        onClick={() => setServicesOpen(!servicesOpen)}
+                        className="flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors"
+                      >
+                        Посмотреть все услуги
+                        <ChevronDown className={`transition-transform duration-300 ${servicesOpen ? "rotate-180" : ""}`} size={20} />
+                      </button>
+                      {servicesOpen && (
+                        <ul className="mt-1 flex flex-col gap-1 pl-4">
+                          {servicePages.map((service) => (
+                            <li key={service.to}>
+                              <Link
+                                to={service.to}
+                                onClick={() => setMenuOpen(false)}
+                                className="block w-full rounded-lg px-3 py-2 text-sm font-normal leading-[150%] text-[#4A5C85] hover:bg-[#EFF6FF] transition-colors"
+                              >
+                                {service.label}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </li>
+                  </>
+                )}
               </ul>
             </nav>
             <div className="mt-3 flex items-center gap-3 border-t border-[#daebff] pt-3">
