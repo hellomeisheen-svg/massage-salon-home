@@ -143,8 +143,8 @@ export function Header({
                   </li>
                 ))}
                 <li>
-                  <Link
-                    to="/#services"
+                  <a
+                    href="/#services"
                     onClick={() => {
                       setMenuOpen(false);
                       setServicesOpen(false);
@@ -152,7 +152,7 @@ export function Header({
                     className="block w-full rounded-lg px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors"
                   >
                     Все услуги
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </nav>
