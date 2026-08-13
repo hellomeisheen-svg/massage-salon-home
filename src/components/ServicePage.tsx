@@ -240,7 +240,7 @@ function AboutService({ content }: { content: ServicePageContent }) {
   return (
     <section id="services" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section">
       <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-8 sm:gap-5 items-start">
-        <div className="self-start xl:sticky xl:top-[140px] flex flex-col items-start xl:items-start text-left xl:text-left">
+        <div className="self-start xl:sticky xl:top-[140px] flex flex-col items-center xl:items-start text-center xl:text-left">
           <span
             className="inline-flex items-center gap-2 px-4 py-1.5 ds-label text-white"
             style={{
@@ -250,7 +250,7 @@ function AboutService({ content }: { content: ServicePageContent }) {
           >
             Об услуге
           </span>
-          <h2 className="font-noto-serif-narrow mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-0 xl:mx-0">
+          <h2 className="font-noto-serif-narrow mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0">
             {content.aboutHeading}
           </h2>
 
