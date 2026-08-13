@@ -190,6 +190,7 @@ export function Header({
                     )}
                   </li>
                 ))}
+              </ul>
             </nav>
             <div className="mt-3 flex items-center gap-3 border-t border-[#daebff] pt-3">
               <a
