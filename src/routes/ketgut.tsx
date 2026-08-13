@@ -40,6 +40,11 @@ const content: ServicePageContent = {
       Перед процедурой обсуждаем ваше состояние&nbsp;— и&nbsp;решаем, подходит ли&nbsp;формат
     </>
   ),
+  aboutHeadingMobile: (
+    <>
+      Обсуждаем состояние перед каждым визитом и&nbsp;подбираем технику
+    </>
+  ),
   bookingPrefix: "Акупунктурный кетгут",
   pricesStyle: "table",
   sections: [
