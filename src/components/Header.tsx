@@ -131,20 +131,9 @@ export function Header({
           <div className="flex h-full flex-col ds-card p-4">
             <nav className="flex-1 overflow-y-auto" aria-label="Мобильная навигация">
               <ul className="flex flex-col gap-1">
-                {items && (
-                  <li>
-                    <Link
-                      to="/"
-                      onClick={() => setMenuOpen(false)}
-                      className="block w-full rounded-lg px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors"
-                    >
-                      Главная
-                    </Link>
-                  </li>
-                )}
                 {navigationItems.map((item) => (
                   <li key={item.label}>
-                    {item.href === "#services" && !items ? (
+                    {item.label === "Услуги" ? (
                       <div>
                         <button
                           type="button"
@@ -161,21 +150,23 @@ export function Header({
                         {servicesOpen && (
                           <div className="mt-1 flex flex-col gap-0.5 pl-3">
                             <ul className="flex flex-col gap-0.5 border-l border-[#daebff] pl-3">
-                              {servicePages.map((service) => (
-                                <li key={service.to}>
-                                  <Link
-                                    to={service.to}
-                                    onClick={() => setMenuOpen(false)}
-                                    className="block w-full rounded-lg px-3 py-2 text-left text-[15px] font-normal leading-[150%] text-[#566A93] hover:bg-[#EFF6FF] transition-colors"
-                                  >
-                                    {service.label}
-                                  </Link>
-                                </li>
-                              ))}
+                              {servicePages
+                                .filter((service) => service.to !== pathname)
+                                .map((service) => (
+                                  <li key={service.to}>
+                                    <Link
+                                      to={service.to}
+                                      onClick={() => setMenuOpen(false)}
+                                      className="block w-full rounded-lg px-3 py-2 text-left text-[15px] font-normal leading-[150%] text-[#566A93] hover:bg-[#EFF6FF] transition-colors"
+                                    >
+                                      {service.label}
+                                    </Link>
+                                  </li>
+                                ))}
                             </ul>
                             <div className="mt-1 border-l border-[#daebff] pl-3">
                               <a
-                                href="#services"
+                                href="/#services"
                                 onClick={() => {
                                   setMenuOpen(false);
                                   setServicesOpen(false);
@@ -187,7 +178,6 @@ export function Header({
                             </div>
                           </div>
                         )}
-
                       </div>
                     ) : (
                       <a
@@ -201,55 +191,6 @@ export function Header({
                   </li>
                 ))}
               </ul>
-
-              {items && showServicesMenu && (
-                <div className="mt-3 border-t border-[#daebff] pt-2">
-                  <button
-                    type="button"
-                    onClick={() => setServicesOpen((v) => !v)}
-                    aria-expanded={servicesOpen}
-                    className="flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors"
-                  >
-                    Услуги
-                    <ChevronDown
-                      size={18}
-                      className={`transition-transform duration-300 ${servicesOpen ? "rotate-180" : ""}`}
-                    />
-                  </button>
-                  {servicesOpen && (
-                    <div className="mt-1 flex flex-col gap-0.5 pl-3">
-                      <ul className="flex flex-col gap-0.5 border-l border-[#daebff] pl-3">
-                        {servicePages
-                          .filter((service) => service.to !== pathname)
-                          .map((service) => (
-                            <li key={service.to}>
-                              <Link
-                                to={service.to}
-                                onClick={() => setMenuOpen(false)}
-                                className="block w-full rounded-lg px-3 py-2 text-left text-[15px] font-normal leading-[150%] text-[#566A93] hover:bg-[#EFF6FF] transition-colors"
-                              >
-                                {service.label}
-                              </Link>
-                            </li>
-                          ))}
-                      </ul>
-                      <div className="mt-1 border-l border-[#daebff] pl-3">
-                        <a
-                          href="/#services"
-                          onClick={() => {
-                            setMenuOpen(false);
-                            setServicesOpen(false);
-                          }}
-                          className="block w-full rounded-lg px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors"
-                        >
-                          Другие услуги
-                        </a>
-
-                      </div>
-                    </div>
-                  )}
-                </div>
-              )}
             </nav>
             <div className="mt-3 flex items-center gap-3 border-t border-[#daebff] pt-3">
               <a
