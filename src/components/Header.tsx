@@ -152,7 +152,8 @@ export function Header({
                           aria-expanded={servicesOpen}
                           className="flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors"
                         >
-                          {item.label}
+                          Другие услуги
+
                           <ChevronDown
                             size={18}
                             className={`transition-transform duration-300 ${servicesOpen ? "rotate-180" : ""}`}
