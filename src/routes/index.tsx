@@ -34,6 +34,7 @@ export const Route = createFileRoute("/")({
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://7heavenmassage.ru/" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "google-site-verification", content: "MxkkT93_Q8HJKGeMHeXoPRwXvPMRT5QPR6UJQFEkD3E" },
     ],
     links: [{ rel: "canonical", href: "https://7heavenmassage.ru/" }],
     scripts: [
