@@ -70,7 +70,7 @@ export function Hero() {
 
 
           <SpecialistBlock />
-          <div className="mt-[60px] pt-0 sm:mt-[140px] xl:mt-auto xl:pt-[140px]">
+          <div className="mt-[100px] pt-0 sm:mt-[140px] xl:mt-auto xl:pt-[140px]">
             <HeadlineBlock />
           </div>
         </div>
