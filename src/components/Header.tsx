@@ -157,17 +157,19 @@ export function Header({
                       </button>
                       {servicesOpen && (
                         <ul className="mt-1 flex flex-col gap-1 pl-4">
-                          {servicePages.map((service) => (
-                            <li key={service.to}>
-                              <Link
-                                to={service.to}
-                                onClick={() => setMenuOpen(false)}
-                                className="block w-full rounded-lg px-3 py-2 text-sm font-normal leading-[150%] text-[#4A5C85] hover:bg-[#EFF6FF] transition-colors"
-                              >
-                                {service.label}
-                              </Link>
-                            </li>
-                          ))}
+                          {servicePages
+                            .filter((service) => service.to !== pathname)
+                            .map((service) => (
+                              <li key={service.to}>
+                                <Link
+                                  to={service.to}
+                                  onClick={() => setMenuOpen(false)}
+                                  className="block w-full rounded-lg px-3 py-2 text-sm font-normal leading-[150%] text-[#4A5C85] hover:bg-[#EFF6FF] transition-colors"
+                                >
+                                  {service.label}
+                                </Link>
+                              </li>
+                            ))}
                         </ul>
                       )}
                     </li>
