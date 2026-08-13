@@ -481,7 +481,7 @@ function HirudoPriceTableMobileRow({ p }: { p: HirudoRow }) {
   return (
     <div className="px-4 py-5">
       <div className="min-w-0">
-        <div className="font-noto-serif-narrow text-[18px] font-light leading-[1.25] text-[#1C3C8C]">
+        <div className="font-noto-serif-narrow text-[28px] font-light leading-[1.25] text-[#1C3C8C]">
           {p.zone}
         </div>
         <div className="mt-1 text-[13px] font-light leading-[18px] text-[#566A93]">
