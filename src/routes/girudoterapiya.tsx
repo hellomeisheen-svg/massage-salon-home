@@ -506,7 +506,7 @@ function HirudoPriceTableMobileRow({ p }: { p: HirudoRow }) {
                   </span>
                 )}
               </div>
-              <div className="font-noto-serif-narrow mt-1 text-[15px] font-light text-[#1C3C8C]">
+              <div className="font-noto-serif-narrow mt-1 text-[22px] font-light text-[#1C3C8C]">
                 {renderPrice(formatPrice(current))}
               </div>
               {discount > 0 && (
