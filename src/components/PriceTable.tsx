@@ -115,7 +115,7 @@ function PriceTableMobileRow({ p }: { p: ServicePrice }) {
               -15%
             </span>
           </div>
-          <div className="font-noto-serif-narrow mt-1 text-[15px] font-light text-[#1C3C8C]">
+          <div className="font-noto-serif-narrow mt-1 text-[24px] font-light text-[#1C3C8C]">
             {renderPrice(formatPrice(price6))}
           </div>
           <div className="font-noto-serif-narrow text-[11px] font-light text-[#566A93] line-through">
