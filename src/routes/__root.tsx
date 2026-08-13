@@ -13,6 +13,8 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Preloader } from "@/components/Preloader";
 import { TypographyProvider } from "@/components/TypographyProvider";
+import { FontDebugger } from "@/components/FontDebugger";
+
 
 
 
@@ -172,6 +174,8 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <Preloader />
       <TypographyProvider />
+      <FontDebugger />
+
 
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
