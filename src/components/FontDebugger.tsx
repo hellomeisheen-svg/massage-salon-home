@@ -14,18 +14,13 @@ export function FontDebugger() {
       );
       
       elements.forEach((el) => {
-        // Пропускаем элементы внутри других уже помеченных элементов, 
-        // если они имеют такой же размер, чтобы не спамить
         const style = window.getComputedStyle(el);
         const fontSize = style.fontSize;
         const fontWeight = style.fontWeight;
         
-        // Добавляем только если элемент содержит текст
-        if (el.textContent?.trim() && el.children.length === 0) {
+        // Показываем отладчик для всех элементов, если они содержат текст
+        if (el.textContent?.trim()) {
           el.setAttribute("data-font-debug", `${fontSize} / w${fontWeight}`);
-        } else if (el.tagName.startsWith('H')) {
-           // Для заголовков всегда показываем
-           el.setAttribute("data-font-debug", `${fontSize} / w${fontWeight}`);
         }
       });
     };
