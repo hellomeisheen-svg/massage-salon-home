@@ -143,7 +143,7 @@ export function Header({
                   </li>
                 ))}
                 
-                {pathname === "/" && (
+                {(pathname === "/" || items !== undefined) && (
                   <>
                     <li className="my-1 border-t border-[#daebff]" />
                     <li>
