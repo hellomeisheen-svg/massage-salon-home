@@ -165,8 +165,8 @@ export function Header({
                                 ))}
                             </ul>
                             <div className="mt-1 border-l border-[#daebff] pl-3">
-                              <Link
-                                to="/#services"
+                              <a
+                                href="/#services"
                                 onClick={() => {
                                   setMenuOpen(false);
                                   setServicesOpen(false);
@@ -174,7 +174,7 @@ export function Header({
                                 className="block w-full rounded-lg px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors"
                               >
                                 Другие услуги
-                              </Link>
+                              </a>
                             </div>
                           </div>
                         )}
