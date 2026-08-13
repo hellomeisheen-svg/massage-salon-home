@@ -210,28 +210,45 @@ export function Header({
                     aria-expanded={servicesOpen}
                     className="flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors"
                   >
-                    Другие услуги
+                    Услуги
                     <ChevronDown
                       size={18}
                       className={`transition-transform duration-300 ${servicesOpen ? "rotate-180" : ""}`}
                     />
                   </button>
                   {servicesOpen && (
-                    <ul className="ml-3 flex flex-col gap-0.5 border-l border-[#daebff] pl-3">
-                      {servicePages
-                        .filter((service) => service.to !== pathname)
-                        .map((service) => (
-                          <li key={service.to}>
-                            <Link
-                              to={service.to}
-                              onClick={() => setMenuOpen(false)}
-                              className="block w-full rounded-lg px-3 py-2 text-left text-[15px] font-normal leading-[150%] text-[#566A93] hover:bg-[#EFF6FF] transition-colors"
-                            >
-                              {service.label}
-                            </Link>
-                          </li>
-                        ))}
-                    </ul>
+                    <div className="mt-1 flex flex-col gap-0.5 pl-3">
+                      <ul className="flex flex-col gap-0.5 border-l border-[#daebff] pl-3">
+                        {servicePages
+                          .filter((service) => service.to !== pathname)
+                          .map((service) => (
+                            <li key={service.to}>
+                              <Link
+                                to={service.to}
+                                onClick={() => setMenuOpen(false)}
+                                className="block w-full rounded-lg px-3 py-2 text-left text-[15px] font-normal leading-[150%] text-[#566A93] hover:bg-[#EFF6FF] transition-colors"
+                              >
+                                {service.label}
+                              </Link>
+                            </li>
+                          ))}
+                      </ul>
+                      <div className="mt-1 border-l border-[#daebff] pl-3">
+                        <Link
+                          to="/"
+                          onClick={() => {
+                            setMenuOpen(false);
+                            setServicesOpen(false);
+                            // Scroll to services after navigation if needed, 
+                            // but since it's a Link to "/" and we want hash, 
+                            // we should probably use a regular <a> or handle it
+                          }}
+                          className="block w-full rounded-lg px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors"
+                        >
+                          <a href="/#services" className="w-full h-full block">Другие услуги</a>
+                        </Link>
+                      </div>
+                    </div>
                   )}
                 </div>
               )}
