@@ -473,8 +473,8 @@ function Faq({ content }: { content: ServicePageContent }) {
         </div>
 
         <div className="flex flex-col gap-3 sm:gap-4">
-          {content.faq.map((f) => (
-            <FaqItem key={f.q} q={f.q} a={f.a} />
+          {content.faq.map((it) => (
+            <FaqItem key={it.q} q={it.q} a={it.a} />
           ))}
         </div>
       </div>
