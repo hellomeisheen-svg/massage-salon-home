@@ -419,9 +419,9 @@ function FaqItem({ q, a }: { q: string; a: React.ReactNode }) {
         }`}
       >
         <div className="overflow-hidden">
-          <p className="px-5 sm:px-6 xl:px-7 pb-5 sm:pb-6 xl:pb-7 body-text text-[#566A93] max-w-[720px]">
+          <div className="px-5 sm:px-6 xl:px-7 pb-5 sm:pb-6 xl:pb-7 body-text text-[#566A93] max-w-[720px]">
             {a}
-          </p>
+          </div>
         </div>
       </div>
     </div>
@@ -473,8 +473,8 @@ function Faq({ content }: { content: ServicePageContent }) {
         </div>
 
         <div className="flex flex-col gap-3 sm:gap-4">
-          {content.faq.map((f) => (
-            <FaqItem key={f.q} q={f.q} a={f.a} />
+          {content.faq.map((it) => (
+            <FaqItem key={it.q} q={it.q} a={it.a} />
           ))}
         </div>
       </div>
