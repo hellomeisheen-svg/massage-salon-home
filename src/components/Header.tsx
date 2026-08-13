@@ -234,19 +234,17 @@ export function Header({
                           ))}
                       </ul>
                       <div className="mt-1 border-l border-[#daebff] pl-3">
-                        <Link
-                          to="/"
+                        <a
+                          href="/#services"
                           onClick={() => {
                             setMenuOpen(false);
                             setServicesOpen(false);
-                            // Scroll to services after navigation if needed, 
-                            // but since it's a Link to "/" and we want hash, 
-                            // we should probably use a regular <a> or handle it
                           }}
                           className="block w-full rounded-lg px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors"
                         >
-                          <a href="/#services" className="w-full h-full block">Другие услуги</a>
-                        </Link>
+                          Другие услуги
+                        </a>
+
                       </div>
                     </div>
                   )}
