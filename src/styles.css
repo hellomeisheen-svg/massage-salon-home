@@ -463,25 +463,26 @@ button:focus-visible {
 /* ===== Design system: typography, spacing, cards ===== */
 
 /* Временные подсказки с размером шрифта */
-[data-font-debug]:hover {
+[data-font-debug] {
   position: relative;
-  outline: 1px dashed rgba(93, 170, 253, 0.4);
+  outline: 1px dashed rgba(93, 170, 253, 0.2);
 }
-[data-font-debug]:hover::after {
+[data-font-debug]::after {
   content: attr(data-font-debug);
   position: absolute;
-  top: -20px;
+  top: -18px;
   left: 0;
   background: #1C3C8C;
   color: white;
   font-size: 10px;
   font-family: sans-serif;
-  padding: 2px 4px;
+  padding: 1px 4px;
   border-radius: 3px;
   white-space: nowrap;
   z-index: 10000;
   pointer-events: none;
   font-weight: 500;
+  opacity: 0.8;
 }
 
 @utility ds-section {
