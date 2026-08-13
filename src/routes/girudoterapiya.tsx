@@ -202,7 +202,7 @@ function PageHero() {
             <SpecialistBlock />
           </div>
 
-          <div className="mt-[60px] pt-0 sm:mt-[140px] xl:mt-auto xl:pt-[140px]">
+          <div className="mt-[100px] pt-0 sm:mt-[140px] xl:mt-auto xl:pt-[140px]">
             <div className="flex flex-col tablet-text-block xl:max-w-[640px]">
               <div className="flex flex-wrap items-center gap-3">
                 <h1 className="font-noto-serif-narrow text-[38px] font-light leading-[1.12] text-[#1C3C8C] sm:text-[58px] sm:leading-[1.15]">
