@@ -599,7 +599,7 @@ function FaqItem({ q, a }: { q: string; a: React.ReactNode }) {
         onClick={() => setOpen((v) => !v)}
         className="w-full flex items-center justify-between gap-4 p-5 sm:p-6 xl:p-7 text-left"
       >
-        <span className="font-noto-serif-narrow text-[#1C3C8C] text-[20px] sm:text-[24px] xl:text-[28px] leading-[1.2]">
+        <span className="font-noto-serif-narrow text-[#1C3C8C] ds-h4">
           {q}
         </span>
         <span
@@ -616,9 +616,9 @@ function FaqItem({ q, a }: { q: string; a: React.ReactNode }) {
         }`}
       >
         <div className="overflow-hidden">
-          <p className="px-5 sm:px-6 xl:px-7 pb-5 sm:pb-6 xl:pb-7 body-text text-[#566A93] max-w-[720px]">
+          <div className="px-5 sm:px-6 xl:px-7 pb-5 sm:pb-6 xl:pb-7 body-text text-[#566A93] max-w-[720px]">
             {a}
-          </p>
+          </div>
         </div>
       </div>
     </div>
@@ -632,7 +632,10 @@ function Faq() {
         <div className="flex flex-col items-center xl:items-start text-center xl:text-left h-full">
           <span
             className="inline-flex items-center gap-2 px-4 py-1.5 ds-label text-white"
-            style={{ borderRadius: "4px", backgroundImage: "linear-gradient(to bottom, #A2CFFE, #88C1FF)" }}
+            style={{
+              borderRadius: "4px",
+              backgroundImage: "linear-gradient(to bottom, #A2CFFE, #88C1FF)",
+            }}
           >
             FAQs
           </span>
@@ -646,7 +649,7 @@ function Faq() {
               alt="Татьяна Злобина"
               className="h-[90px] w-[70px] xl:h-[110px] xl:w-[85px] rounded-lg border border-[#daebff] object-cover"
             />
-            <h3 className="font-noto-serif-narrow mt-6 text-[#1C3C8C] text-[26px] sm:text-[30px] leading-[1.1] font-light">
+            <h3 className="font-noto-serif-narrow mt-6 ds-h4 text-[#1C3C8C]">
               Татьяна Злобина
             </h3>
             <p className="mt-3 body-text text-[#566A93]">

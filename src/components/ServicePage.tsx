@@ -419,9 +419,9 @@ function FaqItem({ q, a }: { q: string; a: React.ReactNode }) {
         }`}
       >
         <div className="overflow-hidden">
-          <p className="px-5 sm:px-6 xl:px-7 pb-5 sm:pb-6 xl:pb-7 body-text text-[#566A93] max-w-[720px]">
+          <div className="px-5 sm:px-6 xl:px-7 pb-5 sm:pb-6 xl:pb-7 body-text text-[#566A93] max-w-[720px]">
             {a}
-          </p>
+          </div>
         </div>
       </div>
     </div>
