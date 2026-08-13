@@ -134,8 +134,8 @@ function PageHero({ content }: { content: ServicePageContent }) {
                   {content.title}
                 </h1>
                 {content.hit && (
-                  <span className="inline-flex shrink-0 self-center items-center rounded-[4px] bg-gradient-to-b from-[#A2CFFE] to-[#88C1FF] px-2 py-1 text-[11px] font-semibold uppercase tracking-wider text-white">
-                    Хит
+                  <span className="inline-flex shrink-0 items-center rounded-[6px] bg-[#A2CFFE] px-2 py-0.5 text-[14px] font-medium lowercase tracking-tight text-white mt-1">
+                    хит
                   </span>
                 )}
               </div>
