@@ -157,9 +157,9 @@ export function Header({
                           type="button"
                           onClick={() => setServicesOpen((v) => !v)}
                           aria-expanded={servicesOpen}
-                          aria-label="Показать список услуг"
-                          className="flex h-9 w-9 items-center justify-center rounded-lg text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors"
+                          className="flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors"
                         >
+                          Другие услуги
                           <ChevronDown
                             size={18}
                             className={`transition-transform duration-300 ${servicesOpen ? "rotate-180" : ""}`}
