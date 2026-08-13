@@ -135,18 +135,26 @@ export function Header({
                   <li key={item.label}>
                     {item.label === "Услуги" ? (
                       <div>
-                        <button
-                          type="button"
-                          onClick={() => setServicesOpen((v) => !v)}
-                          aria-expanded={servicesOpen}
-                          className="flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors"
-                        >
-                          Услуги
-                          <ChevronDown
-                            size={18}
-                            className={`transition-transform duration-300 ${servicesOpen ? "rotate-180" : ""}`}
-                          />
-                        </button>
+                        <div className="flex items-center">
+                          <a
+                            href={item.href}
+                            onClick={() => setMenuOpen(false)}
+                            className="flex-1 rounded-l-lg px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors"
+                          >
+                            Услуги
+                          </a>
+                          <button
+                            type="button"
+                            onClick={() => setServicesOpen((v) => !v)}
+                            aria-expanded={servicesOpen}
+                            className="flex h-[44px] w-12 items-center justify-center rounded-r-lg text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors"
+                          >
+                            <ChevronDown
+                              size={18}
+                              className={`transition-transform duration-300 ${servicesOpen ? "rotate-180" : ""}`}
+                            />
+                          </button>
+                        </div>
                         {servicesOpen && (
                           <div className="mt-1 flex flex-col gap-0.5 pl-3">
                             <ul className="flex flex-col gap-0.5 border-l border-[#daebff] pl-3">
@@ -163,19 +171,19 @@ export function Header({
                                     </Link>
                                   </li>
                                 ))}
+                              <li>
+                                <a
+                                  href="/#services"
+                                  onClick={() => {
+                                    setMenuOpen(false);
+                                    setServicesOpen(false);
+                                  }}
+                                  className="block w-full rounded-lg px-3 py-2 text-left text-[15px] font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors"
+                                >
+                                  Другие услуги
+                                </a>
+                              </li>
                             </ul>
-                            <div className="mt-1 border-l border-[#daebff] pl-3">
-                              <a
-                                href="/#services"
-                                onClick={() => {
-                                  setMenuOpen(false);
-                                  setServicesOpen(false);
-                                }}
-                                className="block w-full rounded-lg px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors"
-                              >
-                                Другие услуги
-                              </a>
-                            </div>
                           </div>
                         )}
                       </div>
