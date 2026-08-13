@@ -161,20 +161,34 @@ export function Header({
                           />
                         </button>
                         {servicesOpen && (
-                          <ul className="mb-1 ml-3 flex flex-col gap-0.5 border-l border-[#daebff] pl-3">
-                            {servicePages.map((service) => (
-                              <li key={service.to}>
-                                <Link
-                                  to={service.to}
-                                  onClick={() => setMenuOpen(false)}
-                                  className="block w-full rounded-lg px-3 py-2 text-left text-[15px] font-normal leading-[150%] text-[#566A93] hover:bg-[#EFF6FF] transition-colors"
-                                >
-                                  {service.label}
-                                </Link>
-                              </li>
-                            ))}
-                          </ul>
+                          <div className="mt-1 border-t border-[#daebff] pt-2">
+                            <ul className="ml-3 flex flex-col gap-0.5 border-l border-[#daebff] pl-3">
+                              {servicePages.map((service) => (
+                                <li key={service.to}>
+                                  <Link
+                                    to={service.to}
+                                    onClick={() => setMenuOpen(false)}
+                                    className="block w-full rounded-lg px-3 py-2 text-left text-[15px] font-normal leading-[150%] text-[#566A93] hover:bg-[#EFF6FF] transition-colors"
+                                  >
+                                    {service.label}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                            <div className="mt-2 border-t border-[#daebff] pt-2">
+                              <button
+                                type="button"
+                                onClick={() => setMenuOpen(false)}
+                                className="flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors"
+                              >
+                                <a href="#services" onClick={() => setMenuOpen(false)} className="w-full">
+                                  Другие услуги
+                                </a>
+                              </button>
+                            </div>
+                          </div>
                         )}
+
                       </div>
                     ) : (
                       <a
