@@ -161,8 +161,8 @@ export function Header({
                           />
                         </button>
                         {servicesOpen && (
-                          <div className="mt-1 border-t border-[#daebff] pt-2">
-                            <ul className="ml-3 flex flex-col gap-0.5 border-l border-[#daebff] pl-3">
+                          <div className="mt-1 flex flex-col gap-0.5 pl-3">
+                            <ul className="flex flex-col gap-0.5 border-l border-[#daebff] pl-3">
                               {servicePages.map((service) => (
                                 <li key={service.to}>
                                   <Link
@@ -175,16 +175,17 @@ export function Header({
                                 </li>
                               ))}
                             </ul>
-                            <div className="mt-2 border-t border-[#daebff] pt-2">
-                              <button
-                                type="button"
-                                onClick={() => setMenuOpen(false)}
-                                className="flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors"
+                            <div className="mt-1 border-l border-[#daebff] pl-3">
+                              <a
+                                href="#services"
+                                onClick={() => {
+                                  setMenuOpen(false);
+                                  setServicesOpen(false);
+                                }}
+                                className="block w-full rounded-lg px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors"
                               >
-                                <a href="#services" onClick={() => setMenuOpen(false)} className="w-full">
-                                  Другие услуги
-                                </a>
-                              </button>
+                                Другие услуги
+                              </a>
                             </div>
                           </div>
                         )}
