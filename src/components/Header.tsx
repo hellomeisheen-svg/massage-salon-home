@@ -144,43 +144,44 @@ export function Header({
                 )}
                 {navigationItems.map((item) => (
                   <li key={item.label}>
-                    <div className="flex items-center">
-                      <a
-                        href={item.href}
-                        onClick={() => setMenuOpen(false)}
-                        className="block flex-1 rounded-lg px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors"
-                      >
-                        {item.label}
-                      </a>
-                      {!items && item.href === "#services" && (
+                    {item.href === "#services" && !items ? (
+                      <div>
                         <button
                           type="button"
                           onClick={() => setServicesOpen((v) => !v)}
                           aria-expanded={servicesOpen}
                           className="flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors"
                         >
-                          Другие услуги
+                          {item.label}
                           <ChevronDown
                             size={18}
                             className={`transition-transform duration-300 ${servicesOpen ? "rotate-180" : ""}`}
                           />
                         </button>
-                      )}
-                    </div>
-                    {!items && item.href === "#services" && servicesOpen && (
-                      <ul className="mb-1 ml-3 flex flex-col gap-0.5 border-l border-[#daebff] pl-3">
-                        {servicePages.map((service) => (
-                          <li key={service.to}>
-                            <Link
-                              to={service.to}
-                              onClick={() => setMenuOpen(false)}
-                              className="block w-full rounded-lg px-3 py-2 text-left text-[15px] font-normal leading-[150%] text-[#566A93] hover:bg-[#EFF6FF] transition-colors"
-                            >
-                              {service.label}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
+                        {servicesOpen && (
+                          <ul className="mb-1 ml-3 flex flex-col gap-0.5 border-l border-[#daebff] pl-3">
+                            {servicePages.map((service) => (
+                              <li key={service.to}>
+                                <Link
+                                  to={service.to}
+                                  onClick={() => setMenuOpen(false)}
+                                  className="block w-full rounded-lg px-3 py-2 text-left text-[15px] font-normal leading-[150%] text-[#566A93] hover:bg-[#EFF6FF] transition-colors"
+                                >
+                                  {service.label}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    ) : (
+                      <a
+                        href={item.href}
+                        onClick={() => setMenuOpen(false)}
+                        className="block w-full rounded-lg px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors"
+                      >
+                        {item.label}
+                      </a>
                     )}
                   </li>
                 ))}
