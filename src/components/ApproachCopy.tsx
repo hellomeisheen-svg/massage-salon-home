@@ -50,8 +50,8 @@ export function ApproachCopy() {
 
         {/* Right column — Среда вокруг */}
         <div className="ds-card p-6 sm:p-8 xl:p-12">
-          <h3 className="font-noto-serif-narrow ds-h2 text-[#1C3C8C] sm:text-left">
-            Всё, чтобы вы чувствовали себя спокойно и комфортно с первых минут
+          <h3 className="font-noto-serif-narrow ds-h2 text-center text-[#1C3C8C] sm:text-left">
+            Всё, чтобы вы чувствовали себя спокойно и&nbsp;комфортно с&nbsp;первых минут
           </h3>
 
           <ul className="mt-[120px] flex flex-col gap-8 sm:mt-[140px] sm:text-left xl:mt-[140px] xl:gap-[40px]">
