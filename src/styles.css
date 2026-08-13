@@ -476,12 +476,9 @@ button:focus-visible {
 
 @utility ds-h1 {
   font-family: var(--font-heading);
-  font-weight: 300;
+  font-weight: 500;
   font-size: 30px;
   line-height: 1.15;
-  @media (max-width: 639px) {
-    font-weight: 500;
-  }
   @media (min-width: 640px) {
     font-size: 38px;
     line-height: 1.18;
@@ -494,12 +491,9 @@ button:focus-visible {
 
 @utility ds-h2 {
   font-family: var(--font-heading);
-  font-weight: 300;
+  font-weight: 500;
   font-size: 30px;
   line-height: 1.15;
-  @media (max-width: 639px) {
-    font-weight: 500;
-  }
   @media (min-width: 640px) {
     font-size: 36px;
   }
