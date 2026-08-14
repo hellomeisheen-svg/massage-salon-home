@@ -26,7 +26,7 @@ function SpecialistBlock() {
 
 function HeadlineBlock() {
   return (
-    <div className="flex flex-col tablet-text-block xl:w-[640px]">
+    <div className="flex flex-col tablet-text-block xl:w-[700px]">
       <h1 className="font-noto-serif-narrow ds-h1 text-[#1C3C8C] xl:whitespace-pre-line">
         {"Массаж, гирудотерапия и\u00a0банки\nво\u00a0Владивостоке"}
       </h1>
