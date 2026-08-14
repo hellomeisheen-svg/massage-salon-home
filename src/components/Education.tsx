@@ -90,7 +90,7 @@ export function Education() {
                     <br className="hidden xl:inline min-[1600px]:inline" />
                     и времени, чтобы почувствовать себя лучше.»
                   </blockquote>
-                  <p className="text-[14px] sm:text-[16px] xl:text-[clamp(14px,1.1vw,16px)] font-light leading-[1.5] text-[#566A93] max-w-[480px]">
+                  <p className="text-[14px] sm:text-[16px] xl:text-[clamp(14px,1.1vw,16px)] font-light leading-[1.5] text-[#566A93] max-w-[480px] xl:hidden">
                     Татьяна Злобина — Мастер кабинета,
                     <br className="hidden sm:inline" />
                     специалист по оздоровительным практикам
@@ -98,13 +98,11 @@ export function Education() {
                 </div>
 
                 <div className="flex flex-col xl:flex-row xl:items-end xl:justify-between gap-6 sm:gap-4">
-                  <div className="hidden xl:block">
-                    <p className="text-[clamp(14px,1.1vw,16px)] font-light leading-[1.5] text-[#566A93] max-w-[480px]">
-                      Татьяна Злобина — Мастер кабинета,
-                      <br className="hidden sm:inline" />
-                      специалист по оздоровительным практикам
-                    </p>
-                  </div>
+                  <p className="hidden xl:block text-[clamp(14px,1.1vw,16px)] font-light leading-[1.5] text-[#566A93] max-w-[480px]">
+                    Татьяна Злобина — Мастер кабинета,
+                    <br className="hidden sm:inline" />
+                    специалист по оздоровительным практикам
+                  </p>
 
                   <div className="flex justify-end xl:flex-shrink-0 pointer-events-none relative z-20 xl:mb-[-10px]">
                     <img
