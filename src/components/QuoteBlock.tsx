@@ -46,24 +46,26 @@ const decoImages = [
 
 export function QuoteBlock() {
   return (
-    <section className="relative bg-[#EFF6FF] pt-[60px] pb-[60px] sm:pt-[140px] sm:pb-[180px] xl:pt-[180px] xl:pb-[140px]">
-      {/* Decorative photos — hidden on very small screens to avoid clutter */}
-      <div className="absolute inset-0 hidden sm:block">
-        {decoImages.map((img, i) => (
-          <img
-            key={i}
-            src={img.src}
-            alt=""
-            width={512}
-            height={512}
-            loading="lazy"
-            className={`deco-photo ${img.className}`}
-            style={{
-              ["--deco-delay" as string]: img.delay,
-              ["--deco-rot" as string]: img.rot,
-            }}
-          />
-        ))}
+    <section className="relative bg-[#EFF6FF] pt-[60px] pb-[60px] sm:pt-[140px] sm:pb-[180px] xl:pt-[180px] xl:pb-[140px] overflow-hidden">
+      {/* Decorative photos — constrained to container width */}
+      <div className="container-1900 absolute inset-0 left-1/2 -translate-x-1/2 hidden sm:block pointer-events-none">
+        <div className="relative w-full h-full">
+          {decoImages.map((img, i) => (
+            <img
+              key={i}
+              src={img.src}
+              alt=""
+              width={512}
+              height={512}
+              loading="lazy"
+              className={`deco-photo ${img.className}`}
+              style={{
+                ["--deco-delay" as string]: img.delay,
+                ["--deco-rot" as string]: img.rot,
+              }}
+            />
+          ))}
+        </div>
       </div>
 
       <div className="container-1900 relative z-10 flex flex-col items-center sm:px-5 text-center">
