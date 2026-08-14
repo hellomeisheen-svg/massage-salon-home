@@ -405,7 +405,7 @@ export function ServiceCard({
   const priceLabel = applyTypography(`за ${sessionCounts[activeSession]} ${sessionWord}`);
 
   return (
-    <article className="ds-card ds-card-hover p-6 sm:p-8 flex flex-col h-auto min-h-[640px] sm:min-h-0 lg:min-h-[700px] xl:min-h-[700px]">
+    <article className="ds-card ds-card-hover p-6 sm:p-8 flex flex-col h-auto min-h-[640px] sm:min-h-0 md:min-h-[700px] xl:min-h-[700px]">
       {/* Sessions — pill switcher */}
       <div className="flex items-stretch gap-1 rounded-[10px] bg-[#EFF6FF] p-1">
         {items.map((s, i) => (
@@ -435,8 +435,8 @@ export function ServiceCard({
         ))}
       </div>
 
-      <div className="flex-1 flex flex-col mb-6 sm:flex-none sm:mb-0 xl:flex-1 xl:mb-6">
-        <div className="flex-1 sm:flex-none xl:flex-1">
+      <div className="flex-1 flex flex-col mb-6 md:flex-none md:mb-0 xl:flex-1 xl:mb-6">
+        <div className="flex-1 md:flex-none xl:flex-1">
           {/* Title */}
           <div className="mt-5 flex flex-wrap items-center gap-3">
             <h3 className="font-noto-serif-narrow ds-h3 text-[#1C3C8C] break-words hyphens-auto">
@@ -499,7 +499,7 @@ export function ServiceCard({
         </div>
 
         {/* Price */}
-        <div className="mt-auto pt-6 flex items-center justify-end gap-4 sm:gap-5">
+        <div className="mt-auto pt-6 flex items-center justify-end gap-4 md:gap-5">
           {hasDiscount && (
             <span className="ds-price-old">
               {renderPrice(originalPrice)}
@@ -515,7 +515,7 @@ export function ServiceCard({
       </div>
 
       {/* Actions */}
-      <div className="mt-8 flex flex-col gap-3 sm:mt-8 xl:mt-8">
+      <div className="mt-8 flex flex-col gap-3 md:mt-8 xl:mt-8">
         {/* Desktop / tablet */}
         <div className="hidden sm:flex items-center gap-3">
           <button
