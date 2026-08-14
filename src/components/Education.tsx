@@ -71,7 +71,7 @@ export function Education() {
           <span className="hidden xl:inline">За&nbsp;плечами&nbsp;— годы ежедневной практики, регулярное обучение и&nbsp;спокойный подход к&nbsp;работе с&nbsp;телом</span>
         </h2>
       </div>
-      <div className="container-1900 grid grid-cols-1 xl:grid-cols-[1fr_420px] min-[1440px]:grid-cols-[1fr_480px] gap-4 sm:gap-5 items-stretch">
+      <div className="container-1900 grid grid-cols-1 xl:grid-cols-[1fr_745px] gap-4 sm:gap-5 items-stretch">
 
         {/* Left: photo + quote panel */}
         <div className="relative min-h-[480px] xl:min-h-0 xl:h-full flex flex-col rounded-[12px] overflow-hidden border border-[#DAEBFF] xl:border-0">
