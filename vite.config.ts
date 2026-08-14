@@ -4,9 +4,6 @@ export default defineConfig({
   tanstackStart: {
     server: { entry: "server" },
   },
-  vite: {
-    nitro: {
-      preset: "node-server",
-    },
-  },
+  // We use the environment variable NITRO_PRESET to control the build target
+  // without breaking the Vite config type validation.
 });
