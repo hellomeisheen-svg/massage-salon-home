@@ -64,23 +64,27 @@ function HeadlineBlock() {
 export function Hero() {
   return (
     <main className="bg-[#EFF6FF] py-4 sm:py-5">
-      <section id="hero" className="container-1900 grid grid-cols-1 gap-4 sm:gap-5 laptop:min-h-[calc(100vh-160px)] laptop:grid-cols-12">
+      <section id="hero" className="container-1900 grid grid-cols-1 gap-4 sm:gap-5 xl:min-h-[calc(100vh-160px)] xl:grid-cols-2">
         {/* Content card */}
-        <div className="flex min-h-0 flex-col ds-card p-5 sm:min-h-[520px] sm:p-6 laptop:min-h-0 laptop:p-10 laptop:col-span-7 wide:col-span-8">
+        <div className="flex min-h-0 flex-col ds-card p-5 sm:min-h-[520px] sm:p-6 xl:min-h-0 xl:p-10">
+
+
           <SpecialistBlock />
-          <div className="mt-[100px] pt-0 sm:mt-[140px] laptop:mt-auto laptop:pt-[140px]">
+          <div className="mt-[100px] pt-0 sm:mt-[140px] xl:mt-auto xl:pt-[140px]">
             <HeadlineBlock />
           </div>
         </div>
 
+
         {/* Hero image */}
-        <div className="relative h-[420px] overflow-hidden rounded-[12px] border border-[#daebff] sm:h-[520px] laptop:h-auto laptop:min-h-0 laptop:col-span-5 wide:col-span-4">
+        <div className="relative h-[420px] overflow-hidden rounded-[12px] border border-[#daebff] sm:h-[520px] xl:h-auto xl:min-h-0">
           <img
             className="absolute inset-0 h-full w-full scale-x-[-1] object-cover object-top sm:object-center"
             alt="Оздоровительные процедуры"
             src={heroImageAsset.url}
           />
         </div>
+
       </section>
     </main>
   );
