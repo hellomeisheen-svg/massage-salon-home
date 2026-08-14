@@ -69,11 +69,11 @@ export function Header({
 
   return (
     <>
-      <header className="fixed top-0 left-0 z-50 w-full bg-transparent pt-4 sm:pt-5">
+      <header className="fixed top-0 left-0 z-50 w-full bg-transparent pt-4 sm:pt-6">
 
       <div className="container-1900 relative">
       {/* Desktop header */}
-      <div className="hidden h-20 w-full items-center justify-between ds-card px-5 py-2.5 xl:flex xl:px-[30px]">
+      <div className="hidden h-[88px] w-full items-center justify-between ds-card px-8 laptop:flex xl:px-12">
         {/* Logo */}
         <Link to="/" aria-label="На главную" className="flex h-12 items-center hover:opacity-70 transition-opacity">
           <Logo className="h-full w-auto" />

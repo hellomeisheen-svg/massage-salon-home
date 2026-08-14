@@ -507,18 +507,16 @@ button:focus-visible {
 @utility ds-h1 {
   font-family: var(--font-heading);
   font-weight: 400;
-  font-size: 30px;
-  line-height: 1.15;
+  font-size: 32px;
+  line-height: 1.1;
   @media (max-width: 639px) {
     font-weight: 500;
   }
-  @media (min-width: 640px) {
-    font-size: 38px;
-    line-height: 1.18;
+  @media (min-width: 768px) {
+    font-size: 48px;
   }
-  @media (min-width: 940px) {
-    font-size: 54px;
-    line-height: 1.15;
+  @media (min-width: 1200px) {
+    font-size: 72px;
   }
 }
 
@@ -530,11 +528,11 @@ button:focus-visible {
   @media (max-width: 639px) {
     font-weight: 500;
   }
-  @media (min-width: 640px) {
+  @media (min-width: 768px) {
     font-size: 36px;
   }
-  @media (min-width: 940px) {
-    font-size: 44px;
+  @media (min-width: 1200px) {
+    font-size: 48px;
   }
 }
 
