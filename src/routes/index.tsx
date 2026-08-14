@@ -4,13 +4,14 @@ import { Hero } from "@/components/Hero";
 import { QuoteBlock } from "@/components/QuoteBlock";
 import { Services } from "@/components/Services";
 
-import { ApproachCopy } from "@/components/Approach";
+import { ApproachCopy } from "@/components/ApproachCopy";
 import { PromoBanner } from "@/components/PromoBanner";
 import { StatsSection } from "@/components/StatsSection";
 import { Programs } from "@/components/Programs";
 import { Education } from "@/components/Education";
 import { Faq } from "@/components/Faq";
 import Gallery from "@/components/Gallery";
+import { GalleryIntro } from "@/components/GalleryIntro";
 import { Footer } from "@/components/Footer";
 import { BookingProvider } from "@/components/BookingModal";
 
@@ -104,7 +105,7 @@ function Index() {
         }
       />
       <Education />
-      
+      <GalleryIntro />
       <Gallery />
       <Faq />
       <Footer />
