@@ -217,7 +217,7 @@ export function Programs({ prioritizeKeys }: ProgramsProps = {}) {
         </div>
 
         {/* Right column — program card */}
-        <article className="ds-card ds-card-hover p-5 sm:p-8 flex flex-col h-[620px] sm:h-[671px] xl:h-auto xl:min-h-[700px]">
+        <article className="ds-card ds-card-hover p-5 sm:p-8 flex flex-col h-auto sm:h-auto xl:h-auto xl:min-h-[700px]">
           <h3 className="font-noto-serif-narrow ds-h3 text-[#1C3C8C]">
             {program.name}
           </h3>
@@ -226,7 +226,7 @@ export function Programs({ prioritizeKeys }: ProgramsProps = {}) {
           </p>
 
           {/* Program content: fills fixed card and scrolls if needed */}
-          <div className="flex-1 min-h-0 xl:min-h-fit xl:overflow-visible overflow-hidden">
+          <div className="flex-1 min-h-0 xl:min-h-fit xl:overflow-visible">
             {/* Desktop / tablet: two-column table */}
             <div className="hidden sm:block h-full overflow-y-auto xl:h-auto xl:overflow-visible">
               <div className="mt-8 grid grid-cols-[1.3fr_1fr] gap-6 pb-4 border-b border-[#daebff]">
@@ -244,7 +244,7 @@ export function Programs({ prioritizeKeys }: ProgramsProps = {}) {
             </div>
 
             {/* Mobile: stacked blocks */}
-            <div className="sm:hidden pt-2 divide-y divide-[#daebff] h-full overflow-y-auto">
+            <div className="sm:hidden pt-2 divide-y divide-[#daebff] h-auto">
               {computedItems.map((it, idx) => (
                 <div key={idx} className="py-3">
                   <div className="text-[16px] leading-[22px] text-[#1C3C8C]">{it.title}</div>
