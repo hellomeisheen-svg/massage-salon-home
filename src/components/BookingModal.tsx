@@ -194,23 +194,22 @@ function BookingDialog({
                   const comment = formData.get("comment") as string;
                   const email = formData.get("email") as string;
 
-                  const { data: lead, error: insertError } = await supabase.from("leads").insert([
+                  const { error: insertError } = await supabase.from("leads").insert([
                     {
                       name,
                       phone: formatPhone(phone),
                       message: comment,
                       email: email || null,
                     },
-                  ]).select().single();
+                  ]);
 
                   if (insertError) throw insertError;
 
-                  // Fire-and-forget notification
-                  if (lead?.id) {
-                    sendLeadNotification({ data: { leadId: lead.id } }).catch(err => {
-                      console.error("Failed to trigger lead notification:", err);
-                    });
-                  }
+                  // Fire-and-forget notification by phone number 
+                  // since we don't have the new ID from anon insert without .select()
+                  sendLeadNotification({ data: { phone: formatPhone(phone) } }).catch(err => {
+                    console.error("Failed to trigger lead notification:", err);
+                  });
 
                   setSent(true);
                 } catch (err) {
