@@ -515,7 +515,7 @@ export function ServiceCard({
       </div>
 
       {/* Actions */}
-      <div className="mt-8 flex flex-col gap-3">
+      <div className="mt-auto pt-8 flex flex-col gap-3">
         {/* Desktop / tablet */}
         <div className="hidden sm:flex items-center gap-3">
           <button
