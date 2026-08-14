@@ -29,9 +29,9 @@ export function StatsSection() {
       className="scroll-mt-[120px] bg-[#EFF6FF] pt-[60px] pb-0 sm:pt-[70px] sm:pb-0 xl:pt-[140px] xl:pb-0"
     >
       <div className="container-1900">
-        <div className="flex flex-col gap-10 xl:grid xl:grid-cols-2 xl:gap-5 xl:items-start">
+        <div className="flex flex-col gap-10 lg:grid lg:grid-cols-2 lg:gap-5 lg:items-start xl:grid xl:grid-cols-2 xl:gap-5 xl:items-start">
           {/* Left: label + heading */}
-          <div className="text-left xl:text-left">
+          <div className="text-left lg:text-left xl:text-left">
             <span
               className="inline-flex items-center gap-2 px-4 py-1.5 ds-label text-white"
               style={{
@@ -42,7 +42,7 @@ export function StatsSection() {
               Преимущества
             </span>
 
-            <h2 className="font-noto-serif-narrow mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-0 xl:mx-0">
+            <h2 className="font-noto-serif-narrow mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-0 lg:mx-0 xl:mx-0">
               Бережная работа с телом: опыт, диалог, внимание
             </h2>
           </div>

@@ -171,9 +171,9 @@ export function Programs({ prioritizeKeys }: ProgramsProps = {}) {
 
   return (
     <section id="programs" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section">
-      <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-8 sm:gap-5 items-start">
+      <div className="container-1900 grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] xl:grid-cols-2 gap-8 sm:gap-5 items-start">
         {/* Left column */}
-        <div className="self-start flex flex-col items-center xl:items-start text-center xl:text-left">
+        <div className="self-start flex flex-col items-center lg:items-start xl:items-start text-center lg:text-left xl:text-left">
           <span
             className="inline-flex items-center gap-2 px-4 py-1.5 ds-label text-white"
             style={{
@@ -183,11 +183,11 @@ export function Programs({ prioritizeKeys }: ProgramsProps = {}) {
           >
             Программы восстановления
           </span>
-          <h2 className="font-noto-serif-narrow mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0" data-no-typo>
+          <h2 className="font-noto-serif-narrow mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto lg:mx-0 xl:mx-0" data-no-typo>
             Программы из нескольких процедур — для глубокой работы с состоянием
           </h2>
 
-          <ul className="mt-8 hidden xl:flex flex-col gap-3 items-start">
+          <ul className="mt-8 hidden lg:flex flex-col gap-3 items-start">
             {orderedPrograms.map((p, i) => {
               const isActive = i === active;
               return (
@@ -217,7 +217,7 @@ export function Programs({ prioritizeKeys }: ProgramsProps = {}) {
         </div>
 
         {/* Right column — program card */}
-        <article className="ds-card ds-card-hover p-5 sm:p-8 flex flex-col h-[620px] sm:h-[671px] xl:h-auto xl:min-h-[700px]">
+        <article className="ds-card ds-card-hover p-5 sm:p-8 flex flex-col h-[620px] sm:h-[671px] lg:h-[700px] xl:h-auto xl:min-h-[700px]">
           <h3 className="font-noto-serif-narrow ds-h3 text-[#1C3C8C]">
             {program.name}
           </h3>
