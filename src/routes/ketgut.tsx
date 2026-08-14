@@ -67,7 +67,7 @@ const content: ServicePageContent = {
       ),
     },
     {
-      label: "Как проходит",
+      label: "Как проходит сеанс",
       content: (
         <>
           <p>
