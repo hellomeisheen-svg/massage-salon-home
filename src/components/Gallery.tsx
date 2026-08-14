@@ -15,8 +15,11 @@ export default function Gallery() {
           <path d="M12 0 L13.2 10.8 L24 12 L13.2 13.2 L12 24 L10.8 13.2 L0 12 L10.8 10.8 Z" />
         </svg>
         <h2 className="font-noto-serif-narrow max-w-none sm:max-w-[900px] xl:max-w-[1100px] ds-h1 text-[#1C3C8C]">
-          Галерея
+          Атмосфера кабинета
         </h2>
+        <p className="mt-6 text-[18px] sm:text-[20px] text-[#566A93] font-light max-w-[600px] mx-auto">
+          Несколько кадров о&nbsp;том, как всё устроено внутри&nbsp;— свет, текстуры и&nbsp;тишина
+        </p>
       </div>
 
       <div className="pt-4 pb-[60px] xl:pt-0 xl:pb-0">
