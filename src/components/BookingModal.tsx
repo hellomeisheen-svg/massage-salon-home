@@ -8,7 +8,8 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { Check, X } from "lucide-react";
+import { Check, Loader2, X } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 type BookingContextValue = {
   openBooking: (subject?: string) => void;
