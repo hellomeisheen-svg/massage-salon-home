@@ -87,8 +87,8 @@ export function Education() {
                 <div className="flex flex-col gap-3 sm:gap-4 xl:gap-3 relative z-10">
                   <blockquote className="font-noto-serif-narrow ds-h4 text-[#1C3C8C] text-[20px] sm:text-[28px] xl:text-[clamp(20px,2.2vw,32px)] leading-[1.2] w-full">
                     «Иногда достаточно тишины, бережного внимания,{" "}
-                    <br className="hidden xl:inline min-[1600px]:inline" />
-                    и времени, чтобы почувствовать себя лучше.»
+                    <br className="hidden xl:inline" />
+                    и&nbsp;времени, чтобы почувствовать себя лучше.»
                   </blockquote>
                   <p className="text-[14px] sm:text-[16px] xl:text-[clamp(14px,1.1vw,16px)] font-light leading-[1.5] text-[#566A93] max-w-[480px]">
                     Татьяна Злобина — Мастер кабинета,
