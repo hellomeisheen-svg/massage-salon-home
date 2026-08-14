@@ -5,5 +5,6 @@ export default defineConfig({
     server: { entry: "server" },
   },
   // We use the environment variable NITRO_PRESET to control the build target
-  // without breaking the Vite config type validation.
+  // when running in the user's VPS environment.
+  // In Lovable Cloud, the config automatically targets Cloudflare.
 });
