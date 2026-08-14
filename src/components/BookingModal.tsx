@@ -53,6 +53,8 @@ function BookingDialog({
   onClose: () => void;
 }) {
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [phone, setPhone] = useState("");
   const handlePhoneInput = (e: React.FormEvent<HTMLInputElement>) => {
     const native = e.nativeEvent as InputEvent;
