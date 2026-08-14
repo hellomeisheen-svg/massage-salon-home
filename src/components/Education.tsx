@@ -97,7 +97,7 @@ export function Education() {
                   </p>
                 </div>
 
-                <div className="flex justify-end xl:flex-shrink-0 pointer-events-none relative z-20 xl:mb-[-10px]">
+                <div className="flex justify-end xl:hidden xl:flex-shrink-0 pointer-events-none relative z-20 xl:mb-[-10px]">
                   <img
                     src={tatianaSignature.url}
                     alt="Подпись Татьяны Злобиной"
