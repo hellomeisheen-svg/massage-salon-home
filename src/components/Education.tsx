@@ -92,7 +92,7 @@ export function Education() {
                   </blockquote>
                 </div>
 
-                <div className="flex flex-col xl:flex-row xl:items-end xl:justify-between gap-6 sm:gap-4">
+                <div className="flex flex-col xl:flex-row xl:items-end xl:justify-between gap-3 sm:gap-4">
                   <p className="text-[clamp(14px,1.1vw,16px)] font-light leading-[1.5] text-[#566A93] max-w-[480px]">
                     Татьяна Злобина — Мастер кабинета,
                     <br className="hidden sm:inline" />
