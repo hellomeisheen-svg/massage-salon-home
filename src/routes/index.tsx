@@ -11,7 +11,7 @@ import { Programs } from "@/components/Programs";
 import { Education } from "@/components/Education";
 import { Faq } from "@/components/Faq";
 import Gallery from "@/components/Gallery";
-import { GalleryIntro } from "@/components/GalleryIntro";
+
 import { Footer } from "@/components/Footer";
 import { BookingProvider } from "@/components/BookingModal";
 
@@ -105,7 +105,7 @@ function Index() {
         }
       />
       <Education />
-      <GalleryIntro />
+      
       <Gallery />
       <Faq />
       <Footer />
