@@ -83,26 +83,39 @@ export function Education() {
           />
           <div className="relative mt-auto xl:absolute xl:inset-x-0 xl:bottom-0 xl:mt-0 xl:p-[clamp(16px,2vw,32px)]">
             <div className="relative overflow-hidden rounded-[12px] border border-[#DAEBFF] bg-white xl:bg-white/95 xl:backdrop-blur-sm p-6 sm:p-12 xl:p-[clamp(24px,4vw,48px)] shadow-[0_20px_50px_-12px_rgba(74,127,214,0.08)]">
-              <div className="flex flex-col xl:flex-row xl:items-end xl:justify-between gap-6 sm:gap-8">
-                <div className="flex flex-col gap-3 sm:gap-4 relative z-10 flex-1">
+              <div className="flex flex-col xl:grid xl:grid-cols-[1fr_auto] xl:items-end gap-6 sm:gap-8">
+                <div className="flex flex-col gap-3 sm:gap-4 relative z-10">
                   <blockquote className="font-noto-serif-narrow ds-h4 text-[#1C3C8C] text-[clamp(20px,2.2vw,32px)] leading-[1.2] max-w-[850px]">
                     «Иногда достаточно тишины, бережного внимания,{" "}
                     <br className="hidden min-[1600px]:inline" />
                     и времени, чтобы почувствовать себя лучше.»
                   </blockquote>
 
-                  <p className="text-[clamp(14px,1.1vw,16px)] font-light leading-[1.5] text-[#566A93] max-w-[480px]">
-                    Татьяна Злобина — Мастер кабинета,
-                    <br className="hidden sm:inline" />
-                    специалист по оздоровительным практикам
-                  </p>
+                  <div className="relative">
+                    <p className="text-[clamp(14px,1.1vw,16px)] font-light leading-[1.5] text-[#566A93] max-w-[480px]">
+                      Татьяна Злобина — Мастер кабинета,
+                      <br className="hidden sm:inline" />
+                      специалист по оздоровительным практикам
+                    </p>
+                    
+                    {/* Tablet/Small Desktop signature positioning: below text but relative */}
+                    <div className="mt-6 xl:hidden flex justify-end">
+                      <img
+                        src={tatianaSignature.url}
+                        alt="Подпись Татьяны Злобиной"
+                        className="h-auto w-[120px] sm:w-[180px] opacity-80"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
                 </div>
 
-                <div className="flex justify-end xl:flex-shrink-0 pointer-events-none relative z-20">
+                {/* Large Desktop signature: strictly to the right */}
+                <div className="hidden xl:flex justify-end xl:flex-shrink-0 pointer-events-none relative z-20 xl:mb-[-10px]">
                   <img
                     src={tatianaSignature.url}
                     alt="Подпись Татьяны Злобиной"
-                    className="h-auto w-[120px] sm:w-[180px] xl:w-[clamp(140px,15vw,225px)] opacity-80 xl:opacity-100"
+                    className="h-auto xl:w-[clamp(140px,12vw,225px)] opacity-100"
                     loading="lazy"
                   />
                 </div>
