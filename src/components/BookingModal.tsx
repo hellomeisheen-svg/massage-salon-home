@@ -157,11 +157,11 @@ function BookingDialog({
 
             <form
               className="mt-6 flex flex-col gap-4"
-              onSubmit={(e) => {
+              onSubmit={async (e) => {
                 e.preventDefault();
+                setError(null);
                 let ok = true;
                 if (phone.length !== 10) {
-
                   setPhoneError("Введите номер телефона полностью");
                   ok = false;
                 } else {
@@ -176,7 +176,32 @@ function BookingDialog({
                   setConsentError(null);
                 }
                 if (!ok) return;
-                setSent(true);
+
+                setLoading(true);
+                try {
+                  const formData = new FormData(e.currentTarget);
+                  const name = formData.get("name") as string;
+                  const comment = formData.get("comment") as string;
+                  const email = formData.get("email") as string; // if it existed
+
+                  const { error: insertError } = await supabase.from("leads").insert([
+                    {
+                      name,
+                      phone: formatPhone(phone),
+                      message: comment,
+                      email: email || null,
+                    },
+                  ]);
+
+                  if (insertError) throw insertError;
+
+                  setSent(true);
+                } catch (err) {
+                  console.error("Lead submission error:", err);
+                  setError("Не удалось отправить заявку. Попробуйте ещё раз.");
+                } finally {
+                  setLoading(false);
+                }
               }}
             >
               <label className="flex flex-col gap-2">
