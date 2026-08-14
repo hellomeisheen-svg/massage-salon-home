@@ -1,4 +1,5 @@
 import { formatPrice, renderPrice } from "@/components/Services";
+import { useBooking } from "@/components/BookingModal";
 
 export type ServicePrice = {
   zone: string;
@@ -8,9 +9,6 @@ export type ServicePrice = {
   /** Цена одного сеанса */
   base: number;
 };
-
-import { useBooking } from "@/components/BookingModal";
-import { ServicePrice } from "@/components/PriceTable";
 
 export function PriceTable({ prices, bookingPrefix }: { prices: ServicePrice[], bookingPrefix?: string }) {
   const { openBooking } = useBooking();
