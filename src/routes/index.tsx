@@ -4,7 +4,7 @@ import { Hero } from "@/components/Hero";
 import { QuoteBlock } from "@/components/QuoteBlock";
 import { Services } from "@/components/Services";
 
-import { ApproachCopy } from "@/components/ApproachCopy";
+import { ApproachCopy } from "@/components/Approach";
 import { PromoBanner } from "@/components/PromoBanner";
 import { StatsSection } from "@/components/StatsSection";
 import { Programs } from "@/components/Programs";
