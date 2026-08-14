@@ -18,17 +18,17 @@ export function FontDebugger() {
         const fontSize = style.fontSize;
         const fontWeight = style.fontWeight;
         
-        // Показываем отладчик для всех элементов, если они содержат текст
         if (el.textContent?.trim()) {
           el.setAttribute("data-font-debug", `${fontSize} / w${fontWeight}`);
         }
       });
     };
 
-    // Запускаем через небольшую паузу после рендера и при изменениях DOM
-    const timer = setTimeout(updateDebugInfo, 1000);
+    // Run immediately and then on an interval to catch dynamic changes
+    updateDebugInfo();
+    const interval = setInterval(updateDebugInfo, 2000);
     
-    return () => clearTimeout(timer);
+    return () => clearInterval(interval);
   }, []);
 
   return null;
