@@ -180,9 +180,18 @@ function BookingDialog({
                 setLoading(true);
                 try {
                   const formData = new FormData(e.currentTarget);
+                  const honeypot = formData.get("website") as string;
+                  
+                  // Silent drop if honeypot is filled (bot detection)
+                  if (honeypot) {
+                    console.warn("Spam detected via honeypot");
+                    setSent(true);
+                    return;
+                  }
+
                   const name = formData.get("name") as string;
                   const comment = formData.get("comment") as string;
-                  const email = formData.get("email") as string; // if it existed
+                  const email = formData.get("email") as string;
 
                   const { error: insertError } = await supabase.from("leads").insert([
                     {
