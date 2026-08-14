@@ -37,7 +37,7 @@ function EduCard({ item }: { item: EduItem }) {
           {city}
         </span>
       )}
-      <h3 className="font-noto-serif-narrow ds-h4 text-[#1C3C8C] text-[24px] pr-0 sm:pr-24 whitespace-nowrap sm:whitespace-normal sm:text-[28px] xl:text-[28px]">
+      <h3 className="font-noto-serif-narrow ds-h4 text-[#1C3C8C] text-[24px] pr-0 sm:pr-24 whitespace-nowrap sm:whitespace-normal xl:whitespace-nowrap sm:text-[28px] xl:text-[28px]">
         <span className="xl:hidden">{mobileName}</span>
         <span className="hidden xl:inline">{item.school}</span>
       </h3>
@@ -71,7 +71,7 @@ export function Education() {
           <span className="hidden xl:inline">За&nbsp;плечами&nbsp;— годы ежедневной практики, регулярное обучение и&nbsp;спокойный подход к&nbsp;работе с&nbsp;телом</span>
         </h2>
       </div>
-      <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-5 items-stretch">
+      <div className="container-1900 grid grid-cols-1 xl:grid-cols-[1fr_auto] gap-4 sm:gap-5 items-stretch">
 
         {/* Left: photo + quote panel */}
         <div className="relative xl:min-h-0 xl:h-full flex flex-col xl:rounded-[12px] xl:overflow-hidden xl:border xl:border-[#DAEBFF]">
@@ -111,7 +111,7 @@ export function Education() {
         </div>
 
         {/* Right: education lists */}
-        <div className="flex flex-col gap-6 xl:gap-3">
+        <div className="flex flex-col gap-6 xl:gap-3 xl:min-w-[745px]">
           <div className="px-2 text-[#566A93] text-[14px] sm:text-[15px]">Основное образование</div>
           <div className="flex flex-col gap-6 xl:gap-3">
             {mainEducation.map((e) => (
