@@ -10,6 +10,7 @@ import {
 } from "react";
 import { Check, Loader2, X } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { sendLeadNotification } from "@/lib/notifications.functions";
 
 type BookingContextValue = {
   openBooking: (subject?: string) => void;
@@ -193,16 +194,23 @@ function BookingDialog({
                   const comment = formData.get("comment") as string;
                   const email = formData.get("email") as string;
 
-                  const { error: insertError } = await supabase.from("leads").insert([
+                  const { data: lead, error: insertError } = await supabase.from("leads").insert([
                     {
                       name,
                       phone: formatPhone(phone),
                       message: comment,
                       email: email || null,
                     },
-                  ]);
+                  ]).select().single();
 
                   if (insertError) throw insertError;
+
+                  // Fire-and-forget notification
+                  if (lead?.id) {
+                    sendLeadNotification({ data: { leadId: lead.id } }).catch(err => {
+                      console.error("Failed to trigger lead notification:", err);
+                    });
+                  }
 
                   setSent(true);
                 } catch (err) {
