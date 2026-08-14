@@ -405,7 +405,7 @@ export function ServiceCard({
   const priceLabel = applyTypography(`за ${sessionCounts[activeSession]} ${sessionWord}`);
 
   return (
-    <article className="ds-card ds-card-hover p-6 sm:p-8 flex flex-col h-auto min-h-[640px] sm:min-h-0 xl:min-h-[700px]">
+    <article className="ds-card ds-card-hover p-6 sm:p-8 flex flex-col h-auto min-h-[640px] sm:min-h-0 lg:min-h-[700px] xl:min-h-[700px]">
       {/* Sessions — pill switcher */}
       <div className="flex items-stretch gap-1 rounded-[10px] bg-[#EFF6FF] p-1">
         {items.map((s, i) => (
@@ -488,7 +488,7 @@ export function ServiceCard({
           <p className="mt-6 whitespace-pre-line body-text text-[#566A93] sm:hidden">
             {variant.mobileDescription || variant.description}
           </p>
-          <p className="mt-6 hidden whitespace-pre-line body-text text-[#566A93] sm:block xl:max-w-[540px]">
+          <p className="mt-6 hidden whitespace-pre-line body-text text-[#566A93] sm:block sm:max-w-[480px] xl:max-w-[540px]">
             {variant.description}
           </p>
 
@@ -499,7 +499,7 @@ export function ServiceCard({
         </div>
 
         {/* Price */}
-        <div className="mt-2 sm:mt-[120px] xl:mt-5 flex items-center justify-end gap-4 sm:gap-5">
+        <div className="mt-auto sm:mt-auto xl:mt-5 flex items-center justify-end gap-4 sm:gap-5">
           {hasDiscount && (
             <span className="ds-price-old">
               {renderPrice(originalPrice)}
