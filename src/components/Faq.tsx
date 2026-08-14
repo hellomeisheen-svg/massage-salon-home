@@ -68,9 +68,9 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 export function Faq() {
   return (
     <section id="faq" className="scroll-mt-[120px] bg-[#EFF6FF] ds-section">
-      <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-5 items-stretch">
+      <div className="container-1900 grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-5 items-stretch xl:grid-cols-2">
         {/* Left column */}
-        <div className="flex flex-col items-center xl:items-start text-center xl:text-left h-full">
+        <div className="flex flex-col items-center lg:items-start xl:items-start text-center lg:text-left xl:text-left h-full">
           <span
             className="inline-flex items-center gap-2 px-4 py-1.5 ds-label text-white"
             style={{
@@ -80,11 +80,11 @@ export function Faq() {
           >
             FAQs
           </span>
-          <h2 className="font-noto-serif-narrow mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0">
+          <h2 className="font-noto-serif-narrow mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto lg:mx-0 xl:mx-0">
             Отвечаю на&nbsp;самые важные вопросы
           </h2>
 
-          <div className="mt-8 xl:mt-auto ds-card p-6 sm:p-7 w-full xl:w-1/2 mx-auto xl:mx-0 text-left">
+          <div className="mt-8 lg:mt-auto xl:mt-auto ds-card p-6 sm:p-7 w-full lg:w-3/4 xl:w-1/2 mx-auto lg:mx-0 xl:mx-0 text-left">
             <img
               src={tatyanaPhotoAsset.url}
               alt="Татьяна Злобина"
