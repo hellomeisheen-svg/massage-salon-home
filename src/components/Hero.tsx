@@ -26,7 +26,7 @@ function SpecialistBlock() {
 
 function HeadlineBlock() {
   return (
-    <div className="flex flex-col tablet-text-block xl:max-w-[640px]">
+    <div className="flex flex-col tablet-text-block xl:w-[640px]">
       <h1 className="font-noto-serif-narrow ds-h1 text-[#1C3C8C]">
         Массаж, гирудотерапия и&nbsp;банки во&nbsp;Владивостоке
       </h1>

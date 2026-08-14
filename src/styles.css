@@ -262,9 +262,9 @@ button:focus-visible {
 .tablet-text-block {
   width: 100%;
 }
-@media (min-width: 640px) and (max-width: 939px) {
+@media (min-width: 640px) and (max-width: 1279px) {
   .tablet-text-block {
-    max-width: 550px;
+    width: 550px;
   }
   .tablet-text-block h1 {
     font-size: 52px;
