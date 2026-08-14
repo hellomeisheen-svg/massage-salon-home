@@ -64,9 +64,9 @@ function HeadlineBlock() {
 export function Hero() {
   return (
     <main className="bg-[#EFF6FF] py-4 sm:py-5">
-      <section id="hero" className="container-1900 grid grid-cols-1 gap-4 sm:gap-5 xl:min-h-[calc(100vh-160px)] xl:grid-cols-2">
+      <section id="hero" className="container-1900 grid grid-cols-1 gap-4 sm:gap-6 xl:min-h-[calc(100vh-160px)] xl:grid-cols-2">
         {/* Content card */}
-        <div className="flex min-h-0 flex-col ds-card p-5 sm:min-h-[520px] sm:p-6 xl:min-h-0 xl:p-10">
+        <div className="flex min-h-0 flex-col ds-card p-5 sm:min-h-[520px] sm:p-8 laptop:p-12 xl:min-h-0 xl:p-16">
 
 
           <SpecialistBlock />
@@ -77,7 +77,7 @@ export function Hero() {
 
 
         {/* Hero image */}
-        <div className="relative h-[420px] overflow-hidden rounded-[12px] border border-[#daebff] sm:h-[520px] xl:h-auto xl:min-h-0">
+        <div className="relative h-[420px] overflow-hidden rounded-[16px] border border-[#daebff] sm:h-[580px] xl:h-auto xl:min-h-0">
           <img
             className="absolute inset-0 h-full w-full scale-x-[-1] object-cover object-top sm:object-center"
             alt="Оздоровительные процедуры"
