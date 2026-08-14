@@ -1,36 +1,51 @@
-import { supabase } from "@/integrations/supabase/client";
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 
 const sendNotificationSchema = z.object({
-  leadId: z.string().uuid(),
+  leadId: z.string().uuid().optional(),
+  phone: z.string().optional(),
 });
 
 export const sendLeadNotification = createServerFn({ method: "POST" })
   .inputValidator((data) => sendNotificationSchema.parse(data))
   .handler(async ({ data }) => {
-    const { leadId } = data;
+    const { leadId, phone } = data;
     
     // Import admin client dynamically inside handler to avoid client-side leakage
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
 
     try {
-      // 1. Fetch the lead data using admin client
-      const { data: lead, error: fetchError } = await supabaseAdmin
-        .from("leads")
-        .select("*")
-        .eq("id", leadId)
-        .single();
+      let lead;
+      if (leadId) {
+        // 1a. Fetch by ID
+        const { data: leadData, error: fetchError } = await supabaseAdmin
+          .from("leads")
+          .select("*")
+          .eq("id", leadId)
+          .single();
+        lead = leadData;
+        if (fetchError) throw fetchError;
+      } else if (phone) {
+        // 1b. Fetch latest by phone if ID is missing (e.g. anon insert)
+        const { data: leadData, error: fetchError } = await supabaseAdmin
+          .from("leads")
+          .select("*")
+          .eq("phone", phone)
+          .order("created_at", { ascending: false })
+          .limit(1)
+          .maybeSingle();
+        lead = leadData;
+        if (fetchError) throw fetchError;
+      }
 
-      if (fetchError || !lead) {
-        console.error(`[Notification Error] Could not fetch lead ${leadId}:`, fetchError);
+      if (!lead) {
+        console.error(`[Notification Error] Could not find lead (ID: ${leadId}, Phone: ${phone})`);
         return { success: false, error: "Lead not found" };
       }
 
       // 2. Prevent duplicate notifications
-      // We check if notification_sent is already true
       if (lead.notification_sent) {
-        console.log(`[Notification] Notification already sent for lead ${leadId}`);
+        console.log(`[Notification] Notification already sent for lead ${lead.id}`);
         return { success: true, alreadySent: true };
       }
 
@@ -42,7 +57,7 @@ export const sendLeadNotification = createServerFn({ method: "POST" })
 
       // 3. Prepare Email Content
       const name = lead.name || "Не указано";
-      const phone = lead.phone || "Не указан";
+      const phoneVal = lead.phone || "Не указан";
       const message = lead.message || "Не указан";
       const createdAt = new Date(lead.created_at).toLocaleString("ru-RU", {
         timeZone: "Asia/Vladivostok",
@@ -54,7 +69,7 @@ export const sendLeadNotification = createServerFn({ method: "POST" })
         <div style="font-family: sans-serif; line-height: 1.6; color: #333;">
           <h2 style="color: #1C3C8C; border-bottom: 1px solid #daebff; padding-bottom: 10px;">Новая заявка с сайта 7 Heaven Massage</h2>
           <p><strong>Имя:</strong> ${name}</p>
-          <p><strong>Телефон:</strong> ${phone}</p>
+          <p><strong>Телефон:</strong> ${phoneVal}</p>
           <p><strong>Комментарий:</strong> ${message}</p>
           <p><strong>Дата и время:</strong> ${createdAt}</p>
         </div>
@@ -85,10 +100,10 @@ export const sendLeadNotification = createServerFn({ method: "POST" })
       const { error: updateError } = await supabaseAdmin
         .from("leads")
         .update({ notification_sent: true })
-        .eq("id", leadId);
+        .eq("id", lead.id);
 
       if (updateError) {
-        console.error(`[Notification Error] Failed to update lead ${leadId}:`, updateError);
+        console.error(`[Notification Error] Failed to update lead ${lead.id}:`, updateError);
       }
 
       return { success: true };
