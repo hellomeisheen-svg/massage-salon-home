@@ -27,11 +27,11 @@ function parseSchool(school: string) {
   };
 }
 
-function EduCard({ item, isLarge }: { item: EduItem; isLarge?: boolean }) {
+function EduCard({ item }: { item: EduItem }) {
   const { name, city } = parseSchool(item.school);
   const mobileName = item.mobileName ?? name;
   return (
-    <div className={`relative rounded-[12px] bg-white border border-[#daebff] px-6 sm:px-7 xl:px-8 ${isLarge ? 'py-[30px]' : 'py-6 sm:py-[30px]'}`}>
+    <div className="relative rounded-[12px] bg-white border border-[#daebff] px-6 sm:px-7 xl:px-8 py-6 sm:py-[30px]">
       {city && (
         <span className="absolute -top-3 right-4 rounded-full bg-[#EFF6FF] border border-[#daebff] px-3.5 py-1.5 text-[14px] font-medium tracking-wide text-[#1C3C8C] leading-none xl:hidden">
           {city}
@@ -114,7 +114,7 @@ export function Education() {
           <div className="px-2 text-[#566A93] text-[14px] sm:text-[15px]">Основное образование</div>
           <div className="flex flex-col gap-6 xl:gap-3">
             {mainEducation.map((e) => (
-              <EduCard key={e.school} item={e} isLarge={e.school.includes("Магнат")} />
+              <EduCard key={e.school} item={e} />
             ))}
           </div>
           <div className="px-2 mt-2 xl:mt-1 text-[#566A93] text-[14px] sm:text-[15px]">Дополнительное образование</div>
