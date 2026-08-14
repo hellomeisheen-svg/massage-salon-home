@@ -280,8 +280,17 @@ function BookingDialog({
                 <p className="text-[13px] leading-[1.5] text-[#C0392B]">{consentError}</p>
               )}
 
-              <button type="submit" className="btn-primary mt-2 w-full">
-                Отправить заявку
+              {error && (
+                <p className="text-[13px] leading-[1.5] text-[#C0392B] text-center">{error}</p>
+              )}
+
+              <button 
+                type="submit" 
+                className="btn-primary mt-2 w-full flex items-center justify-center gap-2"
+                disabled={loading}
+              >
+                {loading && <Loader2 className="animate-spin" size={18} />}
+                {loading ? "Отправка..." : "Отправить заявку"}
               </button>
             </form>
           </>
