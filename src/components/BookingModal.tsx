@@ -180,9 +180,18 @@ function BookingDialog({
                 setLoading(true);
                 try {
                   const formData = new FormData(e.currentTarget);
+                  const honeypot = formData.get("website") as string;
+                  
+                  // Silent drop if honeypot is filled (bot detection)
+                  if (honeypot) {
+                    console.warn("Spam detected via honeypot");
+                    setSent(true);
+                    return;
+                  }
+
                   const name = formData.get("name") as string;
                   const comment = formData.get("comment") as string;
-                  const email = formData.get("email") as string; // if it existed
+                  const email = formData.get("email") as string;
 
                   const { error: insertError } = await supabase.from("leads").insert([
                     {
@@ -284,7 +293,12 @@ function BookingDialog({
                 <p className="text-[13px] leading-[1.5] text-[#C0392B] text-center">{error}</p>
               )}
 
+              <div className="absolute opacity-0 -z-10 w-0 h-0 overflow-hidden" aria-hidden="true">
+                <input type="text" name="website" tabIndex={-1} autoComplete="off" />
+              </div>
+              
               <button 
+
                 type="submit" 
                 className="btn-primary mt-2 w-full flex items-center justify-center gap-2"
                 disabled={loading}
