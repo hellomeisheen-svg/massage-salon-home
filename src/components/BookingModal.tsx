@@ -205,11 +205,11 @@ function BookingDialog({
 
                   if (insertError) throw insertError;
 
-                  // Trigger server-side notification check (or handle via DB trigger)
-                  // We don't have the ID from anon insert without returning, 
-                  // but we can trigger a generic notification check on the server
-                  // or rely on a database trigger if configured.
-                  // For now, since we removed .select(), we just confirm success.
+                  // Fire-and-forget notification by phone number 
+                  // since we don't have the new ID from anon insert without .select()
+                  sendLeadNotification({ data: { phone: formatPhone(phone) } }).catch(err => {
+                    console.error("Failed to trigger lead notification:", err);
+                  });
 
                   setSent(true);
                 } catch (err) {
