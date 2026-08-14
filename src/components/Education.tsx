@@ -31,7 +31,7 @@ function EduCard({ item }: { item: EduItem }) {
   const { name, city } = parseSchool(item.school);
   const mobileName = item.mobileName ?? name;
   return (
-    <div className="relative rounded-[12px] bg-white border border-[#daebff] px-6 sm:px-7 xl:px-8 py-[30px]">
+    <div className="relative rounded-[12px] bg-white border border-[#daebff] px-6 sm:px-7 xl:px-8 py-6 sm:py-[30px]">
       {city && (
         <span className="absolute -top-3 right-4 rounded-full bg-[#EFF6FF] border border-[#daebff] px-3.5 py-1.5 text-[14px] font-medium tracking-wide text-[#1C3C8C] leading-none xl:hidden">
           {city}
@@ -71,39 +71,40 @@ export function Education() {
           <span className="hidden xl:inline">За&nbsp;плечами&nbsp;— годы ежедневной практики, регулярное обучение и&nbsp;спокойный подход к&nbsp;работе с&nbsp;телом</span>
         </h2>
       </div>
-      <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-5 items-stretch">
+      <div className="container-1900 grid grid-cols-1 xl:grid-cols-[1fr_420px] min-[1440px]:grid-cols-[1fr_480px] gap-4 sm:gap-5 items-stretch">
 
         {/* Left: photo + quote panel */}
-        <div className="relative min-h-[480px] xl:min-h-0 xl:h-full flex flex-col xl:block rounded-[12px] border-0 xl:border xl:border-[#DAEBFF]">
+        <div className="relative min-h-[480px] xl:min-h-0 xl:h-full flex flex-col rounded-[12px] overflow-hidden border border-[#DAEBFF] xl:border-0">
           <img
             src={tatianaPhoto.url}
             alt="Татьяна Злобина — мастер кабинета Седьмое небо"
             loading="lazy"
-            className="w-full h-[480px] sm:h-[720px] rounded-[12px] border border-[#DAEBFF] xl:border-0 xl:absolute xl:inset-0 xl:h-full object-cover object-top sm:object-center"
+            className="w-full h-[480px] sm:h-[720px] xl:absolute xl:inset-0 xl:h-full object-cover object-top sm:object-center"
           />
-          <div className="relative mt-4 xl:absolute xl:inset-x-0 xl:bottom-0 xl:mt-0 xl:px-8 xl:pb-8">
-            <div className="relative rounded-[12px] border border-[#DAEBFF] bg-white xl:bg-[#EFF6FF] p-8 sm:p-12 xl:p-10 shadow-[0_20px_50px_-12px_rgba(74,127,214,0.08)] flex flex-col xl:flex-row xl:items-end justify-between gap-6 xl:gap-8">
-              <div className="flex flex-col gap-3 sm:gap-4 xl:w-[760px] xl:shrink-0">
-                <blockquote className="font-noto-serif-narrow ds-h4 text-[#1C3C8C] text-[24px] sm:text-[28px] xl:max-w-[760px]">
-                  «Иногда достаточно тишины, бережного внимания,<br className="hidden xl:inline" />{" "}
+          <div className="relative mt-auto xl:absolute xl:inset-x-0 xl:bottom-0 xl:mt-0 xl:p-[clamp(16px,2vw,32px)]">
+            <div className="relative overflow-hidden rounded-[12px] border border-[#DAEBFF] bg-white xl:bg-white/95 xl:backdrop-blur-sm p-6 sm:p-12 xl:p-[clamp(24px,4vw,48px)] shadow-[0_20px_50px_-12px_rgba(74,127,214,0.08)] flex flex-col justify-between gap-4 sm:gap-6">
+              <div className="flex flex-col gap-3 sm:gap-4 relative z-10">
+                <blockquote className="font-noto-serif-narrow ds-h4 text-[#1C3C8C] text-[clamp(20px,2.2vw,32px)] leading-[1.2] max-w-[850px]">
+                  «Иногда достаточно тишины, бережного внимания,{" "}
+                  <br className="hidden min-[1600px]:inline" />
                   и времени, чтобы почувствовать себя лучше.»
                 </blockquote>
 
-                <p className="text-[16px] font-light leading-[1.5] text-[#566A93] xl:max-w-[480px]">
+                <p className="text-[clamp(14px,1.1vw,16px)] font-light leading-[1.5] text-[#566A93] max-w-[480px]">
                   Татьяна Злобина — Мастер кабинета,
-                  <br className="hidden xl:inline" />
+                  <br className="hidden sm:inline" />
                   специалист по оздоровительным практикам
                 </p>
               </div>
 
-              <img
-                src={tatianaSignature.url}
-                alt="Подпись Татьяны Злобиной"
-                width={295}
-                height={113}
-                className="h-auto w-[160px] sm:hidden xl:block xl:w-[225px] shrink-0 self-end xl:absolute xl:bottom-[40px] xl:right-[30px]"
-                loading="lazy"
-              />
+              <div className="flex justify-end xl:absolute xl:bottom-[clamp(16px,2.5vw,40px)] xl:right-[clamp(16px,2.5vw,40px)] pointer-events-none">
+                <img
+                  src={tatianaSignature.url}
+                  alt="Подпись Татьяны Злобиной"
+                  className="h-auto w-[120px] sm:w-[180px] xl:w-[clamp(120px,12vw,225px)] opacity-80 xl:opacity-100"
+                  loading="lazy"
+                />
+              </div>
             </div>
           </div>
         </div>
