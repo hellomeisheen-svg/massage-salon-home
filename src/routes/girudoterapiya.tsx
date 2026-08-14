@@ -9,7 +9,7 @@ import { PromoBanner } from "@/components/PromoBanner";
 import { Programs } from "@/components/Programs";
 import { Education } from "@/components/Education";
 import { OtherServices } from "@/components/OtherServices";
-import { BookingProvider } from "@/components/BookingModal";
+import { BookingProvider, useBooking } from "@/components/BookingModal";
 import { formatPrice, pluralize, renderPrice } from "@/components/Services";
 import tatyanaPhotoAsset from "@/assets/tatyana-photo.png.asset.json";
 
@@ -536,6 +536,7 @@ function HirudoPriceTableMobileRow({ p }: { p: HirudoRow }) {
 }
 
 function Prices() {
+  const { openBooking } = useBooking();
   return (
     <section id="prices" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section">
       <div className="container-1900">
@@ -595,6 +596,16 @@ function Prices() {
         <p className="mt-6 text-center text-[14px] font-light text-[#566A93]">
           Цены указаны с учётом скидки при покупке курса. Оплатить можно на месте.
         </p>
+
+        <div className="mt-10 flex justify-center">
+          <button
+            type="button"
+            onClick={() => openBooking("Гирудотерапия · Форматы и стоимость")}
+            className="btn-primary w-full sm:w-[280px] xl:w-[250px]"
+          >
+            Записаться
+          </button>
+        </div>
       </div>
     </section>
   );
