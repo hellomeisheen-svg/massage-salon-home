@@ -11,7 +11,7 @@ import { Education } from "@/components/Education";
 import { OtherServices } from "@/components/OtherServices";
 import { BookingProvider, useBooking } from "@/components/BookingModal";
 import { formatPrice, pluralize, renderPrice } from "@/components/Services";
-import tatyanaPhotoAsset from "@/assets/tatyana-photo.png.asset.json";
+
 
 
 
@@ -168,7 +168,7 @@ function SpecialistBlock() {
       <img
         className="h-[90px] w-[70px] rounded-lg border border-[#daebff] object-cover xl:h-[110px] xl:w-[85px]"
         alt="Татьяна Злобина"
-        src={tatyanaPhotoAsset.url}
+        src="/images/tatyana-photo.png"
 
       />
       <div className="flex flex-col gap-1">
