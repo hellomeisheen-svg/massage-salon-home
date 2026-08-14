@@ -74,7 +74,7 @@ export function Education() {
       <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-5 items-stretch">
 
         {/* Left: photo + quote panel */}
-        <div className="relative min-h-[480px] xl:min-h-0 xl:h-full flex flex-col xl:block rounded-[12px] border-0 xl:border xl:border-[#DAEBFF]">
+        <div className="relative min-h-0 xl:min-h-0 xl:h-full flex flex-col xl:block rounded-[12px] border-0 xl:border xl:border-[#DAEBFF]">
           <img
             src={tatianaPhoto.url}
             alt="Татьяна Злобина — мастер кабинета Седьмое небо"
