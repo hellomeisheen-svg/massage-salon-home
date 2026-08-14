@@ -64,18 +64,13 @@
 
 @utility container-1900 {
   width: 100%;
-  max-width: 1440px;
+  max-width: 1590px;
   margin-inline: auto;
-  padding-inline: 20px;
+  padding-inline: 1rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   .container-1900 {
-    padding-inline: 40px;
-  }
-}
-@media (min-width: 1440px) {
-  .container-1900 {
-    padding-inline: 60px;
+    padding-inline: 1.25rem;
   }
 }
 
@@ -294,9 +289,8 @@ button:focus-visible {
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
   --breakpoint-lg: 1024px;
-  --breakpoint-laptop: 1200px;
-  --breakpoint-xl: 1440px;
-  --breakpoint-2xl: 1600px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
 
   --font-heading: "Noto Serif Display", "NSD Fallback", "Times New Roman", serif;
   --font-body: "Inter", "Inter Fallback", ui-sans-serif, system-ui, sans-serif;
@@ -507,16 +501,18 @@ button:focus-visible {
 @utility ds-h1 {
   font-family: var(--font-heading);
   font-weight: 400;
-  font-size: 32px;
-  line-height: 1.1;
+  font-size: 30px;
+  line-height: 1.15;
   @media (max-width: 639px) {
     font-weight: 500;
   }
-  @media (min-width: 768px) {
-    font-size: 48px;
+  @media (min-width: 640px) {
+    font-size: 38px;
+    line-height: 1.18;
   }
-  @media (min-width: 1200px) {
-    font-size: 72px;
+  @media (min-width: 940px) {
+    font-size: 54px;
+    line-height: 1.15;
   }
 }
 
@@ -528,11 +524,11 @@ button:focus-visible {
   @media (max-width: 639px) {
     font-weight: 500;
   }
-  @media (min-width: 768px) {
+  @media (min-width: 640px) {
     font-size: 36px;
   }
-  @media (min-width: 1200px) {
-    font-size: 48px;
+  @media (min-width: 940px) {
+    font-size: 44px;
   }
 }
 
@@ -561,10 +557,7 @@ button:focus-visible {
   @media (max-width: 639px) {
     font-weight: 500;
   }
-  @media (min-width: 768px) {
-    font-size: 22px;
-  }
-  @media (min-width: 1200px) {
+  @media (min-width: 940px) {
     font-size: 24px;
   }
 }
@@ -577,10 +570,10 @@ button:focus-visible {
   @media (max-width: 639px) {
     font-weight: 500;
   }
-  @media (min-width: 768px) {
+  @media (min-width: 640px) {
     font-size: 28px;
   }
-  @media (min-width: 1200px) {
+  @media (min-width: 940px) {
     font-size: 36px;
   }
 }
@@ -620,11 +613,10 @@ button:focus-visible {
 }
 
 @utility ds-card {
-  border-radius: 16px;
+  border-radius: 12px;
   border: 1px solid #daebff;
   background-color: #fff;
   transition: box-shadow 0.3s ease;
-  overflow: hidden;
 }
 @media (hover: hover) and (pointer: fine) {
   .ds-card-hover:hover {
