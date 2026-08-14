@@ -90,7 +90,7 @@ export function Education() {
                     <br className="hidden xl:inline min-[1600px]:inline" />
                     и времени, чтобы почувствовать себя лучше.»
                   </blockquote>
-                  <p className="text-[14px] sm:text-[16px] xl:text-[clamp(14px,1.1vw,16px)] font-light leading-[1.5] text-[#566A93] max-w-[480px]">
+                  <p className="text-[14px] sm:text-[16px] xl:text-[clamp(14px,1.1vw,16px)] font-light leading-[1.5] text-[#566A93] max-w-[480px] pb-12 sm:pb-16 xl:pb-0">
                     Татьяна Злобина — Мастер кабинета,
                     <br className="hidden sm:inline" />
                     специалист по оздоровительным практикам
