@@ -499,7 +499,7 @@ export function ServiceCard({
         </div>
 
         {/* Price */}
-        <div className="mt-auto sm:mt-auto xl:mt-5 flex items-center justify-end gap-4 sm:gap-5">
+        <div className="mt-auto pt-6 flex items-center justify-end gap-4 sm:gap-5">
           {hasDiscount && (
             <span className="ds-price-old">
               {renderPrice(originalPrice)}
@@ -515,7 +515,7 @@ export function ServiceCard({
       </div>
 
       {/* Actions */}
-      <div className="mt-auto flex flex-col gap-3 sm:mt-5 xl:mt-auto">
+      <div className="mt-8 flex flex-col gap-3 sm:mt-8 xl:mt-8">
         {/* Desktop / tablet */}
         <div className="hidden sm:flex items-center gap-3">
           <button
