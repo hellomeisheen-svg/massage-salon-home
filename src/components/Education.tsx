@@ -107,13 +107,6 @@ export function Education() {
                 </div>
               </div>
             </div>
-                    alt="Подпись Татьяны Злобиной"
-                    className="h-auto w-[120px] sm:w-[180px] xl:w-[clamp(140px,12vw,225px)] opacity-80 xl:opacity-100"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-            </div>
           </div>
         </div>
 
