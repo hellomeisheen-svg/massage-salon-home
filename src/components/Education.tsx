@@ -71,37 +71,37 @@ export function Education() {
           <span className="hidden xl:inline">За&nbsp;плечами&nbsp;— годы ежедневной практики, регулярное обучение и&nbsp;спокойный подход к&nbsp;работе с&nbsp;телом</span>
         </h2>
       </div>
-      <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-5 items-stretch">
+      <div className="container-1900 grid grid-cols-1 xl:grid-cols-[1fr_420px] min-[1440px]:grid-cols-[1fr_480px] gap-4 sm:gap-5 items-stretch">
 
         {/* Left: photo + quote panel */}
-        <div className="relative min-h-[480px] xl:min-h-0 xl:h-full flex flex-col xl:block rounded-[12px] border-0 xl:border xl:border-[#DAEBFF]">
+        <div className="relative min-h-[480px] xl:min-h-0 xl:h-full flex flex-col rounded-[12px] overflow-hidden border border-[#DAEBFF] xl:border-0">
           <img
             src={tatianaPhoto.url}
             alt="Татьяна Злобина — мастер кабинета Седьмое небо"
             loading="lazy"
-            className="w-full h-[480px] sm:h-[720px] rounded-[12px] border border-[#DAEBFF] xl:border-0 xl:absolute xl:inset-0 xl:h-full object-cover object-top sm:object-center"
+            className="w-full h-[480px] sm:h-[720px] xl:absolute xl:inset-0 xl:h-full object-cover object-top sm:object-center"
           />
-          <div className="relative mt-4 xl:absolute xl:inset-x-0 xl:bottom-0 xl:mt-0 xl:p-[clamp(24px,3vw,32px)]">
-            <div className="relative overflow-hidden rounded-[12px] border border-[#DAEBFF] bg-white xl:bg-white/90 xl:backdrop-blur-sm p-8 sm:p-12 xl:p-[clamp(32px,4vw,48px)] shadow-[0_20px_50px_-12px_rgba(74,127,214,0.08)] flex flex-col justify-between gap-6">
+          <div className="relative mt-auto xl:absolute xl:inset-x-0 xl:bottom-0 xl:mt-0 xl:p-[clamp(16px,2vw,32px)]">
+            <div className="relative overflow-hidden rounded-[12px] border border-[#DAEBFF] bg-white xl:bg-white/95 xl:backdrop-blur-sm p-6 sm:p-12 xl:p-[clamp(24px,4vw,48px)] shadow-[0_20px_50px_-12px_rgba(74,127,214,0.08)] flex flex-col justify-between gap-4 sm:gap-6">
               <div className="flex flex-col gap-3 sm:gap-4 relative z-10">
-                <blockquote className="font-noto-serif-narrow ds-h4 text-[#1C3C8C] text-[clamp(24px,2.5vw,32px)] leading-[1.2] max-w-[800px]">
+                <blockquote className="font-noto-serif-narrow ds-h4 text-[#1C3C8C] text-[clamp(20px,2.2vw,32px)] leading-[1.2] max-w-[850px]">
                   «Иногда достаточно тишины, бережного внимания,{" "}
-                  <br className="hidden min-[1440px]:inline" />
+                  <br className="hidden min-[1600px]:inline" />
                   и времени, чтобы почувствовать себя лучше.»
                 </blockquote>
 
-                <p className="text-[clamp(14px,1.2vw,16px)] font-light leading-[1.5] text-[#566A93] max-w-[480px]">
+                <p className="text-[clamp(14px,1.1vw,16px)] font-light leading-[1.5] text-[#566A93] max-w-[480px]">
                   Татьяна Злобина — Мастер кабинета,
                   <br className="hidden sm:inline" />
                   специалист по оздоровительным практикам
                 </p>
               </div>
 
-              <div className="flex justify-end xl:absolute xl:bottom-[clamp(24px,3vw,40px)] xl:right-[clamp(24px,3vw,40px)] pointer-events-none">
+              <div className="flex justify-end xl:absolute xl:bottom-[clamp(16px,2.5vw,40px)] xl:right-[clamp(16px,2.5vw,40px)] pointer-events-none">
                 <img
                   src={tatianaSignature.url}
                   alt="Подпись Татьяны Злобиной"
-                  className="h-auto w-[160px] sm:w-[200px] xl:w-[clamp(140px,15vw,225px)] opacity-80 xl:opacity-100"
+                  className="h-auto w-[120px] sm:w-[180px] xl:w-[clamp(120px,12vw,225px)] opacity-80 xl:opacity-100"
                   loading="lazy"
                 />
               </div>
