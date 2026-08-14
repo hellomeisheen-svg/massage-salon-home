@@ -288,9 +288,8 @@ button:focus-visible {
 
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
-  --breakpoint-lg: 940px;
-  --breakpoint-laptop: 960px;
-  --breakpoint-xl: 1200px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
   --breakpoint-2xl: 1536px;
 
   --font-heading: "Noto Serif Display", "NSD Fallback", "Times New Roman", serif;
