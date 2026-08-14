@@ -97,13 +97,23 @@ export function Education() {
                   </p>
                 </div>
 
-                <div className="flex justify-end xl:flex-shrink-0 pointer-events-none relative z-20 xl:mb-[-10px]">
-                  <img
-                    src={tatianaSignature.url}
-                    alt="Подпись Татьяны Злобиной"
-                    className="h-auto w-[120px] sm:w-[180px] xl:w-[clamp(140px,12vw,225px)] opacity-80 xl:opacity-100"
-                    loading="lazy"
-                  />
+                <div className="flex flex-col xl:flex-row xl:items-end xl:justify-between gap-6 sm:gap-4">
+                  <div className="hidden xl:block">
+                    <p className="text-[clamp(14px,1.1vw,16px)] font-light leading-[1.5] text-[#566A93] max-w-[480px]">
+                      Татьяна Злобина — Мастер кабинета,
+                      <br className="hidden sm:inline" />
+                      специалист по оздоровительным практикам
+                    </p>
+                  </div>
+
+                  <div className="flex justify-end xl:flex-shrink-0 pointer-events-none relative z-20 xl:mb-[-10px]">
+                    <img
+                      src={tatianaSignature.url}
+                      alt="Подпись Татьяны Злобиной"
+                      className="h-auto w-[120px] sm:w-[180px] xl:w-[clamp(140px,12vw,225px)] opacity-80 xl:opacity-100"
+                      loading="lazy"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
