@@ -293,7 +293,12 @@ function BookingDialog({
                 <p className="text-[13px] leading-[1.5] text-[#C0392B] text-center">{error}</p>
               )}
 
+              <div className="absolute opacity-0 -z-10 w-0 h-0 overflow-hidden" aria-hidden="true">
+                <input type="text" name="website" tabIndex={-1} autoComplete="off" />
+              </div>
+              
               <button 
+
                 type="submit" 
                 className="btn-primary mt-2 w-full flex items-center justify-center gap-2"
                 disabled={loading}
