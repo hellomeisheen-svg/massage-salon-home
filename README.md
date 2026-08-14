@@ -27,3 +27,24 @@ npm run dev
 - TypeScript
 - React
 - Tailwind CSS
+
+## Deploy to Ubuntu VPS
+
+To deploy this project on your own Ubuntu VPS using Nginx and Node.js:
+
+1. **Install dependencies:**
+   ```sh
+   npm install
+   ```
+
+2. **Build the project:**
+   ```sh
+   npm run build
+   ```
+
+3. **Run the production server:**
+   ```sh
+   HOST=127.0.0.1 PORT=3000 node .output/server/index.mjs
+   ```
+
+Note: Ensure you have configured your environment variables (like `VITE_SUPABASE_URL`, `RESEND_API_KEY`, etc.) on your VPS environment. For production, you should use a process manager like `pm2` to keep the server running.
