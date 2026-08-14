@@ -85,15 +85,15 @@ export function Education() {
             <div className="relative overflow-hidden rounded-[12px] border border-[#DAEBFF] bg-white xl:bg-white/95 xl:backdrop-blur-sm p-6 sm:p-12 xl:p-[clamp(24px,4vw,48px)] shadow-[0_20px_50px_-12px_rgba(74,127,214,0.08)]">
               <div className="flex flex-col gap-6 sm:gap-8">
                 <div className="flex flex-col gap-3 sm:gap-4 relative z-10">
-                  <blockquote className="font-noto-serif-narrow ds-h4 text-[#1C3C8C] text-[clamp(20px,2.2vw,32px)] leading-[1.2] w-full">
+                  <blockquote className="font-noto-serif-narrow ds-h4 text-[#1C3C8C] text-[20px] sm:text-[28px] xl:text-[clamp(20px,2.2vw,32px)] leading-[1.2] w-full">
                     «Иногда достаточно тишины, бережного внимания,{" "}
-                    <br className="hidden min-[1600px]:inline" />
+                    <br className="hidden xl:inline min-[1600px]:inline" />
                     и времени, чтобы почувствовать себя лучше.»
                   </blockquote>
                 </div>
 
                 <div className="flex flex-col xl:flex-row xl:items-end xl:justify-between gap-6 sm:gap-4">
-                  <p className="text-[clamp(14px,1.1vw,16px)] font-light leading-[1.5] text-[#566A93] max-w-[480px]">
+                  <p className="text-[14px] sm:text-[16px] xl:text-[clamp(14px,1.1vw,16px)] font-light leading-[1.5] text-[#566A93] max-w-[480px]">
                     Татьяна Злобина — Мастер кабинета,
                     <br className="hidden sm:inline" />
                     специалист по оздоровительным практикам
