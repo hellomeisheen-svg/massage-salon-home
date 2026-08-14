@@ -116,28 +116,75 @@ function BookingDialog({
         </button>
 
         {sent ? (
-          <div className="pr-12">
+          <div className="relative flex flex-col items-center px-2 pt-6 pb-2 text-center sm:px-4 sm:pt-8">
+            {/* Success icon with halo */}
+            <div className="relative mb-8">
+              <div className="absolute inset-0 rounded-full bg-[#A2CFFE] blur-2xl opacity-40" />
+              <div className="relative flex h-20 w-20 items-center justify-center rounded-full border border-[#DAEBFF] bg-white shadow-lg shadow-[#A2CFFE]/25">
+                <svg
+                  className="h-10 w-10 text-[#1C3C8C]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={1.5}
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+              </div>
+            </div>
+
             <h2
               id="booking-title"
               className="font-noto-serif-narrow ds-h3 text-[#1C3C8C]"
             >
-              Заявка отправлена
+              Ваш визит забронирован
             </h2>
-            <p className="mt-4 text-[15px] leading-[1.5] text-[#566A93] sm:text-[16px]">
-              Я&nbsp;свяжусь с&nbsp;вами, чтобы подобрать удобное время. Если хочется
-              выбрать слот прямо сейчас&nbsp;— воспользуйтесь онлайн-записью.
+            <p className="mt-4 max-w-[360px] text-[15px] leading-[1.6] text-[#566A93] sm:text-[16px]">
+              Мы создадим для вас атмосферу полного спокойствия в&nbsp;«Седьмом небе». Администратор свяжется с&nbsp;вами, чтобы уточнить детали и&nbsp;подтвердить время.
             </p>
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+
+            <div className="mt-8 w-full rounded-2xl border border-[#DAEBFF] bg-[#EFF6FF] p-5 text-left">
+              <div className="flex items-start justify-between gap-4">
+                <span className="text-[12px] font-medium uppercase tracking-wider text-[#566A93]">
+                  Что дальше
+                </span>
+              </div>
+              <ul className="mt-3 space-y-2 text-[14px] leading-[1.5] text-[#566A93]">
+                <li className="flex gap-2">
+                  <span className="text-[#1C3C8C]">1.</span>
+                  <span>Перезвоним вам в&nbsp;ближайшее время</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-[#1C3C8C]">2.</span>
+                  <span>Подберём удобный день и&nbsp;время</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-[#1C3C8C]">3.</span>
+                  <span>Встретимся в&nbsp;кабинете на&nbsp;сеанс</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="mt-8 flex w-full flex-col gap-3">
               <a
                 href="https://n2418813.yclients.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary inline-flex w-full items-center justify-center sm:flex-1"
+                className="btn-primary inline-flex w-full items-center justify-center"
               >
-                Онлайн запись
+                Записаться онлайн
               </a>
-              <button type="button" onClick={onClose} className="btn-secondary w-full sm:flex-1">
-                Закрыть
+              <button
+                type="button"
+                onClick={onClose}
+                className="text-[14px] font-medium text-[#566A93] transition-colors hover:text-[#1C3C8C]"
+              >
+                Закрыть окно
               </button>
             </div>
           </div>
