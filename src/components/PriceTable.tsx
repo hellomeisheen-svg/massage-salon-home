@@ -1,4 +1,5 @@
 import { formatPrice, renderPrice } from "@/components/Services";
+import { useBooking } from "@/components/BookingModal";
 
 export type ServicePrice = {
   zone: string;
@@ -9,7 +10,8 @@ export type ServicePrice = {
   base: number;
 };
 
-export function PriceTable({ prices }: { prices: ServicePrice[] }) {
+export function PriceTable({ prices, bookingPrefix }: { prices: ServicePrice[], bookingPrefix?: string }) {
+  const { openBooking } = useBooking();
   return (
     <section id="prices" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section">
       <div className="container-1900">
@@ -69,8 +71,19 @@ export function PriceTable({ prices }: { prices: ServicePrice[] }) {
         <p className="mt-6 text-center text-[14px] font-light text-[#566A93]">
           Цены указаны с учётом скидки при покупке курса. Оплатить можно на месте.
         </p>
+
+        <div className="mt-10 flex justify-center">
+          <button
+            type="button"
+            onClick={() => openBooking(bookingPrefix || "Форматы и стоимость")}
+            className="btn-primary w-full sm:w-[280px] xl:w-[250px]"
+          >
+            Записаться
+          </button>
+        </div>
       </div>
     </section>
+
   );
 }
 
