@@ -289,8 +289,9 @@ button:focus-visible {
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
   --breakpoint-lg: 940px;
-  --breakpoint-xl: 940px;
-  --breakpoint-2xl: 1280px;
+  --breakpoint-laptop: 960px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-2xl: 1536px;
 
   --font-heading: "Noto Serif Display", "NSD Fallback", "Times New Roman", serif;
   --font-body: "Inter", "Inter Fallback", ui-sans-serif, system-ui, sans-serif;
