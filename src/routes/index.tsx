@@ -105,7 +105,7 @@ function Index() {
         }
       />
       <Education />
-      <GalleryIntro />
+      
       <Gallery />
       <Faq />
       <Footer />
