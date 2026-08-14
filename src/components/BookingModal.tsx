@@ -207,7 +207,7 @@ function BookingDialog({
 
                   // Fire-and-forget notification
                   if (lead?.id) {
-                    sendLeadNotification({ leadId: lead.id }).catch(err => {
+                    sendLeadNotification({ data: { leadId: lead.id } }).catch(err => {
                       console.error("Failed to trigger lead notification:", err);
                     });
                   }
