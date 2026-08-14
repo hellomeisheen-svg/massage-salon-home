@@ -638,7 +638,7 @@ export function Services() {
   const type = serviceTypes[active];
 
   useEffect(() => {
-    const mq = window.matchMedia("(min-width: 940px)");
+    const mq = window.matchMedia("(min-width: 980px)");
     const update = () => setIsDesktop(mq.matches);
     update();
     mq.addEventListener("change", update);
@@ -702,9 +702,9 @@ export function Services() {
 
   return (
     <section id="services" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section">
-      <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-8 sm:gap-5 items-start">
+      <div className="container-1900 grid grid-cols-1 laptop:grid-cols-12 gap-8 sm:gap-5 items-start">
         {/* Left column */}
-        <div className="self-start flex flex-col items-center xl:items-start text-center xl:text-left">
+        <div className="self-start flex flex-col items-center laptop:items-start text-center laptop:text-left laptop:col-span-5 wide:col-span-4">
           <span
             className="inline-flex items-center gap-2 px-4 py-1.5 ds-label text-white"
             style={{
@@ -719,11 +719,11 @@ export function Services() {
           </h2>
 
           {/* Desktop: compact category navigation */}
-          <div className="mt-8 hidden xl:block w-full max-w-[520px] text-left">{renderNav(false)}</div>
+          <div className="mt-8 hidden laptop:block w-full max-w-[520px] text-left">{renderNav(false)}</div>
         </div>
 
         {/* Right column — active service */}
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 laptop:col-span-7 wide:col-span-8">
 
 
           <ServiceCard
