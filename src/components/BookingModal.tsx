@@ -8,7 +8,8 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { Check, X } from "lucide-react";
+import { Check, Loader2, X } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 type BookingContextValue = {
   openBooking: (subject?: string) => void;
@@ -52,6 +53,8 @@ function BookingDialog({
   onClose: () => void;
 }) {
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [phone, setPhone] = useState("");
   const handlePhoneInput = (e: React.FormEvent<HTMLInputElement>) => {
     const native = e.nativeEvent as InputEvent;
@@ -154,11 +157,11 @@ function BookingDialog({
 
             <form
               className="mt-6 flex flex-col gap-4"
-              onSubmit={(e) => {
+              onSubmit={async (e) => {
                 e.preventDefault();
+                setError(null);
                 let ok = true;
                 if (phone.length !== 10) {
-
                   setPhoneError("Введите номер телефона полностью");
                   ok = false;
                 } else {
@@ -173,7 +176,32 @@ function BookingDialog({
                   setConsentError(null);
                 }
                 if (!ok) return;
-                setSent(true);
+
+                setLoading(true);
+                try {
+                  const formData = new FormData(e.currentTarget);
+                  const name = formData.get("name") as string;
+                  const comment = formData.get("comment") as string;
+                  const email = formData.get("email") as string; // if it existed
+
+                  const { error: insertError } = await supabase.from("leads").insert([
+                    {
+                      name,
+                      phone: formatPhone(phone),
+                      message: comment,
+                      email: email || null,
+                    },
+                  ]);
+
+                  if (insertError) throw insertError;
+
+                  setSent(true);
+                } catch (err) {
+                  console.error("Lead submission error:", err);
+                  setError("Не удалось отправить заявку. Попробуйте ещё раз.");
+                } finally {
+                  setLoading(false);
+                }
               }}
             >
               <label className="flex flex-col gap-2">
@@ -252,8 +280,17 @@ function BookingDialog({
                 <p className="text-[13px] leading-[1.5] text-[#C0392B]">{consentError}</p>
               )}
 
-              <button type="submit" className="btn-primary mt-2 w-full">
-                Отправить заявку
+              {error && (
+                <p className="text-[13px] leading-[1.5] text-[#C0392B] text-center">{error}</p>
+              )}
+
+              <button 
+                type="submit" 
+                className="btn-primary mt-2 w-full flex items-center justify-center gap-2"
+                disabled={loading}
+              >
+                {loading && <Loader2 className="animate-spin" size={18} />}
+                {loading ? "Отправка..." : "Отправить заявку"}
               </button>
             </form>
           </>
