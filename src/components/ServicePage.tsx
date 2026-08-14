@@ -10,7 +10,7 @@ import { OtherServices } from "@/components/OtherServices";
 import { BookingProvider, useBooking } from "@/components/BookingModal";
 import { formatPrice, pluralize, renderPrice } from "@/components/Services";
 import { PriceTable, type ServicePrice } from "@/components/PriceTable";
-import tatyanaPhotoAsset from "@/assets/tatyana-photo.png.asset.json";
+
 
 export type ServiceSection = { label: string; content: React.ReactNode };
 
@@ -94,7 +94,7 @@ function SpecialistBlock() {
       <img
         className="h-[90px] w-[70px] rounded-lg border border-[#daebff] object-cover xl:h-[110px] xl:w-[85px]"
         alt="Татьяна Злобина"
-        src={tatyanaPhotoAsset.url}
+        src="/images/tatyana-photo.png"
 
       />
       <div className="flex flex-col gap-1">
@@ -452,7 +452,7 @@ function Faq({ content }: { content: ServicePageContent }) {
 
           <div className="mt-8 xl:mt-auto ds-card p-6 sm:p-7 w-full xl:w-1/2 mx-auto xl:mx-0 text-left">
             <img
-              src={tatyanaPhotoAsset.url}
+              src="/images/tatyana-photo.png"
               alt="Татьяна Злобина"
               className="h-[90px] w-[70px] xl:h-[110px] xl:w-[85px] rounded-lg border border-[#daebff] object-cover"
             />

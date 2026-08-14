@@ -1,5 +1,5 @@
-import tatianaPhoto from "@/assets/tatiana-zlobina.jpg.asset.json";
-import tatianaSignature from "@/assets/tatiana-signature.svg.asset.json";
+
+
 
 type EduItem = { school: string; items: string[]; mobileName?: string };
 
@@ -76,7 +76,7 @@ export function Education() {
         {/* Left: photo + quote panel */}
         <div className="relative xl:min-h-0 xl:h-full flex flex-col xl:rounded-[12px] xl:overflow-hidden xl:border xl:border-[#DAEBFF]">
           <img
-            src={tatianaPhoto.url}
+            src="/images/tatiana-zlobina.jpg"
             alt="Татьяна Злобина — мастер кабинета Седьмое небо"
             loading="lazy"
             className="w-full h-[480px] sm:h-[720px] rounded-[12px] border border-[#DAEBFF] xl:border-0 xl:rounded-none xl:absolute xl:inset-0 xl:h-full object-cover object-top sm:object-center"
@@ -97,7 +97,7 @@ export function Education() {
 
                 <div className="flex justify-end xl:hidden xl:flex-shrink-0 pointer-events-none relative z-20 xl:mb-[-10px]">
                   <img
-                    src={tatianaSignature.url}
+                    src="/images/tatiana-signature.svg"
                     alt="Подпись Татьяны Злобиной"
                     className="h-auto w-[120px] sm:w-[180px] xl:w-[clamp(140px,12vw,225px)] opacity-80 xl:opacity-100"
                     loading="lazy"

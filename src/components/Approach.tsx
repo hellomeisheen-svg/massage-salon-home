@@ -1,4 +1,4 @@
-import approachMasterAsset from "@/assets/approach-master.jpg.asset.json";
+
 
 const environmentItems: { title: string; text: string }[] = [
   {
@@ -39,7 +39,7 @@ export function Approach() {
           {/* Подход мастера */}
           <div className="relative h-[420px] sm:h-[720px] xl:h-full ds-card overflow-hidden">
             <img
-              src={approachMasterAsset.url}
+              src="/images/approach-master.jpg"
               alt="Татьяна работает с клиенткой в светлом массажном кабинете"
               width={1024}
               height={1024}
