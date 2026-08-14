@@ -97,11 +97,11 @@ export function Education() {
                 </p>
               </div>
 
-              <div className="flex justify-end xl:absolute xl:bottom-[clamp(16px,2.5vw,40px)] xl:right-[clamp(16px,2.5vw,40px)] pointer-events-none">
+              <div className="flex justify-end xl:absolute xl:bottom-[clamp(8px,1vw,16px)] xl:right-[clamp(16px,2.5vw,40px)] pointer-events-none">
                 <img
                   src={tatianaSignature.url}
                   alt="Подпись Татьяны Злобиной"
-                  className="h-auto w-[120px] sm:w-[180px] xl:w-[clamp(120px,12vw,225px)] opacity-80 xl:opacity-100"
+                  className="h-auto w-[120px] sm:w-[180px] xl:w-[clamp(120px,10vw,200px)] opacity-80 xl:opacity-100"
                   loading="lazy"
                 />
               </div>
