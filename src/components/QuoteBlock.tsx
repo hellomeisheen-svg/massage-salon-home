@@ -16,28 +16,28 @@ const decoImages = [
   {
     src: "/images/uslugi-limfodrenazhnyi-massazh.jpg",
     className:
-      "absolute left-[2%] top-[6%] sm:left-[6%] sm:top-[80px] xl:left-[10%] xl:top-[110px] h-[70px] w-[70px] sm:h-[75px] sm:w-[75px] xl:h-[85px] xl:w-[85px] rounded-2xl object-cover shadow-sm",
+      "absolute left-0 top-[6%] sm:left-[2%] sm:top-[80px] xl:left-[60px] xl:top-[110px] h-[70px] w-[70px] sm:h-[75px] sm:w-[75px] xl:h-[85px] xl:w-[85px] rounded-2xl object-cover shadow-sm",
     delay: "0s",
     rot: "-3deg",
   },
   {
     src: "/images/uslugi-massazh-golovy.jpg",
     className:
-      "absolute right-[2%] top-[5%] sm:right-[6%] sm:top-[80px] xl:right-[10%] xl:top-[110px] h-[70px] w-[70px] sm:h-[75px] sm:w-[75px] xl:h-[85px] xl:w-[85px] rounded-2xl object-cover shadow-sm",
+      "absolute right-0 top-[5%] sm:right-[2%] sm:top-[80px] xl:right-[60px] xl:top-[110px] h-[70px] w-[70px] sm:h-[75px] sm:w-[75px] xl:h-[85px] xl:w-[85px] rounded-2xl object-cover shadow-sm",
     delay: "0.2s",
     rot: "3deg",
   },
   {
     src: "/images/uslugi-massazh-spiny-i-shei.jpg",
     className:
-      "absolute left-[10%] bottom-[6%] sm:left-[14%] sm:bottom-[15px] xl:left-[18%] xl:bottom-[-60px] h-[70px] w-[70px] sm:h-[75px] sm:w-[75px] xl:h-[85px] xl:w-[85px] rounded-2xl object-cover shadow-sm",
+      "absolute left-[8%] bottom-[6%] sm:left-[10%] sm:bottom-[15px] xl:left-[140px] xl:bottom-[-60px] h-[70px] w-[70px] sm:h-[75px] sm:w-[75px] xl:h-[85px] xl:w-[85px] rounded-2xl object-cover shadow-sm",
     delay: "0.4s",
     rot: "2deg",
   },
   {
     src: "/images/uslugi-girudoterapiya.jpg",
     className:
-      "absolute right-[10%] bottom-[8%] sm:right-[14%] sm:bottom-[15px] xl:right-[18%] xl:bottom-[-60px] h-[70px] w-[70px] sm:h-[75px] sm:w-[75px] xl:h-[85px] xl:w-[85px] rounded-2xl object-cover shadow-sm",
+      "absolute right-[8%] bottom-[8%] sm:right-[10%] sm:bottom-[15px] xl:right-[140px] xl:bottom-[-60px] h-[70px] w-[70px] sm:h-[75px] sm:w-[75px] xl:h-[85px] xl:w-[85px] rounded-2xl object-cover shadow-sm",
     delay: "0.6s",
     rot: "-2deg",
   },
@@ -46,24 +46,26 @@ const decoImages = [
 
 export function QuoteBlock() {
   return (
-    <section className="relative bg-[#EFF6FF] pt-[60px] pb-[60px] sm:pt-[140px] sm:pb-[180px] xl:pt-[180px] xl:pb-[140px]">
-      {/* Decorative photos — hidden on very small screens to avoid clutter */}
-      <div className="absolute inset-0 hidden sm:block">
-        {decoImages.map((img, i) => (
-          <img
-            key={i}
-            src={img.src}
-            alt=""
-            width={512}
-            height={512}
-            loading="lazy"
-            className={`deco-photo ${img.className}`}
-            style={{
-              ["--deco-delay" as string]: img.delay,
-              ["--deco-rot" as string]: img.rot,
-            }}
-          />
-        ))}
+    <section className="relative bg-[#EFF6FF] pt-[60px] pb-[60px] sm:pt-[140px] sm:pb-[180px] xl:pt-[180px] xl:pb-[140px] overflow-hidden">
+      {/* Decorative photos — constrained to container width */}
+      <div className="container-1900 absolute inset-0 left-1/2 -translate-x-1/2 hidden sm:block pointer-events-none">
+        <div className="relative w-full h-full">
+          {decoImages.map((img, i) => (
+            <img
+              key={i}
+              src={img.src}
+              alt=""
+              width={512}
+              height={512}
+              loading="lazy"
+              className={`deco-photo ${img.className}`}
+              style={{
+                ["--deco-delay" as string]: img.delay,
+                ["--deco-rot" as string]: img.rot,
+              }}
+            />
+          ))}
+        </div>
       </div>
 
       <div className="container-1900 relative z-10 flex flex-col items-center sm:px-5 text-center">
