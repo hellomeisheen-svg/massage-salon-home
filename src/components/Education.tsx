@@ -81,29 +81,30 @@ export function Education() {
             loading="lazy"
             className="w-full h-[480px] sm:h-[720px] rounded-[12px] border border-[#DAEBFF] xl:border-0 xl:absolute xl:inset-0 xl:h-full object-cover object-top sm:object-center"
           />
-          <div className="relative mt-4 xl:absolute xl:inset-x-0 xl:bottom-0 xl:mt-0 xl:px-8 xl:pb-8">
-            <div className="relative rounded-[12px] border border-[#DAEBFF] bg-white xl:bg-[#EFF6FF] p-8 sm:p-12 xl:p-10 shadow-[0_20px_50px_-12px_rgba(74,127,214,0.08)] flex flex-col xl:flex-row xl:items-end justify-between gap-6 xl:gap-8">
-              <div className="flex flex-col gap-3 sm:gap-4 xl:w-[760px] xl:shrink-0">
-                <blockquote className="font-noto-serif-narrow ds-h4 text-[#1C3C8C] text-[24px] sm:text-[28px] xl:max-w-[760px]">
-                  «Иногда достаточно тишины, бережного внимания,<br className="hidden xl:inline" />{" "}
+          <div className="relative mt-4 xl:absolute xl:inset-x-0 xl:bottom-0 xl:mt-0 xl:p-[clamp(24px,3vw,32px)]">
+            <div className="relative overflow-hidden rounded-[12px] border border-[#DAEBFF] bg-white xl:bg-white/90 xl:backdrop-blur-sm p-8 sm:p-12 xl:p-[clamp(32px,4vw,48px)] shadow-[0_20px_50px_-12px_rgba(74,127,214,0.08)] flex flex-col justify-between gap-6">
+              <div className="flex flex-col gap-3 sm:gap-4 relative z-10">
+                <blockquote className="font-noto-serif-narrow ds-h4 text-[#1C3C8C] text-[clamp(24px,2.5vw,32px)] leading-[1.2] max-w-[800px]">
+                  «Иногда достаточно тишины, бережного внимания,{" "}
+                  <br className="hidden min-[1440px]:inline" />
                   и времени, чтобы почувствовать себя лучше.»
                 </blockquote>
 
-                <p className="text-[16px] font-light leading-[1.5] text-[#566A93] xl:max-w-[480px]">
+                <p className="text-[clamp(14px,1.2vw,16px)] font-light leading-[1.5] text-[#566A93] max-w-[480px]">
                   Татьяна Злобина — Мастер кабинета,
-                  <br className="hidden xl:inline" />
+                  <br className="hidden sm:inline" />
                   специалист по оздоровительным практикам
                 </p>
               </div>
 
-              <img
-                src={tatianaSignature.url}
-                alt="Подпись Татьяны Злобиной"
-                width={295}
-                height={113}
-                className="h-auto w-[160px] sm:hidden xl:block xl:w-[225px] shrink-0 self-end xl:absolute xl:bottom-[40px] xl:right-[30px]"
-                loading="lazy"
-              />
+              <div className="flex justify-end xl:absolute xl:bottom-[clamp(24px,3vw,40px)] xl:right-[clamp(24px,3vw,40px)] pointer-events-none">
+                <img
+                  src={tatianaSignature.url}
+                  alt="Подпись Татьяны Злобиной"
+                  className="h-auto w-[160px] sm:w-[200px] xl:w-[clamp(140px,15vw,225px)] opacity-80 xl:opacity-100"
+                  loading="lazy"
+                />
+              </div>
             </div>
           </div>
         </div>
