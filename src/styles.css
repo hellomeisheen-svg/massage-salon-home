@@ -561,7 +561,10 @@ button:focus-visible {
   @media (max-width: 639px) {
     font-weight: 500;
   }
-  @media (min-width: 940px) {
+  @media (min-width: 768px) {
+    font-size: 22px;
+  }
+  @media (min-width: 1200px) {
     font-size: 24px;
   }
 }
@@ -574,10 +577,10 @@ button:focus-visible {
   @media (max-width: 639px) {
     font-weight: 500;
   }
-  @media (min-width: 640px) {
+  @media (min-width: 768px) {
     font-size: 28px;
   }
-  @media (min-width: 940px) {
+  @media (min-width: 1200px) {
     font-size: 36px;
   }
 }
