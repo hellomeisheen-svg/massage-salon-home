@@ -71,10 +71,10 @@ export function Education() {
           <span className="hidden xl:inline">За&nbsp;плечами&nbsp;— годы ежедневной практики, регулярное обучение и&nbsp;спокойный подход к&nbsp;работе с&nbsp;телом</span>
         </h2>
       </div>
-      <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-5 items-stretch">
+      <div className="container-1900 grid grid-cols-1 laptop:grid-cols-12 gap-4 sm:gap-5 items-stretch">
 
         {/* Left: photo + quote panel */}
-        <div className="relative min-h-[480px] xl:min-h-0 xl:h-full flex flex-col xl:block rounded-[12px] border-0 xl:border xl:border-[#DAEBFF]">
+        <div className="relative min-h-[480px] laptop:min-h-0 laptop:h-full flex flex-col laptop:block rounded-[12px] border-0 laptop:border laptop:border-[#DAEBFF] laptop:col-span-7 wide:col-span-6">
           <img
             src={tatianaPhoto.url}
             alt="Татьяна Злобина — мастер кабинета Седьмое небо"
@@ -109,7 +109,8 @@ export function Education() {
         </div>
 
         {/* Right: education lists */}
-        <div className="flex flex-col gap-6 xl:gap-3">
+        <div className="flex flex-col gap-6 laptop:gap-3 laptop:col-span-5 wide:col-span-6">
+
           <div className="px-2 text-[#566A93] text-[14px] sm:text-[15px]">Основное образование</div>
           <div className="flex flex-col gap-6 xl:gap-3">
             {mainEducation.map((e) => (

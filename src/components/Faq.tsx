@@ -68,9 +68,9 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 export function Faq() {
   return (
     <section id="faq" className="scroll-mt-[120px] bg-[#EFF6FF] ds-section">
-      <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-5 items-stretch">
+      <div className="container-1900 grid grid-cols-1 laptop:grid-cols-12 gap-4 sm:gap-5 items-stretch">
         {/* Left column */}
-        <div className="flex flex-col items-center xl:items-start text-center xl:text-left h-full">
+        <div className="flex flex-col items-center laptop:items-start text-center laptop:text-left h-full laptop:col-span-5 wide:col-span-4">
           <span
             className="inline-flex items-center gap-2 px-4 py-1.5 ds-label text-white"
             style={{
@@ -84,7 +84,7 @@ export function Faq() {
             Отвечаю на&nbsp;самые важные вопросы
           </h2>
 
-          <div className="mt-8 xl:mt-auto ds-card p-6 sm:p-7 w-full xl:w-1/2 mx-auto xl:mx-0 text-left">
+          <div className="mt-8 laptop:mt-auto ds-card p-6 sm:p-7 w-full laptop:w-full mx-auto laptop:mx-0 text-left">
             <img
               src={tatyanaPhotoAsset.url}
               alt="Татьяна Злобина"
@@ -111,7 +111,7 @@ export function Faq() {
         </div>
 
         {/* Right column: accordion card */}
-        <div className="flex flex-col gap-3 sm:gap-4">
+        <div className="flex flex-col gap-3 sm:gap-4 laptop:col-span-7 wide:col-span-8">
           {items.map((it) => (
             <FaqItem key={it.q} q={it.q} a={it.a} />
           ))}

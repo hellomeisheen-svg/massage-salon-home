@@ -29,9 +29,10 @@ export function StatsSection() {
       className="scroll-mt-[120px] bg-[#EFF6FF] pt-[60px] pb-0 sm:pt-[70px] sm:pb-0 xl:pt-[140px] xl:pb-0"
     >
       <div className="container-1900">
-        <div className="flex flex-col gap-10 xl:grid xl:grid-cols-2 xl:gap-5 xl:items-start">
+        <div className="flex flex-col gap-10 laptop:grid laptop:grid-cols-12 laptop:gap-5 laptop:items-start">
+
           {/* Left: label + heading */}
-          <div className="text-left xl:text-left">
+          <div className="text-left laptop:col-span-5 wide:col-span-4">
             <span
               className="inline-flex items-center gap-2 px-4 py-1.5 ds-label text-white"
               style={{
@@ -48,7 +49,7 @@ export function StatsSection() {
           </div>
 
           {/* Right: stats grid */}
-          <div className="grid grid-cols-2 gap-x-6 gap-y-8 sm:gap-x-10 sm:gap-y-12 xl:pt-2">
+          <div className="grid grid-cols-2 gap-x-6 gap-y-8 sm:gap-x-10 sm:gap-y-12 laptop:col-span-7 wide:col-span-8 laptop:pt-2">
             {stats.map((stat, i) => (
               <div key={i} className="flex flex-col">
                 <span className="font-noto-serif-narrow text-[48px] font-light leading-[1] tracking-[-0.04em] text-[#1C3C8C] sm:text-[56px] xl:text-[72px]">
