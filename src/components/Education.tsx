@@ -74,14 +74,14 @@ export function Education() {
       <div className="container-1900 grid grid-cols-1 xl:grid-cols-[1fr_745px] gap-4 sm:gap-5 items-stretch">
 
         {/* Left: photo + quote panel */}
-        <div className="relative min-h-[480px] xl:min-h-0 xl:h-full flex flex-col rounded-[12px] overflow-hidden border border-[#DAEBFF] xl:border-0">
+        <div className="relative xl:min-h-0 xl:h-full flex flex-col xl:rounded-[12px] xl:overflow-hidden xl:border xl:border-[#DAEBFF]">
           <img
             src={tatianaPhoto.url}
             alt="Татьяна Злобина — мастер кабинета Седьмое небо"
             loading="lazy"
-            className="w-full h-[480px] sm:h-[720px] xl:absolute xl:inset-0 xl:h-full object-cover object-top sm:object-center"
+            className="w-full h-[480px] sm:h-[720px] rounded-[12px] border border-[#DAEBFF] xl:border-0 xl:rounded-none xl:absolute xl:inset-0 xl:h-full object-cover object-top sm:object-center"
           />
-          <div className="relative mt-auto xl:absolute xl:inset-x-0 xl:bottom-0 xl:mt-0 xl:p-[clamp(16px,2vw,32px)]">
+          <div className="relative mt-4 sm:mt-5 xl:absolute xl:inset-x-0 xl:bottom-0 xl:mt-0 xl:p-[clamp(16px,2vw,32px)]">
             <div className="relative overflow-hidden rounded-[12px] border border-[#DAEBFF] bg-white xl:bg-white/95 xl:backdrop-blur-sm p-6 sm:p-12 xl:p-[clamp(24px,4vw,48px)] shadow-[0_20px_50px_-12px_rgba(74,127,214,0.08)]">
               <div className="flex flex-col gap-6 sm:gap-8">
                 <div className="flex flex-col gap-3 sm:gap-4 xl:gap-3 relative z-10">
