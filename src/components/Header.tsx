@@ -107,7 +107,7 @@ export function Header({
       </div>
 
       {/* Mobile / tablet header */}
-      <div className="flex h-16 w-full items-center justify-between ds-card px-4 py-2.5 xl:hidden">
+      <div className="flex h-16 w-full items-center justify-between ds-card px-4 py-2.5 laptop:hidden">
         {/* Logo */}
         <Link to="/" aria-label="На главную" onClick={() => setMenuOpen(false)} className="flex h-10 items-center hover:opacity-70 transition-opacity">
           <Logo className="h-full w-auto" />
@@ -127,7 +127,7 @@ export function Header({
 
       {/* Mobile / tablet menu panel — same width as the header */}
       {menuOpen && (
-        <div className="absolute inset-x-4 sm:inset-x-5 top-[calc(100%+8px)] z-40 h-[calc(100dvh-104px)] sm:h-[calc(100dvh-108px)] xl:hidden">
+        <div className="absolute inset-x-4 sm:inset-x-5 top-[calc(100%+8px)] z-40 h-[calc(100dvh-104px)] sm:h-[calc(100dvh-112px)] laptop:hidden">
           <div className="flex h-full flex-col ds-card p-4">
             <nav className="flex-1 overflow-y-auto" aria-label="Мобильная навигация">
               <ul className="flex flex-col gap-1">
