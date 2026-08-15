@@ -567,7 +567,7 @@ export function ServiceCard({
         </div>
         
         {/* Mobile: Price + Actions */}
-        <div className="flex flex-col gap-3 px-2 sm:hidden sm:px-0">
+        <div className="flex flex-col gap-3 sm:hidden px-0">
           {/* Mobile Price */}
           <div className="flex items-center justify-center gap-4 py-2">
             {hasDiscount && (
