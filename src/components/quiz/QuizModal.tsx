@@ -134,22 +134,24 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
             
             <div className="grid gap-3 mb-10">
               {currentStep.options.map((opt) => {
-                const isSelected = (answers[currentStep.id] || []).includes(opt.text);
+                const isSelected = currentStep.type === "single" 
+                  ? answers[currentStep.id] === opt.id
+                  : (answers[currentStep.id] || []).includes(opt.id);
                 return (
                   <button
                     key={opt.id}
                     onClick={() => {
-                      const current = answers[currentStep.id] || [];
                       if (currentStep.type === "single") {
-                        setAnswers({ ...answers, [currentStep.id]: [opt.text] });
+                        setAnswers({ ...answers, [currentStep.id]: opt.id });
                         setTimeout(handleNext, 300);
                       } else {
-                        const exists = current.includes(opt.text);
+                        const current = answers[currentStep.id] || [];
+                        const exists = current.includes(opt.id);
                         setAnswers({ 
                           ...answers, 
                           [currentStep.id]: exists 
-                            ? current.filter((t: string) => t !== opt.text) 
-                            : [...current, opt.text] 
+                            ? current.filter((id: string) => id !== opt.id) 
+                            : [...current, opt.id] 
                         });
                       }
                     }}
