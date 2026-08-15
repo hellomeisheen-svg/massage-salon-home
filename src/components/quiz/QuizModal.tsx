@@ -11,7 +11,7 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
   const [answers, setAnswers] = useState<Record<string, any>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-  const [resultScenarioIds, setResultScenarioIds] = useState<string[]>([]);
+  const [recommendedServices, setRecommendedServices] = useState<any[]>([]);
 
   // Filter steps based on current answers
   const visibleSteps = QUIZ_CONFIG.steps.filter(s => !s.showIf || s.showIf(answers));
@@ -34,8 +34,8 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
 
   const handleNext = () => {
     if (isLastQuestion) {
-      const results = calculateResult(answers);
-      setResultScenarioIds(results);
+      const services = calculateResult(answers);
+      setRecommendedServices(services);
     }
     setStep(step + 1);
   };
@@ -115,7 +115,7 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
             <button onClick={handleNext} className="btn-primary mt-8 w-full">Подобрать программу</button>
           </div>
         ) : isResultsStep ? (
-          <QuizResults scenarioIds={resultScenarioIds} answers={answers} onNext={handleNext} />
+          <QuizResults services={recommendedServices} answers={answers} onNext={handleNext} />
         ) : isContactStep ? (
           <QuizContactForm onSubmit={onContactSubmit} isSubmitting={isSubmitting} />
         ) : (
