@@ -212,7 +212,7 @@ function PriceTableCell({
       <span className="font-noto-serif-narrow text-[13px] xl:text-[15px] font-light text-[#566A93] line-through">
         {renderPrice(formatPrice(total))}
       </span>
-      <span className="font-noto-serif-narrow text-[18px] xl:text-[24px] font-light text-[#1C3C8C]">
+      <span className="font-noto-serif-narrow text-[24px] font-light text-[#1C3C8C]">
         {renderPrice(formatPrice(current))}
       </span>
     </div>
