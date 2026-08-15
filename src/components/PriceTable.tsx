@@ -83,7 +83,7 @@ export function PriceTable({ prices, bookingPrefix }: { prices: ServicePrice[], 
                 >
                   <span
                     className={`whitespace-nowrap text-[13px] tracking-tight transition-colors duration-300 ${
-                      activeTab === i ? "font-medium text-[#1C3C8C]" : "font-light text-[#566A93]"
+                      activeTab === i ? "font-normal text-[#1C3C8C]" : "font-light text-[#566A93]"
                     }`}
                   >
                     {label}
