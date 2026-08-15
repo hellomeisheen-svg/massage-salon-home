@@ -109,11 +109,11 @@ export const QUIZ_CONFIG: {
     { id: "classic-face", name: "Классический — лицо", duration: "40 мин", price: "2 000 ₽", tags: ["face"] },
     { id: "classic-legs", name: "Классический — ноги/стопы", duration: "60 мин", price: "3 000 ₽", tags: ["legs"] },
     { id: "classic-head", name: "Классический — голова", duration: "20 мин", price: "1 000 ₽", tags: ["relax"] },
-    { id: "cups-fire", name: "Стихия Огонь (стеклянные банки)", duration: "10 мин", price: "2 000 ₽", tags: ["cups", "wellness"] },
-    { id: "cups-air", name: "Стихия Воздух (мягкие банки)", duration: "10-25 мин", price: "1 000-2 000 ₽", tags: ["cups", "wellness"] },
-    { id: "girudo-med", name: "Гирудотерапия (медицинские пиявки)", duration: "", price: "пакеты 6/16/74", tags: ["hirudo", "wellness"] },
-    { id: "girudo-cosm", name: "Гирудотерапия (косметические пиявки)", duration: "", price: "пакеты 6/10/20", tags: ["hirudo", "face", "wellness"] },
-    { id: "ketgut", name: "Акупунктурный кетгут", duration: "", price: "по запросу", tags: ["ketgut", "wellness"] },
+    { id: "cups-fire", name: "Стихия Огонь (стеклянные банки)", duration: "10 мин", price: "2 000 ₽", tags: ["wellness"] },
+    { id: "cups-air", name: "Стихия Воздух (мягкие банки)", duration: "10-25 мин", price: "1 000-2 000 ₽", tags: ["wellness"] },
+    { id: "girudo-med", name: "Гирудотерапия (медицинские пиявки)", duration: "", price: "пакеты 6/16/74", tags: ["wellness"] },
+    { id: "girudo-cosm", name: "Гирудотерапия (косметические пиявки)", duration: "", price: "пакеты 6/10/20", tags: ["face", "wellness"] },
+    { id: "ketgut", name: "Акупунктурный кетгут", duration: "", price: "по запросу", tags: ["wellness"] },
   ],
   scenarios: [
     {
