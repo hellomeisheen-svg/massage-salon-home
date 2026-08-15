@@ -170,7 +170,7 @@ function BookingDialog({
               </ul>
             </div>
 
-            <div className="mt-8 flex w-full flex-col gap-3">
+            <div className="mt-8 flex w-full flex-col gap-3 sm:px-0">
               <a
                 href="https://n2418813.yclients.com"
                 target="_blank"
