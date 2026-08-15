@@ -12,7 +12,7 @@ export type ServicePrice = {
   base: number;
 };
 
-export function PriceTable({ prices, title = "Форматы и стоимость" }: { prices: ServicePrice[], title?: string }) {
+export function PriceTable({ prices, title = "Форматы и стоимость", id }: { prices: ServicePrice[], title?: string, id?: string }) {
   const { openBooking } = useBooking();
   const [activeTab, setActiveTab] = useState(0);
 
@@ -22,13 +22,13 @@ export function PriceTable({ prices, title = "Форматы и стоимост
   const sessionDiscounts = [null, "-10%", "-15%"];
 
   return (
-    <section id="prices" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section">
+    <section id={id || "prices"} className="scroll-mt-[140px] ds-section opacity-0 animate-in fade-in duration-700 fill-mode-forwards">
       <div className="container-1900">
-        <h2 className="font-noto-serif-narrow text-center ds-h2 text-[#1C3C8C]">
+        <h2 className="font-noto-serif-narrow text-center ds-h2 text-[#1C3C8C] mb-8 sm:mb-12">
           {title}
         </h2>
 
-        <div className="mt-8 sm:mt-10 ds-card overflow-hidden">
+        <div className="ds-card overflow-hidden bg-white/50 backdrop-blur-sm border border-[#daebff]/40 shadow-sm transition-shadow hover:shadow-md">
           {/* Desktop */}
           <div className="hidden lg:block overflow-x-auto scrollbar-none">
             <table className="w-full text-left">
@@ -234,7 +234,7 @@ function PriceTableRow({ p, isProgram = false }: { p: ServicePrice, isProgram?: 
           {p.zone.includes(" • ") ? (
             <>
               <span>{p.zone.split(" • ")[0]}</span>
-              <span className="inline-flex items-center justify-center rounded-full bg-[#daebff]/60 px-3 py-1 text-[12px] xl:text-[14px] font-light leading-none text-[#566A93]">
+              <span className="inline-flex items-center justify-center rounded-full bg-[#daebff]/50 px-2.5 py-0.5 text-[11px] xl:text-[12px] font-light tracking-tight text-[#566A93]/80 border border-[#daebff]/30">
                 {p.zone.split(" • ")[1]}
               </span>
             </>
@@ -268,7 +268,7 @@ function PriceTableRow({ p, isProgram = false }: { p: ServicePrice, isProgram?: 
       ) : (
         <td className="px-4 py-5 xl:px-8">
           <div className="flex items-center gap-2">
-            <span className="font-noto-serif-narrow text-[13px] xl:text-[15px] font-light text-[#566A93] line-through">
+            <span className="font-noto-serif-narrow text-[13px] xl:text-[15px] font-light text-[#566A93]/40 line-through decoration-[#566A93]/20">
               {renderPrice(formatPrice(originalPrice))}
             </span>
             <span className="font-noto-serif-narrow text-[18px] xl:text-[24px] font-light text-[#1C3C8C]">
@@ -294,7 +294,7 @@ function PriceTableCell({
   const current = Math.round(total * (1 - discount));
   return (
     <div className="flex items-center gap-2">
-      <span className="font-noto-serif-narrow text-[13px] xl:text-[15px] font-light text-[#566A93] line-through">
+      <span className="font-noto-serif-narrow text-[13px] xl:text-[15px] font-light text-[#566A93]/40 line-through decoration-[#566A93]/20">
         {renderPrice(formatPrice(total))}
       </span>
       <span className="font-noto-serif-narrow text-[18px] xl:text-[24px] font-light text-[#1C3C8C]">
