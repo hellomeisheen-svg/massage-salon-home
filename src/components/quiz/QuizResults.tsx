@@ -24,22 +24,36 @@ export function QuizResults({
       </div>
 
       <div className="grid gap-4">
-        {primaryScenario.recommendedServiceIds.map(id => {
-          const service = getService(id);
-          if (!service) return null;
-          return <ServiceCard key={id} service={service} />;
-        })}
+        {(() => {
+          const services = primaryScenario.recommendedServiceIds
+            .map(id => getService(id))
+            .filter((s): s is QuizService => !!s);
+          
+          const massageServices = services.filter(s => !s.tags.includes("wellness"));
+          const wellnessServices = services.filter(s => s.tags.includes("wellness"));
+          
+          return [...massageServices, ...wellnessServices].map(service => (
+            <ServiceCard key={service.id} service={service} />
+          ));
+        })()}
       </div>
 
       {secondaryScenario && (
         <div className="pt-8 border-t border-[#DAEBFF]">
           <h3 className="ds-h4 text-[#1c3c8c] mb-4 text-center">Также вам может подойти</h3>
           <div className="grid gap-4">
-            {secondaryScenario.recommendedServiceIds.slice(0, 1).map(id => {
-              const service = getService(id);
-              if (!service) return null;
-              return <ServiceCard key={id} service={service} />;
-            })}
+            {(() => {
+              const services = secondaryScenario.recommendedServiceIds
+                .map(id => getService(id))
+                .filter((s): s is QuizService => !!s);
+              
+              const massageServices = services.filter(s => !s.tags.includes("wellness"));
+              const wellnessServices = services.filter(s => s.tags.includes("wellness"));
+              
+              return [...massageServices, ...wellnessServices].slice(0, 1).map(service => (
+                <ServiceCard key={service.id} service={service} />
+              ));
+            })()}
           </div>
         </div>
       )}
