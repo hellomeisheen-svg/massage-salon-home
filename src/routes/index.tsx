@@ -6,7 +6,7 @@ import { Services } from "@/components/Services";
 
 import { Approach } from "@/components/Approach";
 import { PromoBanner } from "@/components/PromoBanner";
-import { IntroSection } from "@/components/IntroSection";
+
 import { StatsSection } from "@/components/StatsSection";
 import { Programs } from "@/components/Programs";
 import { Education } from "@/components/Education";
@@ -80,7 +80,7 @@ function Index() {
       <Services />
       <PromoBanner />
       
-      <IntroSection />
+      
       <StatsSection />
       <Approach />
       
