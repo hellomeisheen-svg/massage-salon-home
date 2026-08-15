@@ -9,6 +9,7 @@ import { PromoBanner } from "@/components/PromoBanner";
 import { Programs } from "@/components/Programs";
 import { Education } from "@/components/Education";
 import { OtherServices } from "@/components/OtherServices";
+import { PriceTable } from "@/components/PriceTable";
 import { BookingProvider, useBooking } from "@/components/BookingModal";
 import { formatPrice, pluralize, renderPrice } from "@/components/Services";
 
@@ -131,7 +132,7 @@ function GirudoterapiyaPage() {
         <Header items={servicePageNav} />
         <PageHero />
         <GirudoterapiyaServices />
-        <Prices />
+        <PriceTable prices={hirudoRows} />
         <PromoBanner />
         <Programs prioritizeKeys={["hirudoMed", "hirudoCosm"]} />
         <PromoBanner
@@ -433,174 +434,7 @@ function GirudoterapiyaServices() {
   );
 }
 
-const sessionDiscounts = [null, "-10%", "-15%"] as const;
-const discountValues = [0, 0.1, 0.15];
-const sessionCounts = [1, 3, 6];
-
-function HirudoPriceCell({ p, index }: { p: HirudoRow; index: number }) {
-  const sessions = sessionCounts[index];
-  const discount = discountValues[index];
-  const leechCount = p.leechCounts[index];
-  const total = p.perLeech ? leechCount * p.base : sessions * p.base;
-  const current = Math.round(total * (1 - discount));
-  const leechWord = pluralize(leechCount, ["пиявка", "пиявки", "пиявок"]);
-  return (
-    <div className="flex flex-col gap-0.5">
-      <div className="flex items-center gap-2">
-        {discount > 0 && (
-          <span className="font-noto-serif-narrow text-[13px] font-light text-[#566A93] line-through">
-            {renderPrice(formatPrice(total))}
-          </span>
-        )}
-        <span className="font-noto-serif-narrow text-[18px] font-light text-[#1C3C8C]">
-          {renderPrice(formatPrice(current))}
-        </span>
-      </div>
-      <span className="text-[12px] font-light text-[#566A93]">
-        {leechCount} {leechWord}
-      </span>
-    </div>
-  );
-}
-
-function HirudoPriceTableRow({ p }: { p: HirudoRow }) {
-  return (
-    <tr className="group transition-colors hover:bg-[#F7FBFF]">
-      <td className="px-4 py-5 xl:px-8">
-        <div className="font-noto-serif-narrow text-[18px] xl:text-[24px] font-light leading-[1.25] text-[#1C3C8C]">
-          {p.zone}
-        </div>
-        <div className="mt-1 text-[13px] font-light leading-[18px] text-[#566A93] sm:hidden">
-          {p.subtitle}
-        </div>
-      </td>
-      <td className="px-4 py-5 text-[15px] font-light text-[#566A93] xl:px-8">
-        {p.duration}
-      </td>
-      {[0, 1, 2].map((i) => (
-        <td key={i} className="px-4 py-5 xl:px-8">
-          <HirudoPriceCell p={p} index={i} />
-        </td>
-      ))}
-    </tr>
-  );
-}
-
-function HirudoPriceTableMobileRow({ p }: { p: HirudoRow }) {
-  const tableLabels = ["1 сеанс", "3 сеанса", "6 сеансов"];
-  return (
-    <div className="px-4 py-5">
-      <div className="min-w-0">
-        <div className="font-noto-serif-narrow text-[24px] font-light leading-[1.25] text-[#1C3C8C]">
-          {p.zone}
-        </div>
-        <div className="mt-1 text-[13px] font-light leading-[18px] text-[#566A93]">
-          {p.duration}
-        </div>
-      </div>
-      <div className="mt-4 grid grid-cols-3 gap-2">
-        {[0, 1, 2].map((i) => {
-          const sessions = sessionCounts[i];
-          const discount = discountValues[i];
-          const leechCount = p.leechCounts[i];
-          const total = p.perLeech ? leechCount * p.base : sessions * p.base;
-          const current = Math.round(total * (1 - discount));
-          const leechWord = pluralize(leechCount, ["пиявка", "пиявки", "пиявок"]);
-          return (
-            <div key={i}>
-              <div className="text-[11px] font-medium text-[#566A93]">
-                {tableLabels[i]}
-                {discount > 0 && (
-                  <span className="ml-1 rounded-full bg-[#1C3C8C] px-1.5 py-0.5 text-[9px] font-semibold text-white">
-                    {sessionDiscounts[i]}
-                  </span>
-                )}
-              </div>
-              <div className="font-noto-serif-narrow mt-1 text-[22px] font-light text-[#1C3C8C]">
-                {renderPrice(formatPrice(current))}
-              </div>
-              {discount > 0 && (
-                <div className="font-noto-serif-narrow text-[11px] font-light text-[#566A93] line-through">
-                  {renderPrice(formatPrice(total))}
-                </div>
-              )}
-              <div className="text-[11px] font-light text-[#566A93]">
-                {leechCount} {leechWord}
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  );
-}
-
-function Prices() {
-  const { openBooking } = useBooking();
-  return (
-    <section id="prices" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section">
-      <div className="container-1900">
-        <h2 className="font-noto-serif-narrow text-center ds-h2 text-[#1C3C8C]">
-          Форматы и стоимость
-        </h2>
-
-        <div className="mt-8 sm:mt-10 ds-card overflow-hidden">
-          {/* Desktop */}
-          <div className="hidden sm:block overflow-x-auto scrollbar-none">
-            <table className="w-full text-left">
-              <thead>
-                <tr className="bg-[#EFF6FF]">
-                  <th className="px-4 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
-                    Формат
-                  </th>
-                  <th className="px-4 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
-                    Длительность
-                  </th>
-                  <th className="px-4 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
-                    1 сеанс
-                  </th>
-                  <th className="px-4 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
-                    <span className="flex items-center gap-2">
-                      3 сеанса
-                      <span className="rounded-full bg-[#1C3C8C] px-2 py-0.5 text-[10px] font-semibold text-white">
-                        -10%
-                      </span>
-                    </span>
-                  </th>
-                  <th className="px-4 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
-                    <span className="flex items-center gap-2">
-                      6 сеансов
-                      <span className="rounded-full bg-[#1C3C8C] px-2 py-0.5 text-[10px] font-semibold text-white">
-                        -15%
-                      </span>
-                    </span>
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-[#daebff]">
-                {hirudoRows.map((p) => (
-                  <HirudoPriceTableRow key={p.zone} p={p} />
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          {/* Mobile */}
-          <div className="sm:hidden divide-y divide-[#daebff]">
-            {hirudoRows.map((p) => (
-              <HirudoPriceTableMobileRow key={p.zone} p={p} />
-            ))}
-          </div>
-        </div>
-
-        <p className="mt-6 text-center text-[14px] font-light text-[#566A93]">
-          Цены указаны с учётом скидки при покупке курса. Оплатить можно на месте.
-        </p>
-
-      </div>
-    </section>
-  );
-}
+// Prices component removed to use shared PriceTable component
 
 function FaqItem({ q, a }: { q: string; a: React.ReactNode }) {
   const [open, setOpen] = useState(false);

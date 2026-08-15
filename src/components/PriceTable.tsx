@@ -101,13 +101,15 @@ export function PriceTable({ prices, bookingPrefix }: { prices: ServicePrice[], 
               {prices.map((p) => {
                 const count = sessionCounts[activeTab];
                 const discount = discountValues[activeTab];
-                const totalBase = p.base * count;
+                const isHirudo = p.zone.toLowerCase().includes("пиявк");
+                
+                // Specific data for leech therapy
+                const hirudoRow = isHirudo ? (p as any) : null;
+                const leeches = hirudoRow?.leechCounts ? hirudoRow.leechCounts[activeTab] : 0;
+                
+                const totalBase = hirudoRow?.perLeech ? leeches * p.base : p.base * count;
                 const currentPrice = Math.round(totalBase * (1 - discount));
                 const sessionWord = pluralize(count, ["сеанс", "сеанса", "сеансов"]);
-                
-                // Specific data for leech therapy based on context
-                const isHirudo = p.zone.toLowerCase().includes("пиявк");
-                const leeches = count === 1 ? 6 : (count === 3 ? 16 : (count === 6 ? 74 : 0));
                 
                 return (
                   <div key={p.zone} className="bg-white p-4 rounded-[12px] border border-[#daebff]/50">
