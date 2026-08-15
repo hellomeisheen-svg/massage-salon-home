@@ -15,6 +15,8 @@ export const Route = createFileRoute("/price")({
       },
       { property: "og:title", content: "Прайс-лист — Седьмое небо" },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://7heavenmassage.ru/price" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "https://7heavenmassage.ru/price" }],
   }),
@@ -34,7 +36,7 @@ function PricePage() {
 
   return (
     <BookingProvider>
-      <div className="relative min-h-screen bg-[#EFF6FF] pt-20 xl:pt-[100px]">
+      <div className="accent-noto-serif relative min-h-screen bg-[#EFF6FF] pt-20 xl:pt-[100px]">
         <Header />
         <main className="container-1900 py-10 sm:py-16">
           <PriceTable prices={allPrices} />
