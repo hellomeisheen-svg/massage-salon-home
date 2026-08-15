@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { BookingProvider } from "@/components/BookingModal";
-import { PriceTable } from "@/components/PriceTable";
+import { PriceTable, type ServicePrice } from "@/components/PriceTable";
 import { serviceTypes } from "@/components/Services";
 import { Programs } from "@/components/Programs";
 
