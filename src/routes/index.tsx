@@ -80,7 +80,7 @@ function Index() {
       <Services />
       <PromoBanner />
       
-      <IntroSection />
+      
       <StatsSection />
       <Approach />
       
