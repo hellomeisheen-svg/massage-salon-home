@@ -15,7 +15,7 @@ const mainEducation: EduItem[] = [
 ];
 
 const extraEducation: EduItem[] = [
-  { school: "Школа Бахолдиной, Москва", items: ["Баночный массаж", "Акупунктурный кетгут"] },
+  { school: "Академия Бахолдиной, Москва", items: ["Баночный массаж", "Акупунктурный кетгут"] },
 ];
 
 function parseSchool(school: string) {
