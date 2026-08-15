@@ -9,7 +9,7 @@ import { PromoBanner } from "@/components/PromoBanner";
 import { Programs } from "@/components/Programs";
 import { Education } from "@/components/Education";
 import { OtherServices } from "@/components/OtherServices";
-import { PriceTable } from "@/components/PriceTable";
+import { PriceTable, type ServicePrice } from "@/components/PriceTable";
 import { BookingProvider, useBooking } from "@/components/BookingModal";
 import { formatPrice, pluralize, renderPrice } from "@/components/Services";
 
@@ -132,7 +132,7 @@ function GirudoterapiyaPage() {
         <Header items={servicePageNav} />
         <PageHero />
         <GirudoterapiyaServices />
-        <PriceTable prices={hirudoRows} />
+        <Prices />
         <PromoBanner />
         <Programs prioritizeKeys={["hirudoMed", "hirudoCosm"]} />
         <PromoBanner
@@ -434,7 +434,104 @@ function GirudoterapiyaServices() {
   );
 }
 
-// Prices component removed to use shared PriceTable component
+const sessionDiscounts = [null, "-10%", "-15%"] as const;
+const discountValues = [0, 0.1, 0.15];
+const sessionCounts = [1, 3, 6];
+const tabLabels = ["1\u00A0сеанс", "3\u00A0сеанса", "6\u00A0сеансов"];
+
+function PriceCard({ p }: { p: HirudoRow }) {
+  const [active, setActive] = useState(0);
+
+  const count = sessionCounts[active];
+  const discount = discountValues[active];
+  
+  // Specific data for leech therapy
+  const leeches = p.leechCounts[active];
+  const totalBase = p.perLeech ? leeches * p.base : p.base * count;
+  const currentPrice = Math.round(totalBase * (1 - discount));
+  
+  const sessionWord = pluralize(count, ["сеанс", "сеанса", "сеансов"]);
+  const summary = `${count} ${sessionWord} · ${p.duration}`;
+
+  return (
+    <article className="flex flex-col ds-card p-6 sm:p-8 xl:p-10">
+      <div className="flex items-stretch gap-1 rounded-[10px] bg-[#EFF6FF] p-1">
+        {tabLabels.map((label, i) => (
+          <button
+            key={label}
+            type="button"
+            onClick={() => setActive(i)}
+            className={`relative flex flex-1 items-center justify-center rounded-[8px] px-2 py-2.5 transition-all duration-300 ${
+              active === i ? "bg-white shadow-[0_2px_8px_rgba(28,60,140,0.08)]" : "bg-transparent"
+            }`}
+          >
+            <span
+              className={`whitespace-nowrap text-[13px] tracking-tight transition-colors duration-300 ${
+                active === i ? "font-medium text-[#1C3C8C]" : "font-light text-[#566A93]"
+              }`}
+            >
+              {label}
+            </span>
+            {sessionDiscounts[i] && (
+              <span className="absolute -top-1 right-1 rounded-full bg-[#1C3C8C] px-1.5 py-0.5 text-[9px] font-semibold tracking-wide text-white">
+                {sessionDiscounts[i]}
+              </span>
+            )}
+          </button>
+        ))}
+      </div>
+
+      <h3 className="font-noto-serif-narrow mt-5 ds-h3 text-[#1C3C8C]">
+        {p.zone}
+      </h3>
+      <p className="mt-3 body-text text-[#566A93]">{p.subtitle}</p>
+
+      <div className="mt-6 flex flex-col gap-1">
+        <p className="text-[13px] font-medium leading-[18px] tracking-wide text-[#1C3C8C]">
+          {summary}
+        </p>
+        <p className="text-[12px] font-light text-[#566A93]">
+          {leeches} {pluralize(leeches, ["пиявка", "пиявки", "пиявок"])}
+        </p>
+      </div>
+
+      <div className="mt-6 flex items-center justify-end gap-4 sm:gap-5">
+        {discount > 0 && (
+          <span className="font-noto-serif-narrow text-[17px] sm:text-[19px] font-light leading-[1.2] text-[#566A93] line-through">
+            {renderPrice(formatPrice(totalBase))}
+          </span>
+        )}
+        <div className="flex flex-col items-end">
+          <span className="font-noto-serif-narrow ds-price text-[#1C3C8C]">
+            {renderPrice(formatPrice(currentPrice))}
+          </span>
+          <span className="text-[13px] font-light text-[#566A93]">
+            за {count} {sessionWord}
+          </span>
+        </div>
+      </div>
+    </article>
+  );
+}
+
+function Prices() {
+  return (
+    <section id="prices" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section">
+      <div className="container-1900">
+        <h2 className="font-noto-serif-narrow text-center ds-h2 text-[#1C3C8C]">
+          Форматы и&nbsp;стоимость
+        </h2>
+
+        <div className="mt-10 grid grid-cols-1 gap-4 sm:gap-5 xl:grid-cols-2">
+          {hirudoRows.map((p) => (
+            <PriceCard key={p.zone} p={p} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 
 function FaqItem({ q, a }: { q: string; a: React.ReactNode }) {
   const [open, setOpen] = useState(false);
