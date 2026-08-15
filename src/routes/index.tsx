@@ -76,10 +76,11 @@ function Index() {
     <div className="accent-noto-serif relative min-h-screen bg-[#EFF6FF] pt-20 xl:pt-[100px]">
       <Header />
       <Hero />
+      <StatsSection />
+      <QuoteBlock />
       <Services />
       <PromoBanner />
-      
-      <StatsSection />
+
       <Approach />
       
       
