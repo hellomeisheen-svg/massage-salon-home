@@ -69,8 +69,8 @@ export function HabitQuote() {
       <div className="container-1900 relative z-10 flex flex-col items-center px-4 sm:px-5 text-center">
         <Sparkle className="mb-8 sm:mb-10 xl:mb-12 h-6 w-6 sm:h-7 sm:w-7 text-[#1C3C8C]" />
         
-        <div className="relative z-10 max-w-[900px]">
-          <h2 className="font-noto-serif-narrow text-[24px] sm:text-[32px] xl:text-[44px] leading-[1.2] text-[#1C3C8C]">
+        <div className="relative z-10 max-w-[900px] xl:max-w-[1100px]">
+          <h2 className="font-noto-serif-narrow ds-h1 text-[#1C3C8C]">
             Регулярная забота о&nbsp;теле&nbsp;— спокойная привычка, которая помогает сохранять внутреннюю опору и&nbsp;легкость в&nbsp;повседневной жизни
           </h2>
         </div>
