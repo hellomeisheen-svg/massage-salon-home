@@ -65,18 +65,6 @@ function PricePage() {
     }
   };
 
-  // Категория "Оздоровительные практики"
-  const wellnessPrices = serviceTypes
-    .filter(type => type.category === 0)
-    .flatMap(type => 
-      type.variants.map(v => ({
-        zone: type.variants.length > 1 ? `${type.title} • ${v.zone}` : type.title,
-        subtitle: v.subtitle,
-        duration: v.duration,
-        base: parseInt(v.price.replace(/[^\d]/g, "")) || 0
-      }))
-    );
-
   // Категория "Массаж"
   const massagePrices = serviceTypes
     .filter(type => type.category === 1)
@@ -89,34 +77,46 @@ function PricePage() {
       }))
     );
 
+  // Категория "Оздоровительные практики"
+  const wellnessPrices = serviceTypes
+    .filter(type => type.category === 0)
+    .flatMap(type => 
+      type.variants.map(v => ({
+        zone: type.variants.length > 1 ? `${type.title} • ${v.zone}` : type.title,
+        subtitle: v.subtitle,
+        duration: v.duration,
+        base: parseInt(v.price.replace(/[^\d]/g, "")) || 0
+      }))
+    );
+
   const programPrices: ServicePrice[] = [
     { 
       zone: "Программа «Лёгкость»", 
-      subtitle: "Лимфатический (1)\nЛимфодренажный (6)\nМягкие банки (6)", 
+      subtitle: "Лимфатический (1), Лимфодренажный (6), Мягкие банки (6)", 
       duration: "13 сеансов", 
       base: 38750 
     },
     { 
       zone: "Программа «Свежесть»", 
-      subtitle: "Лимфодренажный Лицо (3)\nКлассический Лицо (3)\nКосм. пиявки (6)", 
+      subtitle: "Лимфодренажный Лицо (3), Классический Лицо (3), Косм. пиявки (6)", 
       duration: "12 сеансов", 
       base: 35000 
     },
     { 
       zone: "Программа «Тишина»", 
-      subtitle: "Лимфодренажный (3)\nКлассический (3)\nКосм. пиявки (6)", 
+      subtitle: "Лимфодренажный (3), Классический (3), Косм. пиявки (6)", 
       duration: "12 сеансов", 
       base: 40000 
     },
     { 
       zone: "Программа «Баланс»", 
-      subtitle: "Классический (6)\nСтеклянные банки (6)\nМед. пиявки (6)", 
+      subtitle: "Классический (6), Стеклянные банки (6), Мед. пиявки (6)", 
       duration: "18 сеансов", 
       base: 56250 
     },
     { 
       zone: "Программа «Свобода»", 
-      subtitle: "Мед. пиявки (6)\nСтеклянные банки (8)", 
+      subtitle: "Мед. пиявки (6), Стеклянные банки (8)", 
       duration: "14 сеансов", 
       base: 30000 
     },
@@ -127,7 +127,6 @@ function PricePage() {
       <div className="accent-noto-serif relative min-h-screen bg-[#EFF6FF] pt-20 xl:pt-[100px]">
         <Header />
         
-        {/* Price Navigation */}
         <div className="sticky top-20 xl:top-[100px] z-30 bg-[#EFF6FF]/80 backdrop-blur-md border-b border-[#daebff]/40 py-4">
           <div className="container-1900 flex justify-center gap-2 sm:gap-6 overflow-x-auto scrollbar-none px-4">
             {[
