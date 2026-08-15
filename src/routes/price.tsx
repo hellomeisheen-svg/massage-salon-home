@@ -4,7 +4,8 @@ import { Footer } from "@/components/Footer";
 import { BookingProvider } from "@/components/BookingModal";
 import { PriceTable, type ServicePrice } from "@/components/PriceTable";
 import { serviceTypes } from "@/components/Services";
-import { Programs } from "@/components/Programs";
+import { PriceInclusions, FinalCTA } from "@/components/PriceExtras";
+import { useState, useEffect } from "react";
 
 export const Route = createFileRoute("/price")({
   head: () => ({
@@ -25,6 +26,45 @@ export const Route = createFileRoute("/price")({
 });
 
 function PricePage() {
+  const [activeSection, setActiveSection] = useState("massage");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ["massage", "wellness", "programs"];
+      const scrollPos = window.scrollY + 200;
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const top = element.offsetTop;
+          const height = element.offsetHeight;
+          if (scrollPos >= top && scrollPos < top + height) {
+            setActiveSection(section);
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollTo = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = 100;
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+  };
+
   // Категория "Оздоровительные практики"
   const wellnessPrices = serviceTypes
     .filter(type => type.category === 0)
@@ -49,8 +89,6 @@ function PricePage() {
       }))
     );
 
-  // Категория "Программы восстановления" (имитируем структуру ServicePrice)
-  // На основе данных из Programs.tsx (заглушка для демонстрации в таблице)
   const programPrices: ServicePrice[] = [
     { 
       zone: "Программа «Лёгкость»", 
@@ -88,11 +126,38 @@ function PricePage() {
     <BookingProvider>
       <div className="accent-noto-serif relative min-h-screen bg-[#EFF6FF] pt-20 xl:pt-[100px]">
         <Header />
-        <main className="container-1900 space-y-20 py-10 sm:py-16">
-          <PriceTable title="Массаж" prices={massagePrices} />
-          <PriceTable title="Оздоровительные практики" prices={wellnessPrices} />
-          <PriceTable title="Программы восстановления" prices={programPrices} />
+        
+        {/* Price Navigation */}
+        <div className="sticky top-20 xl:top-[100px] z-30 bg-[#EFF6FF]/80 backdrop-blur-md border-b border-[#daebff]/40 py-4">
+          <div className="container-1900 flex justify-center gap-2 sm:gap-6 overflow-x-auto scrollbar-none px-4">
+            {[
+              { id: "massage", label: "Массаж" },
+              { id: "wellness", label: "Практики" },
+              { id: "programs", label: "Программы" }
+            ].map((nav) => (
+              <button
+                key={nav.id}
+                onClick={() => scrollTo(nav.id)}
+                className={`whitespace-nowrap px-4 py-2 rounded-full text-sm sm:text-base transition-all duration-300 ${
+                  activeSection === nav.id
+                    ? "bg-[#1C3C8C] text-white shadow-md"
+                    : "text-[#566A93] hover:text-[#1C3C8C] hover:bg-white/50"
+                }`}
+              >
+                {nav.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <main className="container-1900 space-y-24 sm:space-y-32 py-12 sm:py-20">
+          <PriceTable id="massage" title="Массаж" prices={massagePrices} />
+          <PriceInclusions />
+          <PriceTable id="wellness" title="Оздоровительные практики" prices={wellnessPrices} />
+          <PriceTable id="programs" title="Программы восстановления" prices={programPrices} />
+          <FinalCTA />
         </main>
+        
         <Footer />
       </div>
     </BookingProvider>
