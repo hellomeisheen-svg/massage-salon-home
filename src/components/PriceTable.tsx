@@ -30,7 +30,7 @@ export function PriceTable({ prices, bookingPrefix }: { prices: ServicePrice[], 
 
         <div className="mt-8 sm:mt-10 ds-card overflow-hidden">
           {/* Desktop */}
-          <div className="hidden xl:block overflow-x-auto scrollbar-none">
+          <div className="hidden lg:block overflow-x-auto scrollbar-none">
             <table className="w-full text-left">
               <thead>
                 <tr className="bg-[#EFF6FF]">
@@ -70,7 +70,7 @@ export function PriceTable({ prices, bookingPrefix }: { prices: ServicePrice[], 
           </div>
 
           {/* Mobile & Tablet Tabs */}
-          <div className="xl:hidden p-5 sm:p-8">
+          <div className="lg:hidden p-5 sm:p-8">
             <div className="flex items-stretch gap-1 rounded-[10px] bg-[#EFF6FF] p-1">
               {tabLabels.map((label, i) => (
                 <button
