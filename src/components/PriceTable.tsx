@@ -120,7 +120,7 @@ export function PriceTable({ prices, title = "Форматы и стоимост
                             {p.zone.includes(" • ") ? (
                               <>
                                 <span>{p.zone.split(" • ")[0]}</span>
-                                <span className="inline-flex items-center justify-center rounded-full bg-[#daebff] px-2 py-0.5 text-[10px] font-medium leading-none text-[#1C3C8C]">
+                                <span className="inline-flex items-center justify-center rounded-full bg-[#daebff]/60 px-2 py-0.5 text-[10px] font-light leading-none text-[#566A93]">
                                   {p.zone.split(" • ")[1]}
                                 </span>
                               </>
@@ -186,7 +186,7 @@ function PriceTableRow({ p }: { p: ServicePrice }) {
           {p.zone.includes(" • ") ? (
             <>
               <span>{p.zone.split(" • ")[0]}</span>
-              <span className="inline-flex items-center justify-center rounded-full bg-[#daebff] px-3 py-1 text-[12px] xl:text-[14px] font-medium leading-none text-[#1C3C8C]">
+              <span className="inline-flex items-center justify-center rounded-full bg-[#daebff]/60 px-3 py-1 text-[12px] xl:text-[14px] font-light leading-none text-[#566A93]">
                 {p.zone.split(" • ")[1]}
               </span>
             </>
