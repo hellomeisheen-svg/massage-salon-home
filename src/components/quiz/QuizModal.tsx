@@ -94,7 +94,7 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
             <button onClick={handleNext} className="btn-primary mt-8 w-full">Подобрать программу</button>
           </div>
         ) : isResultsStep ? (
-          <QuizResults scenarioIds={resultScenarioIds} onNext={handleNext} />
+          <QuizResults scenarioIds={resultScenarioIds} answers={answers} onNext={handleNext} />
         ) : isContactStep ? (
           <QuizContactForm onSubmit={onContactSubmit} isSubmitting={isSubmitting} />
         ) : (
@@ -114,11 +114,16 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
                     onClick={() => {
                       const current = answers[currentStep.id] || [];
                       if (currentStep.type === "single") {
-                        setAnswers({ ...answers, [currentStep.id]: [opt.text], goal: currentStep.id === "goal" ? opt.text : answers.goal });
+                        setAnswers({ ...answers, [currentStep.id]: [opt.text] });
                         setTimeout(handleNext, 300);
                       } else {
                         const exists = current.includes(opt.text);
-                        setAnswers({ ...answers, [currentStep.id]: exists ? current.filter(t => t !== opt.text) : [...current, opt.text] });
+                        setAnswers({ 
+                          ...answers, 
+                          [currentStep.id]: exists 
+                            ? current.filter((t: string) => t !== opt.text) 
+                            : [...current, opt.text] 
+                        });
                       }
                     }}
                     className={`w-full text-left p-4 rounded-[0.5rem] border transition-all ${isSelected ? "border-[#1C3C8C] bg-white" : "bg-[#EFF6FF] text-[#566A93]"}`}
