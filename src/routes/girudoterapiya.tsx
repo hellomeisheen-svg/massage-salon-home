@@ -132,7 +132,7 @@ function GirudoterapiyaPage() {
         <Header items={servicePageNav} />
         <PageHero />
         <GirudoterapiyaServices />
-        <Prices />
+        <PriceTable prices={hirudoRows} />
         <PromoBanner />
         <Programs prioritizeKeys={["hirudoMed", "hirudoCosm"]} />
         <PromoBanner
