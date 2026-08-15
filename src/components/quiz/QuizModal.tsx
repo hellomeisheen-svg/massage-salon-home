@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { X, ChevronLeft, Loader2 } from "lucide-react";
+import { X, ChevronLeft, Loader2, Check } from "lucide-react";
 import { QUIZ_CONFIG, calculateResult } from "@/config/quiz";
 import { submitQuizLead } from "@/lib/quiz.functions";
 import { QuizResults } from "./QuizResults";

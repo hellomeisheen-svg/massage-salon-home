@@ -1,30 +1,82 @@
 import { useState } from "react";
 import { QuizModal } from "@/components/quiz/QuizModal";
 
+function SpecialistBlock() {
+  return (
+    <div className="flex flex-col items-start gap-3 sm:gap-4">
+      <img
+        className="h-[90px] w-[70px] rounded-lg border border-[#daebff] object-cover xl:h-[110px] xl:w-[85px]"
+        alt="Татьяна Злобина"
+        src="/images/tatyana-photo.webp"
+      />
+      <div className="flex flex-col gap-1">
+        <div className="font-noto-serif-narrow ds-h4 text-[#1c3c8c]">
+          Татьяна&nbsp;Злобина
+        </div>
+        <p className="text-[16px] font-light leading-[26px] text-[#566A93]">
+          Мастер кабинета, специалист
+          <br />
+          по&nbsp;оздоровительным практикам
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function HeadlineBlock({ onOpenQuiz }: { onOpenQuiz: () => void }) {
+  return (
+    <div className="flex flex-col tablet-text-block xl:min-w-[640px] xl:w-[640px]">
+      <h1 className="font-noto-serif-narrow ds-h1 text-[#1C3C8C] xl:whitespace-pre-line">
+        {"Массаж, гирудотерапия и\u00a0банки во\u00a0Владивостоке"}
+      </h1>
+      <p className="mt-4 text-[16px] font-light leading-[26px] text-[#566A93] xl:max-w-[540px]">
+        Убираю напряжение, отёки и&nbsp;боли, возвращаю лёгкость движений — первый эффект уже после 1–2 сеансов.
+      </p>
+      <div className="mt-[30px] flex flex-col gap-3 sm:flex-row sm:gap-4">
+        <a
+          href="https://n2418813.yclients.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-primary w-full sm:w-[280px] xl:w-[250px] inline-flex items-center justify-center text-center whitespace-nowrap"
+        >
+          Онлайн запись
+        </a>
+        <button
+          type="button"
+          onClick={onOpenQuiz}
+          className="btn-secondary w-full sm:w-[280px] xl:w-[250px] whitespace-nowrap"
+        >
+          Подобрать программу
+        </button>
+      </div>
+    </div>
+  );
+}
+
 export function Hero() {
   const [isQuizOpen, setIsQuizOpen] = useState(false);
 
   return (
     <main className="bg-[#EFF6FF] py-4 sm:py-5">
       <section id="hero" className="container-1900 grid grid-cols-1 gap-4 sm:gap-5 xl:min-h-[calc(100vh-160px)] xl:grid-cols-2">
-        <div className="flex min-h-0 flex-col ds-card p-5 sm:p-6 xl:p-10">
-          {/* Content content... */}
+        {/* Content card */}
+        <div className="flex min-h-0 flex-col ds-card p-5 sm:min-h-[520px] sm:p-6 xl:min-h-0 xl:p-10">
+          <SpecialistBlock />
           <div className="mt-[100px] pt-0 sm:mt-[140px] xl:mt-auto xl:pt-[140px]">
-            <h1 className="font-noto-serif-narrow ds-h1 text-[#1C3C8C] xl:whitespace-pre-line">
-              Массаж, гирудотерапия и банки во Владивостоке
-            </h1>
-            <div className="mt-[30px] flex flex-col gap-3 sm:flex-row sm:gap-4">
-              <a href="https://n2418813.yclients.com" className="btn-primary w-full sm:w-[280px] xl:w-[250px] inline-flex items-center justify-center">
-                Онлайн запись
-              </a>
-              <button onClick={() => setIsQuizOpen(true)} className="btn-secondary w-full sm:w-[280px] xl:w-[250px]">
-                Подобрать программу
-              </button>
-            </div>
+            <HeadlineBlock onOpenQuiz={() => setIsQuizOpen(true)} />
           </div>
         </div>
 
-        {/* Hero image... */}
+        {/* Hero image */}
+        <div className="relative h-[420px] overflow-hidden rounded-[12px] border border-[#daebff] sm:h-[520px] xl:h-auto xl:min-h-0">
+          <img
+            className="absolute inset-0 h-full w-full scale-x-[-1] object-cover object-top sm:object-center"
+            alt="Оздоровительные процедуры"
+            src="/images/hero-portrait-solid.webp"
+            loading="eager"
+            fetchPriority="high"
+          />
+        </div>
       </section>
       <QuizModal isOpen={isQuizOpen} onClose={() => setIsQuizOpen(false)} />
     </main>
