@@ -56,6 +56,7 @@ export function HabitQuote() {
               width={512}
               height={512}
               loading="lazy"
+              decoding="async"
               className={`deco-photo ${img.className}`}
               style={{
                 ["--deco-delay" as string]: img.delay,

@@ -82,6 +82,8 @@ export function Hero() {
             className="absolute inset-0 h-full w-full scale-x-[-1] object-cover object-top sm:object-center"
             alt="Оздоровительные процедуры"
             src="/images/hero-portrait-solid.webp"
+            loading="eager"
+            fetchPriority="high"
           />
         </div>
 

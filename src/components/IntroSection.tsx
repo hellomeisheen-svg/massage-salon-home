@@ -19,6 +19,8 @@ export function IntroSection() {
               src="/images/tatyana-photo.webp" 
               alt="Татьяна Злобина — мастер оздоровительных практик" 
               className="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
             />
           </div>
           

@@ -173,6 +173,8 @@ export const RollingGallery: React.FC<RollingGalleryProps> = ({
                 src={url}
                 alt={alt}
                 draggable={false}
+                loading="lazy"
+                decoding="async"
                 style={{ width: imgWidth, height: imgHeight, flexShrink: 0, maxWidth: "none" }}
                 className={`pointer-events-none rounded-[12px] shadow-[0_8px_24px_rgba(28,60,140,0.12)] object-cover`}
               />

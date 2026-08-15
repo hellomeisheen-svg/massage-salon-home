@@ -180,6 +180,8 @@ function PageHero({ content }: { content: ServicePageContent }) {
             className="absolute inset-0 h-full w-full object-cover object-top sm:object-center"
             alt={content.heroImageAlt}
             src={content.heroImage}
+            loading="eager"
+            fetchPriority="high"
           />
         </div>
       </section>
