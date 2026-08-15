@@ -9,7 +9,7 @@ import { PromoBanner } from "@/components/PromoBanner";
 import { Programs } from "@/components/Programs";
 import { Education } from "@/components/Education";
 import { OtherServices } from "@/components/OtherServices";
-import { PriceTable } from "@/components/PriceTable";
+import { PriceTable, type ServicePrice } from "@/components/PriceTable";
 import { BookingProvider, useBooking } from "@/components/BookingModal";
 import { formatPrice, pluralize, renderPrice } from "@/components/Services";
 
@@ -132,7 +132,7 @@ function GirudoterapiyaPage() {
         <Header items={servicePageNav} />
         <PageHero />
         <GirudoterapiyaServices />
-        <PriceTable prices={hirudoRows} />
+        <Prices />
         <PromoBanner />
         <Programs prioritizeKeys={["hirudoMed", "hirudoCosm"]} />
         <PromoBanner
