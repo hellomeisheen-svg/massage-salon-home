@@ -129,7 +129,7 @@ export function PriceTable({ prices, bookingPrefix }: { prices: ServicePrice[], 
                             {count} {sessionWord}
                           </div>
                           <div className="flex items-baseline gap-2">
-                            <span className="font-noto-serif-narrow text-[28px] font-light text-[#1C3C8C]">
+                            <span className="font-noto-serif-narrow ds-price text-[#1C3C8C]">
                               {renderPrice(formatPrice(currentPrice))}
                             </span>
                             {discount > 0 && (
