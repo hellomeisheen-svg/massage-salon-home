@@ -35,42 +35,86 @@ export function PriceTable({ prices, title = "Форматы и стоимост
               <thead>
                 <tr className="bg-[#EFF6FF]">
                   <th className="px-4 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
-                    Формат
+                    {title === "Программы восстановления" ? "Программа" : "Формат"}
                   </th>
                   <th className="px-4 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
-                    Длительность
+                    {title === "Программы восстановления" ? "Что входит" : "Длительность"}
                   </th>
                   <th className="px-4 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
-                    1 сеанс
+                    {title === "Программы восстановления" ? "Срок" : "1 сеанс"}
                   </th>
-                  <th className="px-4 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
-                    <span className="flex items-center gap-2">
-                      3 сеанса
-                      <span className="rounded-full bg-[#1C3C8C] px-2 py-0.5 text-[10px] font-semibold text-white">
-                        -10%
-                      </span>
-                    </span>
-                  </th>
-                  <th className="px-4 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
-                    <span className="flex items-center gap-2">
-                      6 сеансов
-                      <span className="rounded-full bg-[#1C3C8C] px-2 py-0.5 text-[10px] font-semibold text-white">
-                        -15%
-                      </span>
-                    </span>
-                  </th>
+                  {title !== "Программы восстановления" && (
+                    <>
+                      <th className="px-4 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
+                        <span className="flex items-center gap-2">
+                          3 сеанса
+                          <span className="rounded-full bg-[#1C3C8C] px-2 py-0.5 text-[10px] font-semibold text-white">
+                            -10%
+                          </span>
+                        </span>
+                      </th>
+                      <th className="px-4 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
+                        <span className="flex items-center gap-2">
+                          6 сеансов
+                          <span className="rounded-full bg-[#1C3C8C] px-2 py-0.5 text-[10px] font-semibold text-white">
+                            -15%
+                          </span>
+                        </span>
+                      </th>
+                    </>
+                  )}
+                  {title === "Программы восстановления" && (
+                    <th className="px-4 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
+                      Стоимость
+                    </th>
+                  )}
                 </tr>
               </thead>
               <tbody className="divide-y divide-[#daebff]">
                 {prices.map((p) => (
-                  <PriceTableRow key={p.zone} p={p} />
+                  <PriceTableRow key={p.zone} p={p} isProgram={title === "Программы восстановления"} />
                 ))}
               </tbody>
             </table>
           </div>
+          
+          {/* Mobile Program List */}
+          {title === "Программы восстановления" && (
+            <div className="lg:hidden divide-y divide-[#daebff]">
+              {prices.map((p) => {
+                const basePrice = Math.round(p.base * 0.8);
+                const originalPrice = p.base;
+                return (
+                  <div key={p.zone} className="p-5 space-y-4 bg-white">
+                    <div>
+                      <div className="font-noto-serif-narrow text-[20px] font-light text-[#1C3C8C]">
+                        {p.zone}
+                      </div>
+                      <div className="mt-2 text-[14px] font-light text-[#566A93] whitespace-pre-line leading-relaxed">
+                        {p.subtitle}
+                      </div>
+                    </div>
+                    <div className="flex items-center justify-between pt-4 border-t border-[#daebff]/40">
+                      <div className="text-[13px] font-light text-[#566A93]">
+                        {(p as any).validity || "2 месяца"}
+                      </div>
+                      <div className="flex items-baseline gap-2">
+                        <span className="font-noto-serif-narrow text-[14px] font-light text-[#566A93] line-through">
+                          {renderPrice(formatPrice(originalPrice))}
+                        </span>
+                        <span className="font-noto-serif-narrow text-[22px] font-light text-[#1C3C8C]">
+                          {renderPrice(formatPrice(basePrice))}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          )}
 
           {/* Mobile & Tablet Tabs */}
-          <div className="lg:hidden p-5 sm:p-8">
+          <div className={`${title === "Программы восстановления" ? "hidden" : "lg:hidden"} p-5 sm:p-8`}>
             <div className="flex items-stretch gap-1 rounded-[10px] bg-[#EFF6FF] p-1">
               {tabLabels.map((label, i) => (
                 <button
@@ -178,7 +222,11 @@ export function PriceTable({ prices, title = "Форматы и стоимост
 // Убран неиспользуемый компонент MobileRow, так как табы теперь встроены в основной компонент
 
 
-function PriceTableRow({ p }: { p: ServicePrice }) {
+function PriceTableRow({ p, isProgram = false }: { p: ServicePrice, isProgram?: boolean }) {
+  const isHirudo = p.zone.toLowerCase().includes("пиявк");
+  const basePrice = Math.round(p.base * (isProgram ? 0.8 : 1)); // В Programs.tsx цена уже со скидкой, но в PriceTable мы передаем базу
+  const originalPrice = p.base;
+
   return (
     <tr className="group transition-colors hover:bg-[#F7FBFF]">
       <td className="px-4 py-5 xl:px-8">
@@ -198,18 +246,37 @@ function PriceTableRow({ p }: { p: ServicePrice }) {
           {p.subtitle}
         </div>
       </td>
-      <td className="px-4 py-5 text-[15px] xl:text-[18px] font-light text-[#566A93] xl:px-8">
-        {p.duration}
+      <td className="px-4 py-5 text-[15px] xl:text-[18px] font-light text-[#566A93] xl:px-8 max-w-[300px]">
+        {isProgram ? (
+          <div className="whitespace-pre-line">{p.subtitle}</div>
+        ) : (
+          p.duration
+        )}
       </td>
-      <td className="font-noto-serif-narrow px-4 py-5 text-[18px] xl:text-[24px] font-light text-[#1C3C8C] xl:px-8">
-        {renderPrice(formatPrice(p.base))}
+      <td className="font-noto-serif-narrow px-4 py-5 text-[15px] xl:text-[18px] font-light text-[#566A93] xl:px-8">
+        {isProgram ? (p as any).validity || "2 месяца" : renderPrice(formatPrice(p.base))}
       </td>
-      <td className="px-4 py-5 xl:px-8">
-        <PriceTableCell base={p.base} count={3} discount={0.1} />
-      </td>
-      <td className="px-4 py-5 xl:px-8">
-        <PriceTableCell base={p.base} count={6} discount={0.15} />
-      </td>
+      {!isProgram ? (
+        <>
+          <td className="px-4 py-5 xl:px-8">
+            <PriceTableCell base={p.base} count={3} discount={0.1} />
+          </td>
+          <td className="px-4 py-5 xl:px-8">
+            <PriceTableCell base={p.base} count={6} discount={0.15} />
+          </td>
+        </>
+      ) : (
+        <td className="px-4 py-5 xl:px-8">
+          <div className="flex items-center gap-2">
+            <span className="font-noto-serif-narrow text-[13px] xl:text-[15px] font-light text-[#566A93] line-through">
+              {renderPrice(formatPrice(originalPrice))}
+            </span>
+            <span className="font-noto-serif-narrow text-[18px] xl:text-[24px] font-light text-[#1C3C8C]">
+              {renderPrice(formatPrice(basePrice))}
+            </span>
+          </div>
+        </td>
+      )}
     </tr>
   );
 }
