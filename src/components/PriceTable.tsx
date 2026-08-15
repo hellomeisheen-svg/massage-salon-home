@@ -30,7 +30,7 @@ export function PriceTable({ prices, bookingPrefix }: { prices: ServicePrice[], 
 
         <div className="mt-8 sm:mt-10 ds-card overflow-hidden">
           {/* Desktop */}
-          <div className="hidden xl:block overflow-x-auto scrollbar-none">
+          <div className="hidden lg:block overflow-x-auto scrollbar-none">
             <table className="w-full text-left">
               <thead>
                 <tr className="bg-[#EFF6FF]">
@@ -70,7 +70,7 @@ export function PriceTable({ prices, bookingPrefix }: { prices: ServicePrice[], 
           </div>
 
           {/* Mobile & Tablet Tabs */}
-          <div className="xl:hidden p-5 sm:p-8">
+          <div className="lg:hidden p-5 sm:p-8">
             <div className="flex items-stretch gap-1 rounded-[10px] bg-[#EFF6FF] p-1">
               {tabLabels.map((label, i) => (
                 <button
@@ -97,7 +97,7 @@ export function PriceTable({ prices, bookingPrefix }: { prices: ServicePrice[], 
               ))}
             </div>
 
-            <div className="mt-8 divide-y divide-[#daebff]">
+            <div className="mt-8 space-y-6">
               {prices.map((p) => {
                 const count = sessionCounts[activeTab];
                 const discount = discountValues[activeTab];
@@ -105,31 +105,44 @@ export function PriceTable({ prices, bookingPrefix }: { prices: ServicePrice[], 
                 const currentPrice = Math.round(totalBase * (1 - discount));
                 const sessionWord = pluralize(count, ["сеанс", "сеанса", "сеансов"]);
                 
+                // Specific data for leech therapy based on context
+                const isHirudo = p.zone.toLowerCase().includes("пиявк");
+                const leeches = count === 1 ? 6 : (count === 3 ? 16 : (count === 6 ? 74 : 0));
+                
                 return (
-                  <div key={p.zone} className="py-6 first:pt-0 last:pb-0">
-                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
-                      <div className="min-w-0">
-                        <div className="font-noto-serif-narrow text-[24px] font-light leading-[1.25] text-[#1C3C8C]">
-                          {p.zone}
-                        </div>
-                        <div className="mt-1 text-[13px] font-light leading-[18px] text-[#566A93]">
-                          {count === 1 ? p.duration : `В пакете: ${count}\u00A0${sessionWord} · ${p.duration}`}
+                  <div key={p.zone} className="bg-white p-6 rounded-[20px] shadow-[0_4px_20px_rgba(28,60,140,0.04)] border border-[#daebff]/50">
+                    <div className="space-y-4">
+                      <div className="flex justify-between items-start">
+                        <div>
+                          <div className="font-noto-serif-narrow text-[22px] font-light leading-[1.2] text-[#1C3C8C]">
+                            {p.zone}
+                          </div>
+                          <div className="mt-1 text-[13px] font-light text-[#566A93]">
+                            {p.duration}
+                          </div>
                         </div>
                       </div>
                       
-                      <div className="flex flex-row items-center justify-end sm:flex-col sm:items-end gap-3 sm:gap-1">
-                        {discount > 0 && (
-                          <span className="font-noto-serif-narrow text-[15px] font-light text-[#566A93] line-through">
-                            {renderPrice(formatPrice(totalBase))}
-                          </span>
-                        )}
-                        <div className="flex flex-col items-end">
-                          <span className="font-noto-serif-narrow text-[28px] font-light text-[#1C3C8C]">
-                            {renderPrice(formatPrice(currentPrice))}
-                          </span>
-                          <span className="text-[12px] font-light text-[#566A93]">
-                            за {count} {sessionWord}
-                          </span>
+                      <div className="flex items-center justify-between pt-4 border-t border-[#daebff]/40">
+                        <div className="flex-1">
+                          <div className="text-[12px] font-light text-[#566A93] uppercase tracking-wider mb-1">
+                            {count} {sessionWord}
+                          </div>
+                          <div className="flex items-baseline gap-2">
+                            <span className="font-noto-serif-narrow text-[28px] font-light text-[#1C3C8C]">
+                              {renderPrice(formatPrice(currentPrice))}
+                            </span>
+                            {discount > 0 && (
+                              <span className="font-noto-serif-narrow text-[15px] font-light text-[#566A93] line-through">
+                                {renderPrice(formatPrice(totalBase))}
+                              </span>
+                            )}
+                          </div>
+                          {isHirudo && (
+                            <div className="mt-1 text-[12px] font-light text-[#566A93]">
+                              {leeches} {pluralize(leeches, ["пиявка", "пиявки", "пиявок"])}
+                            </div>
+                          )}
                         </div>
                       </div>
                     </div>
