@@ -125,10 +125,16 @@ export function Header({
         </button>
       </div>
 
-      {/* Mobile / tablet menu panel — same width as the header */}
+      {/* Mobile / tablet menu panel */}
       {menuOpen && (
-        <div className="absolute inset-x-4 sm:inset-x-5 top-[calc(100%+8px)] z-40 h-[calc(100dvh-96px)] sm:h-[calc(100dvh-100px)] xl:hidden">
-          <div className="flex h-full flex-col ds-card p-4">
+        <>
+          {/* Blur overlay behind menu */}
+          <div 
+            className="fixed inset-0 z-40 bg-[#EFF6FF]/40 backdrop-blur-[8px] xl:hidden" 
+            onClick={() => setMenuOpen(false)}
+          />
+          <div className="absolute inset-x-4 sm:inset-x-5 top-[calc(100%+8px)] z-[60] h-[calc(100dvh-96px)] sm:h-[calc(100dvh-100px)] xl:hidden">
+            <div className="flex h-full flex-col ds-card p-4">
             <nav className="flex-1 overflow-y-auto pr-1 scrollbar-none" aria-label="Мобильная навигация">
               <ul className="flex flex-col gap-1">
                 {navigationItems.length === 0 && (
