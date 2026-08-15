@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
+import { HabitQuote } from "@/components/HabitQuote";
 import { QuoteBlock } from "@/components/QuoteBlock";
 import { Services } from "@/components/Services";
 
@@ -77,6 +78,7 @@ function Index() {
     <div className="accent-noto-serif relative min-h-screen bg-[#EFF6FF] pt-20 xl:pt-[100px]">
       <Header />
       <Hero />
+      <HabitQuote />
       <Services />
       <PromoBanner />
       
