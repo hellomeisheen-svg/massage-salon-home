@@ -27,7 +27,6 @@ export const submitQuizLead = createServerFn({ method: "POST" })
     const resendApiKey = process.env.RESEND_API_KEY;
     
     // 2. Save to Supabase
-    // We use 'message' column to store quiz summary as 'source' column is missing
     const { error: dbError } = await supabaseAdmin
       .from("leads")
       .insert([{
