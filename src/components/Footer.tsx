@@ -5,11 +5,11 @@ import Logo from "@/components/Logo";
 export type FooterNavItem = { label: string; href?: string; to?: string };
 
 const navItems: FooterNavItem[] = [
-  { label: "Услуги", href: "#services" },
-  { label: "Преимущества", href: "#advantages" },
-  { label: "Программы", href: "#programs" },
-  { label: "Образование", href: "#obrazovanie" },
-  { label: "Вопросы", href: "#faq" },
+  { label: "Услуги", href: "/#services" },
+  { label: "Прайс", to: "/price" },
+  { label: "Программы", href: "/#programs" },
+  { label: "Образование", href: "/#obrazovanie" },
+  { label: "Вопросы", href: "/#faq" },
 ];
 
 
