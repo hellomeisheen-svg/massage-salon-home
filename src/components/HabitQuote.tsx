@@ -43,7 +43,7 @@ const decoImages = [
 export function HabitQuote() {
   return (
     <section className="relative bg-[#EFF6FF] pt-[60px] pb-[60px] sm:pt-[140px] sm:pb-[180px] xl:pt-[180px] xl:pb-[140px] overflow-hidden">
-      {/* Decorative photos — constrained to container width */}
+      {/* Decorative photos — Desktop/Tablet (floating) */}
       <div className="container-1900 absolute inset-0 left-1/2 -translate-x-1/2 hidden sm:block pointer-events-none">
         <div className="relative w-full h-full">
           {decoImages.map((img, i) => (
@@ -64,13 +64,37 @@ export function HabitQuote() {
         </div>
       </div>
 
-      <div className="container-1900 relative z-10 flex flex-col items-center sm:px-5 text-center">
+      <div className="container-1900 relative z-10 flex flex-col items-center px-4 sm:px-5 text-center">
         <Sparkle className="mb-8 sm:mb-10 xl:mb-12 h-6 w-6 sm:h-7 sm:w-7 text-[#1C3C8C]" />
         
-        <div className="relative z-10 max-w-[900px]">
+        <div className="relative z-10 max-w-[900px] mb-8 sm:mb-0">
           <h2 className="font-noto-serif-narrow text-[24px] sm:text-[32px] xl:text-[44px] leading-[1.2] text-[#1C3C8C]">
             Регулярная забота о&nbsp;теле&nbsp;— спокойная привычка, которая помогает сохранять внутреннюю опору и&nbsp;легкость в&nbsp;повседневной жизни
           </h2>
+        </div>
+
+        {/* Mobile-only stacked photos based on reference screenshot */}
+        <div className="sm:hidden flex justify-center items-center mt-6 w-full max-w-[320px] mx-auto">
+          <div className="relative flex items-center justify-center">
+            {/* Left image */}
+            <img 
+              src="/images/uslugi-massazh-spiny-i-shei.jpg" 
+              alt=""
+              className="w-[100px] h-[120px] rounded-xl object-cover -rotate-6 -mr-8 shadow-md relative z-10"
+            />
+            {/* Center image */}
+            <img 
+              src="/images/uslugi-limfodrenazhnyi-massazh.jpg" 
+              alt=""
+              className="w-[110px] h-[140px] rounded-xl object-cover z-20 shadow-lg"
+            />
+            {/* Right image */}
+            <img 
+              src="/images/uslugi-massazh-golovy.jpg" 
+              alt=""
+              className="w-[100px] h-[120px] rounded-xl object-cover rotate-6 -ml-8 shadow-md relative z-10"
+            />
+          </div>
         </div>
       </div>
     </section>
