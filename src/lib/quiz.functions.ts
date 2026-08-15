@@ -11,27 +11,33 @@ const leadSchema = z.object({
     question: z.string(),
     answer: z.union([z.string(), z.array(z.string())])
   })),
-  results: z.array(z.string())
+  results: z.array(z.string()),
+  website: z.string().optional() // Honeypot
 });
 
 export const submitQuizLead = createServerFn({ method: "POST" })
   .inputValidator((data) => leadSchema.parse(data))
   .handler(async ({ data }) => {
+    // 1. Check honeypot
+    if (data.website) {
+      console.warn("Spam detected via honeypot");
+      return { success: true }; // Silent fail for bots
+    }
+
     const resendApiKey = process.env.RESEND_API_KEY;
     
-    // 1. Save to Supabase
+    // 2. Save to Supabase
     const { error: dbError } = await supabaseAdmin
       .from("leads")
       .insert([{
         name: data.name,
         phone: data.phone,
-        message: `Quiz Results: ${data.results.join(", ")}\n\nAnswers: ${JSON.stringify(data.answers, null, 2)}\nMethod: ${data.method || 'Not specified'}`,
-        source: 'quiz'
+        message: `[QUIZ LEAD] Results: ${data.results.join(", ")}\n\nAnswers: ${JSON.stringify(data.answers, null, 2)}\nMethod: ${data.method || 'Not specified'}`
       }]);
 
     if (dbError) throw dbError;
 
-    // 2. Send email via Resend
+    // 3. Send email via Resend
     if (resendApiKey) {
       const resend = new Resend(resendApiKey);
       await resend.emails.send({

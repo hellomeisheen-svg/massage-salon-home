@@ -1,13 +1,14 @@
 export interface QuizOption {
-  id: number;
+  id: string | number;
   text: string;
 }
 
 export interface QuizStepConfig {
-  id: number;
+  id: string;
   question: string;
   type: "single" | "multiple";
   options: QuizOption[];
+  showIf?: (answers: Record<string, any>) => boolean;
 }
 
 export interface QuizService {
@@ -17,6 +18,7 @@ export interface QuizService {
   price: string;
   tags: string[];
   description?: string;
+  isWellness?: boolean;
 }
 
 export interface QuizScenario {
@@ -34,174 +36,206 @@ export const QUIZ_CONFIG: {
   scenarios: QuizScenario[];
 } = {
   title: "Подберём идеальную процедуру для вашего тела и настроения",
-  subtitle: "Ответьте на 6 коротких вопросов — получите персональную рекомендацию и спецпредложение на первый визит",
+  subtitle: "Ответьте на несколько коротких вопросов — получите персональную рекомендацию",
   steps: [
     {
-      id: 1,
+      id: "goal",
       question: "Главная цель визита",
       type: "single",
       options: [
-        { id: 1, text: "Глубоко расслабиться, «выключить голову» и отпустить тело" },
-        { id: 2, text: "Снять напряжение в спине, шее, плечах (после работы/за рулём)" },
-        { id: 3, text: "Убрать отёчность, ощущение тяжести в теле" },
-        { id: 4, text: "Улучшить состояние кожи лица, свежесть, тонус" },
-        { id: 5, text: "Оздоровиться, поддержать организм (включая восточные/восстановительные техники)" },
-        { id: 6, text: "Не знаю, хочу рекомендацию специалиста" },
+        { id: "relax", text: "Глубоко расслабиться, «выключить голову» и отпустить тело" },
+        { id: "back_neck", text: "Снять напряжение в спине, шее, плечах" },
+        { id: "lightness", text: "Убрать отёчность и ощущение тяжести в теле" },
+        { id: "face", text: "Улучшить состояние кожи лица, свежесть и тонус" },
+        { id: "wellness", text: "Оздоровиться с помощью восстановительных практик" },
+        { id: "unsure", text: "Не знаю, хочу рекомендацию специалиста" },
       ],
     },
+    // Branch 1: Relax
     {
-      id: 2,
-      question: "Что вас беспокоит прямо сейчас?",
-      type: "multiple",
-      options: [
-        { id: 1, text: "Усталость, ощущение «выжатости», трудно расслабиться" },
-        { id: 2, text: "Боль/зажимы в спине, шее, плечах" },
-        { id: 3, text: "Отёчность, тяжесть в ногах, ощущение «ватного» тела" },
-        { id: 4, text: "Усталый вид лица, отёки после работы/перелётов" },
-        { id: 5, text: "Тяжёлая голова, шум, трудно отключиться от мыслей" },
-        { id: 6, text: "Хочу комплексно поработать с телом" },
-        { id: 7, text: "Ничего конкретного, просто хочу отдохнуть" },
-      ],
-    },
-    {
-      id: 4,
-      question: "Интенсивность воздействия",
+      id: "relax_area",
+      question: "Что хочется расслабить в первую очередь?",
       type: "single",
+      showIf: (a) => a.goal?.includes("Глубоко расслабиться"),
       options: [
-        { id: 1, text: "Мягко, деликатно, без давления" },
-        { id: 2, text: "Средне: приятно, но с проработкой мышц" },
-        { id: 3, text: "Интенсивно, глубоко" },
-        { id: 4, text: "Не знаю, доверюсь мастеру" },
+        { id: "whole_body", text: "Всё тело" },
+        { id: "back_neck", text: "Спина, плечи и шея" },
+        { id: "head", text: "Голова и затылок" },
+        { id: "legs", text: "Ноги и стопы" },
+        { id: "master_choice", text: "Не знаю, доверюсь мастеру" },
       ],
     },
     {
-      id: 5,
-      question: "Зоны, на которые хочется сделать акцент",
-      type: "multiple",
+      id: "relax_intensity",
+      question: "Какой формат воздействия вам ближе?",
+      type: "single",
+      showIf: (a) => a.goal?.includes("Глубоко расслабиться"),
       options: [
-        { id: 1, text: "Спина, шея, плечи" },
-        { id: 2, text: "Голова, затылок" },
-        { id: 3, text: "Лицо" },
-        { id: 4, text: "Ноги (бёдра, голени, стопы)" },
-        { id: 5, text: "Всё тело (комплексно)" },
-        { id: 6, text: "Без акцента, доверюсь мастеру" },
+        { id: "soft", text: "Мягко и спокойно" },
+        { id: "deep", text: "С глубокой проработкой" },
+        { id: "master_choice", text: "Не знаю, доверюсь мастеру" },
+      ],
+    },
+    // Branch 2: Back/Neck
+    {
+      id: "back_tension_area",
+      question: "Где ощущается основное напряжение?",
+      type: "multiple",
+      showIf: (a) => a.goal?.includes("Снять напряжение в спине"),
+      options: [
+        { id: "neck", text: "Шея" },
+        { id: "shoulders", text: "Плечи" },
+        { id: "upper_back", text: "Верх спины" },
+        { id: "lower_back", text: "Поясница" },
+        { id: "whole_body", text: "Всё тело" },
+        { id: "master_choice", text: "Не знаю, доверюсь мастеру" },
       ],
     },
     {
-      id: 6,
-      question: "Интересуют ли вас оздоровительные техники?",
-      type: "multiple",
+      id: "back_result",
+      question: "Какой результат для вас важнее?",
+      type: "single",
+      showIf: (a) => a.goal?.includes("Снять напряжение в спине"),
       options: [
-        { id: 1, text: "Банки (вакуумная терапия)" },
-        { id: 2, text: "Гирудотерапия (медицинские пиявки)" },
-        { id: 3, text: "Космитеческие пиявки для лица/кожи" },
-        { id: 4, text: "Акупунктурный кетгут (восстановительная медицина)" },
-        { id: 5, text: "Пока не интересно, хочу только массаж/лимфодренаж" },
+        { id: "quick_relief", text: "Быстро снять напряжение в конкретной зоне" },
+        { id: "deep_work", text: "Глубоко проработать тело" },
+        { id: "relaxation", text: "Просто расслабиться после работы" },
+        { id: "master_choice", text: "Не знаю, хочу рекомендацию мастера" },
+      ],
+    },
+    // Branch 3: Lightness
+    {
+      id: "lightness_area",
+      question: "Где ощущается тяжесть или отёчность?",
+      type: "multiple",
+      showIf: (a) => a.goal?.includes("Убрать отёчность"),
+      options: [
+        { id: "whole_body", text: "Всё тело" },
+        { id: "legs", text: "Ноги" },
+        { id: "feet", text: "Стопы" },
+        { id: "face", text: "Лицо" },
+        { id: "master_choice", text: "Не знаю, доверюсь мастеру" },
+      ],
+    },
+    // Branch 4: Face
+    {
+      id: "face_goal",
+      question: "Что хочется получить от процедуры для лица?",
+      type: "multiple",
+      showIf: (a) => a.goal?.includes("Улучшить состояние кожи лица") || (a.goal?.includes("Убрать отёчность") && a.lightness_area?.includes("Лицо") && a.lightness_area?.length === 1),
+      options: [
+        { id: "face_swelling", text: "Убрать отёчность" },
+        { id: "freshness", text: "Вернуть свежесть и отдохнувший вид" },
+        { id: "face_relaxation", text: "Расслабить мышцы лица" },
+        { id: "mimic_zones", text: "Поработать с мимическими зонами" },
+        { id: "delicate_care", text: "Хочу деликатный уход" },
+        { id: "master_choice", text: "Не знаю, доверюсь мастеру" },
+      ],
+    },
+    {
+      id: "face_format",
+      question: "Какой формат ухода вам ближе?",
+      type: "single",
+      showIf: (a) => a.goal?.includes("Улучшить состояние кожи лица") || (a.goal?.includes("Убрать отёчность") && a.lightness_area?.includes("Лицо") && a.lightness_area?.length === 1),
+      options: [
+        { id: "classic_face", text: "Массаж лица" },
+        { id: "lymph_face", text: "Лимфодренаж лица" },
+        { id: "cosmetic_hirudo", text: "Косметические пиявки" },
+        { id: "master_choice", text: "Не знаю, хочу рекомендацию специалиста" },
+      ],
+    },
+    // Branch 5: Wellness
+    {
+      id: "wellness_type",
+      question: "Какая практика вам интересна?",
+      type: "multiple",
+      showIf: (a) => a.goal?.includes("Оздоровиться с помощью восстановительных практик"),
+      options: [
+        { id: "cups_air", text: "Мягкие банки" },
+        { id: "cups_fire", text: "Стеклянные банки" },
+        { id: "hirudo_medical", text: "Медицинские пиявки" },
+        { id: "hirudo_cosmetic", text: "Косметические пиявки" },
+        { id: "ketgut", text: "Акупунктурный кетгут" },
+        { id: "master_choice", text: "Пока не знаю, хочу консультацию" },
+      ],
+    },
+    {
+      id: "wellness_massage",
+      question: "Нужно ли дополнить практику массажем?",
+      type: "single",
+      showIf: (a) => a.goal?.includes("Оздоровиться с помощью восстановительных практик"),
+      options: [
+        { id: "add_relax_massage", text: "Да, хочу расслабляющий массаж" },
+        { id: "add_back_neck_massage", text: "Да, хочу массаж спины и шеи" },
+        { id: "wellness_only", text: "Нет, интересует только практика" },
+        { id: "master_choice", text: "Не знаю, пусть подскажет мастер" },
+      ],
+    },
+    // Branch 6: Unsure
+    {
+      id: "unsure_direction",
+      question: "Что вам сейчас ближе?",
+      type: "single",
+      showIf: (a) => a.goal?.includes("Не знаю, хочу рекомендацию"),
+      options: [
+        { id: "relax", text: "Хочу расслабиться" },
+        { id: "back_neck", text: "Беспокоит спина и шея" },
+        { id: "lightness", text: "Чувствую тяжесть или отёчность" },
+        { id: "face", text: "Хочу уход за лицом" },
+        { id: "wellness", text: "Интересуют оздоровительные практики" },
+        { id: "still_unsure", text: "Пока не могу определить" },
       ],
     },
   ],
   services: [
-    { id: "vector", name: "Векторный", duration: "120 мин", price: "5 000 ₽", tags: ["relax", "lymph", "wellness"] },
-    { id: "lymph", name: "Лимфодренажный", duration: "120 мин", price: "5 000 ₽", tags: ["relax", "lymph"] },
-    { id: "lymphatic", name: "Лимфатический", duration: "120 мин", price: "5 000 ₽", tags: ["relax", "lymph"] },
-    { id: "classic-full", name: "Классический", duration: "60 мин", price: "2 000 ₽", tags: ["relax", "spine"] },
-    { id: "classic-spine", name: "Классический — спина и шея", duration: "30 мин", price: "1 500 ₽", tags: ["spine"] },
-    { id: "classic-face", name: "Классический — лицо", duration: "40 мин", price: "2 000 ₽", tags: ["face"] },
-    { id: "classic-legs", name: "Классический — ноги/стопы", duration: "60 мин", price: "3 000 ₽", tags: ["legs"] },
-    { id: "classic-head", name: "Классический — голова", duration: "20 мин", price: "1 000 ₽", tags: ["relax"] },
-    { id: "cups-fire", name: "Стихия Огонь (стеклянные банки)", duration: "10 мин", price: "2 000 ₽", tags: ["wellness"] },
-    { id: "cups-air", name: "Стихия Воздух (мягкие банки)", duration: "10-25 мин", price: "1 000-2 000 ₽", tags: ["wellness"] },
-    { id: "girudo-med", name: "Гирудотерапия (медицинские пиявки)", duration: "", price: "пакеты 6/16/74", tags: ["wellness"] },
-    { id: "girudo-cosm", name: "Гирудотерапия (косметические пиявки)", duration: "", price: "пакеты 6/10/20", tags: ["face", "wellness"] },
-    { id: "ketgut", name: "Акупунктурный кетгут", duration: "", price: "по запросу", tags: ["wellness"] },
+    { id: "vector", name: "Векторный массаж", duration: "120 мин", price: "5 000 ₽", tags: ["relax", "spine", "lymph", "wellness"], description: "Комплексная работа с телом, восстанавливающая естественный баланс." },
+    { id: "lymph", name: "Лимфодренажный массаж", duration: "120 мин", price: "5 000 ₽", tags: ["lymph", "relax"], description: "Стимулирует отток лимфы, уменьшает отёчность и выводит токсины." },
+    { id: "lymphatic", name: "Лимфатический массаж тела", duration: "120 мин", price: "5 000 ₽", tags: ["lymph", "relax"], description: "Глубокая проработка лимфатической системы для лёгкости в теле." },
+    { id: "classic-full", name: "Классический массаж", duration: "60 мин", price: "2 000 ₽", tags: ["relax", "spine"], description: "Традиционная техника для снятия мышечного напряжения и отдыха." },
+    { id: "classic-spine", name: "Классический — спина и шея", duration: "30 мин", price: "1 500 ₽", tags: ["spine"], description: "Акцент на снятие зажимов в шейно-воротниковой зоне и спине." },
+    { id: "classic-face", name: "Классический — лицо", duration: "40 мин", price: "2 000 ₽", tags: ["face"], description: "Поддерживает тонус мышц лица и улучшает цвет кожи." },
+    { id: "lymph-face", name: "Лимфодренажный — лицо", duration: "40 мин", price: "2 000 ₽", tags: ["face"], description: "Деликатно выводит лишнюю жидкость, возвращая свежесть взгляду." },
+    { id: "classic-legs", name: "Классический — ноги/стопы", duration: "60 мин", price: "3 000 ₽", tags: ["legs", "lymph"], description: "Снимает усталость и тяжесть в ногах после долгого дня." },
+    { id: "classic-head", name: "Классический — голова", duration: "20 мин", price: "1 000 ₽", tags: ["relax"], description: "Помогает «выключить голову» и избавиться от эмоционального напряжения." },
+    { id: "cups-fire", name: "Стихия Огонь (стеклянные банки)", duration: "10-20 мин", price: "2 000 ₽", tags: ["wellness"], isWellness: true, description: "Древняя техника для улучшения кровообращения и снятия болей." },
+    { id: "cups-air", name: "Стихия Воздух (мягкие банки)", duration: "10-25 мин", price: "1 000-2 000 ₽", tags: ["wellness"], isWellness: true, description: "Бережная вакуумная терапия для расслабления и лимфодренажа." },
+    { id: "girudo-med", name: "Гирудотерапия (медицинские пиявки)", duration: "60-90 мин", price: "от 600 ₽ за шт", tags: ["wellness"], isWellness: true, description: "Биологически активное воздействие для комплексного оздоровления." },
+    { id: "girudo-cosm", name: "Гирудотерапия (косметические пиявки)", duration: "40-60 мин", price: "от 600 ₽ за шт", tags: ["face", "wellness"], isWellness: true, description: "Природный лифтинг и улучшение микроциркуляции кожи лица." },
+    { id: "ketgut", name: "Акупунктурный кетгут", duration: "30-60 мин", price: "по запросу", tags: ["wellness"], isWellness: true, description: "Длительное воздействие на биологически активные точки." },
   ],
   scenarios: [
-    {
-      id: "face-refresh",
-      title: "Лицо: свежесть, тонус, отдых",
-      description: "Для лица мы предлагаем деликатные техники: работа с лимфотоком, мимическими мышцами и общим тонусом кожи. Это помогает убрать отёчность, вернуть свежесть и ощущение отдыха.",
-      recommendedServiceIds: ["classic-face", "girudo-cosm"],
-    },
-    {
-      id: "deep-relax",
-      title: "Глубокое расслабление и перезагрузка",
-      description: "Вам подойдёт формат глубокой работы с телом, когда внимание уделяется не отдельной зоне, а всему состоянию. Это помогает «выключить голову», отпустить накопленное напряжение и почувствовать настоящий отдых.",
-      recommendedServiceIds: ["vector", "lymph", "lymphatic"],
-    },
-    {
-      id: "spine-tension",
-      title: "Спина, шея, плечи: снять зажимы после работы",
-      description: "Ваш запрос — сфокусированная работа с верхней частью тела. Это помогает выдохнуть после рабочего дня, убрать зажимы от статичной позы и вернуть лёгкость движениям.",
-      recommendedServiceIds: ["classic-full", "vector", "classic-spine"],
-    },
-    {
-      id: "body-lightness",
-      title: "Лёгкость в теле: лимфодренаж и снятие отёчности",
-      description: "Вам подойдут лимфодренажные техники: они поддерживают естественный отток жидкости, уменьшают отёчность и ощущение «ватного» тела. После сеансов обычно появляется ощущение лёгкости и спокойствия.",
-      recommendedServiceIds: ["lymph", "lymphatic", "classic-legs"],
-    },
-    {
-      id: "wellness-practices",
-      title: "Оздоровительные техники: банки, пиявки, кетгут",
-      description: "Помимо массажа, у нас есть оздоровительные практики: вакуумная терапия (банки), гирудотерапия (медицинские и косметические пиявки) и акупунктурный кетгут. Они используются в рамках восстановительных программ для поддержки самочувствия и тонуса.",
-      recommendedServiceIds: ["cups-fire", "cups-air", "girudo-med", "girudo-cosm", "ketgut"],
-    },
-    {
-      id: "first-visit",
-      title: "Первый визит: познакомиться с кабинетом",
-      description: "Если вы впервые у нас, лучше начать с универсального формата. Это поможет познакомиться с кабинетом, мастером и понять, что вам ближе, а затем спокойно выбрать более специализированную программу.",
-      recommendedServiceIds: ["vector", "classic-full", "classic-spine", "classic-head"],
-    },
+    { id: "relax", title: "Глубокое расслабление", description: "Вам подойдёт формат глубокой работы с телом для восстановления сил.", recommendedServiceIds: ["vector"] },
+    { id: "back_neck", title: "Снятие напряжения: спина и шея", description: "Фокус на работу с зажимами в верхней части тела.", recommendedServiceIds: ["classic-spine", "vector"] },
+    { id: "lightness", title: "Лёгкость и лимфодренаж", description: "Техники, направленные на снятие отёчности и тяжести.", recommendedServiceIds: ["lymph", "lymphatic"] },
+    { id: "face", title: "Уход за лицом", description: "Деликатные техники для свежести и тонуса кожи.", recommendedServiceIds: ["lymph-face", "classic-face", "girudo-cosm"] },
+    { id: "wellness", title: "Оздоровительные практики", description: "Восстановительные техники для поддержки организма.", recommendedServiceIds: [] },
+    { id: "first-visit", title: "Первый визит", description: "Если вы впервые у нас, рекомендуем начать с векторного массажа.", recommendedServiceIds: ["vector", "classic-full"] },
   ],
 };
 
-export function calculateResult(answers: Record<number, any[]>): string[] {
-  const q1 = answers[1]?.[0] || "";
-  const q2 = answers[2] || [];
-  const q4 = answers[4]?.[0] || "";
-  const q5 = answers[5] || [];
-  const q6 = answers[6] || [];
-
-  const results: string[] = [];
-
-  // Logic: Hard rule for Face
-  // If Face is selected in Q5 and NO OTHER zones are selected
-  if (q5.includes("Лицо") && q5.length === 1) {
-    return ["face-refresh"];
+export function calculateResult(answers: Record<string, any>): string[] {
+  const goal = answers.goal?.[0] || "";
+  
+  // Rule 4: Isolated Face branch
+  if (goal.includes("кожи лица") || (goal.includes("Убрать отёчность") && answers.lightness_area?.includes("Лицо") && answers.lightness_area?.length === 1)) {
+    return ["face"];
   }
 
-  // Logic: Wellness techniques
-  const wellnessSelected = q6.some((a: string) => 
-    ["Банки (вакуумная терапия)", "Гирудотерапия (медицинские пиявки)", "Космитеческие пиявки для лица/кожи", "Акупунктурный кетгут (восстановительная медицина)"].includes(a)
-  );
-  if (wellnessSelected || q1 === "Оздоровиться, поддержать организм (включая восточные/восстановительные техники)") {
-    results.push("wellness-practices");
+  if (goal.includes("расслабиться")) return ["relax"];
+  if (goal.includes("спине, шее")) return ["back_neck"];
+  if (goal.includes("отёчность")) return ["lightness"];
+  if (goal.includes("Оздоровиться")) return ["wellness"];
+  
+  // Unsure with sub-selection
+  if (goal.includes("Не знаю")) {
+    const dir = answers.unsure_direction?.[0] || "";
+    if (dir.includes("расслабиться")) return ["relax"];
+    if (dir.includes("спина")) return ["back_neck"];
+    if (dir.includes("отёчность")) return ["lightness"];
+    if (dir.includes("лицом")) return ["face"];
+    if (dir.includes("практики")) return ["wellness"];
+    return ["first-visit"];
   }
 
-  // Logic: Deep Relax
-  if (q1 === "Глубоко расслабиться, «выключить голову» и отпустить тело" || q2.includes("Усталость, ощущение «выжатости», трудно расслабиться")) {
-    results.push("deep-relax");
-  }
-
-  // Logic: Spine
-  if (q1 === "Снять напряжение в спине, шее, плечах (после работы/за рулём)" || q5.includes("Спина, шея, плечи") || q2.includes("Боль/зажимы в спине, шее, плечах")) {
-    results.push("spine-tension");
-  }
-
-  // Logic: Edema/Lymph
-  if (q1 === "Убрать отёчность, ощущение тяжести в теле" || q2.includes("Отёчность, тяжесть в ногах, ощущение «ватного» тела")) {
-    results.push("body-lightness");
-  }
-
-  // Logic: Face (general)
-  if (q1 === "Улучшить состояние кожи лица, свежесть, тонус" || q5.includes("Лицо")) {
-    results.push("face-refresh");
-  }
-
-  // Logic: First visit
-  if (results.length === 0 || (q1 === "Не знаю, хочу рекомендацию специалиста" && q4 === "Не знаю, доверюсь мастеру")) {
-    results.push("first-visit");
-  }
-
-  return Array.from(new Set(results)).slice(0, 2);
+  return ["first-visit"];
 }

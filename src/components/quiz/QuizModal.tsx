@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { X, ChevronLeft, Loader2, Check } from "lucide-react";
+import { X, ChevronLeft, Check } from "lucide-react";
 import { QUIZ_CONFIG, calculateResult } from "@/config/quiz";
 import { submitQuizLead } from "@/lib/quiz.functions";
 import { QuizResults } from "./QuizResults";
@@ -7,14 +7,20 @@ import { QuizContactForm } from "./QuizContactForm";
 
 export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const [step, setStep] = useState(0); 
-  const [answers, setAnswers] = useState<Record<number, any[]>>({});
+  const [answers, setAnswers] = useState<Record<string, any>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [resultScenarioIds, setResultScenarioIds] = useState<string[]>([]);
 
+  // Filter steps based on current answers
+  const visibleSteps = QUIZ_CONFIG.steps.filter(s => !s.showIf || s.showIf(answers));
+  const currentStep = visibleSteps[step - 1];
+  const isLastQuestion = step === visibleSteps.length;
+  const isResultsStep = step === visibleSteps.length + 1;
+  const isContactStep = step === visibleSteps.length + 2;
+
   useEffect(() => {
     if (!isOpen) {
-      // Reset state when closing
       setTimeout(() => {
         setStep(0);
         setAnswers({});
@@ -24,11 +30,6 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
   }, [isOpen]);
 
   if (!isOpen) return null;
-
-  const currentStep = QUIZ_CONFIG.steps[step - 1];
-  const isLastQuestion = step === QUIZ_CONFIG.steps.length;
-  const isResultsStep = step === QUIZ_CONFIG.steps.length + 1;
-  const isContactStep = step === QUIZ_CONFIG.steps.length + 2;
 
   const handleNext = () => {
     if (isLastQuestion) {
@@ -42,7 +43,7 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
     if (step > 0) setStep(step - 1);
   };
 
-  const onContactSubmit = async (contact: { name: string; phone: string; method: string }) => {
+  const onContactSubmit = async (contact: { name: string; phone: string; method: string; website?: string }) => {
     setIsSubmitting(true);
     try {
       await submitQuizLead({
@@ -50,17 +51,19 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
           name: contact.name,
           phone: contact.phone,
           method: contact.method,
-          answers: QUIZ_CONFIG.steps.map(s => ({
+          website: contact.website,
+          answers: visibleSteps.map(s => ({
             question: s.question,
             answer: answers[s.id] || []
           })),
+
           results: resultScenarioIds
         }
       });
       setIsSuccess(true);
     } catch (e) {
       console.error(e);
-      alert("Что-то пошло не так, попробуйте ещё раз или напишите нам в Telegram.");
+      alert("Что-то пошло не так, попробуйте ещё раз.");
     } finally {
       setIsSubmitting(false);
     }
@@ -69,11 +72,7 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
   return (
     <div 
       className={`fixed inset-0 z-[100] flex items-end justify-center overflow-y-auto bg-[#1C3C8C]/40 p-4 backdrop-blur-sm sm:items-center sm:p-6 transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0'}`}
-      onMouseDown={(e) => {
-        if ((e.target as HTMLElement).getAttribute('role') === 'dialog-overlay') onClose();
-      }}
       role="presentation"
-      data-role="dialog-overlay"
     >
       <div className="relative my-auto w-full max-w-[640px] ds-card p-5 sm:p-8 xl:p-10 transition-transform duration-300 scale-100">
         <button 
@@ -86,47 +85,17 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
 
         {isSuccess ? (
           <div className="relative flex flex-col items-center px-2 pt-6 pb-2 text-center sm:px-4 sm:pt-8 animate-in zoom-in-95 duration-500">
-            {/* Success icon with halo */}
             <div className="relative mb-8">
               <div className="absolute inset-0 rounded-full bg-[#A2CFFE] blur-2xl opacity-40 animate-pulse" />
               <div className="relative flex h-20 w-20 items-center justify-center rounded-full border border-[#DAEBFF] bg-white shadow-lg shadow-[#A2CFFE]/25">
-                <svg
-                  className="h-10 w-10 text-[#1C3C8C]"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
+                <Check size={40} className="text-[#1C3C8C]" strokeWidth={1.5} />
               </div>
             </div>
-
             <h2 className="font-noto-serif-narrow ds-h3 text-[#1c3c8c]">Спасибо!</h2>
             <p className="mt-4 max-w-[360px] text-[15px] leading-[1.6] text-[#566A93] sm:text-[16px]">
-              Ваша программа уже у&nbsp;нас. Администратор свяжется с&nbsp;вами в&nbsp;течение 15&nbsp;минут, чтобы уточнить детали и&nbsp;согласуем время без&nbsp;спешки.
+              Ваша программа уже у&nbsp;нас. Администратор свяжется с&nbsp;вами в&nbsp;течение 15&nbsp;минут.
             </p>
-
-            <div className="mt-8 flex w-full flex-col gap-3 sm:px-0">
-              <button 
-                onClick={onClose} 
-                className="btn-primary inline-flex w-full items-center justify-center"
-              >
-                Вернуться на сайт
-              </button>
-              <button
-                type="button"
-                onClick={onClose}
-                className="text-[14px] font-medium text-[#566A93] transition-colors hover:text-[#1C3C8C]"
-              >
-                Закрыть окно
-              </button>
-            </div>
+            <button onClick={onClose} className="btn-primary mt-8 w-full">Вернуться на сайт</button>
           </div>
         ) : step === 0 ? (
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
@@ -134,60 +103,29 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
               <h2 className="font-noto-serif-narrow ds-h3 text-[#1c3c8c] leading-tight">{QUIZ_CONFIG.title}</h2>
               <p className="mt-3 text-[15px] leading-[1.5] text-[#566A93] sm:text-[16px]">{QUIZ_CONFIG.subtitle}</p>
             </div>
-            
-            <div className="mt-8 w-full rounded-2xl border border-[#DAEBFF] bg-[#EFF6FF] p-5 text-left">
-              <div className="flex items-start justify-between gap-4">
-                <span className="text-[12px] font-medium uppercase tracking-wider text-[#566A93]">
-                  Что вы получите
-                </span>
-              </div>
-              <ul className="mt-3 space-y-2 text-[14px] leading-[1.5] text-[#566A93]">
-                <li className="flex gap-2">
-                  <span className="text-[#1C3C8C]">1.</span>
-                  <span>Персональный список процедур</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-[#1C3C8C]">2.</span>
-                  <span>Расчет стоимости и длительности</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-[#1C3C8C]">3.</span>
-                  <span>Скидка на первый визит</span>
-                </li>
+            <div className="mt-8 w-full rounded-2xl border border-[#DAEBFF] bg-[#EFF6FF] p-5">
+              <span className="text-[12px] font-medium uppercase tracking-wider text-[#566A93]">Что вы получите</span>
+              <ul className="mt-3 space-y-2 text-[14px] text-[#566A93]">
+                <li className="flex gap-2"><span className="text-[#1C3C8C]">1.</span> Персональный список процедур</li>
+                <li className="flex gap-2"><span className="text-[#1C3C8C]">2.</span> Расчет стоимости и длительности</li>
+                <li className="flex gap-2"><span className="text-[#1C3C8C]">3.</span> Скидка на первый визит</li>
               </ul>
             </div>
-            
-            <div className="mt-8 flex w-full flex-col gap-3 sm:px-0">
-              <button 
-                onClick={handleNext} 
-                className="btn-primary inline-flex w-full items-center justify-center"
-              >
-                Подобрать программу
-              </button>
-              <button
-                type="button"
-                onClick={onClose}
-                className="text-[14px] font-medium text-[#566A93] transition-colors hover:text-[#1C3C8C]"
-              >
-                Вернуться на сайт
-              </button>
-            </div>
+            <button onClick={handleNext} className="btn-primary mt-8 w-full">Подобрать программу</button>
           </div>
         ) : isResultsStep ? (
-          <QuizResults scenarioIds={resultScenarioIds} onNext={handleNext} />
+          <QuizResults scenarioIds={resultScenarioIds} answers={answers} onNext={handleNext} />
         ) : isContactStep ? (
           <QuizContactForm onSubmit={onContactSubmit} isSubmitting={isSubmitting} />
         ) : (
           <div className="py-6 animate-in fade-in slide-in-from-right-4 duration-300">
-            <div className="flex items-center justify-between mb-8">
-              <div className="flex flex-col gap-1 w-full">
-                <span className="text-[10px] font-bold text-[#A2CFFE] uppercase tracking-[0.2em] mb-2">Вопрос {step} из 6</span>
-                <div className="h-1.5 w-full bg-[#EFF6FF] rounded-full overflow-hidden">
-                  <div 
-                    className="h-full bg-gradient-to-r from-[#A2CFFE] to-[#5DAAFD] transition-all duration-500 ease-out"
-                    style={{ width: `${(step / 6) * 100}%` }}
-                  />
-                </div>
+            <div className="flex flex-col gap-1 w-full mb-8">
+              <span className="text-[10px] font-bold text-[#A2CFFE] uppercase tracking-[0.2em] mb-2">Вопрос {step} из {visibleSteps.length}</span>
+              <div className="h-1.5 w-full bg-[#EFF6FF] rounded-full overflow-hidden">
+                <div 
+                  className="h-full bg-gradient-to-r from-[#A2CFFE] to-[#5DAAFD] transition-all duration-500 ease-out"
+                  style={{ width: `${(step / visibleSteps.length) * 100}%` }}
+                />
               </div>
             </div>
             
@@ -203,14 +141,13 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
                       const current = answers[currentStep.id] || [];
                       if (currentStep.type === "single") {
                         setAnswers({ ...answers, [currentStep.id]: [opt.text] });
-                        // Auto next for single choice
                         setTimeout(handleNext, 300);
                       } else {
                         const exists = current.includes(opt.text);
                         setAnswers({ 
                           ...answers, 
                           [currentStep.id]: exists 
-                            ? current.filter(t => t !== opt.text) 
+                            ? current.filter((t: string) => t !== opt.text) 
                             : [...current, opt.text] 
                         });
                       }
@@ -233,12 +170,8 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
             </div>
 
             <div className="flex gap-4">
-              <button 
-                onClick={handleBack} 
-                className="btn-secondary flex-1 h-14 flex items-center justify-center gap-2"
-              >
-                <ChevronLeft size={20} />
-                Назад
+              <button onClick={handleBack} className="btn-secondary flex-1 h-14 flex items-center justify-center gap-2">
+                <ChevronLeft size={20} /> Назад
               </button>
               {currentStep.type === "multiple" && (
                 <button 

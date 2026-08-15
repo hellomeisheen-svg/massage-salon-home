@@ -15,9 +15,7 @@ const navItems: FooterNavItem[] = [
 
 const ADDRESS =
   "Приморский край, п. Трудовое, ул. Лермонтова, 46";
-const YANDEX_QUERY = encodeURIComponent(
-  "Седьмое небо, Приморский край, посёлок Трудовое, улица Лермонтова, 46"
-);
+
 
 function scrollToTop() {
   const start = window.scrollY || document.documentElement.scrollTop;
