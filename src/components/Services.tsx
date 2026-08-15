@@ -506,7 +506,7 @@ export function ServiceCard({
             </span>
           )}
           <div className="flex flex-col items-end">
-            <span className="font-noto-serif-narrow ds-price text-[#1C3C8C]">
+            <span className="font-noto-serif-narrow text-[36px] font-light text-[#1C3C8C]">
               {renderPrice(computedPrice)}
             </span>
             <span className="text-[13px] font-light text-[#566A93]">{priceLabel}</span>
@@ -576,7 +576,7 @@ export function ServiceCard({
               </span>
             )}
             <div className="flex flex-col items-end">
-              <span className="font-noto-serif-narrow ds-price text-[#1C3C8C]">
+              <span className="font-noto-serif-narrow text-[36px] font-light text-[#1C3C8C]">
                 {renderPrice(computedPrice)}
               </span>
               <span className="text-[13px] font-light text-[#566A93]">{priceLabel}</span>
