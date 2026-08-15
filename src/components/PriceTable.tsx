@@ -158,17 +158,6 @@ export function PriceTable({ prices, bookingPrefix }: { prices: ServicePrice[], 
           Цены указаны с учётом скидки при покупке курса. Оплатить можно на месте.
         </p>
 
-        <div className="mt-10 flex justify-center">
-          <div className="w-full flex justify-center">
-            <button
-              type="button"
-              onClick={() => openBooking(bookingPrefix || "Форматы и стоимость")}
-              className="btn-primary w-full sm:w-[280px] xl:w-[250px] px-16"
-            >
-              Записаться
-            </button>
-          </div>
-        </div>
       </div>
     </section>
 
