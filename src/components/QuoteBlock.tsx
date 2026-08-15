@@ -74,7 +74,7 @@ export function QuoteBlock() {
           «Иногда достаточно тишины и&nbsp;бережного внимания, чтобы почувствовать себя лучше»
         </h2>
 
-        <div className="mt-6 hidden sm:flex xl:hidden flex-col items-center gap-1">
+        <div className="mt-6 flex flex-col items-center gap-1">
           <div className="font-noto-serif-narrow ds-h4 text-[#1c3c8c]">
             Татьяна Злобина
           </div>
