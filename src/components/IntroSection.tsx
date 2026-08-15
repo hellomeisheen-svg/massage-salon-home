@@ -1,16 +1,14 @@
 import { useBooking } from "@/components/BookingModal";
 
 const educationList = [
-  "Школа «Магнат» (Владивосток) — Классический массаж",
-  "Школа мастеров массажа (Москва) — Массаж лица",
-  "Школа векторного массажа и соматики (Москва) — Векторный, лимфатический и лимфадренажный массаж",
-  "Академия гирудотерапии (Челябинск) — Гирудотерапия",
-  "Школа Бахолдиной (Москва) — Баночный массаж и акупунктурный кетгут"
+  { school: "Школа «Магнат» (Владивосток)", skill: "Классический массаж" },
+  { school: "Школа мастеров массажа (Москва)", skill: "Массаж лица" },
+  { school: "Школа векторного массажа и соматики (Москва)", skill: "Векторный, лимфатический и лимфадренажный массаж" },
+  { school: "Академия гирудотерапии (Челябинск)", skill: "Гирудотерапия" },
+  { school: "Школа Бахолдиной (Москва)", skill: "Баночный массаж и акупунктурный кетгут" }
 ];
 
 export function IntroSection() {
-  const { openBooking } = useBooking();
-  
   return (
     <section id="about" className="scroll-mt-[120px] bg-[#EFF6FF] ds-section pb-0 sm:pb-0 xl:pb-0">
       <div className="container-1900">
@@ -40,35 +38,26 @@ export function IntroSection() {
               Знакомство с кабинетом
             </h2>
             
-            <div className="mt-8 space-y-6 text-[#566A93] body-text">
+            <div className="mt-8 space-y-8 text-[#566A93] body-text w-full">
               <p>
                 Меня зовут Татьяна Злобина. Я — мастер оздоровительных практик с многолетним опытом работы. Мой кабинет — это пространство, где профессионализм встречается с искренней заботой о человеке.
               </p>
               
-              <div>
-                <p className="font-medium text-[#1C3C8C] mb-3">Моё образование и специализации:</p>
-                <ul className="space-y-2 list-none">
+              <div className="space-y-4">
+                <p className="font-medium text-[#1C3C8C] text-[18px]">Моё образование и специализации:</p>
+                <div className="grid gap-3">
                   {educationList.map((item, idx) => (
-                    <li key={idx} className="flex gap-3 items-start">
-                      <span className="text-[#A2CFFE] mt-1.5" aria-hidden="true">•</span>
-                      <span>{item}</span>
-                    </li>
+                    <div key={idx} className="group relative flex flex-col p-4 rounded-[12px] bg-white border border-[#DAEBFF] hover:border-[#A2CFFE] transition-all duration-300">
+                      <span className="text-[12px] uppercase tracking-wider text-[#A2CFFE] font-medium mb-1">{item.school}</span>
+                      <span className="text-[#1C3C8C] font-medium leading-snug">{item.skill}</span>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
 
               <p>
                 В своей работе я использую комплексный подход, сочетая классический массаж, работу с банками и гирудотерапию. Каждый сеанс выстраивается индивидуально, исходя из вашего запроса и текущего состояния тела.
               </p>
-            </div>
-            
-            <div className="mt-10 w-full sm:w-auto">
-              <button 
-                onClick={() => openBooking()}
-                className="btn-primary w-full sm:w-[280px]"
-              >
-                Записаться на сеанс
-              </button>
             </div>
           </div>
         </div>
