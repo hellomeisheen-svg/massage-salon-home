@@ -68,61 +68,110 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
 
   return (
     <div 
-      className={`fixed inset-0 z-[100] flex items-center justify-center p-4 bg-[#1c3c8c]/50 backdrop-blur-sm transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0'}`}
-      role="dialog"
-      aria-modal="true"
+      className={`fixed inset-0 z-[100] flex items-end justify-center overflow-y-auto bg-[#1C3C8C]/40 p-4 backdrop-blur-sm sm:items-center sm:p-6 transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0'}`}
+      onMouseDown={(e) => {
+        if ((e.target as HTMLElement).getAttribute('role') === 'dialog-overlay') onClose();
+      }}
+      role="presentation"
+      data-role="dialog-overlay"
     >
-      <div className="relative w-full max-w-2xl bg-white rounded-3xl p-6 md:p-10 shadow-2xl overflow-y-auto max-h-[90vh] transition-transform duration-300 scale-100">
+      <div className="relative my-auto w-full max-w-[640px] ds-card p-5 sm:p-8 xl:p-10 transition-transform duration-300 scale-100">
         <button 
           onClick={onClose} 
-          className="absolute top-6 right-6 p-2 rounded-full text-[#566A93] hover:text-[#1c3c8c] hover:bg-[#EFF6FF] transition-all"
+          className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-[0.5rem] border border-[#daebff] bg-[#EFF6FF] text-[#1C3C8C] transition-colors hover:bg-white z-10"
           aria-label="Закрыть"
         >
-          <X size={20} />
+          <X size={18} />
         </button>
 
         {isSuccess ? (
-          <div className="text-center py-12 animate-in zoom-in-95 duration-500">
-            <div className="mb-8 flex justify-center">
-              <div className="relative">
-                <div className="absolute inset-0 rounded-full bg-[#A2CFFE] blur-2xl opacity-40 animate-pulse" />
-                <div className="relative flex h-20 w-20 items-center justify-center rounded-full border border-[#DAEBFF] bg-white shadow-lg">
-                  <Check className="h-10 w-10 text-[#5DAAFD]" />
-                </div>
+          <div className="relative flex flex-col items-center px-2 pt-6 pb-2 text-center sm:px-4 sm:pt-8 animate-in zoom-in-95 duration-500">
+            {/* Success icon with halo */}
+            <div className="relative mb-8">
+              <div className="absolute inset-0 rounded-full bg-[#A2CFFE] blur-2xl opacity-40 animate-pulse" />
+              <div className="relative flex h-20 w-20 items-center justify-center rounded-full border border-[#DAEBFF] bg-white shadow-lg shadow-[#A2CFFE]/25">
+                <svg
+                  className="h-10 w-10 text-[#1C3C8C]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={1.5}
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
               </div>
             </div>
-            <h2 className="font-noto-serif-narrow ds-h2 text-[#1c3c8c]">Спасибо!</h2>
-            <p className="mt-4 text-[#566A93] text-lg max-w-[400px] mx-auto">
-              Ваша программа уже у нас. Менеджер свяжется в течение 15 минут, чтобы согласовать время.
+
+            <h2 className="font-noto-serif-narrow ds-h3 text-[#1c3c8c]">Спасибо!</h2>
+            <p className="mt-4 max-w-[360px] text-[15px] leading-[1.6] text-[#566A93] sm:text-[16px]">
+              Ваша программа уже у&nbsp;нас. Администратор свяжется с&nbsp;вами в&nbsp;течение 15&nbsp;минут, чтобы уточнить детали и&nbsp;согласуем время без&nbsp;спешки.
             </p>
-            <button onClick={onClose} className="btn-primary mt-10 w-full sm:w-auto px-12">
-              Вернуться на сайт
-            </button>
+
+            <div className="mt-8 flex w-full flex-col gap-3 sm:px-0">
+              <button 
+                onClick={onClose} 
+                className="btn-primary inline-flex w-full items-center justify-center"
+              >
+                Вернуться на сайт
+              </button>
+              <button
+                type="button"
+                onClick={onClose}
+                className="text-[14px] font-medium text-[#566A93] transition-colors hover:text-[#1C3C8C]"
+              >
+                Закрыть окно
+              </button>
+            </div>
           </div>
         ) : step === 0 ? (
-          <div className="text-center py-10 animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <h2 className="font-noto-serif-narrow ds-h2 text-[#1c3c8c] leading-tight">{QUIZ_CONFIG.title}</h2>
-            <p className="mt-5 text-[#566A93] text-lg leading-relaxed">{QUIZ_CONFIG.subtitle}</p>
-            <div className="mt-10 p-6 rounded-2xl bg-[#EFF6FF]/50 border border-[#DAEBFF] text-left">
-              <h4 className="text-sm font-semibold text-[#1c3c8c] uppercase tracking-wider mb-3">Что вы получите:</h4>
-              <ul className="space-y-2 text-[#566A93] text-sm">
-                <li className="flex gap-2 items-center">
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#5DAAFD]" />
-                  Персональный список процедур
+          <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
+            <div className="pr-12">
+              <h2 className="font-noto-serif-narrow ds-h3 text-[#1c3c8c] leading-tight">{QUIZ_CONFIG.title}</h2>
+              <p className="mt-3 text-[15px] leading-[1.5] text-[#566A93] sm:text-[16px]">{QUIZ_CONFIG.subtitle}</p>
+            </div>
+            
+            <div className="mt-8 w-full rounded-2xl border border-[#DAEBFF] bg-[#EFF6FF] p-5 text-left">
+              <div className="flex items-start justify-between gap-4">
+                <span className="text-[12px] font-medium uppercase tracking-wider text-[#566A93]">
+                  Что вы получите
+                </span>
+              </div>
+              <ul className="mt-3 space-y-2 text-[14px] leading-[1.5] text-[#566A93]">
+                <li className="flex gap-2">
+                  <span className="text-[#1C3C8C]">1.</span>
+                  <span>Персональный список процедур</span>
                 </li>
-                <li className="flex gap-2 items-center">
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#5DAAFD]" />
-                  Расчет стоимости и длительности
+                <li className="flex gap-2">
+                  <span className="text-[#1C3C8C]">2.</span>
+                  <span>Расчет стоимости и длительности</span>
                 </li>
-                <li className="flex gap-2 items-center">
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#5DAAFD]" />
-                  Скидка на первый визит
+                <li className="flex gap-2">
+                  <span className="text-[#1C3C8C]">3.</span>
+                  <span>Скидка на первый визит</span>
                 </li>
               </ul>
             </div>
-            <button onClick={handleNext} className="btn-primary mt-10 w-full">
-              Подобрать программу
-            </button>
+            
+            <div className="mt-8 flex w-full flex-col gap-3 sm:px-0">
+              <button 
+                onClick={handleNext} 
+                className="btn-primary inline-flex w-full items-center justify-center"
+              >
+                Подобрать программу
+              </button>
+              <button
+                type="button"
+                onClick={onClose}
+                className="text-[14px] font-medium text-[#566A93] transition-colors hover:text-[#1C3C8C]"
+              >
+                Вернуться на сайт
+              </button>
+            </div>
           </div>
         ) : isResultsStep ? (
           <QuizResults scenarioIds={resultScenarioIds} onNext={handleNext} />
@@ -131,9 +180,9 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
         ) : (
           <div className="py-6 animate-in fade-in slide-in-from-right-4 duration-300">
             <div className="flex items-center justify-between mb-8">
-              <div className="flex flex-col gap-1">
-                <span className="text-[10px] font-bold text-[#A2CFFE] uppercase tracking-[0.2em]">Вопрос {step} из 6</span>
-                <div className="h-1.5 w-48 bg-[#EFF6FF] rounded-full overflow-hidden">
+              <div className="flex flex-col gap-1 w-full">
+                <span className="text-[10px] font-bold text-[#A2CFFE] uppercase tracking-[0.2em] mb-2">Вопрос {step} из 6</span>
+                <div className="h-1.5 w-full bg-[#EFF6FF] rounded-full overflow-hidden">
                   <div 
                     className="h-full bg-gradient-to-r from-[#A2CFFE] to-[#5DAAFD] transition-all duration-500 ease-out"
                     style={{ width: `${(step / 6) * 100}%` }}
@@ -166,15 +215,15 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
                         });
                       }
                     }}
-                    className={`w-full text-left p-4 md:p-5 rounded-2xl border-2 transition-all duration-300 flex items-center justify-between group ${
+                    className={`w-full text-left p-4 md:p-5 rounded-[0.5rem] border border-[#daebff] transition-all duration-300 flex items-center justify-between group ${
                       isSelected 
-                        ? "border-[#5DAAFD] bg-[#EFF6FF] text-[#1c3c8c] shadow-md shadow-[#5DAAFD]/10" 
-                        : "border-[#DAEBFF] bg-white text-[#566A93] hover:border-[#A2CFFE] hover:bg-[#EFF6FF]/30"
+                        ? "border-[#1C3C8C] bg-white text-[#1c3c8c]" 
+                        : "bg-[#EFF6FF] text-[#566A93] hover:bg-white"
                     }`}
                   >
                     <span className="font-medium text-base md:text-lg">{opt.text}</span>
-                    <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-colors ${
-                      isSelected ? "bg-[#5DAAFD] border-[#5DAAFD]" : "bg-white border-[#DAEBFF] group-hover:border-[#A2CFFE]"
+                    <div className={`w-6 h-6 rounded-[6px] border flex items-center justify-center transition-colors ${
+                      isSelected ? "bg-[#88C1FF] border-[#88C1FF]" : "bg-white border-[#DAEBFF] group-hover:border-[#A2CFFE]"
                     }`}>
                       {isSelected && <Check size={14} className="text-white" strokeWidth={3} />}
                     </div>
