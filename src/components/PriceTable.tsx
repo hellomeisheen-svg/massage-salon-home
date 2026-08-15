@@ -12,7 +12,7 @@ export type ServicePrice = {
   base: number;
 };
 
-export function PriceTable({ prices, bookingPrefix }: { prices: ServicePrice[], bookingPrefix?: string }) {
+export function PriceTable({ prices, title = "Форматы и стоимость" }: { prices: ServicePrice[], title?: string }) {
   const { openBooking } = useBooking();
   const [activeTab, setActiveTab] = useState(0);
 
@@ -25,7 +25,7 @@ export function PriceTable({ prices, bookingPrefix }: { prices: ServicePrice[], 
     <section id="prices" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section">
       <div className="container-1900">
         <h2 className="font-noto-serif-narrow text-center ds-h2 text-[#1C3C8C]">
-          Форматы и стоимость
+          {title}
         </h2>
 
         <div className="mt-8 sm:mt-10 ds-card overflow-hidden">
