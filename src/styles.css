@@ -509,6 +509,18 @@ button:focus-visible {
   }
 }
 
+@media (max-width: 767px) {
+  body, .footer-bottom-padding {
+    padding-bottom: 96px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  body, .footer-bottom-padding {
+    padding-bottom: 104px;
+  }
+}
+
 @utility ds-h1 {
   font-family: var(--font-heading);
   font-weight: 400;
