@@ -4,21 +4,34 @@ export const StickyMobileCTA = memo(function StickyMobileCTA() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const hero = document.getElementById("hero");
-    if (!hero) {
-      setIsVisible(false);
-      return;
-    }
+    // We check for the hero element. If it doesn't exist (e.g. during a transition),
+    // we wait a bit or just poll, but usually it's there on load.
+    const updateVisibility = () => {
+      const hero = document.getElementById("hero");
+      if (!hero) {
+        setIsVisible(false);
+        return;
+      }
 
-    const handleScroll = () => {
       const rect = hero.getBoundingClientRect();
-      // Показываем кнопку, когда нижняя граница hero скрывается из виду
+      // Show only when the bottom of hero is passed
       setIsVisible(rect.bottom <= 0);
     };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", updateVisibility, { passive: true });
+    window.addEventListener("resize", updateVisibility);
+    
+    // Initial check
+    updateVisibility();
+
+    // Periodic check in case DOM changes without scroll
+    const interval = setInterval(updateVisibility, 500);
+
+    return () => {
+      window.removeEventListener("scroll", updateVisibility);
+      window.removeEventListener("resize", updateVisibility);
+      clearInterval(interval);
+    };
   }, []);
 
   if (!isVisible) return null;
