@@ -105,19 +105,25 @@ export function PriceTable({ prices, bookingPrefix }: { prices: ServicePrice[], 
                 const currentPrice = Math.round(totalBase * (1 - discount));
                 const sessionWord = pluralize(count, ["сеанс", "сеанса", "сеансов"]);
                 
+                // Specific data for leech therapy based on context
+                const isHirudo = p.zone.toLowerCase().includes("пиявк");
+                const leeches = count === 1 ? 6 : (count === 3 ? 16 : (count === 6 ? 74 : 0));
+                
                 return (
                   <div key={p.zone} className="bg-white p-6 rounded-[20px] shadow-[0_4px_20px_rgba(28,60,140,0.04)] border border-[#daebff]/50">
                     <div className="space-y-4">
-                      <div>
-                        <div className="font-noto-serif-narrow text-[22px] font-light leading-[1.2] text-[#1C3C8C]">
-                          {p.zone}
-                        </div>
-                        <div className="mt-1 text-[13px] font-light text-[#566A93]">
-                          {p.duration}
+                      <div className="flex justify-between items-start">
+                        <div>
+                          <div className="font-noto-serif-narrow text-[22px] font-light leading-[1.2] text-[#1C3C8C]">
+                            {p.zone}
+                          </div>
+                          <div className="mt-1 text-[13px] font-light text-[#566A93]">
+                            {p.duration}
+                          </div>
                         </div>
                       </div>
                       
-                      <div className="flex items-center gap-6 pt-4 border-t border-[#daebff]/40">
+                      <div className="flex items-center justify-between pt-4 border-t border-[#daebff]/40">
                         <div className="flex-1">
                           <div className="text-[12px] font-light text-[#566A93] uppercase tracking-wider mb-1">
                             {count} {sessionWord}
@@ -132,18 +138,12 @@ export function PriceTable({ prices, bookingPrefix }: { prices: ServicePrice[], 
                               </span>
                             )}
                           </div>
+                          {isHirudo && (
+                            <div className="mt-1 text-[12px] font-light text-[#566A93]">
+                              {leeches} {pluralize(leeches, ["пиявка", "пиявки", "пиявок"])}
+                            </div>
+                          )}
                         </div>
-                        
-                        {count > 1 && (
-                          <div className="text-right">
-                             <div className="text-[11px] font-light text-[#566A93] mb-0.5">
-                               За 1 пиявку
-                             </div>
-                             <div className="font-noto-serif-narrow text-[15px] font-light text-[#1C3C8C]">
-                               {renderPrice(formatPrice(Math.round(currentPrice / (count === 3 ? 16 : 74))))}
-                             </div>
-                          </div>
-                        )}
                       </div>
                     </div>
                   </div>
