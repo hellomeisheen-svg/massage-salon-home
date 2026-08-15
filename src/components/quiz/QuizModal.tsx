@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { X, ChevronLeft, Loader2, Check } from "lucide-react";
+import { X, ChevronLeft, Check } from "lucide-react";
 import { QUIZ_CONFIG, calculateResult } from "@/config/quiz";
 import { submitQuizLead } from "@/lib/quiz.functions";
 import { QuizResults } from "./QuizResults";
@@ -82,15 +82,33 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
         </button>
 
         {isSuccess ? (
-          <div className="py-12 text-center animate-in zoom-in-95 duration-500">
+          <div className="relative flex flex-col items-center px-2 pt-6 pb-2 text-center sm:px-4 sm:pt-8 animate-in zoom-in-95 duration-500">
+            <div className="relative mb-8">
+              <div className="absolute inset-0 rounded-full bg-[#A2CFFE] blur-2xl opacity-40 animate-pulse" />
+              <div className="relative flex h-20 w-20 items-center justify-center rounded-full border border-[#DAEBFF] bg-white shadow-lg shadow-[#A2CFFE]/25">
+                <Check size={40} className="text-[#1C3C8C]" strokeWidth={1.5} />
+              </div>
+            </div>
             <h2 className="font-noto-serif-narrow ds-h3 text-[#1c3c8c]">Спасибо!</h2>
-            <p className="mt-4 text-[#566A93]">Ваша программа принята.</p>
+            <p className="mt-4 max-w-[360px] text-[15px] leading-[1.6] text-[#566A93] sm:text-[16px]">
+              Ваша программа уже у&nbsp;нас. Администратор свяжется с&nbsp;вами в&nbsp;течение 15&nbsp;минут.
+            </p>
             <button onClick={onClose} className="btn-primary mt-8 w-full">Вернуться на сайт</button>
           </div>
         ) : step === 0 ? (
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <h2 className="font-noto-serif-narrow ds-h3 text-[#1c3c8c] leading-tight">{QUIZ_CONFIG.title}</h2>
-            <p className="mt-3 text-[15px] leading-[1.5] text-[#566A93] sm:text-[16px]">{QUIZ_CONFIG.subtitle}</p>
+            <div className="pr-12">
+              <h2 className="font-noto-serif-narrow ds-h3 text-[#1c3c8c] leading-tight">{QUIZ_CONFIG.title}</h2>
+              <p className="mt-3 text-[15px] leading-[1.5] text-[#566A93] sm:text-[16px]">{QUIZ_CONFIG.subtitle}</p>
+            </div>
+            <div className="mt-8 w-full rounded-2xl border border-[#DAEBFF] bg-[#EFF6FF] p-5">
+              <span className="text-[12px] font-medium uppercase tracking-wider text-[#566A93]">Что вы получите</span>
+              <ul className="mt-3 space-y-2 text-[14px] text-[#566A93]">
+                <li className="flex gap-2"><span className="text-[#1C3C8C]">1.</span> Персональный список процедур</li>
+                <li className="flex gap-2"><span className="text-[#1C3C8C]">2.</span> Расчет стоимости и длительности</li>
+                <li className="flex gap-2"><span className="text-[#1C3C8C]">3.</span> Скидка на первый визит</li>
+              </ul>
+            </div>
             <button onClick={handleNext} className="btn-primary mt-8 w-full">Подобрать программу</button>
           </div>
         ) : isResultsStep ? (
@@ -99,8 +117,14 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
           <QuizContactForm onSubmit={onContactSubmit} isSubmitting={isSubmitting} />
         ) : (
           <div className="py-6 animate-in fade-in slide-in-from-right-4 duration-300">
-            <div className="flex items-center justify-between mb-8">
-              <span className="text-[10px] font-bold text-[#A2CFFE] uppercase tracking-[0.2em]">Вопрос {step} из {visibleSteps.length}</span>
+            <div className="flex flex-col gap-1 w-full mb-8">
+              <span className="text-[10px] font-bold text-[#A2CFFE] uppercase tracking-[0.2em] mb-2">Вопрос {step} из {visibleSteps.length}</span>
+              <div className="h-1.5 w-full bg-[#EFF6FF] rounded-full overflow-hidden">
+                <div 
+                  className="h-full bg-gradient-to-r from-[#A2CFFE] to-[#5DAAFD] transition-all duration-500 ease-out"
+                  style={{ width: `${(step / visibleSteps.length) * 100}%` }}
+                />
+              </div>
             </div>
             
             <h3 className="font-noto-serif-narrow ds-h3 text-[#1c3c8c] mb-8 leading-tight">{currentStep.question}</h3>
@@ -126,14 +150,37 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
                         });
                       }
                     }}
-                    className={`w-full text-left p-4 rounded-[0.5rem] border transition-all ${isSelected ? "border-[#1C3C8C] bg-white" : "bg-[#EFF6FF] text-[#566A93]"}`}
+                    className={`w-full text-left p-4 md:p-5 rounded-[0.5rem] border border-[#daebff] transition-all duration-300 flex items-center justify-between group ${
+                      isSelected 
+                        ? "border-[#1C3C8C] bg-white text-[#1c3c8c]" 
+                        : "bg-[#EFF6FF] text-[#566A93] hover:bg-white"
+                    }`}
                   >
-                    <span className="font-medium text-base">{opt.text}</span>
+                    <span className="font-medium text-base md:text-lg">{opt.text}</span>
+                    <div className={`w-6 h-6 rounded-[6px] border flex items-center justify-center transition-colors ${
+                      isSelected ? "bg-[#88C1FF] border-[#88C1FF]" : "bg-white border-[#DAEBFF] group-hover:border-[#A2CFFE]"
+                    }`}>
+                      {isSelected && <Check size={14} className="text-white" strokeWidth={3} />}
+                    </div>
                   </button>
                 );
               })}
             </div>
-            <button onClick={handleBack} className="text-[#566A93]">Назад</button>
+
+            <div className="flex gap-4">
+              <button onClick={handleBack} className="btn-secondary flex-1 h-14 flex items-center justify-center gap-2">
+                <ChevronLeft size={20} /> Назад
+              </button>
+              {currentStep.type === "multiple" && (
+                <button 
+                  disabled={!(answers[currentStep.id]?.length)}
+                  onClick={handleNext} 
+                  className="btn-primary flex-[2] h-14"
+                >
+                  Далее
+                </button>
+              )}
+            </div>
           </div>
         )}
       </div>
