@@ -132,11 +132,11 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
           <div className="py-6 animate-in fade-in slide-in-from-right-4 duration-300">
             <div className="flex items-center justify-between mb-8">
               <div className="flex flex-col gap-1">
-                <span className="text-[10px] font-bold text-[#A2CFFE] uppercase tracking-[0.2em]">Вопрос {step} из {QUIZ_CONFIG.steps.length}</span>
+                <span className="text-[10px] font-bold text-[#A2CFFE] uppercase tracking-[0.2em]">Вопрос {step} из 6</span>
                 <div className="h-1.5 w-48 bg-[#EFF6FF] rounded-full overflow-hidden">
                   <div 
                     className="h-full bg-gradient-to-r from-[#A2CFFE] to-[#5DAAFD] transition-all duration-500 ease-out"
-                    style={{ width: `${(step / QUIZ_CONFIG.steps.length) * 100}%` }}
+                    style={{ width: `${(step / 6) * 100}%` }}
                   />
                 </div>
               </div>
