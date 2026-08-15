@@ -6,12 +6,12 @@ import Logo from "@/components/Logo";
 type NavItem = { label: string; href: string };
 
 const defaultNavigationItems: NavItem[] = [
-  { label: "Услуги", href: "#services" },
-  { label: "Преимущества", href: "#advantages" },
-  { label: "Программы", href: "#programs" },
-  { label: "Обо мне", href: "#obrazovanie" },
-  { label: "Вопросы", href: "#faq" },
-  { label: "Контакты", href: "#contacts" },
+  { label: "Услуги", href: "/#services" },
+  { label: "Прайс", href: "/price" },
+  { label: "Программы", href: "/#programs" },
+  { label: "Обо мне", href: "/#obrazovanie" },
+  { label: "Вопросы", href: "/#faq" },
+  { label: "Контакты", href: "/#contacts" },
 ];
 
 const servicePages = [
