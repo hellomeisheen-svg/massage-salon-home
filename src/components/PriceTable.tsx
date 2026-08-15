@@ -116,8 +116,17 @@ export function PriceTable({ prices, title = "Форматы и стоимост
                     <div className="space-y-2.5">
                       <div className="flex justify-between items-baseline gap-3">
                         <div className="flex-1 min-w-0">
-                          <div className="font-noto-serif-narrow text-[18px] font-light leading-[1.1] text-[#1C3C8C] truncate">
-                            {p.zone}
+                          <div className="font-noto-serif-narrow text-[18px] font-light leading-[1.1] text-[#1C3C8C] flex flex-wrap items-center gap-x-2">
+                            {p.zone.includes(" • ") ? (
+                              <>
+                                <span>{p.zone.split(" • ")[0]}</span>
+                                <span className="inline-flex items-center justify-center rounded-full bg-[#daebff] px-2 py-0.5 text-[10px] font-medium leading-none text-[#1C3C8C]">
+                                  {p.zone.split(" • ")[1]}
+                                </span>
+                              </>
+                            ) : (
+                              p.zone
+                            )}
                           </div>
                           <div className="mt-0.5 text-[11px] font-light text-[#566A93]">
                             {p.duration}
@@ -173,8 +182,17 @@ function PriceTableRow({ p }: { p: ServicePrice }) {
   return (
     <tr className="group transition-colors hover:bg-[#F7FBFF]">
       <td className="px-4 py-5 xl:px-8">
-        <div className="font-noto-serif-narrow text-[18px] xl:text-[24px] font-light leading-[1.25] text-[#1C3C8C]">
-          {p.zone}
+        <div className="font-noto-serif-narrow text-[18px] xl:text-[24px] font-light leading-[1.25] text-[#1C3C8C] flex items-center gap-x-3">
+          {p.zone.includes(" • ") ? (
+            <>
+              <span>{p.zone.split(" • ")[0]}</span>
+              <span className="inline-flex items-center justify-center rounded-full bg-[#daebff] px-3 py-1 text-[12px] xl:text-[14px] font-medium leading-none text-[#1C3C8C]">
+                {p.zone.split(" • ")[1]}
+              </span>
+            </>
+          ) : (
+            p.zone
+          )}
         </div>
         <div className="mt-1 text-[13px] font-light leading-[18px] text-[#566A93] sm:hidden">
           {p.subtitle}
