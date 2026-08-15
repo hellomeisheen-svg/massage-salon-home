@@ -58,27 +58,32 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   }, [error]);
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="font-heading text-xl font-semibold tracking-tight text-foreground">
+    <div className="flex min-h-screen items-center justify-center bg-[#EFF6FF] px-4">
+      <div className="w-full max-w-[560px] px-6 py-10 text-center sm:px-10 sm:py-14">
+        <span
+          className="font-noto-serif-narrow block text-[80px] font-light leading-none tracking-tight text-[#1C3C8C] sm:text-[120px]"
+        >
+          !
+        </span>
+        <h1 className="font-heading mt-6 text-[30px] font-light leading-[1.15] text-[#1C3C8C] sm:text-[38px] xl:text-[44px]">
           Страница не загрузилась
         </h1>
-        <p className="mt-2 text-sm text-muted-foreground">
+        <p className="body-text mx-auto mt-4 max-w-[400px] text-[#566A93]">
           Что-то пошло не так. Попробуйте обновить страницу или вернуться на главную.
         </p>
-        <div className="mt-6 flex flex-wrap justify-center gap-2">
+        <div className="mt-8 flex flex-wrap justify-center gap-4">
           <button
             onClick={() => {
               router.invalidate();
               reset();
             }}
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="btn-primary w-full sm:w-[250px] cursor-pointer"
           >
             Попробовать снова
           </button>
           <a
             href="/"
-            className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+            className="btn-secondary w-full sm:w-[250px] inline-flex items-center justify-center text-center whitespace-nowrap"
           >
             На главную
           </a>
