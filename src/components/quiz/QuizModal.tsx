@@ -55,10 +55,9 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
           website: contact.website,
           answers: visibleSteps.map(s => ({
             question: s.question,
-            answer: answers[s.id] || []
+            answer: answers[s.id] || (s.type === "multiple" ? [] : "")
           })),
-
-          results: resultScenarioIds
+          results: recommendedServices.map(s => s.name)
         }
       });
       setIsSuccess(true);
