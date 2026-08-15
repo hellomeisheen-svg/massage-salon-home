@@ -1,5 +1,5 @@
 export interface QuizOption {
-  id: string | number;
+  id: string;
   text: string;
 }
 
@@ -21,19 +21,11 @@ export interface QuizService {
   isWellness?: boolean;
 }
 
-export interface QuizScenario {
-  id: string;
-  title: string;
-  description: string;
-  recommendedServiceIds: string[];
-}
-
 export const QUIZ_CONFIG: {
   title: string;
   subtitle: string;
   steps: QuizStepConfig[];
   services: QuizService[];
-  scenarios: QuizScenario[];
 } = {
   title: "Подберём идеальную процедуру для вашего тела и настроения",
   subtitle: "Ответьте на несколько коротких вопросов — получите персональную рекомендацию",
@@ -51,12 +43,12 @@ export const QUIZ_CONFIG: {
         { id: "unsure", text: "Не знаю, хочу рекомендацию специалиста" },
       ],
     },
-    // Branch 1: Relax
+    // Ветка 1. Глубокое расслабление
     {
       id: "relax_area",
       question: "Что хочется расслабить в первую очередь?",
       type: "single",
-      showIf: (a) => a.goal?.includes("Глубоко расслабиться"),
+      showIf: (a) => a.goal === "relax",
       options: [
         { id: "whole_body", text: "Всё тело" },
         { id: "back_neck", text: "Спина, плечи и шея" },
@@ -69,19 +61,19 @@ export const QUIZ_CONFIG: {
       id: "relax_intensity",
       question: "Какой формат воздействия вам ближе?",
       type: "single",
-      showIf: (a) => a.goal?.includes("Глубоко расслабиться"),
+      showIf: (a) => a.goal === "relax",
       options: [
         { id: "soft", text: "Мягко и спокойно" },
         { id: "deep", text: "С глубокой проработкой" },
         { id: "master_choice", text: "Не знаю, доверюсь мастеру" },
       ],
     },
-    // Branch 2: Back/Neck
+    // Ветка 2. Спина, шея и плечи
     {
       id: "back_tension_area",
       question: "Где ощущается основное напряжение?",
       type: "multiple",
-      showIf: (a) => a.goal?.includes("Снять напряжение в спине"),
+      showIf: (a) => a.goal === "back_neck",
       options: [
         { id: "neck", text: "Шея" },
         { id: "shoulders", text: "Плечи" },
@@ -95,7 +87,7 @@ export const QUIZ_CONFIG: {
       id: "back_result",
       question: "Какой результат для вас важнее?",
       type: "single",
-      showIf: (a) => a.goal?.includes("Снять напряжение в спине"),
+      showIf: (a) => a.goal === "back_neck",
       options: [
         { id: "quick_relief", text: "Быстро снять напряжение в конкретной зоне" },
         { id: "deep_work", text: "Глубоко проработать тело" },
@@ -103,12 +95,12 @@ export const QUIZ_CONFIG: {
         { id: "master_choice", text: "Не знаю, хочу рекомендацию мастера" },
       ],
     },
-    // Branch 3: Lightness
+    // Ветка 3. Лёгкость и отёчность
     {
       id: "lightness_area",
       question: "Где ощущается тяжесть или отёчность?",
       type: "multiple",
-      showIf: (a) => a.goal?.includes("Убрать отёчность"),
+      showIf: (a) => a.goal === "lightness",
       options: [
         { id: "whole_body", text: "Всё тело" },
         { id: "legs", text: "Ноги" },
@@ -117,12 +109,12 @@ export const QUIZ_CONFIG: {
         { id: "master_choice", text: "Не знаю, доверюсь мастеру" },
       ],
     },
-    // Branch 4: Face
+    // Ветка 4. Лицо (изолированная)
     {
       id: "face_goal",
       question: "Что хочется получить от процедуры для лица?",
       type: "multiple",
-      showIf: (a) => a.goal?.includes("Улучшить состояние кожи лица") || (a.goal?.includes("Убрать отёчность") && a.lightness_area?.includes("Лицо") && a.lightness_area?.length === 1),
+      showIf: (a) => a.goal === "face" || (a.goal === "lightness" && a.lightness_area?.length === 1 && a.lightness_area.includes("face")),
       options: [
         { id: "face_swelling", text: "Убрать отёчность" },
         { id: "freshness", text: "Вернуть свежесть и отдохнувший вид" },
@@ -136,7 +128,7 @@ export const QUIZ_CONFIG: {
       id: "face_format",
       question: "Какой формат ухода вам ближе?",
       type: "single",
-      showIf: (a) => a.goal?.includes("Улучшить состояние кожи лица") || (a.goal?.includes("Убрать отёчность") && a.lightness_area?.includes("Лицо") && a.lightness_area?.length === 1),
+      showIf: (a) => a.goal === "face" || (a.goal === "lightness" && a.lightness_area?.length === 1 && a.lightness_area.includes("face")),
       options: [
         { id: "classic_face", text: "Массаж лица" },
         { id: "lymph_face", text: "Лимфодренаж лица" },
@@ -144,12 +136,12 @@ export const QUIZ_CONFIG: {
         { id: "master_choice", text: "Не знаю, хочу рекомендацию специалиста" },
       ],
     },
-    // Branch 5: Wellness
+    // Ветка 5. Оздоровительные практики
     {
       id: "wellness_type",
       question: "Какая практика вам интересна?",
       type: "multiple",
-      showIf: (a) => a.goal?.includes("Оздоровиться с помощью восстановительных практик"),
+      showIf: (a) => a.goal === "wellness",
       options: [
         { id: "cups_air", text: "Мягкие банки" },
         { id: "cups_fire", text: "Стеклянные банки" },
@@ -163,7 +155,7 @@ export const QUIZ_CONFIG: {
       id: "wellness_massage",
       question: "Нужно ли дополнить практику массажем?",
       type: "single",
-      showIf: (a) => a.goal?.includes("Оздоровиться с помощью восстановительных практик"),
+      showIf: (a) => a.goal === "wellness",
       options: [
         { id: "add_relax_massage", text: "Да, хочу расслабляющий массаж" },
         { id: "add_back_neck_massage", text: "Да, хочу массаж спины и шеи" },
@@ -171,12 +163,12 @@ export const QUIZ_CONFIG: {
         { id: "master_choice", text: "Не знаю, пусть подскажет мастер" },
       ],
     },
-    // Branch 6: Unsure
+    // Ветка 6. Не знаю
     {
       id: "unsure_direction",
       question: "Что вам сейчас ближе?",
       type: "single",
-      showIf: (a) => a.goal?.includes("Не знаю, хочу рекомендацию"),
+      showIf: (a) => a.goal === "unsure",
       options: [
         { id: "relax", text: "Хочу расслабиться" },
         { id: "back_neck", text: "Беспокоит спина и шея" },
@@ -203,39 +195,4 @@ export const QUIZ_CONFIG: {
     { id: "girudo-cosm", name: "Гирудотерапия (косметические пиявки)", duration: "40-60 мин", price: "от 600 ₽ за шт", tags: ["face", "wellness"], isWellness: true, description: "Природный лифтинг и улучшение микроциркуляции кожи лица." },
     { id: "ketgut", name: "Акупунктурный кетгут", duration: "30-60 мин", price: "по запросу", tags: ["wellness"], isWellness: true, description: "Длительное воздействие на биологически активные точки." },
   ],
-  scenarios: [
-    { id: "relax", title: "Глубокое расслабление", description: "Вам подойдёт формат глубокой работы с телом для восстановления сил.", recommendedServiceIds: ["vector"] },
-    { id: "back_neck", title: "Снятие напряжения: спина и шея", description: "Фокус на работу с зажимами в верхней части тела.", recommendedServiceIds: ["classic-spine", "vector"] },
-    { id: "lightness", title: "Лёгкость и лимфодренаж", description: "Техники, направленные на снятие отёчности и тяжести.", recommendedServiceIds: ["lymph", "lymphatic"] },
-    { id: "face", title: "Уход за лицом", description: "Деликатные техники для свежести и тонуса кожи.", recommendedServiceIds: ["lymph-face", "classic-face", "girudo-cosm"] },
-    { id: "wellness", title: "Оздоровительные практики", description: "Восстановительные техники для поддержки организма.", recommendedServiceIds: [] },
-    { id: "first-visit", title: "Первый визит", description: "Если вы впервые у нас, рекомендуем начать с векторного массажа.", recommendedServiceIds: ["vector", "classic-full"] },
-  ],
 };
-
-export function calculateResult(answers: Record<string, any>): string[] {
-  const goal = answers.goal?.[0] || "";
-  
-  // Rule 4: Isolated Face branch
-  if (goal.includes("кожи лица") || (goal.includes("Убрать отёчность") && answers.lightness_area?.includes("Лицо") && answers.lightness_area?.length === 1)) {
-    return ["face"];
-  }
-
-  if (goal.includes("расслабиться")) return ["relax"];
-  if (goal.includes("спине, шее")) return ["back_neck"];
-  if (goal.includes("отёчность")) return ["lightness"];
-  if (goal.includes("Оздоровиться")) return ["wellness"];
-  
-  // Unsure with sub-selection
-  if (goal.includes("Не знаю")) {
-    const dir = answers.unsure_direction?.[0] || "";
-    if (dir.includes("расслабиться")) return ["relax"];
-    if (dir.includes("спина")) return ["back_neck"];
-    if (dir.includes("отёчность")) return ["lightness"];
-    if (dir.includes("лицом")) return ["face"];
-    if (dir.includes("практики")) return ["wellness"];
-    return ["first-visit"];
-  }
-
-  return ["first-visit"];
-}

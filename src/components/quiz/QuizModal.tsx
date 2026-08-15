@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { X, ChevronLeft, Check } from "lucide-react";
-import { QUIZ_CONFIG, calculateResult } from "@/config/quiz";
+import { QUIZ_CONFIG } from "@/config/quiz";
+import { calculateResult } from "@/lib/quiz.utils";
 import { submitQuizLead } from "@/lib/quiz.functions";
 import { QuizResults } from "./QuizResults";
 import { QuizContactForm } from "./QuizContactForm";
@@ -10,7 +11,7 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
   const [answers, setAnswers] = useState<Record<string, any>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-  const [resultScenarioIds, setResultScenarioIds] = useState<string[]>([]);
+  const [recommendedServices, setRecommendedServices] = useState<any[]>([]);
 
   // Filter steps based on current answers
   const visibleSteps = QUIZ_CONFIG.steps.filter(s => !s.showIf || s.showIf(answers));
@@ -33,8 +34,8 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
 
   const handleNext = () => {
     if (isLastQuestion) {
-      const results = calculateResult(answers);
-      setResultScenarioIds(results);
+      const services = calculateResult(answers);
+      setRecommendedServices(services);
     }
     setStep(step + 1);
   };
@@ -54,10 +55,9 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
           website: contact.website,
           answers: visibleSteps.map(s => ({
             question: s.question,
-            answer: answers[s.id] || []
+            answer: answers[s.id] || (s.type === "multiple" ? [] : "")
           })),
-
-          results: resultScenarioIds
+          results: recommendedServices.map(s => s.name)
         }
       });
       setIsSuccess(true);
@@ -114,7 +114,7 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
             <button onClick={handleNext} className="btn-primary mt-8 w-full">Подобрать программу</button>
           </div>
         ) : isResultsStep ? (
-          <QuizResults scenarioIds={resultScenarioIds} answers={answers} onNext={handleNext} />
+          <QuizResults services={recommendedServices} answers={answers} onNext={handleNext} />
         ) : isContactStep ? (
           <QuizContactForm onSubmit={onContactSubmit} isSubmitting={isSubmitting} />
         ) : (
@@ -133,22 +133,24 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
             
             <div className="grid gap-3 mb-10">
               {currentStep.options.map((opt) => {
-                const isSelected = (answers[currentStep.id] || []).includes(opt.text);
+                const isSelected = currentStep.type === "single" 
+                  ? answers[currentStep.id] === opt.id
+                  : (answers[currentStep.id] || []).includes(opt.id);
                 return (
                   <button
                     key={opt.id}
                     onClick={() => {
-                      const current = answers[currentStep.id] || [];
                       if (currentStep.type === "single") {
-                        setAnswers({ ...answers, [currentStep.id]: [opt.text] });
+                        setAnswers({ ...answers, [currentStep.id]: opt.id });
                         setTimeout(handleNext, 300);
                       } else {
-                        const exists = current.includes(opt.text);
+                        const current = answers[currentStep.id] || [];
+                        const exists = current.includes(opt.id);
                         setAnswers({ 
                           ...answers, 
                           [currentStep.id]: exists 
-                            ? current.filter((t: string) => t !== opt.text) 
-                            : [...current, opt.text] 
+                            ? current.filter((id: string) => id !== opt.id) 
+                            : [...current, opt.id] 
                         });
                       }
                     }}
