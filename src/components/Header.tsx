@@ -130,7 +130,7 @@ export function Header({
         <>
           {/* Blur overlay behind menu */}
           <div 
-            className="fixed inset-0 z-40 bg-[#EFF6FF]/40 backdrop-blur-[8px] xl:hidden" 
+            className="fixed inset-0 z-50 bg-[#EFF6FF]/40 backdrop-blur-[8px] xl:hidden" 
             onClick={() => setMenuOpen(false)}
           />
           <div className="absolute inset-x-4 sm:inset-x-5 top-[calc(100%+8px)] z-[60] h-[calc(100dvh-96px)] sm:h-[calc(100dvh-100px)] xl:hidden">
