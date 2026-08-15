@@ -39,6 +39,15 @@ export function QuizResults({
       const area = answers.lightness_area || [];
       if (area.includes("Ноги") || area.includes("Стопы")) serviceIds = ["classic-legs", "lymph", "lymphatic"];
       else if (area.includes("Всё тело")) serviceIds = ["lymph", "lymphatic", "vector"];
+      else if (area.includes("Лицо")) serviceIds = ["lymph-face", "classic-face"];
+    }
+
+    else if (goal.includes("кожи лица")) {
+      const format = answers.face_format?.[0] || "";
+      if (format.includes("Массаж лица")) serviceIds = ["classic-face"];
+      else if (format.includes("Лимфодренаж")) serviceIds = ["lymph-face"];
+      else if (format.includes("пиявки")) serviceIds = ["girudo-cosm"];
+      else serviceIds = ["lymph-face", "classic-face", "girudo-cosm"];
     }
 
     else if (goal.includes("Оздоровиться")) {
@@ -56,8 +65,9 @@ export function QuizResults({
       
       let massageIds: string[] = [];
       if (massage.includes("расслабляющий")) massageIds = ["vector", "classic-full"];
-      if (massage.includes("спины и шеи")) massageIds = ["classic-spine"];
+      else if (massage.includes("спины и шеи")) massageIds = ["classic-spine"];
       
+      // Filter out vector if it's already a practice or if we want to prioritize massage first
       serviceIds = [...massageIds, ...practiceIds];
     }
 
@@ -68,11 +78,13 @@ export function QuizResults({
       }
     }
 
-    return serviceIds
+    // Deduplicate and filter
+    return Array.from(new Set(serviceIds))
       .map(id => getService(id))
       .filter((s): s is QuizService => !!s)
       .slice(0, 3);
   };
+
 
   const services = getRecommendedServices();
 
