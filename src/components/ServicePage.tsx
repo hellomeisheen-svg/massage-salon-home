@@ -376,7 +376,7 @@ function PriceTable({ content }: { content: ServicePageContent }) {
       <div className="overflow-x-auto">
         <table className="w-full text-left border-collapse">
           <thead>
-            <tr className="bg-white border-b border-[#daebff]">
+            <tr className="bg-[#EFF6FF]/50 border-b border-[#daebff]">
               <th className="px-6 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
                 Зона
               </th>
