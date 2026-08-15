@@ -125,7 +125,7 @@ export function PriceTable({ prices, bookingPrefix }: { prices: ServicePrice[], 
                       
                       <div className="flex items-center justify-between pt-4 border-t border-[#daebff]/40">
                         <div className="flex-1">
-                          <div className="text-[12px] font-light text-[#566A93] uppercase tracking-wider mb-1">
+                          <div className="mb-2 inline-flex rounded-full bg-[#daebff]/40 px-2 py-0.5 text-[11px] font-light text-[#566A93]">
                             {count} {sessionWord}
                           </div>
                           <div className="flex items-baseline gap-2">
