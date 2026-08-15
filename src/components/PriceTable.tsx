@@ -73,13 +73,15 @@ export function PriceTable({ prices, bookingPrefix }: { prices: ServicePrice[], 
         </p>
 
         <div className="mt-10 flex justify-center">
-          <button
-            type="button"
-            onClick={() => openBooking(bookingPrefix || "Форматы и стоимость")}
-            className="btn-primary w-full sm:w-[280px] xl:w-[250px]"
-          >
-            Записаться
-          </button>
+          <div className="w-full px-2 sm:w-auto sm:px-0 flex justify-center">
+            <button
+              type="button"
+              onClick={() => openBooking(bookingPrefix || "Форматы и стоимость")}
+              className="btn-primary w-full sm:w-[280px] xl:w-[250px]"
+            >
+              Записаться
+            </button>
+          </div>
         </div>
       </div>
     </section>
