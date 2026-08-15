@@ -74,7 +74,7 @@ export function PromoBanner({
               {subtitle}
             </p>
 
-            <div className="mt-8 w-full sm:mt-10 sm:w-auto px-1 sm:px-0">
+            <div className="mt-8 w-full sm:mt-10 sm:w-auto">
               <button
                 type="button"
                 onClick={() => openBooking()}
