@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { formatPrice, renderPrice, pluralize } from "@/components/Services";
+import { useBooking } from "@/components/BookingModal";
+
 
 export type ServicePrice = {
   zone: string;
