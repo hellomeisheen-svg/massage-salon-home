@@ -230,10 +230,14 @@ export function Header({
                 Онлайн запись
               </a>
             </div>
+            </div>
           </div>
-        </div>
+        </>
       )}
       </div>
+    </header>
+  </>);
+}
     </header>
   </>);
 }
