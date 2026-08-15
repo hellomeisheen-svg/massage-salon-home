@@ -128,6 +128,7 @@
   background-image: linear-gradient(to bottom, #A2CFFE, #88C1FF);
   isolation: isolate;
   overflow: hidden;
+  touch-action: manipulation;
 }
 .btn-primary::before {
   content: "";
@@ -505,6 +506,18 @@ button:focus-visible {
   @media (min-width: 940px) {
     padding-top: 140px;
     padding-bottom: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  body, .footer-bottom-padding {
+    padding-bottom: 96px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  body, .footer-bottom-padding {
+    padding-bottom: 104px;
   }
 }
 

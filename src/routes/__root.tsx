@@ -13,6 +13,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Preloader } from "@/components/Preloader";
 import { TypographyProvider } from "@/components/TypographyProvider";
+import { StickyMobileCTA } from "@/components/StickyMobileCTA";
 
 
 
@@ -186,6 +187,7 @@ function RootComponent() {
 
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
+      <StickyMobileCTA />
     </QueryClientProvider>
 
   );
