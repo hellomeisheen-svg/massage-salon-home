@@ -566,8 +566,22 @@ export function ServiceCard({
           )}
         </div>
         
-        {/* Mobile: Actions */}
+        {/* Mobile: Price + Actions */}
         <div className="flex flex-col gap-3 sm:hidden">
+          {/* Mobile Price */}
+          <div className="flex items-center justify-center gap-4 py-2">
+            {hasDiscount && (
+              <span className="ds-price-old">
+                {renderPrice(originalPrice)}
+              </span>
+            )}
+            <div className="flex flex-col items-center">
+              <span className="font-noto-serif-narrow ds-price text-[#1C3C8C]">
+                {renderPrice(computedPrice)}
+              </span>
+            </div>
+          </div>
+
           <button
             type="button"
             onClick={() => openBooking(bookingTitle)}
