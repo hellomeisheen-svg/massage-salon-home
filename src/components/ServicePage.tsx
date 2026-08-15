@@ -9,7 +9,7 @@ import { Education } from "@/components/Education";
 import { OtherServices } from "@/components/OtherServices";
 import { BookingProvider, useBooking } from "@/components/BookingModal";
 import { formatPrice, pluralize, renderPrice } from "@/components/Services";
-import { PriceTable, type ServicePrice } from "@/components/PriceTable";
+// PriceTable removed as it was replaced by local PriceCards design
 
 
 export type ServiceSection = { label: string; content: React.ReactNode };
@@ -335,10 +335,10 @@ function PriceCard({ p, prefix }: { p: ServicePrice; prefix: string }) {
         ))}
       </div>
 
-      <h3 className="font-noto-serif-narrow mt-5 ds-h3 text-[#1C3C8C]">
+      <h3 className="font-noto-serif-narrow mt-5 text-[24px] sm:text-[32px] font-light leading-[1.1] text-[#1C3C8C]">
         {p.zone}
       </h3>
-      <p className="mt-3 body-text text-[#566A93]">{p.subtitle}</p>
+      <p className="mt-3 text-[15px] font-light leading-[1.5] text-[#566A93]">{p.subtitle}</p>
 
       <p className="mt-6 text-[13px] font-medium leading-[18px] tracking-wide text-[#1C3C8C]">
         {summary}

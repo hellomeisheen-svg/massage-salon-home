@@ -9,7 +9,7 @@ import { PromoBanner } from "@/components/PromoBanner";
 import { Programs } from "@/components/Programs";
 import { Education } from "@/components/Education";
 import { OtherServices } from "@/components/OtherServices";
-import { PriceTable, type ServicePrice } from "@/components/PriceTable";
+// PriceTable removed as it was replaced by local Prices design
 import { BookingProvider, useBooking } from "@/components/BookingModal";
 import { formatPrice, pluralize, renderPrice } from "@/components/Services";
 
@@ -481,10 +481,10 @@ function PriceCard({ p }: { p: HirudoRow }) {
         ))}
       </div>
 
-      <h3 className="font-noto-serif-narrow mt-5 ds-h3 text-[#1C3C8C]">
+      <h3 className="font-noto-serif-narrow mt-5 text-[24px] sm:text-[32px] font-light leading-[1.1] text-[#1C3C8C]">
         {p.zone}
       </h3>
-      <p className="mt-3 body-text text-[#566A93]">{p.subtitle}</p>
+      <p className="mt-3 text-[15px] font-light leading-[1.5] text-[#566A93]">{p.subtitle}</p>
 
       <div className="mt-6 flex flex-col gap-1">
         <p className="text-[13px] font-medium leading-[18px] tracking-wide text-[#1C3C8C]">
