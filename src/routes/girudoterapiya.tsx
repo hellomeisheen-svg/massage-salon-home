@@ -597,15 +597,6 @@ function Prices() {
           Цены указаны с учётом скидки при покупке курса. Оплатить можно на месте.
         </p>
 
-        <div className="mt-10 flex justify-center">
-          <button
-            type="button"
-            onClick={() => openBooking("Гирудотерапия · Форматы и стоимость")}
-            className="btn-primary w-full sm:w-[280px] xl:w-[250px]"
-          >
-            Записаться
-          </button>
-        </div>
       </div>
     </section>
   );
