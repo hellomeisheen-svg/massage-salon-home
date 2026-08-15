@@ -607,13 +607,13 @@ function Prices() {
           Форматы и&nbsp;стоимость
         </h2>
 
-        {/* Tablet & Desktop View */}
-        <div className="hidden sm:block mt-10">
+        {/* Desktop View */}
+        <div className="hidden lg:block mt-10">
           <HirudoPriceTable />
         </div>
 
         {/* Mobile View */}
-        <div className="sm:hidden mt-8 grid grid-cols-1 gap-4">
+        <div className="lg:hidden mt-8 grid grid-cols-1 gap-4 sm:gap-5">
           {hirudoRows.map((p) => (
             <PriceCard key={p.zone} p={p} />
           ))}
