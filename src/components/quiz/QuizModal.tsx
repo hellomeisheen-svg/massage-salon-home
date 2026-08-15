@@ -52,10 +52,11 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
           phone: contact.phone,
           method: contact.method,
           website: contact.website,
-          answers: QUIZ_CONFIG.steps.map(s => ({
+          answers: visibleSteps.map(s => ({
             question: s.question,
             answer: answers[s.id] || []
           })),
+
           results: resultScenarioIds
         }
       });
