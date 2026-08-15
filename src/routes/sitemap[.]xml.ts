@@ -18,6 +18,7 @@ const entries: SitemapEntry[] = [
   { path: "/limfaticheskii-massazh", changefreq: "monthly", priority: "0.8" },
   { path: "/limfodrenazhnyi-massazh", changefreq: "monthly", priority: "0.8" },
   { path: "/vektornyi-massazh", changefreq: "monthly", priority: "0.8" },
+  { path: "/price", changefreq: "monthly", priority: "0.7" },
   { path: "/privacy-policy", changefreq: "yearly", priority: "0.2" },
 ];
 
