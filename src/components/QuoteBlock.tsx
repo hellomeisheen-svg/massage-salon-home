@@ -46,7 +46,7 @@ const decoImages = [
 
 export function QuoteBlock() {
   return (
-    <section className="relative bg-[#EFF6FF] pt-[60px] pb-[60px] sm:pt-[140px] sm:pb-[180px] xl:pt-[180px] xl:pb-[140px] overflow-hidden sm:hidden xl:hidden !hidden sm:!hidden xl:!hidden">
+    <section className="relative bg-[#EFF6FF] pt-[60px] pb-[60px] sm:pt-[140px] sm:pb-[180px] xl:pt-[180px] xl:pb-[140px] overflow-hidden">
       {/* Decorative photos — constrained to container width */}
       <div className="container-1900 absolute inset-0 left-1/2 -translate-x-1/2 hidden sm:block pointer-events-none">
         <div className="relative w-full h-full">
@@ -74,7 +74,7 @@ export function QuoteBlock() {
           «Иногда достаточно тишины и&nbsp;бережного внимания, чтобы почувствовать себя лучше»
         </h2>
 
-        <div className="mt-6 flex flex-col items-center gap-1 xl:hidden">
+        <div className="mt-6 hidden sm:flex xl:hidden flex-col items-center gap-1">
           <div className="font-noto-serif-narrow ds-h4 text-[#1c3c8c]">
             Татьяна Злобина
           </div>
