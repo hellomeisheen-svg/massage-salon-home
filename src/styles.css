@@ -511,13 +511,13 @@ button:focus-visible {
 
 @media (max-width: 767px) {
   body, .footer-bottom-padding {
-    padding-bottom: 40px;
+    padding-bottom: 60px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
   body, .footer-bottom-padding {
-    padding-bottom: 44px;
+    padding-bottom: 66px;
   }
 }
 
