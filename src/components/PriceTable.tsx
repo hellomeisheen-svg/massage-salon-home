@@ -150,7 +150,7 @@ export function PriceTable({ prices, bookingPrefix }: { prices: ServicePrice[], 
             <button
               type="button"
               onClick={() => openBooking(bookingPrefix || "Форматы и стоимость")}
-              className="btn-primary w-full sm:w-[280px] xl:w-[250px] px-16"
+              className="btn-primary w-full sm:w-[280px] xl:w-[250px] px-24"
             >
               Записаться
             </button>
