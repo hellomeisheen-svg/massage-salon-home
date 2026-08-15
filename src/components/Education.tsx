@@ -82,11 +82,11 @@ export function Education() {
             className="w-full h-[480px] sm:h-[720px] rounded-[12px] border border-[#DAEBFF] xl:border-0 xl:rounded-none xl:absolute xl:inset-0 xl:h-full object-cover object-top sm:object-center"
           />
           <div className="relative mt-4 sm:mt-5 xl:absolute xl:inset-x-0 xl:bottom-0 xl:mt-0 xl:p-[clamp(16px,2vw,32px)]">
-            <div className="relative overflow-hidden rounded-[12px] border border-[#DAEBFF] bg-white xl:bg-white/95 xl:backdrop-blur-sm p-6 sm:p-12 xl:p-[clamp(24px,4vw,48px)] shadow-[0_20px_50px_-12px_rgba(74,127,214,0.08)]">
+            <div className="relative overflow-hidden rounded-[12px] border border-[#DAEBFF] bg-white xl:bg-white/95 xl:backdrop-blur-sm p-6 sm:p-12 xl:p-[clamp(24px,4vw,48px)] shadow-[0_20px_50px_-12px_rgba(74,127,214,0.08)] hidden">
               <div className="flex flex-col gap-6 sm:gap-8">
                 <div className="flex flex-col gap-3 sm:gap-4 xl:gap-3 relative z-10">
                   <blockquote className="font-noto-serif-narrow ds-h4 text-[#1C3C8C] text-[20px] sm:text-[28px] xl:text-[clamp(20px,2.2vw,32px)] leading-[1.2] w-full">
-                    «Атмосфера кабинета&nbsp;— это не&nbsp;просто декор, а&nbsp;возможность наконец-то выдохнуть»
+                    «Иногда достаточно тишины и бережного внимания, чтобы почувствовать себя лучше»
                   </blockquote>
                   <p className="text-[14px] sm:text-[16px] xl:text-[clamp(14px,1.1vw,16px)] font-light leading-[1.5] text-[#566A93] max-w-[480px]">
                     Татьяна Злобина — Мастер кабинета,
@@ -95,7 +95,7 @@ export function Education() {
                   </p>
                 </div>
 
-                <div className="flex justify-end xl:flex-shrink-0 pointer-events-none relative z-20 xl:mb-[-10px]">
+                <div className="flex justify-end xl:hidden xl:flex-shrink-0 pointer-events-none relative z-20 xl:mb-[-10px]">
                   <img
                     src="/images/tatiana-signature.svg"
                     alt="Подпись Татьяны Злобиной"
