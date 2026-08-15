@@ -27,13 +27,13 @@ export const submitQuizLead = createServerFn({ method: "POST" })
     const resendApiKey = process.env.RESEND_API_KEY;
     
     // 2. Save to Supabase
+    // We use 'message' column to store quiz summary as 'source' column is missing
     const { error: dbError } = await supabaseAdmin
       .from("leads")
       .insert([{
         name: data.name,
         phone: data.phone,
-        message: `Quiz Results: ${data.results.join(", ")}\n\nAnswers: ${JSON.stringify(data.answers, null, 2)}\nMethod: ${data.method || 'Not specified'}`,
-        source: 'quiz'
+        message: `[QUIZ LEAD] Results: ${data.results.join(", ")}\n\nAnswers: ${JSON.stringify(data.answers, null, 2)}\nMethod: ${data.method || 'Not specified'}`
       }]);
 
     if (dbError) throw dbError;
