@@ -348,31 +348,21 @@ function PriceCard({ p, prefix }: { p: ServicePrice; prefix: string }) {
       <p className="mt-6 text-[13px] font-medium leading-[18px] tracking-wide text-[#1C3C8C]">
         {summary}
       </p>
-
-      <div className="mt-8 flex items-center justify-between gap-4 border-t border-[#daebff]/40 pt-6">
-        <div className="flex flex-col">
+      
+      <div className="mt-6 flex items-center justify-end gap-4 sm:gap-5">
+        {hasDiscount && (
+          <span className="font-noto-serif-narrow text-[17px] sm:text-[19px] font-light leading-[1.2] text-[#566A93] line-through">
+            {renderPrice(originalPrice)}
+          </span>
+        )}
+        <div className="flex flex-col items-end">
+          <span className="font-noto-serif-narrow ds-price text-[#1C3C8C]">
+            {renderPrice(computedPrice)}
+          </span>
           <span className="text-[13px] font-light text-[#566A93]">
             за {count} {sessionWord}
           </span>
-          <div className="mt-1 flex items-baseline gap-2">
-            <span className="font-noto-serif-narrow ds-price text-[#1C3C8C]">
-              {renderPrice(computedPrice)}
-            </span>
-            {hasDiscount && (
-              <span className="font-noto-serif-narrow text-[17px] sm:text-[19px] font-light leading-[1.2] text-[#566A93]/40 line-through decoration-[#566A93]/20">
-                {renderPrice(originalPrice)}
-              </span>
-            )}
-          </div>
         </div>
-        <a
-          href="https://n2418813.yclients.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex h-[48px] items-center justify-center rounded-lg bg-[#1C3C8C] px-6 text-[14px] font-medium text-white transition-all hover:bg-[#1C3C8C]/90 active:scale-[0.98]"
-        >
-          Записаться
-        </a>
       </div>
 
     </article>
@@ -392,6 +382,17 @@ function PriceCards({ content }: { content: ServicePageContent }) {
           {content.prices.map((p) => (
             <PriceCard key={p.zone} p={p} prefix={content.bookingPrefix} />
           ))}
+        </div>
+
+        <div className="mt-10 flex justify-center sm:mt-12">
+          <a
+            href="https://n2418813.yclients.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex h-[56px] items-center justify-center rounded-lg bg-[#1C3C8C] px-10 text-[16px] font-medium text-white transition-all hover:bg-[#1C3C8C]/90 active:scale-[0.98]"
+          >
+            Онлайн запись
+          </a>
         </div>
       </div>
     </section>
