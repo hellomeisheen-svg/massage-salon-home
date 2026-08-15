@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { BookingProvider } from "@/components/BookingModal";
 import { PriceTable } from "@/components/PriceTable";
 import { serviceTypes } from "@/components/Services";
+import { Programs } from "@/components/Programs";
 
 export const Route = createFileRoute("/price")({
   head: () => ({
@@ -38,8 +39,9 @@ function PricePage() {
     <BookingProvider>
       <div className="accent-noto-serif relative min-h-screen bg-[#EFF6FF] pt-20 xl:pt-[100px]">
         <Header />
-        <main className="container-1900 py-10 sm:py-16">
+        <main className="container-1900 space-y-20 py-10 sm:py-16">
           <PriceTable prices={allPrices} />
+          <Programs />
         </main>
         <Footer />
       </div>
