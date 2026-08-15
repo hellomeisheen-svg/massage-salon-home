@@ -33,7 +33,7 @@ const content: ServicePageContent = {
 
   heroText:
     "Постановка 30 саморассасывающихся нитей в\u00A0акупунктурные точки — мягкий метод пролонгированного действия.",
-  heroImage: "/images/uslugi-ketgut.jpg",
+  heroImage: "/images/uslugi-ketgut.webp",
   heroImageAlt: "Кабинет Татьяны Злобиной: процедура акупунктурного кетгута",
   aboutHeading: (
     <>

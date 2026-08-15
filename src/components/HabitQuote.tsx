@@ -13,28 +13,28 @@ const Sparkle = ({ className }: { className?: string }) => (
 
 const decoImages = [
   {
-    src: "/images/uslugi-limfodrenazhnyi-massazh.jpg",
+    src: "/images/uslugi-limfodrenazhnyi-massazh.webp",
     className:
       "absolute left-0 top-[6%] sm:left-[2%] sm:top-[80px] xl:left-[60px] xl:top-[110px] h-[70px] w-[70px] sm:h-[75px] sm:w-[75px] xl:h-[85px] xl:w-[85px] rounded-2xl object-cover shadow-sm",
     delay: "0s",
     rot: "-3deg",
   },
   {
-    src: "/images/uslugi-massazh-golovy.jpg",
+    src: "/images/uslugi-massazh-golovy.webp",
     className:
       "absolute right-0 top-[5%] sm:right-[2%] sm:top-[80px] xl:right-[60px] xl:top-[110px] h-[70px] w-[70px] sm:h-[75px] sm:w-[75px] xl:h-[85px] xl:w-[85px] rounded-2xl object-cover shadow-sm",
     delay: "0.2s",
     rot: "3deg",
   },
   {
-    src: "/images/uslugi-massazh-spiny-i-shei.jpg",
+    src: "/images/uslugi-massazh-spiny-i-shei.webp",
     className:
       "absolute left-[8%] bottom-[6%] sm:left-[10%] sm:bottom-[15px] xl:left-[140px] xl:bottom-[20px] h-[70px] w-[70px] sm:h-[75px] sm:w-[75px] xl:h-[85px] xl:w-[85px] rounded-2xl object-cover shadow-sm",
     delay: "0.4s",
     rot: "2deg",
   },
   {
-    src: "/images/uslugi-girudoterapiya.jpg",
+    src: "/images/uslugi-girudoterapiya.webp",
     className:
       "absolute right-[8%] bottom-[8%] sm:right-[10%] sm:bottom-[15px] xl:right-[140px] xl:bottom-[20px] h-[70px] w-[70px] sm:h-[75px] sm:w-[75px] xl:h-[85px] xl:w-[85px] rounded-2xl object-cover shadow-sm",
     delay: "0.6s",
@@ -79,9 +79,9 @@ export function HabitQuote() {
         <div className="mt-10 flex w-full justify-center overflow-hidden sm:hidden">
           <ImageReveal
             spread={95}
-            leftImage="/images/uslugi-limfodrenazhnyi-massazh.jpg"
-            middleImage="/images/uslugi-massazh-spiny-i-shei.jpg"
-            rightImage="/images/uslugi-massazh-golovy.jpg"
+            leftImage="/images/uslugi-limfodrenazhnyi-massazh.webp"
+            middleImage="/images/uslugi-massazh-spiny-i-shei.webp"
+            rightImage="/images/uslugi-massazh-golovy.webp"
           />
         </div>
       </div>

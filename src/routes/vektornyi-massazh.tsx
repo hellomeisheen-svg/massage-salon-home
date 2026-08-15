@@ -33,7 +33,7 @@ const content: ServicePageContent = {
 
   heroText:
     "Точная ручная работа с мышцами и фасциями по естественным линиям тела — для освобождения глубоких зажимов и возвращения движениям свободы.",
-  heroImage: "/images/uslugi-massazh-spiny-i-shei.jpg",
+  heroImage: "/images/uslugi-massazh-spiny-i-shei.webp",
   heroImageAlt: "Векторный массаж в кабинете Татьяны Злобиной",
   aboutHeading: (
     <>

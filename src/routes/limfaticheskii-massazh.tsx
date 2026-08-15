@@ -31,7 +31,7 @@ const content: ServicePageContent = {
   title: "Лимфатический массаж",
   heroText:
     "Мягкая работа со всем телом с вниманием к естественным путям оттока жидкости — для уменьшения отёчности и ощущения внутренней лёгкости.",
-  heroImage: "/images/uslugi-limfodrenazhnyi-massazh.jpg",
+  heroImage: "/images/uslugi-limfodrenazhnyi-massazh.webp",
   heroImageAlt: "Лимфатический массаж в кабинете Татьяны Злобиной",
   aboutHeading: (
     <>

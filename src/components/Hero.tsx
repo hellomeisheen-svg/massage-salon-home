@@ -8,7 +8,7 @@ function SpecialistBlock() {
       <img
         className="h-[90px] w-[70px] rounded-lg border border-[#daebff] object-cover xl:h-[110px] xl:w-[85px]"
         alt="Татьяна Злобина"
-        src="/images/tatyana-photo.png"
+        src="/images/tatyana-photo.webp"
       />
       <div className="flex flex-col gap-1">
         <div className="font-noto-serif-narrow ds-h4 text-[#1c3c8c]">
@@ -81,7 +81,7 @@ export function Hero() {
           <img
             className="absolute inset-0 h-full w-full scale-x-[-1] object-cover object-top sm:object-center"
             alt="Оздоровительные процедуры"
-            src="/images/hero-portrait-solid.png"
+            src="/images/hero-portrait-solid.webp"
           />
         </div>
 

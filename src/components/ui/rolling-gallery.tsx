@@ -8,18 +8,18 @@ import {
 } from "framer-motion";
 
 const IMGS: { url: string; alt: string }[] = [
-  { url: "/images/uslugi-klassicheskii-massazh.jpg", alt: "Классический массаж спины в кабинете" },
-  { url: "/images/uslugi-massazh-vorotnikovoi-zony.jpg", alt: "Массаж воротниковой зоны" },
-  { url: "/images/uslugi-atmosfera-ruki-maslo-white.jpg", alt: "Руки мастера с массажным маслом" },
-  { url: "/images/uslugi-girudoterapiya-litsa.jpg", alt: "Гирудотерапия лица" },
-  { url: "/images/uslugi-massazh-nog.jpg", alt: "Массаж ног" },
-  { url: "/images/uslugi-atmosfera-chai-white.jpg", alt: "Чай в спокойной атмосфере кабинета" },
-  { url: "/images/uslugi-massazh-golovy.jpg", alt: "Массаж головы" },
-  { url: "/images/uslugi-girudoterapiya.jpg", alt: "Гирудотерапия" },
-  { url: "/images/uslugi-ketgut.jpg", alt: "Акупунктурный кетгут" },
-  { url: "/images/uslugi-limfodrenazhnyi-massazh.jpg", alt: "Лимфодренажный массаж" },
-  { url: "/images/uslugi-massazh-litsa.jpg", alt: "Массаж лица" },
-  { url: "/images/uslugi-atmosfera-polotenca-white.jpg", alt: "Уютные полотенца в кабинете" },
+  { url: "/images/uslugi-klassicheskii-massazh.webp", alt: "Классический массаж спины в кабинете" },
+  { url: "/images/uslugi-massazh-vorotnikovoi-zony.webp", alt: "Массаж воротниковой зоны" },
+  { url: "/images/uslugi-atmosfera-ruki-maslo-white.webp", alt: "Руки мастера с массажным маслом" },
+  { url: "/images/uslugi-girudoterapiya-litsa.webp", alt: "Гирудотерапия лица" },
+  { url: "/images/uslugi-massazh-nog.webp", alt: "Массаж ног" },
+  { url: "/images/uslugi-atmosfera-chai-white.webp", alt: "Чай в спокойной атмосфере кабинета" },
+  { url: "/images/uslugi-massazh-golovy.webp", alt: "Массаж головы" },
+  { url: "/images/uslugi-girudoterapiya.webp", alt: "Гирудотерапия" },
+  { url: "/images/uslugi-ketgut.webp", alt: "Акупунктурный кетгут" },
+  { url: "/images/uslugi-limfodrenazhnyi-massazh.webp", alt: "Лимфодренажный массаж" },
+  { url: "/images/uslugi-massazh-litsa.webp", alt: "Массаж лица" },
+  { url: "/images/uslugi-atmosfera-polotenca-white.webp", alt: "Уютные полотенца в кабинете" },
 ];
 
 

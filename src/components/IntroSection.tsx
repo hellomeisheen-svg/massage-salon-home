@@ -16,7 +16,7 @@ export function IntroSection() {
           {/* Photo */}
           <div className="relative aspect-[4/5] sm:aspect-square xl:aspect-[4/5] rounded-[12px] overflow-hidden ds-card">
             <img 
-              src="/images/tatyana-photo.png" 
+              src="/images/tatyana-photo.webp" 
               alt="Татьяна Злобина — мастер оздоровительных практик" 
               className="absolute inset-0 w-full h-full object-cover"
             />

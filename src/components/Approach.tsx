@@ -39,7 +39,7 @@ export function Approach() {
           {/* Подход мастера */}
           <div className="relative h-[420px] sm:h-[720px] xl:h-full ds-card overflow-hidden">
             <img
-              src="/images/approach-master.jpg"
+              src="/images/approach-master.webp"
               alt="Татьяна работает с клиенткой в светлом массажном кабинете"
               width={1024}
               height={1024}

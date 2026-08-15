@@ -31,7 +31,7 @@ const content: ServicePageContent = {
   title: "Классический массаж",
   heroText:
     "Комплексная проработка спины, шеи, рук и ног в спокойном ритме — чтобы снять напряжение, глубже расслабиться и восстановить силы.",
-  heroImage: "/images/uslugi-klassicheskii-massazh.jpg",
+  heroImage: "/images/uslugi-klassicheskii-massazh.webp",
   heroImageAlt: "Классический массаж в кабинете Татьяны Злобиной",
   aboutHeading: (
     <>
