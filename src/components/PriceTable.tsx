@@ -35,35 +35,44 @@ export function PriceTable({ prices, title = "Форматы и стоимост
               <thead>
                 <tr className="bg-[#EFF6FF]">
                   <th className="px-4 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
-                    Формат
+                    {title === "Программы восстановления" ? "Программа" : "Формат"}
                   </th>
                   <th className="px-4 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
-                    Длительность
+                    {title === "Программы восстановления" ? "Что входит" : "Длительность"}
                   </th>
                   <th className="px-4 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
-                    1 сеанс
+                    {title === "Программы восстановления" ? "Срок" : "1 сеанс"}
                   </th>
-                  <th className="px-4 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
-                    <span className="flex items-center gap-2">
-                      3 сеанса
-                      <span className="rounded-full bg-[#1C3C8C] px-2 py-0.5 text-[10px] font-semibold text-white">
-                        -10%
-                      </span>
-                    </span>
-                  </th>
-                  <th className="px-4 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
-                    <span className="flex items-center gap-2">
-                      6 сеансов
-                      <span className="rounded-full bg-[#1C3C8C] px-2 py-0.5 text-[10px] font-semibold text-white">
-                        -15%
-                      </span>
-                    </span>
-                  </th>
+                  {title !== "Программы восстановления" && (
+                    <>
+                      <th className="px-4 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
+                        <span className="flex items-center gap-2">
+                          3 сеанса
+                          <span className="rounded-full bg-[#1C3C8C] px-2 py-0.5 text-[10px] font-semibold text-white">
+                            -10%
+                          </span>
+                        </span>
+                      </th>
+                      <th className="px-4 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
+                        <span className="flex items-center gap-2">
+                          6 сеансов
+                          <span className="rounded-full bg-[#1C3C8C] px-2 py-0.5 text-[10px] font-semibold text-white">
+                            -15%
+                          </span>
+                        </span>
+                      </th>
+                    </>
+                  )}
+                  {title === "Программы восстановления" && (
+                    <th className="px-4 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
+                      Стоимость
+                    </th>
+                  )}
                 </tr>
               </thead>
               <tbody className="divide-y divide-[#daebff]">
                 {prices.map((p) => (
-                  <PriceTableRow key={p.zone} p={p} />
+                  <PriceTableRow key={p.zone} p={p} isProgram={title === "Программы восстановления"} />
                 ))}
               </tbody>
             </table>
@@ -178,7 +187,11 @@ export function PriceTable({ prices, title = "Форматы и стоимост
 // Убран неиспользуемый компонент MobileRow, так как табы теперь встроены в основной компонент
 
 
-function PriceTableRow({ p }: { p: ServicePrice }) {
+function PriceTableRow({ p, isProgram = false }: { p: ServicePrice, isProgram?: boolean }) {
+  const isHirudo = p.zone.toLowerCase().includes("пиявк");
+  const basePrice = Math.round(p.base * (isProgram ? 0.8 : 1)); // В Programs.tsx цена уже со скидкой, но в PriceTable мы передаем базу
+  const originalPrice = p.base;
+
   return (
     <tr className="group transition-colors hover:bg-[#F7FBFF]">
       <td className="px-4 py-5 xl:px-8">
