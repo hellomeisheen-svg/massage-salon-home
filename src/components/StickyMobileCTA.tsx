@@ -6,7 +6,7 @@ export const StickyMobileCTA = memo(function StickyMobileCTA() {
   useEffect(() => {
     const hero = document.getElementById("hero");
     if (!hero) {
-      setIsVisible(true);
+      setIsVisible(false);
       return;
     }
 
