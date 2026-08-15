@@ -97,7 +97,7 @@ export function PriceTable({ prices, bookingPrefix }: { prices: ServicePrice[], 
               ))}
             </div>
 
-            <div className="mt-8 divide-y divide-[#daebff]">
+            <div className="mt-8 space-y-6">
               {prices.map((p) => {
                 const count = sessionCounts[activeTab];
                 const discount = discountValues[activeTab];
@@ -106,31 +106,44 @@ export function PriceTable({ prices, bookingPrefix }: { prices: ServicePrice[], 
                 const sessionWord = pluralize(count, ["сеанс", "сеанса", "сеансов"]);
                 
                 return (
-                  <div key={p.zone} className="py-6 first:pt-0 last:pb-0">
-                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
-                      <div className="min-w-0">
-                        <div className="font-noto-serif-narrow text-[24px] font-light leading-[1.25] text-[#1C3C8C]">
+                  <div key={p.zone} className="bg-white p-6 rounded-[20px] shadow-[0_4px_20px_rgba(28,60,140,0.04)] border border-[#daebff]/50">
+                    <div className="space-y-4">
+                      <div>
+                        <div className="font-noto-serif-narrow text-[22px] font-light leading-[1.2] text-[#1C3C8C]">
                           {p.zone}
                         </div>
-                        <div className="mt-1 text-[13px] font-light leading-[18px] text-[#566A93]">
-                          {count === 1 ? p.duration : `В пакете: ${count}\u00A0${sessionWord} · ${p.duration}`}
+                        <div className="mt-1 text-[13px] font-light text-[#566A93]">
+                          {p.duration}
                         </div>
                       </div>
                       
-                      <div className="flex flex-row items-center justify-end sm:flex-col sm:items-end gap-3 sm:gap-1">
-                        {discount > 0 && (
-                          <span className="font-noto-serif-narrow text-[15px] font-light text-[#566A93] line-through">
-                            {renderPrice(formatPrice(totalBase))}
-                          </span>
-                        )}
-                        <div className="flex flex-col items-end">
-                          <span className="font-noto-serif-narrow text-[28px] font-light text-[#1C3C8C]">
-                            {renderPrice(formatPrice(currentPrice))}
-                          </span>
-                          <span className="text-[12px] font-light text-[#566A93]">
-                            за {count} {sessionWord}
-                          </span>
+                      <div className="flex items-center gap-6 pt-4 border-t border-[#daebff]/40">
+                        <div className="flex-1">
+                          <div className="text-[12px] font-light text-[#566A93] uppercase tracking-wider mb-1">
+                            {count} {sessionWord}
+                          </div>
+                          <div className="flex items-baseline gap-2">
+                            <span className="font-noto-serif-narrow text-[28px] font-light text-[#1C3C8C]">
+                              {renderPrice(formatPrice(currentPrice))}
+                            </span>
+                            {discount > 0 && (
+                              <span className="font-noto-serif-narrow text-[15px] font-light text-[#566A93] line-through">
+                                {renderPrice(formatPrice(totalBase))}
+                              </span>
+                            )}
+                          </div>
                         </div>
+                        
+                        {count > 1 && (
+                          <div className="text-right">
+                             <div className="text-[11px] font-light text-[#566A93] mb-0.5">
+                               За 1 пиявку
+                             </div>
+                             <div className="font-noto-serif-narrow text-[15px] font-light text-[#1C3C8C]">
+                               {renderPrice(formatPrice(Math.round(currentPrice / (count === 3 ? 16 : 74))))}
+                             </div>
+                          </div>
+                        )}
                       </div>
                     </div>
                   </div>
