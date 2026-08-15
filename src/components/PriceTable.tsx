@@ -1,5 +1,5 @@
-import { formatPrice, renderPrice } from "@/components/Services";
-import { useBooking } from "@/components/BookingModal";
+import { useState } from "react";
+import { formatPrice, renderPrice, pluralize } from "@/components/Services";
 
 export type ServicePrice = {
   zone: string;
@@ -12,6 +12,13 @@ export type ServicePrice = {
 
 export function PriceTable({ prices, bookingPrefix }: { prices: ServicePrice[], bookingPrefix?: string }) {
   const { openBooking } = useBooking();
+  const [activeTab, setActiveTab] = useState(0);
+
+  const sessionCounts = [1, 3, 6];
+  const discountValues = [0, 0.1, 0.15];
+  const tabLabels = ["1\u00A0сеанс", "3\u00A0сеанса", "6\u00A0сеансов"];
+  const sessionDiscounts = [null, "-10%", "-15%"];
+
   return (
     <section id="prices" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section">
       <div className="container-1900">
@@ -21,7 +28,7 @@ export function PriceTable({ prices, bookingPrefix }: { prices: ServicePrice[], 
 
         <div className="mt-8 sm:mt-10 ds-card overflow-hidden">
           {/* Desktop */}
-          <div className="hidden sm:block overflow-x-auto scrollbar-none">
+          <div className="hidden xl:block overflow-x-auto scrollbar-none">
             <table className="w-full text-left">
               <thead>
                 <tr className="bg-[#EFF6FF]">
@@ -60,13 +67,77 @@ export function PriceTable({ prices, bookingPrefix }: { prices: ServicePrice[], 
             </table>
           </div>
 
-          {/* Mobile */}
-          <div className="sm:hidden divide-y divide-[#daebff]">
-            {prices.map((p) => (
-              <PriceTableMobileRow key={p.zone} p={p} />
-            ))}
+          {/* Mobile & Tablet Tabs */}
+          <div className="xl:hidden p-5 sm:p-8">
+            <div className="flex items-stretch gap-1 rounded-[10px] bg-[#EFF6FF] p-1">
+              {tabLabels.map((label, i) => (
+                <button
+                  key={label}
+                  type="button"
+                  onClick={() => setActiveTab(i)}
+                  className={`relative flex flex-1 items-center justify-center rounded-[8px] px-2 py-2.5 transition-all duration-300 ${
+                    activeTab === i ? "bg-white shadow-[0_2px_8px_rgba(28,60,140,0.08)]" : "bg-transparent"
+                  }`}
+                >
+                  <span
+                    className={`whitespace-nowrap text-[13px] tracking-tight transition-colors duration-300 ${
+                      activeTab === i ? "font-medium text-[#1C3C8C]" : "font-light text-[#566A93]"
+                    }`}
+                  >
+                    {label}
+                  </span>
+                  {sessionDiscounts[i] && (
+                    <span className="absolute -top-1 right-1 rounded-full bg-[#1C3C8C] px-1.5 py-0.5 text-[9px] font-semibold tracking-wide text-white">
+                      {sessionDiscounts[i]}
+                    </span>
+                  )}
+                </button>
+              ))}
+            </div>
+
+            <div className="mt-8 divide-y divide-[#daebff]">
+              {prices.map((p) => {
+                const count = sessionCounts[activeTab];
+                const discount = discountValues[activeTab];
+                const totalBase = p.base * count;
+                const currentPrice = Math.round(totalBase * (1 - discount));
+                const sessionWord = pluralize(count, ["сеанс", "сеанса", "сеансов"]);
+                
+                return (
+                  <div key={p.zone} className="py-6 first:pt-0 last:pb-0">
+                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+                      <div className="min-w-0">
+                        <div className="font-noto-serif-narrow text-[24px] font-light leading-[1.25] text-[#1C3C8C]">
+                          {p.zone}
+                        </div>
+                        <div className="mt-1 text-[13px] font-light leading-[18px] text-[#566A93]">
+                          {count === 1 ? p.duration : `В пакете: ${count}\u00A0${sessionWord} · ${p.duration}`}
+                        </div>
+                      </div>
+                      
+                      <div className="flex flex-row items-center justify-end sm:flex-col sm:items-end gap-3 sm:gap-1">
+                        {discount > 0 && (
+                          <span className="font-noto-serif-narrow text-[15px] font-light text-[#566A93] line-through">
+                            {renderPrice(formatPrice(totalBase))}
+                          </span>
+                        )}
+                        <div className="flex flex-col items-end">
+                          <span className="font-noto-serif-narrow text-[28px] font-light text-[#1C3C8C]">
+                            {renderPrice(formatPrice(currentPrice))}
+                          </span>
+                          <span className="text-[12px] font-light text-[#566A93]">
+                            за {count} {sessionWord}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
+
 
         <p className="mt-6 text-center text-[14px] font-light text-[#566A93]">
           Цены указаны с учётом скидки при покупке курса. Оплатить можно на месте.
@@ -89,58 +160,8 @@ export function PriceTable({ prices, bookingPrefix }: { prices: ServicePrice[], 
   );
 }
 
-function PriceTableMobileRow({ p }: { p: ServicePrice }) {
-  const price3 = Math.round(p.base * 3 * (1 - 0.1));
-  const price6 = Math.round(p.base * 6 * (1 - 0.15));
-  return (
-    <div className="px-4 py-5">
-      <div className="min-w-0">
-        <div className="font-noto-serif-narrow text-[24px] font-light leading-[1.25] text-[#1C3C8C]">
-          {p.zone}
-        </div>
-        <div className="mt-1 text-[13px] font-light leading-[18px] text-[#566A93]">
-          {p.duration}
-        </div>
-      </div>
-      <div className="mt-4 grid grid-cols-3 gap-2">
-        <div>
-          <div className="text-[11px] font-medium text-[#566A93]">1 сеанс</div>
-          <div className="font-noto-serif-narrow mt-1 text-[22px] font-light text-[#1C3C8C]">
-            {renderPrice(formatPrice(p.base))}
-          </div>
-        </div>
-        <div>
-          <div className="text-[11px] font-medium text-[#566A93]">
-            3 сеанса
-            <span className="ml-1 rounded-full bg-[#1C3C8C] px-1.5 py-0.5 text-[9px] font-semibold text-white">
-              -10%
-            </span>
-          </div>
-          <div className="font-noto-serif-narrow mt-1 text-[22px] font-light text-[#1C3C8C]">
-            {renderPrice(formatPrice(price3))}
-          </div>
-          <div className="font-noto-serif-narrow text-[11px] font-light text-[#566A93] line-through">
-            {renderPrice(formatPrice(p.base * 3))}
-          </div>
-        </div>
-        <div>
-          <div className="text-[11px] font-medium text-[#566A93]">
-            6 сеансов
-            <span className="ml-1 rounded-full bg-[#1C3C8C] px-1.5 py-0.5 text-[9px] font-semibold text-white">
-              -15%
-            </span>
-          </div>
-          <div className="font-noto-serif-narrow mt-1 text-[22px] font-light text-[#1C3C8C]">
-            {renderPrice(formatPrice(price6))}
-          </div>
-          <div className="font-noto-serif-narrow text-[11px] font-light text-[#566A93] line-through">
-            {renderPrice(formatPrice(p.base * 6))}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
+// Убран неиспользуемый компонент MobileRow, так как табы теперь встроены в основной компонент
+
 
 function PriceTableRow({ p }: { p: ServicePrice }) {
   return (
