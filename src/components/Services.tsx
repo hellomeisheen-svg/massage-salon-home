@@ -569,16 +569,17 @@ export function ServiceCard({
         {/* Mobile: Price + Actions */}
         <div className="flex flex-col gap-3 sm:hidden px-0">
           {/* Mobile Price */}
-          <div className="flex items-center justify-center gap-4 py-2">
+          <div className="flex items-center justify-end gap-4 py-2">
             {hasDiscount && (
               <span className="ds-price-old">
                 {renderPrice(originalPrice)}
               </span>
             )}
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-end">
               <span className="font-noto-serif-narrow ds-price text-[#1C3C8C]">
                 {renderPrice(computedPrice)}
               </span>
+              <span className="text-[13px] font-light text-[#566A93]">{priceLabel}</span>
             </div>
           </div>
 
