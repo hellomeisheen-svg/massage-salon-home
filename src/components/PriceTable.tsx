@@ -77,9 +77,44 @@ export function PriceTable({ prices, title = "Форматы и стоимост
               </tbody>
             </table>
           </div>
+          
+          {/* Mobile Program List */}
+          {title === "Программы восстановления" && (
+            <div className="lg:hidden divide-y divide-[#daebff]">
+              {prices.map((p) => {
+                const basePrice = Math.round(p.base * 0.8);
+                const originalPrice = p.base;
+                return (
+                  <div key={p.zone} className="p-5 space-y-4 bg-white">
+                    <div>
+                      <div className="font-noto-serif-narrow text-[20px] font-light text-[#1C3C8C]">
+                        {p.zone}
+                      </div>
+                      <div className="mt-2 text-[14px] font-light text-[#566A93] whitespace-pre-line leading-relaxed">
+                        {p.subtitle}
+                      </div>
+                    </div>
+                    <div className="flex items-center justify-between pt-4 border-t border-[#daebff]/40">
+                      <div className="text-[13px] font-light text-[#566A93]">
+                        {(p as any).validity || "2 месяца"}
+                      </div>
+                      <div className="flex items-baseline gap-2">
+                        <span className="font-noto-serif-narrow text-[14px] font-light text-[#566A93] line-through">
+                          {renderPrice(formatPrice(originalPrice))}
+                        </span>
+                        <span className="font-noto-serif-narrow text-[22px] font-light text-[#1C3C8C]">
+                          {renderPrice(formatPrice(basePrice))}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          )}
 
           {/* Mobile & Tablet Tabs */}
-          <div className="lg:hidden p-5 sm:p-8">
+          <div className={`${title === "Программы восстановления" ? "hidden" : "lg:hidden"} p-5 sm:p-8`}>
             <div className="flex items-stretch gap-1 rounded-[10px] bg-[#EFF6FF] p-1">
               {tabLabels.map((label, i) => (
                 <button
