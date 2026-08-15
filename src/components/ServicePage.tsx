@@ -370,7 +370,95 @@ function PriceCard({ p, prefix }: { p: ServicePrice; prefix: string }) {
 }
 
 
-function PriceCards({ content }: { content: ServicePageContent }) {
+function PriceTable({ content }: { content: ServicePageContent }) {
+  return (
+    <div className="ds-card overflow-hidden bg-white/50 backdrop-blur-sm border border-[#daebff]/40">
+      <div className="overflow-x-auto">
+        <table className="w-full text-left border-collapse">
+          <thead>
+            <tr className="bg-[#EFF6FF]">
+              <th className="px-6 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
+                Зона
+              </th>
+              <th className="px-6 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
+                Длительность
+              </th>
+              <th className="px-6 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
+                1 сеанс
+              </th>
+              <th className="px-6 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
+                <span className="flex items-center gap-2">
+                  3 сеанса
+                  <span className="rounded-full bg-[#1C3C8C] px-2 py-0.5 text-[10px] font-semibold text-white">
+                    -10%
+                  </span>
+                </span>
+              </th>
+              <th className="px-6 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
+                <span className="flex items-center gap-2">
+                  6 сеансов
+                  <span className="rounded-full bg-[#1C3C8C] px-2 py-0.5 text-[10px] font-semibold text-white">
+                    -15%
+                  </span>
+                </span>
+              </th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-[#daebff]">
+            {content.prices.map((p) => {
+              const base = p.base;
+              const p3 = Math.round(base * 3 * 0.9);
+              const p6 = Math.round(base * 6 * 0.85);
+
+              return (
+                <tr key={p.zone} className="group transition-colors hover:bg-[#F7FBFF]">
+                  <td className="px-6 py-6 xl:px-8">
+                    <div className="font-noto-serif-narrow text-[20px] xl:text-[24px] font-light leading-tight text-[#1C3C8C]">
+                      {p.zone}
+                    </div>
+                    <div className="mt-1 text-[13px] font-light text-[#566A93]">
+                      {p.subtitle}
+                    </div>
+                  </td>
+                  <td className="px-6 py-6 text-[16px] font-light text-[#566A93] xl:px-8">
+                    {p.duration}
+                  </td>
+                  <td className="px-6 py-6 xl:px-8">
+                    <span className="font-noto-serif-narrow text-[20px] xl:text-[24px] font-light text-[#1C3C8C]">
+                      {renderPrice(formatPrice(base))}
+                    </span>
+                  </td>
+                  <td className="px-6 py-6 xl:px-8">
+                    <div className="flex items-center gap-2">
+                      <span className="font-noto-serif-narrow text-[14px] font-light text-[#566A93]/40 line-through">
+                        {renderPrice(formatPrice(base * 3))}
+                      </span>
+                      <span className="font-noto-serif-narrow text-[20px] xl:text-[24px] font-light text-[#1C3C8C]">
+                        {renderPrice(formatPrice(p3))}
+                      </span>
+                    </div>
+                  </td>
+                  <td className="px-6 py-6 xl:px-8">
+                    <div className="flex items-center gap-2">
+                      <span className="font-noto-serif-narrow text-[14px] font-light text-[#566A93]/40 line-through">
+                        {renderPrice(formatPrice(base * 6))}
+                      </span>
+                      <span className="font-noto-serif-narrow text-[20px] xl:text-[24px] font-light text-[#1C3C8C]">
+                        {renderPrice(formatPrice(p6))}
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+
+function Prices({ content }: { content: ServicePageContent }) {
   return (
     <section id="prices" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section">
       <div className="container-1900">
@@ -378,7 +466,13 @@ function PriceCards({ content }: { content: ServicePageContent }) {
           Форматы и&nbsp;стоимость
         </h2>
 
-        <div className="mt-10 grid grid-cols-1 gap-4 sm:gap-5 xl:grid-cols-2">
+        {/* Desktop View */}
+        <div className="hidden lg:block mt-10">
+          <PriceTable content={content} />
+        </div>
+
+        {/* Mobile View */}
+        <div className="lg:hidden mt-8 grid grid-cols-1 gap-4 sm:gap-5">
           {content.prices.map((p) => (
             <PriceCard key={p.zone} p={p} prefix={content.bookingPrefix} />
           ))}
@@ -397,10 +491,6 @@ function PriceCards({ content }: { content: ServicePageContent }) {
       </div>
     </section>
   );
-}
-
-function Prices({ content }: { content: ServicePageContent }) {
-  return <PriceCards content={content} />;
 }
 
 function FaqItem({ q, a }: { q: string; a: React.ReactNode }) {

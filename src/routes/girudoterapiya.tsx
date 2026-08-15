@@ -439,6 +439,91 @@ const discountValues = [0, 0.1, 0.15];
 const sessionCounts = [1, 3, 6];
 const tabLabels = ["1\u00A0сеанс", "3\u00A0сеанса", "6\u00A0сеансов"];
 
+function HirudoPriceTable() {
+  return (
+    <div className="ds-card overflow-hidden bg-white/50 backdrop-blur-sm border border-[#daebff]/40">
+      <div className="overflow-x-auto">
+        <table className="w-full text-left border-collapse">
+          <thead>
+            <tr className="bg-[#EFF6FF]">
+              <th className="px-6 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
+                Услуга
+              </th>
+              <th className="px-6 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
+                Длительность
+              </th>
+              <th className="px-6 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
+                1 сеанс
+              </th>
+              <th className="px-6 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
+                <span className="flex items-center gap-2">
+                  3 сеанса
+                  <span className="rounded-full bg-[#1C3C8C] px-2 py-0.5 text-[10px] font-semibold text-white">
+                    -10%
+                  </span>
+                </span>
+              </th>
+              <th className="px-6 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
+                <span className="flex items-center gap-2">
+                  6 сеансов
+                  <span className="rounded-full bg-[#1C3C8C] px-2 py-0.5 text-[10px] font-semibold text-white">
+                    -15%
+                  </span>
+                </span>
+              </th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-[#daebff]">
+            {hirudoRows.map((p) => {
+              const prices = sessionCounts.map((count, i) => {
+                const leeches = p.leechCounts[i];
+                const totalBase = p.perLeech ? leeches * p.base : p.base * count;
+                const currentPrice = Math.round(totalBase * (1 - discountValues[i]));
+                return { totalBase, currentPrice, leeches };
+              });
+
+              return (
+                <tr key={p.zone} className="group transition-colors hover:bg-[#F7FBFF]">
+                  <td className="px-6 py-6 xl:px-8">
+                    <div className="font-noto-serif-narrow text-[20px] xl:text-[24px] font-light leading-tight text-[#1C3C8C]">
+                      {p.zone}
+                    </div>
+                    <div className="mt-1 text-[13px] font-light text-[#566A93]">
+                      {p.subtitle}
+                    </div>
+                  </td>
+                  <td className="px-6 py-6 text-[16px] font-light text-[#566A93] xl:px-8">
+                    {p.duration}
+                  </td>
+                  {prices.map((price, i) => (
+                    <td key={i} className="px-6 py-6 xl:px-8">
+                      <div className="flex flex-col gap-1">
+                        <div className="flex items-center gap-2">
+                          {discountValues[i] > 0 && (
+                            <span className="font-noto-serif-narrow text-[14px] font-light text-[#566A93]/40 line-through">
+                              {renderPrice(formatPrice(price.totalBase))}
+                            </span>
+                          )}
+                          <span className="font-noto-serif-narrow text-[20px] xl:text-[24px] font-light text-[#1C3C8C]">
+                            {renderPrice(formatPrice(price.currentPrice))}
+                          </span>
+                        </div>
+                        <div className="text-[12px] font-light text-[#566A93]">
+                          {price.leeches} {pluralize(price.leeches, ["пиявка", "пиявки", "пиявок"])}
+                        </div>
+                      </div>
+                    </td>
+                  ))}
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+
 function PriceCard({ p }: { p: HirudoRow }) {
   const [active, setActive] = useState(0);
 
@@ -522,7 +607,13 @@ function Prices() {
           Форматы и&nbsp;стоимость
         </h2>
 
-        <div className="mt-10 grid grid-cols-1 gap-4 sm:gap-5 xl:grid-cols-2">
+        {/* Desktop View */}
+        <div className="hidden lg:block mt-10">
+          <HirudoPriceTable />
+        </div>
+
+        {/* Mobile View */}
+        <div className="lg:hidden mt-8 grid grid-cols-1 gap-4 sm:gap-5">
           {hirudoRows.map((p) => (
             <PriceCard key={p.zone} p={p} />
           ))}
