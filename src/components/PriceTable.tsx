@@ -83,7 +83,7 @@ export function PriceTable({ prices, bookingPrefix }: { prices: ServicePrice[], 
                 >
                   <span
                     className={`whitespace-nowrap text-[13px] tracking-tight transition-colors duration-300 ${
-                      activeTab === i ? "font-medium text-[#1C3C8C]" : "font-light text-[#566A93]"
+                      activeTab === i ? "font-normal text-[#1C3C8C]" : "font-light text-[#566A93]"
                     }`}
                   >
                     {label}
@@ -110,7 +110,7 @@ export function PriceTable({ prices, bookingPrefix }: { prices: ServicePrice[], 
                 const leeches = count === 1 ? 6 : (count === 3 ? 16 : (count === 6 ? 74 : 0));
                 
                 return (
-                  <div key={p.zone} className="bg-white p-6 rounded-[20px] shadow-[0_4px_20px_rgba(28,60,140,0.04)] border border-[#daebff]/50">
+                  <div key={p.zone} className="bg-white p-6 rounded-[12px] border border-[#daebff]/50">
                     <div className="space-y-4">
                       <div className="flex justify-between items-start">
                         <div>
