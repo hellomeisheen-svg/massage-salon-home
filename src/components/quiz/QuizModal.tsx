@@ -43,7 +43,7 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
     if (step > 0) setStep(step - 1);
   };
 
-  const onContactSubmit = async (contact: { name: string; phone: string; method: string }) => {
+  const onContactSubmit = async (contact: { name: string; phone: string; method: string; website?: string }) => {
     setIsSubmitting(true);
     try {
       await submitQuizLead({
@@ -51,6 +51,7 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
           name: contact.name,
           phone: contact.phone,
           method: contact.method,
+          website: contact.website,
           answers: QUIZ_CONFIG.steps.map(s => ({
             question: s.question,
             answer: answers[s.id] || []
