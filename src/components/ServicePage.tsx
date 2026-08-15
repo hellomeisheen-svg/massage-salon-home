@@ -478,16 +478,6 @@ function Prices({ content }: { content: ServicePageContent }) {
           ))}
         </div>
 
-        <div className="mt-10 flex justify-center sm:mt-12">
-          <a
-            href="https://n2418813.yclients.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex h-[56px] items-center justify-center rounded-lg bg-[#1C3C8C] px-10 text-[16px] font-medium text-white transition-all hover:bg-[#1C3C8C]/90 active:scale-[0.98]"
-          >
-            Онлайн запись
-          </a>
-        </div>
       </div>
     </section>
   );
