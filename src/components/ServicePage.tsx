@@ -360,13 +360,6 @@ function PriceCard({ p, prefix }: { p: ServicePrice; prefix: string }) {
         </div>
       </div>
 
-      <button
-        type="button"
-        onClick={() => openBooking(`${prefix} · ${p.zone}`)}
-        className="btn-primary mt-8 w-full"
-      >
-        Записаться
-      </button>
     </article>
   );
 }
