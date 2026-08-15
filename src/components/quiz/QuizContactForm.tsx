@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Loader2, Check } from "lucide-react";
 
 export function QuizContactForm({ 
   onSubmit, 
   isSubmitting 
 }: { 
-  onSubmit: (data: { name: string; phone: string; method: string }) => void;
+  onSubmit: (data: { name: string; phone: string; method: string; website?: string }) => void;
   isSubmitting: boolean;
 }) {
   const [name, setName] = useState("");
@@ -13,14 +13,49 @@ export function QuizContactForm({
   const [method, setMethod] = useState("whatsapp");
   const [consent, setConsent] = useState(true);
   const [phoneError, setPhoneError] = useState(false);
+  const [honeypot, setHoneypot] = useState("");
+
+  const formatPhone = (val: string) => {
+    const cleaned = val.replace(/\D/g, "");
+    if (cleaned.length === 0) return "";
+    let formatted = "+7 (";
+    if (cleaned.length > 1) {
+      formatted += cleaned.substring(1, 4);
+    }
+    if (cleaned.length > 4) {
+      formatted += ") " + cleaned.substring(4, 7);
+    }
+    if (cleaned.length > 7) {
+      formatted += "-" + cleaned.substring(7, 9);
+    }
+    if (cleaned.length > 9) {
+      formatted += "-" + cleaned.substring(9, 11);
+    }
+    return formatted;
+  };
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const val = e.target.value;
+    if (val.length < phone.length) {
+       // Allow deleting
+       setPhone(val);
+       return;
+    }
+    const cleaned = val.replace(/\D/g, "");
+    if (cleaned.length <= 11) {
+      setPhone(formatPhone(val));
+    }
+    setPhoneError(false);
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (phone.length < 10) {
+    const cleaned = phone.replace(/\D/g, "");
+    if (cleaned.length < 11) {
       setPhoneError(true);
       return;
     }
-    onSubmit({ name, phone, method });
+    onSubmit({ name, phone, method, website: honeypot });
   };
 
   return (
@@ -53,10 +88,7 @@ export function QuizContactForm({
               phoneError ? "border-red-400" : "border-[#daebff]"
             }`}
             value={phone}
-            onChange={(e) => {
-              setPhone(e.target.value);
-              setPhoneError(false);
-            }}
+            onChange={handlePhoneChange}
           />
           {phoneError && <span className="text-xs text-red-500 mt-1 block">Введите корректный номер</span>}
         </label>
@@ -94,7 +126,7 @@ export function QuizContactForm({
             <Check size={14} strokeWidth={3} className="absolute inset-0 m-auto text-white opacity-0 peer-checked:opacity-100 transition-opacity" />
           </div>
           <span className="text-xs text-[#566A93] leading-relaxed group-hover:text-[#1c3c8c] transition-colors">
-            Оставляя контакты, вы соглашаетесь с политикой обработки персональных данных. Мы не передаём ваши данные третьим лицам.
+            Оставляя контакты, вы соглашаетесь с политикой обработки персональных данных.
           </span>
         </label>
       </div>
@@ -116,7 +148,14 @@ export function QuizContactForm({
 
       {/* Honeypot for spam bots */}
       <div className="absolute opacity-0 -z-10 w-0 h-0 overflow-hidden" aria-hidden="true">
-        <input type="text" name="website" tabIndex={-1} autoComplete="off" />
+        <input 
+          type="text" 
+          name="website" 
+          tabIndex={-1} 
+          autoComplete="off" 
+          value={honeypot}
+          onChange={(e) => setHoneypot(e.target.value)}
+        />
       </div>
     </form>
   );
