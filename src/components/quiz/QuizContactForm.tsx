@@ -24,33 +24,33 @@ export function QuizContactForm({
   };
 
   return (
-    <form onSubmit={handleSubmit} className="py-6 space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
-      <div>
-        <h3 className="ds-h3 text-[#1c3c8c] mb-2">Куда отправить результат?</h3>
-        <p className="text-[#566A93]">Оставьте контакты, чтобы мы могли закрепить за вами спецпредложение на первый визит.</p>
+    <form onSubmit={handleSubmit} className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
+      <div className="pr-12">
+        <h3 className="font-noto-serif-narrow ds-h3 text-[#1c3c8c] mb-2">Куда отправить результат?</h3>
+        <p className="mt-3 text-[15px] leading-[1.5] text-[#566A93] sm:text-[16px]">Оставьте контакты, чтобы мы могли закрепить за вами спецпредложение на первый визит.</p>
       </div>
 
       <div className="space-y-4">
         <label className="block">
-          <span className="text-sm font-medium text-[#1c3c8c] mb-1.5 block">Ваше имя</span>
+          <span className="text-[14px] leading-[1.5] text-[#1C3C8C]">Ваше имя</span>
           <input 
             required
             type="text" 
             placeholder="Как к вам обращаться" 
-            className="w-full h-14 px-4 rounded-xl border border-[#DAEBFF] bg-[#EFF6FF] focus:bg-white focus:border-[#5DAAFD] outline-none transition-all"
+            className="h-[52px] w-full rounded-[0.5rem] border border-[#daebff] bg-[#EFF6FF] px-4 text-[16px] text-[#566A93] outline-none transition-colors placeholder:text-[#566A93] focus:border-[#1C3C8C] focus:bg-white"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
         </label>
 
         <label className="block">
-          <span className="text-sm font-medium text-[#1c3c8c] mb-1.5 block">Номер телефона</span>
+          <span className="text-[14px] leading-[1.5] text-[#1C3C8C]">Номер телефона</span>
           <input 
             required
             type="tel" 
             placeholder="+7 (___) ___-__-__" 
-            className={`w-full h-14 px-4 rounded-xl border bg-[#EFF6FF] focus:bg-white focus:border-[#5DAAFD] outline-none transition-all ${
-              phoneError ? "border-red-400" : "border-[#DAEBFF]"
+            className={`h-[52px] w-full rounded-[0.5rem] border bg-[#EFF6FF] px-4 text-[16px] text-[#566A93] outline-none transition-colors placeholder:text-[#566A93] focus:border-[#1C3C8C] focus:bg-white ${
+              phoneError ? "border-red-400" : "border-[#daebff]"
             }`}
             value={phone}
             onChange={(e) => {
@@ -62,7 +62,7 @@ export function QuizContactForm({
         </label>
 
         <div className="space-y-2">
-          <span className="text-sm font-medium text-[#1c3c8c] block">Удобный способ связи</span>
+          <span className="text-[14px] leading-[1.5] text-[#1C3C8C] block">Удобный способ связи</span>
           <div className="grid grid-cols-2 gap-3">
             {[
               { id: "whatsapp", label: "WhatsApp" },
@@ -72,8 +72,8 @@ export function QuizContactForm({
                 key={m.id}
                 type="button"
                 onClick={() => setMethod(m.id)}
-                className={`p-3 rounded-xl border text-sm font-medium transition-all ${
-                  method === m.id ? "bg-[#EFF6FF] border-[#5DAAFD] text-[#1C3C8C]" : "border-[#DAEBFF] text-[#566A93]"
+                className={`h-[48px] rounded-[0.5rem] border text-sm font-medium transition-all ${
+                  method === m.id ? "bg-white border-[#1C3C8C] text-[#1C3C8C]" : "bg-[#EFF6FF] border-[#daebff] text-[#566A93]"
                 }`}
               >
                 {m.label}
@@ -90,8 +90,8 @@ export function QuizContactForm({
               checked={consent}
               onChange={(e) => setConsent(e.target.checked)}
             />
-            <div className="h-5 w-5 rounded-md border border-[#DAEBFF] bg-[#EFF6FF] peer-checked:bg-[#5DAAFD] peer-checked:border-[#5DAAFD] transition-all" />
-            <Check size={14} className="absolute inset-0 m-auto text-white opacity-0 peer-checked:opacity-100 transition-opacity" />
+            <div className="h-5 w-5 rounded-[6px] border border-[#A2CFFE] bg-[#EFF6FF] peer-checked:bg-[#88C1FF] peer-checked:border-[#88C1FF] transition-all" />
+            <Check size={14} strokeWidth={3} className="absolute inset-0 m-auto text-white opacity-0 peer-checked:opacity-100 transition-opacity" />
           </div>
           <span className="text-xs text-[#566A93] leading-relaxed group-hover:text-[#1c3c8c] transition-colors">
             Оставляя контакты, вы соглашаетесь с политикой обработки персональных данных. Мы не передаём ваши данные третьим лицам.
