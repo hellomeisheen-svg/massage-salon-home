@@ -211,18 +211,37 @@ function PriceTableRow({ p, isProgram = false }: { p: ServicePrice, isProgram?: 
           {p.subtitle}
         </div>
       </td>
-      <td className="px-4 py-5 text-[15px] xl:text-[18px] font-light text-[#566A93] xl:px-8">
-        {p.duration}
+      <td className="px-4 py-5 text-[15px] xl:text-[18px] font-light text-[#566A93] xl:px-8 max-w-[300px]">
+        {isProgram ? (
+          <div className="whitespace-pre-line">{p.subtitle}</div>
+        ) : (
+          p.duration
+        )}
       </td>
-      <td className="font-noto-serif-narrow px-4 py-5 text-[18px] xl:text-[24px] font-light text-[#1C3C8C] xl:px-8">
-        {renderPrice(formatPrice(p.base))}
+      <td className="font-noto-serif-narrow px-4 py-5 text-[15px] xl:text-[18px] font-light text-[#566A93] xl:px-8">
+        {isProgram ? (p as any).validity || "2 месяца" : renderPrice(formatPrice(p.base))}
       </td>
-      <td className="px-4 py-5 xl:px-8">
-        <PriceTableCell base={p.base} count={3} discount={0.1} />
-      </td>
-      <td className="px-4 py-5 xl:px-8">
-        <PriceTableCell base={p.base} count={6} discount={0.15} />
-      </td>
+      {!isProgram ? (
+        <>
+          <td className="px-4 py-5 xl:px-8">
+            <PriceTableCell base={p.base} count={3} discount={0.1} />
+          </td>
+          <td className="px-4 py-5 xl:px-8">
+            <PriceTableCell base={p.base} count={6} discount={0.15} />
+          </td>
+        </>
+      ) : (
+        <td className="px-4 py-5 xl:px-8">
+          <div className="flex items-center gap-2">
+            <span className="font-noto-serif-narrow text-[13px] xl:text-[15px] font-light text-[#566A93] line-through">
+              {renderPrice(formatPrice(originalPrice))}
+            </span>
+            <span className="font-noto-serif-narrow text-[18px] xl:text-[24px] font-light text-[#1C3C8C]">
+              {renderPrice(formatPrice(basePrice))}
+            </span>
+          </div>
+        </td>
+      )}
     </tr>
   );
 }
