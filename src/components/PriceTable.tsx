@@ -97,7 +97,7 @@ export function PriceTable({ prices, bookingPrefix }: { prices: ServicePrice[], 
               ))}
             </div>
 
-            <div className="mt-8 space-y-6">
+            <div className="mt-8 space-y-4">
               {prices.map((p) => {
                 const count = sessionCounts[activeTab];
                 const discount = discountValues[activeTab];
@@ -110,40 +110,40 @@ export function PriceTable({ prices, bookingPrefix }: { prices: ServicePrice[], 
                 const leeches = count === 1 ? 6 : (count === 3 ? 16 : (count === 6 ? 74 : 0));
                 
                 return (
-                  <div key={p.zone} className="bg-white p-6 rounded-[12px] border border-[#daebff]/50">
-                    <div className="space-y-4">
-                      <div className="flex justify-between items-start">
-                        <div>
-                          <div className="font-noto-serif-narrow text-[22px] font-light leading-[1.2] text-[#1C3C8C]">
+                  <div key={p.zone} className="bg-white p-5 rounded-[12px] border border-[#daebff]/50">
+                    <div className="space-y-3">
+                      <div className="flex justify-between items-baseline gap-4">
+                        <div className="flex-1 min-w-0">
+                          <div className="font-noto-serif-narrow text-[20px] font-light leading-[1.2] text-[#1C3C8C] truncate">
                             {p.zone}
                           </div>
-                          <div className="mt-1 text-[13px] font-light text-[#566A93]">
+                          <div className="mt-0.5 text-[12px] font-light text-[#566A93]">
                             {p.duration}
+                          </div>
+                        </div>
+                        <div className="text-right shrink-0">
+                          <div className="inline-flex rounded-full bg-[#daebff]/40 px-2 py-0.5 text-[11px] font-light text-[#566A93]">
+                            {count} {sessionWord}
                           </div>
                         </div>
                       </div>
                       
-                      <div className="flex items-center justify-between pt-4 border-t border-[#daebff]/40">
-                        <div className="flex-1">
-                          <div className="mb-2 inline-flex rounded-full bg-[#daebff]/40 px-2 py-0.5 text-[11px] font-light text-[#566A93]">
-                            {count} {sessionWord}
-                          </div>
-                          <div className="flex items-baseline gap-2">
-                            <span className="font-noto-serif-narrow text-[28px] font-light text-[#1C3C8C]">
-                              {renderPrice(formatPrice(currentPrice))}
+                      <div className="flex items-baseline justify-between pt-3 border-t border-[#daebff]/40">
+                        <div className="flex items-baseline gap-2">
+                          <span className="font-noto-serif-narrow text-[24px] font-light text-[#1C3C8C]">
+                            {renderPrice(formatPrice(currentPrice))}
+                          </span>
+                          {discount > 0 && (
+                            <span className="font-noto-serif-narrow text-[14px] font-light text-[#566A93] line-through">
+                              {renderPrice(formatPrice(totalBase))}
                             </span>
-                            {discount > 0 && (
-                              <span className="font-noto-serif-narrow text-[15px] font-light text-[#566A93] line-through">
-                                {renderPrice(formatPrice(totalBase))}
-                              </span>
-                            )}
-                          </div>
-                          {isHirudo && (
-                            <div className="mt-1 text-[12px] font-light text-[#566A93]">
-                              {leeches} {pluralize(leeches, ["пиявка", "пиявки", "пиявок"])}
-                            </div>
                           )}
                         </div>
+                        {isHirudo && (
+                          <div className="text-[12px] font-light text-[#566A93]">
+                            {leeches} {pluralize(leeches, ["пиявка", "пиявки", "пиявок"])}
+                          </div>
+                        )}
                       </div>
                     </div>
                   </div>
