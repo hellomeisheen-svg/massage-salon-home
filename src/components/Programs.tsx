@@ -259,7 +259,7 @@ export function Programs({ prioritizeKeys }: ProgramsProps = {}) {
               {formatPrice(originalPrice)}
               <Ruble />
             </span>
-            <span className="font-noto-serif-narrow ds-price text-[#1C3C8C]">
+            <span className="font-noto-serif-narrow text-[36px] font-light text-[#1C3C8C]">
               {formatPrice(price)}
               <Ruble />
             </span>
