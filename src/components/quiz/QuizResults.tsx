@@ -22,25 +22,26 @@ export function QuizResults({
     if (goal.includes("расслабиться")) {
       const area = answers.relax_area?.[0] || "";
       if (area.includes("Всё тело")) serviceIds = ["vector"];
-      if (area.includes("Спина")) serviceIds = ["vector", "classic-spine"];
-      if (area.includes("Голова")) serviceIds = ["classic-head", "vector"];
-      if (area.includes("Ноги")) serviceIds = ["classic-legs", "vector"];
+      else if (area.includes("Спина")) serviceIds = ["vector", "classic-spine"];
+      else if (area.includes("Голова")) serviceIds = ["classic-head", "vector"];
+      else if (area.includes("Ноги")) serviceIds = ["classic-legs", "vector"];
+      else serviceIds = ["vector"];
     }
     
-    if (goal.includes("спине, шее")) {
+    else if (goal.includes("спине, шее")) {
       const res = answers.back_result?.[0] || "";
       if (res.includes("Быстро")) serviceIds = ["classic-spine"];
-      if (res.includes("Глубоко")) serviceIds = ["vector"];
-      if (res.includes("расслабиться")) serviceIds = ["classic-full", "vector"];
+      else if (res.includes("Глубоко")) serviceIds = ["vector"];
+      else if (res.includes("расслабиться")) serviceIds = ["classic-full", "vector"];
     }
 
-    if (goal.includes("отёчность")) {
+    else if (goal.includes("отёчность")) {
       const area = answers.lightness_area || [];
       if (area.includes("Ноги") || area.includes("Стопы")) serviceIds = ["classic-legs", "lymph", "lymphatic"];
       else if (area.includes("Всё тело")) serviceIds = ["lymph", "lymphatic", "vector"];
     }
 
-    if (goal.includes("Оздоровиться")) {
+    else if (goal.includes("Оздоровиться")) {
       const selectedPractices = answers.wellness_type || [];
       const mapping: Record<string, string> = {
         "Мягкие банки": "cups-air",
@@ -60,8 +61,11 @@ export function QuizResults({
       serviceIds = [...massageIds, ...practiceIds];
     }
 
-    if (goal.includes("Не знаю") && (!answers.unsure_direction || answers.unsure_direction[0].includes("не могу"))) {
-      serviceIds = ["vector", "classic-full"];
+    else if (goal.includes("Не знаю")) {
+      const direction = answers.unsure_direction?.[0] || "";
+      if (!direction || direction.includes("не могу")) {
+        serviceIds = ["vector", "classic-full"];
+      }
     }
 
     return serviceIds
