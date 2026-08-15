@@ -384,6 +384,9 @@ function PriceCards({ content }: { content: ServicePageContent }) {
 }
 
 function Prices({ content }: { content: ServicePageContent }) {
+  if (content.pricesStyle === "table") {
+    return <PriceTable prices={content.prices} />;
+  }
   return <PriceCards content={content} />;
 }
 
