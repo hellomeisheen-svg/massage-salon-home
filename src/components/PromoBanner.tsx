@@ -78,7 +78,7 @@ export function PromoBanner({
               <button
                 type="button"
                 onClick={() => openBooking()}
-                className="btn-primary w-full sm:w-[250px] px-8"
+                className="btn-primary w-full sm:w-[250px] px-16"
               >
                 {buttonText}
               </button>
