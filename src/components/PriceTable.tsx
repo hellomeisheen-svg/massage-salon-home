@@ -12,7 +12,7 @@ export type ServicePrice = {
   base: number;
 };
 
-export function PriceTable({ prices, title = "Форматы и стоимость" }: { prices: ServicePrice[], title?: string }) {
+export function PriceTable({ prices, title = "Форматы и стоимость", id }: { prices: ServicePrice[], title?: string, id?: string }) {
   const { openBooking } = useBooking();
   const [activeTab, setActiveTab] = useState(0);
 
@@ -22,9 +22,9 @@ export function PriceTable({ prices, title = "Форматы и стоимост
   const sessionDiscounts = [null, "-10%", "-15%"];
 
   return (
-    <section id="prices" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section">
+    <section id={id || "prices"} className="scroll-mt-[140px] ds-section opacity-0 animate-in fade-in duration-700 fill-mode-forwards">
       <div className="container-1900">
-        <h2 className="font-noto-serif-narrow text-center ds-h2 text-[#1C3C8C]">
+        <h2 className="font-noto-serif-narrow text-center ds-h2 text-[#1C3C8C] mb-8 sm:mb-12">
           {title}
         </h2>
 
