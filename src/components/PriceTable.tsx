@@ -177,7 +177,7 @@ export function PriceTable({ prices, title = "Форматы и стоимост
                           </div>
                         </div>
                         <div className="text-right shrink-0">
-                          <div className="inline-flex rounded-full bg-[#daebff]/40 px-2 py-0.5 text-[10px] font-light text-[#566A93]">
+                          <div className="inline-flex rounded-full bg-[#DAEBFF] px-2 py-0.5 text-[10px] font-light text-[#566A93]">
                             {count} {sessionWord}
                           </div>
                         </div>
