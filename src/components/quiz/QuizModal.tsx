@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import { X, ChevronLeft, Check } from "lucide-react";
 import { QUIZ_CONFIG } from "@/config/quiz";
 import { calculateResult } from "@/lib/quiz.utils";
-import { submitQuizLead } from "@/lib/quiz.functions";
+import { sendLeadNotification } from "@/lib/notifications.functions";
+import { supabase } from "@/integrations/supabase/client";
 import { QuizResults } from "./QuizResults";
 import { QuizContactForm } from "./QuizContactForm";
 
@@ -55,19 +56,24 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
   const onContactSubmit = async (contact: { name: string; phone: string; method: string; website?: string }) => {
     setIsSubmitting(true);
     try {
-      await submitQuizLead({
-        data: {
+      const message = `[QUIZ LEAD] Results: ${recommendedServices.map(s => s.name).join(", ")}\n\nAnswers:\n${visibleSteps.map(s => {
+        const ans = answers[s.id];
+        return `- ${s.question}: ${Array.isArray(ans) ? ans.join(", ") : ans}`;
+      }).join("\n")}\n\nMethod: ${contact.method}`;
+
+      const { data: leadData, error: insertError } = await supabase.from("leads").insert([
+        {
           name: contact.name,
           phone: contact.phone,
-          method: contact.method,
-          website: contact.website,
-          answers: visibleSteps.map(s => ({
-            question: s.question,
-            answer: answers[s.id] || (s.type === "multiple" ? [] : "")
-          })),
-          results: recommendedServices.map(s => s.name)
-        }
-      });
+          message: message,
+        },
+      ]).select("id").single();
+
+      if (insertError) throw insertError;
+
+      if (leadData?.id) {
+        sendLeadNotification({ data: { leadId: leadData.id } }).catch(e => console.error(e));
+      }
       setIsSuccess(true);
     } catch (e) {
       console.error(e);
