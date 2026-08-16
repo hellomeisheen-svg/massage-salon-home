@@ -36,19 +36,19 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
     serviceIds.push("vector");
 
     // Добавляем массаж по зоне, если он не основной (векторный всегда первый в relax)
-    if (area === "back_neck") serviceIds.push("classic-spine");
-    else if (area === "head") serviceIds.push("classic-head");
-    else if (area === "legs") serviceIds.push("classic-legs");
+    if (area === "back_neck") serviceIds.push("classic_spine_neck");
+    else if (area === "head") serviceIds.push("classic_head");
+    else if (area === "legs") serviceIds.push("classic_legs");
 
     // Затем — банки, только при явном согласии пользователя
     if (addCups === "yes") {
       if (intensity === "soft") {
-        serviceIds.push("cups-air");
+        serviceIds.push("cups_air");
       } else if (intensity === "deep") {
-        serviceIds.push("cups-fire");
+        serviceIds.push("cups_fire");
       } else {
         // master_choice или если не выбрано
-        serviceIds.push("cups-air");
+        serviceIds.push("cups_air");
       }
     }
   }
