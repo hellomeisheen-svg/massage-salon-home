@@ -87,22 +87,8 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
 
   // Ветка 3: Убрать отёчность (lightness)
   else if (goal === "lightness") {
-    const area = 
-      answers.lightnessArea ?? 
-      answers.lightness_area ?? 
-      answers.area ?? 
-      answers.selectedArea ?? 
-      answers.relaxArea;
-
-    const recommendedServices = getLightnessRecommendations({ ...answers, lightnessArea: area });
-    
-    console.log("LIGHTNESS DEBUG", {
-      goal: answers.goal,
-      area: area,
-      recommendedCount: recommendedServices.length
-    });
-
-    return recommendedServices;
+    const area = answers.lightness_area;
+    return getLightnessRecommendations({ ...answers, lightnessArea: area });
   }
 
   // Ветка 5: Оздоровительные практики (wellness)
@@ -138,7 +124,6 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
   }
 
   // Дедупликация и лимит 3
-  // В ветке relax мы не ограничиваем количество, чтобы банки не вытеснили массаж
   const finalIds = Array.from(new Set(serviceIds));
   const result = finalIds
     .map(id => getService(id))
@@ -197,11 +182,14 @@ function getBackNeckRecommendations(answers: Record<string, any>): QuizService[]
 }
 
 function getLightnessRecommendations(answers: Record<string, any>): QuizService[] {
+  // Пытаемся достать значение зоны из всех возможных ключей
   const area =
     answers.lightnessArea ??
+    answers.lightness_area ??
     answers.area ??
     answers.selectedArea ??
     answers.relaxArea;
+
 
   // Готовые объекты для ветки lightness с кастомными описаниями, если нужно
   // Но мы будем брать их из основного конфига для консистентности, 
