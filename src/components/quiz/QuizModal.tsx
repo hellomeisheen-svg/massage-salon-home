@@ -10,6 +10,7 @@ import { QuizContactForm } from "./QuizContactForm";
 export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const [step, setStep] = useState(0); 
   const [answers, setAnswers] = useState<Record<string, any>>({});
+  const [error, setError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [recommendedServices, setRecommendedServices] = useState<any[]>([]);
