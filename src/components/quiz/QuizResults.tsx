@@ -45,11 +45,7 @@ export function QuizResults({
           <div key={service.id || idx} className={`p-5 rounded-[12px] border transition-all ds-bento-shadow ${idx === 0 ? "border-[#A2CFFE] bg-[#DAEBFF]" : "border-[#DAEBFF] bg-white"}`}>
             <div className="flex justify-between items-start gap-4">
               <div>
-                {idx === 0 && (
-                  <span className="inline-block px-2 py-0.5 rounded-[12px] bg-white text-[10px] font-bold text-[#1C3C8C] uppercase tracking-wider mb-2">
-                    Рекомендуем
-                  </span>
-                )}
+                {/* "Recommended" badge removed as per request */}
                 <h4 className="font-medium text-[#1c3c8c]">{service.name}</h4>
                 <p className="text-xs text-[#566A93] mt-1 line-clamp-2">{service.description}</p>
                 <div className="flex gap-3 mt-3 text-sm font-medium text-[#1C3C8C]">
@@ -57,7 +53,7 @@ export function QuizResults({
                   <span>{service.price}</span>
                 </div>
               </div>
-              <div className={`h-8 w-8 rounded-[12px] flex items-center justify-center shrink-0 ${idx === 0 ? "bg-[#1C3C8C] text-white" : "bg-[#EFF6FF] text-[#1C3C8C]"}`}>
+              <div className={`h-8 w-8 rounded-[12px] flex items-center justify-center shrink-0 ${idx === 0 ? "bg-[#A2CFFE] text-white" : "bg-[#EFF6FF] text-[#1C3C8C]"}`}>
                 <Check size={16} strokeWidth={3} />
               </div>
             </div>
