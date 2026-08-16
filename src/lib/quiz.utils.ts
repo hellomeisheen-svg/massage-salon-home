@@ -150,7 +150,7 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
     .map(id => getService(id))
     .filter((s): s is QuizService => !!s);
 
-  const isSpecialBranch = goal === "relax" || goal === "back_neck";
+  const isSpecialBranch = goal === "relax" || goal === "back_neck" || goal === "lightness";
   return isSpecialBranch ? result : result.slice(0, 3);
 }
 
