@@ -8,7 +8,7 @@ import { Programs } from "@/components/Programs";
 import { Education } from "@/components/Education";
 import { OtherServices } from "@/components/OtherServices";
 import { RatingBlock } from "@/components/RatingBlock";
-import { BookingProvider, useBooking } from "@/components/BookingModal";
+import { BookingProvider } from "@/components/BookingModal";
 import { formatPrice, pluralize, renderPrice } from "@/components/Services";
 export type ServicePrice = {
   zone: string;
