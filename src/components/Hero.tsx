@@ -1,14 +1,49 @@
 import { useState } from "react";
+import { Star } from "lucide-react";
 import { QuizModal } from "@/components/quiz/QuizModal";
+
+const YANDEX_MAPS_URL =
+  "https://yandex.ru/maps/org/sedmoye_nebo/130811843218/reviews/";
+
+function RatingBlock() {
+  return (
+    <div className="w-full rounded-[12px] border border-[#daebff] bg-white ds-bento-shadow px-4 py-5 sm:px-5 sm:py-6 sm:max-w-[280px]">
+      <div className="flex flex-col items-center gap-3 text-center">
+        <div className="flex flex-nowrap items-center gap-1">
+          {Array.from({ length: 5 }).map((_, i) => (
+            <Star
+              key={i}
+              aria-hidden="true"
+              className="h-[18px] w-[18px] shrink-0 fill-[#F26A38] text-[#F26A38]"
+            />
+          ))}
+        </div>
+        <div className="font-noto-serif-narrow ds-h2 whitespace-nowrap leading-none text-[#1C3C8C]">
+          4,7
+        </div>
+        <div className="text-[15px] font-light leading-[22px] text-[#1C3C8C]">
+          Рейтинг на&nbsp;Яндекс&nbsp;Картах
+        </div>
+        <a
+          href={YANDEX_MAPS_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex min-h-[44px] items-center justify-center rounded-[12px] px-3 text-[15px] font-medium text-[#1C3C8C] underline underline-offset-4 transition-opacity hover:opacity-80 active:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1C3C8C]"
+        >
+          Смотреть отзывы
+        </a>
+        <div className="text-[14px] font-light leading-[20px] text-[#566A93]">
+          Отзывы клиентов
+        </div>
+      </div>
+    </div>
+  );
+}
 
 function SpecialistBlock() {
   return (
     <div className="flex flex-col items-start gap-3 sm:gap-4">
-      <img
-        className="h-[90px] w-[70px] rounded-[12px] border border-[#daebff] ds-bento-shadow object-cover xl:h-[110px] xl:w-[85px]"
-        alt="Татьяна Злобина"
-        src="/images/tatyana-photo.webp"
-      />
+      <RatingBlock />
       <div className="flex flex-col gap-1">
         <div className="font-noto-serif-narrow ds-h4 text-[#1c3c8c]">
           Татьяна&nbsp;Злобина
@@ -22,6 +57,7 @@ function SpecialistBlock() {
     </div>
   );
 }
+
 
 function HeadlineBlock({ onOpenQuiz }: { onOpenQuiz: () => void }) {
   return (
