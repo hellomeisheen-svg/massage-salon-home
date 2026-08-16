@@ -1,4 +1,4 @@
-import { ArrowUp } from "lucide-react";
+import { ArrowUp, Star } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import Logo from "@/components/Logo";
 
