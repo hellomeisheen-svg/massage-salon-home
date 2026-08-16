@@ -122,7 +122,7 @@ export function Header({
           aria-label={menuOpen ? "Закрыть меню" : "Открыть меню"}
           aria-expanded={menuOpen}
           onClick={() => setMenuOpen((v) => !v)}
-          className="flex h-10 w-10 items-center justify-center rounded-lg text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors"
+          className="flex h-10 w-10 items-center justify-center rounded-[12px] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors"
         >
           {menuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -146,7 +146,7 @@ export function Header({
                       <Link
                         to="/"
                         onClick={() => setMenuOpen(false)}
-                        className="block w-full rounded-lg px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors text-link-active"
+                        className="block w-full rounded-[12px] px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors text-link-active"
                       >
 
                         На главную
@@ -158,7 +158,7 @@ export function Header({
                       <a
                         href={item.href}
                         onClick={() => setMenuOpen(false)}
-                        className="block w-full rounded-lg px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors text-link-active"
+                        className="block w-full rounded-[12px] px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors text-link-active"
                       >
 
                         {item.label}
@@ -173,7 +173,7 @@ export function Header({
                         <button
                           type="button"
                           onClick={() => setServicesOpen(!servicesOpen)}
-                          className="flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors text-link-active"
+                          className="flex w-full items-center justify-between rounded-[12px] px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors text-link-active"
                         >
 
                           Посмотреть все услуги
@@ -188,7 +188,7 @@ export function Header({
                                   <Link
                                     to={service.to}
                                     onClick={() => setMenuOpen(false)}
-                                    className="block w-full rounded-lg px-3 py-2 text-sm font-normal leading-[150%] text-[#4A5C85] hover:bg-[#EFF6FF] transition-colors text-link-active"
+                                    className="block w-full rounded-[12px] px-3 py-2 text-sm font-normal leading-[150%] text-[#4A5C85] hover:bg-[#EFF6FF] transition-colors text-link-active"
                                   >
 
                                     {service.label}
@@ -217,7 +217,7 @@ export function Header({
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Макс — мессенджер"
-                    className="ml-auto flex h-10 w-10 items-center justify-center rounded-lg border border-[#daebff] bg-[#EFF6FF] text-[#1c3c8c] hover:bg-[#DAEBFF] transition-colors icon-btn-active"
+                    className="ml-auto flex h-10 w-10 items-center justify-center rounded-[12px] border border-[#daebff] bg-[#EFF6FF] text-[#1c3c8c] hover:bg-[#DAEBFF] transition-colors icon-btn-active"
                   >
 
                     <svg

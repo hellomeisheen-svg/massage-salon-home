@@ -133,7 +133,7 @@ export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Макс — мессенджер"
-                  className="flex h-10 w-10 items-center justify-center rounded-lg border border-[#daebff] bg-[#EFF6FF] text-[#1c3c8c] hover:bg-[#DAEBFF] transition-colors icon-btn-active"
+                  className="flex h-10 w-10 items-center justify-center rounded-[12px] border border-[#daebff] bg-[#EFF6FF] text-[#1c3c8c] hover:bg-[#DAEBFF] transition-colors icon-btn-active"
                 >
 
                   <svg
@@ -183,7 +183,7 @@ export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
               type="button"
               onClick={scrollToTop}
               aria-label="Наверх"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-[#daebff] bg-[#EFF6FF] text-[#1c3c8c] hover:bg-[#DAEBFF] transition-colors shrink-0 icon-btn-active"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-[12px] border border-[#daebff] bg-[#EFF6FF] text-[#1c3c8c] hover:bg-[#DAEBFF] transition-colors shrink-0 icon-btn-active"
             >
 
               <ArrowUp size={18} strokeWidth={2} />

@@ -199,7 +199,7 @@ export function Programs({ prioritizeKeys }: ProgramsProps = {}) {
 
                   >
                     <span
-                      className={`h-2 w-2 rounded-full transition-colors ${
+                      className={`h-2 w-2 rounded-[12px] transition-colors ${
                         isActive ? "bg-[#1C3C8C]" : "bg-[#B7C5E3] group-hover/nav:bg-[#1C3C8C]/50"
 
                       }`}

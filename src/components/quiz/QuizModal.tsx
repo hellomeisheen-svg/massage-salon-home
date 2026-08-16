@@ -85,7 +85,7 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
       <div className="relative my-auto w-full max-w-[640px] ds-card p-5 sm:p-8 xl:p-10 transition-transform duration-300 scale-100">
         <button 
           onClick={onClose} 
-          className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-lg border border-[#daebff] bg-[#EFF6FF] text-[#1C3C8C] transition-colors hover:bg-white z-10"
+          className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-[12px] border border-[#daebff] bg-[#EFF6FF] text-[#1C3C8C] transition-colors hover:bg-white z-10"
           aria-label="Закрыть"
         >
           <X size={18} />
@@ -94,8 +94,8 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
         {isSuccess ? (
           <div className="relative flex flex-col items-center px-2 pt-6 pb-2 text-center sm:px-4 sm:pt-8 animate-in zoom-in-95 duration-500">
             <div className="relative mb-8">
-              <div className="absolute inset-0 rounded-full bg-[#A2CFFE] blur-2xl opacity-40 animate-pulse" />
-              <div className="relative flex h-20 w-20 items-center justify-center rounded-full border border-[#DAEBFF] bg-white shadow-modal-icon">
+              <div className="absolute inset-0 rounded-[12px] bg-[#A2CFFE] blur-2xl opacity-40 animate-pulse" />
+              <div className="relative flex h-20 w-20 items-center justify-center rounded-[12px] border border-[#DAEBFF] bg-white shadow-modal-icon">
                 <Check size={40} className="text-[#1C3C8C]" strokeWidth={1.5} />
               </div>
             </div>
@@ -119,7 +119,7 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
                   { text: "Расчет стоимости и длительности", icon: "2" },
                   { text: "Скидка на первый визит", icon: "3" }
                 ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-4 p-4 rounded-xl border border-[#DAEBFF]/60 bg-white shadow-[0_2px_8px_rgba(28,60,140,0.05)] group">
+                  <div key={i} className="flex items-center gap-4 p-4 rounded-[12px] border border-[#DAEBFF]/60 bg-white shadow-[0_2px_8px_rgba(28,60,140,0.05)] group">
                     <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-[12px] bg-[#EFF6FF] text-[13px] font-bold text-[#1C3C8C] group-hover:bg-[#88C1FF] group-hover:text-white transition-colors">
                       {item.icon}
                     </span>
@@ -160,7 +160,7 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
           <div className="py-6 animate-in fade-in slide-in-from-right-4 duration-300">
             <div className="flex flex-col gap-1 w-full mb-8">
               <span className="text-[10px] font-bold text-[#A2CFFE] uppercase tracking-[0.2em] mb-2">Вопрос {step} из {visibleSteps.length}</span>
-              <div className="h-1.5 w-full bg-[#EFF6FF] rounded-full overflow-hidden">
+              <div className="h-1.5 w-full bg-[#EFF6FF] rounded-[12px] overflow-hidden">
                 <div 
                   className="h-full bg-gradient-to-r from-[#A2CFFE] to-[#5DAAFD] transition-all duration-500 ease-out"
                   style={{ width: `${(step / visibleSteps.length) * 100}%` }}
@@ -203,7 +203,7 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
                         });
                       }
                     }}
-                    className={`quiz-option w-full text-left p-4 md:p-5 rounded-lg border border-[#daebff] transition-all duration-300 flex items-center justify-between group ${
+                    className={`quiz-option w-full text-left p-4 md:p-5 rounded-[12px] border border-[#daebff] transition-all duration-300 flex items-center justify-between group ${
                       isSelected 
                         ? "border-[#1C3C8C] bg-white text-[#1c3c8c]" 
                         : "bg-[#EFF6FF] text-[#566A93] hover:bg-white"
@@ -212,7 +212,7 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
                     <span className="quiz-option__label font-medium text-base md:text-lg">
                       {opt.text}
                     </span>
-                    <div className={`w-6 h-6 rounded-[6px] border flex items-center justify-center transition-colors ${
+                    <div className={`w-6 h-6 rounded-[12px] border flex items-center justify-center transition-colors ${
                       isSelected ? "bg-[#88C1FF] border-[#88C1FF]" : "bg-white border-[#DAEBFF] group-hover:border-[#A2CFFE]"
                     }`}>
                       {isSelected && <Check size={14} className="text-white" strokeWidth={3} />}

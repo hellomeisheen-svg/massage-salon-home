@@ -47,7 +47,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
           {q}
         </span>
         <span
-          className={`shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-[#EFF6FF] border border-[#daebff] flex items-center justify-center transition-transform duration-300 ${
+          className={`shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-[12px] bg-[#EFF6FF] border border-[#daebff] flex items-center justify-center transition-transform duration-300 ${
             open ? "rotate-45" : ""
           }`}
         >
@@ -93,7 +93,7 @@ export function Faq() {
             <img
               src="/images/tatyana-photo.webp"
               alt="Татьяна Злобина"
-              className="h-[90px] w-[70px] xl:h-[110px] xl:w-[85px] rounded-lg border border-[#daebff] object-cover"
+              className="h-[90px] w-[70px] xl:h-[110px] xl:w-[85px] rounded-[12px] border border-[#daebff] object-cover"
             />
             <h3 className="font-noto-serif-narrow mt-6 ds-h4 text-[#1C3C8C] sm:text-[28px] xl:text-[28px]">
               Татьяна Злобина

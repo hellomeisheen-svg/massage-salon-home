@@ -111,7 +111,7 @@ function BookingDialog({
           type="button"
           onClick={onClose}
           aria-label="Закрыть окно записи"
-          className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-[0.5rem] border border-[#daebff] bg-[#EFF6FF] text-[#1C3C8C] transition-colors hover:bg-white"
+          className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-[12px] border border-[#daebff] bg-[#EFF6FF] text-[#1C3C8C] transition-colors hover:bg-white"
         >
           <X size={18} />
         </button>
@@ -120,8 +120,8 @@ function BookingDialog({
           <div className="relative flex flex-col items-center px-2 pt-6 pb-2 text-center sm:px-4 sm:pt-8">
             {/* Success icon with halo */}
             <div className="relative mb-8">
-              <div className="absolute inset-0 rounded-full bg-[#A2CFFE] blur-2xl opacity-40" />
-              <div className="relative flex h-20 w-20 items-center justify-center rounded-full border border-[#DAEBFF] bg-white shadow-modal-icon">
+              <div className="absolute inset-0 rounded-[12px] bg-[#A2CFFE] blur-2xl opacity-40" />
+              <div className="relative flex h-20 w-20 items-center justify-center rounded-[12px] border border-[#DAEBFF] bg-white shadow-modal-icon">
                 <svg
                   className="h-10 w-10 text-[#1C3C8C]"
                   fill="none"
@@ -275,7 +275,7 @@ function BookingDialog({
                   required
                   autoComplete="name"
                   placeholder="Как к вам обращаться"
-                  className="h-[52px] rounded-[0.5rem] border border-[#daebff] bg-[#EFF6FF] px-4 text-[16px] text-foreground outline-none transition-colors placeholder:text-[#566A93] focus:border-[#1C3C8C] focus:bg-white"
+                  className="h-[52px] rounded-[12px] border border-[#daebff] bg-[#EFF6FF] px-4 text-[16px] text-foreground outline-none transition-colors placeholder:text-[#566A93] focus:border-[#1C3C8C] focus:bg-white"
                 />
               </label>
 
@@ -290,7 +290,7 @@ function BookingDialog({
                   value={formatPhone(phone)}
                   onChange={handlePhoneInput}
                   placeholder="+7 (___) ___-__-__"
-                  className="h-[52px] rounded-[0.5rem] border border-[#daebff] bg-[#EFF6FF] px-4 text-[16px] text-foreground outline-none transition-colors placeholder:text-[#566A93] focus:border-[#1C3C8C] focus:bg-white"
+                  className="h-[52px] rounded-[12px] border border-[#daebff] bg-[#EFF6FF] px-4 text-[16px] text-foreground outline-none transition-colors placeholder:text-[#566A93] focus:border-[#1C3C8C] focus:bg-white"
                 />
                 {phoneError && (
                   <span className="text-[13px] leading-[1.5] text-[#C0392B]">{phoneError}</span>
@@ -309,7 +309,7 @@ function BookingDialog({
                       key={m.id}
                       type="button"
                       onClick={() => setMethod(m.id)}
-                      className={`h-[48px] rounded-[0.5rem] border text-xs font-medium transition-all ${
+                      className={`h-[48px] rounded-[12px] border text-xs font-medium transition-all ${
                         method === m.id ? "bg-white border-[#1C3C8C] text-[#1C3C8C]" : "bg-[#EFF6FF] border-[#daebff] text-[#566A93]"
                       }`}
                     >
@@ -326,7 +326,7 @@ function BookingDialog({
                   rows={2}
                   defaultValue={subject ? `${subject}: ` : ""}
                   placeholder="Самочувствие, пожелания, удобное время"
-                  className="rounded-[0.5rem] border border-[#daebff] bg-[#EFF6FF] px-4 py-3 text-[16px] leading-[1.6] text-foreground outline-none transition-colors placeholder:text-[#566A93] focus:border-[#1C3C8C] focus:bg-white"
+                  className="rounded-[12px] border border-[#daebff] bg-[#EFF6FF] px-4 py-3 text-[16px] leading-[1.6] text-foreground outline-none transition-colors placeholder:text-[#566A93] focus:border-[#1C3C8C] focus:bg-white"
                 />
               </label>
 
@@ -345,7 +345,7 @@ function BookingDialog({
                         setConsent(e.target.checked);
                         if (e.target.checked) setConsentError(null);
                       }}
-                      className="peer h-5 w-5 shrink-0 cursor-pointer appearance-none rounded-[6px] border border-[#A2CFFE] bg-[#EFF6FF] transition-colors hover:border-[#5DAAFD] checked:border-[#88C1FF] checked:bg-[#88C1FF] checked:hover:bg-[#5DAAFD] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5DAAFD]"
+                      className="peer h-5 w-5 shrink-0 cursor-pointer appearance-none rounded-[12px] border border-[#A2CFFE] bg-[#EFF6FF] transition-colors hover:border-[#5DAAFD] checked:border-[#88C1FF] checked:bg-[#88C1FF] checked:hover:bg-[#5DAAFD] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5DAAFD]"
                     />
                     <Check
                       size={14}

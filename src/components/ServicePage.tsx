@@ -229,7 +229,7 @@ function AboutService({ content }: { content: ServicePageContent }) {
 
           >
             <span
-              className={`h-2 w-2 rounded-full transition-colors ${
+              className={`h-2 w-2 rounded-[12px] transition-colors ${
                 isActive ? "bg-[#1C3C8C]" : "bg-[#B7C5E3] group-hover/nav:bg-[#1C3C8C]/50"
 
               }`}
@@ -325,7 +325,7 @@ function PriceCard({ p, prefix }: { p: ServicePrice; prefix: string }) {
             key={label}
             type="button"
             onClick={() => setActive(i)}
-            className={`relative flex flex-1 items-center justify-center rounded-lg px-2 py-2.5 transition-all duration-300 ${
+            className={`relative flex flex-1 items-center justify-center rounded-[12px] px-2 py-2.5 transition-all duration-300 ${
               active === i ? "bg-white shadow-tab-active" : "bg-transparent hover:bg-white/40"
             }`}
 
@@ -511,7 +511,7 @@ function FaqItem({ q, a }: { q: string; a: React.ReactNode }) {
           {q}
         </span>
         <span
-          className={`shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-[#EFF6FF] border border-[#daebff] flex items-center justify-center transition-transform duration-300 ${
+          className={`shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-[12px] bg-[#EFF6FF] border border-[#daebff] flex items-center justify-center transition-transform duration-300 ${
             open ? "rotate-45" : ""
           }`}
         >
