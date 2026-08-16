@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PriceTable } from "@/components/PriceTable";
+import { BookingProvider } from "@/components/BookingModal";
 
 export const Route = createFileRoute("/test-pricetable")({
   head: () => ({
@@ -15,8 +16,10 @@ const samplePrices = [
 
 function TestPage() {
   return (
-    <main className="min-h-screen bg-[#EFF6FF] py-20">
-      <PriceTable prices={samplePrices} />
-    </main>
+    <BookingProvider>
+      <main className="min-h-screen bg-[#EFF6FF] py-20">
+        <PriceTable prices={samplePrices} />
+      </main>
+    </BookingProvider>
   );
 }
