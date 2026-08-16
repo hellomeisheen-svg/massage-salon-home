@@ -79,7 +79,7 @@ export function Faq() {
           <span
             className="inline-flex items-center gap-2 px-4 py-1.5 ds-label text-white"
             style={{
-            borderRadius: "12px",
+              borderRadius: "12px",
             backgroundImage: "linear-gradient(to bottom, #A2CFFE, #88C1FF)",
             }}
           >
