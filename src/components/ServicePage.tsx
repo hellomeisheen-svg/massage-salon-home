@@ -225,16 +225,19 @@ function AboutService({ content }: { content: ServicePageContent }) {
             type="button"
             onClick={() => goTo(i)}
             aria-current={isActive}
-            className="flex items-center gap-3 text-left"
+            className="flex items-center gap-3 text-left group/nav"
+
           >
             <span
               className={`h-2 w-2 rounded-full transition-colors ${
-                isActive ? "bg-[#1C3C8C]" : "bg-[#B7C5E3]"
+                isActive ? "bg-[#1C3C8C]" : "bg-[#B7C5E3] group-hover/nav:bg-[#1C3C8C]/50"
+
               }`}
             />
             <span
               className={`text-[16px] transition-colors ${
-                isActive ? "text-[#1C3C8C]" : "text-[#566A93]"
+                isActive ? "text-[#1C3C8C]" : "text-[#566A93] group-hover/nav:text-[#1C3C8C]"
+
               }`}
             >
               {s.label}
@@ -323,8 +326,9 @@ function PriceCard({ p, prefix }: { p: ServicePrice; prefix: string }) {
             type="button"
             onClick={() => setActive(i)}
             className={`relative flex flex-1 items-center justify-center rounded-[8px] px-2 py-2.5 transition-all duration-300 ${
-              active === i ? "bg-white shadow-[0_2px_8px_rgba(28,60,140,0.08)]" : "bg-transparent"
+              active === i ? "bg-white shadow-[0_2px_8px_rgba(28,60,140,0.08)]" : "bg-transparent hover:bg-white/40"
             }`}
+
           >
             <span
               className={`whitespace-nowrap text-[13px] tracking-tight transition-colors duration-300 ${
