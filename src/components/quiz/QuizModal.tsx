@@ -246,14 +246,14 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
               })}
             </div>
 
-            <div className="flex gap-4">
-              <button onClick={handleBack} className="btn-secondary flex-1 h-14 flex items-center justify-center gap-2">
+            <div className="mt-auto flex gap-4 pt-6">
+              <button onClick={handleBack} className="btn-secondary flex-1 h-14 flex items-center justify-center gap-2 active:opacity-60 transition-opacity">
                 <ChevronLeft size={20} /> Назад
               </button>
               <button 
                 disabled={!answers[currentStep.id] || (currentStep.type === "multiple" && answers[currentStep.id].length === 0)}
                 onClick={() => handleNext()} 
-                className="btn-primary flex-[2] h-14"
+                className="btn-primary flex-[2] h-14 active:opacity-85 transition-opacity"
               >
                 Далее
               </button>
