@@ -6,7 +6,7 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
   
   let serviceIds: string[] = [];
   
-  // Ветка 6: Не знаю (unsure) -> перенаправление в другие ветки или основная рекомендация
+  // Ветка 6: Не знаю (unsure)
   if (goal === "unsure") {
     const dir = answers.unsure_direction;
     if (dir === "relax") return calculateResult({ ...answers, goal: "relax" });
@@ -15,20 +15,15 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
     if (dir === "face") return calculateResult({ ...answers, goal: "face" });
     if (dir === "wellness") return calculateResult({ ...answers, goal: "wellness" });
     
-    // Если все еще неясно (still_unsure) - рекомендация для первого визита
+    // Векторный массаж первым для первого визита
     return [getService("vector"), getService("classic-full")].filter((s): s is QuizService => !!s);
   }
 
   // Ветка 4: Лицо (face) - изолирована
   const isFacePath = goal === "face" || (goal === "lightness" && answers.lightness_area?.length === 1 && answers.lightness_area.includes("face"));
   if (isFacePath) {
-    const format = answers.face_format;
-    if (format === "classic_face") serviceIds = ["classic_face"];
-    else if (format === "lymph_face") serviceIds = ["lymph-face"];
-    else if (format === "cosmetic_hirudo") serviceIds = ["girudo-cosm"];
-    else serviceIds = ["lymph-face", "classic-face", "girudo-cosm"];
-    
-    return serviceIds.map(id => getService(id)).filter((s): s is QuizService => !!s).slice(0, 3);
+    serviceIds = ["lymph-face", "classic-face", "girudo-cosm"];
+    return serviceIds.map(id => getService(id)).filter((s): s is QuizService => !!s);
   }
 
   // Ветка 1: Глубокое расслабление (relax)
@@ -41,19 +36,29 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
     else serviceIds = ["vector"];
   }
 
-  // Ветка 2: Спина, шея и плечи (back_neck)
+  // Ветка 2: Снять напряжение (back_neck)
   else if (goal === "back_neck") {
     const res = answers.back_result;
     const areas = answers.back_tension_area || [];
     const isUpper = areas.includes("neck") || areas.includes("shoulders") || areas.includes("upper_back");
+    const isLower = areas.includes("lower_back");
     
-    if (res === "quick_relief" && isUpper) serviceIds = ["classic-spine"];
-    else if (res === "deep_work") serviceIds = ["vector"];
-    else if (res === "relaxation") serviceIds = ["classic-full", "vector"];
-    else serviceIds = ["classic-spine", "vector"];
+    if (isUpper && isLower) {
+      serviceIds = ["vector", "classic-full", "classic-spine"];
+    } else if (isLower) {
+      serviceIds = ["classic-full", "vector", "classic-spine"];
+    } else if (isUpper) {
+      if (res === "deep_work") {
+        serviceIds = ["classic-spine", "classic-full", "vector"];
+      } else {
+        serviceIds = ["classic-spine", "classic-full"];
+      }
+    } else {
+      serviceIds = ["classic-spine", "vector"];
+    }
   }
 
-  // Ветка 3: Лёгкость и отёчность (lightness)
+  // Ветка 3: Убрать отёчность (lightness)
   else if (goal === "lightness") {
     const areas = answers.lightness_area || [];
     if (areas.includes("legs") || areas.includes("feet")) serviceIds = ["classic-legs", "lymph", "lymphatic"];
@@ -63,23 +68,34 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
 
   // Ветка 5: Оздоровительные практики (wellness)
   else if (goal === "wellness") {
-    const practiceMapping: Record<string, string> = {
-      cups_air: "cups-air",
-      cups_fire: "cups-fire",
-      hirudo_medical: "girudo-med",
-      hirudo_cosmetic: "girudo-cosm",
-      ketgut: "ketgut"
-    };
+    const wellnessPriority = [
+      "ketgut",
+      "girudo-med",
+      "girudo-cosm",
+      "cups-fire",
+      "cups-air"
+    ];
+
+    const selectedTypes = answers.wellness_type || [];
     
-    const selectedPractices = (answers.wellness_type || []).map((id: string) => practiceMapping[id]).filter(Boolean);
-    const massageType = answers.wellness_massage;
+    if (selectedTypes.includes("master_choice")) {
+      serviceIds = ["ketgut", "girudo-med", "cups-air"];
+    } else {
+      const practiceMapping: Record<string, string> = {
+        cups_air: "cups-air",
+        cups_fire: "cups-fire",
+        hirudo_medical: "girudo-med",
+        hirudo_cosmetic: "girudo-cosm",
+        ketgut: "ketgut"
+      };
+      
+      serviceIds = selectedTypes
+        .map((id: string) => practiceMapping[id])
+        .filter(Boolean)
+        .sort((a: string, b: string) => wellnessPriority.indexOf(a) - wellnessPriority.indexOf(b));
+    }
     
-    let massageIds: string[] = [];
-    if (massageType === "add_relax_massage") massageIds = ["vector", "classic-full"];
-    else if (massageType === "add_back_neck_massage") massageIds = ["classic-spine"];
-    
-    // Массажи перед практиками
-    serviceIds = [...massageIds, ...selectedPractices];
+    // В велнесе массажи НЕ предлагаются
   }
 
   // Дедупликация и лимит 3
