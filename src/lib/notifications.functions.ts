@@ -147,7 +147,7 @@ export const sendLeadNotification = createServerFn({ method: "POST" })
         // We don't throw here because the email WAS sent
       }
 
-      return { success: true, resendId: resendData.id };
+      return { success: true, resendId: resendData.id, notification_sent: true };
     } catch (err) {
       console.error("[Notification Error] Unexpected error:", err);
       return { success: false, error: "Internal error" };
