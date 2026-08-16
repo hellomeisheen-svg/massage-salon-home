@@ -57,6 +57,7 @@ function BookingDialog({
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [phone, setPhone] = useState("");
+  const [method, setMethod] = useState("whatsapp");
   const handlePhoneInput = (e: React.FormEvent<HTMLInputElement>) => {
     const native = e.nativeEvent as InputEvent;
     const raw = (e.target as HTMLInputElement).value;
@@ -245,7 +246,7 @@ function BookingDialog({
                     {
                       name,
                       phone: formatPhone(phone),
-                      message: comment,
+                      message: `${method.toUpperCase()}: ${comment}`,
                       email: email || null,
                     },
                   ]);
@@ -296,16 +297,37 @@ function BookingDialog({
                 )}
               </label>
 
+              <div className="space-y-2">
+                <span className="text-[14px] leading-[1.5] text-foreground block">Удобный способ связи</span>
+                <div className="grid grid-cols-3 gap-2">
+                  {[
+                    { id: "whatsapp", label: "WhatsApp" },
+                    { id: "telegram", label: "Telegram" },
+                    { id: "max", label: "MAX" },
+                  ].map(m => (
+                    <button
+                      key={m.id}
+                      type="button"
+                      onClick={() => setMethod(m.id)}
+                      className={`h-[48px] rounded-[0.5rem] border text-xs font-medium transition-all ${
+                        method === m.id ? "bg-white border-[#1C3C8C] text-[#1C3C8C]" : "bg-[#EFF6FF] border-[#daebff] text-[#566A93]"
+                      }`}
+                    >
+                      {m.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
               <label className="flex flex-col gap-2">
                 <span className="text-[14px] leading-[1.5] text-foreground">Комментарий</span>
                 <textarea
                   name="comment"
-                  rows={3}
+                  rows={2}
                   defaultValue={subject ? `${subject}: ` : ""}
                   placeholder="Самочувствие, пожелания, удобное время"
                   className="rounded-[0.5rem] border border-[#daebff] bg-[#EFF6FF] px-4 py-3 text-[16px] leading-[1.6] text-foreground outline-none transition-colors placeholder:text-[#566A93] focus:border-[#1C3C8C] focus:bg-white"
                 />
-
               </label>
 
               <label className="flex items-start gap-3">
