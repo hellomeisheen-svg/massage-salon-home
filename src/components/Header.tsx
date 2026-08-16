@@ -7,8 +7,8 @@ type NavItem = { label: string; href: string };
 
 const defaultNavigationItems: NavItem[] = [
   { label: "Услуги", href: "/#services" },
-  { label: "Программы", href: "/#programs" },
-   { label: "Преимущества", href: "/#advantages" },
+    { label: "Преимущества", href: "/#advantages" },
+    { label: "Программы", href: "/#programs" },
   { label: "Обо мне", href: "/#obrazovanie" },
   { label: "Вопросы", href: "/#faq" },
   { label: "Контакты", href: "/#contacts" },
