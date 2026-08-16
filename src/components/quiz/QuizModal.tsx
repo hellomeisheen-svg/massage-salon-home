@@ -172,8 +172,8 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
         ) : isContactStep ? (
           <div className="animate-in fade-in slide-in-from-right-4 duration-300">
             <QuizContactForm onSubmit={onContactSubmit} isSubmitting={isSubmitting} error={error} />
-            <button onClick={handleBack} className="btn-secondary mt-4 w-full h-12 flex items-center justify-center gap-2 text-sm active:opacity-60 transition-opacity">
-              <ChevronLeft size={18} /> Вернуться к результатам
+            <button onClick={handleBack} className="btn-secondary mt-4 w-full h-12 flex items-center justify-center gap-2 active:opacity-60 transition-opacity">
+              <ChevronLeft size={20} /> Назад
             </button>
           </div>
         ) : (

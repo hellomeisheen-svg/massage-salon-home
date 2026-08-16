@@ -194,13 +194,13 @@ function BookingDialog({
             <div className="pr-12">
               <h2
                 id="booking-title"
-                className="font-noto-serif-narrow ds-h3 text-[#1C3C8C]"
+                className="font-noto-serif-narrow ds-h3 text-[#1C3C8C] mb-2"
               >
-                Записаться на&nbsp;сеанс
+                Записаться на сеанс
               </h2>
               <p className="mt-3 text-[15px] leading-[1.5] text-[#566A93] sm:text-[16px]">
-                Оставьте контакты&nbsp;— подберём формат под&nbsp;ваше состояние
-                и&nbsp;согласуем время без&nbsp;спешки.
+                Оставьте контакты — подберём формат под ваше состояние
+                и согласуем время без спешки.
               </p>
             </div>
 
@@ -277,7 +277,7 @@ function BookingDialog({
               }}
             >
               <label className="flex flex-col gap-2">
-                <span className="text-[14px] leading-[1.5] text-foreground">Имя</span>
+                <span className="text-[14px] leading-[1.5] text-foreground">Ваше имя</span>
                 <input
                   name="name"
                   required
@@ -288,7 +288,7 @@ function BookingDialog({
               </label>
 
               <label className="flex flex-col gap-2">
-                <span className="text-[14px] leading-[1.5] text-foreground">Телефон</span>
+                <span className="text-[14px] leading-[1.5] text-foreground">Номер телефона</span>
                 <input
                   name="phone"
                   type="tel"
