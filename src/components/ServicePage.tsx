@@ -8,7 +8,7 @@ import { Programs } from "@/components/Programs";
 import { Education } from "@/components/Education";
 import { OtherServices } from "@/components/OtherServices";
 import { RatingBlock } from "@/components/RatingBlock";
-import { BookingProvider, useBooking } from "@/components/BookingModal";
+import { BookingProvider } from "@/components/BookingModal";
 import { formatPrice, pluralize, renderPrice } from "@/components/Services";
 export type ServicePrice = {
   zone: string;
@@ -283,7 +283,6 @@ const sessionCounts = [1, 3, 6];
 const tabLabels = ["1\u00A0сеанс", "3\u00A0сеанса", "6\u00A0сеансов"];
 
 function PriceCard({ p, prefix }: { p: ServicePrice; prefix: string }) {
-  const { openBooking } = useBooking();
   const [active, setActive] = useState(0);
 
   const count = sessionCounts[active];
@@ -444,7 +443,6 @@ function PriceTable({ content }: { content: ServicePageContent }) {
 }
 
 function Prices({ content }: { content: ServicePageContent }) {
-  const { openBooking } = useBooking();
   return (
     <section id="prices" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section">
       <div className="container-1900">
@@ -462,15 +460,6 @@ function Prices({ content }: { content: ServicePageContent }) {
           {content.prices.map((p) => (
             <PriceCard key={p.zone} p={p} prefix={content.bookingPrefix} />
           ))}
-        </div>
-
-        <div className="mt-10 flex justify-center">
-          <button 
-            onClick={() => openBooking(content.bookingPrefix)}
-            className="btn-primary w-full sm:w-[280px]"
-          >
-            Записаться на сеанс
-          </button>
         </div>
       </div>
     </section>
