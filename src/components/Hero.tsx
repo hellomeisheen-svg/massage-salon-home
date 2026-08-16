@@ -23,7 +23,7 @@ function RatingBlock() {
               <Star
                 key={i}
                 aria-hidden="true"
-                className="h-[16px] w-[16px] shrink-0 fill-[#1C3C8C] text-[#1C3C8C]"
+                className="h-[16px] w-[16px] shrink-0 fill-[#A2CFFE] text-[#A2CFFE]"
               />
             ))}
           </div>
