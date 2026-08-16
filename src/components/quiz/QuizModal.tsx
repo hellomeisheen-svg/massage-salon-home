@@ -34,7 +34,9 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
 
   const handleNext = (currentAnswers = answers) => {
     if (step === visibleSteps.length) {
+      console.log("CALCULATING RESULTS WITH:", currentAnswers);
       const services = calculateResult(currentAnswers);
+      console.log("RECOMMENDED SERVICES SETTING:", services);
       setRecommendedServices(services);
     }
     setStep(step + 1);
