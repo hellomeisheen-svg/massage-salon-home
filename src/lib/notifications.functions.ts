@@ -21,7 +21,8 @@ export const sendLeadNotification = createServerFn({ method: "POST" })
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
 
     console.log("[Notification] Supabase URL:", process.env['VITE_SUPABASE_URL']);
-    console.log("[Notification] Resend API Key present:", !!process.env['RESEND_API_KEY']);
+    const resendApiKey = process.env['RESEND_API_KEY'];
+    console.log("[Notification] Resend API Key length:", resendApiKey?.length || 0);
 
     try {
       let lead;
@@ -58,7 +59,7 @@ export const sendLeadNotification = createServerFn({ method: "POST" })
         return { success: true, alreadySent: true };
       }
 
-      const resendApiKey = process.env['RESEND_API_KEY'];
+      // const resendApiKey = process.env['RESEND_API_KEY']; (already read above)
       if (!resendApiKey) {
         console.error("[Notification Error] RESEND_API_KEY is not configured");
         return { success: false, error: "Resend API key missing" };
