@@ -87,15 +87,16 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
 
   // Ветка 3: Убрать отёчность (lightness)
   else if (goal === "lightness") {
-    // Если выбрано только лицо, перенаправляем на ветку лица (через calculateResult выше)
     const area = answers.lightness_area;
     const areas = Array.isArray(area) ? area : [area].filter(Boolean);
     
     if (areas.length === 1 && areas.includes("face")) {
-      // Это условие уже поймано выше в isFacePath, но для надежности:
       serviceIds = ["lymph_face", "classic_face", "girudo_cosm"];
     } else {
-      return getLightnessRecommendations({ ...answers, lightnessArea: area });
+      // Прямой возврат результата из функции-хелпера
+      const lightnessResult = getLightnessRecommendations({ ...answers, lightnessArea: area });
+      console.log("LIGHTNESS BRANCH FINAL RESULT:", lightnessResult.map(s => s.id));
+      return lightnessResult;
     }
   }
 
