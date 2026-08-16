@@ -22,10 +22,12 @@ function formatPhone(rest: string) {
 
 export function QuizContactForm({ 
   onSubmit, 
-  isSubmitting 
+  isSubmitting,
+  error 
 }: { 
   onSubmit: (data: { name: string; phone: string; method: string; website?: string }) => void;
   isSubmitting: boolean;
+  error?: string | null;
 }) {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
@@ -164,7 +166,11 @@ export function QuizContactForm({
         {consentError && <p className="text-[13px] leading-[1.5] text-[#C0392B]">{consentError}</p>}
       </div>
 
+      {error && <p className="text-[13px] leading-[1.5] text-[#C0392B] text-center">{error}</p>}
+
+      
       <button 
+
         type="submit" 
         disabled={isSubmitting}
         className="btn-primary w-full h-14 flex items-center justify-center gap-3"

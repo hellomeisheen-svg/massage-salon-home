@@ -10,6 +10,7 @@ import { QuizContactForm } from "./QuizContactForm";
 export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const [step, setStep] = useState(0); 
   const [answers, setAnswers] = useState<Record<string, any>>({});
+  const [error, setError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [recommendedServices, setRecommendedServices] = useState<any[]>([]);
@@ -35,6 +36,7 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
         setStep(0);
         setAnswers({});
         setIsSuccess(false);
+        setError(null);
       }, 300);
     }
   }, [isOpen]);
@@ -55,6 +57,7 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
 
   const onContactSubmit = async (contact: { name: string; phone: string; method: string; website?: string }) => {
     setIsSubmitting(true);
+    setError(null);
     try {
       const answersText = visibleSteps.map(s => {
         const ansId = answers[s.id];
@@ -87,8 +90,8 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
       }
       setIsSuccess(true);
     } catch (e) {
-      console.error(e);
-      alert("Что-то пошло не так, попробуйте ещё раз.");
+      console.error("Quiz submission error:", e);
+      setError("Не удалось отправить заявку. Попробуйте ещё раз.");
     } finally {
       setIsSubmitting(false);
     }
@@ -162,14 +165,14 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
                 </button>
               </div>
             )}
-            <button onClick={handleBack} className="btn-secondary mt-4 w-full h-12 flex items-center justify-center gap-2">
+            <button onClick={handleBack} className="btn-secondary mt-4 w-full h-12 flex items-center justify-center gap-2 active:opacity-60 transition-opacity">
               <ChevronLeft size={20} /> Назад к вопросам
             </button>
           </div>
         ) : isContactStep ? (
           <div className="animate-in fade-in slide-in-from-right-4 duration-300">
-            <QuizContactForm onSubmit={onContactSubmit} isSubmitting={isSubmitting} />
-            <button onClick={handleBack} className="btn-secondary mt-4 w-full h-12 flex items-center justify-center gap-2 text-sm">
+            <QuizContactForm onSubmit={onContactSubmit} isSubmitting={isSubmitting} error={error} />
+            <button onClick={handleBack} className="btn-secondary mt-4 w-full h-12 flex items-center justify-center gap-2 text-sm active:opacity-60 transition-opacity">
               <ChevronLeft size={18} /> Вернуться к результатам
             </button>
           </div>
@@ -243,14 +246,14 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
               })}
             </div>
 
-            <div className="flex gap-4">
-              <button onClick={handleBack} className="btn-secondary flex-1 h-14 flex items-center justify-center gap-2">
+            <div className="mt-auto flex gap-4 pt-6">
+              <button onClick={handleBack} className="btn-secondary flex-1 h-14 flex items-center justify-center gap-2 active:opacity-60 transition-opacity">
                 <ChevronLeft size={20} /> Назад
               </button>
               <button 
                 disabled={!answers[currentStep.id] || (currentStep.type === "multiple" && answers[currentStep.id].length === 0)}
                 onClick={() => handleNext()} 
-                className="btn-primary flex-[2] h-14"
+                className="btn-primary flex-[2] h-14 active:opacity-85 transition-opacity"
               >
                 Далее
               </button>

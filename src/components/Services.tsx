@@ -436,7 +436,7 @@ export function ServiceCard({
         ))}
       </div>
 
-      <div className="flex-1 flex flex-col mb-4 md:flex-1 md:mb-4">
+      <div className="flex-1 flex flex-col mb-4 md:flex-1 md:mb-6">
         <div className="flex-1">
           {/* Title */}
           <div className="mt-5 flex flex-wrap items-center gap-3">

@@ -259,8 +259,12 @@ function BookingDialog({
                     console.log("Notification result:", result);
                     if (result && !result.success) {
                       console.error("Notification failed:", result.error);
-                      // Still show success to user as lead is in DB, but log error
+                      // In development or if result explicitly fails, we might want to alert if it's not a success
+                      // But usually we don't want to block the user if the DB insert worked
                     }
+                  } else {
+                    console.error("No lead ID returned from insert");
+                    throw new Error("No lead ID returned");
                   }
 
                   setSent(true);
