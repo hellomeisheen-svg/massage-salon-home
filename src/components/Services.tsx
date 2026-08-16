@@ -416,8 +416,9 @@ export function ServiceCard({
             className={`relative flex flex-1 items-center justify-center rounded-[8px] px-2 py-2.5 transition-all duration-300 ${
               activeSession === i
                 ? "bg-white shadow-[0_2px_8px_rgba(28,60,140,0.08)]"
-                : "bg-transparent"
+                : "bg-transparent hover:bg-white/40"
             }`}
+
           >
             <span
               className={`whitespace-nowrap text-[13px] tracking-tight transition-colors duration-300 ${
