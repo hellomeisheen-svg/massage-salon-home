@@ -29,7 +29,7 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
   // Ветка 1: Глубокое расслабление (relax)
   if (goal === "relax") {
     const area = answers.relax_area;
-    const intensity = answers.relax_intensity;
+    const intensity = answers.intensity;
     const addCups = answers.addCups;
 
     // Сначала основная массажная рекомендация
@@ -51,6 +51,12 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
         serviceIds.push("cups_air");
       }
     }
+
+    console.log("RELAX RECOMMENDATIONS:", {
+      intensity,
+      addCups,
+      serviceIds
+    });
   }
 
   // Ветка 2: Снять напряжение (back_neck)
