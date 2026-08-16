@@ -29,15 +29,27 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
   // Ветка 1: Глубокое расслабление (relax)
   if (goal === "relax") {
     const area = answers.relax_area;
-    if (area === "whole_body") serviceIds = ["vector"];
-    else if (area === "back_neck") serviceIds = ["vector", "classic-spine"];
-    else if (area === "head") serviceIds = ["classic-head", "vector"];
-    else if (area === "legs") serviceIds = ["classic-legs", "vector"];
-    else serviceIds = ["vector"];
+    const intensity = answers.relax_intensity;
+    const addCups = answers.addCups;
 
-    // Если выбрали банки в расслаблении
-    if (answers.relax_add_cups === "yes_cups") {
-      serviceIds.push("cups-air");
+    // Сначала основная массажная рекомендация
+    serviceIds.push("vector");
+
+    // Добавляем массаж по зоне, если он не основной (векторный всегда первый в relax)
+    if (area === "back_neck") serviceIds.push("classic-spine");
+    else if (area === "head") serviceIds.push("classic-head");
+    else if (area === "legs") serviceIds.push("classic-legs");
+
+    // Затем — банки, только при явном согласии пользователя
+    if (addCups === "yes") {
+      if (intensity === "soft") {
+        serviceIds.push("cups-air");
+      } else if (intensity === "deep") {
+        serviceIds.push("cups-fire");
+      } else {
+        // master_choice или если не выбрано
+        serviceIds.push("cups-air");
+      }
     }
   }
 
