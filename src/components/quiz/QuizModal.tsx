@@ -111,22 +111,22 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
               <h2 className="font-noto-serif-narrow ds-h3 text-[#1c3c8c] leading-tight">{QUIZ_CONFIG.title}</h2>
               <p className="mt-3 text-[15px] leading-[1.5] text-[#566A93] sm:text-[16px]">{QUIZ_CONFIG.subtitle}</p>
             </div>
-            <div className="mt-8 w-full rounded-2xl border border-[#DAEBFF]/60 bg-white p-6 sm:p-7 shadow-[0_8px_30px_rgb(218,235,255,0.4)]">
-              <span className="text-[14px] sm:text-[15px] leading-tight text-[#566A93]">Что вы получите</span>
-              <ul className="mt-6 space-y-4">
+            <div className="mt-8 space-y-3">
+              <span className="text-[14px] sm:text-[15px] leading-tight text-[#566A93] block mb-4">Что вы получите:</span>
+              <div className="grid gap-3">
                 {[
-                  "Персональный список процедур",
-                  "Расчет стоимости и длительности",
-                  "Скидка на первый визит"
-                ].map((text, i) => (
-                  <li key={i} className="flex items-center gap-4 group">
-                    <span className="flex-shrink-0 flex items-center justify-center w-6 h-6 rounded-full bg-[#EFF6FF] text-[12px] font-bold text-[#1C3C8C] shadow-sm group-hover:bg-[#88C1FF] group-hover:text-white transition-all duration-300">
-                      {i + 1}
+                  { text: "Персональный список процедур", icon: "1" },
+                  { text: "Расчет стоимости и длительности", icon: "2" },
+                  { text: "Скидка на первый визит", icon: "3" }
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-4 p-4 rounded-xl border border-[#DAEBFF]/60 bg-white shadow-[0_2px_8px_rgba(28,60,140,0.05)] transition-all hover:shadow-[0_4px_12px_rgba(28,60,140,0.08)] hover:border-[#88C1FF]/50 group">
+                    <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-lg bg-[#EFF6FF] text-[13px] font-bold text-[#1C3C8C] group-hover:bg-[#88C1FF] group-hover:text-white transition-colors">
+                      {item.icon}
                     </span>
-                    <span className="text-[15px] sm:text-[16px] leading-none text-[#1C3C8C] font-semibold">{text}</span>
-                  </li>
+                    <span className="text-[14px] sm:text-[15px] leading-tight text-[#1C3C8C] font-semibold">{item.text}</span>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
             <button onClick={handleNext} className="btn-primary mt-8 w-full">Подобрать программу</button>
           </div>
