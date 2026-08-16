@@ -7,65 +7,47 @@ const YANDEX_MAPS_URL =
 
 function RatingBlock() {
   return (
-    <div className="flex flex-col gap-8">
-      {/* Variant 1: Minimalist Underline */}
-      <a
-        href={YANDEX_MAPS_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group flex items-center gap-3 border-b border-[#daebff] pb-2 transition-all hover:border-[#A2CFFE] w-fit"
-      >
-        <span className="font-noto-serif-narrow text-[24px] font-bold text-[#1C3C8C]">4,7</span>
-        <div className="flex gap-0.5">
-          {Array.from({ length: 5 }).map((_, i) => (
-            <Star key={i} className="h-4 w-4 fill-[#A2CFFE] text-[#A2CFFE]" />
-          ))}
+    <a
+      href={YANDEX_MAPS_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group flex w-fit items-center gap-3.5 rounded-[15px] border border-[#daebff] bg-white px-4 py-3.5 transition-all hover:-translate-y-0.5 hover:opacity-85 ds-bento-shadow"
+    >
+      <div className="flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-[12px] bg-[#A2CFFE]/15">
+        <svg
+          viewBox="0 0 24 24"
+          className="h-6 w-6 fill-[#A2CFFE]"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z" />
+        </svg>
+      </div>
+      <div className="flex flex-col gap-1">
+        <div className="flex items-center gap-2">
+          <span className="font-noto-serif-narrow text-[24px] font-bold leading-none tracking-tight text-[#1C3C8C]">
+            4,7
+          </span>
+          <div className="flex gap-0.5">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <Star
+                key={i}
+                className="h-[14px] w-[14px] fill-[#A2CFFE] text-[#A2CFFE]"
+              />
+            ))}
+          </div>
         </div>
-        <span className="text-[12px] uppercase tracking-wider text-[#566A93] ml-2">Яндекс Карты</span>
-      </a>
-
-      {/* Variant 2: Floating Glass Pill */}
-      <a
-        href={YANDEX_MAPS_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center gap-3 rounded-full border border-[#daebff] bg-white/50 backdrop-blur-sm px-4 py-2 transition-all hover:bg-white w-fit ds-bento-shadow"
-      >
-        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#A2CFFE] text-white font-bold text-[14px]">Я</div>
-        <span className="font-semibold text-[#1C3C8C]">4,7</span>
-        <div className="flex gap-0.5">
-          {Array.from({ length: 5 }).map((_, i) => (
-            <Star key={i} className="h-3.5 w-3.5 fill-[#A2CFFE] text-[#A2CFFE]" />
-          ))}
-        </div>
-      </a>
-
-      {/* Variant 3: Vertical Serif Elegance */}
-      <a
-        href={YANDEX_MAPS_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group flex flex-col gap-1 transition-all hover:opacity-80 w-fit"
-      >
-        <div className="flex items-baseline gap-2">
-          <span className="font-noto-serif-narrow text-[36px] font-bold leading-none text-[#1C3C8C]">4,7</span>
-          <span className="text-[11px] uppercase tracking-[0.2em] text-[#566A93]">Рейтинг</span>
-        </div>
-        <div className="flex gap-1">
-          {Array.from({ length: 5 }).map((_, i) => (
-            <Star key={i} className="h-4 w-4 fill-[#A2CFFE] text-[#A2CFFE]" />
-          ))}
-        </div>
-      </a>
-    </div>
+        <span className="text-[12px] font-medium leading-none text-[#566A93]">
+          Рейтинг организации в Яндексе
+        </span>
+      </div>
+    </a>
   );
 }
-
-
 
 function HeadlineBlock({ onOpenQuiz }: { onOpenQuiz: () => void }) {
   return (
     <div className="flex flex-col tablet-text-block xl:min-w-[640px] xl:w-[640px]">
+
       <h1 className="font-noto-serif-narrow ds-h1 text-[#1C3C8C] xl:whitespace-pre-line">
         {"Массаж, гирудотерапия и\u00a0банки во\u00a0Владивостоке"}
       </h1>
