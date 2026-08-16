@@ -378,7 +378,7 @@ function PriceCard({ p, prefix }: { p: ServicePrice; prefix: string }) {
 
 function PriceTable({ content }: { content: ServicePageContent }) {
   return (
-    <div className="ds-card overflow-hidden bg-white border border-[#daebff]/40">
+    <div className="ds-card overflow-hidden bg-white border border-[#daebff]/40 rounded-[12px]">
       <div className="overflow-x-auto">
         <table className="w-full text-left border-collapse">
           <thead>
