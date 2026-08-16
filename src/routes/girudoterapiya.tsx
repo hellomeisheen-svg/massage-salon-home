@@ -190,7 +190,7 @@ function PageHero() {
   return (
     <main className="bg-[#EFF6FF] py-4 sm:py-5">
       <section id="hero" className="container-1900 grid grid-cols-1 gap-4 sm:gap-5 xl:min-h-[calc(100vh-160px)] xl:grid-cols-2">
-        <div className="flex min-h-0 flex-col ds-card p-5 sm:min-h-[520px] sm:p-6 xl:min-h-0 xl:p-10">
+        <div className="ds-bento-shadow flex min-h-0 flex-col ds-card p-5 sm:min-h-[520px] sm:p-6 xl:min-h-0 xl:p-10">
           <nav aria-label="Хлебные крошки" className="text-[14px] text-[#566A93]">
             <Link to="/" className="hover:opacity-70 transition-opacity">
               Главная
@@ -243,7 +243,7 @@ function PageHero() {
           </div>
         </div>
 
-        <div className="relative h-[420px] overflow-hidden rounded-[12px] border border-[#daebff] sm:h-[520px] xl:h-auto xl:min-h-0">
+        <div className="ds-bento-shadow relative h-[420px] overflow-hidden rounded-[12px] border border-[#daebff] sm:h-[520px] xl:h-auto xl:min-h-0">
           <img
             className="absolute inset-0 h-full w-full object-cover object-top sm:object-center"
             alt="Гирудотерапия в кабинете Татьяны Злобиной"
@@ -413,7 +413,7 @@ function GirudoterapiyaServices() {
         </div>
 
         <div className="flex flex-col gap-4">
-          <div className="ds-card p-6 sm:p-8 xl:p-10">
+          <div className="ds-bento-shadow ds-card p-6 sm:p-8 xl:p-10">
             <div className="flex flex-col gap-10 sm:gap-12">
               {girudoSections.map((s, i) => (
                 <div
@@ -446,7 +446,7 @@ const tabLabels = ["1\u00A0сеанс", "3\u00A0сеанса", "6\u00A0сеан�
 
 function HirudoPriceTable() {
   return (
-    <div className="ds-card overflow-hidden bg-white border border-[#daebff]/40">
+    <div className="ds-bento-shadow ds-card overflow-hidden bg-white border border-[#daebff]/40">
       <div className="overflow-x-auto">
         <table className="w-full text-left border-collapse">
           <thead>
