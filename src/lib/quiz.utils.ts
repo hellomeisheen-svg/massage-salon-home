@@ -34,6 +34,11 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
     else if (area === "head") serviceIds = ["classic-head", "vector"];
     else if (area === "legs") serviceIds = ["classic-legs", "vector"];
     else serviceIds = ["vector"];
+
+    // Если выбрали банки в расслаблении
+    if (answers.relax_add_cups === "yes_cups") {
+      serviceIds.push("cups-air");
+    }
   }
 
   // Ветка 2: Снять напряжение (back_neck)
