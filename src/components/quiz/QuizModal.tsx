@@ -112,7 +112,7 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
               <p className="mt-3 text-[15px] leading-[1.5] text-[#566A93] sm:text-[16px]">{QUIZ_CONFIG.subtitle}</p>
             </div>
             <div className="mt-8 w-full rounded-2xl border border-[#DAEBFF]/60 bg-[#EFF6FF]/40 p-6 sm:p-7">
-              <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-[#A2CFFE]">что вы получите</span>
+              <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-[#566A93]">что вы получите</span>
               <ul className="mt-5 space-y-3.5">
                 {[
                   "Персональный список процедур",
