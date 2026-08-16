@@ -37,7 +37,7 @@ export function Approach() {
         {/* Left column */}
         <div className="flex flex-col gap-6 xl:h-full">
           {/* Подход мастера */}
-          <div className="relative h-[420px] sm:h-[720px] xl:h-full ds-card overflow-hidden">
+          <div className="relative h-[420px] sm:h-[720px] xl:h-full ds-card overflow-hidden rounded-[12px]">
             <img
               src="/images/approach-master.webp"
               alt="Татьяна работает с клиенткой в светлом массажном кабинете"
