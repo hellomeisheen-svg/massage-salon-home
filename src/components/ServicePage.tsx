@@ -283,7 +283,6 @@ const sessionCounts = [1, 3, 6];
 const tabLabels = ["1\u00A0сеанс", "3\u00A0сеанса", "6\u00A0сеансов"];
 
 function PriceCard({ p, prefix }: { p: ServicePrice; prefix: string }) {
-  const { openBooking } = useBooking();
   const [active, setActive] = useState(0);
 
   const count = sessionCounts[active];
