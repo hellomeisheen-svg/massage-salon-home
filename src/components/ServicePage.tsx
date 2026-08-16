@@ -443,7 +443,6 @@ function PriceTable({ content }: { content: ServicePageContent }) {
 }
 
 function Prices({ content }: { content: ServicePageContent }) {
-  const { openBooking } = useBooking();
   return (
     <section id="prices" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section">
       <div className="container-1900">
@@ -461,15 +460,6 @@ function Prices({ content }: { content: ServicePageContent }) {
           {content.prices.map((p) => (
             <PriceCard key={p.zone} p={p} prefix={content.bookingPrefix} />
           ))}
-        </div>
-
-        <div className="mt-10 flex justify-center">
-          <button 
-            onClick={() => openBooking(content.bookingPrefix)}
-            className="btn-primary w-full sm:w-[280px]"
-          >
-            Записаться на сеанс
-          </button>
         </div>
       </div>
     </section>
