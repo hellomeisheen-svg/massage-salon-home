@@ -78,6 +78,7 @@ export const QUIZ_CONFIG: {
         { id: "no_cups", text: "Нет, только массаж" },
         { id: "master_choice", text: "Обсудим с мастером" },
       ],
+    },
     // Ветка 2. Спина, шея и плечи
     {
       id: "back_tension_area",
