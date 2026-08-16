@@ -15,6 +15,7 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
 
   // Filter steps based on current answers
   const visibleSteps = QUIZ_CONFIG.steps.filter(s => !s.showIf || s.showIf(answers));
+  console.log("RENDER QUIZ: step", step, "visibleSteps", visibleSteps.length, "answers", answers);
   const currentStep = visibleSteps[step - 1];
   const isLastQuestion = step === visibleSteps.length;
   const isResultsStep = step === visibleSteps.length + 1;
