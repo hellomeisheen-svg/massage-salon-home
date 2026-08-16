@@ -231,7 +231,7 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
                 <ChevronLeft size={20} /> Назад
               </button>
               <button 
-                disabled={currentStep.type === "multiple" && !(answers[currentStep.id]?.length)}
+                disabled={!answers[currentStep.id] || (currentStep.type === "multiple" && answers[currentStep.id].length === 0)}
                 onClick={() => handleNext()} 
                 className="btn-primary flex-[2] h-14"
               >
