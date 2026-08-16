@@ -148,6 +148,7 @@ const content: ServicePageContent = {
       base: 1000,
     },
   ],
+  ],
   faq: [
     {
       q: "Это больно?",
