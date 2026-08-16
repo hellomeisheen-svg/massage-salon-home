@@ -54,7 +54,7 @@ export const sendLeadNotification = createServerFn({ method: "POST" })
         return { success: true, alreadySent: true };
       }
 
-      const resendApiKey = process.env.RESEND_API_KEY;
+      const resendApiKey = process.env['RESEND_API_KEY'];
       if (!resendApiKey) {
         console.error("[Notification Error] RESEND_API_KEY is not configured");
         return { success: false, error: "Resend API key missing" };
