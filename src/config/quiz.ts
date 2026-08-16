@@ -72,7 +72,7 @@ export const QUIZ_CONFIG: {
       id: "addCups",
       question: "Дополнить массаж постановкой банок для лучшего эффекта?",
       type: "single",
-      showIf: (a) => a.goal === "relax" && a.relax_area === "back_neck",
+      showIf: (a) => a.goal === "relax" && ["whole_body", "back_neck"].includes(a.relax_area),
       options: [
         { id: "yes", text: "Да" },
         { id: "no", text: "Нет" },
