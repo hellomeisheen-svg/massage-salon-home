@@ -7,6 +7,7 @@ import { PromoBanner } from "@/components/PromoBanner";
 import { Programs } from "@/components/Programs";
 import { Education } from "@/components/Education";
 import { OtherServices } from "@/components/OtherServices";
+import { RatingBlock } from "@/components/RatingBlock";
 import { BookingProvider, useBooking } from "@/components/BookingModal";
 import { formatPrice, pluralize, renderPrice } from "@/components/Services";
 export type ServicePrice = {
@@ -93,28 +94,6 @@ export function ServicePage({ content }: { content: ServicePageContent }) {
   );
 }
 
-function SpecialistBlock() {
-  return (
-    <div className="flex flex-col items-start gap-3 sm:gap-4">
-      <img
-        className="h-[90px] w-[70px] rounded-[12px] border border-[#daebff] ds-bento-shadow object-cover xl:h-[110px] xl:w-[85px]"
-        alt="Татьяна Злобина"
-        src="/images/tatyana-photo.webp"
-
-      />
-      <div className="flex flex-col gap-1">
-        <div className="font-noto-serif-narrow text-[22px] font-light leading-[1.2] text-[#1c3c8c] sm:text-[24px] xl:text-[28px]">
-          Татьяна&nbsp;Злобина
-        </div>
-        <p className="text-[16px] font-light leading-[26px] text-[#566A93]">
-          Мастер кабинета, специалист
-          <br />
-          по&nbsp;оздоровительным практикам
-        </p>
-      </div>
-    </div>
-  );
-}
 
 function PageHero({ content }: { content: ServicePageContent }) {
   return (
@@ -130,7 +109,7 @@ function PageHero({ content }: { content: ServicePageContent }) {
           </nav>
 
           <div className="mt-6 sm:mt-8">
-            <SpecialistBlock />
+            <RatingBlock />
           </div>
 
           <div className="mt-[100px] pt-0 sm:mt-[140px] xl:mt-auto xl:pt-[140px]">
