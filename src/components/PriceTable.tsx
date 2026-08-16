@@ -34,18 +34,18 @@ export function PriceTable({ prices, title = "Форматы и стоимост
             <table className="w-full text-left">
               <thead>
                 <tr className="bg-[#EFF6FF]">
-                  <th className="px-4 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
+                  <th className="px-6 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
                     {title === "Программы восстановления" ? "Программа" : "Формат"}
                   </th>
-                  <th className="px-4 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
+                  <th className="px-6 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
                     {title === "Программы восстановления" ? "Что входит" : "Длительность"}
                   </th>
-                  <th className="px-4 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
+                  <th className="px-6 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
                     {title === "Программы восстановления" ? "Срок" : "1 сеанс"}
                   </th>
                   {title !== "Программы восстановления" && (
                     <>
-                      <th className="px-4 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
+                      <th className="px-6 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
                         <span className="flex items-center gap-2">
                           3 сеанса
                           <span className="rounded-full bg-[#1C3C8C] px-2 py-0.5 text-[10px] font-semibold text-white">
@@ -53,7 +53,7 @@ export function PriceTable({ prices, title = "Форматы и стоимост
                           </span>
                         </span>
                       </th>
-                      <th className="px-4 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
+                      <th className="px-6 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
                         <span className="flex items-center gap-2">
                           6 сеансов
                           <span className="rounded-full bg-[#1C3C8C] px-2 py-0.5 text-[10px] font-semibold text-white">
@@ -64,7 +64,7 @@ export function PriceTable({ prices, title = "Форматы и стоимост
                     </>
                   )}
                   {title === "Программы восстановления" && (
-                    <th className="px-4 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
+                    <th className="px-6 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
                       Стоимость
                     </th>
                   )}
@@ -230,7 +230,7 @@ function PriceTableRow({ p, isProgram = false }: { p: ServicePrice, isProgram?: 
 
   return (
     <tr className="group transition-colors hover:bg-[#F7FBFF]">
-      <td className="px-4 py-5 xl:px-8">
+      <td className="px-6 py-5 xl:px-8">
         <div className="font-noto-serif-narrow text-[18px] xl:text-[24px] font-light leading-[1.25] text-[#1C3C8C] flex items-center gap-x-3">
           {p.zone.includes(" • ") ? (
             <>
@@ -247,27 +247,27 @@ function PriceTableRow({ p, isProgram = false }: { p: ServicePrice, isProgram?: 
           {p.subtitle}
         </div>
       </td>
-      <td className="px-4 py-5 text-[15px] xl:text-[18px] font-light text-[#566A93] xl:px-8 max-w-[300px]">
+      <td className="px-6 py-5 text-[15px] xl:text-[18px] font-light text-[#566A93] xl:px-8 max-w-[300px]">
         {isProgram ? (
           <div className="whitespace-pre-line">{p.subtitle}</div>
         ) : (
           p.duration
         )}
       </td>
-      <td className="font-noto-serif-narrow px-4 py-5 text-[15px] xl:text-[18px] font-light text-[#566A93] xl:px-8">
+      <td className="font-noto-serif-narrow px-6 py-5 text-[15px] xl:text-[18px] font-light text-[#566A93] xl:px-8">
         {isProgram ? (p as any).validity || "2 месяца" : renderPrice(formatPrice(p.base))}
       </td>
       {!isProgram ? (
         <>
-          <td className="px-4 py-5 xl:px-8">
+          <td className="px-6 py-5 xl:px-8">
             <PriceTableCell base={p.base} count={3} discount={0.1} />
           </td>
-          <td className="px-4 py-5 xl:px-8">
+          <td className="px-6 py-5 xl:px-8">
             <PriceTableCell base={p.base} count={6} discount={0.15} />
           </td>
         </>
       ) : (
-        <td className="px-4 py-5 xl:px-8">
+        <td className="px-6 py-5 xl:px-8">
           <div className="flex items-center gap-2">
             <span className="font-noto-serif-narrow text-[13px] xl:text-[15px] font-light text-[#566A93]/40 line-through decoration-[#566A93]/20">
               {renderPrice(formatPrice(originalPrice))}
