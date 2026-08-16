@@ -257,22 +257,23 @@ export function Programs({ prioritizeKeys }: ProgramsProps = {}) {
             </div>
           </div>
 
-          <div className="mt-auto pt-4 sm:pt-8 flex flex-wrap items-center justify-end gap-x-4 gap-y-2">
-            <span className="ds-price-old">
-              {formatPrice(originalPrice)}
-              <Ruble />
-            </span>
-            <span className="font-noto-serif-narrow ds-price text-[#1C3C8C]">
-              {formatPrice(price)}
-              <Ruble />
-            </span>
-          </div>
+          <div className="mt-auto flex flex-col gap-4">
+            <div className="flex flex-wrap items-center justify-end gap-x-4 gap-y-2">
+              <span className="ds-price-old">
+                {formatPrice(originalPrice)}
+                <Ruble />
+              </span>
+              <span className="font-noto-serif-narrow ds-price text-[#1C3C8C]">
+                {formatPrice(price)}
+                <Ruble />
+              </span>
+            </div>
 
           <p className="hidden sm:block mt-6 text-[13px] leading-[18px] sm:text-[15px] sm:leading-normal text-[#566A93]">
             Срок использования: {program.validity}
           </p>
 
-          <div className="mt-4 sm:mt-8 flex flex-col sm:flex-row gap-3">
+          <div className="flex flex-col sm:flex-row gap-3">
             <button
               type="button"
               onClick={() => openBooking(program.name)}
@@ -302,6 +303,7 @@ export function Programs({ prioritizeKeys }: ProgramsProps = {}) {
                 </svg>
               </button>
             </div>
+          </div>
           </div>
         </article>
       </div>

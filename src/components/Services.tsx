@@ -436,7 +436,7 @@ export function ServiceCard({
         ))}
       </div>
 
-      <div className="flex-1 flex flex-col mb-6 md:flex-1 md:mb-6">
+      <div className="flex-1 flex flex-col mb-4 md:flex-1 md:mb-4">
         <div className="flex-1">
           {/* Title */}
           <div className="mt-5 flex flex-wrap items-center gap-3">
@@ -498,9 +498,12 @@ export function ServiceCard({
             {selectedSummary}
           </p>
         </div>
+      </div>
 
-        {/* Price (Desktop/Tablet only) */}
-        <div className="mt-auto pt-6 hidden sm:flex items-center justify-end gap-4 md:gap-5">
+      {/* Actions */}
+      <div className="mt-auto flex flex-col gap-4">
+        {/* Desktop / tablet Price */}
+        <div className="hidden sm:flex items-center justify-end gap-4 md:gap-5 pb-2">
           {hasDiscount && (
             <span className="ds-price-old">
               {renderPrice(originalPrice)}
@@ -513,11 +516,8 @@ export function ServiceCard({
             <span className="text-[13px] font-light text-[#566A93] leading-none mt-1">{priceLabel}</span>
           </div>
         </div>
-      </div>
 
-      {/* Actions */}
-      <div className="mt-auto pt-8 flex flex-col gap-3">
-        {/* Desktop / tablet */}
+        {/* Desktop / tablet Buttons */}
         <div className="hidden sm:flex items-center gap-3">
           <button
             type="button"
