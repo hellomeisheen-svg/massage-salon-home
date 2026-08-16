@@ -48,12 +48,12 @@ function scrollToTop() {
 export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
   return (
     <>
-      <footer id="contacts" className="scroll-mt-[120px] bg-[var(--color-bg-main)] py-[var(--space-8)] xl:py-[var(--space-10)]">
+      <footer id="contacts" className="scroll-mt-[120px] bg-[#EFF6FF] pt-[60px] xl:pt-[140px] pb-8">
       <div className="container-1900">
         {/* Top card: map + contacts */}
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-5">
           {/* Map */}
-          <div className="relative rounded-[var(--radius-card)] overflow-hidden border border-[var(--color-border)] bg-[var(--color-bg-card)] min-h-[320px] xl:min-h-[440px] shadow-[var(--shadow-card)]">
+          <div className="relative rounded-[12px] overflow-hidden border border-[#daebff] bg-white min-h-[320px] xl:min-h-[440px]">
             <iframe
               title="Карта — расположение кабинета"
               src="https://yandex.ru/map-widget/v1/org/sedmoye_nebo/130811843218/?ll=132.072118%2C43.306027&z=16"
@@ -65,33 +65,33 @@ export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
           </div>
 
           {/* Contacts */}
-          <div className="flex flex-col justify-between gap-8 ds-card p-5 xl:p-[30px] bg-[var(--color-bg-card)] shadow-[var(--shadow-card)] border-[var(--color-border)]">
+          <div className="flex flex-col justify-between gap-8 ds-card p-5 xl:p-[30px]">
             <div>
-              <h2 className="font-noto-serif-narrow ds-h2 text-[var(--color-primary)] tracking-[0.01em]">
+              <h2 className="font-noto-serif-narrow ds-h2 text-[#1c3c8c] tracking-[0.01em]">
                 Как найти кабинет
               </h2>
-              <p className="mt-4 xl:mt-5 text-[var(--color-text-main)] max-w-[440px] text-[15px] sm:text-[16px] leading-[1.6]">
+              <p className="mt-4 xl:mt-5 body-text text-[#566A93] max-w-[440px]">
                 Уютное пространство в центре посёлка Трудового, где можно прийти чуть раньше, выдохнуть и спокойно настроиться на сеанс.
               </p>
             </div>
 
             <ul className="flex flex-col gap-5 xl:gap-6">
-              <li className="text-[var(--color-primary)] leading-[150%] font-light">
-                <div className="text-[13px] font-medium text-[var(--color-text-muted)] uppercase tracking-wider mb-2">Адрес</div>
-                <div className="text-[16px] text-[var(--color-primary)]">{ADDRESS}</div>
+              <li className="text-[#1c3c8c] leading-[150%] font-light">
+                <div className="body-text text-[#566A93] mb-2">Адрес</div>
+                <div className="body-text text-[#1c3c8c]">{ADDRESS}</div>
               </li>
-              <li className="text-[var(--color-primary)] leading-[150%] font-light">
-                <div className="text-[13px] font-medium text-[var(--color-text-muted)] uppercase tracking-wider mb-2">Телефон</div>
-                <a href="tel:+79242324611" className="text-[16px] text-[var(--color-primary)] hover:text-[var(--color-primary-action)] transition-colors">
+              <li className="text-[#1c3c8c] leading-[150%] font-light">
+                <div className="body-text text-[#566A93] mb-2">Телефон</div>
+                <a href="tel:+79242324611" className="body-text text-[#1c3c8c] hover:opacity-70 transition-opacity">
                   +7 924 232 46 11
                 </a>
               </li>
-              <li className="text-[var(--color-primary)] leading-[150%] font-light">
-                <div className="text-[13px] font-medium text-[var(--color-text-muted)] uppercase tracking-wider mb-2">Режим работы</div>
-                <div className="text-[16px] text-[var(--color-primary)]">пн-сб с 9:00 до 22:00</div>
+              <li className="text-[#1c3c8c] leading-[150%] font-light">
+                <div className="body-text text-[#566A93] mb-2">Режим работы</div>
+                <div className="body-text text-[#1c3c8c]">пн-сб с 9:00 до 22:00</div>
               </li>
-              <li className="text-[var(--color-primary)] leading-[150%] font-light">
-                <div className="text-[13px] font-medium text-[var(--color-text-muted)] uppercase tracking-wider mb-2">Рейтинг в Яндекс Справочнике</div>
+              <li className="text-[#1c3c8c] leading-[150%] font-light">
+                <div className="body-text text-[#566A93] mb-2">Рейтинг в Яндекс Справочнике</div>
                 <iframe
                   src="https://yandex.ru/sprav/widget/rating-badge/130811843218?type=rating"
                   width="150"
@@ -107,7 +107,7 @@ export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
               href="https://n2418813.yclients.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="ds-button-primary inline-flex items-center justify-center w-full"
+              className="btn-primary inline-flex items-center justify-center w-full"
             >
               Онлайн запись
             </a>
@@ -115,14 +115,14 @@ export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
         </div>
 
         {/* Bottom band */}
-        <div className="mt-5 ds-card p-5 xl:p-[30px] bg-[var(--color-bg-card)] shadow-[var(--shadow-card)] border-[var(--color-border)]">
+        <div className="mt-5 ds-card p-5 xl:p-[30px]">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Brand */}
             <div>
               <Link to="/" aria-label="На главную" className="inline-flex h-12 items-center hover:opacity-70 transition-opacity">
                 <Logo className="h-full w-auto" />
               </Link>
-              <p className="mt-4 text-[var(--color-text-main)] max-w-[320px] text-[14px] leading-[1.6]">
+              <p className="mt-4 body-text text-[#566A93] max-w-[320px]">
                 Кабинет оздоровительных практик Татьяны Злобиной. Спокойный ритм и внимание к каждому состоянию.
               </p>
               <div className="mt-5 flex items-center gap-2">
@@ -131,7 +131,7 @@ export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Макс — мессенджер"
-                  className="flex h-10 w-10 items-center justify-center rounded-[var(--radius-button)] border border-[var(--color-border)] bg-[var(--color-bg-main)] text-[var(--color-primary)] hover:bg-[var(--color-bg-hover)] transition-colors"
+                  className="flex h-10 w-10 items-center justify-center rounded-[0.5rem] border border-[#daebff] bg-[#EFF6FF] text-[#1c3c8c] hover:bg-[#DAEBFF] transition-colors"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -154,14 +154,14 @@ export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
                     {item.to ? (
                       <Link
                         to={item.to}
-                        className="text-[16px] text-[var(--color-primary)] hover:text-[var(--color-primary-action)] transition-colors"
+                        className="body-text text-[#1c3c8c] hover:opacity-70 transition-opacity"
                       >
                         {item.label}
                       </Link>
                     ) : (
                       <a
                         href={item.href}
-                        className="text-[16px] text-[var(--color-primary)] hover:text-[var(--color-primary-action)] transition-colors"
+                        className="body-text text-[#1c3c8c] hover:opacity-70 transition-opacity"
                       >
                         {item.label}
                       </a>
@@ -178,24 +178,24 @@ export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
               type="button"
               onClick={scrollToTop}
               aria-label="Наверх"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-[var(--radius-button)] border border-[var(--color-border)] bg-[var(--color-bg-main)] text-[var(--color-primary)] hover:bg-[var(--color-bg-hover)] transition-colors shrink-0"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-[0.5rem] border border-[#daebff] bg-[#EFF6FF] text-[#1c3c8c] hover:bg-[#DAEBFF] transition-colors shrink-0"
             >
               <ArrowUp size={18} strokeWidth={2} />
             </button>
           </div>
 
-          <div className="mt-5 pt-5 border-t border-[var(--color-border)] flex flex-col xl:flex-row items-start xl:items-center justify-between gap-3">
-            <p className="text-[13px] text-[var(--color-text-muted)] font-light">
+          <div className="mt-5 pt-5 border-t border-[#daebff] flex flex-col xl:flex-row items-start xl:items-center justify-between gap-3">
+            <p className="text-[13px] text-[#566A93] font-light">
               © {new Date().getFullYear()} Седьмое небо. Все права защищены.
             </p>
             <div className="flex flex-col xl:flex-row items-start xl:items-center gap-3 xl:gap-6">
               <a
                 href="/privacy-policy"
-                className="text-[13px] text-[var(--color-text-muted)] hover:text-[var(--color-primary-action)] transition-colors font-light"
+                className="text-[13px] text-[#566A93] hover:opacity-70 transition-opacity font-light"
               >
                 Политика конфиденциальности
               </a>
-              <p className="text-[13px] text-[var(--color-text-muted)] font-light">
+              <p className="text-[13px] text-[#566A93] font-light">
                 Информация не является публичной офертой
               </p>
             </div>
@@ -205,15 +205,15 @@ export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
       </div>
       </footer>
 
-      <div className="bg-[var(--color-bg-main)] border-t border-[var(--color-border)] pt-5 pb-12 xl:py-5 footer-bottom-padding">
+      <div className="bg-[#EFF6FF] border-t border-[#daebff] pt-5 pb-12 xl:py-5 footer-bottom-padding">
         <div className="container-1900 flex justify-center">
-          <p className="text-[13px] text-[var(--color-primary)]/80 font-light">
+          <p className="text-[13px] text-[#1c3c8c]/80 font-light">
             Сайт разработан —{" "}
             <a
               href="https://t.me/ksenny_designer"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[var(--color-primary)]/80 hover:text-[var(--color-primary)] transition-colors font-light"
+              className="text-[#1c3c8c]/80 hover:text-[#1c3c8c] transition-colors font-light"
             >
               CUBIK
             </a>

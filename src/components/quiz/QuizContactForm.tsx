@@ -79,8 +79,8 @@ export function QuizContactForm({
   return (
     <form onSubmit={handleSubmit} className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <div className="pr-12">
-        <h3 className="font-noto-serif-narrow ds-h3 text-[var(--color-primary)] mb-2">Куда отправить результат?</h3>
-        <p className="mt-3 text-[15px] leading-[1.5] text-[var(--color-text-muted)] sm:text-[16px]">Оставьте контакты, чтобы мы могли закрепить за вами спецпредложение на первый визит.</p>
+        <h3 className="font-noto-serif-narrow ds-h3 text-[#1C3C8C] mb-2">Куда отправить результат?</h3>
+        <p className="mt-3 text-[15px] leading-[1.5] text-[#566A93] sm:text-[16px]">Оставьте контакты, чтобы мы могли закрепить за вами спецпредложение на первый визит.</p>
       </div>
 
       <div className="space-y-4">
@@ -91,7 +91,7 @@ export function QuizContactForm({
             required
             autoComplete="name"
             placeholder="Как к вам обращаться" 
-            className="ds-input placeholder:text-[var(--color-text-muted)] focus:border-[var(--color-border-focus)] focus:bg-white"
+            className="h-[52px] w-full rounded-[0.5rem] border border-[#daebff] bg-[#EFF6FF] px-4 text-[16px] text-foreground outline-none transition-colors placeholder:text-[#566A93] focus:border-[#1C3C8C] focus:bg-white"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
@@ -106,13 +106,13 @@ export function QuizContactForm({
             required
             autoComplete="tel"
             placeholder="+7 (___) ___-__-__" 
-            className={`ds-input placeholder:text-[var(--color-text-muted)] focus:border-[var(--color-border-focus)] focus:bg-white ${
-              phoneError ? "border-[var(--color-error)]" : ""
+            className={`h-[52px] w-full rounded-[0.5rem] border bg-[#EFF6FF] px-4 text-[16px] text-foreground outline-none transition-colors placeholder:text-[#566A93] focus:border-[#1C3C8C] focus:bg-white ${
+              phoneError ? "border-[#C0392B]" : "border-[#daebff]"
             }`}
             value={formatPhone(phone)}
             onChange={handlePhoneInput}
           />
-          {phoneError && <span className="text-[13px] leading-[1.5] text-[var(--color-error)]">{phoneError}</span>}
+          {phoneError && <span className="text-[13px] leading-[1.5] text-[#C0392B]">{phoneError}</span>}
         </label>
 
         <div className="space-y-2">
@@ -127,8 +127,8 @@ export function QuizContactForm({
                 key={m.id}
                 type="button"
                 onClick={() => setMethod(m.id)}
-                className={`h-[48px] rounded-[var(--radius-button)] border text-xs font-medium transition-all ${
-                  method === m.id ? "bg-white border-[var(--color-primary)] text-[var(--color-primary)]" : "bg-[var(--color-bg-main)] border-[var(--color-border)] text-[var(--color-text-muted)]"
+                className={`h-[48px] rounded-[0.5rem] border text-xs font-medium transition-all ${
+                  method === m.id ? "bg-white border-[#1C3C8C] text-[#1C3C8C]" : "bg-[#EFF6FF] border-[#daebff] text-[#566A93]"
                 }`}
               >
                 {m.label}
@@ -147,11 +147,11 @@ export function QuizContactForm({
                 setConsent(e.target.checked);
                 if (e.target.checked) setConsentError(null);
               }}
-              className="peer h-5 w-5 shrink-0 cursor-pointer appearance-none rounded-[var(--radius-sm)] border border-[var(--color-border-hover)] bg-[var(--color-bg-main)] transition-colors hover:border-[var(--color-border-focus)] checked:border-[var(--color-primary-action)] checked:bg-[var(--color-primary-action)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-border-focus)]"
+              className="peer h-5 w-5 shrink-0 cursor-pointer appearance-none rounded-[6px] border border-[#A2CFFE] bg-[#EFF6FF] transition-colors hover:border-[#5DAAFD] checked:border-[#88C1FF] checked:bg-[#88C1FF] checked:hover:bg-[#5DAAFD] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5DAAFD]"
             />
             <Check size={14} strokeWidth={3} className="pointer-events-none absolute text-white opacity-0 transition-opacity peer-checked:opacity-100" />
           </span>
-          <span className="text-[13px] leading-[1.5] text-[var(--color-text-muted)]">
+          <span className="text-[13px] leading-[1.5] text-[#566A93]">
             Нажимая кнопку, вы соглашаетесь с{" "}
             <a
               href="/privacy-policy"
@@ -165,13 +165,13 @@ export function QuizContactForm({
             .
           </span>
         </label>
-        {consentError && <p className="text-[13px] leading-[1.5] text-[var(--color-error)]">{consentError}</p>}
+        {consentError && <p className="text-[13px] leading-[1.5] text-[#C0392B]">{consentError}</p>}
       </div>
 
       <button 
         type="submit" 
         disabled={isSubmitting}
-        className="ds-button-primary w-full h-14 flex items-center justify-center gap-3"
+        className="btn-primary w-full h-14 flex items-center justify-center gap-3"
       >
         {isSubmitting ? (
           <>

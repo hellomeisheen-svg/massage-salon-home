@@ -79,13 +79,13 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
 
   return (
     <div 
-      className={`fixed inset-0 z-[100] flex items-end justify-center overflow-y-auto bg-[var(--color-overlay)] p-4 backdrop-blur-sm sm:items-center sm:p-6 transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0'}`}
+      className={`fixed inset-0 z-[100] flex items-end justify-center overflow-y-auto bg-[#1C3C8C]/40 p-4 backdrop-blur-sm sm:items-center sm:p-6 transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0'}`}
       role="presentation"
     >
-      <div className="relative my-auto w-full max-w-[640px] ds-card p-5 sm:p-8 xl:p-10 transition-transform duration-300 scale-100 shadow-[var(--shadow-modal)] rounded-[var(--radius-modal)]">
+      <div className="relative my-auto w-full max-w-[640px] ds-card p-5 sm:p-8 xl:p-10 transition-transform duration-300 scale-100">
         <button 
           onClick={onClose} 
-          className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-[var(--radius-button)] border border-[var(--color-border)] bg-[var(--color-bg-main)] text-[var(--color-primary)] transition-colors hover:bg-white z-10"
+          className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-[0.5rem] border border-[#daebff] bg-[#EFF6FF] text-[#1C3C8C] transition-colors hover:bg-white z-10"
           aria-label="Закрыть"
         >
           <X size={18} />
@@ -103,7 +103,7 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
             <p className="mt-4 max-w-[360px] text-[15px] leading-[1.6] text-[#566A93] sm:text-[16px]">
               Ваша программа уже у&nbsp;нас. Администратор свяжется с&nbsp;вами в&nbsp;течение 15&nbsp;минут.
             </p>
-            <button onClick={onClose} className="ds-button-primary mt-8 w-full">Вернуться на сайт</button>
+            <button onClick={onClose} className="btn-primary mt-8 w-full">Вернуться на сайт</button>
           </div>
         ) : step === 0 ? (
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
@@ -119,8 +119,8 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
                   { text: "Расчет стоимости и длительности", icon: "2" },
                   { text: "Скидка на первый визит", icon: "3" }
                 ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-4 p-4 rounded-[var(--radius-card)] border border-[var(--color-border)] bg-white shadow-[var(--shadow-card)] group">
-                    <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-[var(--radius-button)] bg-[var(--color-bg-main)] text-[13px] font-bold text-[var(--color-primary)] transition-colors">
+                  <div key={i} className="flex items-center gap-4 p-4 rounded-xl border border-[#DAEBFF]/60 bg-white shadow-[0_2px_8px_rgba(28,60,140,0.05)] group">
+                    <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-lg bg-[#EFF6FF] text-[13px] font-bold text-[#1C3C8C] group-hover:bg-[#88C1FF] group-hover:text-white transition-colors">
                       {item.icon}
                     </span>
                     <span className="text-[14px] sm:text-[15px] leading-tight text-[#1C3C8C] font-semibold">{item.text}</span>
@@ -128,7 +128,7 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
                 ))}
               </div>
             </div>
-            <button onClick={handleNext} className="ds-button-primary mt-8 w-full">Подобрать программу</button>
+            <button onClick={handleNext} className="btn-primary mt-8 w-full">Подобрать программу</button>
           </div>
         ) : isResultsStep ? (
           <div className="animate-in fade-in slide-in-from-right-4 duration-300">
@@ -145,14 +145,14 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
                 </button>
               </div>
             )}
-            <button onClick={handleBack} className="ds-button-secondary mt-4 w-full h-12 flex items-center justify-center gap-2 rounded-[var(--radius-button)] border border-[var(--color-border)] bg-white text-[var(--color-primary)] font-medium">
+            <button onClick={handleBack} className="btn-secondary mt-4 w-full h-12 flex items-center justify-center gap-2">
               <ChevronLeft size={20} /> Назад к вопросам
             </button>
           </div>
         ) : isContactStep ? (
           <div className="animate-in fade-in slide-in-from-right-4 duration-300">
             <QuizContactForm onSubmit={onContactSubmit} isSubmitting={isSubmitting} />
-            <button onClick={handleBack} className="ds-button-secondary mt-4 w-full h-12 flex items-center justify-center gap-2 rounded-[var(--radius-button)] border border-[var(--color-border)] bg-white text-[var(--color-primary)] font-medium text-sm">
+            <button onClick={handleBack} className="btn-secondary mt-4 w-full h-12 flex items-center justify-center gap-2 text-sm">
               <ChevronLeft size={18} /> Вернуться к результатам
             </button>
           </div>
@@ -203,10 +203,10 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
                         });
                       }
                     }}
-                    className={`quiz-option w-full text-left p-4 md:p-5 rounded-[var(--radius-button)] border transition-all duration-300 flex items-center justify-between group ${
+                    className={`quiz-option w-full text-left p-4 md:p-5 rounded-[0.5rem] border border-[#daebff] transition-all duration-300 flex items-center justify-between group ${
                       isSelected 
-                        ? "border-[var(--color-primary)] bg-white text-[var(--color-primary)]" 
-                        : "border-[var(--color-border)] bg-[var(--color-bg-main)] text-[var(--color-text-main)] hover:bg-white"
+                        ? "border-[#1C3C8C] bg-white text-[#1c3c8c]" 
+                        : "bg-[#EFF6FF] text-[#566A93] hover:bg-white"
                     }`}
                   >
                     <span className="quiz-option__label font-medium text-base md:text-lg">
@@ -223,14 +223,14 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
             </div>
 
             <div className="flex gap-4">
-              <button onClick={handleBack} className="ds-button-secondary flex-1 h-14 flex items-center justify-center gap-2 rounded-[var(--radius-button)] border border-[var(--color-border)] bg-white text-[var(--color-primary)] font-medium">
+              <button onClick={handleBack} className="btn-secondary flex-1 h-14 flex items-center justify-center gap-2">
                 <ChevronLeft size={20} /> Назад
               </button>
               {currentStep.type === "multiple" && (
                 <button 
                   disabled={!(answers[currentStep.id]?.length)}
                   onClick={handleNext} 
-                  className="ds-button-primary flex-[2] h-14"
+                  className="btn-primary flex-[2] h-14"
                 >
                   Далее
                 </button>

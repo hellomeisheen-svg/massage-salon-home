@@ -58,7 +58,7 @@ export type ServicePageContent = {
 export function ServicePage({ content }: { content: ServicePageContent }) {
   return (
     <BookingProvider>
-      <div className="relative min-h-screen bg-[var(--color-bg-main)] pt-20 xl:pt-[100px]">
+      <div className="relative min-h-screen bg-[#EFF6FF] pt-20 xl:pt-[100px]">
         <Header items={servicePageNav} />
         <PageHero content={content} />
         <AboutService content={content} />
@@ -97,16 +97,16 @@ function SpecialistBlock() {
   return (
     <div className="flex flex-col items-start gap-3 sm:gap-4">
       <img
-        className="h-[90px] w-[70px] rounded-[var(--radius-sm)] border border-[var(--color-border)] object-cover xl:h-[110px] xl:w-[85px]"
+        className="h-[90px] w-[70px] rounded-lg border border-[#daebff] object-cover xl:h-[110px] xl:w-[85px]"
         alt="Татьяна Злобина"
         src="/images/tatyana-photo.webp"
 
       />
       <div className="flex flex-col gap-1">
-        <div className="font-noto-serif-narrow text-[22px] font-light leading-[1.2] text-[var(--color-primary)] sm:text-[24px] xl:text-[28px]">
+        <div className="font-noto-serif-narrow text-[22px] font-light leading-[1.2] text-[#1c3c8c] sm:text-[24px] xl:text-[28px]">
           Татьяна&nbsp;Злобина
         </div>
-        <p className="text-[16px] font-light leading-[26px] text-[var(--color-text-muted)]">
+        <p className="text-[16px] font-light leading-[26px] text-[#566A93]">
           Мастер кабинета, специалист
           <br />
           по&nbsp;оздоровительным практикам
@@ -118,15 +118,15 @@ function SpecialistBlock() {
 
 function PageHero({ content }: { content: ServicePageContent }) {
   return (
-    <main className="bg-[var(--color-bg-main)] py-4 sm:py-5">
+    <main className="bg-[#EFF6FF] py-4 sm:py-5">
       <section id="hero" className="container-1900 grid grid-cols-1 gap-4 sm:gap-5 xl:min-h-[calc(100vh-160px)] xl:grid-cols-2">
-        <div className="flex min-h-0 flex-col ds-card p-5 sm:min-h-[520px] sm:p-6 xl:min-h-0 xl:p-10 bg-[var(--color-bg-card)] border-[var(--color-border)] shadow-[var(--shadow-card)] rounded-[var(--radius-card)] hover:translate-y-0">
-          <nav aria-label="Хлебные крошки" className="text-[14px] text-[var(--color-text-muted)]">
+        <div className="flex min-h-0 flex-col ds-card p-5 sm:min-h-[520px] sm:p-6 xl:min-h-0 xl:p-10">
+          <nav aria-label="Хлебные крошки" className="text-[14px] text-[#566A93]">
             <Link to="/" className="hover:opacity-70 transition-opacity">
               Главная
             </Link>
             <span className="px-2">/</span>
-            <span className="text-[var(--color-primary)]">{content.breadcrumb}</span>
+            <span className="text-[#1C3C8C]">{content.breadcrumb}</span>
           </nav>
 
           <div className="mt-6 sm:mt-8">
@@ -137,15 +137,15 @@ function PageHero({ content }: { content: ServicePageContent }) {
             <div className="flex flex-col tablet-text-block xl:max-w-[640px]">
               <div className="flex flex-col xl:flex-row xl:items-center gap-x-3 gap-y-2">
                 {content.hit && (
-                  <span className="inline-flex w-fit shrink-0 items-center rounded-[var(--radius-sm)] bg-[var(--color-primary-action)] px-2 py-0.5 text-[14px] font-medium lowercase tracking-tight text-white xl:order-2 xl:mb-[-12px]">
+                  <span className="inline-flex w-fit shrink-0 items-center rounded-[6px] bg-[#A2CFFE] px-2 py-0.5 text-[14px] font-medium lowercase tracking-tight text-white xl:order-2 xl:mb-[-12px]">
                     хит
                   </span>
                 )}
-                <h1 className="font-noto-serif-narrow text-[38px] font-light leading-[1.12] text-[var(--color-primary)] sm:text-[58px] sm:leading-[1.15] xl:order-1">
+                <h1 className="font-noto-serif-narrow text-[38px] font-light leading-[1.12] text-[#1C3C8C] sm:text-[58px] sm:leading-[1.15] xl:order-1">
                   {content.title}
                 </h1>
               </div>
-              <p className="mt-4 text-[16px] font-light leading-[26px] text-[var(--color-text-main)]">
+              <p className="mt-4 text-[16px] font-light leading-[26px] text-[#566A93]">
                 {content.heroText}
               </p>
               <div className="mt-[30px] flex flex-col gap-3 sm:flex-row sm:gap-4">
@@ -153,7 +153,7 @@ function PageHero({ content }: { content: ServicePageContent }) {
                   href="https://n2418813.yclients.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="ds-button-primary w-full sm:w-[280px] xl:w-[250px] inline-flex items-center justify-center text-center whitespace-nowrap"
+                  className="btn-primary w-full sm:w-[280px] xl:w-[250px] inline-flex items-center justify-center text-center whitespace-nowrap"
                 >
                   Онлайн запись
                 </a>
@@ -166,7 +166,7 @@ function PageHero({ content }: { content: ServicePageContent }) {
                       "noopener,noreferrer"
                     )
                   }
-                  className="ds-button-secondary w-full sm:w-[280px] xl:w-[250px] whitespace-nowrap rounded-[var(--radius-button)] border border-[var(--color-border)] bg-white text-[var(--color-primary)] font-medium h-[52px]"
+                  className="btn-secondary w-full sm:w-[280px] xl:w-[250px] whitespace-nowrap"
                 >
                   Получить консультацию
                 </button>
@@ -175,7 +175,7 @@ function PageHero({ content }: { content: ServicePageContent }) {
           </div>
         </div>
 
-        <div className="relative h-[420px] overflow-hidden rounded-[var(--radius-card)] border border-[var(--color-border)] sm:h-[520px] xl:h-auto xl:min-h-0 shadow-[var(--shadow-card)]">
+        <div className="relative h-[420px] overflow-hidden rounded-[12px] border border-[#daebff] sm:h-[520px] xl:h-auto xl:min-h-0">
           <img
             className="absolute inset-0 h-full w-full object-cover object-top sm:object-center"
             alt={content.heroImageAlt}
@@ -229,12 +229,12 @@ function AboutService({ content }: { content: ServicePageContent }) {
           >
             <span
               className={`h-2 w-2 rounded-full transition-colors ${
-                isActive ? "bg-[var(--color-primary-action)]" : "bg-[var(--color-border)]"
+                isActive ? "bg-[#1C3C8C]" : "bg-[#B7C5E3]"
               }`}
             />
             <span
               className={`text-[16px] transition-colors ${
-                isActive ? "text-[var(--color-primary-action)] font-medium" : "text-[var(--color-text-main)] hover:text-[var(--color-primary)]"
+                isActive ? "text-[#1C3C8C]" : "text-[#566A93]"
               }`}
             >
               {s.label}
@@ -246,15 +246,19 @@ function AboutService({ content }: { content: ServicePageContent }) {
   );
 
   return (
-    <section id="services" className="scroll-mt-[140px] bg-[var(--color-bg-main)] py-[var(--space-8)] xl:py-[var(--space-10)]">
+    <section id="services" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section">
       <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-8 sm:gap-5 items-start">
         <div className="self-start xl:sticky xl:top-[140px] flex flex-col items-center xl:items-start text-center xl:text-left">
           <span
-            className="inline-flex items-center gap-2 px-4 py-1.5 ds-chip !bg-[var(--color-primary-action)] text-white !border-none !rounded-[var(--radius-sm)]"
+            className="inline-flex items-center gap-2 px-4 py-1.5 ds-label text-white"
+            style={{
+              borderRadius: "4px",
+              backgroundImage: "linear-gradient(to bottom, #A2CFFE, #88C1FF)",
+            }}
           >
             Об услуге
           </span>
-          <h2 className="font-noto-serif-narrow mt-6 ds-h2 text-[var(--color-primary)] max-w-[520px] mx-auto xl:mx-0 font-light">
+          <h2 className="font-noto-serif-narrow mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0">
             <span className="xl:hidden">
               {content.aboutHeadingMobile || "Обсуждаем состояние перед каждым визитом и\u00A0подбираем технику"}
             </span>
@@ -265,7 +269,7 @@ function AboutService({ content }: { content: ServicePageContent }) {
         </div>
 
         <div className="flex flex-col gap-4">
-          <div className="ds-card p-6 sm:p-8 xl:p-10 bg-[var(--color-bg-card)] border-[var(--color-border)] shadow-[var(--shadow-card)] rounded-[var(--radius-card)] hover:translate-y-0">
+          <div className="ds-card p-6 sm:p-8 xl:p-10">
             <div className="flex flex-col gap-10 sm:gap-12">
               {sections.map((s, i) => (
                 <div
@@ -275,10 +279,10 @@ function AboutService({ content }: { content: ServicePageContent }) {
                   }}
                   className="scroll-mt-[140px]"
                 >
-                  <h3 className="font-noto-serif-narrow text-[26px] sm:text-[36px] font-light leading-[1.15] text-[var(--color-primary)]">
+                  <h3 className="font-noto-serif-narrow text-[26px] sm:text-[36px] font-light leading-[1.15] text-[#1C3C8C]">
                     {s.label}
                   </h3>
-                  <div className="mt-5 text-[var(--color-text-main)] space-y-4 text-[15px] leading-[1.6]">
+                  <div className="mt-5 text-[#566A93] space-y-4 text-[15px] leading-[1.6]">
                     {s.content}
                   </div>
                 </div>
@@ -311,26 +315,26 @@ function PriceCard({ p, prefix }: { p: ServicePrice; prefix: string }) {
   const summary = `${count} ${sessionWord} · ${p.duration}`;
 
   return (
-    <article className="flex flex-col ds-card p-6 sm:p-8 xl:p-10 bg-[var(--color-bg-card)] border-[var(--color-border)] shadow-[var(--shadow-card)] rounded-[var(--radius-card)]">
-      <div className="flex items-stretch gap-1 rounded-[var(--radius-button)] bg-[var(--color-bg-main)] p-1">
+    <article className="flex flex-col ds-card p-6 sm:p-8 xl:p-10">
+      <div className="flex items-stretch gap-1 rounded-[10px] bg-[#EFF6FF] p-1">
         {tabLabels.map((label, i) => (
           <button
             key={label}
             type="button"
             onClick={() => setActive(i)}
-            className={`relative flex flex-1 items-center justify-center rounded-[var(--radius-sm)] px-2 py-2.5 transition-all duration-300 ${
-              active === i ? "bg-white shadow-[var(--shadow-card)]" : "bg-transparent"
+            className={`relative flex flex-1 items-center justify-center rounded-[8px] px-2 py-2.5 transition-all duration-300 ${
+              active === i ? "bg-white shadow-[0_2px_8px_rgba(28,60,140,0.08)]" : "bg-transparent"
             }`}
           >
             <span
               className={`whitespace-nowrap text-[13px] tracking-tight transition-colors duration-300 ${
-                active === i ? "font-medium text-[var(--color-primary)]" : "font-light text-[var(--color-text-muted)]"
+                active === i ? "font-medium text-[#1C3C8C]" : "font-light text-[#566A93]"
               }`}
             >
               {label}
             </span>
             {sessionDiscounts[i] && (
-              <span className="absolute -top-1 right-1 rounded-full bg-[var(--color-primary-action)] px-1.5 py-0.5 text-[9px] font-semibold tracking-wide text-white">
+              <span className="absolute -top-1 right-1 rounded-full bg-[#1C3C8C] px-1.5 py-0.5 text-[9px] font-semibold tracking-wide text-white">
                 {sessionDiscounts[i]}
               </span>
             )}
@@ -338,26 +342,26 @@ function PriceCard({ p, prefix }: { p: ServicePrice; prefix: string }) {
         ))}
       </div>
 
-      <h3 className="font-noto-serif-narrow mt-5 text-[24px] sm:text-[32px] font-light leading-[1.1] text-[var(--color-primary)]">
+      <h3 className="font-noto-serif-narrow mt-5 text-[24px] sm:text-[32px] font-light leading-[1.1] text-[#1C3C8C]">
         {p.zone}
       </h3>
-      <p className="mt-3 text-[15px] font-light leading-[1.5] text-[var(--color-text-main)]">{p.subtitle}</p>
+      <p className="mt-3 text-[15px] font-light leading-[1.5] text-[#566A93]">{p.subtitle}</p>
 
-      <p className="mt-6 text-[13px] font-medium leading-[18px] tracking-wide text-[var(--color-primary-action)] uppercase">
+      <p className="mt-6 text-[13px] font-medium leading-[18px] tracking-wide text-[#1C3C8C]">
         {summary}
       </p>
       
       <div className="mt-6 flex items-center justify-end gap-4 sm:gap-5">
         {hasDiscount && (
-          <span className="font-noto-serif-narrow text-[17px] sm:text-[19px] font-light leading-[1.2] text-[var(--color-text-muted)] line-through opacity-50">
+          <span className="font-noto-serif-narrow text-[17px] sm:text-[19px] font-light leading-[1.2] text-[#566A93] line-through">
             {renderPrice(originalPrice)}
           </span>
         )}
         <div className="flex flex-col items-end">
-          <span className="font-noto-serif-narrow ds-price text-[var(--color-primary)]">
+          <span className="font-noto-serif-narrow ds-price text-[#1C3C8C]">
             {renderPrice(computedPrice)}
           </span>
-          <span className="text-[13px] font-light text-[var(--color-text-muted)]">
+          <span className="text-[13px] font-light text-[#566A93]">
             за {count} {sessionWord}
           </span>
         </div>
@@ -370,68 +374,68 @@ function PriceCard({ p, prefix }: { p: ServicePrice; prefix: string }) {
 
 function PriceTable({ content }: { content: ServicePageContent }) {
   return (
-    <div className="ds-card overflow-hidden bg-[var(--color-bg-card)] border border-[var(--color-border)] shadow-[var(--shadow-card)] rounded-[var(--radius-card)]">
+    <div className="ds-card overflow-hidden bg-white border border-[#daebff]/40">
       <div className="overflow-x-auto">
         <table className="w-full text-left border-collapse">
           <thead>
-            <tr className="bg-[var(--color-bg-main)]/50 border-b border-[var(--color-border)]">
-              <th className="px-6 py-4 text-[13px] font-medium tracking-wide text-[var(--color-primary)] xl:px-8 uppercase">
+            <tr className="bg-[#EFF6FF]/50 border-b border-[#daebff]">
+              <th className="px-6 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
                 Зона
               </th>
-              <th className="px-6 py-4 text-[13px] font-medium tracking-wide text-[var(--color-primary)] xl:px-8 uppercase">
+              <th className="px-6 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
                 Длительность
               </th>
-              <th className="px-6 py-4 text-[13px] font-medium tracking-wide text-[var(--color-primary)] xl:px-8 uppercase">
+              <th className="px-6 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
                 1 сеанс
               </th>
-              <th className="px-6 py-4 text-[13px] font-medium tracking-wide text-[var(--color-primary)] xl:px-8 uppercase">
+              <th className="px-6 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
                 <span className="flex items-center gap-2">
                   3 сеанса
-                  <span className="rounded-full bg-[var(--color-primary-action)] px-2 py-0.5 text-[10px] font-semibold text-white">
+                  <span className="rounded-full bg-[#1C3C8C] px-2 py-0.5 text-[10px] font-semibold text-white">
                     -10%
                   </span>
                 </span>
               </th>
-              <th className="px-6 py-4 text-[13px] font-medium tracking-wide text-[var(--color-primary)] xl:px-8 uppercase">
+              <th className="px-6 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
                 <span className="flex items-center gap-2">
                   6 сеансов
-                  <span className="rounded-full bg-[var(--color-primary-action)] px-2 py-0.5 text-[10px] font-semibold text-white">
+                  <span className="rounded-full bg-[#1C3C8C] px-2 py-0.5 text-[10px] font-semibold text-white">
                     -15%
                   </span>
                 </span>
               </th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-[var(--color-border)]">
+          <tbody className="divide-y divide-[#daebff]">
             {content.prices.map((p) => {
               const base = p.base;
               const p3 = Math.round(base * 3 * 0.9);
               const p6 = Math.round(base * 6 * 0.85);
 
               return (
-                <tr key={p.zone} className="group transition-colors hover:bg-[var(--color-bg-main)]/30">
+                <tr key={p.zone} className="group transition-colors hover:bg-[#F7FBFF]">
                   <td className="px-6 py-6 xl:px-8">
-                    <div className="font-noto-serif-narrow text-[20px] xl:text-[24px] font-light leading-tight text-[var(--color-primary)]">
+                    <div className="font-noto-serif-narrow text-[20px] xl:text-[24px] font-light leading-tight text-[#1C3C8C]">
                       {p.zone}
                     </div>
-                    <div className="mt-1 text-[13px] font-light text-[var(--color-text-muted)]">
+                    <div className="mt-1 text-[13px] font-light text-[#566A93]">
                       {p.subtitle}
                     </div>
                   </td>
-                  <td className="px-6 py-6 text-[16px] font-light text-[var(--color-text-main)] xl:px-8">
+                  <td className="px-6 py-6 text-[16px] font-light text-[#566A93] xl:px-8">
                     {p.duration}
                   </td>
                   <td className="px-6 py-6 xl:px-8">
-                    <span className="font-noto-serif-narrow text-[20px] xl:text-[24px] font-light text-[var(--color-primary)]">
+                    <span className="font-noto-serif-narrow text-[20px] xl:text-[24px] font-light text-[#1C3C8C]">
                       {renderPrice(formatPrice(base))}
                     </span>
                   </td>
                   <td className="px-6 py-6 xl:px-8">
                     <div className="flex items-center gap-2">
-                      <span className="font-noto-serif-narrow text-[14px] font-light text-[var(--color-text-muted)]/40 line-through">
+                      <span className="font-noto-serif-narrow text-[14px] font-light text-[#566A93]/40 line-through">
                         {renderPrice(formatPrice(base * 3))}
                       </span>
-                      <span className="font-noto-serif-narrow text-[20px] xl:text-[24px] font-light text-[var(--color-primary)]">
+                      <span className="font-noto-serif-narrow text-[20px] xl:text-[24px] font-light text-[#1C3C8C]">
                         {renderPrice(formatPrice(p3))}
                       </span>
                     </div>
@@ -459,9 +463,9 @@ function PriceTable({ content }: { content: ServicePageContent }) {
 function Prices({ content }: { content: ServicePageContent }) {
   const { openBooking } = useBooking();
   return (
-    <section id="prices" className="scroll-mt-[140px] bg-[var(--color-bg-main)] py-[var(--space-8)] xl:py-[var(--space-10)]">
+    <section id="prices" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section">
       <div className="container-1900">
-        <h2 className="font-noto-serif-narrow text-center ds-h2 text-[var(--color-primary)]">
+        <h2 className="font-noto-serif-narrow text-center ds-h2 text-[#1C3C8C]">
           Форматы и&nbsp;стоимость
         </h2>
 
@@ -480,7 +484,7 @@ function Prices({ content }: { content: ServicePageContent }) {
         <div className="mt-10 flex justify-center">
           <button 
             onClick={() => openBooking(content.bookingPrefix)}
-            className="ds-button-primary w-full sm:w-[280px]"
+            className="btn-primary w-full sm:w-[280px]"
           >
             Записаться на сеанс
           </button>
@@ -493,21 +497,21 @@ function Prices({ content }: { content: ServicePageContent }) {
 function FaqItem({ q, a }: { q: string; a: React.ReactNode }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="ds-card bg-[var(--color-bg-card)] border border-[var(--color-border)] shadow-[var(--shadow-card)] rounded-[var(--radius-card)] hover:translate-y-0">
+    <div className="ds-card">
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
         className="w-full flex items-center justify-between gap-4 p-5 sm:p-6 xl:p-7 text-left"
       >
-        <span className="font-noto-serif-narrow text-[var(--color-primary)] ds-h3 text-[18px] sm:text-[24px] font-light">
+        <span className="font-noto-serif-narrow text-[#1C3C8C] ds-h4 text-[18px] sm:text-[28px]">
           {q}
         </span>
         <span
-          className={`shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-[var(--radius-sm)] bg-[var(--color-bg-main)] border border-[var(--color-border)] flex items-center justify-center transition-transform duration-300 ${
+          className={`shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-[0.5rem] bg-[#EFF6FF] border border-[#daebff] flex items-center justify-center transition-transform duration-300 ${
             open ? "rotate-45" : ""
           }`}
         >
-          <Plus className="w-4 h-4 sm:w-5 sm:h-5 text-[var(--color-primary)]" strokeWidth={2} />
+          <Plus className="w-4 h-4 sm:w-5 sm:h-5 text-[#1C3C8C]" strokeWidth={2} />
         </span>
       </button>
       <div
@@ -516,7 +520,7 @@ function FaqItem({ q, a }: { q: string; a: React.ReactNode }) {
         }`}
       >
         <div className="overflow-hidden">
-          <div className="px-5 sm:px-6 xl:px-7 pb-5 sm:pb-6 xl:pb-7 text-[var(--color-text-main)] max-w-[720px] text-[15px] sm:text-[16px] leading-[1.6]">
+          <div className="px-5 sm:px-6 xl:px-7 pb-5 sm:pb-6 xl:pb-7 body-text text-[#566A93] max-w-[720px]">
             {a}
           </div>
         </div>
@@ -527,38 +531,42 @@ function FaqItem({ q, a }: { q: string; a: React.ReactNode }) {
 
 function Faq({ content }: { content: ServicePageContent }) {
   return (
-    <section id="faq" className="scroll-mt-[120px] bg-[var(--color-bg-main)] py-[var(--space-8)] xl:py-[var(--space-10)]">
+    <section id="faq" className="scroll-mt-[120px] bg-[#EFF6FF] ds-section">
       <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-5 items-stretch">
         <div className="flex flex-col items-center xl:items-start text-center xl:text-left h-full">
           <span
-            className="inline-flex items-center gap-2 px-4 py-1.5 ds-chip !bg-[var(--color-primary-action)] text-white !border-none !rounded-[var(--radius-sm)]"
+            className="inline-flex items-center gap-2 px-4 py-1.5 ds-label text-white"
+            style={{
+              borderRadius: "4px",
+              backgroundImage: "linear-gradient(to bottom, #A2CFFE, #88C1FF)",
+            }}
           >
             FAQs
           </span>
-          <h2 className="font-noto-serif-narrow mt-6 ds-h2 text-[var(--color-primary)] max-w-[520px] mx-auto xl:mx-0 font-light">
+          <h2 className="font-noto-serif-narrow mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0">
             Отвечаю на&nbsp;самые важные вопросы
           </h2>
 
-          <div className="mt-8 xl:mt-auto ds-card p-6 sm:p-7 w-full xl:w-1/2 mx-auto xl:mx-0 text-left bg-[var(--color-bg-card)] border border-[var(--color-border)] shadow-[var(--shadow-card)] rounded-[var(--radius-card)] hover:translate-y-0">
+          <div className="mt-8 xl:mt-auto ds-card p-6 sm:p-7 w-full xl:w-1/2 mx-auto xl:mx-0 text-left">
             <img
               src="/images/tatyana-photo.webp"
               alt="Татьяна Злобина"
-              className="h-[90px] w-[70px] xl:h-[110px] xl:w-[85px] rounded-[var(--radius-sm)] border border-[var(--color-border)] object-cover"
+              className="h-[90px] w-[70px] xl:h-[110px] xl:w-[85px] rounded-lg border border-[#daebff] object-cover"
             />
-            <h3 className="font-noto-serif-narrow mt-6 ds-h3 text-[var(--color-primary)] font-light">
+            <h3 className="font-noto-serif-narrow mt-6 ds-h4 text-[#1C3C8C]">
               Татьяна Злобина
             </h3>
-            <p className="mt-3 text-[15px] leading-[1.6] text-[var(--color-text-muted)]">
+            <p className="mt-3 body-text text-[#566A93]">
               Мастер кабинета, специалист по&nbsp;оздоровительным практикам
             </p>
-            <p className="mt-6 text-[15px] leading-[1.6] text-[var(--color-primary)] font-medium">
+            <p className="mt-6 body-text text-[#1C3C8C]">
               Остались вопросы? Напишите мне&nbsp;— я&nbsp;всё подробно расскажу.
             </p>
             <a
               href="https://max.ru/u/f9LHodD0cOLS1ZC9ThcQkVLRVzcK-MbYZ7JVAg8PC5Tx9LyihgOVdPnzaxM"
               target="_blank"
               rel="noopener noreferrer"
-              className="ds-button-primary mt-6 w-full inline-flex items-center justify-center"
+              className="btn-primary mt-6 w-full inline-flex items-center justify-center"
             >
               Получить консультацию
             </a>
