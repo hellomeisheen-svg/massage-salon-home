@@ -36,6 +36,7 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
         setStep(0);
         setAnswers({});
         setIsSuccess(false);
+        setError(null);
       }, 300);
     }
   }, [isOpen]);
