@@ -87,16 +87,14 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
 
   // Ветка 3: Убрать отёчность (lightness)
   else if (goal === "lightness") {
-    const area = 
-      answers.lightness_area ?? 
-      answers.lightnessArea ?? 
-      answers.area ?? 
-      answers.selectedArea ?? 
-      answers.relaxArea;
+    // Явно читаем lightness_area из объекта answers
+    const area = answers.lightness_area;
 
-    console.log("LIGHTNESS DEBUG START", { goal, area, answers });
+    console.log("DEBUG: LIGHTNESS BRANCH SELECTED", { goal, area, allAnswers: answers });
+    
     const recommendedServices = getLightnessRecommendations({ ...answers, lightnessArea: area });
-    console.log("LIGHTNESS DEBUG END", { recommendedCount: recommendedServices.length, ids: recommendedServices.map(s => s.id) });
+    
+    console.log("DEBUG: LIGHTNESS RECOMMENDATIONS RESULT", { count: recommendedServices.length, services: recommendedServices });
 
     return recommendedServices;
   }
