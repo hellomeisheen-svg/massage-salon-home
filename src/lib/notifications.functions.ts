@@ -111,7 +111,7 @@ export const sendLeadNotification = createServerFn({ method: "POST" })
         },
         body: JSON.stringify({
           from: "7 Heaven Massage <zayavki@7heavenmassage.ru>",
-          to: ["meisheen@yandex.ru", "ks.zlobina.93@gmail.com"],
+          to: "meisheen@yandex.ru",
           subject: emailSubject,
           html: `
             <div style="font-family: sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto;">
