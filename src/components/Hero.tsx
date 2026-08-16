@@ -5,58 +5,54 @@ import { QuizModal } from "@/components/quiz/QuizModal";
 const YANDEX_MAPS_URL =
   "https://yandex.ru/maps/org/sedmoye_nebo/130811843218/reviews/";
 
-function RatingBlock() {
+function YandexLogo() {
   return (
-    <div className="w-full rounded-[12px] border border-[#daebff] bg-white ds-bento-shadow px-4 py-5 sm:px-5 sm:py-6 sm:max-w-[280px]">
-      <div className="flex flex-col items-center gap-3 text-center">
-        <div className="flex flex-nowrap items-center gap-1">
-          {Array.from({ length: 5 }).map((_, i) => (
-            <Star
-              key={i}
-              aria-hidden="true"
-              className="h-[18px] w-[18px] shrink-0 fill-[#F26A38] text-[#F26A38]"
-            />
-          ))}
-        </div>
-        <div className="font-noto-serif-narrow ds-h2 whitespace-nowrap leading-none text-[#1C3C8C]">
-          4,7
-        </div>
-        <div className="text-[15px] font-light leading-[22px] text-[#1C3C8C]">
-          Рейтинг на&nbsp;Яндекс&nbsp;Картах
-        </div>
-        <a
-          href={YANDEX_MAPS_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex min-h-[44px] items-center justify-center rounded-[12px] px-3 text-[15px] font-medium text-[#1C3C8C] underline underline-offset-4 transition-opacity hover:opacity-80 active:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1C3C8C]"
-        >
-          Смотреть отзывы
-        </a>
-        <div className="text-[14px] font-light leading-[20px] text-[#566A93]">
-          Отзывы клиентов
-        </div>
-      </div>
+    <div
+      className="flex h-[48px] w-[48px] shrink-0 items-center justify-center rounded-[12px] bg-[#FC3F1D] ds-bento-shadow"
+      aria-hidden="true"
+    >
+      <span className="text-[22px] font-bold leading-none text-white">Я</span>
     </div>
   );
 }
 
-function SpecialistBlock() {
+function RatingBlock() {
   return (
-    <div className="flex flex-col items-start gap-3 sm:gap-4">
-      <RatingBlock />
-      <div className="flex flex-col gap-1">
-        <div className="font-noto-serif-narrow ds-h4 text-[#1c3c8c]">
-          Татьяна&nbsp;Злобина
+    <a
+      href={YANDEX_MAPS_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group flex w-full items-center gap-4 rounded-[12px] border border-[#daebff] bg-white ds-bento-shadow px-4 py-4 transition-all hover:-translate-y-0.5 hover:opacity-85 active:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1C3C8C] sm:max-w-[320px] sm:px-5 sm:py-5"
+    >
+      <YandexLogo />
+      <div className="flex min-w-0 flex-col gap-2">
+        <div className="flex items-center gap-2.5">
+          <span className="font-noto-serif-narrow text-[28px] font-semibold leading-none tracking-tight text-[#1C3C8C]">
+            4,7
+          </span>
+          <div className="flex flex-nowrap items-center gap-0.5">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <Star
+                key={i}
+                aria-hidden="true"
+                className="h-[16px] w-[16px] shrink-0 fill-[#F26A38] text-[#F26A38]"
+              />
+            ))}
+          </div>
         </div>
-        <p className="text-[16px] font-light leading-[26px] text-[#566A93]">
-          Мастер кабинета, специалист
-          <br />
-          по&nbsp;оздоровительным практикам
-        </p>
+        <div className="flex flex-col gap-0.5">
+          <span className="text-[13px] font-medium uppercase tracking-wider text-[#FC3F1D]">
+            Яндекс Карты
+          </span>
+          <span className="text-[13px] font-light leading-[18px] text-[#566A93]">
+            Смотреть отзывы клиентов
+          </span>
+        </div>
       </div>
-    </div>
+    </a>
   );
 }
+
 
 
 function HeadlineBlock({ onOpenQuiz }: { onOpenQuiz: () => void }) {
@@ -97,7 +93,7 @@ export function Hero() {
       <section id="hero" className="container-1900 grid grid-cols-1 gap-4 sm:gap-5 xl:min-h-[calc(100vh-160px)] xl:grid-cols-2">
         {/* Content card */}
         <div className="flex min-h-0 flex-col ds-card ds-bento-shadow p-5 sm:min-h-[520px] sm:p-6 xl:min-h-0 xl:p-10">
-          <SpecialistBlock />
+          <RatingBlock />
           <div className="mt-[100px] pt-0 sm:mt-[140px] xl:mt-auto xl:pt-[140px]">
             <HeadlineBlock onOpenQuiz={() => setIsQuizOpen(true)} />
           </div>
