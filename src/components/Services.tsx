@@ -436,7 +436,7 @@ export function ServiceCard({
         ))}
       </div>
 
-      <div className="flex-1 flex flex-col mb-6 md:flex-1 md:mb-6">
+      <div className="flex-1 flex flex-col mb-4 md:flex-1 md:mb-4">
         <div className="flex-1">
           {/* Title */}
           <div className="mt-5 flex flex-wrap items-center gap-3">
@@ -497,21 +497,6 @@ export function ServiceCard({
           <p className="mt-6 text-[13px] font-medium leading-[18px] tracking-wide text-[#1C3C8C]">
             {selectedSummary}
           </p>
-        </div>
-
-        {/* Price (Desktop/Tablet only) */}
-        <div className="mt-auto pt-6 hidden sm:flex items-center justify-end gap-4 md:gap-5 self-end">
-          {hasDiscount && (
-            <span className="ds-price-old">
-              {renderPrice(originalPrice)}
-            </span>
-          )}
-          <div className="flex flex-col items-end">
-            <span className="font-noto-serif-narrow ds-price text-[#1C3C8C]">
-              {renderPrice(computedPrice)}
-            </span>
-            <span className="text-[13px] font-light text-[#566A93] leading-none mt-1">{priceLabel}</span>
-          </div>
         </div>
       </div>
 
