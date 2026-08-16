@@ -273,6 +273,59 @@ button:focus-visible {
   border-radius: 12px;
 }
 
+/* Tactile form inputs (white surface + soft inset depth) */
+.ds-input {
+  width: 100%;
+  min-height: 52px;
+  border-radius: 12px;
+  border: 1px solid #DAEBFF;
+  background-color: #FFFFFF;
+  padding: 0 1rem;
+  font-size: 16px;
+  color: #1C3C8C;
+  box-shadow: inset 0 2px 4px rgba(28, 60, 140, 0.03);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+.ds-input::placeholder {
+  color: #566A93;
+}
+.ds-input:hover {
+  border-color: #A2CFFE;
+}
+.ds-input:focus {
+  border-color: #A2CFFE;
+  outline: none;
+  box-shadow:
+    inset 0 2px 4px rgba(28, 60, 140, 0.03),
+    0 0 0 4px rgba(162, 207, 254, 0.2),
+    0 8px 20px rgba(93, 170, 253, 0.1);
+}
+
+/* Messenger / toggle buttons inside forms */
+.ds-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  border-radius: 12px;
+  border: 1px solid #DAEBFF;
+  background-color: #FFFFFF;
+  color: #566A93;
+  font-size: 13px;
+  font-weight: 500;
+  transition: border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+.ds-toggle:hover {
+  border-color: #A2CFFE;
+  color: #1C3C8C;
+}
+.ds-toggle-active {
+  border-color: #1C3C8C;
+  background-color: #FFFFFF;
+  color: #1C3C8C;
+  box-shadow: 0 4px 12px rgba(28, 60, 140, 0.08);
+}
+
 .text-link-active:active,
 .faq-trigger:active {
   opacity: 0.6 !important;

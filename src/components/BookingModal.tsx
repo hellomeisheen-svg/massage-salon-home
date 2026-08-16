@@ -275,7 +275,7 @@ function BookingDialog({
                   required
                   autoComplete="name"
                   placeholder="Как к вам обращаться"
-                  className="h-[52px] rounded-[12px] border border-[#daebff] bg-[#EFF6FF] px-4 text-[16px] text-foreground outline-none transition-colors placeholder:text-[#566A93] focus:border-[#1C3C8C] focus:bg-white"
+                  className="ds-input"
                 />
               </label>
 
@@ -290,7 +290,7 @@ function BookingDialog({
                   value={formatPhone(phone)}
                   onChange={handlePhoneInput}
                   placeholder="+7 (___) ___-__-__"
-                  className="h-[52px] rounded-[12px] border border-[#daebff] bg-[#EFF6FF] px-4 text-[16px] text-foreground outline-none transition-colors placeholder:text-[#566A93] focus:border-[#1C3C8C] focus:bg-white"
+                  className="ds-input"
                 />
                 {phoneError && (
                   <span className="text-[13px] leading-[1.5] text-[#C0392B]">{phoneError}</span>
@@ -309,9 +309,7 @@ function BookingDialog({
                       key={m.id}
                       type="button"
                       onClick={() => setMethod(m.id)}
-                      className={`h-[48px] rounded-[12px] border text-xs font-medium transition-all ${
-                        method === m.id ? "bg-white border-[#1C3C8C] text-[#1C3C8C]" : "bg-[#EFF6FF] border-[#daebff] text-[#566A93]"
-                      }`}
+                      className={`ds-toggle ${method === m.id ? "ds-toggle-active" : ""}`}
                     >
                       {m.label}
                     </button>
@@ -326,7 +324,7 @@ function BookingDialog({
                   rows={2}
                   defaultValue={subject ? `${subject}: ` : ""}
                   placeholder="Самочувствие, пожелания, удобное время"
-                  className="rounded-[12px] border border-[#daebff] bg-[#EFF6FF] px-4 py-3 text-[16px] leading-[1.6] text-foreground outline-none transition-colors placeholder:text-[#566A93] focus:border-[#1C3C8C] focus:bg-white"
+                  className="ds-input py-3"
                 />
               </label>
 
