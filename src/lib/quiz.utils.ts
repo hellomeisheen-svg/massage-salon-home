@@ -116,8 +116,11 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
   }
 
   // Дедупликация и лимит 3
-  return Array.from(new Set(serviceIds))
+  // В ветке relax мы не ограничиваем количество, чтобы банки не вытеснили массаж
+  const finalIds = Array.from(new Set(serviceIds));
+  const result = finalIds
     .map(id => getService(id))
-    .filter((s): s is QuizService => !!s)
-    .slice(0, 3);
+    .filter((s): s is QuizService => !!s);
+
+  return goal === "relax" ? result : result.slice(0, 3);
 }
