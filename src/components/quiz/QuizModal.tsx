@@ -116,15 +116,15 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
         ) : isResultsStep ? (
           <div className="animate-in fade-in slide-in-from-right-4 duration-300">
             <QuizResults services={recommendedServices} answers={answers} onNext={handleNext} />
-            <button onClick={handleBack} className="btn-secondary mt-6 w-full h-14 flex items-center justify-center gap-2">
-              <ChevronLeft size={20} /> Назад
+            <button onClick={handleBack} className="btn-secondary mt-4 w-full h-12 flex items-center justify-center gap-2">
+              <ChevronLeft size={20} /> Назад к вопросам
             </button>
           </div>
         ) : isContactStep ? (
           <div className="animate-in fade-in slide-in-from-right-4 duration-300">
             <QuizContactForm onSubmit={onContactSubmit} isSubmitting={isSubmitting} />
-            <button onClick={handleBack} className="btn-secondary mt-6 w-full h-14 flex items-center justify-center gap-2">
-              <ChevronLeft size={20} /> Назад
+            <button onClick={handleBack} className="btn-secondary mt-4 w-full h-12 flex items-center justify-center gap-2 text-sm">
+              <ChevronLeft size={18} /> Вернуться к результатам
             </button>
           </div>
         ) : (
