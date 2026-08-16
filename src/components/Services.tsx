@@ -500,17 +500,17 @@ export function ServiceCard({
         </div>
 
         {/* Price (Desktop/Tablet only) */}
-        <div className="mt-auto pt-6 hidden sm:flex items-center justify-end gap-4 md:gap-5">
+        <div className="mt-auto pt-6 hidden sm:flex items-center justify-end gap-4 md:gap-5 min-h-[64px]">
           {hasDiscount && (
-            <span className="ds-price-old">
+            <span className="ds-price-old self-center">
               {renderPrice(originalPrice)}
             </span>
           )}
-          <div className="flex flex-col items-end">
-            <span className="font-noto-serif-narrow ds-price text-[#1C3C8C]">
+          <div className="flex flex-col items-end justify-center">
+            <span className="font-noto-serif-narrow ds-price text-[#1C3C8C] leading-none">
               {renderPrice(computedPrice)}
             </span>
-            <span className="text-[13px] font-light text-[#566A93] leading-none mt-1">{priceLabel}</span>
+            <span className="text-[13px] font-light text-[#566A93] leading-none mt-1.5">{priceLabel}</span>
           </div>
         </div>
       </div>
