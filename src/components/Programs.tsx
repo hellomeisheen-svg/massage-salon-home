@@ -175,11 +175,7 @@ export function Programs({ prioritizeKeys }: ProgramsProps = {}) {
         {/* Left column */}
         <div className="self-start flex flex-col items-center xl:items-start text-center xl:text-left">
           <span
-            className="inline-flex items-center gap-2 px-4 py-1.5 ds-label text-white"
-            style={{
-              borderRadius: "4px",
-              backgroundImage: "linear-gradient(to bottom, #A2CFFE, #88C1FF)",
-            }}
+            className="inline-flex items-center gap-2 px-4 py-1.5 ds-chip !bg-[var(--color-primary-action)] text-white !border-none !rounded-[var(--radius-sm)]"
           >
             Программы восстановления
           </span>
@@ -217,7 +213,7 @@ export function Programs({ prioritizeKeys }: ProgramsProps = {}) {
         </div>
 
         {/* Right column — program card */}
-        <article className="ds-card p-5 sm:p-8 flex flex-col h-[620px] sm:h-[671px] xl:h-auto xl:min-h-[700px] hover:translate-y-0 hover:shadow-[var(--shadow-card)]">
+        <article className="ds-card p-5 sm:p-8 flex flex-col h-[620px] sm:h-[671px] xl:h-auto xl:min-h-[700px] hover:translate-y-0 bg-[var(--color-bg-card)] border border-[var(--color-border)] shadow-[var(--shadow-card)] rounded-[var(--radius-card)]">
           <h3 className="font-noto-serif-narrow ds-h3 text-[var(--color-primary)]">
             {program.name}
           </h3>
