@@ -125,22 +125,30 @@
   line-height: 150%;
   min-height: 60px;
   color: #fff;
-  background-image: linear-gradient(to bottom, #A2CFFE, #88C1FF);
+  background-image: linear-gradient(to bottom, #5DAAFD, #2F7BD6);
+  box-shadow: 0 10px 24px -12px rgba(28, 60, 140, 0.45);
   isolation: isolate;
   overflow: hidden;
   touch-action: manipulation;
+  transition: box-shadow 0.35s ease, transform 0.2s ease;
 }
 .btn-primary::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: #5DAAFD;
+  background-image: linear-gradient(to bottom, #3E93EC, #1C5FB4);
   opacity: 0;
   transition: opacity 0.35s ease;
   z-index: -1;
 }
 .btn-primary:hover::before {
   opacity: 1;
+}
+.btn-primary:hover {
+  box-shadow: 0 14px 30px -12px rgba(28, 60, 140, 0.55);
+}
+.btn-primary:active {
+  transform: translateY(1px);
 }
 @utility btn-secondary {
   position: relative;
@@ -155,7 +163,7 @@
   min-height: 60px;
   color: #1c3c8c;
   background-color: transparent;
-  border: 1px solid #daebff;
+  border: 1px solid #A2CFFE;
   isolation: isolate;
   overflow: hidden;
   transition: border-color 0.35s ease, color 0.35s ease;
@@ -173,8 +181,9 @@
   opacity: 1;
 }
 .btn-secondary:hover {
-  border-color: #A2CFFE;
+  border-color: #5DAAFD;
 }
+
 
 @utility btn-header-cta {
   position: relative;
@@ -189,7 +198,7 @@
   min-height: 60px;
   color: #1c3c8c;
   background-color: transparent;
-  border: 1px solid #DAEBFF;
+  border: 1px solid #A2CFFE;
   isolation: isolate;
   overflow: hidden;
   transition: color 0.5s ease, border-color 0.5s ease;
@@ -198,7 +207,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(to bottom, #A2CFFE, #88C1FF);
+  background-image: linear-gradient(to bottom, #5DAAFD, #2F7BD6);
   opacity: 0;
   transition: opacity 0.5s ease;
   z-index: -2;
@@ -216,18 +225,19 @@
   opacity: 1;
 }
 .btn-header-cta:hover {
-  border-color: #DAEBFF;
+  border-color: #5DAAFD;
 }
 .btn-header-cta-active::before {
   opacity: 1;
 }
 .btn-header-cta-active::after {
-  background-color: #5DAAFD;
+  background-color: #2F7BD6;
 }
 .btn-header-cta-active {
   color: #fff;
-  border-color: #DAEBFF;
+  border-color: #2F7BD6;
 }
+
 
 /* Ghost navigation arrows */
 @utility btn-nav {
@@ -608,7 +618,7 @@ button:focus-visible {
   font-size: 16px;
   line-height: 1.2;
   text-decoration: line-through;
-  color: color-mix(in srgb, #566a93 60%, transparent);
+  color: color-mix(in srgb, #566a93 75%, transparent);
 }
 
 /* Служебные лейблы и счётчики (Inter) */
@@ -639,13 +649,17 @@ button:focus-visible {
   border-radius: 12px;
   border: 1px solid #daebff;
   background-color: #fff;
-  transition: box-shadow 0.3s ease;
+  box-shadow: 0 2px 10px -6px rgba(28, 60, 140, 0.12);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
 }
 @media (hover: hover) and (pointer: fine) {
   .ds-card-hover:hover {
-    box-shadow: 0 20px 50px -24px rgba(28, 60, 140, 0.18);
+    box-shadow: 0 20px 50px -20px rgba(28, 60, 140, 0.24);
+    border-color: #A2CFFE;
+    transform: translateY(-2px);
   }
 }
+
 
 /* ===== Preloader ===== */
 .preloader {
