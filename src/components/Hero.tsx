@@ -93,7 +93,7 @@ export function Hero() {
       <section id="hero" className="container-1900 grid grid-cols-1 gap-4 sm:gap-5 xl:min-h-[calc(100vh-160px)] xl:grid-cols-2">
         {/* Content card */}
         <div className="flex min-h-0 flex-col ds-card ds-bento-shadow p-5 sm:min-h-[520px] sm:p-6 xl:min-h-0 xl:p-10">
-          <SpecialistBlock />
+          <RatingBlock />
           <div className="mt-[100px] pt-0 sm:mt-[140px] xl:mt-auto xl:pt-[140px]">
             <HeadlineBlock onOpenQuiz={() => setIsQuizOpen(true)} />
           </div>
