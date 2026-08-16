@@ -75,7 +75,7 @@ export function Header({
       {/* Desktop header */}
       <div className="hidden h-20 w-full items-center justify-between ds-card px-5 py-2.5 xl:flex xl:px-[30px]">
         {/* Logo */}
-        <Link to="/" aria-label="На главную" className="flex h-12 items-center hover:opacity-70 transition-opacity text-link-active">
+        <Link to="/" aria-label="На главную" className="flex h-12 items-center hover:opacity-70 transition-opacity logo-link-active">
           <Logo className="h-full w-auto" />
         </Link>
 
@@ -111,7 +111,7 @@ export function Header({
       {/* Mobile / tablet header */}
       <div className="flex h-16 w-full items-center justify-between ds-card px-4 py-2.5 xl:hidden">
         {/* Logo */}
-        <Link to="/" aria-label="На главную" onClick={() => setMenuOpen(false)} className="flex h-10 items-center hover:opacity-70 transition-opacity text-link-active">
+        <Link to="/" aria-label="На главную" onClick={() => setMenuOpen(false)} className="flex h-10 items-center hover:opacity-70 transition-opacity logo-link-active">
           <Logo className="h-full w-auto" />
         </Link>
 
@@ -217,7 +217,7 @@ export function Header({
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Макс — мессенджер"
-                    className="ml-auto flex h-10 w-10 items-center justify-center rounded-[0.5rem] border border-[#daebff] bg-[#EFF6FF] text-[#1c3c8c] hover:bg-[#DAEBFF] transition-colors text-link-active"
+                    className="ml-auto flex h-10 w-10 items-center justify-center rounded-[0.5rem] border border-[#daebff] bg-[#EFF6FF] text-[#1c3c8c] hover:bg-[#DAEBFF] transition-colors icon-btn-active"
                   >
 
                     <svg

@@ -272,10 +272,13 @@ button:focus-visible {
   border-radius: 0.5rem;
 }
 
-.text-link-active:active {
+.text-link-active:active,
+.logo-link-active:active,
+.icon-btn-active:active {
   opacity: 0.6 !important;
   transition: opacity 0.1s ease;
 }
+
 
 
 .faq-trigger:focus-visible {
