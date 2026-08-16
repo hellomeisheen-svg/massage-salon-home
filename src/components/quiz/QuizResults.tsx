@@ -62,8 +62,8 @@ export function QuizResults({
       </div>
 
       <div className="pt-4 flex flex-col gap-3">
-        <button onClick={onNext} className="btn-primary w-full py-4">
-          Записаться
+        <button onClick={onNext} className="btn-primary w-full py-4 active:opacity-85 transition-opacity">
+          Получить рекомендации
         </button>
         <a 
           href="https://max.ru/u/f9LHodD0cOLS1ZC9ThcQkVLRVzcK-MbYZ7JVAg8PC5Tx9LyihgOVdPnzaxM" 
