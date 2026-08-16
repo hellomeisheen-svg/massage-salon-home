@@ -16,13 +16,13 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
     if (dir === "wellness") return calculateResult({ ...answers, goal: "wellness" });
     
     // Векторный массаж первым для первого визита
-    return [getService("vector"), getService("classic-full")].filter((s): s is QuizService => !!s);
+    return [getService("vector"), getService("classic_full")].filter((s): s is QuizService => !!s);
   }
 
   // Ветка 4: Лицо (face) - изолирована
   const isFacePath = goal === "face" || (goal === "lightness" && answers.lightness_area?.length === 1 && answers.lightness_area.includes("face"));
   if (isFacePath) {
-    serviceIds = ["lymph-face", "classic-face", "girudo-cosm"];
+    serviceIds = ["lymph_face", "classic_face", "girudo_cosm"];
     return serviceIds.map(id => getService(id)).filter((s): s is QuizService => !!s);
   }
 
@@ -61,24 +61,24 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
     const isLower = areas.includes("lower_back");
     
     if (isUpper && isLower) {
-      serviceIds = ["vector", "classic-full", "classic-spine"];
+      serviceIds = ["vector", "classic_full", "classic_spine_neck"];
     } else if (isLower) {
-      serviceIds = ["classic-full", "vector", "classic-spine"];
+      serviceIds = ["classic_full", "vector", "classic_spine_neck"];
     } else if (isUpper) {
       if (res === "deep_work") {
-        serviceIds = ["classic-spine", "classic-full", "vector"];
+        serviceIds = ["classic_spine_neck", "classic_full", "vector"];
       } else {
-        serviceIds = ["classic-spine", "classic-full"];
+        serviceIds = ["classic_spine_neck", "classic_full"];
       }
     } else {
-      serviceIds = ["classic-spine", "vector"];
+      serviceIds = ["classic_spine_neck", "vector"];
     }
   }
 
   // Ветка 3: Убрать отёчность (lightness)
   else if (goal === "lightness") {
     const areas = answers.lightness_area || [];
-    if (areas.includes("legs") || areas.includes("feet")) serviceIds = ["classic-legs", "lymph", "lymphatic"];
+    if (areas.includes("legs") || areas.includes("feet")) serviceIds = ["classic_legs", "lymph", "lymphatic"];
     else if (areas.includes("whole_body")) serviceIds = ["lymph", "lymphatic", "vector"];
     else serviceIds = ["lymph", "lymphatic"];
   }
@@ -87,22 +87,22 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
   else if (goal === "wellness") {
     const wellnessPriority = [
       "ketgut",
-      "girudo-med",
-      "girudo-cosm",
-      "cups-fire",
-      "cups-air"
+      "girudo_med",
+      "girudo_cosm",
+      "cups_fire",
+      "cups_air"
     ];
 
     const selectedTypes = answers.wellness_type || [];
     
     if (selectedTypes.includes("master_choice")) {
-      serviceIds = ["ketgut", "girudo-med", "cups-air"];
+      serviceIds = ["ketgut", "girudo_med", "cups_air"];
     } else {
       const practiceMapping: Record<string, string> = {
-        cups_air: "cups-air",
-        cups_fire: "cups-fire",
-        hirudo_medical: "girudo-med",
-        hirudo_cosmetic: "girudo-cosm",
+        cups_air: "cups_air",
+        cups_fire: "cups_fire",
+        hirudo_medical: "girudo_med",
+        hirudo_cosmetic: "girudo_cosm",
         ketgut: "ketgut"
       };
       
