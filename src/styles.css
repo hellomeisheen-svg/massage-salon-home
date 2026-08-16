@@ -272,6 +272,12 @@ button:focus-visible {
   border-radius: 0.5rem;
 }
 
+.text-link-active:active {
+  opacity: 0.6 !important;
+  transition: opacity 0.1s ease;
+}
+
+
 .faq-trigger:focus-visible {
   outline: 2px solid #1C3C8C;
   outline-offset: 3px;
