@@ -94,15 +94,14 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
       answers.selectedArea ?? 
       answers.relaxArea;
 
+    const recommendedServices = getLightnessRecommendations({ ...answers, lightnessArea: area });
+    
     console.log("LIGHTNESS DEBUG", {
       goal: answers.goal,
-      lightnessArea: answers.lightnessArea,
       area: area,
-      recommendedServiceIds: getLightnessRecommendations({ ...answers, lightnessArea: area })
+      recommendedCount: recommendedServices.length
     });
 
-    const recommendedServices = getLightnessRecommendations({ ...answers, lightnessArea: area });
-    console.log("LIGHTNESS RESOLVED SERVICES", recommendedServices);
     return recommendedServices;
   }
 
@@ -198,27 +197,96 @@ function getBackNeckRecommendations(answers: Record<string, any>): QuizService[]
 }
 
 function getLightnessRecommendations(answers: Record<string, any>): QuizService[] {
-  const getService = (id: string) => QUIZ_CONFIG.services.find(s => s.id === id);
   const area =
     answers.lightnessArea ??
     answers.area ??
     answers.selectedArea ??
     answers.relaxArea;
 
+  // Готовые объекты для ветки lightness с кастомными описаниями, если нужно
+  // Но мы будем брать их из основного конфига для консистентности, 
+  // если ID совпадают.
+  const getService = (id: string) => QUIZ_CONFIG.services.find(s => s.id === id);
+
+  const lightnessServices: Record<string, Partial<QuizService>> = {
+    lymph: {
+      id: "lymph",
+      name: "Лимфодренажный",
+      description: "Бережная техника для поддержки лимфотока, уменьшения отёчности и ощущения тяжести в теле.",
+      duration: "120 минут",
+      price: "5 000 ₽"
+    },
+    lymphatic: {
+      id: "lymphatic",
+      name: "Лимфатический",
+      description: "Деликатная работа с лимфатической системой и общим состоянием тела. Помогает мягко поддержать естественные процессы восстановления и почувствовать лёгкость.",
+      duration: "120 минут",
+      price: "5 000 ₽"
+    },
+    classic_legs: {
+      id: "classic_legs",
+      name: "Классический — ноги/стопы",
+      description: "Работа с икрами, бёдрами и стопами. Подходит после долгого дня на ногах, тренировок или длительной сидячей работы.",
+      duration: "60 минут",
+      price: "3 000 ₽"
+    },
+    vector: {
+      id: "vector",
+      name: "Векторный массаж",
+      description: "Комплексная работа с телом для глубокого расслабления и восстановления баланса.",
+      duration: "120 минут",
+      price: "5 000 ₽"
+    },
+    lymph_face: {
+      id: "lymph_face",
+      name: "Лимфодренажный — лицо",
+      description: "Деликатно выводит лишнюю жидкость, возвращая свежесть взгляду.",
+      duration: "40 минут",
+      price: "2 000 ₽"
+    },
+    classic_face: {
+      id: "classic_face",
+      name: "Классический — лицо",
+      description: "Поддерживает тонус мышц лица и улучшает цвет кожи.",
+      duration: "40 минут",
+      price: "2 000 ₽"
+    },
+    girudo_cosm: {
+      id: "girudo_cosm",
+      name: "Косметические пиявки",
+      description: "Природный лифтинг и улучшение микроциркуляции кожи лица.",
+      duration: "40-60 мин",
+      price: "от 600 ₽ за шт"
+    }
+  };
+
+  const resolve = (id: string): QuizService | null => {
+    const base = getService(id);
+    const custom = lightnessServices[id];
+    if (!base && !custom) return null;
+    return {
+      ...(base || {}),
+      ...(custom || {}),
+      id: id,
+      tags: base?.tags || [],
+    } as QuizService;
+  };
+
   let ids: string[] = [];
 
-  if (area === "face") {
+  const areas = Array.isArray(area) ? area : [area].filter(Boolean);
+
+  if (areas.includes("face")) {
     ids = ["lymph_face", "classic_face", "girudo_cosm"];
-  } else if (area === "legs" || area === "feet" || (Array.isArray(area) && (area.includes("legs") || area.includes("feet")))) {
+  } else if (areas.includes("legs") || areas.includes("feet")) {
     ids = ["lymph", "lymphatic", "classic_legs"];
-  } else if (area === "whole_body" || (Array.isArray(area) && area.includes("whole_body"))) {
+  } else if (areas.includes("whole_body")) {
     ids = ["lymph", "lymphatic", "vector"];
-  } else if (area === "master_choice" || (Array.isArray(area) && area.includes("master_choice"))) {
+  } else if (areas.includes("master_choice") || areas.length === 0) {
     ids = ["lymph", "lymphatic", "classic_legs"];
   } else {
-    // Fallback
     ids = ["lymph", "lymphatic", "classic_legs"];
   }
 
-  return ids.map(id => getService(id)).filter((s): s is QuizService => !!s);
+  return ids.map(id => resolve(id)).filter((s): s is QuizService => !!s);
 }
