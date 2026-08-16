@@ -330,42 +330,48 @@ function BookingDialog({
                 />
               </label>
 
-              <label className="flex items-start gap-3">
-                <span className="relative mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center">
-                  <input
-                    type="checkbox"
-                    name="consent"
-                    checked={consent}
-                    onChange={(e) => {
-                      setConsent(e.target.checked);
-                      if (e.target.checked) setConsentError(null);
-                    }}
-                    className="peer h-5 w-5 shrink-0 cursor-pointer appearance-none rounded-[6px] border border-[#A2CFFE] bg-[#EFF6FF] transition-colors hover:border-[#5DAAFD] checked:border-[#88C1FF] checked:bg-[#88C1FF] checked:hover:bg-[#5DAAFD] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5DAAFD]"
-                  />
-                  <Check
-                    size={14}
-                    strokeWidth={3}
-                    className="pointer-events-none absolute text-white opacity-0 transition-opacity peer-checked:opacity-100"
-                  />
-                </span>
+              <div className="flex flex-col gap-1.5">
+                <label className="flex items-start gap-3 cursor-pointer" htmlFor="consent-checkbox">
+                  <span className="relative mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center">
+                    <input
+                      id="consent-checkbox"
+                      type="checkbox"
+                      name="consent"
+                      required
+                      checked={consent}
+                      aria-invalid={!!consentError}
+                      aria-describedby={consentError ? "consent-error" : undefined}
+                      onChange={(e) => {
+                        setConsent(e.target.checked);
+                        if (e.target.checked) setConsentError(null);
+                      }}
+                      className="peer h-5 w-5 shrink-0 cursor-pointer appearance-none rounded-[6px] border border-[#A2CFFE] bg-[#EFF6FF] transition-colors hover:border-[#5DAAFD] checked:border-[#88C1FF] checked:bg-[#88C1FF] checked:hover:bg-[#5DAAFD] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5DAAFD]"
+                    />
+                    <Check
+                      size={14}
+                      strokeWidth={3}
+                      className="pointer-events-none absolute text-white opacity-0 transition-opacity peer-checked:opacity-100"
+                    />
+                  </span>
 
-                <span className="text-[13px] leading-[1.5] text-[#566A93]">
-                  Нажимая кнопку, вы соглашаетесь с{" "}
-                  <a
-                    href="/privacy-policy"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    политикой конфиденциальности
-                  </a>
-                  .
-                </span>
-              </label>
-              {consentError && (
-                <p className="text-[13px] leading-[1.5] text-[#C0392B]">{consentError}</p>
-              )}
+                  <span className="text-[13px] leading-[1.5] text-[#566A93]">
+                    Нажимая кнопку, вы соглашаетесь с{" "}
+                    <a
+                      href="/privacy-policy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      политикой конфиденциальности
+                    </a>
+                    .
+                  </span>
+                </label>
+                {consentError && (
+                  <p id="consent-error" className="text-[13px] leading-[1.5] text-[#C0392B]">{consentError}</p>
+                )}
+              </div>
 
               {error && (
                 <p className="text-[13px] leading-[1.5] text-[#C0392B] text-center">{error}</p>
