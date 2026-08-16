@@ -255,7 +255,7 @@ function AboutService({ content }: { content: ServicePageContent }) {
           <span
             className="inline-flex items-center gap-2 px-4 py-1.5 ds-label text-white"
             style={{
-              borderRadius: "12px",
+            borderRadius: "12px",
               backgroundImage: "linear-gradient(to bottom, #A2CFFE, #88C1FF)",
             }}
           >
@@ -319,7 +319,7 @@ function PriceCard({ p, prefix }: { p: ServicePrice; prefix: string }) {
 
   return (
     <article className="flex flex-col ds-card p-6 sm:p-8 xl:p-10">
-      <div className="flex items-stretch gap-1 rounded-[12px] bg-[#EFF6FF] p-1">
+      <div className="items-stretch gap-1 rounded-[12px] bg-[#EFF6FF] p-1 flex">
         {tabLabels.map((label, i) => (
           <button
             key={label}
@@ -338,7 +338,7 @@ function PriceCard({ p, prefix }: { p: ServicePrice; prefix: string }) {
               {label}
             </span>
             {sessionDiscounts[i] && (
-              <span className="absolute -top-1 right-1 rounded-full bg-[#1C3C8C] px-1.5 py-0.5 text-[9px] font-semibold tracking-wide text-white">
+              <span className="absolute -top-1 right-1 rounded-[12px] bg-[#1C3C8C] px-1.5 py-0.5 text-[9px] font-semibold tracking-wide text-white">
                 {sessionDiscounts[i]}
               </span>
             )}
@@ -395,7 +395,7 @@ function PriceTable({ content }: { content: ServicePageContent }) {
               <th className="px-6 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
                 <span className="flex items-center gap-2">
                   3 сеанса
-                  <span className="rounded-full bg-[#1C3C8C] px-2 py-0.5 text-[10px] font-semibold text-white">
+                  <span className="rounded-[12px] bg-[#1C3C8C] px-2 py-0.5 text-[10px] font-semibold text-white">
                     -10%
                   </span>
                 </span>
@@ -403,7 +403,7 @@ function PriceTable({ content }: { content: ServicePageContent }) {
               <th className="px-6 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
                 <span className="flex items-center gap-2">
                   6 сеансов
-                  <span className="rounded-full bg-[#1C3C8C] px-2 py-0.5 text-[10px] font-semibold text-white">
+                  <span className="rounded-[12px] bg-[#1C3C8C] px-2 py-0.5 text-[10px] font-semibold text-white">
                     -15%
                   </span>
                 </span>
