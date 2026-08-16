@@ -91,7 +91,7 @@ export function QuizContactForm({
             required
             autoComplete="name"
             placeholder="Как к вам обращаться" 
-            className="h-[52px] w-full rounded-[0.5rem] border border-[#daebff] bg-[#EFF6FF] px-4 text-[16px] text-foreground outline-none transition-colors placeholder:text-[#566A93] focus:border-[#1C3C8C] focus:bg-white"
+            className="h-[52px] w-full rounded-lg border border-[#daebff] bg-[#EFF6FF] px-4 text-[16px] text-foreground outline-none transition-colors placeholder:text-[#566A93] focus:border-[#1C3C8C] focus:bg-white"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
@@ -106,7 +106,7 @@ export function QuizContactForm({
             required
             autoComplete="tel"
             placeholder="+7 (___) ___-__-__" 
-            className={`h-[52px] w-full rounded-[0.5rem] border bg-[#EFF6FF] px-4 text-[16px] text-foreground outline-none transition-colors placeholder:text-[#566A93] focus:border-[#1C3C8C] focus:bg-white ${
+            className={`h-[52px] w-full rounded-lg border bg-[#EFF6FF] px-4 text-[16px] text-foreground outline-none transition-colors placeholder:text-[#566A93] focus:border-[#1C3C8C] focus:bg-white ${
               phoneError ? "border-[#C0392B]" : "border-[#daebff]"
             }`}
             value={formatPhone(phone)}
@@ -127,7 +127,7 @@ export function QuizContactForm({
                 key={m.id}
                 type="button"
                 onClick={() => setMethod(m.id)}
-                className={`h-[48px] rounded-[0.5rem] border text-xs font-medium transition-all ${
+                className={`h-[48px] rounded-lg border text-xs font-medium transition-all ${
                   method === m.id ? "bg-white border-[#1C3C8C] text-[#1C3C8C]" : "bg-[#EFF6FF] border-[#daebff] text-[#566A93]"
                 }`}
               >

@@ -85,7 +85,7 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
       <div className="relative my-auto w-full max-w-[640px] ds-card p-5 sm:p-8 xl:p-10 transition-transform duration-300 scale-100">
         <button 
           onClick={onClose} 
-          className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-[0.5rem] border border-[#daebff] bg-[#EFF6FF] text-[#1C3C8C] transition-colors hover:bg-white z-10"
+          className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-lg border border-[#daebff] bg-[#EFF6FF] text-[#1C3C8C] transition-colors hover:bg-white z-10"
           aria-label="Закрыть"
         >
           <X size={18} />
@@ -203,7 +203,7 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
                         });
                       }
                     }}
-                    className={`quiz-option w-full text-left p-4 md:p-5 rounded-[0.5rem] border border-[#daebff] transition-all duration-300 flex items-center justify-between group ${
+                    className={`quiz-option w-full text-left p-4 md:p-5 rounded-lg border border-[#daebff] transition-all duration-300 flex items-center justify-between group ${
                       isSelected 
                         ? "border-[#1C3C8C] bg-white text-[#1c3c8c]" 
                         : "bg-[#EFF6FF] text-[#566A93] hover:bg-white"
