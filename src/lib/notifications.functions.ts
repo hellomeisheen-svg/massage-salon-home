@@ -14,6 +14,7 @@ const sendNotificationSchema = z.object({
 export const sendLeadNotification = createServerFn({ method: "POST" })
   .inputValidator((data) => sendNotificationSchema.parse(data))
   .handler(async ({ data }) => {
+    console.log("[Notification] Handler started for lead:", data.leadId);
     const { leadId, phone } = data;
     
     // Import admin client dynamically inside handler to avoid client-side leakage
@@ -54,7 +55,8 @@ export const sendLeadNotification = createServerFn({ method: "POST" })
         return { success: true, alreadySent: true };
       }
 
-      const resendApiKey = process.env.RESEND_API_KEY;
+      const resendApiKey = process.env['RESEND_API_KEY'];
+      console.log("[Notification] API Key present:", !!resendApiKey);
       if (!resendApiKey) {
         console.error("[Notification Error] RESEND_API_KEY is not configured");
         return { success: false, error: "Resend API key missing" };
@@ -115,7 +117,7 @@ export const sendLeadNotification = createServerFn({ method: "POST" })
           subject: emailSubject,
           html: `
             <div style="font-family: sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto;">
-              <h2 style="color: #1C3C8C; border-bottom: 2px solid #DAEBFF; padding-bottom: 10px;">Новая заявка</h2>
+              <h2 style="color: #1C3C8C; border-bottom: 2px solid #DAEBFF; padding-bottom: 10px;">Новая заявка (Тестовое подтверждение)</h2>
               <div style="margin: 20px 0;">
                 <p><strong>Имя:</strong> ${name}</p>
                 <p><strong>Телефон:</strong> ${phoneVal}</p>
