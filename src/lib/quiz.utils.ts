@@ -87,9 +87,12 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
 
   // Ветка 3: Убрать отёчность (lightness)
   else if (goal === "lightness") {
+    // ВНИМАНИЕ: В этой ветке (multiple choice) ID ответа — lightness_area.
+    // Если пользователь выбрал только одну зону "face", он может попасть в facePath выше,
+    // но если выбрано несколько зон, мы попадаем сюда.
     const area = 
-      answers.lightnessArea ?? 
       answers.lightness_area ?? 
+      answers.lightnessArea ?? 
       answers.area ?? 
       answers.selectedArea ?? 
       answers.relaxArea;
@@ -98,7 +101,8 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
     
     console.log("LIGHTNESS DEBUG", {
       goal: answers.goal,
-      area: area,
+      rawArea: answers.lightness_area,
+      finalArea: area,
       recommendedCount: recommendedServices.length
     });
 
@@ -197,11 +201,14 @@ function getBackNeckRecommendations(answers: Record<string, any>): QuizService[]
 }
 
 function getLightnessRecommendations(answers: Record<string, any>): QuizService[] {
+  // Пытаемся достать значение зоны из всех возможных ключей
   const area =
     answers.lightnessArea ??
+    answers.lightness_area ??
     answers.area ??
     answers.selectedArea ??
     answers.relaxArea;
+
 
   // Готовые объекты для ветки lightness с кастомными описаниями, если нужно
   // Но мы будем брать их из основного конфига для консистентности, 
