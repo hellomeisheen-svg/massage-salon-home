@@ -34,6 +34,11 @@ export function QuizContactForm({
   const [phoneError, setPhoneError] = useState<string | null>(null);
   const [consentError, setConsentError] = useState<string | null>(null);
   
+  const handleFocus = (e: React.FocusEvent<HTMLInputElement | HTMLButtonElement>) => {
+    // Scroll element into view when keyboard might appear
+    e.target.scrollIntoView({ behavior: "smooth", block: "center" });
+  };
+
   const handlePhoneInput = (e: React.FormEvent<HTMLInputElement>) => {
     const native = e.nativeEvent as InputEvent;
     const raw = (e.target as HTMLInputElement).value;
@@ -94,6 +99,7 @@ export function QuizContactForm({
             className="h-[52px] w-full rounded-[0.5rem] border border-[#daebff] bg-[#EFF6FF] px-4 text-[16px] text-foreground outline-none transition-colors placeholder:text-[#566A93] focus:border-[#1C3C8C] focus:bg-white"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            onFocus={handleFocus}
           />
         </label>
 
@@ -111,6 +117,7 @@ export function QuizContactForm({
             }`}
             value={formatPhone(phone)}
             onChange={handlePhoneInput}
+            onFocus={handleFocus}
           />
           {phoneError && <span className="text-[13px] leading-[1.5] text-[#C0392B]">{phoneError}</span>}
         </label>
@@ -127,6 +134,7 @@ export function QuizContactForm({
                 key={m.id}
                 type="button"
                 onClick={() => setMethod(m.id)}
+                onFocus={handleFocus}
                 className={`h-[48px] rounded-[0.5rem] border text-xs font-medium transition-all ${
                   method === m.id ? "bg-white border-[#1C3C8C] text-[#1C3C8C]" : "bg-[#EFF6FF] border-[#daebff] text-[#566A93]"
                 }`}
@@ -143,11 +151,12 @@ export function QuizContactForm({
               type="checkbox" 
               name="consent"
               checked={consent}
-              onChange={(e) => {
-                setConsent(e.target.checked);
-                if (e.target.checked) setConsentError(null);
-              }}
-              className="peer h-5 w-5 shrink-0 cursor-pointer appearance-none rounded-[6px] border border-[#A2CFFE] bg-[#EFF6FF] transition-colors hover:border-[#5DAAFD] checked:border-[#88C1FF] checked:bg-[#88C1FF] checked:hover:bg-[#5DAAFD] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5DAAFD]"
+                  onChange={(e) => {
+                    setConsent(e.target.checked);
+                    if (e.target.checked) setConsentError(null);
+                  }}
+                  onFocus={handleFocus}
+                  className="peer h-5 w-5 shrink-0 cursor-pointer appearance-none rounded-[6px] border border-[#A2CFFE] bg-[#EFF6FF] transition-colors hover:border-[#5DAAFD] checked:border-[#88C1FF] checked:bg-[#88C1FF] checked:hover:bg-[#5DAAFD] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5DAAFD]"
             />
             <Check size={14} strokeWidth={3} className="pointer-events-none absolute text-white opacity-0 transition-opacity peer-checked:opacity-100" />
           </span>
@@ -171,6 +180,7 @@ export function QuizContactForm({
       <button 
         type="submit" 
         disabled={isSubmitting}
+        onFocus={handleFocus}
         className="btn-primary w-full h-14 flex items-center justify-center gap-3"
       >
         {isSubmitting ? (
