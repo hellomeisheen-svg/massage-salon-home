@@ -4,6 +4,11 @@ import { z } from "zod";
 const sendNotificationSchema = z.object({
   leadId: z.string().uuid().optional(),
   phone: z.string().optional(),
+  results: z.array(z.string()).optional(),
+  answers: z.array(z.object({
+    question: z.string(),
+    answer: z.union([z.string(), z.array(z.string())])
+  })).optional(),
 });
 
 export const sendLeadNotification = createServerFn({ method: "POST" })
@@ -76,6 +81,19 @@ export const sendLeadNotification = createServerFn({ method: "POST" })
       `;
 
       // 4. Send Email via Resend API
+      const emailSubject = lead.message?.includes("[QUIZ LEAD]") 
+        ? `Результат квиза: ${name}`
+        : `Новая заявка с сайта: ${name}`;
+
+      const resultsHtml = lead.message?.includes("[QUIZ LEAD]") 
+        ? `
+          <div style="margin-top: 20px; padding: 15px; background-color: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0;">
+            <h3 style="color: #1C3C8C; margin-top: 0;">Детали квиза:</h3>
+            ${lead.message}
+          </div>
+        ` 
+        : `<p><strong>Сообщение:</strong> ${message}</p>`;
+
       const response = await fetch("https://api.resend.com/emails", {
         method: "POST",
         headers: {
@@ -85,8 +103,18 @@ export const sendLeadNotification = createServerFn({ method: "POST" })
         body: JSON.stringify({
           from: "7 Heaven Massage <zayavki@7heavenmassage.ru>",
           to: "meisheen@yandex.ru",
-          subject: `Новая заявка с сайта 7 Heaven Massage — ${name}`,
-          html: emailHtml,
+          subject: emailSubject,
+          html: `
+            <div style="font-family: sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto;">
+              <h2 style="color: #1C3C8C; border-bottom: 2px solid #DAEBFF; padding-bottom: 10px;">Новая заявка</h2>
+              <div style="margin: 20px 0;">
+                <p><strong>Имя:</strong> ${name}</p>
+                <p><strong>Телефон:</strong> ${phoneVal}</p>
+                ${resultsHtml}
+                <p style="margin-top: 20px; font-size: 12px; color: #64748b;">Дата заявки: ${createdAt}</p>
+              </div>
+            </div>
+          `,
         }),
       });
 
