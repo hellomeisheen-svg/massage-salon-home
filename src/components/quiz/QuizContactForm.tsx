@@ -115,8 +115,8 @@ export function QuizContactForm({
           </div>
         </div>
 
-        <label className="flex items-start gap-3 cursor-pointer group">
-          <div className="relative mt-1">
+        <label className="flex items-center gap-3 cursor-pointer group">
+          <div className="relative shrink-0">
             <input 
               type="checkbox" 
               className="peer sr-only" 
@@ -126,7 +126,7 @@ export function QuizContactForm({
             <div className="h-5 w-5 rounded-[6px] border border-[#A2CFFE] bg-[#EFF6FF] peer-checked:bg-[#88C1FF] peer-checked:border-[#88C1FF] transition-all" />
             <Check size={14} strokeWidth={3} className="absolute inset-0 m-auto text-white opacity-0 peer-checked:opacity-100 transition-opacity" />
           </div>
-          <span className="text-[13px] leading-[1.5] text-[#566A93]">
+          <span className="text-[13px] leading-tight text-[#566A93]">
             Нажимая кнопку, вы соглашаетесь с{" "}
             <a
               href="/privacy-policy"
