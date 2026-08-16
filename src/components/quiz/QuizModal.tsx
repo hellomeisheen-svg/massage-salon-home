@@ -142,16 +142,13 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
                     onClick={() => {
                       if (currentStep.type === "single") {
                         const newAnswers = { ...answers, [currentStep.id]: opt.id };
-                        setAnswers(newAnswers);
                         
-                        if (currentStep.id === "addCups") {
-                          console.log("CUPS ANSWER:", {
-                            goal: newAnswers.goal,
-                            intensity: newAnswers.intensity,
-                            addCups: newAnswers.addCups,
-                            answers: newAnswers
-                          });
+                        // Сброс ответа о банках, если зона изменилась и она не "спина/шея"
+                        if (currentStep.id === "relax_area" && opt.id !== "back_neck") {
+                          delete newAnswers.addCups;
                         }
+
+                        setAnswers(newAnswers);
                         
                         setTimeout(() => handleNext(newAnswers), 300);
                       } else {

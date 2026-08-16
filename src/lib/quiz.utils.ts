@@ -32,31 +32,45 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
     const intensity = answers.intensity;
     const addCups = answers.addCups;
 
-    // Сначала основная массажная рекомендация
-    serviceIds.push("vector");
-
-    // Добавляем массаж по зоне, если он не основной (векторный всегда первый в relax)
-    if (area === "back_neck") serviceIds.push("classic_spine_neck");
-    else if (area === "head") serviceIds.push("classic_head");
-    else if (area === "legs") serviceIds.push("classic_legs");
-
-    // Затем — банки, только при явном согласии пользователя
-    if (addCups === "yes") {
-      if (intensity === "soft") {
-        serviceIds.push("cups_air");
-      } else if (intensity === "deep") {
-        serviceIds.push("cups_fire");
-      } else {
-        // master_choice или если не выбрано
-        serviceIds.push("cups_air");
-      }
+    // Всё тело: только векторный массаж
+    if (area === "whole_body") {
+      return [getService("vector")].filter((s): s is QuizService => !!s);
     }
 
-    console.log("RELAX RECOMMENDATIONS:", {
-      intensity,
-      addCups,
-      serviceIds
-    });
+    // Голова: без банок
+    if (area === "head") {
+      return ["classic_head", "vector"].map(id => getService(id)).filter((s): s is QuizService => !!s);
+    }
+
+    // Ноги: без банок
+    if (area === "legs") {
+      return ["classic_legs", "vector"].map(id => getService(id)).filter((s): s is QuizService => !!s);
+    }
+
+    // Если человек не выбрал конкретную зону
+    if (area === "master_choice") {
+      return [getService("vector")].filter((s): s is QuizService => !!s);
+    }
+
+    // Только для спины, шеи и плеч:
+    if (area === "back_neck") {
+      serviceIds.push("vector", "classic_spine_neck");
+
+      // Банки добавляются только при явном согласии
+      if (addCups === "yes") {
+        if (intensity === "soft") {
+          serviceIds.push("cups_air");
+        }
+        if (intensity === "deep") {
+          serviceIds.push("cups_fire");
+        }
+      }
+      
+      const finalIds = Array.from(new Set(serviceIds));
+      return finalIds.map(id => getService(id)).filter((s): s is QuizService => !!s);
+    }
+
+    return [getService("vector")].filter((s): s is QuizService => !!s);
   }
 
   // Ветка 2: Снять напряжение (back_neck)
