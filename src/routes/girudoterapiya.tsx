@@ -446,7 +446,7 @@ const tabLabels = ["1\u00A0сеанс", "3\u00A0сеанса", "6\u00A0сеан�
 
 function HirudoPriceTable() {
   return (
-    <div className="ds-bento-shadow ds-card overflow-hidden bg-white border border-[#daebff]/40">
+    <div className="ds-bento-shadow ds-card overflow-hidden bg-white border border-[#daebff]">
       <div className="overflow-x-auto">
         <table className="w-full text-left border-collapse">
           <thead>
@@ -656,7 +656,7 @@ function FaqItem({ q, a }: { q: string; a: React.ReactNode }) {
           open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
         }`}
       >
-        <div className="overflow-hidden">
+        <div className="overflow-hidden px-2 -mx-2 py-3 -my-3">
           <div className="px-5 sm:px-6 xl:px-7 pb-5 sm:pb-6 xl:pb-7 body-text text-[#566A93] max-w-[720px]">
             {a}
           </div>

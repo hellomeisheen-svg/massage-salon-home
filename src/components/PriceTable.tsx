@@ -28,7 +28,7 @@ export function PriceTable({ prices, title = "Форматы и стоимост
           {title}
         </h2>
 
-        <div className="ds-card overflow-hidden bg-white/50 backdrop-blur-sm border border-[#daebff]/40 shadow-sm transition-shadow hover:[box-shadow:0_8px_24px_-6px_rgba(28,60,140,0.14)]">
+        <div className="ds-card ds-bento-shadow overflow-hidden bg-white/50 backdrop-blur-sm border border-[#daebff]">
           {/* Desktop */}
           <div className="hidden lg:block overflow-x-auto scrollbar-none">
             <table className="w-full text-left">
@@ -157,7 +157,7 @@ export function PriceTable({ prices, title = "Форматы и стоимост
                 const sessionWord = pluralize(count, ["сеанс", "сеанса", "сеансов"]);
                 
                 return (
-                  <div key={p.zone} className="bg-white p-4 rounded-[12px] border border-[#daebff]/50">
+                  <div key={p.zone} className="bg-white p-4 rounded-[12px] border border-[#daebff]">
                     <div className="space-y-2.5">
                       <div className="flex justify-between items-baseline gap-3">
                         <div className="flex-1 min-w-0">
