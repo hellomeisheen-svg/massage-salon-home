@@ -181,7 +181,7 @@ export function QuizContactForm({
             <span>Отправка...</span>
           </>
         ) : (
-          "Получить рекомендации"
+          "Отправить"
         )}
       </button>
 
