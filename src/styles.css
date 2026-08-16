@@ -618,7 +618,7 @@ button:focus-visible {
   font-size: 16px;
   line-height: 1.2;
   text-decoration: line-through;
-  color: color-mix(in srgb, #566a93 60%, transparent);
+  color: color-mix(in srgb, #566a93 75%, transparent);
 }
 
 /* Служебные лейблы и счётчики (Inter) */
