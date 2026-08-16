@@ -29,7 +29,7 @@ export function IntroSection() {
             <span 
               className="inline-flex items-center px-4 py-1.5 ds-label text-white"
               style={{
-                borderRadius: "4px",
+                borderRadius: "12px",
                 backgroundImage: "linear-gradient(to bottom, #A2CFFE, #88C1FF)",
               }}
             >
@@ -46,7 +46,7 @@ export function IntroSection() {
               </p>
               
               <div className="space-y-4">
-                <p className="font-medium text-[#1C3C8C] text-[18px]">еще вариант дизайна Моё образование и специализации:</p>
+                <p className="font-medium text-[#1C3C8C] text-[18px]">Моё образование и специализации:</p>
                 <div className="grid gap-3">
                   {educationList.map((item, idx) => (
                     <div key={idx} className="group relative flex flex-col p-4 rounded-[12px] bg-white border border-[#DAEBFF] hover:border-[#A2CFFE] transition-all duration-300">
