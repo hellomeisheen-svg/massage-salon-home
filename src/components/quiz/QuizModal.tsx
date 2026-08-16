@@ -32,9 +32,9 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
 
   if (!isOpen) return null;
 
-  const handleNext = () => {
-    if (isLastQuestion) {
-      const services = calculateResult(answers);
+  const handleNext = (currentAnswers = answers) => {
+    if (step === visibleSteps.length) {
+      const services = calculateResult(currentAnswers);
       setRecommendedServices(services);
     }
     setStep(step + 1);
@@ -141,8 +141,19 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
                     key={opt.id}
                     onClick={() => {
                       if (currentStep.type === "single") {
-                        setAnswers({ ...answers, [currentStep.id]: opt.id });
-                        setTimeout(handleNext, 300);
+                        const newAnswers = { ...answers, [currentStep.id]: opt.id };
+                        setAnswers(newAnswers);
+                        
+                        if (currentStep.id === "addCups") {
+                          console.log("CUPS ANSWER:", {
+                            goal: newAnswers.goal,
+                            intensity: newAnswers.intensity,
+                            addCups: newAnswers.addCups,
+                            answers: newAnswers
+                          });
+                        }
+                        
+                        setTimeout(() => handleNext(newAnswers), 300);
                       } else {
                         const current = answers[currentStep.id] || [];
                         const exists = current.includes(opt.id);

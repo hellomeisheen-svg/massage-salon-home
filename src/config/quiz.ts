@@ -58,7 +58,7 @@ export const QUIZ_CONFIG: {
       ],
     },
     {
-      id: "relax_intensity",
+      id: "intensity",
       question: "Какой формат воздействия вам ближе?",
       type: "single",
       showIf: (a) => a.goal === "relax",
