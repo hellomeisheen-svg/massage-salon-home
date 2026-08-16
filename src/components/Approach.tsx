@@ -49,7 +49,7 @@ export function Approach() {
         </div>
 
         {/* Right column — Среда вокруг */}
-        <div className="ds-card p-6 sm:p-8 xl:p-12">
+        <div className="ds-card p-6 sm:p-8 xl:p-12 rounded-[12px]">
           <h3 className="font-noto-serif-narrow ds-h2 text-left text-[#1C3C8C] leading-tight px-0">
             Всё, чтобы вы чувствовали себя спокойно и&nbsp;комфортно с&nbsp;первых минут
           </h3>
