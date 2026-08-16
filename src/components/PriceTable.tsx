@@ -165,7 +165,7 @@ export function PriceTable({ prices, title = "Форматы и стоимост
                             {p.zone.includes(" • ") ? (
                               <>
                                 <span>{p.zone.split(" • ")[0]}</span>
-                                <span className="inline-flex items-center justify-center rounded-full bg-[#DAEBFF] px-2 py-0.5 text-[10px] font-light leading-none text-[#566A93]">
+                                <span className="inline-flex items-center justify-center rounded-[12px] bg-[#DAEBFF] px-2 py-0.5 text-[10px] font-light leading-none text-[#566A93]">
                                   {p.zone.split(" • ")[1]}
                                 </span>
                               </>
@@ -178,7 +178,7 @@ export function PriceTable({ prices, title = "Форматы и стоимост
                           </div>
                         </div>
                         <div className="text-right shrink-0">
-                          <div className="inline-flex rounded-full bg-[#DAEBFF] px-2 py-0.5 text-[10px] font-light text-[#566A93]">
+                          <div className="inline-flex rounded-[12px] bg-[#DAEBFF] px-2 py-0.5 text-[10px] font-light text-[#566A93]">
                             {count} {sessionWord}
                           </div>
                         </div>
@@ -235,7 +235,7 @@ function PriceTableRow({ p, isProgram = false }: { p: ServicePrice, isProgram?: 
           {p.zone.includes(" • ") ? (
             <>
               <span>{p.zone.split(" • ")[0]}</span>
-              <span className="inline-flex items-center justify-center rounded-full bg-[#DAEBFF] px-2.5 py-0.5 text-[11px] xl:text-[12px] font-light tracking-tight text-[#566A93]/80 border border-[#daebff]/30">
+              <span className="inline-flex items-center justify-center rounded-[12px] bg-[#DAEBFF] px-2.5 py-0.5 text-[11px] xl:text-[12px] font-light tracking-tight text-[#566A93]/80 border border-[#daebff]/30">
                 {p.zone.split(" • ")[1]}
               </span>
             </>

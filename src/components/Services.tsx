@@ -445,7 +445,7 @@ export function ServiceCard({
               <span className="hidden xl:block">{mobileTitle(type.title)}</span>
             </h3>
             {type.hit && (
-              <span className="inline-flex items-center rounded-[4px] bg-gradient-to-b from-[#A2CFFE] to-[#88C1FF] px-2 py-1 text-[11px] font-semibold uppercase tracking-wider text-white">
+              <span className="inline-flex items-center rounded-[12px] bg-gradient-to-b from-[#A2CFFE] to-[#88C1FF] px-2 py-1 text-[11px] font-semibold uppercase tracking-wider text-white">
                 Хит
               </span>
             )}
@@ -471,7 +471,7 @@ export function ServiceCard({
                       type="button"
                       onClick={() => onZoneChange(i)}
                       aria-pressed={isActive}
-                      className={`rounded-[0.5rem] px-3 py-1.5 text-[14px] leading-[20px] transition-all duration-300 ${
+                      className={`rounded-[12px] px-3 py-1.5 text-[14px] leading-[20px] transition-all duration-300 ${
                         isActive
                           ? "border border-[#A2CFFE] bg-[#EFF6FF] font-medium text-[#1C3C8C]"
                           : "border border-[#DAEBFF] bg-transparent font-medium text-[#1C3C8C] hover:border-[#A2CFFE] hover:bg-[#EFF6FF]"
