@@ -87,30 +87,23 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
 
   // Ветка 3: Убрать отёчность (lightness)
   else if (goal === "lightness") {
-    const areas = answers.lightness_area || [];
-    console.log("LIGHTNESS AREA:", areas);
-    
-    // Ноги или Стопы (или оба) -> Ноги + Лимфодренаж + Лимфатический
-    if (areas.includes("legs") || areas.includes("feet")) {
-      serviceIds = ["classic_legs", "lymph", "lymphatic"];
-    } 
-    // Всё тело -> Лимфодренаж + Лимфатический + Векторный
-    else if (areas.includes("whole_body")) {
-      serviceIds = ["lymph", "lymphatic", "vector"];
-    }
-    // Лицо -> перенаправляем на логику лица
-    else if (areas.includes("face")) {
-      serviceIds = ["lymph_face", "classic_face", "girudo_cosm"];
-    }
-    // Не знаю / доверюсь мастеру -> Лимфодренаж + Лимфатический + Векторный
-    else if (areas.includes("master_choice")) {
-      serviceIds = ["lymph", "lymphatic", "vector"];
-    }
-    // По умолчанию
-    else {
-      serviceIds = ["lymph", "lymphatic"];
-    }
-    console.log("LIGHTNESS RECOMMENDATIONS:", serviceIds);
+    const area = 
+      answers.lightnessArea ?? 
+      answers.lightness_area ?? 
+      answers.area ?? 
+      answers.selectedArea ?? 
+      answers.relaxArea;
+
+    console.log("LIGHTNESS DEBUG", {
+      goal: answers.goal,
+      lightnessArea: answers.lightnessArea,
+      area: area,
+      recommendedServiceIds: getLightnessRecommendations({ ...answers, lightnessArea: area })
+    });
+
+    const recommendedServices = getLightnessRecommendations({ ...answers, lightnessArea: area });
+    console.log("LIGHTNESS RESOLVED SERVICES", recommendedServices);
+    return recommendedServices;
   }
 
   // Ветка 5: Оздоровительные практики (wellness)
@@ -199,6 +192,32 @@ function getBackNeckRecommendations(answers: Record<string, any>): QuizService[]
   // Fallback
   else {
     ids = ["classic_spine_neck", "classic_full", cupsId];
+  }
+
+  return ids.map(id => getService(id)).filter((s): s is QuizService => !!s);
+}
+
+function getLightnessRecommendations(answers: Record<string, any>): QuizService[] {
+  const getService = (id: string) => QUIZ_CONFIG.services.find(s => s.id === id);
+  const area =
+    answers.lightnessArea ??
+    answers.area ??
+    answers.selectedArea ??
+    answers.relaxArea;
+
+  let ids: string[] = [];
+
+  if (area === "face") {
+    ids = ["lymph_face", "classic_face", "girudo_cosm"];
+  } else if (area === "legs" || area === "feet" || (Array.isArray(area) && (area.includes("legs") || area.includes("feet")))) {
+    ids = ["lymph", "lymphatic", "classic_legs"];
+  } else if (area === "whole_body" || (Array.isArray(area) && area.includes("whole_body"))) {
+    ids = ["lymph", "lymphatic", "vector"];
+  } else if (area === "master_choice" || (Array.isArray(area) && area.includes("master_choice"))) {
+    ids = ["lymph", "lymphatic", "classic_legs"];
+  } else {
+    // Fallback
+    ids = ["lymph", "lymphatic", "classic_legs"];
   }
 
   return ids.map(id => getService(id)).filter((s): s is QuizService => !!s);
