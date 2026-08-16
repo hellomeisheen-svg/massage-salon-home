@@ -120,6 +120,7 @@ export const sendLeadNotification = createServerFn({ method: "POST" })
                 <p><strong>Имя:</strong> ${name}</p>
                 <p><strong>Телефон:</strong> ${phoneVal}</p>
                 ${resultsHtml}
+                <p><strong>Источник:</strong> ${lead.message?.includes("[QUIZ LEAD]") ? "Квиз" : "Форма записи"}</p>
                 <p style="margin-top: 20px; font-size: 12px; color: #64748b;">Дата заявки: ${createdAt}</p>
               </div>
             </div>
