@@ -30,7 +30,7 @@ export function QuizContactForm({
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [method, setMethod] = useState("whatsapp");
-  const [consent, setConsent] = useState(true);
+  const [consent, setConsent] = useState(false);
   const [phoneError, setPhoneError] = useState<string | null>(null);
   const [consentError, setConsentError] = useState<string | null>(null);
   
