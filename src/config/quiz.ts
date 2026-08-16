@@ -133,18 +133,6 @@ export const QUIZ_CONFIG: {
         { id: "master_choice", text: "Не знаю, доверюсь мастеру" },
       ],
     },
-    {
-      id: "face_format",
-      question: "Какой формат ухода вам ближе?",
-      type: "single",
-      showIf: (a) => a.goal === "face" || (a.goal === "lightness" && Array.isArray(a.lightness_area) && a.lightness_area.length === 1 && a.lightness_area.includes("face")),
-      options: [
-        { id: "classic_face", text: "Массаж лица" },
-        { id: "lymph_face", text: "Лимфодренаж лица" },
-        { id: "cosmetic_hirudo", text: "Косметические пиявки" },
-        { id: "master_choice", text: "Не знаю, хочу рекомендацию специалиста" },
-      ],
-    },
     // Ветка 5. Оздоровительные практики
     {
       id: "wellness_type",
