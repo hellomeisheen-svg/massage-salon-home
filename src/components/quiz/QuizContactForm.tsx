@@ -164,7 +164,10 @@ export function QuizContactForm({
           </span>
         </label>
         {consentError && <p className="text-[13px] leading-[1.5] text-[#C0392B]">{consentError}</p>}
+      </div>
+
       {error && <p className="text-[13px] leading-[1.5] text-[#C0392B] text-center">{error}</p>}
+
       
       <button 
 
