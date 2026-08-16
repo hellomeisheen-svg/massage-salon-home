@@ -217,7 +217,7 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
                       {opt.text}
                     </span>
                     <div className={`w-6 h-6 rounded-[12px] border flex items-center justify-center transition-colors ${
-                      isSelected ? "bg-[#88C1FF] border-[#88C1FF]" : "bg-white border-[#DAEBFF] group-hover:border-[#A2CFFE]"
+                      isSelected ? "bg-[#88C1FF] border-[#88C1FF]" : "bg-white border-[#DAEBFF]"
                     }`}>
                       {isSelected && <Check size={14} className="text-white" strokeWidth={3} />}
                     </div>
