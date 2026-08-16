@@ -7,8 +7,10 @@ export type FooterNavItem = { label: string; href?: string; to?: string };
 const navItems: FooterNavItem[] = [
   { label: "Услуги", href: "/#services" },
   { label: "Программы", href: "/#programs" },
-  { label: "Образование", href: "/#obrazovanie" },
+  { label: "Преимущества", href: "/#advantages" },
+  { label: "Обо мне", href: "/#obrazovanie" },
   { label: "Вопросы", href: "/#faq" },
+  { label: "Контакты", href: "/#contacts" },
 ];
 
 
