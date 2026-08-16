@@ -90,8 +90,8 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
       }
       setIsSuccess(true);
     } catch (e) {
-      console.error(e);
-      alert("Что-то пошло не так, попробуйте ещё раз.");
+      console.error("Quiz submission error:", e);
+      setError("Не удалось отправить заявку. Попробуйте ещё раз.");
     } finally {
       setIsSubmitting(false);
     }
