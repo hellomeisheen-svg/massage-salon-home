@@ -290,7 +290,7 @@ function BookingDialog({
                   value={formatPhone(phone)}
                   onChange={handlePhoneInput}
                   placeholder="+7 (___) ___-__-__"
-                  className="h-[52px] rounded-[12px] border border-[#daebff] bg-[#EFF6FF] px-4 text-[16px] text-foreground outline-none transition-colors placeholder:text-[#566A93] focus:border-[#1C3C8C] focus:bg-white"
+                  className="ds-input"
                 />
                 {phoneError && (
                   <span className="text-[13px] leading-[1.5] text-[#C0392B]">{phoneError}</span>
