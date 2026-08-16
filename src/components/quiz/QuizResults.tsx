@@ -13,7 +13,7 @@ export function QuizResults({
   const isFirstVisit = answers.goal === "unsure" && answers.unsure_direction === "still_unsure";
   const isWellnessMasterChoice = answers.goal === "wellness" && answers.wellness_type?.includes("master_choice");
 
-  console.log("RESOLVED SERVICES RENDER:", services.length, JSON.stringify(services.map(s => s.id)));
+  // Services resolution debug is removed
 
   return (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">

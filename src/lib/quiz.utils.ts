@@ -93,7 +93,8 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
     if (areas.length === 1 && areas.includes("face")) {
       serviceIds = ["lymph_face", "classic_face", "girudo_cosm"];
     } else {
-      return getLightnessRecommendations({ ...answers, lightnessArea: area });
+      // Возвращаем ID для стандартной дедупликации в конце функции
+      serviceIds = getLightnessRecommendations({ ...answers, lightnessArea: area }).map(s => s.id);
     }
   }
 

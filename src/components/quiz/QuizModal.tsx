@@ -23,7 +23,6 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
 
   useEffect(() => {
     if (isResultsStep && recommendedServices.length === 0) {
-       console.log("RESULTS STEP DETECTED BUT NO SERVICES. RE-CALCULATING...");
        const services = calculateResult(answers);
        setRecommendedServices(services);
     }
