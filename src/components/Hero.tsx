@@ -1,37 +1,7 @@
 import { useState } from "react";
-import { Star } from "lucide-react";
+import { RatingBlock } from "@/components/RatingBlock";
 import { QuizModal } from "@/components/quiz/QuizModal";
 
-const YANDEX_MAPS_URL =
-  "https://yandex.ru/maps/org/sedmoye_nebo/130811843218/reviews/";
-
-function RatingBlock() {
-  return (
-    <a
-      href={YANDEX_MAPS_URL}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group flex w-fit flex-col items-start gap-2 rounded-[15px] border border-[#daebff] bg-white px-5 py-4 transition-all hover:-translate-y-0.5 hover:opacity-85 ds-bento-shadow"
-    >
-      <div className="flex gap-0.5">
-        {Array.from({ length: 5 }).map((_, i) => (
-          <Star
-            key={i}
-            className="h-[14px] w-[14px] fill-[#A2CFFE] text-[#A2CFFE]"
-          />
-        ))}
-      </div>
-      <div className="flex items-baseline gap-1.5">
-        <span className="font-noto-serif-narrow text-[30px] font-bold leading-none tracking-tight text-[#1C3C8C]">
-          4,7
-        </span>
-        <span className="text-[13px] font-medium text-[#566A93]">
-          Рейтинг организации в Яндексе
-        </span>
-      </div>
-    </a>
-  );
-}
 
 function HeadlineBlock({ onOpenQuiz }: { onOpenQuiz: () => void }) {
   return (
