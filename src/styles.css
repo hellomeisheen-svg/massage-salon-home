@@ -321,7 +321,7 @@ button:focus-visible {
 }
 .ds-toggle-active {
   border-color: #A2CFFE;
-  background-color: #FFFFFF;
+  background-color: #DAEBFF;
   color: #1C3C8C;
   box-shadow: 0 4px 12px rgba(28, 60, 140, 0.08);
 }
