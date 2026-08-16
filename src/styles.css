@@ -106,7 +106,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 0.5rem;
+  border-radius: 12px;
   padding: 1rem 1.5rem;
   font-size: 1rem;
   font-weight: 500;
@@ -122,7 +122,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 0.5rem;
+  border-radius: 12px;
   padding: 1rem 1.5rem;
   font-size: 1rem;
   font-weight: 500;
@@ -155,7 +155,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 0.5rem;
+  border-radius: 12px;
   padding: 1rem 1.5rem;
   font-size: 1rem;
   font-weight: 500;
@@ -192,7 +192,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 0.5rem;
+  border-radius: 12px;
   padding: 1rem 1.5rem;
   font-size: 1rem;
   font-weight: 500;
@@ -250,7 +250,7 @@
   justify-content: center;
   height: 40px;
   padding-inline: 12px;
-  border-radius: 0.5rem;
+  border-radius: 12px;
   font-size: 0.875rem;
   font-weight: 400;
   color: #566A93;
@@ -270,7 +270,7 @@ a:focus-visible,
 button:focus-visible {
   outline: 2px solid #5DAAFD;
   outline-offset: 2px;
-  border-radius: 0.5rem;
+  border-radius: 12px;
 }
 
 .text-link-active:active,
@@ -293,7 +293,7 @@ button:focus-visible {
 .faq-trigger:focus-visible {
   outline: 2px solid #1C3C8C;
   outline-offset: 3px;
-  border-radius: 0.75rem;
+  border-radius: 12px;
 }
 
 
@@ -326,13 +326,13 @@ button:focus-visible {
  */
 
 @theme inline {
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --radius-2xl: calc(var(--radius) + 8px);
-  --radius-3xl: calc(var(--radius) + 12px);
-  --radius-4xl: calc(var(--radius) + 16px);
+  --radius-sm: 12px;
+  --radius-md: 12px;
+  --radius-lg: 12px;
+  --radius-xl: 12px;
+  --radius-2xl: 12px;
+  --radius-3xl: 12px;
+  --radius-4xl: 12px;
 
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
@@ -396,7 +396,7 @@ button:focus-visible {
 }
 
 :root {
-  --radius: 0.75rem;
+  --radius: 12px;
   --background: #EFF6FF;
   --foreground: #566A93;
   --card: #FFFFFF;
@@ -533,7 +533,7 @@ button:focus-visible {
   line-height: 1;
   font-family: ui-sans-serif, system-ui, sans-serif;
   padding: 1px 3px;
-  border-radius: 2px;
+  border-radius: 12px;
   white-space: nowrap;
   z-index: 10000;
   pointer-events: none;
@@ -731,7 +731,7 @@ button:focus-visible {
 .preloader-track {
   width: 120px;
   height: 2px;
-  border-radius: 999px;
+  border-radius: 12px;
   overflow: hidden;
   background-color: #daebff;
 }
@@ -744,7 +744,7 @@ button:focus-visible {
   display: block;
   height: 100%;
   width: 100%;
-  border-radius: 999px;
+  border-radius: 12px;
   background: linear-gradient(90deg, #5DAAFD 0%, #88C1FF 100%);
   transform-origin: left center;
   transform: scaleX(0);
