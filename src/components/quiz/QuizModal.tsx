@@ -114,9 +114,19 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
             <button onClick={handleNext} className="btn-primary mt-8 w-full">Подобрать программу</button>
           </div>
         ) : isResultsStep ? (
-          <QuizResults services={recommendedServices} answers={answers} onNext={handleNext} />
+          <div className="animate-in fade-in slide-in-from-right-4 duration-300">
+            <QuizResults services={recommendedServices} answers={answers} onNext={handleNext} />
+            <button onClick={handleBack} className="btn-secondary mt-4 w-full h-12 flex items-center justify-center gap-2">
+              <ChevronLeft size={20} /> Назад к вопросам
+            </button>
+          </div>
         ) : isContactStep ? (
-          <QuizContactForm onSubmit={onContactSubmit} isSubmitting={isSubmitting} />
+          <div className="animate-in fade-in slide-in-from-right-4 duration-300">
+            <QuizContactForm onSubmit={onContactSubmit} isSubmitting={isSubmitting} />
+            <button onClick={handleBack} className="btn-secondary mt-4 w-full h-12 flex items-center justify-center gap-2 text-sm">
+              <ChevronLeft size={18} /> Вернуться к результатам
+            </button>
+          </div>
         ) : (
           <div className="py-6 animate-in fade-in slide-in-from-right-4 duration-300">
             <div className="flex flex-col gap-1 w-full mb-8">
