@@ -156,7 +156,7 @@ export function QuizContactForm({
               className="underline"
               onClick={(e) => e.stopPropagation()}
             >
-              политикой конфиденциальности
+              Политикой конфиденциальности
             </a>
             .
           </span>
