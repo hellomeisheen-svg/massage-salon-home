@@ -157,7 +157,7 @@ export function PriceTable({ prices, title = "Форматы и стоимост
                 const sessionWord = pluralize(count, ["сеанс", "сеанса", "сеансов"]);
                 
                 return (
-                  <div key={p.zone} className="bg-white p-4 rounded-[12px] border border-[#daebff]/50">
+                  <div key={p.zone} className="bg-white p-4 rounded-[12px] border border-[#daebff]">
                     <div className="space-y-2.5">
                       <div className="flex justify-between items-baseline gap-3">
                         <div className="flex-1 min-w-0">
