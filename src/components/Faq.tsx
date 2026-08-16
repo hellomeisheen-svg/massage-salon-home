@@ -35,7 +35,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
   const contentId = useId();
 
   return (
-    <div className="ds-card">
+    <div className="ds-card ds-bento-shadow">
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
@@ -89,7 +89,7 @@ export function Faq() {
             Отвечаю на&nbsp;самые важные вопросы
           </h2>
 
-          <div className="mt-8 xl:mt-auto ds-card p-6 sm:p-7 w-full xl:w-1/2 mx-auto xl:mx-0 text-left">
+          <div className="mt-8 xl:mt-auto ds-card ds-bento-shadow p-6 sm:p-7 w-full xl:w-1/2 mx-auto xl:mx-0 text-left">
             <img
               src="/images/tatyana-photo.webp"
               alt="Татьяна Злобина"

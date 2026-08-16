@@ -37,7 +37,7 @@ export function Approach() {
         {/* Left column */}
         <div className="flex flex-col gap-6 xl:h-full">
           {/* Подход мастера */}
-          <div className="relative h-[420px] sm:h-[720px] xl:h-full ds-card overflow-hidden rounded-[12px]">
+          <div className="relative h-[420px] sm:h-[720px] xl:h-full ds-card ds-bento-shadow overflow-hidden rounded-[12px]">
             <img
               src="/images/approach-master.webp"
               alt="Татьяна работает с клиенткой в светлом массажном кабинете"
@@ -49,7 +49,7 @@ export function Approach() {
         </div>
 
         {/* Right column — Среда вокруг */}
-        <div className="ds-card p-6 sm:p-8 xl:p-12 rounded-[12px]">
+        <div className="ds-card ds-bento-shadow p-6 sm:p-8 xl:p-12 rounded-[12px]">
           <h3 className="font-noto-serif-narrow ds-h2 text-left text-[#1C3C8C] leading-tight px-0">
             Всё, чтобы вы чувствовали себя спокойно и&nbsp;комфортно с&nbsp;первых минут
           </h3>
