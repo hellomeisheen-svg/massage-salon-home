@@ -14,7 +14,7 @@ export function IntroSection() {
       <div className="container-1900">
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-10 xl:gap-20 items-center">
           {/* Photo */}
-          <div className="relative aspect-[4/5] sm:aspect-square xl:aspect-[4/5] rounded-[12px] overflow-hidden ds-card">
+          <div className="relative aspect-[4/5] sm:aspect-square xl:aspect-[4/5] rounded-[12px] overflow-hidden ds-card ds-bento-shadow">
             <img 
               src="/images/tatyana-photo.webp" 
               alt="Татьяна Злобина — мастер оздоровительных практик" 
