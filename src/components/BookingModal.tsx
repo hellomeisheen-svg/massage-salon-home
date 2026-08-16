@@ -255,9 +255,7 @@ function BookingDialog({
 
                   // Trigger Resend notification via server function
                   if (leadData?.id) {
-                    sendLeadNotification({ data: { leadId: leadData.id } }).catch(err => {
-                      console.error("Failed to trigger lead notification:", err);
-                    });
+                    await sendLeadNotification({ data: { leadId: leadData.id } });
                   }
 
                   setSent(true);
