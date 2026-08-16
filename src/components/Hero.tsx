@@ -28,13 +28,9 @@ function RatingBlock() {
             ))}
           </div>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center">
           <span className="text-[13px] font-light leading-none text-[#566A93]">
             Яндекс Карты
-          </span>
-          <span className="h-1 w-1 rounded-full bg-[#daebff]" aria-hidden="true" />
-          <span className="text-[13px] font-light leading-none text-[#566A93]">
-            Смотреть отзывы
           </span>
         </div>
       </div>
