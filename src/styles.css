@@ -198,7 +198,7 @@
   min-height: 60px;
   color: #1c3c8c;
   background-color: transparent;
-  border: 1px solid #DAEBFF;
+  border: 1px solid #A2CFFE;
   isolation: isolate;
   overflow: hidden;
   transition: color 0.5s ease, border-color 0.5s ease;
@@ -207,7 +207,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(to bottom, #A2CFFE, #88C1FF);
+  background-image: linear-gradient(to bottom, #5DAAFD, #2F7BD6);
   opacity: 0;
   transition: opacity 0.5s ease;
   z-index: -2;
@@ -225,18 +225,19 @@
   opacity: 1;
 }
 .btn-header-cta:hover {
-  border-color: #DAEBFF;
+  border-color: #5DAAFD;
 }
 .btn-header-cta-active::before {
   opacity: 1;
 }
 .btn-header-cta-active::after {
-  background-color: #5DAAFD;
+  background-color: #2F7BD6;
 }
 .btn-header-cta-active {
   color: #fff;
-  border-color: #DAEBFF;
+  border-color: #2F7BD6;
 }
+
 
 /* Ghost navigation arrows */
 @utility btn-nav {
