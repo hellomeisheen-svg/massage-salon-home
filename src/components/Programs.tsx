@@ -304,6 +304,7 @@ export function Programs({ prioritizeKeys }: ProgramsProps = {}) {
               </button>
             </div>
           </div>
+          </div>
         </article>
       </div>
     </section>
