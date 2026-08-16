@@ -53,7 +53,7 @@ export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
         {/* Top card: map + contacts */}
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-5">
           {/* Map */}
-          <div className="relative rounded-[12px] overflow-hidden border border-[#daebff] bg-white min-h-[320px] xl:min-h-[440px]">
+          <div className="relative rounded-[12px] overflow-hidden border border-[#daebff] bg-white min-h-[320px] xl:min-h-[440px] ds-bento-shadow">
             <iframe
               title="Карта — расположение кабинета"
               src="https://yandex.ru/map-widget/v1/org/sedmoye_nebo/130811843218/?ll=132.072118%2C43.306027&z=16"
@@ -65,7 +65,7 @@ export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
           </div>
 
           {/* Contacts */}
-          <div className="flex flex-col justify-between gap-8 ds-card p-5 xl:p-[30px]">
+          <div className="flex flex-col justify-between gap-8 ds-card ds-bento-shadow p-5 xl:p-[30px]">
             <div>
               <h2 className="font-noto-serif-narrow ds-h2 text-[#1c3c8c] tracking-[0.01em]">
                 Как найти кабинет
@@ -116,7 +116,7 @@ export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
         </div>
 
         {/* Bottom band */}
-        <div className="mt-5 ds-card p-5 xl:p-[30px]">
+        <div className="mt-5 ds-card ds-bento-shadow p-5 xl:p-[30px]">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Brand */}
             <div>
