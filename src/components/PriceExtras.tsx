@@ -7,7 +7,7 @@ export function PriceInclusions() {
       <div className="container-1900">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           <div className="bg-white/40 backdrop-blur-sm p-6 rounded-[12px] border border-[#daebff]/50 flex flex-col items-center text-center space-y-3">
-            <div className="w-12 h-12 rounded-full bg-[#1C3C8C]/5 flex items-center justify-center text-[#1C3C8C]">
+            <div className="w-12 h-12 rounded-[12px] bg-[#1C3C8C]/5 flex items-center justify-center text-[#1C3C8C]">
               <ShieldCheck className="w-6 h-6" />
             </div>
             <h4 className="font-noto-serif-narrow text-lg text-[#1C3C8C]">Безопасность</h4>
@@ -17,7 +17,7 @@ export function PriceInclusions() {
           </div>
           
           <div className="bg-white/40 backdrop-blur-sm p-6 rounded-[12px] border border-[#daebff]/50 flex flex-col items-center text-center space-y-3">
-            <div className="w-12 h-12 rounded-full bg-[#1C3C8C]/5 flex items-center justify-center text-[#1C3C8C]">
+            <div className="w-12 h-12 rounded-[12px] bg-[#1C3C8C]/5 flex items-center justify-center text-[#1C3C8C]">
               <Sparkles className="w-6 h-6" />
             </div>
             <h4 className="font-noto-serif-narrow text-lg text-[#1C3C8C]">Атмосфера</h4>
@@ -27,7 +27,7 @@ export function PriceInclusions() {
           </div>
 
           <div className="bg-white/40 backdrop-blur-sm p-6 rounded-[12px] border border-[#daebff]/50 flex flex-col items-center text-center space-y-3">
-            <div className="w-12 h-12 rounded-full bg-[#1C3C8C]/5 flex items-center justify-center text-[#1C3C8C]">
+            <div className="w-12 h-12 rounded-[12px] bg-[#1C3C8C]/5 flex items-center justify-center text-[#1C3C8C]">
               <Coffee className="w-6 h-6" />
             </div>
             <h4 className="font-noto-serif-narrow text-lg text-[#1C3C8C]">Забота</h4>

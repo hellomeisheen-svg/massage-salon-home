@@ -167,7 +167,7 @@ function SpecialistBlock() {
   return (
     <div className="flex flex-col items-start gap-3 sm:gap-4">
       <img
-        className="h-[90px] w-[70px] rounded-lg border border-[#daebff] object-cover xl:h-[110px] xl:w-[85px]"
+        className="h-[90px] w-[70px] rounded-[12px] border border-[#daebff] object-cover xl:h-[110px] xl:w-[85px]"
         alt="Татьяна Злобина"
         src="/images/tatyana-photo.webp"
 
@@ -372,7 +372,7 @@ function GirudoterapiyaServices() {
 
           >
             <span
-              className={`h-2 w-2 rounded-full transition-colors ${
+              className={`h-2 w-2 rounded-[12px] transition-colors ${
                 isActive ? "bg-[#1C3C8C]" : "bg-[#B7C5E3] group-hover/nav:bg-[#1C3C8C]/50"
 
               }`}
@@ -463,7 +463,7 @@ function HirudoPriceTable() {
               <th className="px-6 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
                 <span className="flex items-center gap-2">
                   3 сеанса
-                  <span className="rounded-full bg-[#1C3C8C] px-2 py-0.5 text-[10px] font-semibold text-white">
+                  <span className="rounded-[12px] bg-[#1C3C8C] px-2 py-0.5 text-[10px] font-semibold text-white">
                     -10%
                   </span>
                 </span>
@@ -471,7 +471,7 @@ function HirudoPriceTable() {
               <th className="px-6 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
                 <span className="flex items-center gap-2">
                   6 сеансов
-                  <span className="rounded-full bg-[#1C3C8C] px-2 py-0.5 text-[10px] font-semibold text-white">
+                  <span className="rounded-[12px] bg-[#1C3C8C] px-2 py-0.5 text-[10px] font-semibold text-white">
                     -15%
                   </span>
                 </span>
@@ -551,7 +551,7 @@ function PriceCard({ p }: { p: HirudoRow }) {
             key={label}
             type="button"
             onClick={() => setActive(i)}
-            className={`relative flex flex-1 items-center justify-center rounded-[8px] px-2 py-2.5 transition-all duration-300 ${
+            className={`relative flex flex-1 items-center justify-center rounded-[12px] px-2 py-2.5 transition-all duration-300 ${
               active === i ? "bg-white shadow-tab-active" : "bg-transparent hover:bg-white/40"
             }`}
 
@@ -564,7 +564,7 @@ function PriceCard({ p }: { p: HirudoRow }) {
               {label}
             </span>
             {sessionDiscounts[i] && (
-              <span className="absolute -top-1 right-1 rounded-full bg-[#1C3C8C] px-1.5 py-0.5 text-[9px] font-semibold tracking-wide text-white">
+              <span className="absolute -top-1 right-1 rounded-[12px] bg-[#1C3C8C] px-1.5 py-0.5 text-[9px] font-semibold tracking-wide text-white">
                 {sessionDiscounts[i]}
               </span>
             )}
@@ -644,7 +644,7 @@ function FaqItem({ q, a }: { q: string; a: React.ReactNode }) {
           {q}
         </span>
         <span
-          className={`shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-[0.5rem] bg-[#EFF6FF] border border-[#daebff] flex items-center justify-center transition-transform duration-300 ${
+          className={`shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-[12px] bg-[#EFF6FF] border border-[#daebff] flex items-center justify-center transition-transform duration-300 ${
             open ? "rotate-45" : ""
           }`}
         >
@@ -688,7 +688,7 @@ function Faq() {
             <img
               src="/images/tatyana-photo.webp"
               alt="Татьяна Злобина"
-              className="h-[90px] w-[70px] xl:h-[110px] xl:w-[85px] rounded-lg border border-[#daebff] object-cover"
+              className="h-[90px] w-[70px] xl:h-[110px] xl:w-[85px] rounded-[12px] border border-[#daebff] object-cover"
             />
             <h3 className="font-noto-serif-narrow mt-6 ds-h4 text-[#1C3C8C]">
               Татьяна Злобина

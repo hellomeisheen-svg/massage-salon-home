@@ -18,18 +18,18 @@ export function QuizResults({
   return (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <div className="pr-12">
-        <span className="inline-block px-4 py-1.5 rounded-full bg-[#EFF6FF] text-[#1C3C8C] text-[12px] font-medium uppercase tracking-wider mb-4">
+        <span className="inline-block px-4 py-1.5 rounded-[12px] bg-[#EFF6FF] text-[#1C3C8C] text-[12px] font-medium uppercase tracking-wider mb-4">
           Ваша персональная программа
         </span>
         <h2 className="font-noto-serif-narrow ds-h3 text-[#1c3c8c]">Результаты подбора</h2>
         
         {isFirstVisit && (
-          <p className="mt-4 p-4 bg-[#EFF6FF] rounded-lg text-sm text-[#566A93] italic border-l-4 border-[#1C3C8C]">
+          <p className="mt-4 p-4 bg-[#EFF6FF] rounded-[12px] text-sm text-[#566A93] italic border-l-4 border-[#1C3C8C]">
             «Если вы впервые у нас и пока не знаете, что выбрать, рекомендуем начать с векторного массажа. Это комплексная работа с телом, которая помогает познакомиться с подходом мастера и понять, какой формат подходит именно вам».
           </p>
         )}
         {isWellnessMasterChoice && (
-          <p className="mt-4 p-4 bg-[#EFF6FF] rounded-lg text-sm text-[#566A93] italic border-l-4 border-[#1C3C8C]">
+          <p className="mt-4 p-4 bg-[#EFF6FF] rounded-[12px] text-sm text-[#566A93] italic border-l-4 border-[#1C3C8C]">
             «Подберём подходящую оздоровительную практику после короткой консультации с мастером».
           </p>
         )}
@@ -46,7 +46,7 @@ export function QuizResults({
             <div className="flex justify-between items-start gap-4">
               <div>
                 {idx === 0 && (
-                  <span className="inline-block px-2 py-0.5 rounded-[4px] bg-[#EFF6FF] text-[10px] font-bold text-[#1C3C8C] uppercase tracking-wider mb-2">
+                  <span className="inline-block px-2 py-0.5 rounded-[12px] bg-[#EFF6FF] text-[10px] font-bold text-[#1C3C8C] uppercase tracking-wider mb-2">
                     Рекомендуем
                   </span>
                 )}
@@ -57,7 +57,7 @@ export function QuizResults({
                   <span>{service.price}</span>
                 </div>
               </div>
-              <div className={`h-8 w-8 rounded-[6px] flex items-center justify-center shrink-0 ${idx === 0 ? "bg-[#1C3C8C] text-white" : "bg-[#EFF6FF] text-[#1C3C8C]"}`}>
+              <div className={`h-8 w-8 rounded-[12px] flex items-center justify-center shrink-0 ${idx === 0 ? "bg-[#1C3C8C] text-white" : "bg-[#EFF6FF] text-[#1C3C8C]"}`}>
                 <Check size={16} strokeWidth={3} />
               </div>
             </div>

@@ -413,7 +413,7 @@ export function ServiceCard({
             key={i}
             type="button"
             onClick={() => setActiveSession(i)}
-            className={`relative flex flex-1 items-center justify-center rounded-[8px] px-2 py-2.5 transition-all duration-300 ${
+            className={`relative flex flex-1 items-center justify-center rounded-[12px] px-2 py-2.5 transition-all duration-300 ${
               activeSession === i
                 ? "bg-white shadow-tab-active"
                 : "bg-transparent hover:bg-white/40"
@@ -695,7 +695,7 @@ export function Services() {
 
                     >
                       <span
-                        className={`h-2 w-2 rounded-full transition-colors ${
+                        className={`h-2 w-2 rounded-[12px] transition-colors ${
                           isActive ? "bg-[#1C3C8C]" : "bg-[#B7C5E3] group-hover/nav:bg-[#1C3C8C]/50"
 
                         }`}
