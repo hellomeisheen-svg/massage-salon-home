@@ -111,12 +111,21 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
               <h2 className="font-noto-serif-narrow ds-h3 text-[#1c3c8c] leading-tight">{QUIZ_CONFIG.title}</h2>
               <p className="mt-3 text-[15px] leading-[1.5] text-[#566A93] sm:text-[16px]">{QUIZ_CONFIG.subtitle}</p>
             </div>
-            <div className="mt-8 w-full rounded-2xl border border-[#DAEBFF] bg-[#EFF6FF] p-5">
-              <span className="text-[12px] font-medium uppercase tracking-wider text-[#566A93]">Что вы получите</span>
-              <ul className="mt-3 space-y-2 text-[14px] text-[#566A93]">
-                <li className="flex gap-2"><span className="text-[#1C3C8C]">1.</span> Персональный список процедур</li>
-                <li className="flex gap-2"><span className="text-[#1C3C8C]">2.</span> Расчет стоимости и длительности</li>
-                <li className="flex gap-2"><span className="text-[#1C3C8C]">3.</span> Скидка на первый визит</li>
+            <div className="mt-8 w-full rounded-2xl border border-[#DAEBFF]/60 bg-[#EFF6FF]/40 p-6 sm:p-7">
+              <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-[#A2CFFE]">что вы получите</span>
+              <ul className="mt-5 space-y-3.5">
+                {[
+                  "Персональный список процедур",
+                  "Расчет стоимости и длительности",
+                  "Скидка на первый визит"
+                ].map((text, i) => (
+                  <li key={i} className="flex items-start gap-3.5 group">
+                    <span className="flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-full bg-white border border-[#DAEBFF] text-[11px] font-bold text-[#1C3C8C] shadow-sm group-hover:border-[#A2CFFE] transition-colors">
+                      {i + 1}
+                    </span>
+                    <span className="text-[14px] sm:text-[15px] leading-tight text-[#566A93] font-medium pt-0.5">{text}</span>
+                  </li>
+                ))}
               </ul>
             </div>
             <button onClick={handleNext} className="btn-primary mt-8 w-full">Подобрать программу</button>
