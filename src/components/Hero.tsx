@@ -5,27 +5,15 @@ import { QuizModal } from "@/components/quiz/QuizModal";
 const YANDEX_MAPS_URL =
   "https://yandex.ru/maps/org/sedmoye_nebo/130811843218/reviews/";
 
-function YandexLogo() {
-  return (
-    <div
-      className="flex h-[48px] w-[48px] shrink-0 items-center justify-center rounded-[12px] bg-[#FC3F1D] ds-bento-shadow"
-      aria-hidden="true"
-    >
-      <span className="text-[22px] font-bold leading-none text-white">Я</span>
-    </div>
-  );
-}
-
 function RatingBlock() {
   return (
     <a
       href={YANDEX_MAPS_URL}
       target="_blank"
       rel="noopener noreferrer"
-      className="group flex w-full items-center gap-4 rounded-[12px] border border-[#daebff] bg-white ds-bento-shadow px-4 py-4 transition-all hover:-translate-y-0.5 hover:opacity-85 active:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1C3C8C] sm:max-w-[320px] sm:px-5 sm:py-5"
+      className="group flex w-full items-center gap-4 transition-all hover:-translate-y-0.5 hover:opacity-85 active:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1C3C8C] sm:max-w-[320px]"
     >
-      <YandexLogo />
-      <div className="flex min-w-0 flex-col gap-2">
+      <div className="flex min-w-0 flex-col gap-1.5">
         <div className="flex items-center gap-2.5">
           <span className="font-noto-serif-narrow text-[28px] font-semibold leading-none tracking-tight text-[#1C3C8C]">
             4,7
@@ -35,17 +23,18 @@ function RatingBlock() {
               <Star
                 key={i}
                 aria-hidden="true"
-                className="h-[16px] w-[16px] shrink-0 fill-[#F26A38] text-[#F26A38]"
+                className="h-[16px] w-[16px] shrink-0 fill-[#1C3C8C] text-[#1C3C8C]"
               />
             ))}
           </div>
         </div>
-        <div className="flex flex-col gap-0.5">
-          <span className="text-[13px] font-medium uppercase tracking-wider text-[#FC3F1D]">
+        <div className="flex items-center gap-2">
+          <span className="text-[13px] font-light leading-none text-[#566A93]">
             Яндекс Карты
           </span>
-          <span className="text-[13px] font-light leading-[18px] text-[#566A93]">
-            Смотреть отзывы клиентов
+          <span className="h-1 w-1 rounded-full bg-[#daebff]" aria-hidden="true" />
+          <span className="text-[13px] font-light leading-none text-[#566A93]">
+            Смотреть отзывы
           </span>
         </div>
       </div>
