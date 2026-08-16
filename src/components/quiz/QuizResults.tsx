@@ -35,7 +35,7 @@ export function QuizResults({
         )}
       </div>
 
-      <div className="grid gap-4">
+      <div className="grid gap-4 max-h-[320px] overflow-y-auto pr-1 -mr-1 scrollbar-thin scrollbar-thumb-[#DAEBFF] scrollbar-track-transparent">
         {services.length === 0 && (
           <div className="p-8 text-center text-[#566A93] bg-[#EFF6FF] rounded-lg">
             Мы не смогли подобрать программу автоматически. Пожалуйста, обсудите ваши пожелания с мастером.
