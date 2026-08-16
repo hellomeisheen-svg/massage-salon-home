@@ -97,7 +97,7 @@ function SpecialistBlock() {
   return (
     <div className="flex flex-col items-start gap-3 sm:gap-4">
       <img
-        className="h-[90px] w-[70px] rounded-[12px] border border-[#daebff] object-cover xl:h-[110px] xl:w-[85px]"
+        className="h-[90px] w-[70px] rounded-[12px] border border-[#daebff] ds-bento-shadow object-cover xl:h-[110px] xl:w-[85px]"
         alt="Татьяна Злобина"
         src="/images/tatyana-photo.webp"
 
@@ -555,7 +555,7 @@ function Faq({ content }: { content: ServicePageContent }) {
             <img
               src="/images/tatyana-photo.webp"
               alt="Татьяна Злобина"
-              className="h-[90px] w-[70px] xl:h-[110px] xl:w-[85px] rounded-[12px] border border-[#daebff] object-cover"
+              className="h-[90px] w-[70px] xl:h-[110px] xl:w-[85px] rounded-[12px] border border-[#daebff] ds-bento-shadow object-cover"
             />
             <h3 className="font-noto-serif-narrow mt-6 ds-h4 text-[#1C3C8C]">
               Татьяна Злобина
