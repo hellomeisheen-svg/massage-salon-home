@@ -15,10 +15,18 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
 
   // Filter steps based on current answers
   const visibleSteps = QUIZ_CONFIG.steps.filter(s => !s.showIf || s.showIf(answers));
+  
   const currentStep = visibleSteps[step - 1];
   const isLastQuestion = step === visibleSteps.length;
   const isResultsStep = step === visibleSteps.length + 1;
   const isContactStep = step === visibleSteps.length + 2;
+
+  useEffect(() => {
+    if (isResultsStep && recommendedServices.length === 0) {
+       const services = calculateResult(answers);
+       setRecommendedServices(services);
+    }
+  }, [isResultsStep, answers, recommendedServices.length]);
 
   useEffect(() => {
     if (!isOpen) {
@@ -115,7 +123,19 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
           </div>
         ) : isResultsStep ? (
           <div className="animate-in fade-in slide-in-from-right-4 duration-300">
-            <QuizResults services={recommendedServices} answers={answers} onNext={handleNext} />
+            {recommendedServices.length > 0 ? (
+              <QuizResults services={recommendedServices} answers={answers} onNext={handleNext} />
+            ) : (
+              <div className="py-12 text-center space-y-4">
+                <p className="text-[#566A93]">Программа подбирается...</p>
+                <button 
+                  onClick={() => setRecommendedServices(calculateResult(answers))}
+                  className="btn-secondary px-4 py-2"
+                >
+                  Показать результат
+                </button>
+              </div>
+            )}
             <button onClick={handleBack} className="btn-secondary mt-4 w-full h-12 flex items-center justify-center gap-2">
               <ChevronLeft size={20} /> Назад к вопросам
             </button>
@@ -164,11 +184,13 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
                       } else {
                         const current = answers[currentStep.id] || [];
                         const exists = current.includes(opt.id);
+                        const nextSelection = exists 
+                          ? current.filter((id: string) => id !== opt.id) 
+                          : [...current, opt.id];
+                        
                         setAnswers({ 
                           ...answers, 
-                          [currentStep.id]: exists 
-                            ? current.filter((id: string) => id !== opt.id) 
-                            : [...current, opt.id] 
+                          [currentStep.id]: nextSelection
                         });
                       }
                     }}

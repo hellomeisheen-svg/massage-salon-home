@@ -13,7 +13,7 @@ export function QuizResults({
   const isFirstVisit = answers.goal === "unsure" && answers.unsure_direction === "still_unsure";
   const isWellnessMasterChoice = answers.goal === "wellness" && answers.wellness_type?.includes("master_choice");
 
-  console.log("RESOLVED SERVICES:", services);
+  // Services resolution debug is removed
 
   return (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
@@ -36,8 +36,13 @@ export function QuizResults({
       </div>
 
       <div className="grid gap-4">
+        {services.length === 0 && (
+          <div className="p-8 text-center text-[#566A93] bg-[#EFF6FF] rounded-lg">
+            Мы не смогли подобрать программу автоматически. Пожалуйста, обсудите ваши пожелания с мастером.
+          </div>
+        )}
         {services.map((service, idx) => (
-          <div key={service.id} className={`p-5 rounded-[0.5rem] border transition-all ${idx === 0 ? "border-[#1C3C8C] bg-white ring-1 ring-[#1C3C8C]/10" : "border-[#daebff] bg-white"}`}>
+          <div key={service.id || idx} className={`p-5 rounded-[0.5rem] border transition-all ${idx === 0 ? "border-[#1C3C8C] bg-white ring-1 ring-[#1C3C8C]/10" : "border-[#daebff] bg-white"}`}>
             <div className="flex justify-between items-start gap-4">
               <div>
                 {idx === 0 && (

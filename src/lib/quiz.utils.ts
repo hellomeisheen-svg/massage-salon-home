@@ -87,15 +87,14 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
 
   // Ветка 3: Убрать отёчность (lightness)
   else if (goal === "lightness") {
-    // Если выбрано только лицо, перенаправляем на ветку лица (через calculateResult выше)
     const area = answers.lightness_area;
-    const areas = Array.isArray(area) ? area : [area].filter(Boolean);
+    const areas = Array.isArray(area) ? area : (area ? [area] : []);
     
     if (areas.length === 1 && areas.includes("face")) {
-      // Это условие уже поймано выше в isFacePath, но для надежности:
       serviceIds = ["lymph_face", "classic_face", "girudo_cosm"];
     } else {
-      return getLightnessRecommendations({ ...answers, lightnessArea: area });
+      // Возвращаем ID для стандартной дедупликации в конце функции
+      serviceIds = getLightnessRecommendations({ ...answers, lightnessArea: area }).map(s => s.id);
     }
   }
 
@@ -272,7 +271,7 @@ function getLightnessRecommendations(answers: Record<string, any>): QuizService[
 
   const areas = Array.isArray(area) ? area : [area].filter(Boolean);
 
-  console.log("LIGHTNESS RECOMMENDATIONS DEBUG:", { areas, area });
+  // console.log("LIGHTNESS RECOMMENDATIONS DEBUG:", { areas, area });
 
   if (areas.includes("face")) {
     ids = ["lymph_face", "classic_face", "girudo_cosm"];
@@ -288,6 +287,6 @@ function getLightnessRecommendations(answers: Record<string, any>): QuizService[
   }
 
   const result = ids.map(id => resolve(id)).filter((s): s is QuizService => !!s);
-  console.log("LIGHTNESS FINAL RESULT:", result.map(r => r.id));
+  // console.log("LIGHTNESS FINAL RESULT:", result.map(r => r.id));
   return result;
 }
