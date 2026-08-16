@@ -46,7 +46,9 @@ export function QuizResults({
             <div className="flex justify-between items-start gap-4">
               <div>
                 {idx === 0 && (
-                  <span className="text-[10px] font-bold text-[#A2CFFE] uppercase tracking-wider mb-1 block">Рекомендуем</span>
+                  <span className="inline-block px-2 py-0.5 rounded-[4px] bg-[#EFF6FF] text-[10px] font-bold text-[#1C3C8C] uppercase tracking-wider mb-2">
+                    Рекомендуем
+                  </span>
                 )}
                 <h4 className="font-medium text-[#1c3c8c]">{service.name}</h4>
                 <p className="text-xs text-[#566A93] mt-1 line-clamp-2">{service.description}</p>
