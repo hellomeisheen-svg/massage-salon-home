@@ -1,39 +1,49 @@
-# Design System Implementation Plan
+# Unified Radius Normalization (12px)
 
-This plan focuses on standardizing the visual system of the existing massage cabinet website to make it cohesive, predictable, and scalable without changing content, business logic, or page structure.
+Bring selected elements to a unified 12px radius, preserving all other visual and functional attributes.
 
-## 1. Core Styles Foundation (`src/styles.css`)
+## User Review Required
 
-- **Color Tokens**: Define CSS variables for primary, text, background, border, and semantic colors (success, error, etc.) using the specified hex values.
-- **Radii Tokens**: Standardize border-radius for small elements (6px), buttons (8px), cards (12px), and modals (16px).
-- **Shadows & Borders**: Implement uniform `box-shadow` and `border` tokens with smooth transitions.
-- **Typography Scale**: Establish a clear hierarchy for headers (Noto Serif Display) and body text (Inter) with adaptive sizes for mobile (320px/375px), tablet (768px), and desktop (1440px).
-- **Spacing Scale**: Implement a consistent 1-10 spacing scale and standard section paddings (140px desktop, 100px tablet, 60px mobile).
-- **Global States**: Apply a unified `focus-visible` ring and `prefers-reduced-motion` support.
+> [!IMPORTANT]
+> The normalization applies only to the listed elements. Other elements (buttons, inputs, compact badges) will maintain their existing radii (e.g., 8px).
 
-## 2. Component Standardization
-
-- **Buttons**: Unify `.btn-primary`, `.btn-secondary`, and navigation buttons into a single system with hover, active, and disabled states.
-- **Cards**: Apply the `ds-card` pattern (border, radius, shadow) to all service, program, review, and FAQ cards. Add hover lifts only to interactive cards.
-- **Chips/Badges**: Standardize all tags (categories, duration labels, session counts) using a pill shape and `var(--color-bg-chip)`.
-- **Form Inputs**: Update `BookingModal` and `QuizContactForm` to use the standardized `ds-input` styles with proper focus and error states.
-
-## 3. Interactive Elements & Accessibility
-
-- **FAQ**: Ensure the entire question row is clickable, add `aria-expanded`/`aria-controls`, and use a smooth height transition.
-- **Modals/Quiz**: standardise the `shadow-modal` and `radius-modal`. Ensure focus management (trap focus while open, return on close) and Esc-key support.
-- **Sticky CTA**: Ensure the `StickyMobileCTA` doesn't overlap important form elements and respects the z-index hierarchy.
-
-## 4. Layout Verification
-
-- **Breakpoints**: Verify the content width limits (900px tablet, 640px hero desktop) and ensure spacing scales correctly across all devices.
-- **Typography Check**: Ensure Noto Serif Display is used for headers and Inter for interface elements as per the brand concept.
+- **PriceExtras**: Currently using 16px (rounded-2xl). Will be brought to 12px (rounded-xl / ds-card).
+- **BookingModal Info Block**: Currently using 16px (rounded-2xl). Will be brought to 12px.
+- **ImageTiles**: Currently using 24px. Will be brought to 12px.
+- **ServicePage Category Badge**: Currently using 6px. Will be brought to 12px.
+- **QuizResults Card**: Currently using 8px (rounded-lg). Will be brought to 12px.
+- **Tab Containers**: External containers in Services, PriceTable, ServicePage, and girudoterapiya will be brought to 12px.
 
 ## Technical Details
 
-- Use standard Tailwind v4 @theme variables for tokens where possible, but use CSS variables for absolute control over the design system.
-- Implement transitions using a standard timing (200ms) for color, shadow, and transform changes.
-- Ensure all text-to-background contrast ratios meet WCAG AA standards (4.5:1 for body text).
+### Proposed Changes
 
----
-*Note: This update will not modify any texts, prices, services, or images. It purely targets the presentation layer and interaction feedback.*
+1.  **StickyMobileCTA** (`src/components/StickyMobileCTA.tsx`)
+    *   Maintain 12px radius.
+    *   Standardize the `!rounded-[12px]` class usage to match the project's standard 12px radius (if a utility exists) or keep it clean.
+
+2.  **PriceExtras** (within `src/components/ServicePage.tsx` or `src/routes/banki.tsx`)
+    *   Locate and update all PriceExtras cards to `rounded-[12px]`.
+
+3.  **BookingModal Info Block** (`src/components/BookingModal.tsx`)
+    *   Update the "What's next" info block (currently `rounded-2xl`) to `rounded-[12px]`.
+
+4.  **QuizResults** (`src/components/quiz/QuizResults.tsx`)
+    *   Update result cards and their large containers from `rounded-lg` (8px) to `rounded-[12px]`.
+    *   Keep small elements (checkmarks, badges) at their current radii.
+
+5.  **Tab Containers**
+    *   Update external tab wrappers (currently mixed 10px or 8px) to `rounded-[12px]`.
+    *   Files: `src/components/Services.tsx`, `src/components/PriceTable.tsx`, `src/components/ServicePage.tsx`, `src/routes/girudoterapiya.tsx`.
+
+6.  **ServicePage Category Badge** (`src/components/ServicePage.tsx`)
+    *   Update category label from `rounded-[4px]` or `rounded-[6px]` to `rounded-[12px]`.
+
+7.  **ImageTiles** (`src/styles.css` or component)
+    *   Update `.image-tile` or the component container from 24px to 12px.
+
+### Implementation Strategy
+
+*   Use `rounded-[12px]` consistently or the `ds-card` utility where appropriate.
+*   Ensure no layout shifts or padding changes occur.
+*   Verify focus-visible and active states remain intact.
