@@ -875,3 +875,17 @@ button:focus-visible {
     font-weight: 500 !important;
   }
 }
+
+@utility quiz-option {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+}
+
+@utility quiz-option__label {
+  line-height: 1.35;
+  max-width: calc(100% - 48px);
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+

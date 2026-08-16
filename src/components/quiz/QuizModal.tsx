@@ -194,13 +194,15 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
                         });
                       }
                     }}
-                    className={`w-full text-left p-4 md:p-5 rounded-[0.5rem] border border-[#daebff] transition-all duration-300 flex items-center justify-between group ${
+                    className={`quiz-option w-full text-left p-4 md:p-5 rounded-[0.5rem] border border-[#daebff] transition-all duration-300 flex items-center justify-between group ${
                       isSelected 
                         ? "border-[#1C3C8C] bg-white text-[#1c3c8c]" 
                         : "bg-[#EFF6FF] text-[#566A93] hover:bg-white"
                     }`}
                   >
-                    <span className="font-medium text-base md:text-lg">{opt.text}</span>
+                    <span className="quiz-option__label font-medium text-base md:text-lg">
+                      {opt.text}
+                    </span>
                     <div className={`w-6 h-6 rounded-[6px] border flex items-center justify-center transition-colors ${
                       isSelected ? "bg-[#88C1FF] border-[#88C1FF]" : "bg-white border-[#DAEBFF] group-hover:border-[#A2CFFE]"
                     }`}>
