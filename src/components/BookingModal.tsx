@@ -343,7 +343,7 @@ function BookingDialog({
                       id="consent-checkbox"
                       type="checkbox"
                       name="consent"
-                      required
+                      required={false}
                       checked={consent}
                       aria-invalid={!!consentError}
                       aria-describedby={consentError ? "consent-error" : undefined}
