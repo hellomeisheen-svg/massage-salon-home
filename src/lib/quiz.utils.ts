@@ -111,7 +111,7 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
     const selectedTypes = answers.wellness_type || [];
     
     if (selectedTypes.includes("master_choice")) {
-      serviceIds = ["ketgut", "girudo_med", "cups_air"];
+      serviceIds = ["ketgut", "girudo_med", "cups_air", "vector"];
     } else {
       const practiceMapping: Record<string, string> = {
         cups_air: "cups_air",
@@ -123,11 +123,14 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
       
       serviceIds = selectedTypes
         .map((id: string) => practiceMapping[id])
-        .filter(Boolean)
-        .sort((a: string, b: string) => wellnessPriority.indexOf(a) - wellnessPriority.indexOf(b));
+        .filter(Boolean);
+      
+      // Добавляем векторный массаж, если выбраны банки
+      if (selectedTypes.includes("cups_air") || selectedTypes.includes("cups_fire")) {
+        serviceIds.push("vector");
+      }
+      
     }
-    
-    // В велнесе массажи НЕ предлагаются
   }
 
   // Дедупликация и лимит 3
