@@ -119,8 +119,8 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
                   { text: "Расчет стоимости и длительности", icon: "2" },
                   { text: "Скидка на первый визит", icon: "3" }
                 ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-4 p-4 rounded-[12px] border border-[#DAEBFF] bg-white ds-bento-shadow group">
-                    <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-[12px] bg-[#EFF6FF] text-[13px] font-bold text-[#1C3C8C] group-hover:bg-[#DAEBFF] transition-colors">
+                  <div key={i} className="flex items-center gap-4 p-4 rounded-[12px] border border-[#DAEBFF] bg-white ds-bento-shadow">
+                    <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-[12px] bg-[#EFF6FF] text-[13px] font-bold text-[#1C3C8C]">
                       {item.icon}
                     </span>
                     <span className="text-[14px] sm:text-[15px] leading-tight text-[#1C3C8C] font-medium">{item.text}</span>
@@ -168,7 +168,10 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
               </div>
             </div>
             
-            <h3 className="font-noto-serif-narrow ds-h3 text-[#1c3c8c] mb-8 leading-tight">{currentStep.question}</h3>
+            <div className="mb-8">
+              <h3 className="font-noto-serif-narrow ds-h3 text-[#1c3c8c] leading-tight">{currentStep.question}</h3>
+              <p className="text-[12px] text-[#566A93] mt-2 uppercase tracking-wider opacity-60">Главная цель визита</p>
+            </div>
             
             <div className="grid gap-3 mb-10">
               {currentStep.options.map((opt) => {
@@ -189,7 +192,8 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
 
                         setAnswers(newAnswers);
                         
-                        setTimeout(() => handleNext(newAnswers), 300);
+                        // Автопереход убран для внедрения кнопки "Далее"
+                        // setTimeout(() => handleNext(newAnswers), 300);
                       } else {
                         const current = answers[currentStep.id] || [];
                         const exists = current.includes(opt.id);
@@ -203,7 +207,7 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
                         });
                       }
                     }}
-                    className={`quiz-option w-full text-left p-4 md:p-5 rounded-[12px] border transition-all duration-300 flex items-center justify-between group ${
+                    className={`quiz-option w-full text-left p-4 md:p-5 rounded-[12px] border transition-all duration-300 flex items-center justify-between group ds-bento-shadow ${
                       isSelected 
                         ? "border-[#A2CFFE] bg-[#DAEBFF] text-[#1c3c8c]" 
                         : "bg-white border-[#DAEBFF] text-[#566A93] hover:border-[#A2CFFE]"
@@ -226,15 +230,13 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
               <button onClick={handleBack} className="btn-secondary flex-1 h-14 flex items-center justify-center gap-2">
                 <ChevronLeft size={20} /> Назад
               </button>
-              {currentStep.type === "multiple" && (
-                <button 
-                  disabled={!(answers[currentStep.id]?.length)}
-                  onClick={handleNext} 
-                  className="btn-primary flex-[2] h-14"
-                >
-                  Далее
-                </button>
-              )}
+              <button 
+                disabled={currentStep.type === "multiple" && !(answers[currentStep.id]?.length)}
+                onClick={() => handleNext()} 
+                className="btn-primary flex-[2] h-14"
+              >
+                Далее
+              </button>
             </div>
           </div>
         )}
