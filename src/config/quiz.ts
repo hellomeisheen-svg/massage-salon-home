@@ -122,7 +122,7 @@ export const QUIZ_CONFIG: {
     // Ветка 4. Лицо (изолированная)
     {
       id: "face_goal",
-      question: "Что хочется получить от процедуры для лица?",
+      question: "Чего вы ждете от процедуры для лица?",
       type: "multiple",
       showIf: (a) => a.goal === "face" || (a.goal === "lightness" && Array.isArray(a.lightness_area) && a.lightness_area.length === 1 && a.lightness_area.includes("face")),
       options: [
