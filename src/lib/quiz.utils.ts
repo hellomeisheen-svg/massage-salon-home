@@ -78,24 +78,7 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
 
   // Ветка 2: Снять напряжение (back_neck)
   else if (goal === "back_neck") {
-    const res = answers.back_result;
-    const areas = answers.back_tension_area || [];
-    const isUpper = areas.includes("neck") || areas.includes("shoulders") || areas.includes("upper_back");
-    const isLower = areas.includes("lower_back");
-    
-    if (isUpper && isLower) {
-      serviceIds = ["vector", "classic_full", "classic_spine_neck"];
-    } else if (isLower) {
-      serviceIds = ["classic_full", "vector", "classic_spine_neck"];
-    } else if (isUpper) {
-      if (res === "deep_work") {
-        serviceIds = ["classic_spine_neck", "classic_full", "vector"];
-      } else {
-        serviceIds = ["classic_spine_neck", "classic_full"];
-      }
-    } else {
-      serviceIds = ["classic_spine_neck", "vector"];
-    }
+    return getBackNeckRecommendations(answers);
   }
 
   // Ветка 3: Убрать отёчность (lightness)
@@ -145,5 +128,54 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
     .map(id => getService(id))
     .filter((s): s is QuizService => !!s);
 
-  return goal === "relax" ? result : result.slice(0, 3);
+  const isSpecialBranch = goal === "relax" || goal === "back_neck";
+  return isSpecialBranch ? result : result.slice(0, 3);
+}
+
+function getBackNeckRecommendations(answers: Record<string, any>): QuizService[] {
+  const getService = (id: string) => QUIZ_CONFIG.services.find(s => s.id === id);
+  const zones = Array.isArray(answers.back_tension_area)
+    ? answers.back_tension_area
+    : [answers.back_tension_area].filter(Boolean);
+  
+  const result = answers.back_result;
+  
+  // Банки обязательны во всех сценариях второй ветки
+  const cupsId = result === "deep_work" ? "cups_fire" : "cups_air";
+  
+  const hasUpperBody = zones.some((zone) =>
+    ["neck", "shoulders", "upper_back"].includes(zone)
+  );
+  const hasLowerBack = zones.includes("lower_back");
+  const hasWholeBody = zones.includes("whole_body");
+  const isMasterChoice = zones.includes("master_choice");
+
+  let ids: string[] = [];
+
+  // Верх спины + поясница: максимум 3 карточки (включая банки)
+  if (zones.includes("upper_back") && hasLowerBack) {
+    ids = ["vector", "classic_full", cupsId];
+  }
+  // Всё тело
+  else if (hasWholeBody) {
+    ids = ["vector", "classic_full", cupsId];
+  }
+  // Поясница
+  else if (hasLowerBack) {
+    ids = ["classic_full", "vector", cupsId];
+  }
+  // Шея / плечи / верх спины
+  else if (hasUpperBody) {
+    ids = ["classic_spine_neck", "classic_full", cupsId];
+  }
+  // Не знаю
+  else if (isMasterChoice) {
+    ids = ["vector", "classic_spine_neck", cupsId];
+  }
+  // Fallback
+  else {
+    ids = ["classic_spine_neck", "classic_full", cupsId];
+  }
+
+  return ids.map(id => getService(id)).filter((s): s is QuizService => !!s);
 }
