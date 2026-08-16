@@ -545,7 +545,7 @@ function PriceCard({ p }: { p: HirudoRow }) {
 
   return (
     <article className="flex flex-col ds-card p-6 sm:p-8 xl:p-10">
-      <div className="flex items-stretch gap-1 rounded-[10px] bg-[#EFF6FF] p-1">
+      <div className="flex items-stretch gap-1 rounded-[12px] bg-[#EFF6FF] p-1">
         {tabLabels.map((label, i) => (
           <button
             key={label}

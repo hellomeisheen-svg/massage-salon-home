@@ -255,7 +255,7 @@ function AboutService({ content }: { content: ServicePageContent }) {
           <span
             className="inline-flex items-center gap-2 px-4 py-1.5 ds-label text-white"
             style={{
-              borderRadius: "4px",
+              borderRadius: "12px",
               backgroundImage: "linear-gradient(to bottom, #A2CFFE, #88C1FF)",
             }}
           >
@@ -319,7 +319,7 @@ function PriceCard({ p, prefix }: { p: ServicePrice; prefix: string }) {
 
   return (
     <article className="flex flex-col ds-card p-6 sm:p-8 xl:p-10">
-      <div className="flex items-stretch gap-1 rounded-[10px] bg-[#EFF6FF] p-1">
+      <div className="flex items-stretch gap-1 rounded-[12px] bg-[#EFF6FF] p-1">
         {tabLabels.map((label, i) => (
           <button
             key={label}
