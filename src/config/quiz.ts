@@ -124,7 +124,7 @@ export const QUIZ_CONFIG: {
       id: "face_goal",
       question: "Что хочется получить от процедуры для лица?",
       type: "multiple",
-      showIf: (a) => a.goal === "face" || (a.goal === "lightness" && a.lightness_area?.length === 1 && a.lightness_area.includes("face")),
+      showIf: (a) => a.goal === "face" || (a.goal === "lightness" && Array.isArray(a.lightness_area) && a.lightness_area.length === 1 && a.lightness_area.includes("face")),
       options: [
         { id: "face_swelling", text: "Убрать отёчность" },
         { id: "freshness", text: "Вернуть свежесть и отдохнувший вид" },
@@ -137,7 +137,7 @@ export const QUIZ_CONFIG: {
       id: "face_format",
       question: "Какой формат ухода вам ближе?",
       type: "single",
-      showIf: (a) => a.goal === "face" || (a.goal === "lightness" && a.lightness_area?.length === 1 && a.lightness_area.includes("face")),
+      showIf: (a) => a.goal === "face" || (a.goal === "lightness" && Array.isArray(a.lightness_area) && a.lightness_area.length === 1 && a.lightness_area.includes("face")),
       options: [
         { id: "classic_face", text: "Массаж лица" },
         { id: "lymph_face", text: "Лимфодренаж лица" },

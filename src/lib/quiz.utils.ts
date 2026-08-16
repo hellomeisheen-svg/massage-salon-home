@@ -20,10 +20,12 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
   }
 
   // Ветка 4: Лицо (face) - изолирована
-  const isFacePath = goal === "face" || (goal === "lightness" && answers.lightness_area?.length === 1 && answers.lightness_area.includes("face"));
+  const isFacePath = goal === "face" || (goal === "lightness" && Array.isArray(answers.lightness_area) && answers.lightness_area.length === 1 && answers.lightness_area.includes("face"));
   if (isFacePath) {
     serviceIds = ["lymph_face", "classic_face", "girudo_cosm"];
-    return serviceIds.map(id => getService(id)).filter((s): s is QuizService => !!s);
+    const results = serviceIds.map(id => getService(id)).filter((s): s is QuizService => !!s);
+    console.log("FACE RECOMMENDATIONS:", results.map(r => r.id));
+    return results;
   }
 
   // Ветка 1: Глубокое расслабление (relax)
@@ -86,9 +88,29 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
   // Ветка 3: Убрать отёчность (lightness)
   else if (goal === "lightness") {
     const areas = answers.lightness_area || [];
-    if (areas.includes("legs") || areas.includes("feet")) serviceIds = ["classic_legs", "lymph", "lymphatic"];
-    else if (areas.includes("whole_body")) serviceIds = ["lymph", "lymphatic", "vector"];
-    else serviceIds = ["lymph", "lymphatic"];
+    console.log("LIGHTNESS AREA:", areas);
+    
+    // Ноги или Стопы (или оба) -> Ноги + Лимфодренаж + Лимфатический
+    if (areas.includes("legs") || areas.includes("feet")) {
+      serviceIds = ["classic_legs", "lymph", "lymphatic"];
+    } 
+    // Всё тело -> Лимфодренаж + Лимфатический + Векторный
+    else if (areas.includes("whole_body")) {
+      serviceIds = ["lymph", "lymphatic", "vector"];
+    }
+    // Лицо -> перенаправляем на логику лица
+    else if (areas.includes("face")) {
+      serviceIds = ["lymph_face", "classic_face", "girudo_cosm"];
+    }
+    // Не знаю / доверюсь мастеру -> Лимфодренаж + Лимфатический + Векторный
+    else if (areas.includes("master_choice")) {
+      serviceIds = ["lymph", "lymphatic", "vector"];
+    }
+    // По умолчанию
+    else {
+      serviceIds = ["lymph", "lymphatic"];
+    }
+    console.log("LIGHTNESS RECOMMENDATIONS:", serviceIds);
   }
 
   // Ветка 5: Оздоровительные практики (wellness)
@@ -130,7 +152,7 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
     .map(id => getService(id))
     .filter((s): s is QuizService => !!s);
 
-  const isSpecialBranch = goal === "relax" || goal === "back_neck";
+  const isSpecialBranch = goal === "relax" || goal === "back_neck" || goal === "lightness";
   return isSpecialBranch ? result : result.slice(0, 3);
 }
 
