@@ -234,7 +234,7 @@ function PriceTableRow({ p, isProgram = false }: { p: ServicePrice, isProgram?: 
           {p.zone.includes(" • ") ? (
             <>
               <span>{p.zone.split(" • ")[0]}</span>
-              <span className="inline-flex items-center justify-center rounded-full bg-[#daebff]/50 px-2.5 py-0.5 text-[11px] xl:text-[12px] font-light tracking-tight text-[#566A93]/80 border border-[#daebff]/30">
+              <span className="inline-flex items-center justify-center rounded-full bg-[#DAEBFF] px-2.5 py-0.5 text-[11px] xl:text-[12px] font-light tracking-tight text-[#566A93]/80 border border-[#daebff]/30">
                 {p.zone.split(" • ")[1]}
               </span>
             </>
