@@ -309,9 +309,7 @@ function BookingDialog({
                       key={m.id}
                       type="button"
                       onClick={() => setMethod(m.id)}
-                      className={`h-[48px] rounded-[12px] border text-xs font-medium transition-all ${
-                        method === m.id ? "bg-white border-[#1C3C8C] text-[#1C3C8C]" : "bg-[#EFF6FF] border-[#daebff] text-[#566A93]"
-                      }`}
+                      className={`ds-toggle ${method === m.id ? "ds-toggle-active" : ""}`}
                     >
                       {m.label}
                     </button>
