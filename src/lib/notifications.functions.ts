@@ -112,8 +112,11 @@ export const sendLeadNotification = createServerFn({ method: "POST" })
       if (!response.ok) {
         const errorData = await response.json();
         console.error("[Notification Error] Resend API failed:", errorData);
-        return { success: false, error: "Email sending failed" };
+        return { success: false, error: "Email sending failed", details: errorData };
       }
+
+      const resendData = await response.json();
+      console.log(`[Notification Success] Email sent. ID: ${resendData.id}`);
 
       // 5. Mark as sent in DB
       const { error: updateError } = await supabaseAdmin
@@ -123,9 +126,10 @@ export const sendLeadNotification = createServerFn({ method: "POST" })
 
       if (updateError) {
         console.error(`[Notification Error] Failed to update lead ${lead.id}:`, updateError);
+        // We don't throw here because the email WAS sent
       }
 
-      return { success: true };
+      return { success: true, resendId: resendData.id };
     } catch (err) {
       console.error("[Notification Error] Unexpected error:", err);
       return { success: false, error: "Internal error" };

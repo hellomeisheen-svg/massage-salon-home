@@ -72,7 +72,7 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
       if (insertError) throw insertError;
 
       if (leadData?.id) {
-        sendLeadNotification({ data: { leadId: leadData.id } }).catch(e => console.error(e));
+        await sendLeadNotification({ data: { leadId: leadData.id } });
       }
       setIsSuccess(true);
     } catch (e) {
