@@ -70,15 +70,6 @@ export const sendLeadNotification = createServerFn({ method: "POST" })
         timeStyle: "medium",
       });
 
-      const emailHtml = `
-        <div style="font-family: sans-serif; line-height: 1.6; color: #333;">
-          <h2 style="color: #1C3C8C; border-bottom: 1px solid #daebff; padding-bottom: 10px;">Новая заявка с сайта 7 Heaven Massage</h2>
-          <p><strong>Имя:</strong> ${name}</p>
-          <p><strong>Телефон:</strong> ${phoneVal}</p>
-          <p><strong>Комментарий:</strong> ${message}</p>
-          <p><strong>Дата и время:</strong> ${createdAt}</p>
-        </div>
-      `;
 
       // 4. Send Email via Resend API
       const emailSubject = lead.message?.includes("[QUIZ LEAD]") 
