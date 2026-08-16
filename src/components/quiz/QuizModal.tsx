@@ -82,7 +82,7 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
       className={`fixed inset-0 z-[100] flex items-end justify-center overflow-y-auto bg-[#1C3C8C]/40 p-4 backdrop-blur-sm sm:items-center sm:p-6 transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0'}`}
       role="presentation"
     >
-      <div className="relative my-auto w-full max-w-[640px] ds-card p-5 sm:p-8 xl:p-10 transition-transform duration-300 scale-100">
+      <div className="relative my-auto w-full max-w-[640px] ds-card ds-bento-shadow p-5 sm:p-8 xl:p-10 transition-transform duration-300 scale-100">
         <button 
           onClick={onClose} 
           className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-[12px] border border-[#daebff] bg-[#EFF6FF] text-[#1C3C8C] transition-colors hover:bg-white z-10"
@@ -119,11 +119,11 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
                   { text: "Расчет стоимости и длительности", icon: "2" },
                   { text: "Скидка на первый визит", icon: "3" }
                 ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-4 p-4 rounded-[12px] border border-[#DAEBFF]/60 bg-white shadow-[0_2px_8px_rgba(28,60,140,0.05)] group">
-                    <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-[12px] bg-[#EFF6FF] text-[13px] font-bold text-[#1C3C8C] group-hover:bg-[#88C1FF] group-hover:text-white transition-colors">
+                  <div key={i} className="flex items-center gap-4 p-4 rounded-[12px] border border-[#DAEBFF] bg-white ds-bento-shadow group">
+                    <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-[12px] bg-[#EFF6FF] text-[13px] font-bold text-[#1C3C8C] group-hover:bg-[#DAEBFF] transition-colors">
                       {item.icon}
                     </span>
-                    <span className="text-[14px] sm:text-[15px] leading-tight text-[#1C3C8C] font-semibold">{item.text}</span>
+                    <span className="text-[14px] sm:text-[15px] leading-tight text-[#1C3C8C] font-medium">{item.text}</span>
                   </div>
                 ))}
               </div>
@@ -203,10 +203,10 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
                         });
                       }
                     }}
-                    className={`quiz-option w-full text-left p-4 md:p-5 rounded-[12px] border border-[#daebff] transition-all duration-300 flex items-center justify-between group ${
+                    className={`quiz-option w-full text-left p-4 md:p-5 rounded-[12px] border transition-all duration-300 flex items-center justify-between group ${
                       isSelected 
-                        ? "border-[#1C3C8C] bg-white text-[#1c3c8c]" 
-                        : "bg-[#EFF6FF] text-[#566A93] hover:bg-white"
+                        ? "border-[#A2CFFE] bg-[#DAEBFF] text-[#1c3c8c]" 
+                        : "bg-white border-[#DAEBFF] text-[#566A93] hover:border-[#A2CFFE]"
                     }`}
                   >
                     <span className="quiz-option__label font-medium text-base md:text-lg">
