@@ -20,10 +20,12 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
   }
 
   // Ветка 4: Лицо (face) - изолирована
-  const isFacePath = goal === "face" || (goal === "lightness" && answers.lightness_area?.length === 1 && answers.lightness_area.includes("face"));
+  const isFacePath = goal === "face" || (goal === "lightness" && Array.isArray(answers.lightness_area) && answers.lightness_area.length === 1 && answers.lightness_area.includes("face"));
   if (isFacePath) {
     serviceIds = ["lymph_face", "classic_face", "girudo_cosm"];
-    return serviceIds.map(id => getService(id)).filter((s): s is QuizService => !!s);
+    const results = serviceIds.map(id => getService(id)).filter((s): s is QuizService => !!s);
+    console.log("FACE RECOMMENDATIONS:", results.map(r => r.id));
+    return results;
   }
 
   // Ветка 1: Глубокое расслабление (relax)
