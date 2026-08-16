@@ -7,34 +7,57 @@ const YANDEX_MAPS_URL =
 
 function RatingBlock() {
   return (
-    <a
-      href={YANDEX_MAPS_URL}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group flex w-full items-center gap-4 transition-all hover:-translate-y-0.5 hover:opacity-85 active:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1C3C8C] sm:max-w-[320px]"
-    >
-      <div className="flex min-w-0 flex-col gap-1.5">
-        <div className="flex items-center gap-2.5">
-          <span className="font-noto-serif-narrow text-[28px] font-semibold leading-none tracking-tight text-[#1C3C8C]">
-            4,7
-          </span>
-          <div className="flex flex-nowrap items-center gap-0.5">
-            {Array.from({ length: 5 }).map((_, i) => (
-              <Star
-                key={i}
-                aria-hidden="true"
-                className="h-[16px] w-[16px] shrink-0 fill-[#A2CFFE] text-[#A2CFFE]"
-              />
-            ))}
-          </div>
+    <div className="flex flex-col gap-8">
+      {/* Variant 1: Minimalist Underline */}
+      <a
+        href={YANDEX_MAPS_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group flex items-center gap-3 border-b border-[#daebff] pb-2 transition-all hover:border-[#A2CFFE] w-fit"
+      >
+        <span className="font-noto-serif-narrow text-[24px] font-bold text-[#1C3C8C]">4,7</span>
+        <div className="flex gap-0.5">
+          {Array.from({ length: 5 }).map((_, i) => (
+            <Star key={i} className="h-4 w-4 fill-[#A2CFFE] text-[#A2CFFE]" />
+          ))}
         </div>
-        <div className="flex items-center">
-          <span className="text-[13px] font-light leading-none text-[#566A93]">
-            Яндекс Карты
-          </span>
+        <span className="text-[12px] uppercase tracking-wider text-[#566A93] ml-2">Яндекс Карты</span>
+      </a>
+
+      {/* Variant 2: Floating Glass Pill */}
+      <a
+        href={YANDEX_MAPS_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-3 rounded-full border border-[#daebff] bg-white/50 backdrop-blur-sm px-4 py-2 transition-all hover:bg-white w-fit ds-bento-shadow"
+      >
+        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#A2CFFE] text-white font-bold text-[14px]">Я</div>
+        <span className="font-semibold text-[#1C3C8C]">4,7</span>
+        <div className="flex gap-0.5">
+          {Array.from({ length: 5 }).map((_, i) => (
+            <Star key={i} className="h-3.5 w-3.5 fill-[#A2CFFE] text-[#A2CFFE]" />
+          ))}
         </div>
-      </div>
-    </a>
+      </a>
+
+      {/* Variant 3: Vertical Serif Elegance */}
+      <a
+        href={YANDEX_MAPS_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group flex flex-col gap-1 transition-all hover:opacity-80 w-fit"
+      >
+        <div className="flex items-baseline gap-2">
+          <span className="font-noto-serif-narrow text-[36px] font-bold leading-none text-[#1C3C8C]">4,7</span>
+          <span className="text-[11px] uppercase tracking-[0.2em] text-[#566A93]">Рейтинг</span>
+        </div>
+        <div className="flex gap-1">
+          {Array.from({ length: 5 }).map((_, i) => (
+            <Star key={i} className="h-4 w-4 fill-[#A2CFFE] text-[#A2CFFE]" />
+          ))}
+        </div>
+      </a>
+    </div>
   );
 }
 
