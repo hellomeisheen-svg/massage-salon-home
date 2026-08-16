@@ -324,7 +324,7 @@ function BookingDialog({
                   rows={4}
                   defaultValue={subject ? `${subject}: ` : ""}
                   placeholder="Самочувствие, пожелания, удобное время"
-                  className="ds-input py-3"
+                  className="ds-input py-3 resize-none align-top"
                 />
               </label>
 
@@ -361,7 +361,7 @@ function BookingDialog({
                       className="underline"
                       onClick={(e) => e.stopPropagation()}
                     >
-                      политикой конфиденциальности
+                      Политикой конфиденциальности
                     </a>
                     .
                   </span>
