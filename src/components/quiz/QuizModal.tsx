@@ -57,6 +57,7 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
 
   const onContactSubmit = async (contact: { name: string; phone: string; method: string; website?: string }) => {
     setIsSubmitting(true);
+    setError(null);
     try {
       const answersText = visibleSteps.map(s => {
         const ansId = answers[s.id];
