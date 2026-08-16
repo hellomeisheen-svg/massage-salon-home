@@ -285,7 +285,7 @@ export function Programs({ prioritizeKeys }: ProgramsProps = {}) {
                 type="button"
                 onClick={prev}
                 aria-label="Предыдущая программа"
-                className="btn-secondary sm:min-w-[80px] sm:flex-none flex items-center justify-center"
+                className="btn-secondary sm:min-w-[80px] sm:flex-none flex items-center justify-center active:opacity-60 transition-opacity"
               >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                   <path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
@@ -295,7 +295,7 @@ export function Programs({ prioritizeKeys }: ProgramsProps = {}) {
                 type="button"
                 onClick={next}
                 aria-label="Следующая программа"
-                className="btn-secondary sm:min-w-[80px] sm:flex-none flex items-center justify-center"
+                className="btn-secondary sm:min-w-[80px] sm:flex-none flex items-center justify-center active:opacity-60 transition-opacity"
               >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                   <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
