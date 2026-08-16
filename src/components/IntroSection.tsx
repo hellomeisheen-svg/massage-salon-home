@@ -49,7 +49,7 @@ export function IntroSection() {
                 <p className="font-medium text-[#1C3C8C] text-[18px]">Моё образование и специализации:</p>
                 <div className="grid gap-3">
                   {educationList.map((item, idx) => (
-                    <div key={idx} className="group relative flex flex-col p-4 rounded-[12px] bg-white border border-[#DAEBFF] hover:border-[#A2CFFE] transition-all duration-300">
+                    <div key={idx} className="group relative flex flex-col p-4 rounded-[12px] ds-bento-shadow bg-white border border-[#DAEBFF] hover:border-[#A2CFFE] transition-all duration-300">
                       <span className="text-[12px] uppercase tracking-wider text-[#A2CFFE] font-medium mb-1">{item.school}</span>
                       <span className="text-[#1C3C8C] font-medium leading-snug">{item.skill}</span>
                     </div>

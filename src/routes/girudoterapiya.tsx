@@ -544,7 +544,7 @@ function PriceCard({ p }: { p: HirudoRow }) {
   const summary = `${count} ${sessionWord} · ${p.duration}`;
 
   return (
-    <article className="flex flex-col ds-card p-6 sm:p-8 xl:p-10">
+    <article className="flex flex-col ds-card ds-bento-shadow p-6 sm:p-8 xl:p-10">
       <div className="flex items-stretch gap-1 rounded-[12px] bg-[#EFF6FF] p-1">
         {tabLabels.map((label, i) => (
           <button
@@ -634,7 +634,7 @@ function Prices() {
 function FaqItem({ q, a }: { q: string; a: React.ReactNode }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="ds-card">
+    <div className="ds-card ds-bento-shadow">
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
@@ -684,7 +684,7 @@ function Faq() {
             Отвечаю на&nbsp;самые важные вопросы
           </h2>
 
-          <div className="mt-8 xl:mt-auto ds-card p-6 sm:p-7 w-full xl:w-1/2 mx-auto xl:mx-0 text-left">
+          <div className="mt-8 xl:mt-auto ds-card ds-bento-shadow p-6 sm:p-7 w-full xl:w-1/2 mx-auto xl:mx-0 text-left">
             <img
               src="/images/tatyana-photo.webp"
               alt="Татьяна Злобина"

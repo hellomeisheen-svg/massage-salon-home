@@ -405,7 +405,7 @@ export function ServiceCard({
   const priceLabel = applyTypography(`за ${sessionCounts[activeSession]} ${sessionWord}`);
 
   return (
-    <article className="ds-card ds-card-hover p-5 sm:p-8 flex flex-col h-auto min-h-[640px] md:min-h-[700px]">
+    <article className="ds-card ds-bento-shadow p-5 sm:p-8 flex flex-col h-auto min-h-[640px] md:min-h-[700px]">
       {/* Sessions — pill switcher */}
       <div className="flex items-stretch gap-1 rounded-[12px] bg-[#EFF6FF] p-1">
         {items.map((s, i) => (
