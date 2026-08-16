@@ -16,7 +16,7 @@ export function PriceInclusions() {
             </p>
           </div>
           
-          <div className="bg-white/40 backdrop-blur-sm p-6 rounded-2xl border border-[#daebff]/50 flex flex-col items-center text-center space-y-3">
+          <div className="bg-white/40 backdrop-blur-sm p-6 rounded-[12px] border border-[#daebff]/50 flex flex-col items-center text-center space-y-3">
             <div className="w-12 h-12 rounded-full bg-[#1C3C8C]/5 flex items-center justify-center text-[#1C3C8C]">
               <Sparkles className="w-6 h-6" />
             </div>
@@ -26,7 +26,7 @@ export function PriceInclusions() {
             </p>
           </div>
 
-          <div className="bg-white/40 backdrop-blur-sm p-6 rounded-2xl border border-[#daebff]/50 flex flex-col items-center text-center space-y-3">
+          <div className="bg-white/40 backdrop-blur-sm p-6 rounded-[12px] border border-[#daebff]/50 flex flex-col items-center text-center space-y-3">
             <div className="w-12 h-12 rounded-full bg-[#1C3C8C]/5 flex items-center justify-center text-[#1C3C8C]">
               <Coffee className="w-6 h-6" />
             </div>
