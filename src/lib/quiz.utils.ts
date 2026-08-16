@@ -78,7 +78,9 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
 
   // Ветка 2: Снять напряжение (back_neck)
   else if (goal === "back_neck") {
-    return getBackNeckRecommendations(answers);
+    const result = getBackNeckRecommendations(answers);
+    console.log("BACK_NECK RECOMMENDATIONS:", result.map(s => s.id));
+    return result;
   }
 
   // Ветка 3: Убрать отёчность (lightness)
