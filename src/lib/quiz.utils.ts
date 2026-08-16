@@ -272,6 +272,8 @@ function getLightnessRecommendations(answers: Record<string, any>): QuizService[
 
   const areas = Array.isArray(area) ? area : [area].filter(Boolean);
 
+  console.log("LIGHTNESS RECOMMENDATIONS DEBUG:", { areas, area });
+
   if (areas.includes("face")) {
     ids = ["lymph_face", "classic_face", "girudo_cosm"];
   } else if (areas.includes("legs") || areas.includes("feet")) {
@@ -281,8 +283,11 @@ function getLightnessRecommendations(answers: Record<string, any>): QuizService[
   } else if (areas.includes("master_choice") || areas.length === 0) {
     ids = ["lymph", "lymphatic", "classic_legs"];
   } else {
+    // Если ничего не подошло, но мы в этой ветке
     ids = ["lymph", "lymphatic", "classic_legs"];
   }
 
-  return ids.map(id => resolve(id)).filter((s): s is QuizService => !!s);
+  const result = ids.map(id => resolve(id)).filter((s): s is QuizService => !!s);
+  console.log("LIGHTNESS FINAL RESULT:", result.map(r => r.id));
+  return result;
 }
