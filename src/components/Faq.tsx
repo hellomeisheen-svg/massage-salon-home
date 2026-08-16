@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useId } from "react";
 import { Plus } from "lucide-react";
 
 
@@ -32,12 +32,16 @@ const items = [
 
 function FaqItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
+  const contentId = useId();
+
   return (
     <div className="ds-card">
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        className="w-full flex items-center justify-between gap-4 p-5 sm:p-6 xl:p-7 text-left"
+        aria-expanded={open}
+        aria-controls={contentId}
+        className="w-full flex items-center justify-between gap-4 p-5 sm:p-6 xl:p-7 text-left faq-trigger focus:outline-none"
       >
         <span className="font-noto-serif-narrow ds-h4 text-[#1C3C8C] text-[18px] sm:text-[28px] xl:text-[28px]">
           {q}
@@ -51,6 +55,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
         </span>
       </button>
       <div
+        id={contentId}
         className={`grid transition-all duration-300 ease-out ${
           open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
         }`}
