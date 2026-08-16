@@ -111,7 +111,7 @@ export const sendLeadNotification = createServerFn({ method: "POST" })
         },
         body: JSON.stringify({
           from: "7 Heaven Massage <zayavki@7heavenmassage.ru>",
-          to: "meisheen@yandex.ru",
+          to: ["meisheen@yandex.ru", "ks.zlobina.93@gmail.com"],
           subject: emailSubject,
           html: `
             <div style="font-family: sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto;">
@@ -129,7 +129,13 @@ export const sendLeadNotification = createServerFn({ method: "POST" })
       });
 
       if (!response.ok) {
-        const errorData = await response.json();
+        const errorText = await response.text();
+        let errorData;
+        try {
+          errorData = JSON.parse(errorText);
+        } catch (e) {
+          errorData = { message: errorText };
+        }
         console.error("[Notification Error] Resend API failed:", errorData);
         return { success: false, error: "Email sending failed", details: errorData };
       }
