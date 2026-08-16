@@ -87,16 +87,8 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
 
   // Ветка 3: Убрать отёчность (lightness)
   else if (goal === "lightness") {
-    // Явно читаем lightness_area из объекта answers
     const area = answers.lightness_area;
-
-    console.log("DEBUG: LIGHTNESS BRANCH SELECTED", { goal, area, allAnswers: answers });
-    
-    const recommendedServices = getLightnessRecommendations({ ...answers, lightnessArea: area });
-    
-    console.log("DEBUG: LIGHTNESS RECOMMENDATIONS RESULT", { count: recommendedServices.length, services: recommendedServices });
-
-    return recommendedServices;
+    return getLightnessRecommendations({ ...answers, lightnessArea: area });
   }
 
   // Ветка 5: Оздоровительные практики (wellness)
