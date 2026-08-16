@@ -501,8 +501,23 @@ export function ServiceCard({
       </div>
 
       {/* Actions */}
-      <div className="mt-auto pt-8 flex flex-col gap-3">
-        {/* Desktop / tablet */}
+      <div className="mt-auto flex flex-col gap-4">
+        {/* Desktop / tablet Price */}
+        <div className="hidden sm:flex items-center justify-end gap-4 md:gap-5 pb-2">
+          {hasDiscount && (
+            <span className="ds-price-old">
+              {renderPrice(originalPrice)}
+            </span>
+          )}
+          <div className="flex flex-col items-end">
+            <span className="font-noto-serif-narrow ds-price text-[#1C3C8C]">
+              {renderPrice(computedPrice)}
+            </span>
+            <span className="text-[13px] font-light text-[#566A93] leading-none mt-1">{priceLabel}</span>
+          </div>
+        </div>
+
+        {/* Desktop / tablet Buttons */}
         <div className="hidden sm:flex items-center gap-3">
           <button
             type="button"
