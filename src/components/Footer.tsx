@@ -82,9 +82,10 @@ export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
               </li>
               <li className="text-[#1c3c8c] leading-[150%] font-light">
                 <div className="body-text text-[#566A93] mb-2">Телефон</div>
-                <a href="tel:+79242324611" className="body-text text-[#1c3c8c] hover:opacity-70 transition-opacity">
+                <a href="tel:+79242324611" className="body-text text-[#1c3c8c] hover:opacity-70 transition-opacity text-link-active">
                   +7 924 232 46 11
                 </a>
+
               </li>
               <li className="text-[#1c3c8c] leading-[150%] font-light">
                 <div className="body-text text-[#566A93] mb-2">Режим работы</div>
@@ -119,9 +120,10 @@ export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Brand */}
             <div>
-              <Link to="/" aria-label="На главную" className="inline-flex h-12 items-center hover:opacity-70 transition-opacity">
+              <Link to="/" aria-label="На главную" className="inline-flex h-12 items-center hover:opacity-70 transition-opacity text-link-active">
                 <Logo className="h-full w-auto" />
               </Link>
+
               <p className="mt-4 body-text text-[#566A93] max-w-[320px]">
                 Кабинет оздоровительных практик Татьяны Злобиной. Спокойный ритм и внимание к каждому состоянию.
               </p>
@@ -131,8 +133,9 @@ export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Макс — мессенджер"
-                  className="flex h-10 w-10 items-center justify-center rounded-[0.5rem] border border-[#daebff] bg-[#EFF6FF] text-[#1c3c8c] hover:bg-[#DAEBFF] transition-colors"
+                  className="flex h-10 w-10 items-center justify-center rounded-[0.5rem] border border-[#daebff] bg-[#EFF6FF] text-[#1c3c8c] hover:bg-[#DAEBFF] transition-colors text-link-active"
                 >
+
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 720 720"
@@ -154,15 +157,17 @@ export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
                     {item.to ? (
                       <Link
                         to={item.to}
-                        className="body-text text-[#1c3c8c] hover:opacity-70 transition-opacity"
+                        className="body-text text-[#1c3c8c] hover:opacity-70 transition-opacity text-link-active"
                       >
+
                         {item.label}
                       </Link>
                     ) : (
                       <a
                         href={item.href}
-                        className="body-text text-[#1c3c8c] hover:opacity-70 transition-opacity"
+                        className="body-text text-[#1c3c8c] hover:opacity-70 transition-opacity text-link-active"
                       >
+
                         {item.label}
                       </a>
                     )}
@@ -178,8 +183,9 @@ export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
               type="button"
               onClick={scrollToTop}
               aria-label="Наверх"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-[0.5rem] border border-[#daebff] bg-[#EFF6FF] text-[#1c3c8c] hover:bg-[#DAEBFF] transition-colors shrink-0"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-[0.5rem] border border-[#daebff] bg-[#EFF6FF] text-[#1c3c8c] hover:bg-[#DAEBFF] transition-colors shrink-0 text-link-active"
             >
+
               <ArrowUp size={18} strokeWidth={2} />
             </button>
           </div>
@@ -191,8 +197,9 @@ export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
             <div className="flex flex-col xl:flex-row items-start xl:items-center gap-3 xl:gap-6">
               <a
                 href="/privacy-policy"
-                className="text-[13px] text-[#566A93] hover:opacity-70 transition-opacity font-light"
+                className="text-[13px] text-[#566A93] hover:opacity-70 transition-opacity font-light text-link-active"
               >
+
                 Политика конфиденциальности
               </a>
               <p className="text-[13px] text-[#566A93] font-light">
