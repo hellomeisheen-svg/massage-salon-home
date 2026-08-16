@@ -388,13 +388,18 @@ function BookingDialog({
               </div>
               
               <button 
-
                 type="submit" 
-                className="btn-primary mt-2 w-full flex items-center justify-center gap-2"
+                className="btn-primary mt-2 w-full h-14 flex items-center justify-center gap-3"
                 disabled={loading}
               >
-                {loading && <Loader2 className="animate-spin" size={18} />}
-                {loading ? "Отправка..." : "Отправить заявку"}
+                {loading ? (
+                  <>
+                    <Loader2 className="animate-spin" size={20} />
+                    <span>Отправка...</span>
+                  </>
+                ) : (
+                  "Отправить заявку"
+                )}
               </button>
             </form>
           </>

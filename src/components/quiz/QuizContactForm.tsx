@@ -170,10 +170,9 @@ export function QuizContactForm({
 
       
       <button 
-
         type="submit" 
         disabled={isSubmitting}
-        className="btn-primary w-full h-14 flex items-center justify-center gap-3"
+        className="btn-primary w-full h-14 mt-2 flex items-center justify-center gap-3"
       >
         {isSubmitting ? (
           <>

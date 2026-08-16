@@ -166,7 +166,7 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
               </div>
             )}
             <button onClick={handleBack} className="btn-secondary mt-4 w-full h-12 flex items-center justify-center gap-2 active:opacity-60 transition-opacity">
-              <ChevronLeft size={20} /> Назад к вопросам
+              <ChevronLeft size={20} /> Назад
             </button>
           </div>
         ) : isContactStep ? (
