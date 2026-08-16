@@ -170,7 +170,7 @@ export function Programs({ prioritizeKeys }: ProgramsProps = {}) {
   const next = () => setActive((i) => (i + 1) % orderedPrograms.length);
 
   return (
-    <section id="programs" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section">
+    <section id="programs" className="scroll-mt-[140px] bg-[var(--color-bg-main)] py-[var(--space-8)] xl:py-[var(--space-10)]">
       <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-8 sm:gap-5 items-start">
         {/* Left column */}
         <div className="self-start flex flex-col items-center xl:items-start text-center xl:text-left">
@@ -183,7 +183,7 @@ export function Programs({ prioritizeKeys }: ProgramsProps = {}) {
           >
             Программы восстановления
           </span>
-          <h2 className="font-noto-serif-narrow mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0" data-no-typo>
+          <h2 className="font-noto-serif-narrow mt-6 ds-h2 text-[var(--color-primary)] max-w-[520px] mx-auto xl:mx-0" data-no-typo>
             Программы из нескольких процедур — для глубокой работы с состоянием
           </h2>
 
@@ -199,12 +199,12 @@ export function Programs({ prioritizeKeys }: ProgramsProps = {}) {
                   >
                     <span
                       className={`h-2 w-2 rounded-full transition-colors ${
-                        isActive ? "bg-[#1C3C8C]" : "bg-[#B7C5E3]"
+                        isActive ? "bg-[var(--color-primary-action)]" : "bg-[var(--color-border-hover)]"
                       }`}
                     />
                     <span
                       className={`text-[16px] transition-colors ${
-                        isActive ? "text-[#1C3C8C]" : "text-[#566A93]"
+                        isActive ? "text-[var(--color-primary-action)] font-medium" : "text-[var(--color-text-main)] hover:text-[var(--color-primary)]"
                       }`}
                     >
                       {p.name}
@@ -217,11 +217,11 @@ export function Programs({ prioritizeKeys }: ProgramsProps = {}) {
         </div>
 
         {/* Right column — program card */}
-        <article className="ds-card ds-card-hover p-5 sm:p-8 flex flex-col h-[620px] sm:h-[671px] xl:h-auto xl:min-h-[700px]">
-          <h3 className="font-noto-serif-narrow ds-h3 text-[#1C3C8C]">
+        <article className="ds-card p-5 sm:p-8 flex flex-col h-[620px] sm:h-[671px] xl:h-auto xl:min-h-[700px] hover:translate-y-0 hover:shadow-[var(--shadow-card)]">
+          <h3 className="font-noto-serif-narrow ds-h3 text-[var(--color-primary)]">
             {program.name}
           </h3>
-          <p className="mt-2 sm:mt-3 body-text text-[#566A93]">
+          <p className="mt-2 sm:mt-3 text-[var(--color-text-main)] text-[15px] sm:text-[16px] leading-[1.6]">
             {program.description}
           </p>
 
@@ -229,26 +229,26 @@ export function Programs({ prioritizeKeys }: ProgramsProps = {}) {
           <div className="flex-1 min-h-0 xl:min-h-fit xl:overflow-visible overflow-hidden">
             {/* Desktop / tablet: two-column table */}
             <div className="hidden sm:block h-full overflow-y-auto xl:h-auto xl:overflow-visible">
-              <div className="mt-8 grid grid-cols-[1.3fr_1fr] gap-6 pb-4 border-b border-[#daebff]">
-                <div className="text-[15px] font-semibold text-[#1C3C8C]">Что входит</div>
-                <div className="text-[15px] font-semibold text-[#1C3C8C]">Длительность</div>
+              <div className="mt-8 grid grid-cols-[1.3fr_1fr] gap-6 pb-4 border-b border-[var(--color-border)]">
+                <div className="text-[15px] font-semibold text-[var(--color-primary)] uppercase tracking-wider">Что входит</div>
+                <div className="text-[15px] font-semibold text-[var(--color-primary)] uppercase tracking-wider">Длительность</div>
               </div>
-              <div className="divide-y divide-[#daebff]">
+              <div className="divide-y divide-[var(--color-border)]">
                 {computedItems.map((it, idx) => (
                   <div key={idx} className="grid grid-cols-[1.3fr_1fr] gap-6 py-5">
-                    <div className="body-text text-[#566A93]">{it.title}</div>
-                    <div className="body-text text-[#566A93]">{it.duration}</div>
+                    <div className="text-[var(--color-text-main)] text-[16px]">{it.title}</div>
+                    <div className="text-[var(--color-text-main)] text-[16px]">{it.duration}</div>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Mobile: stacked blocks */}
-            <div className="sm:hidden pt-2 divide-y divide-[#daebff] h-full overflow-y-auto">
+            <div className="sm:hidden pt-2 divide-y divide-[var(--color-border)] h-full overflow-y-auto">
               {computedItems.map((it, idx) => (
                 <div key={idx} className="py-3">
-                  <div className="text-[16px] leading-[22px] text-[#1C3C8C]">{it.title}</div>
-                  <div className="mt-1 text-[13px] leading-[18px] text-[#566A93]">{it.duration}</div>
+                  <div className="text-[16px] leading-[22px] text-[var(--color-primary)]">{it.title}</div>
+                  <div className="mt-1 text-[13px] leading-[18px] text-[var(--color-text-muted)]">{it.duration}</div>
                 </div>
               ))}
             </div>
@@ -259,13 +259,13 @@ export function Programs({ prioritizeKeys }: ProgramsProps = {}) {
               {formatPrice(originalPrice)}
               <Ruble />
             </span>
-            <span className="font-noto-serif-narrow ds-price text-[#1C3C8C]">
+            <span className="font-noto-serif-narrow text-[32px] font-light text-[var(--color-primary)]">
               {formatPrice(price)}
               <Ruble />
             </span>
           </div>
 
-          <p className="hidden sm:block mt-6 text-[13px] leading-[18px] sm:text-[15px] sm:leading-normal text-[#566A93]">
+          <p className="hidden sm:block mt-6 text-[13px] leading-[18px] sm:text-[15px] sm:leading-normal text-[var(--color-text-muted)]">
             Срок использования: {program.validity}
           </p>
 
@@ -273,7 +273,7 @@ export function Programs({ prioritizeKeys }: ProgramsProps = {}) {
             <button
               type="button"
               onClick={() => openBooking(program.name)}
-              className="btn-primary w-full sm:flex-1"
+              className="ds-button-primary w-full sm:flex-1"
             >
               Записаться
             </button>
@@ -282,7 +282,7 @@ export function Programs({ prioritizeKeys }: ProgramsProps = {}) {
                 type="button"
                 onClick={prev}
                 aria-label="Предыдущая программа"
-                className="btn-secondary sm:min-w-[80px] sm:flex-none flex items-center justify-center"
+                className="ds-button-secondary sm:min-w-[80px] sm:flex-none flex items-center justify-center rounded-[var(--radius-button)] border border-[var(--color-border)] bg-white text-[var(--color-primary)] font-medium h-[52px]"
               >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                   <path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
@@ -292,7 +292,7 @@ export function Programs({ prioritizeKeys }: ProgramsProps = {}) {
                 type="button"
                 onClick={next}
                 aria-label="Следующая программа"
-                className="btn-secondary sm:min-w-[80px] sm:flex-none flex items-center justify-center"
+                className="ds-button-secondary sm:min-w-[80px] sm:flex-none flex items-center justify-center rounded-[var(--radius-button)] border border-[var(--color-border)] bg-white text-[var(--color-primary)] font-medium h-[52px]"
               >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                   <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />

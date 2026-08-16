@@ -18,11 +18,10 @@ export function PromoBanner({
 }: PromoBannerProps) {
   const { openBooking } = useBooking();
   return (
-    <section className="bg-brand-surface ds-section">
+    <section className="bg-[var(--color-bg-main)] py-[var(--space-8)] xl:py-[var(--space-10)]">
       <div className="container-1900 px-4 sm:px-5">
         <div
-          className="relative overflow-hidden rounded-[12px] border px-6 py-14 xl:px-24 xl:py-[60px]"
-          style={{ backgroundColor: "#DAEBFF", borderColor: "#daebff" }}
+          className="relative overflow-hidden rounded-[var(--radius-card)] border border-[var(--color-border)] px-6 py-14 xl:px-24 xl:py-[60px] bg-[var(--color-bg-card)] shadow-[var(--shadow-card)]"
         >
           <img
             src="/images/banner-clouds.svg"
@@ -66,11 +65,11 @@ export function PromoBanner({
           ))}
 
           <div className="relative z-10 flex flex-col items-center text-center">
-            <h2 className="font-noto-serif-narrow ds-h2 text-brand-ink">
+            <h2 className="font-noto-serif-narrow ds-h2 text-[var(--color-primary)]">
               {title}
             </h2>
 
-            <p className="mt-4 max-w-[600px] body-text text-brand-ink/60">
+            <p className="mt-4 max-w-[600px] text-[16px] leading-[1.6] text-[var(--color-text-main)]">
               {subtitle}
             </p>
 
@@ -78,7 +77,7 @@ export function PromoBanner({
               <button
                 type="button"
                 onClick={() => openBooking()}
-                className="btn-primary w-full sm:w-[250px] px-16"
+                className="ds-button-primary w-full sm:w-[250px] px-16"
               >
                 {buttonText}
               </button>

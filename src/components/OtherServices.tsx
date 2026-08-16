@@ -73,7 +73,7 @@ export function OtherServices({ exclude }: { exclude?: string }) {
   };
 
   const cardClass =
-    "group flex flex-col justify-between ds-card ds-card-hover p-4 sm:p-5";
+    "group flex flex-col justify-between ds-card ds-card-hover p-4 sm:p-5 bg-[var(--color-bg-card)] border-[var(--color-border)] shadow-[var(--shadow-card)] rounded-[var(--radius-card)]";
 
   const Controls = ({ className }: { className: string }) => (
     <div className={className}>
@@ -82,7 +82,7 @@ export function OtherServices({ exclude }: { exclude?: string }) {
         onClick={() => scroll(-1)}
         disabled={!canPrev}
         aria-label="Предыдущие услуги"
-        className="h-12 w-12 rounded-[0.5rem] border border-[#daebff] bg-white flex items-center justify-center text-[#1C3C8C] transition-colors hover:bg-[#EFF6FF] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-white"
+        className="h-12 w-12 rounded-[var(--radius-button)] border border-[var(--color-border)] bg-[var(--color-bg-card)] flex items-center justify-center text-[var(--color-primary)] transition-all hover:bg-[var(--color-bg-main)] hover:border-[var(--color-primary-action)]/30 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-[var(--color-bg-card)]"
       >
         <ChevronLeft className="h-5 w-5" />
       </button>
@@ -91,7 +91,7 @@ export function OtherServices({ exclude }: { exclude?: string }) {
         onClick={() => scroll(1)}
         disabled={!canNext}
         aria-label="Следующие услуги"
-        className="h-12 w-12 rounded-[0.5rem] border border-[#daebff] bg-white flex items-center justify-center text-[#1C3C8C] transition-colors hover:bg-[#EFF6FF] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-white"
+        className="h-12 w-12 rounded-[var(--radius-button)] border border-[var(--color-border)] bg-[var(--color-bg-card)] flex items-center justify-center text-[var(--color-primary)] transition-all hover:bg-[var(--color-bg-main)] hover:border-[var(--color-primary-action)]/30 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-[var(--color-bg-card)]"
       >
         <ChevronRight className="h-5 w-5" />
       </button>
@@ -99,12 +99,12 @@ export function OtherServices({ exclude }: { exclude?: string }) {
   );
 
   return (
-    <section className="bg-[#EFF6FF] ds-section">
+    <section className="bg-[var(--color-bg-main)] py-[var(--space-8)] xl:py-[var(--space-10)]">
       <div className="container-1900">
         <div className="flex flex-col items-center text-center">
           <div className="flex flex-col items-center">
             <span
-              className="inline-flex items-center gap-2 px-4 py-1.5 ds-label text-white"
+              className="inline-flex items-center gap-2 px-4 py-1.5 ds-chip !bg-[var(--color-primary-action)] text-white !border-none !rounded-[var(--radius-sm)]"
               style={{
                 borderRadius: "4px",
                 backgroundImage: "linear-gradient(to bottom, #A2CFFE, #88C1FF)",
@@ -112,7 +112,7 @@ export function OtherServices({ exclude }: { exclude?: string }) {
             >
               Смотрите также
             </span>
-            <h2 className="font-noto-serif-narrow mt-6 ds-h2 text-[#1C3C8C] max-w-[520px]">
+            <h2 className="font-noto-serif-narrow mt-6 ds-h2 text-[var(--color-primary)] max-w-[520px]">
               Другие услуги
             </h2>
           </div>
@@ -134,14 +134,14 @@ export function OtherServices({ exclude }: { exclude?: string }) {
               className={`${cardClass} flex-[0_0_100%] sm:flex-[0_0_calc((100%-0.75rem)/2)] xl:flex-[0_0_calc((100%-3*0.75rem)/4)] snap-start`}
             >
               <div>
-                <h3 className="ds-h4 font-noto-serif-narrow font-light leading-[1.2] text-[#1C3C8C]">
+                <h3 className="ds-h3 font-noto-serif-narrow font-light leading-[1.2] text-[var(--color-primary)] text-[22px]">
                   {service.title}
                 </h3>
-                <p className="mt-2 body-text text-[#566A93]">
+                <p className="mt-2 text-[15px] leading-[1.6] text-[var(--color-text-main)]">
                   {service.description}
                 </p>
               </div>
-              <div className="mt-4 inline-flex items-center gap-1.5 text-[14px] font-medium text-[#1C3C8C] transition-opacity group-hover:opacity-70">
+              <div className="mt-4 inline-flex items-center gap-1.5 text-[14px] font-medium text-[var(--color-primary-action)] transition-opacity group-hover:opacity-70">
                 Подробнее
                 <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
               </div>

@@ -31,20 +31,20 @@ function EduCard({ item }: { item: EduItem }) {
   const { name, city } = parseSchool(item.school);
   const mobileName = item.mobileName ?? name;
   return (
-    <div className="relative rounded-[12px] bg-white border border-[#daebff] px-6 sm:px-7 xl:px-8 py-6 sm:py-[30px]">
+    <div className="relative rounded-[var(--radius-card)] bg-[var(--color-bg-card)] border border-[var(--color-border)] px-6 sm:px-7 xl:px-8 py-6 sm:py-[30px] shadow-[var(--shadow-card)]">
       {city && (
-        <span className="absolute -top-3 right-4 rounded-full bg-[#EFF6FF] border border-[#daebff] px-3.5 py-1.5 text-[14px] font-medium tracking-wide text-[#1C3C8C] leading-none xl:hidden">
+        <span className="ds-chip absolute -top-3 right-4 !min-h-[28px] !px-3.5 !py-0 !text-[13px] !bg-[var(--color-bg-main)] !text-[var(--color-primary)] xl:hidden">
           {city}
         </span>
       )}
-      <h3 className="font-noto-serif-narrow ds-h4 text-[#1C3C8C] text-[24px] pr-0 sm:pr-24 whitespace-nowrap sm:whitespace-normal xl:whitespace-nowrap sm:text-[28px] xl:text-[28px]">
+      <h3 className="font-noto-serif-narrow ds-h3 text-[var(--color-primary)] text-[22px] sm:text-[24px] xl:text-[26px] pr-0 sm:pr-24 whitespace-nowrap sm:whitespace-normal xl:whitespace-nowrap font-light">
         <span className="xl:hidden">{mobileName}</span>
         <span className="hidden xl:inline">{item.school}</span>
       </h3>
 
       <ul className="mt-4 space-y-2 xl:space-y-1.5">
         {item.items.map((i) => (
-          <li key={i} className="body-text text-[#566A93] flex gap-2">
+          <li key={i} className="text-[var(--color-text-main)] text-[15px] sm:text-[16px] leading-[1.6] flex gap-2">
             <span aria-hidden>•</span>
             <span>{i}</span>
           </li>
@@ -56,17 +56,17 @@ function EduCard({ item }: { item: EduItem }) {
 
 export function Education() {
   return (
-    <section id="obrazovanie" className="scroll-mt-[120px] bg-[#EFF6FF] ds-section pb-0">
+    <section id="obrazovanie" className="scroll-mt-[120px] bg-[var(--color-bg-main)] py-[var(--space-8)] xl:py-[var(--space-10)]">
       <div className="container-1900 mb-[60px] sm:mb-[120px] xl:mb-[140px] flex flex-col items-center text-center">
         <svg
           aria-hidden="true"
           viewBox="0 0 24 24"
           fill="currentColor"
-          className="mb-8 sm:mb-10 xl:mb-12 h-6 w-6 sm:h-7 sm:w-7 text-[#1C3C8C]"
+          className="mb-8 sm:mb-10 xl:mb-12 h-6 w-6 sm:h-7 sm:w-7 text-[var(--color-primary)]"
         >
           <path d="M12 0 L13.2 10.8 L24 12 L13.2 13.2 L12 24 L10.8 13.2 L0 12 L10.8 10.8 Z" />
         </svg>
-        <h2 className="font-noto-serif-narrow max-w-none sm:max-w-[900px] xl:max-w-[1100px] ds-h1 text-[#1C3C8C]">
+        <h2 className="font-noto-serif-narrow max-w-none sm:max-w-[900px] xl:max-w-[1100px] ds-h1 text-[var(--color-primary)]">
           <span className="xl:hidden">За&nbsp;плечами&nbsp;— годы ежедневной практики и&nbsp;регулярное обучение</span>
           <span className="hidden xl:inline">За&nbsp;плечами&nbsp;— годы ежедневной практики, регулярное обучение и&nbsp;спокойный подход к&nbsp;работе с&nbsp;телом</span>
         </h2>
@@ -74,13 +74,13 @@ export function Education() {
       <div className="container-1900 grid grid-cols-1 xl:grid-cols-[1fr_auto] gap-4 sm:gap-5 items-stretch">
 
         {/* Left: photo + quote panel */}
-        <div className="relative xl:min-h-0 xl:h-full flex flex-col xl:rounded-[12px] xl:overflow-hidden xl:border xl:border-[#DAEBFF]">
+        <div className="relative xl:min-h-0 xl:h-full flex flex-col xl:rounded-[var(--radius-card)] xl:overflow-hidden xl:border xl:border-[var(--color-border)]">
           <img
             src="/images/tatiana-zlobina.webp"
             alt="Татьяна Злобина — мастер кабинета Седьмое небо"
             loading="eager"
             fetchPriority="high"
-            className="w-full h-[480px] sm:h-[720px] rounded-[12px] border border-[#DAEBFF] xl:border-0 xl:rounded-none xl:absolute xl:inset-0 xl:h-full object-cover object-top sm:object-center"
+            className="w-full h-[480px] sm:h-[720px] rounded-[var(--radius-card)] border border-[var(--color-border)] xl:border-0 xl:rounded-none xl:absolute xl:inset-0 xl:h-full object-cover object-top sm:object-center"
           />
           <div className="relative mt-4 sm:mt-5 xl:absolute xl:inset-x-0 xl:bottom-0 xl:mt-0 xl:p-[clamp(16px,2vw,32px)]">
             <div className="relative overflow-hidden rounded-[12px] border border-[#DAEBFF] bg-white xl:bg-white/95 xl:backdrop-blur-sm p-6 sm:p-12 xl:p-[clamp(24px,4vw,48px)] shadow-[0_20px_50px_-12px_rgba(74,127,214,0.08)] hidden">
@@ -111,13 +111,13 @@ export function Education() {
 
         {/* Right: education lists */}
         <div className="flex flex-col gap-6 xl:gap-3 xl:min-w-[745px]">
-          <div className="px-2 text-[#566A93] text-[14px] sm:text-[15px]">Основное образование</div>
+          <div className="px-2 text-[var(--color-text-muted)] text-[13px] font-medium uppercase tracking-wider">Основное образование</div>
           <div className="flex flex-col gap-6 xl:gap-3">
             {mainEducation.map((e) => (
               <EduCard key={e.school} item={e} />
             ))}
           </div>
-          <div className="px-2 mt-2 xl:mt-1 text-[#566A93] text-[14px] sm:text-[15px]">Дополнительное образование</div>
+          <div className="px-2 mt-2 xl:mt-1 text-[var(--color-text-muted)] text-[13px] font-medium uppercase tracking-wider">Дополнительное образование</div>
           <div className="flex flex-col gap-6 xl:gap-3">
             {extraEducation.map((e) => (
               <EduCard key={e.school} item={e} />

@@ -18,18 +18,18 @@ export function QuizResults({
   return (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <div className="pr-12">
-        <span className="inline-block px-4 py-1.5 rounded-full bg-[#EFF6FF] text-[#1C3C8C] text-[12px] font-medium uppercase tracking-wider mb-4">
+        <span className="ds-chip !min-h-[24px] !px-4 !py-1 !text-[12px] !bg-[var(--color-bg-main)] !text-[var(--color-primary)] mb-4">
           Ваша персональная программа
         </span>
-        <h2 className="font-noto-serif-narrow ds-h3 text-[#1c3c8c]">Результаты подбора</h2>
+        <h2 className="font-noto-serif-narrow ds-h3 text-[var(--color-primary)]">Результаты подбора</h2>
         
         {isFirstVisit && (
-          <p className="mt-4 p-4 bg-[#EFF6FF] rounded-lg text-sm text-[#566A93] italic border-l-4 border-[#1C3C8C]">
+            <p className="mt-4 p-4 bg-[var(--color-bg-main)] rounded-[var(--radius-card)] text-sm text-[var(--color-text-main)] italic border-l-4 border-[var(--color-primary)]">
             «Если вы впервые у нас и пока не знаете, что выбрать, рекомендуем начать с векторного массажа. Это комплексная работа с телом, которая помогает познакомиться с подходом мастера и понять, какой формат подходит именно вам».
           </p>
         )}
         {isWellnessMasterChoice && (
-          <p className="mt-4 p-4 bg-[#EFF6FF] rounded-lg text-sm text-[#566A93] italic border-l-4 border-[#1C3C8C]">
+          <p className="mt-4 p-4 bg-[var(--color-bg-main)] rounded-[var(--radius-card)] text-sm text-[var(--color-text-main)] italic border-l-4 border-[var(--color-primary)]">
             «Подберём подходящую оздоровительную практику после короткой консультации с мастером».
           </p>
         )}
@@ -37,27 +37,27 @@ export function QuizResults({
 
       <div className="grid gap-4">
         {services.length === 0 && (
-          <div className="p-8 text-center text-[#566A93] bg-[#EFF6FF] rounded-lg">
+          <div className="p-8 text-center text-[var(--color-text-main)] bg-[var(--color-bg-main)] rounded-[var(--radius-card)]">
             Мы не смогли подобрать программу автоматически. Пожалуйста, обсудите ваши пожелания с мастером.
           </div>
         )}
         {services.map((service, idx) => (
-          <div key={service.id || idx} className={`p-5 rounded-[0.5rem] border transition-all ${idx === 0 ? "border-[#1C3C8C] bg-white ring-1 ring-[#1C3C8C]/10" : "border-[#daebff] bg-white"}`}>
+          <div key={service.id || idx} className={`p-5 rounded-[var(--radius-button)] border transition-all ${idx === 0 ? "border-[var(--color-primary)] bg-white ring-1 ring-[var(--color-primary-action)]/10" : "border-[var(--color-border)] bg-white"}`}>
             <div className="flex justify-between items-start gap-4">
               <div>
                 {idx === 0 && (
-                  <span className="inline-block px-2 py-0.5 rounded-[4px] bg-[#EFF6FF] text-[10px] font-bold text-[#1C3C8C] uppercase tracking-wider mb-2">
+                  <span className="inline-block px-2 py-0.5 rounded-[var(--radius-sm)] bg-[var(--color-bg-main)] text-[10px] font-bold text-[var(--color-primary)] uppercase tracking-wider mb-2">
                     Рекомендуем
                   </span>
                 )}
-                <h4 className="font-medium text-[#1c3c8c]">{service.name}</h4>
-                <p className="text-xs text-[#566A93] mt-1 line-clamp-2">{service.description}</p>
-                <div className="flex gap-3 mt-3 text-sm font-medium text-[#1C3C8C]">
+                <h4 className="font-medium text-[var(--color-primary)]">{service.name}</h4>
+                <p className="text-xs text-[var(--color-text-muted)] mt-1 line-clamp-2">{service.description}</p>
+                <div className="flex gap-3 mt-3 text-sm font-medium text-[var(--color-primary)]">
                   {service.duration && <span>{service.duration}</span>}
                   <span>{service.price}</span>
                 </div>
               </div>
-              <div className={`h-8 w-8 rounded-[6px] flex items-center justify-center shrink-0 ${idx === 0 ? "bg-[#1C3C8C] text-white" : "bg-[#EFF6FF] text-[#1C3C8C]"}`}>
+              <div className={`h-8 w-8 rounded-[var(--radius-sm)] flex items-center justify-center shrink-0 ${idx === 0 ? "bg-[var(--color-primary)] text-white" : "bg-[var(--color-bg-main)] text-[var(--color-primary)]"}`}>
                 <Check size={16} strokeWidth={3} />
               </div>
             </div>
@@ -66,14 +66,14 @@ export function QuizResults({
       </div>
 
       <div className="pt-4 flex flex-col gap-3">
-        <button onClick={onNext} className="btn-primary w-full py-4">
+        <button onClick={onNext} className="ds-button-primary w-full py-4">
           Записаться
         </button>
         <a 
           href="https://max.ru/u/f9LHodD0cOLS1ZC9ThcQkVLRVzcK-MbYZ7JVAg8PC5Tx9LyihgOVdPnzaxM" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="btn-secondary w-full py-4 flex items-center justify-center gap-2"
+          className="ds-button-secondary w-full py-4 flex items-center justify-center gap-2 rounded-[var(--radius-button)] border border-[var(--color-border)] bg-white text-[var(--color-primary)] font-medium h-[52px]"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
