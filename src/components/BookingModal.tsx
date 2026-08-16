@@ -255,7 +255,12 @@ function BookingDialog({
 
                   // Trigger Resend notification via server function
                   if (leadData?.id) {
-                    await sendLeadNotification({ data: { leadId: leadData.id } });
+                    const result = await sendLeadNotification({ data: { leadId: leadData.id } });
+                    console.log("Notification result:", result);
+                    if (result && !result.success) {
+                      console.error("Notification failed:", result.error);
+                      // Still show success to user as lead is in DB, but log error
+                    }
                   }
 
                   setSent(true);
