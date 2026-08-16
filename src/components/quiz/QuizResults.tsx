@@ -31,6 +31,11 @@ export function QuizResults({
             «Подберём подходящую оздоровительную практику после короткой консультации с мастером».
           </p>
         )}
+        {answers.relax_add_cups === "yes_cups" && (
+          <p className="mt-4 p-4 bg-[#FFF9E5] rounded-lg text-sm text-[#856404] italic border-l-4 border-[#FFC107]">
+            «В дополнение к массажу мы подобрали для вас постановку банок — это усилит лимфодренажный эффект и поможет быстрее расслабить глубокие мышцы».
+          </p>
+        )}
       </div>
 
       <div className="grid gap-4">
