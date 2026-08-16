@@ -14,15 +14,10 @@ const sendNotificationSchema = z.object({
 export const sendLeadNotification = createServerFn({ method: "POST" })
   .inputValidator((data) => sendNotificationSchema.parse(data))
   .handler(async ({ data }) => {
-    console.log("[Notification] Handler started for lead:", data.leadId);
     const { leadId, phone } = data;
     
     // Import admin client dynamically inside handler to avoid client-side leakage
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
-
-    console.log("[Notification] Supabase URL:", process.env['VITE_SUPABASE_URL']);
-    const resendApiKey = process.env['RESEND_API_KEY'];
-    console.log("[Notification] Resend API Key length:", resendApiKey?.length || 0);
 
     try {
       let lead;
@@ -59,7 +54,7 @@ export const sendLeadNotification = createServerFn({ method: "POST" })
         return { success: true, alreadySent: true };
       }
 
-      // const resendApiKey = process.env['RESEND_API_KEY']; (already read above)
+      const resendApiKey = process.env['RESEND_API_KEY'];
       if (!resendApiKey) {
         console.error("[Notification Error] RESEND_API_KEY is not configured");
         return { success: false, error: "Resend API key missing" };
