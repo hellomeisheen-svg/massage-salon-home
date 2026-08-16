@@ -82,7 +82,7 @@ export function OtherServices({ exclude }: { exclude?: string }) {
         onClick={() => scroll(-1)}
         disabled={!canPrev}
         aria-label="Предыдущие услуги"
-        className="h-12 w-12 rounded-[0.5rem] border border-[#daebff] bg-white flex items-center justify-center text-[#1C3C8C] transition-colors hover:bg-[#EFF6FF] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-white"
+        className="h-12 w-12 rounded-[0.5rem] border border-[#daebff] bg-white flex items-center justify-center text-[#1C3C8C] transition-[background-color,opacity] hover:bg-[#EFF6FF] active:opacity-60 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-white"
       >
         <ChevronLeft className="h-5 w-5" />
       </button>
@@ -91,7 +91,7 @@ export function OtherServices({ exclude }: { exclude?: string }) {
         onClick={() => scroll(1)}
         disabled={!canNext}
         aria-label="Следующие услуги"
-        className="h-12 w-12 rounded-[0.5rem] border border-[#daebff] bg-white flex items-center justify-center text-[#1C3C8C] transition-colors hover:bg-[#EFF6FF] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-white"
+        className="h-12 w-12 rounded-[0.5rem] border border-[#daebff] bg-white flex items-center justify-center text-[#1C3C8C] transition-[background-color,opacity] hover:bg-[#EFF6FF] active:opacity-60 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-white"
       >
         <ChevronRight className="h-5 w-5" />
       </button>
