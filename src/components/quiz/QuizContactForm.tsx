@@ -99,6 +99,7 @@ export function QuizContactForm({
             {[
               { id: "whatsapp", label: "WhatsApp" },
               { id: "telegram", label: "Telegram" },
+              { id: "max", label: "MAX" },
             ].map(m => (
               <button
                 key={m.id}
@@ -125,8 +126,18 @@ export function QuizContactForm({
             <div className="h-5 w-5 rounded-[6px] border border-[#A2CFFE] bg-[#EFF6FF] peer-checked:bg-[#88C1FF] peer-checked:border-[#88C1FF] transition-all" />
             <Check size={14} strokeWidth={3} className="absolute inset-0 m-auto text-white opacity-0 peer-checked:opacity-100 transition-opacity" />
           </div>
-          <span className="text-xs text-[#566A93] leading-relaxed group-hover:text-[#1c3c8c] transition-colors">
-            Оставляя контакты, вы соглашаетесь с политикой обработки персональных данных.
+          <span className="text-[13px] leading-[1.5] text-[#566A93]">
+            Нажимая кнопку, вы соглашаетесь с{" "}
+            <a
+              href="/privacy-policy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+              onClick={(e) => e.stopPropagation()}
+            >
+              политикой конфиденциальности
+            </a>
+            .
           </span>
         </label>
       </div>
