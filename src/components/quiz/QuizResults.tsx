@@ -42,11 +42,11 @@ export function QuizResults({
           </div>
         )}
         {services.map((service, idx) => (
-          <div key={service.id || idx} className={`p-5 rounded-[12px] border transition-all ${idx === 0 ? "border-[#1C3C8C] bg-white ring-1 ring-[#1C3C8C]/10" : "border-[#daebff] bg-white"}`}>
+          <div key={service.id || idx} className={`p-5 rounded-[12px] border transition-all ds-bento-shadow ${idx === 0 ? "border-[#A2CFFE] bg-[#DAEBFF]" : "border-[#DAEBFF] bg-white"}`}>
             <div className="flex justify-between items-start gap-4">
               <div>
                 {idx === 0 && (
-                  <span className="inline-block px-2 py-0.5 rounded-[12px] bg-[#EFF6FF] text-[10px] font-bold text-[#1C3C8C] uppercase tracking-wider mb-2">
+                  <span className="inline-block px-2 py-0.5 rounded-[12px] bg-white text-[10px] font-bold text-[#1C3C8C] uppercase tracking-wider mb-2">
                     Рекомендуем
                   </span>
                 )}
