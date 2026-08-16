@@ -1,6 +1,7 @@
 import { QUIZ_CONFIG, QuizService } from "@/config/quiz";
 
 export function calculateResult(answers: Record<string, any>): QuizService[] {
+  console.log("CALCULATE_RESULT INPUT:", JSON.stringify(answers));
   const goal = answers.goal;
   const getService = (id: string) => QUIZ_CONFIG.services.find(s => s.id === id);
   
@@ -88,15 +89,12 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
   // Ветка 3: Убрать отёчность (lightness)
   else if (goal === "lightness") {
     const area = answers.lightness_area;
-    const areas = Array.isArray(area) ? area : [area].filter(Boolean);
+    const areas = Array.isArray(area) ? area : (area ? [area] : []);
     
     if (areas.length === 1 && areas.includes("face")) {
       serviceIds = ["lymph_face", "classic_face", "girudo_cosm"];
     } else {
-      // Прямой возврат результата из функции-хелпера
-      const lightnessResult = getLightnessRecommendations({ ...answers, lightnessArea: area });
-      console.log("LIGHTNESS BRANCH FINAL RESULT:", lightnessResult.map(s => s.id));
-      return lightnessResult;
+      return getLightnessRecommendations({ ...answers, lightnessArea: area });
     }
   }
 

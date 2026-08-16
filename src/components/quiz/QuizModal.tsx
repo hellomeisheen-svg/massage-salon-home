@@ -166,11 +166,13 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
                       } else {
                         const current = answers[currentStep.id] || [];
                         const exists = current.includes(opt.id);
+                        const nextSelection = exists 
+                          ? current.filter((id: string) => id !== opt.id) 
+                          : [...current, opt.id];
+                        
                         setAnswers({ 
                           ...answers, 
-                          [currentStep.id]: exists 
-                            ? current.filter((id: string) => id !== opt.id) 
-                            : [...current, opt.id] 
+                          [currentStep.id]: nextSelection
                         });
                       }
                     }}
