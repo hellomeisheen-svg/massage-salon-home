@@ -586,17 +586,17 @@ function PriceCard({ p }: { p: HirudoRow }) {
         </p>
       </div>
 
-      <div className="mt-auto pt-6 flex items-center justify-end gap-4 sm:gap-5 min-h-[64px]">
+      <div className="mt-6 flex items-center justify-end gap-4 sm:gap-5">
         {discount > 0 && (
-          <span className="font-noto-serif-narrow text-[17px] sm:text-[19px] font-light leading-none text-[#566A93] line-through self-center">
+          <span className="font-noto-serif-narrow text-[17px] sm:text-[19px] font-light leading-[1.2] text-[#566A93] line-through">
             {renderPrice(formatPrice(totalBase))}
           </span>
         )}
-        <div className="flex flex-col items-end justify-center">
-          <span className="font-noto-serif-narrow ds-price text-[#1C3C8C] leading-none">
+        <div className="flex flex-col items-end">
+          <span className="font-noto-serif-narrow ds-price text-[#1C3C8C]">
             {renderPrice(formatPrice(currentPrice))}
           </span>
-          <span className="text-[13px] font-light text-[#566A93] leading-none mt-1.5">
+          <span className="text-[13px] font-light text-[#566A93]">
             за {count} {sessionWord}
           </span>
         </div>

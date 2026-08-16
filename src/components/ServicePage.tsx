@@ -330,23 +330,21 @@ function PriceCard({ p, prefix }: { p: ServicePrice; prefix: string }) {
       </h3>
       <p className="mt-3 text-[15px] font-light leading-[1.5] text-[#566A93]">{p.subtitle}</p>
 
-      <div className="flex-1">
-        <p className="mt-6 text-[13px] font-medium leading-[18px] tracking-wide text-[#1C3C8C]">
-          {summary}
-        </p>
-      </div>
+      <p className="mt-6 text-[13px] font-medium leading-[18px] tracking-wide text-[#1C3C8C]">
+        {summary}
+      </p>
       
-      <div className="mt-auto pt-6 flex items-center justify-end gap-4 sm:gap-5 min-h-[64px]">
+      <div className="mt-6 flex items-center justify-end gap-4 sm:gap-5">
         {hasDiscount && (
-          <span className="font-noto-serif-narrow text-[17px] sm:text-[19px] font-light leading-none text-[#566A93] line-through self-center">
+          <span className="font-noto-serif-narrow text-[17px] sm:text-[19px] font-light leading-[1.2] text-[#566A93] line-through">
             {renderPrice(originalPrice)}
           </span>
         )}
-        <div className="flex flex-col items-end justify-center">
-          <span className="font-noto-serif-narrow ds-price text-[#1C3C8C] leading-none">
+        <div className="flex flex-col items-end">
+          <span className="font-noto-serif-narrow ds-price text-[#1C3C8C]">
             {renderPrice(computedPrice)}
           </span>
-          <span className="text-[13px] font-light text-[#566A93] leading-none mt-1.5">
+          <span className="text-[13px] font-light text-[#566A93]">
             за {count} {sessionWord}
           </span>
         </div>
