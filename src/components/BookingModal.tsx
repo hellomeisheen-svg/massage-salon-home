@@ -57,6 +57,7 @@ function BookingDialog({
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [phone, setPhone] = useState("");
+  const [method, setMethod] = useState("whatsapp");
   const handlePhoneInput = (e: React.FormEvent<HTMLInputElement>) => {
     const native = e.nativeEvent as InputEvent;
     const raw = (e.target as HTMLInputElement).value;
