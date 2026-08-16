@@ -95,7 +95,7 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
           <div className="relative flex flex-col items-center px-2 pt-6 pb-2 text-center sm:px-4 sm:pt-8 animate-in zoom-in-95 duration-500">
             <div className="relative mb-8">
               <div className="absolute inset-0 rounded-full bg-[#A2CFFE] blur-2xl opacity-40 animate-pulse" />
-              <div className="relative flex h-20 w-20 items-center justify-center rounded-full border border-[#DAEBFF] bg-white shadow-lg shadow-[#A2CFFE]/25">
+              <div className="relative flex h-20 w-20 items-center justify-center rounded-full border border-[#DAEBFF] bg-white shadow-modal-icon">
                 <Check size={40} className="text-[#1C3C8C]" strokeWidth={1.5} />
               </div>
             </div>

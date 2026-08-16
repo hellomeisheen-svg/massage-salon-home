@@ -121,7 +121,7 @@ function BookingDialog({
             {/* Success icon with halo */}
             <div className="relative mb-8">
               <div className="absolute inset-0 rounded-full bg-[#A2CFFE] blur-2xl opacity-40" />
-              <div className="relative flex h-20 w-20 items-center justify-center rounded-full border border-[#DAEBFF] bg-white shadow-lg shadow-[#A2CFFE]/25">
+              <div className="relative flex h-20 w-20 items-center justify-center rounded-full border border-[#DAEBFF] bg-white shadow-modal-icon">
                 <svg
                   className="h-10 w-10 text-[#1C3C8C]"
                   fill="none"
