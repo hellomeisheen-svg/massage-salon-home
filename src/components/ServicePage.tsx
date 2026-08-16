@@ -109,7 +109,7 @@ function PageHero({ content }: { content: ServicePageContent }) {
           </nav>
 
           <div className="mt-6 sm:mt-8">
-            <SpecialistBlock />
+            <RatingBlock />
           </div>
 
           <div className="mt-[100px] pt-0 sm:mt-[140px] xl:mt-auto xl:pt-[140px]">
