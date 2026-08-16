@@ -1,6 +1,7 @@
-import { ArrowUp, Star } from "lucide-react";
+import { ArrowUp } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import Logo from "@/components/Logo";
+import { RatingBlock } from "@/components/RatingBlock";
 
 export type FooterNavItem = { label: string; href?: string; to?: string };
 
