@@ -43,6 +43,7 @@
 }
 .image-tile {
   opacity: 0;
+  border-radius: 12px;
   animation:
     tile-appear 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards,
     tile-float 6s ease-in-out infinite;

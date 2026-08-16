@@ -137,7 +137,7 @@ function PageHero({ content }: { content: ServicePageContent }) {
             <div className="flex flex-col tablet-text-block xl:max-w-[640px]">
               <div className="flex flex-col xl:flex-row xl:items-center gap-x-3 gap-y-2">
                 {content.hit && (
-                  <span className="inline-flex w-fit shrink-0 items-center rounded-[6px] bg-[#A2CFFE] px-2 py-0.5 text-[14px] font-medium lowercase tracking-tight text-white xl:order-2 xl:mb-[-12px]">
+                  <span className="inline-flex w-fit shrink-0 items-center rounded-[12px] bg-[#A2CFFE] px-2 py-0.5 text-[14px] font-medium lowercase tracking-tight text-white xl:order-2 xl:mb-[-12px]">
                     хит
                   </span>
                 )}
