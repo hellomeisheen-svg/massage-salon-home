@@ -104,7 +104,7 @@ function BookingDialog({
         role="dialog"
         aria-modal="true"
         aria-labelledby="booking-title"
-        className="relative my-auto w-full max-w-[560px] ds-card p-5 sm:p-8 xl:p-10"
+        className="relative my-auto w-full max-w-[560px] ds-card ds-bento-shadow p-5 sm:p-8 xl:p-10"
       >
         <button
           ref={closeRef}
@@ -321,7 +321,7 @@ function BookingDialog({
                 <span className="text-[14px] leading-[1.5] text-foreground">Комментарий</span>
                 <textarea
                   name="comment"
-                  rows={2}
+                  rows={4}
                   defaultValue={subject ? `${subject}: ` : ""}
                   placeholder="Самочувствие, пожелания, удобное время"
                   className="ds-input py-3"
