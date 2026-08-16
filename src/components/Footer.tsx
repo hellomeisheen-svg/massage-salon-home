@@ -120,7 +120,7 @@ export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Brand */}
             <div>
-              <Link to="/" aria-label="На главную" className="inline-flex h-12 items-center hover:opacity-70 transition-opacity text-link-active">
+              <Link to="/" aria-label="На главную" className="inline-flex h-12 items-center hover:opacity-70 transition-opacity logo-link-active">
                 <Logo className="h-full w-auto" />
               </Link>
 
@@ -133,7 +133,7 @@ export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Макс — мессенджер"
-                  className="flex h-10 w-10 items-center justify-center rounded-[0.5rem] border border-[#daebff] bg-[#EFF6FF] text-[#1c3c8c] hover:bg-[#DAEBFF] transition-colors text-link-active"
+                  className="flex h-10 w-10 items-center justify-center rounded-[0.5rem] border border-[#daebff] bg-[#EFF6FF] text-[#1c3c8c] hover:bg-[#DAEBFF] transition-colors icon-btn-active"
                 >
 
                   <svg
@@ -183,7 +183,7 @@ export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
               type="button"
               onClick={scrollToTop}
               aria-label="Наверх"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-[0.5rem] border border-[#daebff] bg-[#EFF6FF] text-[#1c3c8c] hover:bg-[#DAEBFF] transition-colors shrink-0 text-link-active"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-[0.5rem] border border-[#daebff] bg-[#EFF6FF] text-[#1c3c8c] hover:bg-[#DAEBFF] transition-colors shrink-0 icon-btn-active"
             >
 
               <ArrowUp size={18} strokeWidth={2} />
