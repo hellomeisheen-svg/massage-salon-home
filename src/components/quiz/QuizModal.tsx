@@ -119,7 +119,7 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
                   { text: "Расчет стоимости и длительности", icon: "2" },
                   { text: "Скидка на первый визит", icon: "3" }
                 ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-4 p-4 rounded-xl border border-[#DAEBFF]/60 bg-white shadow-[0_2px_8px_rgba(28,60,140,0.05)] group">
+                  <div key={i} className="flex items-center gap-4 p-4 ds-card border-[#DAEBFF]/60 bg-white shadow-[0_2px_8px_rgba(28,60,140,0.05)] group">
                     <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-lg bg-[#EFF6FF] text-[13px] font-bold text-[#1C3C8C] group-hover:bg-[#88C1FF] group-hover:text-white transition-colors">
                       {item.icon}
                     </span>
