@@ -82,7 +82,8 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
       if (insertError) throw insertError;
 
       if (leadData?.id) {
-        await sendLeadNotification({ data: { leadId: leadData.id } });
+        const result = await sendLeadNotification({ data: { leadId: leadData.id } });
+        console.log("Quiz Notification result:", result);
       }
       setIsSuccess(true);
     } catch (e) {
