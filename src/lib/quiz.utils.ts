@@ -86,9 +86,23 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
   // Ветка 3: Убрать отёчность (lightness)
   else if (goal === "lightness") {
     const areas = answers.lightness_area || [];
-    if (areas.includes("legs") || areas.includes("feet")) serviceIds = ["classic_legs", "lymph", "lymphatic"];
-    else if (areas.includes("whole_body")) serviceIds = ["lymph", "lymphatic", "vector"];
-    else serviceIds = ["lymph", "lymphatic"];
+    
+    // Ноги или Стопы (или оба) -> Ноги + Лимфодренаж + Лимфатический
+    if (areas.includes("legs") || areas.includes("feet")) {
+      serviceIds = ["classic_legs", "lymph", "lymphatic"];
+    } 
+    // Всё тело -> Лимфодренаж + Лимфатический + Векторный
+    else if (areas.includes("whole_body")) {
+      serviceIds = ["lymph", "lymphatic", "vector"];
+    }
+    // Не знаю / доверюсь мастеру -> Лимфодренаж + Лимфатический + Векторный
+    else if (areas.includes("master_choice")) {
+      serviceIds = ["lymph", "lymphatic", "vector"];
+    }
+    // По умолчанию (если ничего не выбрано или другие комбинации)
+    else {
+      serviceIds = ["lymph", "lymphatic"];
+    }
   }
 
   // Ветка 5: Оздоровительные практики (wellness)
