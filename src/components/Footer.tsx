@@ -53,7 +53,7 @@ export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
         {/* Top card: map + contacts */}
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-5">
           {/* Map */}
-          <div className="relative ds-card overflow-hidden min-h-[320px] xl:min-h-[440px]">
+          <div className="relative rounded-[12px] overflow-hidden border border-[#daebff] bg-white min-h-[320px] xl:min-h-[440px]">
             <iframe
               title="Карта — расположение кабинета"
               src="https://yandex.ru/map-widget/v1/org/sedmoye_nebo/130811843218/?ll=132.072118%2C43.306027&z=16"

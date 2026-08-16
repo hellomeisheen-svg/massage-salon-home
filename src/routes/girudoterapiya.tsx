@@ -243,7 +243,7 @@ function PageHero() {
           </div>
         </div>
 
-        <div className="relative h-[420px] overflow-hidden ds-card sm:h-[520px] xl:h-auto xl:min-h-0">
+        <div className="relative h-[420px] overflow-hidden rounded-[12px] border border-[#daebff] sm:h-[520px] xl:h-auto xl:min-h-0">
           <img
             className="absolute inset-0 h-full w-full object-cover object-top sm:object-center"
             alt="Гирудотерапия в кабинете Татьяны Злобиной"
