@@ -121,7 +121,7 @@ export function PriceTable({ prices, title = "Форматы и стоимост
                   key={label}
                   type="button"
                   onClick={() => setActiveTab(i)}
-                  className={`relative flex flex-1 items-center justify-center rounded-[8px] px-2 py-2.5 transition-all duration-300 ${
+                  className={`relative flex flex-1 items-center justify-center rounded-lg px-2 py-2.5 transition-all duration-300 ${
                     activeTab === i ? "bg-white shadow-tab-active" : "bg-transparent hover:bg-white/40"
                   }`}
 

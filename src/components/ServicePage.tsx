@@ -325,7 +325,7 @@ function PriceCard({ p, prefix }: { p: ServicePrice; prefix: string }) {
             key={label}
             type="button"
             onClick={() => setActive(i)}
-            className={`relative flex flex-1 items-center justify-center rounded-[8px] px-2 py-2.5 transition-all duration-300 ${
+            className={`relative flex flex-1 items-center justify-center rounded-lg px-2 py-2.5 transition-all duration-300 ${
               active === i ? "bg-white shadow-tab-active" : "bg-transparent hover:bg-white/40"
             }`}
 

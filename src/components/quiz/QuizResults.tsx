@@ -42,7 +42,7 @@ export function QuizResults({
           </div>
         )}
         {services.map((service, idx) => (
-          <div key={service.id || idx} className={`p-5 rounded-[0.5rem] border transition-all ${idx === 0 ? "border-[#1C3C8C] bg-white ring-1 ring-[#1C3C8C]/10" : "border-[#daebff] bg-white"}`}>
+          <div key={service.id || idx} className={`p-5 rounded-lg border transition-all ${idx === 0 ? "border-[#1C3C8C] bg-white ring-1 ring-[#1C3C8C]/10" : "border-[#daebff] bg-white"}`}>
             <div className="flex justify-between items-start gap-4">
               <div>
                 {idx === 0 && (
