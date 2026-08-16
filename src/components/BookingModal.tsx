@@ -149,7 +149,7 @@ function BookingDialog({
               Мы создадим для вас атмосферу полного спокойствия в&nbsp;«Седьмом небе». Администратор свяжется с&nbsp;вами, чтобы уточнить детали и&nbsp;подтвердить время.
             </p>
 
-            <div className="mt-8 w-full rounded-2xl border border-[#DAEBFF] bg-[#EFF6FF] p-5 text-left">
+            <div className="mt-8 w-full rounded-[12px] border border-[#DAEBFF] bg-[#EFF6FF] p-5 text-left">
               <div className="flex items-start justify-between gap-4">
                 <span className="text-[12px] font-medium uppercase tracking-wider text-[#566A93]">
                   Что дальше

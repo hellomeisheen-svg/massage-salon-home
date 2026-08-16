@@ -97,7 +97,7 @@ function SpecialistBlock() {
   return (
     <div className="flex flex-col items-start gap-3 sm:gap-4">
       <img
-        className="h-[90px] w-[70px] rounded-lg border border-[#daebff] object-cover xl:h-[110px] xl:w-[85px]"
+        className="h-[90px] w-[70px] rounded-[12px] border border-[#daebff] object-cover xl:h-[110px] xl:w-[85px]"
         alt="Татьяна Злобина"
         src="/images/tatyana-photo.webp"
 
@@ -137,7 +137,7 @@ function PageHero({ content }: { content: ServicePageContent }) {
             <div className="flex flex-col tablet-text-block xl:max-w-[640px]">
               <div className="flex flex-col xl:flex-row xl:items-center gap-x-3 gap-y-2">
                 {content.hit && (
-                  <span className="inline-flex w-fit shrink-0 items-center rounded-[6px] bg-[#A2CFFE] px-2 py-0.5 text-[14px] font-medium lowercase tracking-tight text-white xl:order-2 xl:mb-[-12px]">
+                  <span className="inline-flex w-fit shrink-0 items-center rounded-[12px] bg-[#A2CFFE] px-2 py-0.5 text-[14px] font-medium lowercase tracking-tight text-white xl:order-2 xl:mb-[-12px]">
                     хит
                   </span>
                 )}
@@ -255,7 +255,7 @@ function AboutService({ content }: { content: ServicePageContent }) {
           <span
             className="inline-flex items-center gap-2 px-4 py-1.5 ds-label text-white"
             style={{
-              borderRadius: "4px",
+              borderRadius: "12px",
               backgroundImage: "linear-gradient(to bottom, #A2CFFE, #88C1FF)",
             }}
           >
@@ -319,7 +319,7 @@ function PriceCard({ p, prefix }: { p: ServicePrice; prefix: string }) {
 
   return (
     <article className="flex flex-col ds-card p-6 sm:p-8 xl:p-10">
-      <div className="flex items-stretch gap-1 rounded-[10px] bg-[#EFF6FF] p-1">
+      <div className="flex items-stretch gap-1 rounded-[12px] bg-[#EFF6FF] p-1">
         {tabLabels.map((label, i) => (
           <button
             key={label}
@@ -378,7 +378,7 @@ function PriceCard({ p, prefix }: { p: ServicePrice; prefix: string }) {
 
 function PriceTable({ content }: { content: ServicePageContent }) {
   return (
-    <div className="ds-card overflow-hidden bg-white border border-[#daebff]/40">
+    <div className="ds-card overflow-hidden bg-white border border-[#daebff]/40 rounded-[12px]">
       <div className="overflow-x-auto">
         <table className="w-full text-left border-collapse">
           <thead>
@@ -511,7 +511,7 @@ function FaqItem({ q, a }: { q: string; a: React.ReactNode }) {
           {q}
         </span>
         <span
-          className={`shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-[0.5rem] bg-[#EFF6FF] border border-[#daebff] flex items-center justify-center transition-transform duration-300 ${
+          className={`shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-[#EFF6FF] border border-[#daebff] flex items-center justify-center transition-transform duration-300 ${
             open ? "rotate-45" : ""
           }`}
         >
@@ -541,7 +541,7 @@ function Faq({ content }: { content: ServicePageContent }) {
           <span
             className="inline-flex items-center gap-2 px-4 py-1.5 ds-label text-white"
             style={{
-              borderRadius: "4px",
+              borderRadius: "12px",
               backgroundImage: "linear-gradient(to bottom, #A2CFFE, #88C1FF)",
             }}
           >
@@ -555,7 +555,7 @@ function Faq({ content }: { content: ServicePageContent }) {
             <img
               src="/images/tatyana-photo.webp"
               alt="Татьяна Злобина"
-              className="h-[90px] w-[70px] xl:h-[110px] xl:w-[85px] rounded-lg border border-[#daebff] object-cover"
+              className="h-[90px] w-[70px] xl:h-[110px] xl:w-[85px] rounded-[12px] border border-[#daebff] object-cover"
             />
             <h3 className="font-noto-serif-narrow mt-6 ds-h4 text-[#1C3C8C]">
               Татьяна Злобина

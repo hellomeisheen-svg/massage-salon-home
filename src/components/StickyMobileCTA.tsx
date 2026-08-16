@@ -43,7 +43,7 @@ export const StickyMobileCTA = memo(function StickyMobileCTA() {
           href="https://n2418813.yclients.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="btn-primary w-full !min-h-[60px] !rounded-[12px] shadow-lg shadow-[#1C3C8C]/15"
+          className="btn-primary w-full !min-h-[60px] rounded-[12px] shadow-lg shadow-[#1C3C8C]/15"
         >
           Онлайн запись
         </a>

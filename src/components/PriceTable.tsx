@@ -115,7 +115,7 @@ export function PriceTable({ prices, title = "Форматы и стоимост
 
           {/* Mobile & Tablet Tabs */}
           <div className={`${title === "Программы восстановления" ? "hidden" : "lg:hidden"} p-5 sm:p-8`}>
-            <div className="flex items-stretch gap-1 rounded-[10px] bg-[#EFF6FF] p-1">
+            <div className="flex items-stretch gap-1 rounded-[12px] bg-[#EFF6FF] p-1">
               {tabLabels.map((label, i) => (
                 <button
                   key={label}
