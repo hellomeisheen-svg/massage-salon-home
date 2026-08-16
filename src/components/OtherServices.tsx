@@ -133,7 +133,7 @@ export function OtherServices({ exclude }: { exclude?: string }) {
               to={`/${service.slug}`}
               className={`${cardClass} flex-[0_0_100%] sm:flex-[0_0_calc((100%-0.75rem)/2)] xl:flex-[0_0_calc((100%-3*0.75rem)/4)] snap-start`}
             >
-              <div>
+              <div className="flex-1">
                 <h3 className="ds-h4 font-noto-serif-narrow font-light leading-[1.2] text-[#1C3C8C]">
                   {service.title}
                 </h3>
@@ -141,7 +141,7 @@ export function OtherServices({ exclude }: { exclude?: string }) {
                   {service.description}
                 </p>
               </div>
-              <div className="mt-4 inline-flex items-center gap-1.5 text-[14px] font-medium text-[#1C3C8C] transition-opacity group-hover:opacity-70">
+              <div className="mt-8 inline-flex items-center gap-1.5 text-[14px] font-medium text-[#1C3C8C] transition-opacity group-hover:opacity-70">
                 Подробнее
                 <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
               </div>
