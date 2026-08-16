@@ -32,9 +32,34 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
     const intensity = answers.intensity;
     const addCups = answers.addCups;
 
-    // Всё тело: только векторный массаж
+    // Всё тело: векторный массаж + банки только при явном согласии
     if (area === "whole_body") {
-      return [getService("vector")].filter((s): s is QuizService => !!s);
+      const services = ["vector"];
+      if (addCups === "yes") {
+        if (intensity === "soft") {
+          services.push("cups_air");
+        } else if (intensity === "deep") {
+          services.push("cups_fire");
+        } else if (intensity === "master_choice") {
+          services.push("cups_air");
+        }
+      }
+      return services.map(id => getService(id)).filter((s): s is QuizService => !!s);
+    }
+
+    // Спина, шея и плечи: массаж + банки только при явном согласии
+    if (area === "back_neck") {
+      const services = ["vector", "classic_spine_neck"];
+      if (addCups === "yes") {
+        if (intensity === "soft") {
+          services.push("cups_air");
+        } else if (intensity === "deep") {
+          services.push("cups_fire");
+        } else if (intensity === "master_choice") {
+          services.push("cups_air");
+        }
+      }
+      return services.map(id => getService(id)).filter((s): s is QuizService => !!s);
     }
 
     // Голова: без банок
@@ -47,29 +72,7 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
       return ["classic_legs", "vector"].map(id => getService(id)).filter((s): s is QuizService => !!s);
     }
 
-    // Если человек не выбрал конкретную зону
-    if (area === "master_choice") {
-      return [getService("vector")].filter((s): s is QuizService => !!s);
-    }
-
-    // Только для спины, шеи и плеч:
-    if (area === "back_neck") {
-      serviceIds.push("vector", "classic_spine_neck");
-
-      // Банки добавляются только при явном согласии
-      if (addCups === "yes") {
-        if (intensity === "soft") {
-          serviceIds.push("cups_air");
-        }
-        if (intensity === "deep") {
-          serviceIds.push("cups_fire");
-        }
-      }
-      
-      const finalIds = Array.from(new Set(serviceIds));
-      return finalIds.map(id => getService(id)).filter((s): s is QuizService => !!s);
-    }
-
+    // Не знаю: без банок
     return [getService("vector")].filter((s): s is QuizService => !!s);
   }
 

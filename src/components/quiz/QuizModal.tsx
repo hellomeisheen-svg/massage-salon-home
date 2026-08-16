@@ -143,8 +143,8 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
                       if (currentStep.type === "single") {
                         const newAnswers = { ...answers, [currentStep.id]: opt.id };
                         
-                        // Сброс ответа о банках, если зона изменилась и она не "спина/шея"
-                        if (currentStep.id === "relax_area" && opt.id !== "back_neck") {
+                        // Сброс ответа о банках, если зона изменилась на неподходящую
+                        if (currentStep.id === "relax_area" && !["whole_body", "back_neck"].includes(opt.id)) {
                           delete newAnswers.addCups;
                         }
 
