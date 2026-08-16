@@ -87,8 +87,16 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
 
   // Ветка 3: Убрать отёчность (lightness)
   else if (goal === "lightness") {
+    // Если выбрано только лицо, перенаправляем на ветку лица (через calculateResult выше)
     const area = answers.lightness_area;
-    return getLightnessRecommendations({ ...answers, lightnessArea: area });
+    const areas = Array.isArray(area) ? area : [area].filter(Boolean);
+    
+    if (areas.length === 1 && areas.includes("face")) {
+      // Это условие уже поймано выше в isFacePath, но для надежности:
+      serviceIds = ["lymph_face", "classic_face", "girudo_cosm"];
+    } else {
+      return getLightnessRecommendations({ ...answers, lightnessArea: area });
+    }
   }
 
   // Ветка 5: Оздоровительные практики (wellness)
@@ -264,6 +272,8 @@ function getLightnessRecommendations(answers: Record<string, any>): QuizService[
 
   const areas = Array.isArray(area) ? area : [area].filter(Boolean);
 
+  console.log("LIGHTNESS RECOMMENDATIONS DEBUG:", { areas, area });
+
   if (areas.includes("face")) {
     ids = ["lymph_face", "classic_face", "girudo_cosm"];
   } else if (areas.includes("legs") || areas.includes("feet")) {
@@ -273,8 +283,11 @@ function getLightnessRecommendations(answers: Record<string, any>): QuizService[
   } else if (areas.includes("master_choice") || areas.length === 0) {
     ids = ["lymph", "lymphatic", "classic_legs"];
   } else {
+    // Если ничего не подошло, но мы в этой ветке
     ids = ["lymph", "lymphatic", "classic_legs"];
   }
 
-  return ids.map(id => resolve(id)).filter((s): s is QuizService => !!s);
+  const result = ids.map(id => resolve(id)).filter((s): s is QuizService => !!s);
+  console.log("LIGHTNESS FINAL RESULT:", result.map(r => r.id));
+  return result;
 }
