@@ -242,29 +242,23 @@ function BookingDialog({
                   const comment = formData.get("comment") as string;
                   const email = formData.get("email") as string;
 
-                  const { data: leadData, error: insertError } = await supabase.from("leads").insert([
+                  const phoneValue = formatPhone(phone);
+
+                  const { error: insertError } = await supabase.from("leads").insert([
                     {
                       name,
-                      phone: formatPhone(phone),
+                      phone: phoneValue,
                       message: `${method.toUpperCase()}${comment ? `: ${comment}` : ""}`,
                       email: email || null,
                     },
-                  ]).select("id").single();
+                  ]);
 
                   if (insertError) throw insertError;
 
-                  // Trigger Resend notification via server function
-                  if (leadData?.id) {
-                    const result = await sendLeadNotification({ data: { leadId: leadData.id } });
-                    console.log("Notification result:", result);
-                    if (result && !result.success) {
-                      console.error("Notification failed:", result.error);
-                      // In development or if result explicitly fails, we might want to alert if it's not a success
-                      // But usually we don't want to block the user if the DB insert worked
-                    }
-                  } else {
-                    console.error("No lead ID returned from insert");
-                    throw new Error("No lead ID returned");
+                  // Trigger Resend notification via server function (lookup by phone)
+                  const result = await sendLeadNotification({ data: { phone: phoneValue } });
+                  if (result && !result.success) {
+                    console.error("Notification failed:", result.error);
                   }
 
                   setSent(true);

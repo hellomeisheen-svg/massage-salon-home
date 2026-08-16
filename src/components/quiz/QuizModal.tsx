@@ -74,19 +74,19 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
 
       const message = `[QUIZ LEAD]\nРЕКОМЕНДАЦИИ: ${recommendedServices.map(s => s.name).join(", ")}\n---\nОТВЕТЫ:\n${answersText}\n---\nСПОСОБ СВЯЗИ: ${contact.method.toUpperCase()}`;
 
-      const { data: leadData, error: insertError } = await supabase.from("leads").insert([
+      const { error: insertError } = await supabase.from("leads").insert([
         {
           name: contact.name,
           phone: contact.phone,
           message: message,
         },
-      ]).select("id").single();
+      ]);
 
       if (insertError) throw insertError;
 
-      if (leadData?.id) {
-        const result = await sendLeadNotification({ data: { leadId: leadData.id } });
-        console.log("Quiz Notification result:", result);
+      const result = await sendLeadNotification({ data: { phone: contact.phone } });
+      if (result && !result.success) {
+        console.error("Quiz notification failed:", result.error);
       }
       setIsSuccess(true);
     } catch (e) {
