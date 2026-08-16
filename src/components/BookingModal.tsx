@@ -149,28 +149,6 @@ function BookingDialog({
               Мы создадим для вас атмосферу полного спокойствия в&nbsp;«Седьмом небе». Администратор свяжется с&nbsp;вами, чтобы уточнить детали и&nbsp;подтвердить время.
             </p>
 
-            <div className="mt-8 w-full rounded-[12px] border border-[#DAEBFF] bg-[#EFF6FF] p-5 text-left">
-              <div className="flex items-start justify-between gap-4">
-                <span className="text-[12px] font-medium uppercase tracking-wider text-[#566A93]">
-                  Что дальше
-                </span>
-              </div>
-              <ul className="mt-3 space-y-2 text-[14px] leading-[1.5] text-[#566A93]">
-                <li className="flex gap-2">
-                  <span className="text-[#1C3C8C]">1.</span>
-                  <span>Перезвоним вам в&nbsp;ближайшее время</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-[#1C3C8C]">2.</span>
-                  <span>Подберём удобный день и&nbsp;время</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-[#1C3C8C]">3.</span>
-                  <span>Встретимся в&nbsp;кабинете на&nbsp;сеанс</span>
-                </li>
-              </ul>
-            </div>
-
             <div className="mt-8 flex w-full flex-col gap-3 sm:px-0">
               <a
                 href="https://n2418813.yclients.com"
