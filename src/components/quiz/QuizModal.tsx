@@ -111,19 +111,19 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
               <h2 className="font-noto-serif-narrow ds-h3 text-[#1c3c8c] leading-tight">{QUIZ_CONFIG.title}</h2>
               <p className="mt-3 text-[15px] leading-[1.5] text-[#566A93] sm:text-[16px]">{QUIZ_CONFIG.subtitle}</p>
             </div>
-            <div className="mt-8 w-full rounded-2xl border border-[#DAEBFF]/60 bg-[#EFF6FF]/40 p-6 sm:p-7">
+            <div className="mt-8 w-full rounded-2xl border border-[#DAEBFF]/60 bg-white p-6 sm:p-7 shadow-[0_8px_30px_rgb(218,235,255,0.4)]">
               <span className="text-[14px] sm:text-[15px] leading-tight text-[#566A93]">Что вы получите</span>
-              <ul className="mt-5 space-y-3.5">
+              <ul className="mt-6 space-y-4">
                 {[
                   "Персональный список процедур",
                   "Расчет стоимости и длительности",
                   "Скидка на первый визит"
                 ].map((text, i) => (
-                  <li key={i} className="flex items-start gap-3.5 group">
-                    <span className="flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-full bg-white border border-[#DAEBFF] text-[11px] font-bold text-[#1C3C8C] shadow-sm group-hover:border-[#A2CFFE] transition-colors">
+                  <li key={i} className="flex items-center gap-4 group">
+                    <span className="flex-shrink-0 flex items-center justify-center w-6 h-6 rounded-full bg-[#EFF6FF] text-[12px] font-bold text-[#1C3C8C] shadow-sm group-hover:bg-[#88C1FF] group-hover:text-white transition-all duration-300">
                       {i + 1}
                     </span>
-                    <span className="text-[14px] sm:text-[15px] leading-tight text-[#566A93] font-medium pt-0.5">{text}</span>
+                    <span className="text-[15px] sm:text-[16px] leading-none text-[#1C3C8C] font-semibold">{text}</span>
                   </li>
                 ))}
               </ul>
