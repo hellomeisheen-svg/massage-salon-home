@@ -87,9 +87,6 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
 
   // Ветка 3: Убрать отёчность (lightness)
   else if (goal === "lightness") {
-    // ВНИМАНИЕ: В этой ветке (multiple choice) ID ответа — lightness_area.
-    // Если пользователь выбрал только одну зону "face", он может попасть в facePath выше,
-    // но если выбрано несколько зон, мы попадаем сюда.
     const area = 
       answers.lightness_area ?? 
       answers.lightnessArea ?? 
@@ -97,14 +94,9 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
       answers.selectedArea ?? 
       answers.relaxArea;
 
+    console.log("LIGHTNESS DEBUG START", { goal, area, answers });
     const recommendedServices = getLightnessRecommendations({ ...answers, lightnessArea: area });
-    
-    console.log("LIGHTNESS DEBUG", {
-      goal: answers.goal,
-      rawArea: answers.lightness_area,
-      finalArea: area,
-      recommendedCount: recommendedServices.length
-    });
+    console.log("LIGHTNESS DEBUG END", { recommendedCount: recommendedServices.length, ids: recommendedServices.map(s => s.id) });
 
     return recommendedServices;
   }
