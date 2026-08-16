@@ -67,11 +67,10 @@ export function Education() {
           <path d="M12 0 L13.2 10.8 L24 12 L13.2 13.2 L12 24 L10.8 13.2 L0 12 L10.8 10.8 Z" />
         </svg>
         <h2 className="font-noto-serif-narrow max-w-none sm:max-w-[900px] xl:max-w-[1100px] ds-h1 text-[#1C3C8C]">
-          <span className="xl:hidden">За&nbsp;плечами&nbsp;— годы ежедневной практики и&nbsp;регулярное обучение</span>
-          <span className="hidden xl:inline">За&nbsp;плечами&nbsp;— годы ежедневной практики, регулярное обучение и&nbsp;спокойный подход к&nbsp;работе с&nbsp;телом</span>
+          За&nbsp;плечами&nbsp;— годы ежедневной практики и&nbsp;регулярное обучение
         </h2>
       </div>
-      <div className="container-1900 grid grid-cols-1 xl:grid-cols-[1fr_auto] gap-4 sm:gap-5 items-stretch">
+      <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-5 items-stretch">
 
         {/* Left: photo + quote panel */}
         <div className="relative xl:min-h-0 xl:h-full flex flex-col xl:rounded-[12px] xl:overflow-hidden xl:border xl:border-[#DAEBFF]">
@@ -110,7 +109,7 @@ export function Education() {
         </div>
 
         {/* Right: education lists */}
-        <div className="flex flex-col gap-6 xl:gap-3 xl:min-w-[745px]">
+        <div className="flex flex-col gap-6 xl:gap-3">
           <div className="px-2 text-[#566A93] text-[14px] sm:text-[15px]">Основное образование</div>
           <div className="flex flex-col gap-6 xl:gap-3">
             {mainEducation.map((e) => (
