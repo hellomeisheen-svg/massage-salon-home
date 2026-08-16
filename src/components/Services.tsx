@@ -500,7 +500,7 @@ export function ServiceCard({
         </div>
 
         {/* Price (Desktop/Tablet only) */}
-        <div className="mt-auto pt-6 hidden sm:flex items-center justify-end gap-4 md:gap-5">
+        <div className="mt-auto pt-6 hidden sm:flex items-center justify-end gap-4 md:gap-5 self-end">
           {hasDiscount && (
             <span className="ds-price-old">
               {renderPrice(originalPrice)}
