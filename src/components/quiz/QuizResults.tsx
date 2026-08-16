@@ -37,7 +37,7 @@ export function QuizResults({
 
       <div className="grid gap-4">
         {services.length === 0 && (
-          <div className="p-8 text-center text-[#566A93]">
+          <div className="p-8 text-center text-[#566A93] bg-[#EFF6FF] rounded-lg">
             Мы не смогли подобрать программу автоматически. Пожалуйста, обсудите ваши пожелания с мастером.
           </div>
         )}
