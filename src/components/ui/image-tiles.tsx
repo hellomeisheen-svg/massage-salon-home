@@ -13,7 +13,7 @@ export default function ImageReveal({
   rightImage,
 }: ImageRevealProps) {
   const tileBase =
-    "absolute overflow-hidden rounded-[24px] bg-white shadow-[0_20px_50px_-24px_rgba(28,60,140,0.18)]";
+    "absolute overflow-hidden rounded-[24px] bg-white shadow-card-hover";
 
   const tiles = [
     { src: leftImage, zIndex: 10, left: "20px", top: "40px", rot: "-8deg", delay: 0 },

@@ -686,7 +686,7 @@ button:focus-visible {
 }
 @media (hover: hover) and (pointer: fine) {
   .ds-card-hover:hover {
-    box-shadow: 0 20px 50px -24px rgba(28, 60, 140, 0.18);
+    box-shadow: var(--shadow-card-hover);
   }
 }
 
