@@ -130,8 +130,8 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
         serviceIds.push("vector");
       }
       
-      serviceIds.sort((a: string, b: string) => wellnessPriority.indexOf(a) - wellnessPriority.indexOf(b));
     }
+  }
 
   // Дедупликация и лимит 3
   const finalIds = Array.from(new Set(serviceIds));
