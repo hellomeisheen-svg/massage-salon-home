@@ -106,9 +106,7 @@ export function QuizContactForm({
             required
             autoComplete="tel"
             placeholder="+7 (___) ___-__-__" 
-            className={`h-[52px] w-full rounded-[12px] border bg-[#EFF6FF] px-4 text-[16px] text-foreground outline-none transition-colors placeholder:text-[#566A93] focus:border-[#1C3C8C] focus:bg-white ${
-              phoneError ? "border-[#C0392B]" : "border-[#daebff]"
-            }`}
+            className={`ds-input ${phoneError ? "border-[#C0392B]" : ""}`}
             value={formatPhone(phone)}
             onChange={handlePhoneInput}
           />
