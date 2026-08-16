@@ -21,7 +21,7 @@ export function RatingBlock() {
       </div>
       <div className="flex items-baseline gap-1.5">
         <span className="font-noto-serif-narrow text-[30px] font-bold leading-none tracking-tight text-[#1C3C8C]">
-          4,7
+          4,4
         </span>
         <span className="text-[13px] font-medium text-[#566A93]">
           Рейтинг организации в Яндексе
