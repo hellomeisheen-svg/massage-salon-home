@@ -246,7 +246,7 @@ function BookingDialog({
                     {
                       name,
                       phone: formatPhone(phone),
-                      message: comment,
+                      message: `${method.toUpperCase()}: ${comment}`,
                       email: email || null,
                     },
                   ]);
