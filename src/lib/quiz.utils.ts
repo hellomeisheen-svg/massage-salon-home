@@ -124,13 +124,10 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
   }
 
   // Дедупликация и лимит 3
-  // В ветках relax, back_neck и lightness мы не ограничиваем количество, чтобы пользователь видел полную программу
   const finalIds = Array.from(new Set(serviceIds));
   const result = finalIds
     .map(id => getService(id))
     .filter((s): s is QuizService => !!s);
-
-  console.log("CALCULATE_RESULT FINAL:", { goal, serviceIds, resultCount: result.length });
 
   const isSpecialBranch = goal === "relax" || goal === "back_neck" || goal === "lightness";
   return isSpecialBranch ? result : result.slice(0, 3);
