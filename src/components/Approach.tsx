@@ -22,9 +22,9 @@ const environmentItems: { title: string; text: string }[] = [
 const NumberBadge = ({ number }: { number: number }) => (
   <div className="relative flex shrink-0 items-center justify-center w-[44px] h-[44px] xl:w-[40px] xl:h-[40px]">
     {/* Decorative outer ring */}
-    <span className="absolute -inset-2 rounded-[12px] border border-[#88C1FF]/20" />
+    <span className="absolute -inset-2 rounded-[var(--radius-sm)] border border-[var(--color-primary-action)]/10" />
     {/* Main badge ring */}
-    <span className="ds-counter relative flex h-full w-full items-center justify-center rounded-[12px] border border-[#88C1FF] bg-white text-[#1C3C8C]">
+    <span className="ds-counter relative flex h-full w-full items-center justify-center rounded-[var(--radius-sm)] border border-[var(--color-primary-action)]/30 bg-[var(--color-bg-main)] text-[var(--color-primary)] font-medium">
       {number}
     </span>
   </div>
@@ -32,12 +32,12 @@ const NumberBadge = ({ number }: { number: number }) => (
 
 export function Approach() {
   return (
-    <section id="advantages-2" className="scroll-mt-[140px] bg-[#EFF6FF] pt-8 pb-[60px] sm:pt-[70px] sm:pb-[70px] xl:pt-[140px] xl:pb-0">
+    <section id="advantages-2" className="scroll-mt-[140px] bg-[var(--color-bg-main)] py-[var(--space-8)] xl:py-[var(--space-10)]">
       <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-5">
         {/* Left column */}
         <div className="flex flex-col gap-6 xl:h-full">
           {/* Подход мастера */}
-          <div className="relative h-[420px] sm:h-[720px] xl:h-full ds-card overflow-hidden">
+          <div className="relative h-[420px] sm:h-[720px] xl:h-full ds-card overflow-hidden border-[var(--color-border)] shadow-[var(--shadow-card)] rounded-[var(--radius-card)] hover:translate-y-0">
             <img
               src="/images/approach-master.webp"
               alt="Татьяна работает с клиенткой в светлом массажном кабинете"
@@ -49,8 +49,8 @@ export function Approach() {
         </div>
 
         {/* Right column — Среда вокруг */}
-        <div className="ds-card p-6 sm:p-8 xl:p-12">
-          <h3 className="font-noto-serif-narrow ds-h2 text-left text-[#1C3C8C] leading-tight px-0">
+        <div className="ds-card p-6 sm:p-8 xl:p-12 bg-[var(--color-bg-card)] border-[var(--color-border)] shadow-[var(--shadow-card)] rounded-[var(--radius-card)] hover:translate-y-0">
+          <h3 className="font-noto-serif-narrow ds-h2 text-left text-[var(--color-primary)] leading-tight px-0 font-light">
             Всё, чтобы вы чувствовали себя спокойно и&nbsp;комфортно с&nbsp;первых минут
           </h3>
 
@@ -61,10 +61,10 @@ export function Approach() {
                     <div className="pb-2 sm:row-span-2 sm:pb-0">
                       <NumberBadge number={i + 1} />
                     </div>
-                    <h4 className="font-noto-serif-narrow ds-h4 text-[#1C3C8C] text-[24px] sm:text-[28px] xl:text-[28px]">
+                    <h4 className="font-noto-serif-narrow ds-h3 text-[var(--color-primary)] text-[22px] sm:text-[24px] xl:text-[26px] font-light">
                       {item.title}
                     </h4>
-                    <p className="body-text text-[#566A93] sm:max-w-[560px] xl:max-w-none">
+                    <p className="text-[15px] sm:text-[16px] leading-[1.6] text-[var(--color-text-main)] sm:max-w-[560px] xl:max-w-none">
                       {item.text}
                     </p>
                   </div>

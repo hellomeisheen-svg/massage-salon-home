@@ -405,29 +405,29 @@ export function ServiceCard({
   const priceLabel = applyTypography(`за ${sessionCounts[activeSession]} ${sessionWord}`);
 
   return (
-    <article className="ds-card ds-card-hover p-6 sm:p-8 flex flex-col h-auto min-h-[640px] md:min-h-[700px]">
+    <article className="ds-card p-6 sm:p-8 flex flex-col h-auto min-h-[640px] md:min-h-[700px] hover:translate-y-0 hover:shadow-[var(--shadow-card)]">
       {/* Sessions — pill switcher */}
-      <div className="flex items-stretch gap-1 rounded-[10px] bg-[#EFF6FF] p-1">
+      <div className="flex items-stretch gap-1 rounded-[var(--radius-button)] bg-[var(--color-bg-main)] p-1">
         {items.map((s, i) => (
           <button
             key={i}
             type="button"
             onClick={() => setActiveSession(i)}
-            className={`relative flex flex-1 items-center justify-center rounded-[8px] px-2 py-2.5 transition-all duration-300 ${
+            className={`relative flex flex-1 items-center justify-center rounded-[var(--radius-sm)] px-2 py-2.5 transition-all duration-300 ${
               activeSession === i
-                ? "bg-white shadow-[0_2px_8px_rgba(28,60,140,0.08)]"
+                ? "bg-white shadow-[var(--shadow-card)]"
                 : "bg-transparent"
             }`}
           >
             <span
               className={`whitespace-nowrap text-[13px] tracking-tight transition-colors duration-300 ${
-                activeSession === i ? "font-medium text-[#1C3C8C]" : "font-light text-[#566A93]"
+                activeSession === i ? "font-medium text-[var(--color-primary)]" : "font-light text-[var(--color-text-muted)]"
               }`}
             >
               {s.label}
             </span>
             {s.discount && (
-              <span className="absolute -top-1 right-1 rounded-full bg-[#1C3C8C] px-1.5 py-0.5 text-[9px] font-semibold tracking-wide text-white">
+              <span className="absolute -top-1 right-1 rounded-full bg-[var(--color-primary)] px-1.5 py-0.5 text-[9px] font-semibold tracking-wide text-white">
                 {s.discount}
               </span>
             )}
@@ -439,12 +439,12 @@ export function ServiceCard({
         <div className="flex-1">
           {/* Title */}
           <div className="mt-5 flex flex-wrap items-center gap-3">
-            <h3 className="font-noto-serif-narrow ds-h3 text-[#1C3C8C] break-words hyphens-auto">
+            <h3 className="font-noto-serif-narrow ds-h3 text-[var(--color-primary)] break-words hyphens-auto">
               <span className="xl:hidden">{mobileTitle(type.title)}</span>
               <span className="hidden xl:block">{mobileTitle(type.title)}</span>
             </h3>
             {type.hit && (
-              <span className="inline-flex items-center rounded-[4px] bg-gradient-to-b from-[#A2CFFE] to-[#88C1FF] px-2 py-1 text-[11px] font-semibold uppercase tracking-wider text-white">
+              <span className="inline-flex items-center rounded-[var(--radius-sm)] bg-gradient-to-b from-[#A2CFFE] to-[#88C1FF] px-2 py-1 text-[11px] font-semibold uppercase tracking-wider text-white">
                 Хит
               </span>
             )}
@@ -453,7 +453,7 @@ export function ServiceCard({
           {/* Zone / Type chips */}
           {variant.zone && (
             <div className="mt-6">
-              <span className="block text-[13px] font-light leading-[20px] text-[#566A93]">
+              <span className="block text-[13px] font-light leading-[20px] text-[var(--color-text-muted)]">
                 {clean(type.title) === "Гирудотерапия"
                   ? "Тип пиявок:"
                   : clean(type.title) === "Банки"
@@ -470,10 +470,10 @@ export function ServiceCard({
                       type="button"
                       onClick={() => onZoneChange(i)}
                       aria-pressed={isActive}
-                      className={`rounded-[0.5rem] px-3 py-1.5 text-[14px] leading-[20px] transition-all duration-300 ${
+                      className={`ds-chip !rounded-[var(--radius-button)] px-3 py-1.5 text-[14px] leading-[20px] transition-all duration-300 ${
                         isActive
-                          ? "border border-[#A2CFFE] bg-[#EFF6FF] font-medium text-[#1C3C8C]"
-                          : "border border-[#DAEBFF] bg-transparent font-medium text-[#1C3C8C] hover:border-[#A2CFFE] hover:bg-[#EFF6FF]"
+                          ? "border border-[var(--color-primary-action)] bg-white text-[var(--color-primary-action)]"
+                          : "border border-[var(--color-border)] bg-transparent text-[var(--color-primary)] hover:border-[var(--color-border-hover)] hover:bg-[var(--color-bg-hover)]"
                       }`}
                     >
                       {tabLabel}
@@ -485,15 +485,15 @@ export function ServiceCard({
           )}
 
           {/* Description */}
-          <p className="mt-6 whitespace-pre-line body-text text-[#566A93] sm:hidden">
+          <p className="mt-6 whitespace-pre-line text-[15px] sm:text-[16px] leading-[1.6] text-[var(--color-text-main)] sm:hidden">
             {variant.mobileDescription || variant.description}
           </p>
-          <p className="mt-6 hidden whitespace-pre-line body-text text-[#566A93] sm:block sm:max-w-[480px] xl:max-w-[540px]">
+          <p className="mt-6 hidden whitespace-pre-line text-[15px] sm:text-[16px] leading-[1.6] text-[var(--color-text-main)] sm:block sm:max-w-[480px] xl:max-w-[540px]">
             {variant.description}
           </p>
 
           {/* Selected configuration summary */}
-          <p className="mt-6 text-[13px] font-medium leading-[18px] tracking-wide text-[#1C3C8C]">
+          <p className="mt-6 text-[13px] font-medium leading-[18px] tracking-wide text-[var(--color-primary)] uppercase">
             {selectedSummary}
           </p>
         </div>
@@ -506,10 +506,10 @@ export function ServiceCard({
             </span>
           )}
           <div className="flex flex-col items-end">
-            <span className="font-noto-serif-narrow ds-price text-[#1C3C8C]">
+            <span className="font-noto-serif-narrow text-[32px] font-light text-[var(--color-primary)]">
               {renderPrice(computedPrice)}
             </span>
-            <span className="text-[13px] font-light text-[#566A93]">{priceLabel}</span>
+            <span className="text-[13px] font-light text-[var(--color-text-muted)]">{priceLabel}</span>
           </div>
         </div>
       </div>
@@ -521,21 +521,21 @@ export function ServiceCard({
           <button
             type="button"
             onClick={() => openBooking(bookingTitle)}
-            className="btn-primary flex-1"
+            className="ds-button-primary flex-1"
           >
             Записаться
           </button>
           {servicePageLinks[clean(type.title)] ? (
             <Link
               to={servicePageLinks[clean(type.title)]}
-              className="btn-secondary flex-1 inline-flex items-center justify-center text-center whitespace-nowrap"
+              className="ds-button-secondary flex-1 inline-flex items-center justify-center text-center whitespace-nowrap rounded-[var(--radius-button)] border border-[var(--color-border)] bg-white text-[var(--color-primary)] font-medium h-[52px]"
             >
               Узнать больше
             </Link>
           ) : (
             <a
               href="#programs"
-              className="btn-secondary flex-1 inline-flex items-center justify-center text-center whitespace-nowrap"
+              className="ds-button-secondary flex-1 inline-flex items-center justify-center text-center whitespace-nowrap rounded-[var(--radius-button)] border border-[var(--color-border)] bg-white text-[var(--color-primary)] font-medium h-[52px]"
             >
               Узнать больше
             </a>
@@ -546,7 +546,7 @@ export function ServiceCard({
                 type="button"
                 onClick={onPrev}
                 aria-label="Предыдущая услуга"
-                className="btn-secondary w-[80px] h-[60px] flex items-center justify-center p-0 shrink-0"
+                className="ds-button-secondary w-[80px] h-[52px] flex items-center justify-center p-0 shrink-0 rounded-[var(--radius-button)] border border-[var(--color-border)] bg-white text-[var(--color-primary)] font-medium"
               >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                   <path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
@@ -556,7 +556,7 @@ export function ServiceCard({
                 type="button"
                 onClick={onNext}
                 aria-label="Следующая услуга"
-                className="btn-secondary w-[80px] h-[60px] flex items-center justify-center p-0 shrink-0"
+                className="ds-button-secondary w-[80px] h-[52px] flex items-center justify-center p-0 shrink-0 rounded-[var(--radius-button)] border border-[var(--color-border)] bg-white text-[var(--color-primary)] font-medium"
               >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                   <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
@@ -576,17 +576,17 @@ export function ServiceCard({
               </span>
             )}
             <div className="flex flex-col items-end">
-              <span className="font-noto-serif-narrow ds-price text-[#1C3C8C]">
+              <span className="font-noto-serif-narrow text-[28px] font-light text-[var(--color-primary)]">
                 {renderPrice(computedPrice)}
               </span>
-              <span className="text-[13px] font-light text-[#566A93]">{priceLabel}</span>
+              <span className="text-[13px] font-light text-[var(--color-text-muted)]">{priceLabel}</span>
             </div>
           </div>
 
           <button
             type="button"
             onClick={() => openBooking(bookingTitle)}
-            className="btn-primary w-full h-[60px]"
+            className="ds-button-primary w-full"
           >
             Записаться
           </button>
@@ -595,12 +595,12 @@ export function ServiceCard({
             {servicePageLinks[clean(type.title)] ? (
               <Link
                 to={servicePageLinks[clean(type.title)]}
-                className="btn-secondary flex-1 h-[60px] px-3 py-0 inline-flex items-center justify-center text-center"
+                className="ds-button-secondary flex-1 h-[52px] px-3 py-0 inline-flex items-center justify-center text-center rounded-[var(--radius-button)] border border-[var(--color-border)] bg-white text-[var(--color-primary)] font-medium"
               >
                 Узнать больше
               </Link>
             ) : (
-              <a href="#programs" className="btn-secondary flex-1 h-[60px] px-3 py-0 inline-flex items-center justify-center text-center">
+              <a href="#programs" className="ds-button-secondary flex-1 h-[52px] px-3 py-0 inline-flex items-center justify-center text-center rounded-[var(--radius-button)] border border-[var(--color-border)] bg-white text-[var(--color-primary)] font-medium">
                 Узнать больше
               </a>
             )}
@@ -610,7 +610,7 @@ export function ServiceCard({
                   type="button"
                   onClick={onPrev}
                   aria-label="Предыдущая услуга"
-                  className="btn-secondary w-[60px] h-[60px] flex items-center justify-center p-0 shrink-0"
+                  className="ds-button-secondary w-[60px] h-[52px] flex items-center justify-center p-0 shrink-0 rounded-[var(--radius-button)] border border-[var(--color-border)] bg-white text-[var(--color-primary)] font-medium"
                 >
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
                     <path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
@@ -620,7 +620,7 @@ export function ServiceCard({
                   type="button"
                   onClick={onNext}
                   aria-label="Следующая услуга"
-                  className="btn-secondary w-[60px] h-[60px] flex items-center justify-center p-0 shrink-0"
+                  className="ds-button-secondary w-[60px] h-[52px] flex items-center justify-center p-0 shrink-0 rounded-[var(--radius-button)] border border-[var(--color-border)] bg-white text-[var(--color-primary)] font-medium"
                 >
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
                     <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
@@ -679,7 +679,7 @@ export function Services() {
         return (
           <div key={g.label}>
             {showLabel && (
-              <p className="text-[13px] font-light leading-[18px] text-[#566A93]">{g.label}</p>
+              <p className="text-[13px] font-medium leading-[18px] text-[var(--color-text-muted)] uppercase tracking-wider">{g.label}</p>
             )}
             <ul className={`flex flex-col gap-3 items-start ${showLabel ? "mt-3" : ""}`}>
               {g.items.map((t) => {
@@ -694,12 +694,12 @@ export function Services() {
                     >
                       <span
                         className={`h-2 w-2 rounded-full transition-colors ${
-                          isActive ? "bg-[#1C3C8C]" : "bg-[#B7C5E3]"
+                          isActive ? "bg-[var(--color-primary-action)]" : "bg-[var(--color-border-hover)]"
                         }`}
                       />
                       <span
                         className={`text-[16px] transition-colors ${
-                          isActive ? "text-[#1C3C8C]" : "text-[#566A93]"
+                          isActive ? "text-[var(--color-primary-action)] font-medium" : "text-[var(--color-text-main)] hover:text-[var(--color-primary)]"
                         }`}
                       >
                         {clean(t.title)}
@@ -716,7 +716,7 @@ export function Services() {
   );
 
   return (
-    <section id="services" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section">
+    <section id="services" className="scroll-mt-[140px] bg-[var(--color-bg-main)] py-[var(--space-8)] xl:py-[var(--space-10)]">
       <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-8 sm:gap-5 items-start">
         {/* Left column */}
         <div className="self-start flex flex-col items-center xl:items-start text-center xl:text-left">
@@ -729,7 +729,7 @@ export function Services() {
           >
             Услуги
           </span>
-          <h2 className="font-noto-serif-narrow mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0">
+          <h2 className="font-noto-serif-narrow mt-6 ds-h2 text-[var(--color-primary)] max-w-[520px] mx-auto xl:mx-0">
             Обсуждаем состояние перед каждым визитом и подбираем технику
           </h2>
 

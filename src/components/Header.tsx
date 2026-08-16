@@ -73,7 +73,7 @@ export function Header({
 
       <div className="container-1900 relative">
       {/* Desktop header */}
-      <div className="hidden h-20 w-full items-center justify-between ds-card px-5 py-2.5 xl:flex xl:px-[30px]">
+      <div className="hidden h-20 w-full items-center justify-between ds-card px-5 py-2.5 xl:flex xl:px-[30px] border-[var(--color-border)] bg-[var(--color-bg-card)] shadow-[var(--shadow-card)] rounded-[var(--radius-card)]">
         {/* Logo */}
         <Link to="/" aria-label="На главную" className="flex h-12 items-center hover:opacity-70 transition-opacity">
           <Logo className="h-full w-auto" />
@@ -86,7 +86,7 @@ export function Header({
               <li key={item.label}>
                 <a
                   href={item.href}
-                  className="text-base font-normal leading-[150%] text-[#1c3c8c] hover:opacity-70 transition-opacity"
+                  className="text-base font-normal leading-[150%] text-[var(--color-primary)] hover:text-[var(--color-primary-action)] transition-colors"
                 >
                   {item.label}
                 </a>
@@ -100,14 +100,14 @@ export function Header({
           href="https://n2418813.yclients.com"
           target="_blank"
           rel="noopener noreferrer"
-          className={`btn-header-cta w-[250px] ${heroPassed ? "btn-header-cta-active" : ""}`}
+          className={`ds-button-primary w-[250px] !h-[52px] !min-h-0 ${heroPassed ? "opacity-100" : "opacity-80"}`}
         >
           Онлайн запись
         </a>
       </div>
 
       {/* Mobile / tablet header */}
-      <div className="flex h-16 w-full items-center justify-between ds-card px-4 py-2.5 xl:hidden">
+      <div className="flex h-16 w-full items-center justify-between ds-card px-4 py-2.5 xl:hidden border-[var(--color-border)] bg-[var(--color-bg-card)] shadow-[var(--shadow-card)] rounded-[var(--radius-card)]">
         {/* Logo */}
         <Link to="/" aria-label="На главную" onClick={() => setMenuOpen(false)} className="flex h-10 items-center hover:opacity-70 transition-opacity">
           <Logo className="h-full w-auto" />
@@ -119,7 +119,7 @@ export function Header({
           aria-label={menuOpen ? "Закрыть меню" : "Открыть меню"}
           aria-expanded={menuOpen}
           onClick={() => setMenuOpen((v) => !v)}
-          className="flex h-10 w-10 items-center justify-center rounded-[0.5rem] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors"
+          className="flex h-10 w-10 items-center justify-center rounded-[var(--radius-button)] text-[var(--color-primary)] hover:bg-[var(--color-bg-main)] transition-colors"
         >
           {menuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -130,12 +130,12 @@ export function Header({
         <>
           {/* Blur overlay behind menu */}
           <div 
-            className="fixed inset-x-0 bottom-0 top-[88px] z-50 bg-[#EFF6FF]/40 backdrop-blur-[8px] xl:hidden" 
+            className="fixed inset-x-0 bottom-0 top-[88px] z-50 bg-[var(--color-overlay)] backdrop-blur-[8px] xl:hidden" 
 
             onClick={() => setMenuOpen(false)}
           />
           <div className="absolute inset-x-4 sm:inset-x-5 top-[calc(100%+8px)] z-[60] h-[calc(100dvh-96px)] sm:h-[calc(100dvh-100px)] xl:hidden">
-            <div className="flex h-full flex-col ds-card p-4">
+            <div className="flex h-full flex-col ds-card p-4 border-[var(--color-border)] bg-[var(--color-bg-card)] shadow-[var(--shadow-modal)] rounded-[var(--radius-modal)]">
               <nav className="flex-1 overflow-y-auto pr-1 scrollbar-none" aria-label="Мобильная навигация">
                 <ul className="flex flex-col gap-1">
                   {navigationItems.length === 0 && (
@@ -143,7 +143,7 @@ export function Header({
                       <Link
                         to="/"
                         onClick={() => setMenuOpen(false)}
-                        className="block w-full rounded-lg px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors"
+                        className="block w-full rounded-[var(--radius-sm)] px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[var(--color-primary)] hover:bg-[var(--color-bg-main)] transition-colors"
                       >
                         На главную
                       </Link>
@@ -154,7 +154,7 @@ export function Header({
                       <a
                         href={item.href}
                         onClick={() => setMenuOpen(false)}
-                        className="block w-full rounded-lg px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors"
+                        className="block w-full rounded-[var(--radius-sm)] px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[var(--color-primary)] hover:bg-[var(--color-bg-main)] transition-colors"
                       >
                         {item.label}
                       </a>
@@ -163,12 +163,12 @@ export function Header({
                   
                   {(pathname === "/" || items !== undefined) && (
                     <>
-                      <li className="my-1 border-t border-[#daebff]" />
+                      <li className="my-1 border-t border-[var(--color-border)]" />
                       <li>
                         <button
                           type="button"
                           onClick={() => setServicesOpen(!servicesOpen)}
-                          className="flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors"
+                          className="flex w-full items-center justify-between rounded-[var(--radius-sm)] px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[var(--color-primary)] hover:bg-[var(--color-bg-main)] transition-colors"
                         >
                           Посмотреть все услуги
                           <ChevronDown className={`transition-transform duration-300 ${servicesOpen ? "rotate-180" : ""}`} size={20} />
@@ -182,7 +182,7 @@ export function Header({
                                   <Link
                                     to={service.to}
                                     onClick={() => setMenuOpen(false)}
-                                    className="block w-full rounded-lg px-3 py-2 text-sm font-normal leading-[150%] text-[#4A5C85] hover:bg-[#EFF6FF] transition-colors"
+                                    className="block w-full rounded-[var(--radius-sm)] px-3 py-2 text-sm font-normal leading-[150%] text-[var(--color-text-main)] hover:bg-[var(--color-bg-main)] transition-colors"
                                   >
                                     {service.label}
                                   </Link>
@@ -196,11 +196,11 @@ export function Header({
                 </ul>
               </nav>
               <div className="mt-auto pt-3">
-                <div className="flex items-center gap-3 border-t border-[#daebff] pt-3">
+                <div className="flex items-center gap-3 border-t border-[var(--color-border)] pt-3">
                   <a
                     href="tel:+79242324611"
                     onClick={() => setMenuOpen(false)}
-                    className="text-base font-medium leading-[150%] text-[#1c3c8c] hover:opacity-70 transition-opacity"
+                    className="text-base font-medium leading-[150%] text-[var(--color-primary)] hover:text-[var(--color-primary-action)] transition-colors"
                   >
                     +7 924 232 46 11
                   </a>
@@ -209,7 +209,7 @@ export function Header({
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Макс — мессенджер"
-                    className="ml-auto flex h-10 w-10 items-center justify-center rounded-[0.5rem] border border-[#daebff] bg-[#EFF6FF] text-[#1c3c8c] hover:bg-[#DAEBFF] transition-colors"
+                    className="ml-auto flex h-10 w-10 items-center justify-center rounded-[var(--radius-button)] border border-[var(--color-border)] bg-[var(--color-bg-main)] text-[var(--color-primary)] hover:bg-[var(--color-bg-hover)] transition-colors"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -226,7 +226,7 @@ export function Header({
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setMenuOpen(false)}
-                  className="btn-primary mt-3 w-full inline-flex items-center justify-center"
+                  className="ds-button-primary mt-3 w-full inline-flex items-center justify-center"
                 >
                   Онлайн запись
                 </a>
