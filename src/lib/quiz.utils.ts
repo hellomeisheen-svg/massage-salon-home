@@ -87,8 +87,16 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
 
   // Ветка 3: Убрать отёчность (lightness)
   else if (goal === "lightness") {
+    // Если выбрано только лицо, перенаправляем на ветку лица (через calculateResult выше)
     const area = answers.lightness_area;
-    return getLightnessRecommendations({ ...answers, lightnessArea: area });
+    const areas = Array.isArray(area) ? area : [area].filter(Boolean);
+    
+    if (areas.length === 1 && areas.includes("face")) {
+      // Это условие уже поймано выше в isFacePath, но для надежности:
+      serviceIds = ["lymph_face", "classic_face", "girudo_cosm"];
+    } else {
+      return getLightnessRecommendations({ ...answers, lightnessArea: area });
+    }
   }
 
   // Ветка 5: Оздоровительные практики (wellness)
