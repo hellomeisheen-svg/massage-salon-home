@@ -94,10 +94,7 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
       serviceIds = ["lymph_face", "classic_face", "girudo_cosm"];
     } else {
       const lightnessResult = getLightnessRecommendations({ ...answers, lightnessArea: area });
-      console.log("LIGHTNESS BRANCH FINAL RESULT:", lightnessResult.map(s => s.id));
-      
-      // РЕШЕНИЕ: Если мы в ветке lightness, мы ДОЛЖНЫ вернуть результат здесь, 
-      // иначе пустой serviceIds в конце функции превратится в [].
+      console.log("LIGHTNESS BRANCH FINAL RESULT (INTERNAL):", lightnessResult.map(s => s.id));
       return lightnessResult;
     }
   }
@@ -140,6 +137,7 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
     .map(id => getService(id))
     .filter((s): s is QuizService => !!s);
 
+  console.log("FALLBACK CALCULATION RESULT:", result.map(s => s.id));
   const isSpecialBranch = goal === "relax" || goal === "back_neck" || goal === "lightness";
   return isSpecialBranch ? result : result.slice(0, 3);
 }
