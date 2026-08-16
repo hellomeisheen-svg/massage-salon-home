@@ -1,7 +1,6 @@
 import { QUIZ_CONFIG, QuizService } from "@/config/quiz";
 
 export function calculateResult(answers: Record<string, any>): QuizService[] {
-  console.log("CALCULATE_RESULT INPUT:", JSON.stringify(answers));
   const goal = answers.goal;
   const getService = (id: string) => QUIZ_CONFIG.services.find(s => s.id === id);
   
@@ -94,7 +93,12 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
     if (areas.length === 1 && areas.includes("face")) {
       serviceIds = ["lymph_face", "classic_face", "girudo_cosm"];
     } else {
-      return getLightnessRecommendations({ ...answers, lightnessArea: area });
+      const lightnessResult = getLightnessRecommendations({ ...answers, lightnessArea: area });
+      console.log("LIGHTNESS BRANCH FINAL RESULT:", lightnessResult.map(s => s.id));
+      
+      // РЕШЕНИЕ: Если мы в ветке lightness, мы ДОЛЖНЫ вернуть результат здесь, 
+      // иначе пустой serviceIds в конце функции превратится в [].
+      return lightnessResult;
     }
   }
 
