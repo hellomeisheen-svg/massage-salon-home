@@ -22,10 +22,12 @@ function formatPhone(rest: string) {
 
 export function QuizContactForm({ 
   onSubmit, 
-  isSubmitting 
+  isSubmitting,
+  error 
 }: { 
   onSubmit: (data: { name: string; phone: string; method: string; website?: string }) => void;
   isSubmitting: boolean;
+  error?: string | null;
 }) {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
