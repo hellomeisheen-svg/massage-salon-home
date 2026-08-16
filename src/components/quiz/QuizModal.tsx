@@ -56,10 +56,20 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
   const onContactSubmit = async (contact: { name: string; phone: string; method: string; website?: string }) => {
     setIsSubmitting(true);
     try {
-      const message = `[QUIZ LEAD] Results: ${recommendedServices.map(s => s.name).join(", ")}\n\nAnswers:\n${visibleSteps.map(s => {
-        const ans = answers[s.id];
-        return `- ${s.question}: ${Array.isArray(ans) ? ans.join(", ") : ans}`;
-      }).join("\n")}\n\nMethod: ${contact.method}`;
+      const answersText = visibleSteps.map(s => {
+        const ansId = answers[s.id];
+        let displayValue = "";
+        
+        if (Array.isArray(ansId)) {
+          displayValue = ansId.map(id => s.options.find(o => o.id === id)?.text || id).join(", ");
+        } else {
+          displayValue = s.options.find(o => o.id === ansId)?.text || ansId;
+        }
+        
+        return `- ${s.question}: ${displayValue}`;
+      }).join("\n");
+
+      const message = `[QUIZ LEAD]\nРЕКОМЕНДАЦИИ: ${recommendedServices.map(s => s.name).join(", ")}\n---\nОТВЕТЫ:\n${answersText}\n---\nСПОСОБ СВЯЗИ: ${contact.method.toUpperCase()}`;
 
       const { data: leadData, error: insertError } = await supabase.from("leads").insert([
         {
