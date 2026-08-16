@@ -78,9 +78,27 @@ export const sendLeadNotification = createServerFn({ method: "POST" })
 
       const resultsHtml = lead.message?.includes("[QUIZ LEAD]") 
         ? `
-          <div style="margin-top: 20px; padding: 15px; background-color: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0;">
-            <h3 style="color: #1C3C8C; margin-top: 0;">Детали квиза:</h3>
-            ${lead.message}
+          <div style="margin-top: 20px; padding: 20px; background-color: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0; font-family: sans-serif;">
+            <h3 style="color: #1C3C8C; margin-top: 0; margin-bottom: 15px; border-bottom: 1px solid #DAEBFF; padding-bottom: 10px;">Результаты квиза:</h3>
+            ${message.split("\n").map(line => {
+              if (line.includes("РЕКОМЕНДАЦИИ:")) {
+                return `<p style="margin: 10px 0;"><strong>Рекомендуемые услуги:</strong><br/>${line.replace("РЕКОМЕНДАЦИИ:", "").trim()}</p>`;
+              }
+              if (line === "---") {
+                return `<hr style="border: none; border-top: 1px solid #DAEBFF; margin: 15px 0;" />`;
+              }
+              if (line === "ОТВЕТЫ:") {
+                return `<p style="margin: 10px 0; font-weight: bold; color: #1C3C8C;">Ответы на вопросы:</p>`;
+              }
+              if (line.startsWith("- ")) {
+                return `<p style="margin: 5px 0 5px 15px; font-size: 14px; color: #566A93;">${line}</p>`;
+              }
+              if (line.includes("СПОСОБ СВЯЗИ:")) {
+                return `<p style="margin: 10px 0; padding: 8px; background-color: #DAEBFF; border-radius: 8px; display: inline-block;"><strong>Способ связи:</strong> ${line.replace("СПОСОБ СВЯЗИ:", "").trim()}</p>`;
+              }
+              if (line === "[QUIZ LEAD]") return "";
+              return line ? `<p style="margin: 5px 0;">${line}</p>` : "";
+            }).join("")}
           </div>
         ` 
         : `<p><strong>Сообщение:</strong> ${message}</p>`;
