@@ -510,7 +510,7 @@ export function ServiceCard({
             <span className="font-noto-serif-narrow ds-price text-[#1C3C8C]">
               {renderPrice(computedPrice)}
             </span>
-            <span className="text-[13px] font-light text-[#566A93]">{priceLabel}</span>
+            <span className="text-[13px] font-light text-[#566A93] leading-none mt-1">{priceLabel}</span>
           </div>
         </div>
       </div>
