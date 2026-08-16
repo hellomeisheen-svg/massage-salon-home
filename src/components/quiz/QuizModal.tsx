@@ -16,15 +16,18 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
   // Filter steps based on current answers
   const visibleSteps = QUIZ_CONFIG.steps.filter(s => !s.showIf || s.showIf(answers));
   
-  // DEBUG LOGS
-  useEffect(() => {
-    console.log("QUIZ_STEP_CHANGED:", { step, visibleCount: visibleSteps.length, isResults: step === visibleSteps.length + 1 });
-  }, [step, visibleSteps.length]);
-
   const currentStep = visibleSteps[step - 1];
   const isLastQuestion = step === visibleSteps.length;
   const isResultsStep = step === visibleSteps.length + 1;
   const isContactStep = step === visibleSteps.length + 2;
+
+  useEffect(() => {
+    if (isResultsStep && recommendedServices.length === 0) {
+       console.log("RESULTS STEP DETECTED BUT NO SERVICES. RE-CALCULATING...");
+       const services = calculateResult(answers);
+       setRecommendedServices(services);
+    }
+  }, [isResultsStep, answers, recommendedServices.length]);
 
   useEffect(() => {
     if (!isOpen) {
@@ -40,12 +43,8 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
 
   const handleNext = (currentAnswers = answers) => {
     if (step === visibleSteps.length) {
-      console.log("FINAL CALCULATION AT STEP", step, "WITH ANSWERS", currentAnswers);
       const services = calculateResult(currentAnswers);
-      console.log("SERVICES RETURNED", services);
       setRecommendedServices(services);
-    } else {
-      console.log("MOVING TO STEP", step + 1, "OF", visibleSteps.length);
     }
     setStep(step + 1);
   };

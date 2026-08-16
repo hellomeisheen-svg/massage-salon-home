@@ -93,9 +93,7 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
     if (areas.length === 1 && areas.includes("face")) {
       serviceIds = ["lymph_face", "classic_face", "girudo_cosm"];
     } else {
-      const lightnessResult = getLightnessRecommendations({ ...answers, lightnessArea: area });
-      console.log("LIGHTNESS BRANCH FINAL RESULT (INTERNAL):", lightnessResult.map(s => s.id));
-      return lightnessResult;
+      return getLightnessRecommendations({ ...answers, lightnessArea: area });
     }
   }
 
@@ -137,7 +135,6 @@ export function calculateResult(answers: Record<string, any>): QuizService[] {
     .map(id => getService(id))
     .filter((s): s is QuizService => !!s);
 
-  console.log("FALLBACK CALCULATION RESULT:", result.map(s => s.id));
   const isSpecialBranch = goal === "relax" || goal === "back_neck" || goal === "lightness";
   return isSpecialBranch ? result : result.slice(0, 3);
 }
@@ -273,7 +270,7 @@ function getLightnessRecommendations(answers: Record<string, any>): QuizService[
 
   const areas = Array.isArray(area) ? area : [area].filter(Boolean);
 
-  console.log("LIGHTNESS RECOMMENDATIONS DEBUG:", { areas, area });
+  // console.log("LIGHTNESS RECOMMENDATIONS DEBUG:", { areas, area });
 
   if (areas.includes("face")) {
     ids = ["lymph_face", "classic_face", "girudo_cosm"];
@@ -289,6 +286,6 @@ function getLightnessRecommendations(answers: Record<string, any>): QuizService[
   }
 
   const result = ids.map(id => resolve(id)).filter((s): s is QuizService => !!s);
-  console.log("LIGHTNESS FINAL RESULT:", result.map(r => r.id));
+  // console.log("LIGHTNESS FINAL RESULT:", result.map(r => r.id));
   return result;
 }
