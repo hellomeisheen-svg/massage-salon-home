@@ -44,7 +44,7 @@ export function Hero() {
         <div className="flex min-h-0 flex-col ds-card ds-bento-shadow p-5 sm:min-h-[520px] sm:p-6 xl:min-h-0 xl:p-10">
           <div className="flex flex-col items-start text-left">
             <img
-              src="/images/tatyana-photo-portrait.webp"
+              src="/images/tatyana-photo.webp"
               alt="Татьяна Злобина"
               className="h-[90px] w-[70px] xl:h-[110px] xl:w-[85px] rounded-[12px] border border-[#daebff] ds-bento-shadow object-cover"
             />
