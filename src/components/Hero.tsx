@@ -43,22 +43,17 @@ export function Hero() {
         {/* Content card */}
         <div className="flex min-h-0 flex-col ds-card ds-bento-shadow p-5 sm:min-h-[520px] sm:p-6 xl:min-h-0 xl:p-10">
           <div className="flex flex-col items-start text-left">
-            <div className="h-[120px] w-[110px] shrink-0 overflow-hidden rounded-[15px] border border-[#daebff] bg-white p-0.5">
-              <img
-                src="/images/tatyana-photo-portrait.webp"
-                alt="Татьяна Злобина"
-                className="h-full w-full object-cover rounded-[13px]"
-              />
-            </div>
-            <div className="mt-8 flex flex-col items-start gap-4">
-              <span className="font-noto-serif-narrow text-[34px] font-medium leading-[1.2] text-[#1C3C8C] sm:text-[42px]">
-                Татьяна Злобина
-              </span>
-              <div className="flex flex-col gap-1.5 text-[18px] font-light leading-snug text-[#566A93] sm:text-[22px]">
-                <span>Мастер кабинета, специалист</span>
-                <span>по{"\u00A0"}оздоровительным практикам</span>
-              </div>
-            </div>
+            <img
+              src="/images/tatyana-photo-portrait.webp"
+              alt="Татьяна Злобина"
+              className="h-[90px] w-[70px] xl:h-[110px] xl:w-[85px] rounded-[12px] border border-[#daebff] ds-bento-shadow object-cover"
+            />
+            <h3 className="font-noto-serif-narrow mt-6 ds-h4 text-[#1C3C8C] sm:text-[28px] xl:text-[28px]">
+              Татьяна Злобина
+            </h3>
+            <p className="mt-3 text-[16px] leading-[1.4] text-[#566A93] sm:text-[18px]">
+              Мастер кабинета, специалист по{"\u00A0"}оздоровительным практикам
+            </p>
           </div>
           <div className="mt-auto pt-16 sm:pt-20">
             <HeadlineBlock onOpenQuiz={() => setIsQuizOpen(true)} />
