@@ -622,7 +622,7 @@ button:focus-visible {
 @utility ds-h1 {
   font-family: var(--font-heading);
   font-weight: 400;
-  font-size: 38px;
+  font-size: 30px;
   line-height: 1.15;
   @media (max-width: 639px) {
     font-weight: 500;
