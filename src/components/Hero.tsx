@@ -55,7 +55,7 @@ export function Hero() {
               Мастер кабинета, специалист<br />по{"\u00A0"}оздоровительным практикам
             </p>
           </div>
-          <div className="mt-auto pt-16 sm:pt-20">
+          <div className="mt-10 xl:mt-auto pt-16 sm:pt-20">
             <HeadlineBlock onOpenQuiz={() => setIsQuizOpen(true)} />
           </div>
         </div>
