@@ -117,8 +117,8 @@ function PageHero({ content }: { content: ServicePageContent }) {
             <h3 className="font-noto-serif-narrow mt-4 text-[22px] sm:text-[24px] font-bold text-[#1C3C8C]">
               Татьяна Злобина
             </h3>
-            <p className="mt-2 text-[14px] leading-[1.4] text-[#566A93]">
-              Мастер кабинета, специалист по{"\u00A0"}оздоровительным практикам
+            <p className="mt-2 body-text text-[#566A93]">
+              Мастер кабинета, специалист<br />по{"\u00A0"}оздоровительным практикам
             </p>
           </div>
 
