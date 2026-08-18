@@ -42,8 +42,24 @@ export function Hero() {
       <section id="hero" className="container-1900 grid grid-cols-1 gap-4 sm:gap-5 xl:min-h-[calc(100vh-160px)] xl:grid-cols-2">
         {/* Content card */}
         <div className="flex min-h-0 flex-col ds-card ds-bento-shadow p-5 sm:min-h-[520px] sm:p-6 xl:min-h-0 xl:p-10">
-          {/* RatingBlock removed from Hero */}
-          <div className="mt-[100px] pt-0 sm:mt-[140px] xl:mt-auto xl:pt-[140px]">
+          <div className="flex items-center gap-4">
+            <div className="h-[72px] w-[72px] shrink-0 overflow-hidden rounded-full border-2 border-[#daebff]">
+              <img
+                src="/images/tatyana-photo-portrait.webp"
+                alt="Татьяна Злобина"
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <div className="flex flex-col">
+              <span className="font-noto-serif-narrow text-[20px] font-bold leading-none text-[#1C3C8C]">
+                Татьяна Злобина
+              </span>
+              <span className="mt-1.5 text-[13px] font-medium leading-tight text-[#566A93]">
+                Мастер кабинета, специалист по{"\u00A0"}оздоровительным практикам
+              </span>
+            </div>
+          </div>
+          <div className="mt-[60px] pt-0 sm:mt-[80px] xl:mt-auto xl:pt-[80px]">
             <HeadlineBlock onOpenQuiz={() => setIsQuizOpen(true)} />
           </div>
         </div>
