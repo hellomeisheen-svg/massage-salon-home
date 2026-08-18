@@ -595,7 +595,8 @@ button:focus-visible {
 }
 
 @utility ds-section {
-  padding-block: 60px;
+  padding-top: 60px;
+  padding-bottom: 60px;
   @media (min-width: 640px) {
     padding-top: 70px;
     padding-bottom: 70px;
