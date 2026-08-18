@@ -130,7 +130,7 @@ function PageHero({ content }: { content: ServicePageContent }) {
                     хит
                   </span>
                 )}
-                <h1 className="font-noto-serif-narrow text-[38px] font-light leading-[1.12] text-[#1C3C8C] sm:text-[58px] sm:leading-[1.15] xl:order-1">
+              <h1 className="font-noto-serif-narrow text-[38px] font-light leading-[1.12] text-[#1C3C8C] sm:text-[58px] sm:leading-[1.15] xl:order-1">
                   {content.title}
                 </h1>
               </div>
