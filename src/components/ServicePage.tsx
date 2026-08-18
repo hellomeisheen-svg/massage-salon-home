@@ -122,7 +122,7 @@ function PageHero({ content }: { content: ServicePageContent }) {
             </p>
           </div>
 
-          <div className="mt-10 xl:mt-auto xl:pt-[80px]">
+          <div className="mt-10 md:mt-20 xl:mt-auto xl:pt-[80px]">
             <div className="flex flex-col tablet-text-block xl:max-w-[640px]">
               <div className="flex flex-col xl:flex-row xl:items-center gap-x-3 gap-y-2">
                 {content.hit && (
