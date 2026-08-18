@@ -44,7 +44,7 @@ const decoImages = [
 
 export function HabitQuote() {
   return (
-    <section className="relative bg-[#EFF6FF] pt-[60px] pb-0 sm:pt-[140px] sm:pb-[180px] xl:pt-[180px] xl:pb-[140px] overflow-hidden">
+    <section className="relative bg-[#EFF6FF] pt-0 pb-0 sm:pt-[140px] sm:pb-[180px] xl:pt-[180px] xl:pb-[140px] overflow-hidden">
       {/* Decorative photos — Desktop/Tablet (floating) */}
       <div className="container-1900 absolute inset-0 left-1/2 -translate-x-1/2 hidden sm:block pointer-events-none">
         <div className="relative w-full h-full">
