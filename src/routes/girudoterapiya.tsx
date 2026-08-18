@@ -205,11 +205,11 @@ function PageHero() {
 
           <div className="mt-[100px] pt-0 sm:mt-[140px] xl:mt-auto xl:pt-[140px]">
             <div className="flex flex-col tablet-text-block xl:max-w-[640px]">
-              <div className="flex flex-col xl:flex-row xl:items-center gap-x-3 gap-y-2">
-                <h1 className="font-noto-serif-narrow text-[30px] font-light leading-[1.12] text-[#1C3C8C] sm:text-[58px] sm:leading-[1.15] xl:order-1">
+              <div className="flex items-center gap-x-3 gap-y-2 flex-wrap">
+                <h1 className="font-noto-serif-narrow text-[30px] font-light leading-[1.12] text-[#1C3C8C] sm:text-[58px] sm:leading-[1.15]">
                   Гирудотерапия
                 </h1>
-                <span className="inline-flex w-fit shrink-0 items-center rounded-[12px] bg-[#A2CFFE] px-2 py-0.5 text-[14px] font-medium lowercase tracking-tight text-white xl:order-2 xl:mb-[-12px]">
+                <span className="inline-flex items-center rounded-[12px] bg-[#A2CFFE] px-2 py-0.5 text-[14px] font-medium lowercase tracking-tight text-white mt-1 sm:mt-0">
                   хит
                 </span>
               </div>
