@@ -108,16 +108,16 @@ function PageHero({ content }: { content: ServicePageContent }) {
             <span className="text-[#1C3C8C]">{content.breadcrumb}</span>
           </nav>
 
-          <div className="mt-8 mb-8 flex flex-col items-start text-left">
+          <div className="mt-8 mb-8 flex flex-col items-start text-left xl:mb-8">
             <img
               src="/images/tatyana-photo.webp"
               alt="Татьяна Злобина"
-              className="h-[80px] w-[62px] xl:h-[90px] xl:w-[70px] rounded-[12px] border border-[#daebff] ds-bento-shadow object-cover"
+              className="h-[80px] w-[62px] xl:h-[110px] xl:w-[85px] rounded-[12px] border border-[#daebff] ds-bento-shadow object-cover"
             />
-            <h3 className="font-noto-serif-narrow mt-4 text-[22px] sm:text-[24px] font-bold text-[#1C3C8C]">
+            <h3 className="font-noto-serif-narrow mt-6 ds-h4 text-[#1C3C8C] sm:text-[28px] xl:text-[28px]">
               Татьяна Злобина
             </h3>
-            <p className="mt-2 body-text text-[#566A93]">
+            <p className="mt-3 body-text text-[#566A93]">
               Мастер кабинета, специалист<br />по{"\u00A0"}оздоровительным практикам
             </p>
           </div>
