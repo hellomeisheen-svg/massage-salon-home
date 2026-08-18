@@ -124,15 +124,24 @@ function PageHero({ content }: { content: ServicePageContent }) {
 
           <div className="mt-10 md:mt-20 xl:mt-auto xl:pt-[80px]">
             <div className="flex flex-col tablet-text-block xl:max-w-[640px]">
-              <div className="flex items-center gap-x-3 gap-y-2 flex-wrap">
-                <h1 className="font-noto-serif-narrow text-[30px] font-light leading-[1.12] text-[#1C3C8C] sm:text-[58px] sm:leading-[1.15]">
-                  {content.title}
-                </h1>
+              <div className="flex flex-col gap-y-2">
                 {content.hit && (
-                  <span className="inline-flex items-center rounded-[12px] bg-[#A2CFFE] px-2 py-0.5 text-[14px] font-medium lowercase tracking-tight text-white mt-1 sm:mt-0">
-                    хит
-                  </span>
+                  <div className="flex sm:hidden">
+                    <span className="inline-flex items-center rounded-[12px] bg-[#A2CFFE] px-2 py-0.5 text-[14px] font-medium lowercase tracking-tight text-white">
+                      хит
+                    </span>
+                  </div>
                 )}
+                <div className="flex items-center gap-x-3 gap-y-2 flex-wrap">
+                  <h1 className="font-noto-serif-narrow text-[30px] font-light leading-[1.12] text-[#1C3C8C] sm:text-[58px] sm:leading-[1.15]">
+                    {content.title}
+                  </h1>
+                  {content.hit && (
+                    <span className="hidden sm:inline-flex items-center rounded-[12px] bg-[#A2CFFE] px-2 py-0.5 text-[14px] font-medium lowercase tracking-tight text-white">
+                      хит
+                    </span>
+                  )}
+                </div>
               </div>
               <p className="mt-4 text-[16px] font-light leading-[26px] text-[#566A93]">
                 {content.heroText}
