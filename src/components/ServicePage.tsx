@@ -108,9 +108,27 @@ function PageHero({ content }: { content: ServicePageContent }) {
             <span className="text-[#1C3C8C]">{content.breadcrumb}</span>
           </nav>
 
-          {/* RatingBlock removed from ServiceHero */}
+          <div className="mt-8 mb-6">
+            <div className="flex items-center gap-4">
+              <div className="h-[60px] w-[60px] shrink-0 overflow-hidden rounded-full border border-[#daebff]">
+                <img
+                  src="/images/tatyana-photo-portrait.webp"
+                  alt="Татьяна Злобина"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-noto-serif-narrow text-[18px] font-bold leading-none text-[#1C3C8C]">
+                  Татьяна Злобина
+                </span>
+                <span className="mt-1 text-[12px] font-medium leading-tight text-[#566A93]">
+                  Мастер кабинета, специалист по{"\u00A0"}оздоровительным практикам
+                </span>
+              </div>
+            </div>
+          </div>
 
-          <div className="mt-[100px] pt-0 sm:mt-[140px] xl:mt-auto xl:pt-[140px]">
+          <div className="mt-auto xl:pt-[80px]">
             <div className="flex flex-col tablet-text-block xl:max-w-[640px]">
               <div className="flex flex-col xl:flex-row xl:items-center gap-x-3 gap-y-2">
                 {content.hit && (
