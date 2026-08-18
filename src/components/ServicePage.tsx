@@ -108,9 +108,7 @@ function PageHero({ content }: { content: ServicePageContent }) {
             <span className="text-[#1C3C8C]">{content.breadcrumb}</span>
           </nav>
 
-          <div className="mt-6 sm:mt-8">
-            <RatingBlock />
-          </div>
+          {/* RatingBlock removed from ServiceHero */}
 
           <div className="mt-[100px] pt-0 sm:mt-[140px] xl:mt-auto xl:pt-[140px]">
             <div className="flex flex-col tablet-text-block xl:max-w-[640px]">
