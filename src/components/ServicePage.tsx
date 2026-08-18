@@ -108,7 +108,7 @@ function PageHero({ content }: { content: ServicePageContent }) {
             <span className="text-[#1C3C8C]">{content.breadcrumb}</span>
           </nav>
 
-          <div className="mt-8 mb-4 flex flex-col items-start text-left xl:mb-8">
+          <div className="mt-8 mb-8 flex flex-col items-start text-left xl:mb-8">
             <img
               src="/images/tatyana-photo.webp"
               alt="Татьяна Злобина"
