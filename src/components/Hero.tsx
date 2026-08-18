@@ -60,7 +60,7 @@ export function Hero() {
               </div>
             </div>
           </div>
-          <div className="mt-[60px] pt-0 sm:mt-[80px] xl:mt-auto xl:pt-[80px]">
+          <div className="mt-auto pt-16 sm:pt-20">
             <HeadlineBlock onOpenQuiz={() => setIsQuizOpen(true)} />
           </div>
         </div>
