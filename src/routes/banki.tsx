@@ -28,7 +28,7 @@ export const Route = createFileRoute("/banki")({
 const content: ServicePageContent = {
   slug: "banki",
   breadcrumb: "Банки",
-  title: "Вакуумный массаж (банки)",
+  title: "Вакуумный массаж",
   heroText:
     "Вакуумный массаж стеклянными и\u00a0мягкими банками для\u00a0прогревания тканей и\u00a0лёгкости в\u00a0движении. Кабинет в\u00a0посёлке Трудовое.",
   heroImage: "/images/uslugi-myagkie-banki.webp",
