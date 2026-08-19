@@ -62,6 +62,7 @@ export function ServicePage({ content }: { content: ServicePageContent }) {
       <div className="relative min-h-screen bg-[#EFF6FF] pt-20 xl:pt-[100px]">
         <Header items={servicePageNav} />
         <PageHero content={content} />
+        <div className="h-[120px] md:h-[140px]" />
         <AboutService content={content} />
         <Prices content={content} />
         <PromoBanner />
