@@ -82,6 +82,20 @@ export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
                 <div className="body-text text-[#1c3c8c]">{ADDRESS}</div>
               </li>
               <li className="text-[#1c3c8c] leading-[150%] font-light">
+                <div className="body-text text-[#566A93] mb-2">Запись</div>
+                <div className="body-text text-[#1c3c8c]">
+                  Принимаю по предварительной записи:
+                  <br />
+                  — жителей Трудового;
+                  <br />
+                  — Владивостока;
+                  <br />
+                  — Артёма;
+                  <br />
+                  — ближайших населённых пунктов.
+                </div>
+              </li>
+              <li className="text-[#1c3c8c] leading-[150%] font-light">
                 <div className="body-text text-[#566A93] mb-2">Телефон</div>
                 <a href="tel:+79242324611" className="body-text text-[#1c3c8c] hover:opacity-70 transition-opacity text-link-active">
                   +7 924 232 46 11
