@@ -72,7 +72,7 @@ export function HabitQuote() {
         
         <div className="relative z-10 max-w-[900px] xl:max-w-[1100px]">
           <h2 className="font-noto-serif-narrow ds-h1 text-[#1C3C8C]">
-            Регулярная забота о&nbsp;теле&nbsp;— спокойная привычка, которая помогает сохранять внутреннюю опору и&nbsp;легкость в&nbsp;повседневной жизни
+            Регулярная забота о&nbsp;теле&nbsp;— привычка, которая помогает сохранять внутреннюю опору и&nbsp;легкость в&nbsp;повседневной жизни
           </h2>
         </div>
 
