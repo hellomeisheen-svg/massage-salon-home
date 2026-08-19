@@ -66,11 +66,7 @@ export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
           </div>
 
           {/* Contacts */}
-          <div className="relative flex flex-col justify-between gap-8 ds-card ds-bento-shadow p-5 xl:p-[30px]">
-            <div className="absolute top-5 right-5 xl:top-[30px] xl:right-[30px]">
-              <RatingBlock />
-            </div>
-
+          <div className="flex flex-col justify-between gap-8 ds-card ds-bento-shadow p-5 xl:p-[30px]">
             <div>
               <h2 className="font-noto-serif-narrow ds-h2 text-[#1c3c8c] tracking-[0.01em]">
                 Как найти кабинет
@@ -97,6 +93,8 @@ export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
                 <div className="body-text text-[#1c3c8c]">пн-сб с 9:00 до 22:00</div>
               </li>
             </ul>
+
+            <RatingBlock />
 
             <a
               href="https://n2418813.yclients.com"
