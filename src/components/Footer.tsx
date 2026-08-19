@@ -73,16 +73,6 @@ export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
               </h2>
               <p className="mt-4 xl:mt-5 body-text text-[#566A93] max-w-[440px]">
                 Уютное пространство в центре посёлка Трудового, где можно прийти чуть раньше, выдохнуть и спокойно настроиться на сеанс.
-                <br />
-                Принимаю по предварительной записи:
-                <br />
-                — жителей Трудового;
-                <br />
-                — Владивостока;
-                <br />
-                — Артёма;
-                <br />
-                — ближайших населённых пунктов.
               </p>
             </div>
 
@@ -90,6 +80,20 @@ export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
               <li className="text-[#1c3c8c] leading-[150%] font-light">
                 <div className="body-text text-[#566A93] mb-2">Адрес</div>
                 <div className="body-text text-[#1c3c8c]">{ADDRESS}</div>
+              </li>
+              <li className="text-[#1c3c8c] leading-[150%] font-light">
+                <div className="body-text text-[#566A93] mb-2">Запись</div>
+                <div className="body-text text-[#1c3c8c]">
+                  Принимаю по предварительной записи:
+                  <br />
+                  — жителей Трудового;
+                  <br />
+                  — Владивостока;
+                  <br />
+                  — Артёма;
+                  <br />
+                  — ближайших населённых пунктов.
+                </div>
               </li>
               <li className="text-[#1c3c8c] leading-[150%] font-light">
                 <div className="body-text text-[#566A93] mb-2">Телефон</div>
