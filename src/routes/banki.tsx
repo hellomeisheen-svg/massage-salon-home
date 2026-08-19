@@ -208,7 +208,7 @@ const content: ServicePageContent = {
       ),
     },
     {
-      label: "Когда нужна помощь врача?",
+      label: "Когда нужна помощь врача",
       content: (
         <>
           <p>
