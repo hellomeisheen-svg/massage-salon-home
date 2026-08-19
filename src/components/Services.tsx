@@ -93,7 +93,7 @@ export const serviceTypes: ServiceType[] = [
   },
 
   {
-    title: "Банки",
+    title: "Вакуумный массаж",
     category: 0,
     variants: [
       {
@@ -328,7 +328,7 @@ export function mobileTitle(title: string) {
 
 export const servicePageLinks: Record<string, string> = {
   "Гирудотерапия": "/girudoterapiya",
-  "Банки": "/banki",
+  "Вакуумный массаж": "/banki",
   "Векторный": "/vektornyi-massazh",
   "Лимфатический": "/limfaticheskii-massazh",
   "Лимфодренажный": "/limfodrenazhnyi-massazh",
