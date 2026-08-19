@@ -66,7 +66,11 @@ export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
           </div>
 
           {/* Contacts */}
-          <div className="flex flex-col justify-between gap-8 ds-card ds-bento-shadow p-5 xl:p-[30px]">
+          <div className="relative flex flex-col justify-between gap-8 ds-card ds-bento-shadow p-5 xl:p-[30px]">
+            <div className="absolute top-5 right-5 xl:top-[30px] xl:right-[30px]">
+              <RatingBlock />
+            </div>
+
             <div>
               <h2 className="font-noto-serif-narrow ds-h2 text-[#1c3c8c] tracking-[0.01em]">
                 Как найти кабинет
@@ -80,21 +84,6 @@ export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
               <li className="text-[#1c3c8c] leading-[150%] font-light">
                 <div className="body-text text-[#566A93] mb-2">Адрес</div>
                 <div className="body-text text-[#1c3c8c]">{ADDRESS}</div>
-              </li>
-              <li className="text-[#1c3c8c] leading-[150%] font-light">
-                <div className="body-text text-[#566A93] mb-2">Запись</div>
-                <div className="body-text text-[#1c3c8c]">
-                  Принимаю по предварительной записи:
-                  <div className="mt-2">
-                    — жителей Трудового;
-                    <br />
-                    — Владивостока;
-                    <br />
-                    — Артёма;
-                    <br />
-                    — ближайших населённых пунктов.
-                  </div>
-                </div>
               </li>
               <li className="text-[#1c3c8c] leading-[150%] font-light">
                 <div className="body-text text-[#566A93] mb-2">Телефон</div>
