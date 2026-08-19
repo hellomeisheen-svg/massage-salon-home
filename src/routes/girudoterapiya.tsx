@@ -59,12 +59,34 @@ export const Route = createFileRoute("/girudoterapiya")({
               url: "https://7heavenmassage.ru/",
               image: "https://7heavenmassage.ru/images/uslugi-girudoterapiya-litsa.webp",
               medicalSpecialty: "https://schema.org/PhysicalTherapy",
+              telephone: "+7 924 232 46 11",
               address: {
                 "@type": "PostalAddress",
+                streetAddress: "ул. Лермонтова, 46",
                 addressLocality: "посёлок Трудовое",
                 addressRegion: "Приморский край",
                 addressCountry: "RU",
               },
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: 43.3125,
+                longitude: 132.0119,
+              },
+              openingHoursSpecification: [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  dayOfWeek: [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                  ],
+                  opens: "09:00",
+                  closes: "22:00",
+                },
+              ],
               areaServed: [
                 { "@type": "Place", name: "Трудовое" },
                 { "@type": "Place", name: "Владивосток" },
