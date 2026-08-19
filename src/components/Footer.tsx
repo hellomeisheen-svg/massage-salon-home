@@ -118,7 +118,7 @@ export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
               </Link>
 
               <p className="mt-4 body-text text-[#566A93] max-w-[320px]">
-                Кабинет оздоровительных практик Татьяны Злобиной..
+                Кабинет оздоровительных практик Татьяны Злобиной.
               </p>
               <div className="mt-5 flex items-center gap-2">
                 <a
