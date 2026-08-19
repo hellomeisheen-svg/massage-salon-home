@@ -128,13 +128,13 @@ const content: ServicePageContent = {
     {
       zone: "Всё тело",
       subtitle: "Последовательная работа от\u00A0стоп до\u00A0плеч",
-      duration: "2\u00A0часа",
+      duration: "2 часа",
       base: 5000,
     },
     {
       zone: "Лицо",
       subtitle: "Деликатная работа с\u00A0оттоком жидкости и\u00A0тонусом кожи",
-      duration: "40\u00A0минут",
+      duration: "40 минут",
       base: 2000,
     },
   ],

@@ -328,7 +328,7 @@ const content: ServicePageContent = {
     {
       zone: "Все тело",
       subtitle: "30 нитей",
-      duration: "1\u00A0час 30\u00A0минут",
+      duration: "1,5 часа",
       base: 20000,
     },
   ],

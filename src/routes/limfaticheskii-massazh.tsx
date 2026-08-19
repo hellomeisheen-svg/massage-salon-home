@@ -128,7 +128,7 @@ const content: ServicePageContent = {
     {
       zone: "Всё тело",
       subtitle: "Мягкая работа с\u00A0естественными путями оттока жидкости",
-      duration: "2\u00A0часа",
+      duration: "2 часа",
       base: 5000,
     },
   ],
