@@ -390,10 +390,13 @@ export function ServiceCard({
 
   const hasDiscount = discounts[activeSession] > 0;
 
-  const computedDuration = formatDurationString(
-    variant.duration,
-    variant.multiplyDuration === false ? 1 : sessionCounts[activeSession]
-  );
+  const isHirudo = clean(type.title) === "Гирудотерапия";
+  const computedDuration = isHirudo
+    ? "от 1\u00A0часа 30\u00A0минут до 2\u00A0часов"
+    : formatDurationString(
+        variant.duration,
+        variant.multiplyDuration === false ? 1 : sessionCounts[activeSession]
+      );
 
 
   const bookingTitle = hasZones
