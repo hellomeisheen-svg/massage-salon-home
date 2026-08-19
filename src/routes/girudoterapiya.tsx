@@ -165,12 +165,11 @@ function GirudoterapiyaPage() {
 
 function SpecialistBlock() {
   return (
-    <div className="flex flex-col items-start gap-3 sm:gap-4">
+    <div className="hero-specialist-block flex flex-col items-start gap-3 sm:gap-4">
       <img
         className="h-[90px] w-[70px] rounded-[12px] border border-[#daebff] ds-bento-shadow object-cover xl:h-[110px] xl:w-[85px]"
         alt="Татьяна Злобина"
         src="/images/tatyana-photo.webp"
-
       />
       <div className="flex flex-col gap-1">
         <h2 className="font-noto-serif-narrow text-[22px] font-light leading-[1.2] text-[#1c3c8c] sm:text-[24px] xl:text-[28px]">
