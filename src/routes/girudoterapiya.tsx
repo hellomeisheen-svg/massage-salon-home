@@ -452,6 +452,7 @@ const sessionCounts = [1, 3, 6];
 const tabLabels = ["1\u00A0сеанс", "3\u00A0сеанса", "6\u00A0сеансов"];
 
 function HirudoPriceTable() {
+  const { openBooking } = useBooking();
   return (
     <div className="ds-bento-shadow ds-card overflow-hidden bg-white border border-[#daebff]">
       <div className="overflow-x-auto">
@@ -482,6 +483,9 @@ function HirudoPriceTable() {
                     -15%
                   </span>
                 </span>
+              </th>
+              <th className="px-6 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
+                {/* Кнопка записи */}
               </th>
             </tr>
           </thead>
@@ -526,9 +530,18 @@ function HirudoPriceTable() {
                       </div>
                     </td>
                   ))}
-                </tr>
-              );
-            })}
+                    <td className="px-6 py-6 xl:px-8">
+                      <button
+                        type="button"
+                        onClick={() => openBooking(p.zone)}
+                        className="btn-primary px-5 py-2 text-[14px]"
+                      >
+                        Записаться
+                      </button>
+                    </td>
+                  </tr>
+                );
+              })}
           </tbody>
         </table>
       </div>
@@ -537,6 +550,7 @@ function HirudoPriceTable() {
 }
 
 function PriceCard({ p }: { p: HirudoRow }) {
+  const { openBooking } = useBooking();
   const [active, setActive] = useState(0);
 
   const count = sessionCounts[active];
@@ -607,6 +621,15 @@ function PriceCard({ p }: { p: HirudoRow }) {
             за {count} {sessionWord}
           </span>
         </div>
+      </div>
+      <div className="mt-8">
+        <button
+          type="button"
+          onClick={() => openBooking(p.zone)}
+          className="btn-primary w-full py-3 text-[15px]"
+        >
+          Записаться
+        </button>
       </div>
     </article>
   );
