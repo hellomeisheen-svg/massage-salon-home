@@ -99,7 +99,7 @@ function PageHero({ content }: { content: ServicePageContent }) {
   return (
     <main className="bg-[#EFF6FF] py-4 sm:py-5">
       <section id="hero" className="container-1900 grid grid-cols-1 gap-4 sm:gap-5 xl:min-h-[calc(100vh-160px)] xl:grid-cols-2">
-        <div className="ds-bento-shadow flex min-h-0 flex-col ds-card p-5 sm:min-h-[520px] sm:p-6 xl:min-h-0 xl:p-10">
+        <div className="hero-card flex min-h-0 flex-col ds-card ds-bento-shadow p-5 sm:p-6 xl:p-10 border border-[#DAEBFF]">
           <nav aria-label="Хлебные крошки" className="text-[14px] text-[#566A93]">
             <Link to="/" className="hover:opacity-70 transition-opacity">
               Главная
@@ -122,31 +122,24 @@ function PageHero({ content }: { content: ServicePageContent }) {
             </p>
           </div>
 
-          <div className="mt-10 md:mt-20 xl:mt-auto xl:pt-[80px]">
+          <div className="hero-card__actions mt-auto pt-10">
             <div className="flex flex-col tablet-text-block xl:max-w-[640px]">
               <div className="flex flex-col gap-y-2">
-                {content.hit && (
-                  <div className="flex sm:hidden">
-                    <span className="inline-flex items-center rounded-[12px] bg-[#A2CFFE] px-2 py-0.5 text-[14px] font-medium lowercase tracking-tight text-white">
-                      хит
-                    </span>
-                  </div>
-                )}
+                <div className={`service-badge-slot ${!content.hit ? 'is-empty' : ''}`}>
+                  <span className="inline-flex items-center rounded-[12px] bg-[#A2CFFE] px-2 py-0.5 text-[14px] font-medium lowercase tracking-tight text-white">
+                    хит
+                  </span>
+                </div>
                 <div className="flex items-center gap-x-3 gap-y-2 flex-wrap">
                   <h1 className="font-noto-serif-narrow text-[30px] font-light leading-[1.12] text-[#1C3C8C] sm:text-[58px] sm:leading-[1.15]">
                     {content.title}
                   </h1>
-                  {content.hit && (
-                    <span className="hidden sm:inline-flex items-center rounded-[12px] bg-[#A2CFFE] px-2 py-0.5 text-[14px] font-medium lowercase tracking-tight text-white">
-                      хит
-                    </span>
-                  )}
                 </div>
               </div>
               <p className="mt-4 text-[16px] font-light leading-[26px] text-[#566A93]">
                 {content.heroText}
               </p>
-              <div className="mt-[30px] flex flex-col gap-3 sm:flex-row sm:gap-4">
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
                 <a
                   href="https://n2418813.yclients.com"
                   target="_blank"
