@@ -16,8 +16,8 @@ const serviceCatalog: Record<string, ServiceInfo> = {
   classicFace: { title: "Классический  •  Лицо", priceMin: 2000, durationMin: 40, unit: "сеанс" },
   hirudoMed: { title: "Гирудотерапия  •  Медицинские пиявки", priceMin: 4800, durationMin: 120, unit: "постановка" },
   hirudoCosm: { title: "Гирудотерапия  •  Косметические пиявки", priceMin: 4800, durationMin: 120, unit: "постановка" },
-  fireGlass: { title: "Стихия Огонь  •  Стеклянные банки", priceMin: 2000, durationMin: 10, unit: "банка" },
-  airSoft: { title: "Стихия Воздух  •  Мягкие банки", priceMin: 1000, durationMin: 10, unit: "банка" },
+  fireGlass: { title: "Стеклянные банки", priceMin: 2000, durationMin: 10, unit: "банка" },
+  airSoft: { title: "Мягкие банки", priceMin: 1000, durationMin: 10, unit: "банка" },
 };
 
 type ProgramItem = { key: keyof typeof serviceCatalog; sessions: number };
