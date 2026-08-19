@@ -13,7 +13,7 @@ function HeadlineBlock({ onOpenQuiz }: { onOpenQuiz: () => void }) {
       <p className="mt-4 text-[16px] font-light leading-[26px] text-[#566A93] xl:max-w-[540px]">
         Убираю напряжение, отёки и&nbsp;боли, возвращаю лёгкость движений — первый эффект уже после 1–2 сеансов.
       </p>
-      <div className="mt-[30px] flex flex-col gap-3 sm:flex-row sm:gap-4">
+      <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
         <a
           href="https://n2418813.yclients.com"
           target="_blank"
@@ -55,7 +55,7 @@ export function Hero() {
               Мастер кабинета, специалист<br />по{"\u00A0"}оздоровительным практикам
             </p>
           </div>
-          <div className="hero-card__actions mt-auto pt-16 sm:pt-20">
+          <div className="hero-card__actions mt-auto pt-10">
             <HeadlineBlock onOpenQuiz={() => setIsQuizOpen(true)} />
           </div>
         </div>
