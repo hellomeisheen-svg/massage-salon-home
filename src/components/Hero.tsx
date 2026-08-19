@@ -42,7 +42,7 @@ export function Hero() {
       <section id="hero" className="container-1900 grid grid-cols-1 gap-4 sm:gap-5 xl:min-h-[calc(100vh-160px)] xl:grid-cols-2">
         {/* Content card */}
         <div className="hero-card flex min-h-0 flex-col ds-card ds-bento-shadow p-5 sm:p-6 xl:p-10 border border-[#DAEBFF]">
-          <div className="flex flex-col items-start text-left">
+          <div className="hero-specialist-block flex flex-col items-start text-left">
             <img
               src="/images/tatyana-photo.webp"
               alt="Татьяна Злобина"
@@ -59,7 +59,7 @@ export function Hero() {
               </p>
             </div>
           </div>
-          <div className="hero-card__actions mt-auto pt-10">
+          <div className="hero-card__actions mt-auto">
             <HeadlineBlock onOpenQuiz={() => setIsQuizOpen(true)} />
           </div>
         </div>
