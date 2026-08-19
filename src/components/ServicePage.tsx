@@ -102,13 +102,14 @@ function PageHero({ content }: { content: ServicePageContent }) {
     <main className="bg-[#EFF6FF] py-4 sm:py-5">
       <section id="hero" className="container-1900 grid grid-cols-1 gap-4 sm:gap-5 xl:min-h-[calc(100vh-160px)] xl:grid-cols-2">
         <div className="ds-bento-shadow flex min-h-0 flex-col ds-card p-5 sm:min-h-[520px] sm:p-6 xl:min-h-0 xl:p-10 hero-bento-card">
-          <nav aria-label="Хлебные крошки" className="text-[14px] text-[#566A93]">
+          <nav aria-label="Хлебные крошки" className="hero-breadcrumb-slot text-[14px] text-[#566A93]">
             <Link to="/" className="hover:opacity-70 transition-opacity">
               Главная
             </Link>
             <span className="px-2">/</span>
             <span className="text-[#1C3C8C]">{content.breadcrumb}</span>
           </nav>
+
 
           <div className="mt-8 mb-8 flex flex-col items-start text-left hero-specialist-block">
             <img

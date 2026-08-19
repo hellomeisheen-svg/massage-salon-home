@@ -165,39 +165,38 @@ function GirudoterapiyaPage() {
 
 function SpecialistBlock() {
   return (
-    <div className="flex flex-col items-start gap-3 sm:gap-4">
+    <div className="flex flex-col items-start text-left">
       <img
-        className="h-[90px] w-[70px] rounded-[12px] border border-[#daebff] ds-bento-shadow object-cover xl:h-[110px] xl:w-[85px]"
+        className="h-[80px] w-[62px] xl:h-[90px] xl:w-[70px] rounded-[12px] border border-[#daebff] ds-bento-shadow object-cover"
         alt="Татьяна Злобина"
         src="/images/tatyana-photo.webp"
-
       />
-      <div className="flex flex-col gap-1">
-        <h2 className="font-noto-serif-narrow text-[22px] font-light leading-[1.2] text-[#1c3c8c] sm:text-[24px] xl:text-[28px]">
-          Татьяна&nbsp;Злобина
-        </h2>
-        <p className="text-[16px] font-light leading-[26px] text-[#566A93]">
-          Мастер кабинета, специалист
-          <br />
-          по&nbsp;оздоровительным практикам
-        </p>
-      </div>
+      <h3 className="font-noto-serif-narrow mt-4 text-[22px] sm:text-[24px] font-bold text-[#1C3C8C]">
+        Татьяна&nbsp;Злобина
+      </h3>
+      <p className="mt-2 body-text text-[#566A93]">
+        Мастер кабинета, специалист
+        <br />
+        по&nbsp;оздоровительным практикам
+      </p>
     </div>
   );
 }
+
 
 function PageHero() {
   return (
     <main className="bg-[#EFF6FF] py-4 sm:py-5">
       <section id="hero" className="container-1900 grid grid-cols-1 gap-4 sm:gap-5 xl:min-h-[calc(100vh-160px)] xl:grid-cols-2">
         <div className="ds-bento-shadow flex min-h-0 flex-col ds-card p-5 sm:min-h-[520px] sm:p-6 xl:min-h-0 xl:p-10 hero-bento-card">
-          <nav aria-label="Хлебные крошки" className="text-[14px] text-[#566A93]">
+          <nav aria-label="Хлебные крошки" className="hero-breadcrumb-slot text-[14px] text-[#566A93]">
             <Link to="/" className="hover:opacity-70 transition-opacity">
               Главная
             </Link>
             <span className="px-2">/</span>
             <span className="text-[#1C3C8C]">Гирудотерапия</span>
           </nav>
+
 
           <div className="mt-8 mb-8 hero-specialist-block">
             <SpecialistBlock />
