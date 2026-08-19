@@ -109,7 +109,7 @@ export function Education() {
         </div>
 
         {/* Right: education lists */}
-        <div className="flex flex-col gap-6 xl:gap-3 xl:overflow-y-auto xl:pr-4 ds-custom-scrollbar">
+        <div className="flex flex-col gap-6 xl:gap-3 xl:pr-4">
           <div className="px-2 text-[#566A93] text-[14px] sm:text-[15px]">Основное образование</div>
           <div className="flex flex-col gap-6 xl:gap-3">
             {mainEducation.map((e) => (
