@@ -34,8 +34,93 @@ export const Route = createFileRoute("/girudoterapiya")({
       { property: "og:type", content: "article" },
       { property: "og:url", content: "https://7heavenmassage.ru/girudoterapiya" },
       { name: "twitter:card", content: "summary_large_image" },
+      {
+        property: "og:image",
+        content: "https://7heavenmassage.ru/images/uslugi-girudoterapiya-litsa.webp",
+      },
+      {
+        name: "twitter:image",
+        content: "https://7heavenmassage.ru/images/uslugi-girudoterapiya-litsa.webp",
+      },
     ],
     links: [{ rel: "canonical", href: "https://7heavenmassage.ru/girudoterapiya" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "MedicalBusiness",
+              "@id": "https://7heavenmassage.ru/#business",
+              name: "Седьмое небо",
+              description:
+                "Кабинет массажа и гирудотерапии Татьяны Злобиной в посёлке Трудовое между Владивостоком и Артёмом.",
+              url: "https://7heavenmassage.ru/",
+              image: "https://7heavenmassage.ru/images/uslugi-girudoterapiya-litsa.webp",
+              medicalSpecialty: "https://schema.org/PhysicalTherapy",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "посёлок Трудовое",
+                addressRegion: "Приморский край",
+                addressCountry: "RU",
+              },
+              areaServed: [
+                { "@type": "Place", name: "Трудовое" },
+                { "@type": "Place", name: "Владивосток" },
+                { "@type": "Place", name: "Артём" },
+              ],
+              priceRange: "600–4800 ₽",
+            },
+            {
+              "@type": "Service",
+              name: "Гирудотерапия",
+              serviceType: "Гирудотерапия (лечение медицинскими пиявками)",
+              url: "https://7heavenmassage.ru/girudoterapiya",
+              provider: { "@id": "https://7heavenmassage.ru/#business" },
+              areaServed: [
+                { "@type": "Place", name: "Трудовое" },
+                { "@type": "Place", name: "Владивосток" },
+                { "@type": "Place", name: "Артём" },
+              ],
+              offers: [
+                {
+                  "@type": "Offer",
+                  name: "Медицинские пиявки, сеанс",
+                  price: "4800",
+                  priceCurrency: "RUB",
+                  url: "https://7heavenmassage.ru/girudoterapiya#prices",
+                },
+                {
+                  "@type": "Offer",
+                  name: "Косметические пиявки, за пиявку",
+                  price: "600",
+                  priceCurrency: "RUB",
+                  url: "https://7heavenmassage.ru/girudoterapiya#prices",
+                },
+              ],
+            },
+            {
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Главная",
+                  item: "https://7heavenmassage.ru/",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "Гирудотерапия",
+                  item: "https://7heavenmassage.ru/girudoterapiya",
+                },
+              ],
+            },
+          ],
+        }),
+      },
+    ],
   }),
   component: GirudoterapiyaPage,
 });
