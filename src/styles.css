@@ -392,9 +392,21 @@ button:focus-visible {
   height: 21px;
 }
 
+@media (max-width: 1023px) {
+  .hero-breadcrumb-slot {
+    display: none;
+  }
+}
+
 .hero-specialist-block {
   margin-top: 2rem;
   margin-bottom: 2rem;
+}
+
+@media (max-width: 1023px) {
+  .hero-specialist-block {
+    margin-top: 0 !important;
+  }
 }
 
 .service-badge-slot {
