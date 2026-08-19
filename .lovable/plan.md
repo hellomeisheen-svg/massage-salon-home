@@ -1,29 +1,59 @@
-# План SEO-продвижения сайта «Седьмое небо»
+# Plan - Content Update for Massage Pages
 
-Анализ показал, что сайт имеет прочную техническую базу (React/TanStack Start), высокую скорость загрузки и базовую SEO-оптимизацию. Однако для стабильного роста в конкурентной нише оздоровительных услуг во Владивостоке требуется расширение семантики и усиление локальных факторов.
+Update the text content for "Vectror", "Lymphatic", "Lymphatic Drainage", and "Classic" massage pages to match the high SEO and content standards established on the "Hirudotherapy", "Ketgut", and "Vacuum Massage" pages.
 
-## 1. Технический аудит и гигиена
-- **Устранение 404 в индексе:** Страница `src/routes/$.tsx` сейчас пуста в плане мета-тегов. Нужно добавить базовый `head()` для корректного ответа сервера и закрыть технические страницы от индексации в `robots.txt` (уже частично сделано, проверить `noindex` для API).
-- **Валидация JSON-LD:** Расширить микроразметку `HealthAndBeautyBusiness` на главной. Добавить `priceRange`, `openingHours` и ссылки на социальные сети (`sameAs`).
-- **Микроразметка для услуг:** Внедрить `Schema.org/Service` на все страницы услуг (сейчас есть только на главной).
+## Content Strategy
+- **Hero Section**: Short, descriptive, geo-targeted ("в Трудовом").
+- **About Section**: Professional, structured, focusing on benefits and process.
+- **FAQ Section**: Unified answer length (200-230 characters), informative, including a standard booking question.
+- **JSON-LD**: Expand schema for all pages to include `MedicalBusiness`, `Service`, `BreadcrumbList`, and `FAQPage`.
 
-## 2. Контентная стратегия и семантика
-- **Расширение LSI-слов:** В текстах услуг (Массаж, Гирудотерапия) не хватает околотематических запросов, по которым пользователи ищут решение проблем: «боли в пояснице», «отеки при беременности», «восстановление после тренировок».
-- **Информационный кластер (Блог/Статьи):** Создание раздела с ответами на экспертные вопросы: «Как подготовиться к первому сеансу пиявок?», «Чем векторный массаж отличается от классического?». Это привлечет «холодный» трафик.
-- **Оптимизация заголовков:** На многих страницах `<h1>` реализован через стилевой класс `ds-h1`, но не всегда является первым текстовым элементом для робота. Нужно убедиться в строгой иерархии `H1-H6`.
+## Proposed Content for Each Page
 
-## 3. Локальное SEO (Local Pack)
-- **Яндекс.Карты и Google Business:** Основной источник трафика для кабинета во Владивостоке. Нужно стимулировать отзывы с ключевыми словами («лучший массаж в Трудовом», «гирудотерапия Владивосток»).
-- **Гео-привязка в мета-тегах:** Сейчас «Владивосток» упомянут, но стоит добавить более локальные маркеры (район, поселок Трудовое, ближайшие ориентиры) в `description` и `alt` изображений.
+### 1. Classic Massage (`/klassicheskii-massazh`)
+- **Hero**: "Классический оздоровительный массаж для снятия напряжения и восстановления сил. Кабинет в посёлке Трудовое."
+- **About**: Focus on foundational techniques, versatility (full body vs local), and the relaxing atmosphere.
+- **FAQ**:
+  - Should it be painful? (No, depth is adjusted to comfort).
+  - What to choose first time? (Full body to identify tension).
+  - How many sessions? (Regularity is key, courses available).
+  - What to bring? (Nothing, all provided).
+  - How to book? (Standard office/Max answer).
 
-## 4. Конверсионные правки (SEO + UX)
-- **Анализ поведения (Метрика):** Настроить цели на клики по «Онлайн запись» и прохождение квиза. 
-- **Sticky-элементы:** Проверить видимость кнопки записи на всех этапах скролла (уже внедрено, протестировать на разных разрешениях).
+### 2. Vector Massage (`/vektornyi-massazh`)
+- **Hero**: "Точная работа с мышцами и фасциями по анатомическим линиям тела. Освобождение глубоких зажимов. Кабинет в Трудовом."
+- **About**: Explain the "lines" concept, contrast with surface massage, focus on deep-seated tension relief.
+- **FAQ**:
+  - Difference from classic? (Address targeted lines vs general zones).
+  - Is it painful? (Deeper but within comfort limits).
+  - Duration? (2 hours for full coverage).
+  - Next day feeling? (Muscle sensitivity like after workout).
+  - How to book? (Standard office/Max answer).
 
-## Технические задачи (Backlog)
-- [ ] Добавить `head()` в `src/routes/$.tsx` с `noindex`.
-- [ ] Внедрить `Schema.org/Service` в компонент `ServicePage.tsx`.
-- [ ] Добавить `alt` ко всем изображениям в галерее и блоках (проверить текущие).
-- [ ] Создать файл `robots.txt` с явным запретом индексации `/api/*`.
+### 3. Lymphatic Massage (`/limfaticheskii-massazh`)
+- **Hero**: "Мягкая практика для улучшения оттока жидкости и лёгкости в теле. Бережная разгрузка тканей. Кабинет в Трудовом."
+- **About**: Emphasize superficial, rhythmic, meditative touch. Focus on reducing edema and internal heaviness.
+- **FAQ**:
+  - Difference from drainage? (Softer, more superficial).
+  - Does it hurt? (Delicate, sleep-inducing).
+  - Preparation? (Hydration, light meal).
+  - Contraindications? (Heart, kidney, acute inflammation).
+  - How to book? (Standard office/Max answer).
 
-Этот план обеспечит рост по целевым запросам в течение 3–6 месяцев за счет улучшения релевантности страниц и укрепления доверия поисковиков к локальному бизнесу.
+### 4. Lymphatic Drainage Massage (`/limfodrenazhnyi-massazh`)
+- **Hero**: "Последовательная проработка лимфотока от стоп до плеч. Уменьшение отёчности и детокс-эффект. Кабинет в Трудовом."
+- **About**: Structured sequence, rhythmic pressure, focus on both body and face.
+- **FAQ**:
+  - Why choose face? (Edema reduction, oval lift).
+  - Duration? (2 hours body, 40 min face).
+  - Lifestyle impact? (Great for sedentary work).
+  - Makeup for face? (Remove before session, provided).
+  - How to book? (Standard office/Max answer).
+
+## Technical Implementation
+- Parallel update of `src/routes/*.tsx` files using `line_replace` or `write`.
+- Verify JSON-LD structure matches the template in `girudoterapiya.tsx`.
+- Ensure Typography (non-breaking spaces, quotes) follows project standards.
+
+---
+*Note: Design and layout will remain untouched.*
