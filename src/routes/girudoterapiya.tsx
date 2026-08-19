@@ -319,7 +319,6 @@ const girudoSections: { label: string; content: React.ReactNode }[] = [
       </>
     ),
   },
-  },
   {
     label: "Противопоказания",
     content: (
