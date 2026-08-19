@@ -108,7 +108,7 @@ function PageHero({ content }: { content: ServicePageContent }) {
             <span className="text-[#1C3C8C]">{content.breadcrumb}</span>
           </nav>
 
-          <div className="mt-8 mb-8 flex flex-col items-start text-left">
+          <div className="hero-specialist-block mt-8 flex flex-col items-start text-left">
             <img
               src="/images/tatyana-photo.webp"
               alt="Татьяна Злобина"
@@ -126,9 +126,9 @@ function PageHero({ content }: { content: ServicePageContent }) {
             </div>
           </div>
 
-          <div className="hero-card__actions mt-auto pt-10">
+          <div className="hero-card__actions mt-auto">
             <div className="flex flex-col tablet-text-block xl:max-w-[640px]">
-              <div className="flex flex-col gap-y-2">
+              <div className="flex flex-col">
                 <div className={`service-badge-slot ${!content.hit ? 'is-empty' : ''}`}>
                   <span className="inline-flex items-center rounded-[12px] bg-[#A2CFFE] px-2 py-0.5 text-[14px] font-medium lowercase tracking-tight text-white">
                     хит
