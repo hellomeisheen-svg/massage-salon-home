@@ -70,7 +70,7 @@ export function Education() {
           За&nbsp;плечами&nbsp;— годы ежедневной практики и&nbsp;регулярное обучение
         </h2>
       </div>
-      <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-5 items-stretch">
+      <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-5 items-stretch xl:h-[calc(100vh-280px)] xl:min-h-[600px]">
 
         {/* Left: photo + quote panel */}
         <div className="relative xl:min-h-0 xl:h-full flex flex-col xl:rounded-[12px] xl:overflow-hidden xl:border xl:border-[#DAEBFF]">
@@ -109,7 +109,7 @@ export function Education() {
         </div>
 
         {/* Right: education lists */}
-        <div className="flex flex-col gap-6 xl:gap-3">
+        <div className="flex flex-col gap-6 xl:gap-3 xl:overflow-y-auto xl:pr-4 ds-custom-scrollbar">
           <div className="px-2 text-[#566A93] text-[14px] sm:text-[15px]">Основное образование</div>
           <div className="flex flex-col gap-6 xl:gap-3">
             {mainEducation.map((e) => (

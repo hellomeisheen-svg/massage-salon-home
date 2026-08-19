@@ -447,6 +447,21 @@ button:focus-visible {
   --color-brand-surface: var(--brand-surface);
   --color-brand-border: var(--brand-border);
   --color-brand-muted: var(--brand-muted);
+  @utility ds-custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #DAEBFF transparent;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #DAEBFF;
+      border-radius: 20px;
+    }
+  }
 }
 
 :root {
