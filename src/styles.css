@@ -343,6 +343,13 @@ button:focus-visible {
 
 
 
+.faq-trigger:focus-visible {
+  outline: 2px solid #1C3C8C;
+  outline-offset: 3px;
+  border-radius: 12px;
+}
+
+
 .tablet-text-block {
   width: 100%;
 }
@@ -358,95 +365,6 @@ button:focus-visible {
     max-width: 680px;
   }
 }
-
-/* Hero bento cards layout and heights for mobile and tablet */
-:root {
-  --hero-card-height-mobile: 740px;
-  --hero-card-height-tablet: 680px;
-}
-
-@media (max-width: 767px) {
-  .hero-bento-card {
-    height: var(--hero-card-height-mobile) !important;
-    min-height: var(--hero-card-height-mobile) !important;
-    display: flex !important;
-    flex-direction: column !important;
-    box-sizing: border-box !important;
-    overflow: visible !important;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
-  .hero-bento-card {
-    height: var(--hero-card-height-tablet) !important;
-    min-height: var(--hero-card-height-tablet) !important;
-    display: flex !important;
-    flex-direction: column !important;
-    box-sizing: border-box !important;
-    overflow: visible !important;
-  }
-}
-
-
-.hero-breadcrumb-slot {
-  height: 21px;
-}
-
-@media (max-width: 1023px) {
-  .hero-breadcrumb-slot {
-    display: none;
-  }
-}
-
-.hero-specialist-block {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-
-@media (max-width: 1023px) {
-  .hero-specialist-block {
-    margin-top: 0 !important;
-  }
-}
-
-@media (min-width: 1380px) {
-  #hero .hero-specialist-block {
-    margin-top: 0 !important;
-  }
-}
-
-.service-badge-slot {
-  height: 29px;
-  display: flex;
-  align-items: flex-start;
-}
-
-@media (max-width: 1023px) {
-  .hero-card-actions {
-    margin-top: 24px !important;
-    padding-top: 0 !important;
-    flex-shrink: 0 !important;
-  }
-  
-  .hero-card-actions > div {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 12px !important;
-  }
-
-  .hero-card-actions a,
-  .hero-card-actions button {
-    width: 100% !important;
-    min-height: 56px !important;
-    box-sizing: border-box !important;
-    flex-shrink: 0 !important;
-  }
-}
-
-.hero-card-actions {
-  margin-top: auto;
-}
-
 
 
 

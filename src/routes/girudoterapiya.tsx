@@ -165,31 +165,33 @@ function GirudoterapiyaPage() {
 
 function SpecialistBlock() {
   return (
-    <div className="flex flex-col items-start text-left">
+    <div className="flex flex-col items-start gap-3 sm:gap-4">
       <img
-        className="h-[80px] w-[62px] xl:h-[90px] xl:w-[70px] rounded-[12px] border border-[#daebff] ds-bento-shadow object-cover"
+        className="h-[90px] w-[70px] rounded-[12px] border border-[#daebff] ds-bento-shadow object-cover xl:h-[110px] xl:w-[85px]"
         alt="Татьяна Злобина"
         src="/images/tatyana-photo.webp"
+
       />
-      <h3 className="font-noto-serif-narrow mt-4 text-[22px] sm:text-[24px] font-bold text-[#1C3C8C]">
-        Татьяна&nbsp;Злобина
-      </h3>
-      <p className="mt-2 body-text text-[#566A93]">
-        Мастер кабинета, специалист
-        <br />
-        по&nbsp;оздоровительным практикам
-      </p>
+      <div className="flex flex-col gap-1">
+        <h2 className="font-noto-serif-narrow text-[22px] font-light leading-[1.2] text-[#1c3c8c] sm:text-[24px] xl:text-[28px]">
+          Татьяна&nbsp;Злобина
+        </h2>
+        <p className="text-[16px] font-light leading-[26px] text-[#566A93]">
+          Мастер кабинета, специалист
+          <br />
+          по&nbsp;оздоровительным практикам
+        </p>
+      </div>
     </div>
   );
 }
-
 
 function PageHero() {
   return (
     <main className="bg-[#EFF6FF] py-4 sm:py-5">
       <section id="hero" className="container-1900 grid grid-cols-1 gap-4 sm:gap-5 xl:min-h-[calc(100vh-160px)] xl:grid-cols-2">
-        <div className="ds-bento-shadow flex min-h-0 flex-col ds-card p-5 sm:min-h-[520px] sm:p-6 xl:min-h-0 xl:p-10 hero-bento-card">
-          <nav aria-label="Хлебные крошки" className="hero-breadcrumb-slot text-[14px] text-[#566A93]">
+        <div className="ds-bento-shadow flex min-h-0 flex-col ds-card p-5 sm:min-h-[520px] sm:p-6 xl:min-h-0 xl:p-10">
+          <nav aria-label="Хлебные крошки" className="text-[14px] text-[#566A93]">
             <Link to="/" className="hover:opacity-70 transition-opacity">
               Главная
             </Link>
@@ -197,15 +199,14 @@ function PageHero() {
             <span className="text-[#1C3C8C]">Гирудотерапия</span>
           </nav>
 
-
-          <div className="mt-8 mb-8 hero-specialist-block">
+          <div className="mt-6 sm:mt-8">
             <SpecialistBlock />
           </div>
 
-          <div className="hero-service-content">
+          <div className="mt-[100px] pt-0 sm:mt-[140px] xl:mt-auto xl:pt-[140px]">
             <div className="flex flex-col tablet-text-block xl:max-w-[640px]">
               <div className="flex flex-col gap-y-2">
-                <div className="service-badge-slot">
+                <div className="flex sm:hidden">
                   <span className="inline-flex items-center rounded-[12px] bg-[#A2CFFE] px-2 py-0.5 text-[14px] font-medium lowercase tracking-tight text-white">
                     хит
                   </span>
@@ -214,37 +215,37 @@ function PageHero() {
                   <h1 className="font-noto-serif-narrow text-[30px] font-light leading-[1.12] text-[#1C3C8C] sm:text-[58px] sm:leading-[1.15]">
                     Гирудотерапия
                   </h1>
+                  <span className="hidden sm:inline-flex items-center rounded-[12px] bg-[#A2CFFE] px-2 py-0.5 text-[14px] font-medium lowercase tracking-tight text-white">
+                    хит
+                  </span>
                 </div>
               </div>
               <p className="mt-4 text-[16px] font-light leading-[26px] text-[#566A93]">
                 Оздоровительная практика с использованием медицинских пиявок — для поддержки самочувствия, ощущения лёгкости и более внимательного контакта с телом.
               </p>
-            </div>
-          </div>
-
-          <div className="hero-card-actions mt-auto pt-8">
-            <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
-              <a
-                href="https://n2418813.yclients.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary w-full sm:w-[280px] xl:w-[250px] inline-flex items-center justify-center text-center whitespace-nowrap"
-              >
-                Онлайн запись
-              </a>
-              <button
-                type="button"
-                onClick={() =>
-                  window.open(
-                    "https://max.ru/u/f9LHodD0cOLS1ZC9ThcQkVLRVzcK-MbYZ7JVAg8PC5Tx9LyihgOVdPnzaxM",
-                    "_blank",
-                    "noopener,noreferrer"
-                  )
-                }
-                className="btn-secondary w-full sm:w-[280px] xl:w-[250px] whitespace-nowrap"
-              >
-                Получить консультацию
-              </button>
+              <div className="mt-[30px] flex flex-col gap-3 sm:flex-row sm:gap-4">
+                <a
+                  href="https://n2418813.yclients.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary w-full sm:w-[280px] xl:w-[250px] inline-flex items-center justify-center text-center whitespace-nowrap"
+                >
+                  Онлайн запись
+                </a>
+                <button
+                  type="button"
+                  onClick={() =>
+                    window.open(
+                      "https://max.ru/u/f9LHodD0cOLS1ZC9ThcQkVLRVzcK-MbYZ7JVAg8PC5Tx9LyihgOVdPnzaxM",
+                      "_blank",
+                      "noopener,noreferrer"
+                    )
+                  }
+                  className="btn-secondary w-full sm:w-[280px] xl:w-[250px] whitespace-nowrap"
+                >
+                  Получить консультацию
+                </button>
+              </div>
             </div>
           </div>
         </div>
