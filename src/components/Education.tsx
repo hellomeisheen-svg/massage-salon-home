@@ -57,7 +57,7 @@ function EduCard({ item }: { item: EduItem }) {
 export function Education() {
   return (
     <section id="obrazovanie" className="scroll-mt-[120px] bg-[#EFF6FF] ds-section">
-      <div className="container-1900 mb-8 sm:mb-10 xl:mb-[140px] flex flex-col items-center text-center">
+      <div className="container-1900 mb-8 sm:mb-10 xl:mb-12 flex flex-col items-center text-center">
         <svg
           aria-hidden="true"
           viewBox="0 0 24 24"
@@ -70,7 +70,7 @@ export function Education() {
           За&nbsp;плечами&nbsp;— годы ежедневной практики и&nbsp;регулярное обучение
         </h2>
       </div>
-      <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-5 items-stretch xl:h-[calc(100vh-280px)] xl:min-h-[600px]">
+      <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-5 items-stretch xl:h-[600px]">
 
         {/* Left: photo + quote panel */}
         <div className="relative xl:min-h-0 xl:h-full flex flex-col xl:rounded-[12px] xl:overflow-hidden xl:border xl:border-[#DAEBFF]">
