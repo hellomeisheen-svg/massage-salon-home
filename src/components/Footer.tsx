@@ -106,9 +106,6 @@ export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
                 <div className="body-text text-[#566A93] mb-2">Режим работы</div>
                 <div className="body-text text-[#1c3c8c]">пн-сб с 9:00 до 22:00</div>
               </li>
-              <li className="text-[#1c3c8c] leading-[150%] font-light">
-                <RatingBlock />
-              </li>
             </ul>
 
             <a
@@ -124,6 +121,10 @@ export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
 
         {/* Bottom band */}
         <div className="mt-5 ds-card ds-bento-shadow p-5 xl:p-[30px]">
+          <div className="flex justify-end">
+            <RatingBlock />
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Brand */}
             <div>
