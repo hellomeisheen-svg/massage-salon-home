@@ -63,7 +63,7 @@ export function Hero() {
         {/* Hero image */}
         <div className="relative h-[420px] overflow-hidden rounded-[12px] border border-[#daebff] ds-bento-shadow sm:h-[520px] xl:h-auto xl:min-h-0">
           <img
-            className="absolute inset-0 h-full w-full scale-x-[-1] object-cover object-top sm:object-bottom xl:object-top"
+            className="absolute inset-0 h-full w-full scale-x-[-1] object-cover object-top sm:object-center xl:object-top"
             alt="Оздоровительные процедуры"
             src="/images/hero-portrait-solid.webp"
             loading="eager"
