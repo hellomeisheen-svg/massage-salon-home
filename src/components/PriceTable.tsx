@@ -110,7 +110,6 @@ export function PriceTable({ prices, title = "Форматы и стоимост
                         </span>
                       </div>
                     </div>
-                    </div>
                     <div className="mt-4">
                       <button
                         type="button"
@@ -241,9 +240,6 @@ export function PriceTable({ prices, title = "Форматы и стоимост
 
   );
 }
-
-// Убран неиспользуемый компонент MobileRow, так как табы теперь встроены в основной компонент
-
 
 function PriceTableRow({ p, isProgram = false }: { p: ServicePrice, isProgram?: boolean }) {
   const { openBooking } = useBooking();
