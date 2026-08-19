@@ -85,15 +85,15 @@ export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
                 <div className="body-text text-[#566A93] mb-2">Запись</div>
                 <div className="body-text text-[#1c3c8c]">
                   Принимаю по предварительной записи:
-                  <br />
-                  <br />
-                  — жителей Трудового;
-                  <br />
-                  — Владивостока;
-                  <br />
-                  — Артёма;
-                  <br />
-                  — ближайших населённых пунктов.
+                  <div className="mt-2">
+                    — жителей Трудового;
+                    <br />
+                    — Владивостока;
+                    <br />
+                    — Артёма;
+                    <br />
+                    — ближайших населённых пунктов.
+                  </div>
                 </div>
               </li>
               <li className="text-[#1c3c8c] leading-[150%] font-light">
