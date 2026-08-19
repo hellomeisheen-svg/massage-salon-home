@@ -130,7 +130,7 @@ const content: ServicePageContent = {
     {
       zone: "Всё тело",
       subtitle: "Точная ручная работа по\u00A0анатомическим линиям",
-      duration: "2\u00A0часа",
+      duration: "2 часа",
       base: 5000,
     },
   ],

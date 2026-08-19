@@ -138,13 +138,13 @@ const content: ServicePageContent = {
     {
       zone: "Стеклянные банки",
       subtitle: "Стихия огонь: глубокое вакуумное воздействие",
-      duration: "10\u00A0минут",
+      duration: "10 минут",
       base: 2000,
     },
     {
       zone: "Мягкие банки",
       subtitle: "Стихия воздух: деликатное вакуумное воздействие",
-      duration: "10\u00A0–\u00A025\u00A0минут",
+      duration: "10–25 минут",
       base: 1000,
     },
   ],
