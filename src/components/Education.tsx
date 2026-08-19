@@ -42,7 +42,7 @@ function EduCard({ item }: { item: EduItem }) {
         <span className="hidden xl:inline">{item.school}</span>
       </h3>
 
-      <ul className="mt-4 space-y-2 xl:space-y-1.5">
+      <ul className="mt-8 xl:space-y-1.5">
         {item.items.map((i) => (
           <li key={i} className="body-text text-[#566A93] flex gap-2">
             <span aria-hidden>•</span>
@@ -56,8 +56,8 @@ function EduCard({ item }: { item: EduItem }) {
 
 export function Education() {
   return (
-    <section id="obrazovanie" className="scroll-mt-[120px] bg-[#EFF6FF] ds-section pb-0">
-      <div className="container-1900 mb-[60px] sm:mb-[120px] xl:mb-[140px] flex flex-col items-center text-center">
+    <section id="obrazovanie" className="scroll-mt-[120px] bg-[#EFF6FF] ds-section">
+      <div className="container-1900 mb-8 sm:mb-10 xl:mb-[140px] flex flex-col items-center text-center">
         <svg
           aria-hidden="true"
           viewBox="0 0 24 24"

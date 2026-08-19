@@ -32,7 +32,7 @@ const NumberBadge = ({ number }: { number: number }) => (
 
 export function Approach() {
   return (
-    <section id="advantages-2" className="scroll-mt-[140px] bg-[#EFF6FF] pt-8 pb-[60px] sm:pt-[70px] sm:pb-[70px] xl:pt-[140px] xl:pb-0">
+    <section id="advantages-2" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section">
       <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-5">
         {/* Left column */}
         <div className="flex flex-col gap-6 xl:h-full">
