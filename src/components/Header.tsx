@@ -18,10 +18,10 @@ const servicePages = [
   { label: "Гирудотерапия", to: "/girudoterapiya" },
   { label: "Акупунктурный кетгут", to: "/ketgut" },
   { label: "Банки", to: "/banki" },
+  { label: "Векторный массаж", to: "/vektornyi-massazh" },
   { label: "Классический массаж", to: "/klassicheskii-massazh" },
   { label: "Лимфатический массаж", to: "/limfaticheskii-massazh" },
   { label: "Лимфодренажный массаж", to: "/limfodrenazhnyi-massazh" },
-  { label: "Векторный массаж", to: "/vektornyi-massazh" },
 ] as const;
 
 
@@ -141,14 +141,13 @@ export function Header({
             <div className="flex h-full flex-col ds-card p-4">
               <nav className="flex-1 overflow-y-auto pr-1 scrollbar-none" aria-label="Мобильная навигация">
                 <ul className="flex flex-col gap-1">
-                  {navigationItems.length === 0 && (
+                  {pathname !== "/" && (
                     <li>
                       <Link
                         to="/"
                         onClick={() => setMenuOpen(false)}
                         className="block w-full rounded-[12px] px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors text-link-active"
                       >
-
                         На главную
                       </Link>
                     </li>
@@ -160,7 +159,6 @@ export function Header({
                         onClick={() => setMenuOpen(false)}
                         className="block w-full rounded-[12px] px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors text-link-active"
                       >
-
                         {item.label}
                       </a>
                     </li>
