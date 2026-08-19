@@ -189,6 +189,7 @@ export const Route = createFileRoute("/ketgut")({
   component: KetgutPage,
 });
 
+
 const faq = [
   {
     q: "Как часто нужно делать?",
