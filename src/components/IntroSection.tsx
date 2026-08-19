@@ -10,11 +10,11 @@ const educationList = [
 
 export function IntroSection() {
   return (
-    <section id="about" className="scroll-mt-[120px] bg-[#EFF6FF] ds-section pb-0 sm:pb-0 xl:pb-0">
+    <section id="about" className="scroll-mt-[120px] bg-[#EFF6FF] ds-section">
       <div className="container-1900">
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-10 xl:gap-20 items-center">
           {/* Photo */}
-          <div className="relative aspect-[4/5] sm:aspect-square xl:aspect-[4/5] rounded-[12px] overflow-hidden ds-card ds-bento-shadow">
+          <div className="relative aspect-[4/5] sm:aspect-square xl:aspect-[4/5] rounded-[12px] overflow-hidden ds-card ds-bento-shadow border border-[#DAEBFF]">
             <img 
               src="/images/tatyana-photo-portrait.webp" 
               alt="Татьяна Злобина — мастер оздоровительных практик" 

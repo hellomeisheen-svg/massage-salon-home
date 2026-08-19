@@ -36,7 +36,7 @@ export const serviceTypes: ServiceType[] = [
         mobileDescription:
           "Бережная постановка пиявок на\u00A0выбранные зоны тела для\u00A0поддержки лёгкости и\u00A0общего самочувствия.",
         duration: "120\u00A0минут",
-        price: "4\u00A0800\u00A0₽",
+        price: "4 800 ₽",
         sessionLabels: ["6\u00A0пиявок", "16\u00A0пиявок", "74\u00A0пиявки"],
         multiplyDuration: false,
       },
@@ -48,7 +48,7 @@ export const serviceTypes: ServiceType[] = [
         mobileDescription:
           "Точная, мягкая постановка пиявок на\u00A0лицо и\u00A0локальные зоны для\u00A0свежего и\u00A0отдохнувшего вида кожи.",
         duration: "120\u00A0минут",
-        price: "4\u00A0800\u00A0₽",
+        price: "4 800 ₽",
         sessionLabels: ["6\u00A0пиявок", "10\u00A0пиявок", "20\u00A0пиявок"],
         multiplyDuration: false,
       },
@@ -68,7 +68,7 @@ export const serviceTypes: ServiceType[] = [
         mobileDescription:
           "Акупунктурный кетгут: 30 нитей в акупунктурные точки на всё тело для длительной мягкой поддержки.",
         duration: "60\u00A0минут",
-        price: "20\u00A0000\u00A0₽",
+        price: "20 000 ₽",
       },
     ],
   },
@@ -87,7 +87,7 @@ export const serviceTypes: ServiceType[] = [
         mobileDescription:
           "Точная работа с мышцами, фасциями помогает снять зажимы и вернуть движениям свободу и лёгкость.",
         duration: "120\u00A0минут",
-        price: "5\u00A0000\u00A0₽",
+        price: "5 000 ₽",
       },
     ],
   },
@@ -105,7 +105,7 @@ export const serviceTypes: ServiceType[] = [
         mobileDescription:
           "Глубокое вакуумное воздействие мягко прогревает ткани, снимает скованность и\u00A0напряжение в\u00A0теле.",
         duration: "10\u00A0минут",
-        price: "2\u00A0000\u00A0₽",
+        price: "2 000 ₽",
       },
       {
         zone: "Мягкие банки",
@@ -116,7 +116,7 @@ export const serviceTypes: ServiceType[] = [
         mobileDescription:
           "Деликатный вакуум помогает уменьшить чувство тяжести и\u00A0вернуть телу больше лёгкости и\u00A0движения.",
         duration: "10–25\u00A0минут",
-        price: "1\u00A0000\u00A0₽",
+        price: "1 000 ₽",
       },
     ],
   },
@@ -134,7 +134,7 @@ export const serviceTypes: ServiceType[] = [
         mobileDescription:
           "Мягкая работа со\u00A0всем телом помогает уменьшить отёчность и\u00A0вернуть чувство лёгкости и\u00A0комфорта.",
         duration: "120\u00A0минут",
-        price: "5\u00A0000\u00A0₽",
+        price: "5 000 ₽",
       },
     ],
   },
@@ -151,7 +151,7 @@ export const serviceTypes: ServiceType[] = [
         mobileDescription:
           "Мягкие движения помогают снизить отёчность, облегчить тело и\u00A0бережно поддержать восстановление.",
         duration: "120\u00A0минут",
-        price: "5\u00A0000\u00A0₽",
+        price: "5 000 ₽",
       },
       {
         zone: "Лицо",
@@ -161,7 +161,7 @@ export const serviceTypes: ServiceType[] = [
         mobileDescription:
           "Деликатная техника снимает отёчность и\u00A0ещё возвращает лицу свежесть, лёгкость, ровный тон кожи.",
         duration: "40\u00A0минут",
-        price: "2\u00A0000\u00A0₽",
+        price: "2 000 ₽",
       },
     ],
   },
@@ -178,7 +178,7 @@ export const serviceTypes: ServiceType[] = [
         mobileDescription:
           "Комплексная проработка тела помогает снять напряжение, глубже расслабиться и\u00A0восстановить силы.",
         duration: "60\u00A0минут",
-        price: "3\u00A0000\u00A0₽",
+        price: "3 000 ₽",
       },
       {
         zone: "Голова",
@@ -188,7 +188,7 @@ export const serviceTypes: ServiceType[] = [
         mobileDescription:
           "Массаж головы и\u00A0шеи, мягко снимает напряжение, облегчает тяжесть и\u00A0помогает спокойно отдохнуть.",
         duration: "20\u00A0минут",
-        price: "1\u00A0000\u00A0₽",
+        price: "1 000 ₽",
       },
       {
         zone: "Лицо",
@@ -198,7 +198,7 @@ export const serviceTypes: ServiceType[] = [
         mobileDescription:
           "Мягкая работа с\u00A0лицом расслабляет мимические мышцы, освежает вид и\u00A0поддерживает тон самой кожи.",
         duration: "40\u00A0минут",
-        price: "2\u00A0000\u00A0₽",
+        price: "2 000 ₽",
       },
       {
         zone: "Спина и\u00A0шея",
@@ -208,7 +208,7 @@ export const serviceTypes: ServiceType[] = [
         mobileDescription:
           "Работа с\u00A0нагруженными зонами помогает снять зажимы и\u00A0мягко вернуть спине подвижность и\u00A0комфорт.",
         duration: "30\u00A0минут",
-        price: "1\u00A0500\u00A0₽",
+        price: "1 500 ₽",
       },
       {
         zone: "Ноги и\u00A0стопы",
@@ -218,7 +218,7 @@ export const serviceTypes: ServiceType[] = [
         mobileDescription:
           "Проработка ног и\u00A0стоп помогает снять усталость, тяжесть и\u00A0вернуть ощущение лёгкости в\u00A0движении.",
         duration: "60\u00A0минут",
-        price: "3\u00A0000\u00A0₽",
+        price: "3 000 ₽",
       },
     ],
   },
