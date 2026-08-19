@@ -47,7 +47,7 @@ export function Hero() {
         <div className="ds-bento-shadow flex min-h-0 flex-col ds-card p-5 sm:min-h-[520px] sm:p-6 xl:min-h-0 xl:p-10 hero-bento-card">
           {/* Слот хлебных крошек удален для выравнивания отступов на главной */}
           
-          <div className="mt-8 mb-8 flex flex-col items-start text-left hero-specialist-block xl:mt-0">
+          <div className="mt-8 mb-8 flex flex-col items-start text-left hero-specialist-block xl:mt-0 xl:mb-8">
             <img
               src="/images/tatyana-photo.webp"
               alt="Татьяна Злобина"
