@@ -4,23 +4,138 @@ import { ServicePage, type ServicePageContent } from "@/components/ServicePage";
 export const Route = createFileRoute("/ketgut")({
   head: () => ({
     meta: [
-      { title: "Акупунктурный кетгут — постановка нитей во Владивостоке | Седьмое небо" },
+      { title: "Акупунктурный кетгут в Трудовом (Владивосток, Артём) | Седьмое небо" },
       {
         name: "description",
         content:
-          "Акупунктурный кетгут в кабинете Седьмое небо: постановка 30 саморассасывающихся нитей в акупунктурные точки. Метод пролонгированного действия, деликатная поддержка тела. Стоимость 20 000 ₽, запись онлайн.",
+          "Акупунктурный кетгут в кабинете Седьмое небо (посёлок Трудовое): постановка 30 саморассасывающихся нитей в акупунктурные точки. Стоимость 20 000 ₽, запись онлайн.",
       },
       { property: "og:title", content: "Акупунктурный кетгут — постановка нитей | Седьмое небо" },
       {
         property: "og:description",
         content:
-          "Постановка 30 саморассасывающихся нитей в акупунктурные точки в кабинете Седьмое небо для мягкой, длительной поддержки тела.",
+          "Постановка 30 нитей в акупунктурные точки в кабинете Седьмое небо (Трудовое) для мягкой поддержки тела. Запись из Владивостока и Артёма.",
       },
       { property: "og:type", content: "article" },
       { property: "og:url", content: "https://7heavenmassage.ru/ketgut" },
       { name: "twitter:card", content: "summary_large_image" },
+      {
+        property: "og:image",
+        content: "https://7heavenmassage.ru/images/uslugi-ketgut.webp",
+      },
+      {
+        name: "twitter:image",
+        content: "https://7heavenmassage.ru/images/uslugi-ketgut.webp",
+      },
     ],
     links: [{ rel: "canonical", href: "https://7heavenmassage.ru/ketgut" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Главная",
+                  "item": "https://7heavenmassage.ru",
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Акупунктурный кетгут",
+                  "item": "https://7heavenmassage.ru/ketgut",
+                },
+              ],
+            },
+            {
+              "@type": "MedicalBusiness",
+              "@id": "https://7heavenmassage.ru/#organization",
+              "name": "Седьмое небо",
+              "image": "https://7heavenmassage.ru/images/uslugi-ketgut.webp",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "ул. Лермонтова, 77",
+                "addressLocality": "посёлок Трудовое",
+                "addressRegion": "Приморский край",
+                "addressCountry": "RU",
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "43.296541",
+                "longitude": "132.072237",
+              },
+              "url": "https://7heavenmassage.ru",
+              "telephone": "+79147055745",
+              "priceRange": "20000RUB",
+              "openingHoursSpecification": [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                  "opens": "09:00",
+                  "closes": "22:00",
+                },
+              ],
+              "areaServed": ["Трудовое", "Владивосток", "Артём"],
+            },
+            {
+              "@type": "Service",
+              "name": "Акупунктурный кетгут",
+              "provider": { "@id": "https://7heavenmassage.ru/#organization" },
+              "description": "Постановка 30 саморассасывающихся нитей в акупунктурные точки для мягкой и длительной поддержки тела.",
+              "offers": {
+                "@type": "Offer",
+                "price": "20000",
+                "priceCurrency": "RUB",
+                "availability": "https://schema.org/InStock",
+                "url": "https://7heavenmassage.ru/ketgut",
+              },
+            },
+            {
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Какой результат можно почувствовать после первого сеанса?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "После первого сеанса кетгута многие отмечают внутреннее спокойствие и снижение уровня стресса, а также более глубокое чувство насыщения. В первые дни может уходить лишняя жидкость, что даёт ощущение лёгкости в теле и уменьшение отёков. Важно понимать, что акупунктурный кетгут работает накопительно, поэтому основные изменения в обменных процессах и самочувствии проявляются постепенно в течение первых двух недель после постановки нитей.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  "name": "Остаются ли следы или синяки после процедуры?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Да, в точках постановки нитей могут остаться небольшие проколы, которые заживают за несколько дней, и иногда появляются точечные синяки. Обычно они проходят в течение недели, не оставляя следов на коже при соблюдении всех рекомендаций по уходу в первые 48 часов. Мы обязательно обсудим ваш тип кожи и особенности заживления перед началом, чтобы вы точно знали, чего ожидать в восстановительный период после сеанса.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  "name": "Сочетается ли акупунктурный кетгут с массажем?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Совмещение кетгута с интенсивным массажем в зоне постановки нитей не рекомендуется в течение первых 10–14 дней после процедуры. Механическое воздействие может сместить нить или вызвать дополнительное раздражение тканей, что снизит эффект от длительной стимуляции точек. Легкие техники на других участках тела допустимы, но лучше заранее составить план процедур так, чтобы они дополняли друг друга без риска для вашего комфорта и здоровья.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  "name": "Где находится кабинет и как записаться на процедуру?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Кабинет находится в посёлке Трудовое — между Владивостоком и Артёмом. Принимаю по предварительной записи жителей Трудового, Владивостока, Артёма и ближайших населённых пунктов. Записаться можно через Max — уточню удобное время, отвечу на вопросы и подготовлю рекомендации перед первым сеансом.",
+                  },
+                },
+              ],
+            },
+          ],
+        }),
+      },
+    ],
   }),
   component: KetgutPage,
 });
