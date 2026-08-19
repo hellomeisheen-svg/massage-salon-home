@@ -165,12 +165,11 @@ function GirudoterapiyaPage() {
 
 function SpecialistBlock() {
   return (
-    <div className="flex flex-col items-start gap-3 sm:gap-4">
+    <div className="hero-specialist-block flex flex-col items-start gap-3 sm:gap-4">
       <img
         className="h-[90px] w-[70px] rounded-[12px] border border-[#daebff] ds-bento-shadow object-cover xl:h-[110px] xl:w-[85px]"
         alt="Татьяна Злобина"
         src="/images/tatyana-photo.webp"
-
       />
       <div className="flex flex-col gap-1">
         <h2 className="font-noto-serif-narrow text-[22px] font-light leading-[1.2] text-[#1c3c8c] sm:text-[24px] xl:text-[28px]">
@@ -203,9 +202,9 @@ function PageHero() {
             <SpecialistBlock />
           </div>
 
-          <div className="hero-card__actions mt-auto pt-10">
+          <div className="hero-card__actions mt-auto">
             <div className="flex flex-col tablet-text-block xl:max-w-[640px]">
-              <div className="flex flex-col gap-y-2">
+              <div className="flex flex-col">
                 <div className={`service-badge-slot ${!true ? 'is-empty' : ''}`}>
                   <span className="inline-flex items-center rounded-[12px] bg-[#A2CFFE] px-2 py-0.5 text-[14px] font-medium lowercase tracking-tight text-white">
                     хит

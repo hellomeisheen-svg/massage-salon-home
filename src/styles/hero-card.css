@@ -1,6 +1,6 @@
 :root {
-  --hero-card-height-mobile: 980px;
-  --hero-card-height-tablet: 920px;
+  --hero-card-height-mobile: 780px;
+  --hero-card-height-tablet: 720px;
   --hero-card-height-desktop: 860px;
 }
 
@@ -29,11 +29,22 @@
 }
 
 .service-badge-slot {
-  height: 40px;
+  height: 28px;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  margin-bottom: 8px;
 }
 
 .service-badge-slot.is-empty {
   visibility: hidden;
+}
+
+.hero-specialist-block {
+  margin-bottom: 40px;
+}
+
+@media (min-width: 768px) {
+  .hero-specialist-block {
+    margin-bottom: 56px;
+  }
 }
