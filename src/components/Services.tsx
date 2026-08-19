@@ -391,12 +391,15 @@ export function ServiceCard({
   const hasDiscount = discounts[activeSession] > 0;
 
   const isHirudo = clean(type.title) === "Гирудотерапия";
+  const isKetgut = clean(type.title) === "Акупунктурный кетгут";
   const computedDuration = isHirudo
     ? "от 1\u00A0часа 30\u00A0минут до 2\u00A0часов"
-    : formatDurationString(
-        variant.duration,
-        variant.multiplyDuration === false ? 1 : sessionCounts[activeSession]
-      );
+    : isKetgut
+      ? "1\u00A0час 30\u00A0минут"
+      : formatDurationString(
+          variant.duration,
+          variant.multiplyDuration === false ? 1 : sessionCounts[activeSession]
+        );
 
 
   const bookingTitle = hasZones
