@@ -167,19 +167,17 @@ function SpecialistBlock() {
   return (
     <div className="flex flex-col items-start gap-3 sm:gap-4">
       <img
-        className="h-[90px] w-[70px] rounded-[12px] border border-[#daebff] ds-bento-shadow object-cover xl:h-[110px] xl:w-[85px]"
+        className="h-[90px] w-[70px] xl:h-[110px] xl:w-[85px] rounded-[12px] border border-[#daebff] ds-bento-shadow object-cover"
         alt="Татьяна Злобина"
         src="/images/tatyana-photo.webp"
 
       />
       <div className="flex flex-col gap-1">
-        <h2 className="font-noto-serif-narrow text-[22px] font-light leading-[1.2] text-[#1c3c8c] sm:text-[24px] xl:text-[28px]">
+        <h3 className="font-noto-serif-narrow mt-6 ds-h4 text-[#1C3C8C] sm:text-[28px] xl:text-[28px]">
           Татьяна&nbsp;Злобина
-        </h2>
-        <p className="text-[16px] font-light leading-[26px] text-[#566A93]">
-          Мастер кабинета, специалист
-          <br />
-          по&nbsp;оздоровительным практикам
+        </h3>
+        <p className="mt-3 body-text text-[#566A93]">
+          Мастер кабинета, специалист<br />по{"\u00A0"}оздоровительным практикам
         </p>
       </div>
     </div>
@@ -190,7 +188,7 @@ function PageHero() {
   return (
     <main className="bg-[#EFF6FF] py-4 sm:py-5">
       <section id="hero" className="container-1900 grid grid-cols-1 gap-4 sm:gap-5 xl:min-h-[calc(100vh-160px)] xl:grid-cols-2">
-        <div className="ds-bento-shadow flex min-h-0 flex-col ds-card p-5 sm:min-h-[520px] sm:p-6 xl:min-h-0 xl:p-10">
+        <div className="ds-bento-shadow flex flex-col ds-card p-5 sm:min-h-[580px] md:min-h-[600px] sm:p-6 xl:min-h-0 xl:p-10">
           <nav aria-label="Хлебные крошки" className="text-[14px] text-[#566A93]">
             <Link to="/" className="hover:opacity-70 transition-opacity">
               Главная
@@ -203,7 +201,7 @@ function PageHero() {
             <SpecialistBlock />
           </div>
 
-          <div className="mt-[100px] pt-0 sm:mt-[140px] xl:mt-auto xl:pt-[140px]">
+          <div className="mt-auto xl:mt-auto pt-16 sm:pt-20">
             <div className="flex flex-col tablet-text-block xl:max-w-[640px]">
               <div className="flex flex-col gap-y-2">
                 <div className="flex sm:hidden">
