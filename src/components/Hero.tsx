@@ -41,7 +41,7 @@ export function Hero() {
     <main className="bg-[#EFF6FF] py-4 sm:py-5">
       <section id="hero" className="container-1900 grid grid-cols-1 gap-4 sm:gap-5 xl:min-h-[calc(100vh-160px)] xl:grid-cols-2">
         {/* Content card */}
-        <div className="flex flex-col ds-card ds-bento-shadow p-5 min-h-[720px] sm:min-h-[600px] xl:min-h-0 h-auto sm:h-auto min-h-[720px] sm:min-h-[600px] xl:h-auto p-5 sm:p-6 xl:p-10">
+        <div className="flex flex-col ds-card ds-bento-shadow p-5 min-h-[720px] sm:min-h-[600px] xl:min-h-0 p-5 sm:p-6 xl:p-10">
           <div className="flex flex-col items-start text-left">
             <img
               src="/images/tatyana-photo.webp"
@@ -55,7 +55,7 @@ export function Hero() {
               Мастер кабинета, специалист<br />по{"\u00A0"}оздоровительным практикам
             </p>
           </div>
-          <div className="mt-auto xl:mt-auto pt-16 sm:pt-20">
+          <div className="mt-auto xl:mt-auto pt-8 sm:pt-20">
             <HeadlineBlock onOpenQuiz={() => setIsQuizOpen(true)} />
           </div>
         </div>
