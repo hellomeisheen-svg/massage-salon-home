@@ -6,7 +6,6 @@ import {
   useTransform,
   PanInfo,
 } from "framer-motion";
-import galleryMobileHands from "@/assets/gallery-mobile-hands.webp.asset.json";
 
 const IMGS: { url: string; alt: string }[] = [
   { url: "/images/uslugi-klassicheskii-massazh.webp", alt: "Классический массаж спины в кабинете" },
@@ -161,31 +160,27 @@ export const RollingGallery: React.FC<RollingGalleryProps> = ({
           }}
           className="flex min-h-[200px] cursor-grab items-center justify-center [transform-style:preserve-3d]"
         >
-          {galleryImages.map(({ url, alt }, i) => {
-            const isCenter = i === 2; // "Руки мастера с массажным маслом"
-            const displayUrl = (isCenter && isScreenSizeSm) ? galleryMobileHands.url : url;
-            
-            return (
-              <div
-                key={i}
-                className="group absolute left-1/2 top-1/2 flex h-fit items-center justify-center p-[8%] [backface-visibility:hidden]"
-                style={{
-                  width: `${faceWidth}px`,
-                  transform: `translateX(-50%) translateY(-50%) rotateY(${(360 / faceCount) * i}deg) translateZ(${radius}px)`,
-                }}
-              >
-                <img
-                  src={displayUrl}
-                  alt={alt}
-                  draggable={false}
-                  loading="lazy"
-                  decoding="async"
-                  style={{ width: imgWidth, height: imgHeight, flexShrink: 0, maxWidth: "none" }}
-                  className={`pointer-events-none rounded-[12px] ds-bento-shadow object-cover`}
-                />
-              </div>
-            );
-          })}
+          {galleryImages.map(({ url, alt }, i) => (
+            <div
+              key={i}
+              className="group absolute left-1/2 top-1/2 flex h-fit items-center justify-center p-[8%] [backface-visibility:hidden]"
+              style={{
+                width: `${faceWidth}px`,
+                transform: `translateX(-50%) translateY(-50%) rotateY(${(360 / faceCount) * i}deg) translateZ(${radius}px)`,
+              }}
+            >
+              <img
+                src={url}
+                alt={alt}
+                draggable={false}
+                loading="lazy"
+                decoding="async"
+                style={{ width: imgWidth, height: imgHeight, flexShrink: 0, maxWidth: "none" }}
+                className={`pointer-events-none rounded-[12px] ds-bento-shadow object-cover`}
+              />
+
+            </div>
+          ))}
         </motion.div>
       </div>
     </div>
