@@ -110,11 +110,7 @@ export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
         </div>
 
         {/* Bottom band */}
-        <div className="relative mt-5 ds-card ds-bento-shadow p-5 xl:p-[30px]">
-          <div className="absolute top-5 right-5 xl:top-[30px] xl:right-[30px]">
-            <RatingBlock />
-          </div>
-
+        <div className="mt-5 ds-card ds-bento-shadow p-5 xl:p-[30px]">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Brand */}
             <div>
