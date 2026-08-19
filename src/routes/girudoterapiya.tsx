@@ -34,8 +34,93 @@ export const Route = createFileRoute("/girudoterapiya")({
       { property: "og:type", content: "article" },
       { property: "og:url", content: "https://7heavenmassage.ru/girudoterapiya" },
       { name: "twitter:card", content: "summary_large_image" },
+      {
+        property: "og:image",
+        content: "https://7heavenmassage.ru/images/uslugi-girudoterapiya-litsa.webp",
+      },
+      {
+        name: "twitter:image",
+        content: "https://7heavenmassage.ru/images/uslugi-girudoterapiya-litsa.webp",
+      },
     ],
     links: [{ rel: "canonical", href: "https://7heavenmassage.ru/girudoterapiya" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "MedicalBusiness",
+              "@id": "https://7heavenmassage.ru/#business",
+              name: "Седьмое небо",
+              description:
+                "Кабинет массажа и гирудотерапии Татьяны Злобиной в посёлке Трудовое между Владивостоком и Артёмом.",
+              url: "https://7heavenmassage.ru/",
+              image: "https://7heavenmassage.ru/images/uslugi-girudoterapiya-litsa.webp",
+              medicalSpecialty: "https://schema.org/PhysicalTherapy",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "посёлок Трудовое",
+                addressRegion: "Приморский край",
+                addressCountry: "RU",
+              },
+              areaServed: [
+                { "@type": "Place", name: "Трудовое" },
+                { "@type": "Place", name: "Владивосток" },
+                { "@type": "Place", name: "Артём" },
+              ],
+              priceRange: "600–4800 ₽",
+            },
+            {
+              "@type": "Service",
+              name: "Гирудотерапия",
+              serviceType: "Гирудотерапия (лечение медицинскими пиявками)",
+              url: "https://7heavenmassage.ru/girudoterapiya",
+              provider: { "@id": "https://7heavenmassage.ru/#business" },
+              areaServed: [
+                { "@type": "Place", name: "Трудовое" },
+                { "@type": "Place", name: "Владивосток" },
+                { "@type": "Place", name: "Артём" },
+              ],
+              offers: [
+                {
+                  "@type": "Offer",
+                  name: "Медицинские пиявки, сеанс",
+                  price: "4800",
+                  priceCurrency: "RUB",
+                  url: "https://7heavenmassage.ru/girudoterapiya#prices",
+                },
+                {
+                  "@type": "Offer",
+                  name: "Косметические пиявки, за пиявку",
+                  price: "600",
+                  priceCurrency: "RUB",
+                  url: "https://7heavenmassage.ru/girudoterapiya#prices",
+                },
+              ],
+            },
+            {
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Главная",
+                  item: "https://7heavenmassage.ru/",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "Гирудотерапия",
+                  item: "https://7heavenmassage.ru/girudoterapiya",
+                },
+              ],
+            },
+          ],
+        }),
+      },
+    ],
   }),
   component: GirudoterapiyaPage,
 });
@@ -124,7 +209,7 @@ const faq = [
   },
   {
     q: "Как формируется стоимость сеанса?",
-    a: "Стоимость зависит от\u00A0формата процедуры, количества пиявок и\u00A0выбранной программы. Медицинская гирудотерапия в\u00A0кабинете «Седьмое небо» начинается от\u00A0800 ₽ за\u00A0пиявку, косметическая постановка — от\u00A0600 ₽ за\u00A0пиявку. При покупке курса из\u00A03 или\u00A06 сеансов действуют скидки —10% и\u00A0—15%. Точную цену специалист назовёт после\u00A0консультации, когда будет понятно количество пиявок и\u00A0зоны.",
+    a: "Стоимость зависит от\u00A0формата процедуры, количества пиявок и\u00A0выбранной программы. Сеанс медицинской гирудотерапии в\u00A0кабинете «Седьмое небо» — от\u00A04 800 ₽, это около 800 ₽ за\u00A0пиявку; косметическая постановка — от\u00A0600 ₽ за\u00A0пиявку. При покупке курса из\u00A03 или\u00A06 сеансов действуют скидки —10% и\u00A0—15%. Точную цену специалист назовёт после\u00A0консультации, когда будет понятно количество пиявок и\u00A0зоны.",
   },
   {
     q: "Где находится кабинет и\u00A0как записаться на\u00A0гирудотерапию?",
@@ -227,7 +312,7 @@ function PageHero() {
                 </div>
               </div>
               <p className="mt-4 text-[16px] font-light leading-[26px] text-[#566A93]">
-                Оздоровительная практика с использованием медицинских пиявок — для поддержки самочувствия, ощущения лёгкости и более внимательного контакта с телом.
+                Оздоровительная практика с использованием медицинских пиявок — для поддержки самочувствия, ощущения лёгкости и более внимательного контакта с телом. Кабинет в&nbsp;посёлке Трудовое, между&nbsp;Владивостоком и&nbsp;Артёмом.
               </p>
               <div className="mt-[30px] flex flex-col gap-3 sm:flex-row sm:gap-4">
                 <a
