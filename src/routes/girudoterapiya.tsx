@@ -849,8 +849,9 @@ function Prices() {
 }
 
 
-function FaqItem({ q, a }: { q: string; a: React.ReactNode }) {
+function FaqItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
+  const lines = a.split("\\n");
   return (
     <div className="ds-card ds-bento-shadow">
       <button
@@ -875,8 +876,17 @@ function FaqItem({ q, a }: { q: string; a: React.ReactNode }) {
         }`}
       >
         <div className="overflow-hidden px-2 -mx-2 py-3 -my-3">
-          <div className="px-5 sm:px-6 xl:px-7 pb-5 sm:pb-6 xl:pb-7 body-text text-[#566A93] max-w-[720px]">
-            {a}
+          <div className="px-5 sm:px-6 xl:px-7 pb-5 sm:pb-6 xl:pb-7 body-text text-[#566A93] max-w-[720px] space-y-3">
+            {lines.map((line, i) =>
+              line.startsWith("• ") ? (
+                <div key={i} className="flex gap-2">
+                  <span className="shrink-0">•</span>
+                  <span>{line.slice(2)}</span>
+                </div>
+              ) : line ? (
+                <p key={i}>{line}</p>
+              ) : null
+            )}
           </div>
         </div>
       </div>
