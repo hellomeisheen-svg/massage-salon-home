@@ -51,9 +51,13 @@ export function Hero() {
             <h3 className="font-noto-serif-narrow mt-6 ds-h4 text-[#1C3C8C] sm:text-[28px] xl:text-[28px]">
               Татьяна Злобина
             </h3>
-            <p className="mt-3 body-text text-[#566A93]">
-              Мастер кабинета, специалист<br />по{"\u00A0"}оздоровительным практикам
-            </p>
+            <div className="flex flex-col gap-1">
+              <p className="mt-3 body-text text-[#566A93]">
+                Мастер кабинета, специалист
+                <br />
+                по{"\u00A0"}оздоровительным практикам
+              </p>
+            </div>
           </div>
           <div className="hero-card__actions mt-auto pt-10">
             <HeadlineBlock onOpenQuiz={() => setIsQuizOpen(true)} />

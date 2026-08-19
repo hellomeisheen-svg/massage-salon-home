@@ -179,7 +179,7 @@ function SpecialistBlock() {
         <p className="text-[16px] font-light leading-[26px] text-[#566A93]">
           Мастер кабинета, специалист
           <br />
-          по&nbsp;оздоровительным практикам
+          по{"\u00A0"}оздоровительным практикам
         </p>
       </div>
     </div>

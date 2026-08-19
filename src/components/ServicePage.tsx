@@ -114,12 +114,16 @@ function PageHero({ content }: { content: ServicePageContent }) {
               alt="Татьяна Злобина"
               className="h-[80px] w-[62px] xl:h-[90px] xl:w-[70px] rounded-[12px] border border-[#daebff] ds-bento-shadow object-cover"
             />
-            <h3 className="font-noto-serif-narrow mt-4 text-[22px] sm:text-[24px] font-bold text-[#1C3C8C]">
-              Татьяна Злобина
-            </h3>
-            <p className="mt-2 body-text text-[#566A93]">
-              Мастер кабинета, специалист<br />по{"\u00A0"}оздоровительным практикам
-            </p>
+            <div className="flex flex-col gap-1">
+              <h3 className="font-noto-serif-narrow mt-4 text-[22px] sm:text-[24px] font-bold text-[#1C3C8C]">
+                Татьяна Злобина
+              </h3>
+              <p className="text-[16px] font-light leading-[26px] text-[#566A93]">
+                Мастер кабинета, специалист
+                <br />
+                по{"\u00A0"}оздоровительным практикам
+              </p>
+            </div>
           </div>
 
           <div className="hero-card__actions mt-auto pt-10">
