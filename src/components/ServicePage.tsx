@@ -96,10 +96,12 @@ export function ServicePage({ content }: { content: ServicePageContent }) {
 
 
 function PageHero({ content }: { content: ServicePageContent }) {
+  const { openBooking } = useBooking();
+  
   return (
     <main className="bg-[#EFF6FF] py-4 sm:py-5">
       <section id="hero" className="container-1900 grid grid-cols-1 gap-4 sm:gap-5 xl:min-h-[calc(100vh-160px)] xl:grid-cols-2">
-        <div className="ds-bento-shadow flex min-h-0 flex-col ds-card p-5 sm:min-h-[520px] sm:p-6 xl:min-h-0 xl:p-10">
+        <div className="ds-bento-shadow flex min-h-0 flex-col ds-card p-5 sm:min-h-[520px] sm:p-6 xl:min-h-0 xl:p-10 hero-bento-card">
           <nav aria-label="Хлебные крошки" className="text-[14px] text-[#566A93]">
             <Link to="/" className="hover:opacity-70 transition-opacity">
               Главная
@@ -108,7 +110,7 @@ function PageHero({ content }: { content: ServicePageContent }) {
             <span className="text-[#1C3C8C]">{content.breadcrumb}</span>
           </nav>
 
-          <div className="mt-8 mb-8 flex flex-col items-start text-left">
+          <div className="mt-8 mb-8 flex flex-col items-start text-left hero-specialist-block">
             <img
               src="/images/tatyana-photo.webp"
               alt="Татьяна Злобина"
@@ -122,53 +124,51 @@ function PageHero({ content }: { content: ServicePageContent }) {
             </p>
           </div>
 
-          <div className="mt-10 md:mt-20 xl:mt-auto xl:pt-[80px]">
+          <div className="hero-service-content">
             <div className="flex flex-col tablet-text-block xl:max-w-[640px]">
               <div className="flex flex-col gap-y-2">
-                {content.hit && (
-                  <div className="flex sm:hidden">
+                <div className="service-badge-slot">
+                  {content.hit && (
                     <span className="inline-flex items-center rounded-[12px] bg-[#A2CFFE] px-2 py-0.5 text-[14px] font-medium lowercase tracking-tight text-white">
                       хит
                     </span>
-                  </div>
-                )}
+                  )}
+                </div>
                 <div className="flex items-center gap-x-3 gap-y-2 flex-wrap">
                   <h1 className="font-noto-serif-narrow text-[30px] font-light leading-[1.12] text-[#1C3C8C] sm:text-[58px] sm:leading-[1.15]">
                     {content.title}
                   </h1>
-                  {content.hit && (
-                    <span className="hidden sm:inline-flex items-center rounded-[12px] bg-[#A2CFFE] px-2 py-0.5 text-[14px] font-medium lowercase tracking-tight text-white">
-                      хит
-                    </span>
-                  )}
                 </div>
               </div>
               <p className="mt-4 text-[16px] font-light leading-[26px] text-[#566A93]">
                 {content.heroText}
               </p>
-              <div className="mt-[30px] flex flex-col gap-3 sm:flex-row sm:gap-4">
-                <a
-                  href="https://n2418813.yclients.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary w-full sm:w-[280px] xl:w-[250px] inline-flex items-center justify-center text-center whitespace-nowrap"
-                >
-                  Онлайн запись
-                </a>
-                <button
-                  type="button"
-                  onClick={() =>
-                    window.open(
-                      "https://max.ru/u/f9LHodD0cOLS1ZC9ThcQkVLRVzcK-MbYZ7JVAg8PC5Tx9LyihgOVdPnzaxM",
-                      "_blank",
-                      "noopener,noreferrer"
-                    )
-                  }
-                  className="btn-secondary w-full sm:w-[280px] xl:w-[250px] whitespace-nowrap"
-                >
-                  Получить консультацию
-                </button>
-              </div>
+            </div>
+          </div>
+
+          <div className="hero-card-actions mt-auto pt-8">
+            <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
+              <a
+                href="https://n2418813.yclients.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary w-full sm:w-[280px] xl:w-[250px] inline-flex items-center justify-center text-center whitespace-nowrap"
+              >
+                Онлайн запись
+              </a>
+              <button
+                type="button"
+                onClick={() =>
+                  window.open(
+                    "https://max.ru/u/f9LHodD0cOLS1ZC9ThcQkVLRVzcK-MbYZ7JVAg8PC5Tx9LyihgOVdPnzaxM",
+                    "_blank",
+                    "noopener,noreferrer"
+                  )
+                }
+                className="btn-secondary w-full sm:w-[280px] xl:w-[250px] whitespace-nowrap"
+              >
+                Получить консультацию
+              </button>
             </div>
           </div>
         </div>
