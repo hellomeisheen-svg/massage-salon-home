@@ -393,7 +393,7 @@ export function ServiceCard({
   const isHirudo = clean(type.title) === "Гирудотерапия";
   const isKetgut = clean(type.title) === "Акупунктурный кетгут";
   const computedDuration = isHirudo
-    ? "от 1\u00A0часа 30\u00A0минут до 2\u00A0часов"
+    ? "от 1,5 до 2 часов"
     : isKetgut
       ? "1\u00A0час 30\u00A0минут"
       : formatDurationString(
