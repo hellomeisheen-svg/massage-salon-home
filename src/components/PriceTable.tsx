@@ -68,6 +68,9 @@ export function PriceTable({ prices, title = "Форматы и стоимост
                       Стоимость
                     </th>
                   )}
+                  <th className="px-6 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
+                    {/* Кнопка записи */}
+                  </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-[#daebff]">
@@ -106,6 +109,15 @@ export function PriceTable({ prices, title = "Форматы и стоимост
                           {renderPrice(formatPrice(basePrice))}
                         </span>
                       </div>
+                    </div>
+                    <div className="mt-4">
+                      <button
+                        type="button"
+                        onClick={() => openBooking(p.zone)}
+                        className="btn-primary w-full py-2.5 text-[14px]"
+                      >
+                        Записаться
+                      </button>
                     </div>
                   </div>
                 );
@@ -201,6 +213,15 @@ export function PriceTable({ prices, title = "Форматы и стоимост
                           </div>
                         )}
                       </div>
+                      <div className="mt-5 pt-4 border-t border-[#daebff]/40">
+                        <button
+                          type="button"
+                          onClick={() => openBooking(p.zone)}
+                          className="btn-primary w-full py-2.5 text-[14px]"
+                        >
+                          Записаться
+                        </button>
+                      </div>
                     </div>
                   </div>
                 );
@@ -220,10 +241,8 @@ export function PriceTable({ prices, title = "Форматы и стоимост
   );
 }
 
-// Убран неиспользуемый компонент MobileRow, так как табы теперь встроены в основной компонент
-
-
 function PriceTableRow({ p, isProgram = false }: { p: ServicePrice, isProgram?: boolean }) {
+  const { openBooking } = useBooking();
   const isHirudo = p.zone.toLowerCase().includes("пиявк");
   const basePrice = Math.round(p.base * (isProgram ? 0.8 : 1)); // В Programs.tsx цена уже со скидкой, но в PriceTable мы передаем базу
   const originalPrice = p.base;
@@ -278,6 +297,15 @@ function PriceTableRow({ p, isProgram = false }: { p: ServicePrice, isProgram?: 
           </div>
         </td>
       )}
+      <td className="px-6 py-5 xl:px-8">
+        <button
+          type="button"
+          onClick={() => openBooking(p.zone)}
+          className="btn-primary px-5 py-2 text-[14px]"
+        >
+          Записаться
+        </button>
+      </td>
     </tr>
   );
 }

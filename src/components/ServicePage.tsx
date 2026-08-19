@@ -8,7 +8,7 @@ import { Programs } from "@/components/Programs";
 import { Education } from "@/components/Education";
 import { OtherServices } from "@/components/OtherServices";
 import { RatingBlock } from "@/components/RatingBlock";
-import { BookingProvider } from "@/components/BookingModal";
+import { BookingProvider, useBooking } from "@/components/BookingModal";
 import { formatPrice, pluralize, renderPrice } from "@/components/Services";
 export type ServicePrice = {
   zone: string;
@@ -302,6 +302,7 @@ const sessionCounts = [1, 3, 6];
 const tabLabels = ["1\u00A0сеанс", "3\u00A0сеанса", "6\u00A0сеансов"];
 
 function PriceCard({ p, prefix }: { p: ServicePrice; prefix: string }) {
+  const { openBooking } = useBooking();
   const [active, setActive] = useState(0);
 
   const count = sessionCounts[active];
@@ -367,7 +368,15 @@ function PriceCard({ p, prefix }: { p: ServicePrice; prefix: string }) {
           </span>
         </div>
       </div>
-
+      <div className="mt-8">
+        <button
+          type="button"
+          onClick={() => openBooking(p.zone)}
+          className="btn-primary w-full py-3 text-[15px]"
+        >
+          Записаться
+        </button>
+      </div>
     </article>
   );
 }
