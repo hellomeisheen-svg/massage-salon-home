@@ -343,13 +343,6 @@ button:focus-visible {
 
 
 
-.faq-trigger:focus-visible {
-  outline: 2px solid #1C3C8C;
-  outline-offset: 3px;
-  border-radius: 12px;
-}
-
-
 .tablet-text-block {
   width: 100%;
 }
@@ -365,6 +358,49 @@ button:focus-visible {
     max-width: 680px;
   }
 }
+
+/* Hero bento cards layout and heights for mobile and tablet */
+@media (max-width: 767px) {
+  :root {
+    --hero-card-height-mobile: 760px;
+  }
+  .hero-bento-card {
+    height: var(--hero-card-height-mobile) !important;
+    min-height: var(--hero-card-height-mobile) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    box-sizing: border-box !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  :root {
+    --hero-card-height-tablet: 720px;
+  }
+  .hero-bento-card {
+    height: var(--hero-card-height-tablet) !important;
+    min-height: var(--hero-card-height-tablet) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    box-sizing: border-box !important;
+  }
+}
+
+.hero-specialist-block {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.service-badge-slot {
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.hero-card-actions {
+  margin-top: auto;
+}
+
 
 
 
