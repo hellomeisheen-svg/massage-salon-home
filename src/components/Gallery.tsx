@@ -4,8 +4,8 @@ const heading = "'Noto Serif Display', Georgia, serif";
 
 export default function Gallery() {
   return (
-    <section id="galereya" className="scroll-mt-[120px] bg-[#EFF6FF] ds-section pb-0">
-      <div className="container-1900 mb-[30px] sm:mb-[60px] xl:mb-[140px] flex flex-col items-center text-center">
+    <section id="galereya" className="scroll-mt-[120px] bg-[#EFF6FF] ds-section">
+      <div className="container-1900 mb-8 sm:mb-10 xl:mb-[140px] flex flex-col items-center text-center">
         <svg
           aria-hidden="true"
           viewBox="0 0 24 24"
@@ -22,7 +22,7 @@ export default function Gallery() {
         </p>
       </div>
 
-      <div className="pt-4 pb-[60px] xl:pt-0 xl:pb-0">
+      <div className="xl:pt-0">
         <RollingGallery autoplay pauseOnHover />
       </div>
     </section>
