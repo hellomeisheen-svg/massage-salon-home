@@ -79,7 +79,7 @@ export function Education() {
             alt="Татьяна Злобина — мастер кабинета Седьмое небо"
             loading="eager"
             fetchPriority="high"
-            className="w-full h-[480px] sm:h-[720px] rounded-[12px] border border-[#DAEBFF] ds-bento-shadow xl:border-0 xl:rounded-none xl:absolute xl:inset-0 xl:h-full object-cover object-top sm:object-center"
+            className="w-full h-full rounded-[12px] border border-[#DAEBFF] ds-bento-shadow xl:border-0 xl:rounded-none xl:absolute xl:inset-0 object-cover object-top sm:object-center"
           />
           <div className="relative mt-4 sm:mt-5 xl:absolute xl:inset-x-0 xl:bottom-0 xl:mt-0 xl:p-[clamp(16px,2vw,32px)]">
             <div className="relative overflow-hidden rounded-[12px] border border-[#DAEBFF] bg-white xl:bg-white/95 xl:backdrop-blur-sm p-6 sm:p-12 xl:p-[clamp(24px,4vw,48px)] shadow-[0_20px_50px_-12px_rgba(74,127,214,0.08)] hidden">
