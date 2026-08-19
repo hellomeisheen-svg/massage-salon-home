@@ -21,6 +21,151 @@ export const Route = createFileRoute("/banki")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "https://7heavenmassage.ru/banki" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "MedicalBusiness",
+              "@id": "https://7heavenmassage.ru/#business",
+              name: "Седьмое небо",
+              description:
+                "Кабинет массажа и оздоровительных практик Татьяны Злобиной в посёлке Трудовое между Владивостоком и Артёмом.",
+              url: "https://7heavenmassage.ru/",
+              image: "https://7heavenmassage.ru/images/uslugi-myagkie-banki.webp",
+              medicalSpecialty: "https://schema.org/PhysicalTherapy",
+              telephone: "+7 924 232 46 11",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "ул. Лермонтова, 46",
+                addressLocality: "посёлок Трудовое",
+                addressRegion: "Приморский край",
+                addressCountry: "RU",
+              },
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: 43.3125,
+                longitude: 132.0119,
+              },
+              openingHoursSpecification: [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  dayOfWeek: [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                  ],
+                  opens: "09:00",
+                  closes: "22:00",
+                },
+              ],
+              areaServed: [
+                { "@type": "Place", name: "Трудовое" },
+                { "@type": "Place", name: "Владивосток" },
+                { "@type": "Place", name: "Артём" },
+              ],
+              priceRange: "1000–2000 ₽",
+            },
+            {
+              "@type": "Service",
+              name: "Вакуумный массаж",
+              serviceType: "Вакуумный массаж (банки)",
+              url: "https://7heavenmassage.ru/banki",
+              provider: { "@id": "https://7heavenmassage.ru/#business" },
+              areaServed: [
+                { "@type": "Place", name: "Трудовое" },
+                { "@type": "Place", name: "Владивосток" },
+                { "@type": "Place", name: "Артём" },
+              ],
+              offers: [
+                {
+                  "@type": "Offer",
+                  name: "Стеклянные банки",
+                  price: "2000",
+                  priceCurrency: "RUB",
+                  url: "https://7heavenmassage.ru/banki#prices",
+                },
+                {
+                  "@type": "Offer",
+                  name: "Мягкие банки",
+                  price: "1000",
+                  priceCurrency: "RUB",
+                  url: "https://7heavenmassage.ru/banki#prices",
+                },
+              ],
+            },
+            {
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Главная",
+                  item: "https://7heavenmassage.ru/",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "Вакуумный массаж",
+                  item: "https://7heavenmassage.ru/banki",
+                },
+              ],
+            },
+            {
+              "@type": "FAQPage",
+              "@id": "https://7heavenmassage.ru/banki#faq",
+              mainEntity: [
+                {
+                  "@type": "Question",
+                  name: "Нужно ли что-то брать с собой на сеанс?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Специальной подготовки не требуется. В кабинете «Седьмое небо» всегда в наличии свежее выглаженное белье, одноразовые расходные материалы и все необходимое для вашего комфорта. Если вы планируете массаж спины, рекомендуем надеть удобную одежду, которую легко снять. После процедуры мы предложим вам теплый травяной чай, чтобы вы могли спокойно восстановиться и обсудить рекомендации по домашнему уходу.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Через сколько сеансов я почувствую результат?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Большинство клиентов отмечают чувство легкости и уменьшение мышечного напряжения уже после первого посещения. Однако для работы с глубокими зажимами или улучшения состояния тканей важна регулярность. Обычно курс состоит из 5–10 процедур с интервалом в несколько дней. На первой встрече мы обсудим ваш запрос и составим индивидуальный график, учитывая реакцию вашего организма и состояние сосудов.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Можно ли делать вакуумный массаж, если у меня много родинок?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Наличие родинок не является полным противопоказанием, но требует особого внимания. Во время сеанса я аккуратно обхожу выпуклые невусы и зоны с пигментацией, чтобы не подвергать их механическому воздействию или нагреву. Перед началом работы мы обязательно проведем осмотр кожи. Если у вас есть образования, требующие наблюдения врача, лучше заранее уточнить у дерматолога возможность проведения массажа в этой зоне.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Как лучше спланировать день после процедуры?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Вакуумный массаж запускает активные обменные процессы, поэтому в день сеанса важно пить достаточно чистой воды — это поможет организму мягче адаптироваться к изменениям. Рекомендуется избегать интенсивных тренировок, горячей ванны и сауны в первые 24 часа. Дайте телу возможность усвоить полученный эффект в спокойном режиме. Небольшая прогулка на свежем воздухе будет отличным дополнением к процедуре.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Помогает ли вакуумный массаж при сидячей работе?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Это один из самых частых запросов в нашем кабинете. Длительное сидение приводит к застою жидкости и перенапряжению мышц шеи и поясницы. Вакуумный массаж эффективно «разгружает» эти зоны, улучшая микроциркуляцию и возвращая тканям эластичность. Благодаря сочетанию статичной и динамической техник, мы можем глубоко проработать именно те участки, которые больше всего страдают от статичной нагрузки в течение рабочего дня.",
+                  },
+                },
+              ],
+            },
+          ],
+        }),
+      },
+    ],
   }),
   component: BankiPage,
 });
