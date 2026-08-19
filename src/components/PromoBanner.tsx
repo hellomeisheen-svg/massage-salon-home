@@ -18,7 +18,7 @@ export function PromoBanner({
 }: PromoBannerProps) {
   const { openBooking } = useBooking();
   return (
-    <section className="bg-brand-surface ds-section">
+    <section className="bg-brand-surface ds-section overflow-hidden">
       <div className="container-1900 px-4 sm:px-5">
         <div
           className="relative overflow-hidden rounded-[12px] border px-6 py-14 xl:px-24 xl:py-[60px] ds-bento-shadow"
