@@ -495,7 +495,7 @@ export function ServiceCard({
           <p className="mt-6 whitespace-pre-line body-text text-[#566A93] sm:hidden">
             {variant.mobileDescription || variant.description}
           </p>
-          <p className="mt-6 hidden whitespace-pre-line body-text text-[#566A93] sm:block sm:max-w-[480px] xl:max-w-[540px]">
+          <p className="mt-6 hidden whitespace-pre-line body-text text-[#566A93] sm:block sm:max-w-none xl:max-w-[540px]">
             {variant.description}
           </p>
 
