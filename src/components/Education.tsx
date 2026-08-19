@@ -37,7 +37,7 @@ function EduCard({ item }: { item: EduItem }) {
           {city}
         </span>
       )}
-      <h3 className="font-noto-serif-narrow ds-h4 text-[#1C3C8C] text-[24px] pr-0 sm:pr-24 sm:text-[28px] xl:text-[28px]">
+      <h3 className="font-noto-serif-narrow ds-h4 text-[#1C3C8C] text-[24px] pr-0 sm:pr-24 whitespace-nowrap sm:whitespace-normal xl:whitespace-nowrap sm:text-[28px] xl:text-[28px]">
         <span className="xl:hidden">{mobileName}</span>
         <span className="hidden xl:inline">{item.school}</span>
       </h3>
@@ -57,7 +57,7 @@ function EduCard({ item }: { item: EduItem }) {
 export function Education() {
   return (
     <section id="obrazovanie" className="scroll-mt-[120px] bg-[#EFF6FF] ds-section">
-      <div className="container-1900 mb-8 sm:mb-10 xl:mb-12 flex flex-col items-center text-center">
+      <div className="container-1900 mb-8 sm:mb-10 xl:mb-[140px] flex flex-col items-center text-center">
         <svg
           aria-hidden="true"
           viewBox="0 0 24 24"
@@ -70,16 +70,16 @@ export function Education() {
           За&nbsp;плечами&nbsp;— годы ежедневной практики и&nbsp;регулярное обучение
         </h2>
       </div>
-      <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-5 items-stretch xl:min-h-[600px] xl:h-auto">
+      <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-5 items-stretch">
 
         {/* Left: photo + quote panel */}
-        <div className="relative xl:min-h-0 xl:h-full flex flex-col xl:rounded-[12px] xl:overflow-hidden xl:border xl:border-[#DAEBFF] min-h-[480px] sm:min-h-[720px] xl:min-h-0">
+        <div className="relative xl:min-h-0 xl:h-full flex flex-col xl:rounded-[12px] xl:overflow-hidden xl:border xl:border-[#DAEBFF]">
           <img
             src="/images/tatiana-zlobina.webp"
             alt="Татьяна Злобина — мастер кабинета Седьмое небо"
             loading="eager"
             fetchPriority="high"
-            className="w-full h-full rounded-[12px] border border-[#DAEBFF] ds-bento-shadow xl:border-0 xl:rounded-none xl:absolute xl:inset-0 object-cover object-top sm:object-center"
+            className="w-full h-[480px] sm:h-[720px] rounded-[12px] border border-[#DAEBFF] ds-bento-shadow xl:border-0 xl:rounded-none xl:absolute xl:inset-0 xl:h-full object-cover object-top sm:object-center"
           />
           <div className="relative mt-4 sm:mt-5 xl:absolute xl:inset-x-0 xl:bottom-0 xl:mt-0 xl:p-[clamp(16px,2vw,32px)]">
             <div className="relative overflow-hidden rounded-[12px] border border-[#DAEBFF] bg-white xl:bg-white/95 xl:backdrop-blur-sm p-6 sm:p-12 xl:p-[clamp(24px,4vw,48px)] shadow-[0_20px_50px_-12px_rgba(74,127,214,0.08)] hidden">
@@ -109,7 +109,7 @@ export function Education() {
         </div>
 
         {/* Right: education lists */}
-        <div className="flex flex-col gap-6 xl:gap-3 xl:pr-4">
+        <div className="flex flex-col gap-6 xl:gap-3">
           <div className="px-2 text-[#566A93] text-[14px] sm:text-[15px]">Основное образование</div>
           <div className="flex flex-col gap-6 xl:gap-3">
             {mainEducation.map((e) => (
