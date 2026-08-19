@@ -175,7 +175,7 @@ function PageHero({ content }: { content: ServicePageContent }) {
 
         <div className="ds-bento-shadow relative h-[420px] overflow-hidden rounded-[12px] border border-[#daebff] sm:h-[520px] xl:h-auto xl:min-h-0">
           <img
-            className="absolute inset-0 h-full w-full object-cover object-top sm:object-center"
+            className="absolute inset-0 h-full w-full object-cover object-top"
             alt={content.heroImageAlt}
             src={content.heroImage}
             loading="eager"
