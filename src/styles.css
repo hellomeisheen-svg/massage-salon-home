@@ -360,10 +360,12 @@ button:focus-visible {
 }
 
 /* Hero bento cards layout and heights for mobile and tablet */
+:root {
+  --hero-card-height-mobile: 680px;
+  --hero-card-height-tablet: 640px;
+}
+
 @media (max-width: 767px) {
-  :root {
-    --hero-card-height-mobile: 760px;
-  }
   .hero-bento-card {
     height: var(--hero-card-height-mobile) !important;
     min-height: var(--hero-card-height-mobile) !important;
@@ -374,9 +376,6 @@ button:focus-visible {
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-  :root {
-    --hero-card-height-tablet: 720px;
-  }
   .hero-bento-card {
     height: var(--hero-card-height-tablet) !important;
     min-height: var(--hero-card-height-tablet) !important;
@@ -386,18 +385,28 @@ button:focus-visible {
   }
 }
 
+
+.hero-breadcrumb-slot {
+  height: 21px;
+}
+
 .hero-specialist-block {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
 .service-badge-slot {
-  height: 30px;
+  height: 29px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 
-.hero-card-actions {
+@media (max-width: 1023px) {
+  .hero-card-actions {
+    margin-top: 32px !important;
+  }
+}
+
   margin-top: auto;
 }
 
