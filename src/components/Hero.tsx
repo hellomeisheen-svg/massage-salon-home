@@ -45,7 +45,7 @@ export function Hero() {
       <section id="hero" className="container-1900 grid grid-cols-1 gap-4 sm:gap-5 xl:min-h-[calc(100vh-160px)] xl:grid-cols-2">
         {/* Content card */}
         <div className="ds-bento-shadow flex min-h-0 flex-col ds-card p-5 sm:min-h-[520px] sm:p-6 xl:min-h-0 xl:p-10 hero-bento-card">
-          <div className="hero-breadcrumb-slot" aria-hidden="true" />
+          <div className="hero-breadcrumb-slot xl:hidden" aria-hidden="true" />
           
           <div className="mt-8 mb-8 flex flex-col items-start text-left hero-specialist-block xl:mt-0">
             <img
