@@ -184,7 +184,7 @@ const content: ServicePageContent = {
             <li>не пытайтесь самостоятельно извлекать нить;</li>
             <li>наблюдайте за болью, отёком, покраснением и температурой кожи.</li>
           </ul>
-          <p className="mt-6 font-medium">Когда нужна медицинская помощь?</p>
+          <p className="mt-6 font-medium text-[#1C3C8C]">Когда нужна медицинская помощь?</p>
           <ul className="list-disc pl-5 space-y-2 mt-2">
             <li>боль усиливается;</li>
             <li>быстро нарастает отёк;</li>
