@@ -139,6 +139,15 @@ export const Route = createFileRoute("/girudoterapiya")({
                 },
               ],
             },
+            {
+              "@type": "FAQPage",
+              "@id": "https://7heavenmassage.ru/girudoterapiya#faq",
+              mainEntity: faq.map((item) => ({
+                "@type": "Question",
+                name: item.q,
+                acceptedAnswer: { "@type": "Answer", text: item.a },
+              })),
+            },
           ],
         }),
       },
