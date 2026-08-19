@@ -202,9 +202,9 @@ function PageHero() {
             <SpecialistBlock />
           </div>
 
-          <div className="hero-card__actions mt-auto pt-10">
+          <div className="hero-card__actions mt-auto">
             <div className="flex flex-col tablet-text-block xl:max-w-[640px]">
-              <div className="flex flex-col gap-y-2">
+              <div className="flex flex-col">
                 <div className={`service-badge-slot ${!true ? 'is-empty' : ''}`}>
                   <span className="inline-flex items-center rounded-[12px] bg-[#A2CFFE] px-2 py-0.5 text-[14px] font-medium lowercase tracking-tight text-white">
                     хит
