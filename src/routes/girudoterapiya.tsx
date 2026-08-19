@@ -300,7 +300,6 @@ const girudoSections: { label: string; content: React.ReactNode }[] = [
     ),
   },
   {
-  {
     label: "Показания",
     content: (
       <>
