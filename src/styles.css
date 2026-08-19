@@ -409,6 +409,12 @@ button:focus-visible {
   }
 }
 
+@media (min-width: 1380px) {
+  #hero .hero-specialist-block {
+    margin-top: 0 !important;
+  }
+}
+
 .service-badge-slot {
   height: 29px;
   display: flex;
