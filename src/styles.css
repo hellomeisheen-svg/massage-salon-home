@@ -1,5 +1,4 @@
 @import "tailwindcss" source(none);
-@import "./styles/hero-card.css";
 @source "../src";
 @import "tw-animate-css";
 

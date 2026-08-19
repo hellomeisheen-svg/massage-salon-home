@@ -13,7 +13,7 @@ function HeadlineBlock({ onOpenQuiz }: { onOpenQuiz: () => void }) {
       <p className="mt-4 text-[16px] font-light leading-[26px] text-[#566A93] xl:max-w-[540px]">
         Убираю напряжение, отёки и&nbsp;боли, возвращаю лёгкость движений — первый эффект уже после 1–2 сеансов.
       </p>
-      <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
+      <div className="mt-[30px] flex flex-col gap-3 sm:flex-row sm:gap-4">
         <a
           href="https://n2418813.yclients.com"
           target="_blank"
@@ -41,8 +41,8 @@ export function Hero() {
     <main className="bg-[#EFF6FF] py-4 sm:py-5">
       <section id="hero" className="container-1900 grid grid-cols-1 gap-4 sm:gap-5 xl:min-h-[calc(100vh-160px)] xl:grid-cols-2">
         {/* Content card */}
-        <div className="hero-card flex min-h-0 flex-col ds-card ds-bento-shadow p-5 sm:p-6 xl:p-10 border border-[#DAEBFF]">
-          <div className="hero-specialist-block flex flex-col items-start text-left">
+        <div className="flex min-h-0 flex-col ds-card ds-bento-shadow p-5 sm:min-h-[520px] sm:p-6 xl:min-h-0 xl:p-10">
+          <div className="flex flex-col items-start text-left">
             <img
               src="/images/tatyana-photo.webp"
               alt="Татьяна Злобина"
@@ -51,15 +51,11 @@ export function Hero() {
             <h3 className="font-noto-serif-narrow mt-6 ds-h4 text-[#1C3C8C] sm:text-[28px] xl:text-[28px]">
               Татьяна Злобина
             </h3>
-            <div className="flex flex-col gap-1">
-              <p className="mt-3 body-text text-[#566A93]">
-                Мастер кабинета, специалист
-                <br />
-                по{"\u00A0"}оздоровительным практикам
-              </p>
-            </div>
+            <p className="mt-3 body-text text-[#566A93]">
+              Мастер кабинета, специалист<br />по{"\u00A0"}оздоровительным практикам
+            </p>
           </div>
-          <div className="hero-card__actions mt-auto">
+          <div className="mt-10 md:mt-20 xl:mt-auto pt-16 sm:pt-20">
             <HeadlineBlock onOpenQuiz={() => setIsQuizOpen(true)} />
           </div>
         </div>
