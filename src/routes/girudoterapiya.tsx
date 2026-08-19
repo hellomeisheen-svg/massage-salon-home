@@ -81,7 +81,7 @@ const hirudoRows: HirudoRow[] = [
   {
     zone: "Медицинские пиявки",
     subtitle: "Оздоровительная практика",
-    duration: "2\u00A0часа",
+    duration: "от 1\u00A0часа 30\u00A0минут до 2\u00A0часов",
     base: 4800,
     perLeech: false,
     leechCounts: [6, 16, 74],
