@@ -32,7 +32,7 @@ const DISCOUNT = 0.2;
 
 const programs: Program[] = [
   {
-    name: "Лёгкость",
+    name: "Лёх-лёгкость",
     description: "При отёках и тяжести в теле — мягкое восстановление лимфотока.",
     items: [
       { key: "lymphatic", sessions: 7 },
