@@ -124,6 +124,12 @@ export const Route = createFileRoute("/girudoterapiya")({
               mainEntity: [
                 {
                   "@type": "Question",
+                  name: "Какой результат после первого сеанса?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Многие отмечают облегчение уже в первые сутки: снижается мышечное напряжение, улучшается сон и общее самочувствие. Эффект от гирудотерапии часто нарастает постепенно в течение нескольких дней." } },
+                {
+                  "@type": "Question",
                   name: "Остаются ли следы или синяки после процедуры?",
                   acceptedAnswer: {
                     "@type": "Answer",
