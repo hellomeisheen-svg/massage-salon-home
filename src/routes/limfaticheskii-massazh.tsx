@@ -39,7 +39,7 @@ export const Route = createFileRoute("/limfaticheskii-massazh")({
               serviceType: "Лимфатический оздоровительный массаж",
               url: "https://7heavenmassage.ru/limfaticheskii-massazh",
               provider: { "@id": "https://7heavenmassage.ru/#business" },
-              offers: [{ "@type": "Offer", name: "Лимфатический массаж, сеанс", price: "5000", priceCurrency: "RUB", url: "https://7heavenmassage.ru/limfaticheskii-massazh#prices" }] },
+              offers: [{ "@type": "Offer", name: "Лимфатический массаж, сеанс", price: "2000", priceCurrency: "RUB", url: "https://7heavenmassage.ru/limfaticheskii-massazh#prices" }] },
             {
               "@type": "FAQPage",
               mainEntity: [
