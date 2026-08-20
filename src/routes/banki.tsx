@@ -168,11 +168,7 @@ const content: ServicePageContent = {
     "Вакуумный массаж стеклянными и\u00a0мягкими инструментами для\u00a0прогревания тканей и\u00a0лёгкости в\u00a0движении. Кабинет в\u00a0посёлке Трудовое.",
   heroImage: "/images/uslugi-myagkie-banki.webp",
   heroImageAlt: "Вакуумный массаж в кабинете Татьяны Злобиной",
-  aboutHeading: (
-    <>
-      Что такое вакуумный массаж
-    </>
-  ),
+  aboutHeading: "Обсуждаем состояние перед каждым визитом и\u00A0подбираем технику",
   bookingPrefix: "Вакуумный массаж",
   prioritizeKeys: ["fireGlass", "airSoft"],
   pricesStyle: "table",
