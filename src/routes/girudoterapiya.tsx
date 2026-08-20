@@ -41,8 +41,7 @@ export const Route = createFileRoute("/girudoterapiya")({
       {
         name: "twitter:image",
         content: "https://7heavenmassage.ru/images/uslugi-girudoterapiya-litsa.webp",
-      },
-    ],
+      }],
     links: [{ rel: "canonical", href: "https://7heavenmassage.ru/girudoterapiya" }],
     scripts: [
       {
@@ -81,17 +80,14 @@ export const Route = createFileRoute("/girudoterapiya")({
                     "Wednesday",
                     "Thursday",
                     "Friday",
-                    "Saturday",
-                  ],
+                    "Saturday"],
                   opens: "09:00",
                   closes: "22:00",
-                },
-              ],
+                }],
               areaServed: [
                 { "@type": "Place", name: "Трудовое" },
                 { "@type": "Place", name: "Владивосток" },
-                { "@type": "Place", name: "Артём" },
-              ],
+                { "@type": "Place", name: "Артём" }],
               priceRange: "600–4800 ₽",
             },
             {
@@ -103,8 +99,7 @@ export const Route = createFileRoute("/girudoterapiya")({
               areaServed: [
                 { "@type": "Place", name: "Трудовое" },
                 { "@type": "Place", name: "Владивосток" },
-                { "@type": "Place", name: "Артём" },
-              ],
+                { "@type": "Place", name: "Артём" }],
               offers: [
                 {
                   "@type": "Offer",
@@ -119,8 +114,7 @@ export const Route = createFileRoute("/girudoterapiya")({
                   price: "600",
                   priceCurrency: "RUB",
                   url: "https://7heavenmassage.ru/girudoterapiya#prices",
-                },
-              ],
+                }],
             },
             {
               "@type": "BreadcrumbList",
@@ -136,8 +130,7 @@ export const Route = createFileRoute("/girudoterapiya")({
                   position: 2,
                   name: "Гирудотерапия",
                   item: "https://7heavenmassage.ru/girudoterapiya",
-                },
-              ],
+                }],
             },
             {
               "@type": "FAQPage",
@@ -190,13 +183,10 @@ export const Route = createFileRoute("/girudoterapiya")({
                     "@type": "Answer",
                     text: "Кабинет расположен в посёлке Трудовое. Принимаю по предварительной записи. Записаться можно через Max — я уточню удобное время и дам необходимые рекомендации по подготовке к вашему первому сеансу.",
                   },
-                },
-              ],
-            },
-          ],
+                }],
+            }],
         }),
-      },
-    ],
+      }],
   }),
   component: GirudoterapiyaPage,
 });
@@ -219,15 +209,13 @@ const benefits = [
   {
     title: "Спокойная атмосфера",
     text: "Тихий кабинет, свежее выглаженное бельё и тёплый чай после процедуры.",
-  },
-];
+  }];
 
 const steps = [
   { n: "01", title: "Знакомство", text: "Короткая беседа о самочувствии, ожиданиях и подходящем формате." },
   { n: "02", title: "Подготовка", text: "Выбираем зоны, готовим кожу и стерильные материалы." },
   { n: "03", title: "Как проходит сеанс", text: "Постановка пиявок, комфортное положение тела, тишина и покой." },
-  { n: "04", title: "После сеанса", text: "Накладываю стерильную повязку и подробно рассказываю, как ухаживать за зонами." },
-];
+  { n: "04", title: "После сеанса", text: "Накладываю стерильную повязку и подробно рассказываю, как ухаживать за зонами." }];
 
 type HirudoRow = {
   zone: string;
@@ -254,8 +242,7 @@ const hirudoRows: HirudoRow[] = [
     base: 600,
     perLeech: true,
     leechCounts: [6, 10, 20],
-  },
-];
+  }];
 
 
 const faq = [
@@ -282,8 +269,7 @@ const faq = [
   {
     q: "Где находится кабинет и как записаться?",
     a: "Кабинет расположен в посёлке Трудовое. Принимаю по предварительной записи. Записаться можно через Max — я уточню удобное время и дам необходимые рекомендации по подготовке к вашему первому сеансу.",
-  },
-];
+  }];
 
 
 function GirudoterapiyaPage() {
@@ -561,8 +547,7 @@ const girudoSections: { label: string; content: React.ReactNode }[] = [
         <p>Обратитесь за медицинской помощью, если кровотечение не уменьшается, усиливаются боль или отёк, повышается температура, появляется гнойное или необычное отделяемое.</p>
       </>
     ),
-  },
-];
+  }];
 
 function GirudoterapiyaServices() {
   const [active, setActive] = useState(0);
