@@ -7,13 +7,13 @@ export const otherServices = [
     slug: "ketgut",
     title: "Акупунктурный кетгут",
     description: "Постановка тонких нитей в акупунктурные точки для длительной поддержки и мягкого восстановления баланса.",
-    isHot: true,
+    isHit: true,
   },
   {
     slug: "vektornyi-massazh",
     title: "Векторный массаж",
     description: "Точная работа с мышцами и фасциями для снятия зажимов и восстановления лёгкости и свободы по всему теле.",
-    isHot: true,
+    isHit: true,
   },
   {
     slug: "banki",
@@ -24,7 +24,7 @@ export const otherServices = [
     slug: "girudoterapiya",
     title: "Гирудотерапия",
     description: "Бережная работа с медицинскими пиявками для глубокого расслабления и восстановления внутреннего баланса.",
-    isHot: true,
+    isHit: true,
   },
   {
     slug: "limfaticheskii-massazh",
@@ -140,15 +140,14 @@ export function OtherServices({ exclude }: { exclude?: string }) {
                   <h3 className="ds-h4 font-noto-serif-narrow font-light leading-[1.2] text-[#1C3C8C]">
                     {service.title}
                   </h3>
-                  {'isHot' in service && service.isHot && (
+                  {'isHit' in service && service.isHit && (
                     <span 
                       className="ml-2 px-2 py-0.5 text-[10px] font-bold tracking-wider text-white uppercase rounded-[6px]"
                       style={{
-                        backgroundImage: "linear-gradient(135deg, #FF6B6B 0%, #FF8E8E 100%)",
-                        boxShadow: "0 2px 4px rgba(255, 107, 107, 0.2)"
+                        backgroundImage: "linear-gradient(to bottom, #A2CFFE, #88C1FF)",
                       }}
                     >
-                      Hot
+                      Hit
                     </span>
                   )}
                 </div>
