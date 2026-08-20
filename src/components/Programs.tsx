@@ -35,8 +35,7 @@ const programs: Program[] = [
     name: "Лёгкость",
     description: "При отёках и тяжести в теле — мягкое восстановление лимфотока.",
     items: [
-      { key: "lymphatic", sessions: 1 },
-      { key: "lymphdrainage", sessions: 6 },
+      { key: "lymphatic", sessions: 7 },
       { key: "airSoft", sessions: 6 },
     ],
     validity: "2 месяца с первого сеанса",
