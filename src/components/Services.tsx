@@ -32,7 +32,7 @@ export const serviceTypes: ServiceType[] = [
         zone: "Медицинские",
         subtitle: "Оздоровительная практика",
         description:
-          "'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n                                        \n                                            \n                                            Нет, время указано в минутах, а нужно, чтобы оно было указано в часах. Внеси правки",
+          "Медицинские пиявки на\u00A0выбранные зоны тела снимают накопленное напряжение, улучшают микроциркуляцию и\u00A0дарят ощущение лёгкости. Мягкая поддержка естественного восстановления и\u00A0общего самочувствия без\u00A0лекарств и\u00A0агрессивных вмешательств.",
         mobileDescription:
           "Постановка пиявок на\u00A0выбранные зоны тела для\u00A0поддержки лёгкости и\u00A0общего самочувствия.",
         duration: "1,5 часа",

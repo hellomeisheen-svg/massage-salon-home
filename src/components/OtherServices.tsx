@@ -6,7 +6,7 @@ export const otherServices = [
   {
     slug: "vektornyi-massazh",
     title: "Векторный массаж",
-    description: "'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n                                        \n                                            \n                                            Нет, время указано в минутах, а нужно, чтобы оно было указано в часах. Внеси правки",
+    description: "Точная работа с мышцами и фасциями для снятия зажимов и восстановления лёгкости и свободы по всему теле.",
     isHit: true,
   },
   {
