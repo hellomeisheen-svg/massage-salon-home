@@ -357,7 +357,7 @@ const content: ServicePageContent = {
     },
   ],
   faq: [
-  ],,
+  ],
 };
 
 function KetgutPage() {

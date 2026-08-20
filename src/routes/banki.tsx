@@ -436,7 +436,7 @@ const content: ServicePageContent = {
     },
   ],
   faq: [
-  ],,
+  ],
 };
 
 function BankiPage() {
