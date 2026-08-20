@@ -39,7 +39,7 @@ export const Route = createFileRoute("/limfaticheskii-massazh")({
               serviceType: "Лимфатический оздоровительный массаж",
               url: "https://7heavenmassage.ru/limfaticheskii-massazh",
               provider: { "@id": "https://7heavenmassage.ru/#business" },
-              offers: [{ "@type": "Offer", name: "Лимфатический массаж, сеанс", price: "5000", priceCurrency: "RUB", url: "https://7heavenmassage.ru/limfaticheskii-massazh#prices" }] },
+              offers: [{ "@type": "Offer", name: "Лимфатический массаж, сеанс", price: "2000", priceCurrency: "RUB", url: "https://7heavenmassage.ru/limfaticheskii-massazh#prices" }] },
             {
               "@type": "FAQPage",
               mainEntity: [
@@ -255,8 +255,8 @@ const content: ServicePageContent = {
         </>
       ) }],
   prices: [
-    { zone: "Всё тело", subtitle: "Мягкая работа с\u00A0естественными путями оттока жидкости", duration: "2 часа", base: 5000 },
-    { zone: "Лицо", subtitle: "Деликатная работа для мягкой зоны лица", duration: "2 часа", base: 5000 }],
+    { zone: "Всё тело", subtitle: "Мягкая работа с\u00A0естественными путями оттока жидкости", duration: "40 минут", base: 2000 },
+    { zone: "Лицо", subtitle: "Деликатная работа для мягкой зоны лица", duration: "40 минут", base: 2000 }],
   faq: [
     { q: "Какой результат после первого сеанса?", a: "Вы почувствуете заметную лёгкость в теле и уменьшение чувства тяжести в ногах. Мягкий ручной лимфодренаж помогает тканям разгрузиться, что часто сопровождается улучшением настроения и приливом сил." },
     { q: "Можно ли делать лимфатический массаж при варикозе?", a: "При начальных стадиях массаж полезен для снятия тяжести, но при тромбофлебите или узлах он противопоказан. Перед сеансом мы обязательно обсуждаем стадию заболевания и наличие рекомендаций от вашего врача-флеболога." },
