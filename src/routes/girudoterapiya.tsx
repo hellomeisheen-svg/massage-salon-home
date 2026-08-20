@@ -122,7 +122,6 @@ export const Route = createFileRoute("/girudoterapiya")({
               "@type": "FAQPage",
               "@id": "https://7heavenmassage.ru/girudoterapiya#faq",
               mainEntity: [
-                },
                 {
                   "@type": "Question",
                   name: "Остаются ли следы или синяки после процедуры?",
