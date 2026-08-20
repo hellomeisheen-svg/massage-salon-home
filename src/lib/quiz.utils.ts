@@ -207,13 +207,6 @@ function getLightnessRecommendations(answers: Record<string, any>): QuizService[
   const getService = (id: string) => QUIZ_CONFIG.services.find(s => s.id === id);
 
   const lightnessServices: Record<string, Partial<QuizService>> = {
-    lymph: {
-      id: "lymph",
-      name: "Лимфодренажный",
-      description: "Бережная техника для поддержки лимфотока, уменьшения отёчности и ощущения тяжести в теле.",
-      duration: "120 минут",
-      price: "5 000 ₽"
-    },
     lymphatic: {
       id: "lymphatic",
       name: "Лимфатический",
@@ -237,7 +230,7 @@ function getLightnessRecommendations(answers: Record<string, any>): QuizService[
     },
     lymph_face: {
       id: "lymph_face",
-      name: "Лимфодренажный — лицо",
+      name: "Лимфатический — лицо",
       description: "Деликатно выводит лишнюю жидкость, возвращая свежесть взгляду.",
       duration: "40 минут",
       price: "2 000 ₽"
@@ -279,14 +272,14 @@ function getLightnessRecommendations(answers: Record<string, any>): QuizService[
   if (areas.includes("face")) {
     ids = ["lymph_face", "classic_face", "girudo_cosm"];
   } else if (areas.includes("legs") || areas.includes("feet")) {
-    ids = ["lymph", "lymphatic", "classic_legs"];
+    ids = ["lymphatic", "classic_legs"];
   } else if (areas.includes("whole_body")) {
-    ids = ["lymph", "lymphatic", "vector"];
+    ids = ["lymphatic", "vector"];
   } else if (areas.includes("master_choice") || areas.length === 0) {
-    ids = ["lymph", "lymphatic", "classic_legs"];
+    ids = ["lymphatic", "classic_legs"];
   } else {
     // Если ничего не подошло, но мы в этой ветке
-    ids = ["lymph", "lymphatic", "classic_legs"];
+    ids = ["lymphatic", "classic_legs"];
   }
 
   const result = ids.map(id => resolve(id)).filter((s): s is QuizService => !!s);

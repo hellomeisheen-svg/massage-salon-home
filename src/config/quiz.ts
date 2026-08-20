@@ -166,12 +166,10 @@ export const QUIZ_CONFIG: {
   ],
   services: [
     { id: "vector", name: "Векторный массаж", duration: "120 мин", price: "5 000 ₽", tags: ["relax", "spine", "lymph", "wellness"], description: "Комплексная работа с телом, восстанавливающая естественный баланс." },
-    { id: "lymph", name: "Лимфодренажный массаж", duration: "120 мин", price: "5 000 ₽", tags: ["lymph", "relax"], description: "Стимулирует отток лимфы, уменьшает отёчность и выводит токсины." },
-    { id: "lymphatic", name: "Лимфатический массаж тела", duration: "120 мин", price: "5 000 ₽", tags: ["lymph", "relax"], description: "Глубокая проработка лимфатической системы для лёгкости в теле." },
     { id: "classic_full", name: "Классический массаж", duration: "60 мин", price: "2 000 ₽", tags: ["relax", "spine"], description: "Традиционная техника для снятия мышечного напряжения и отдыха." },
     { id: "classic_spine_neck", name: "Классический — спина и шея", duration: "30 мин", price: "1 500 ₽", tags: ["spine"], description: "Акцент на снятие зажимов в шейно-воротниковой зоне и спине." },
     { id: "classic_face", name: "Классический — лицо", duration: "40 мин", price: "2 000 ₽", tags: ["face"], description: "Поддерживает тонус мышц лица и улучшает цвет кожи." },
-    { id: "lymph_face", name: "Лимфодренажный — лицо", duration: "40 мин", price: "2 000 ₽", tags: ["face"], description: "Деликатно выводит лишнюю жидкость, возвращая свежесть взгляду." },
+    { id: "lymph_face", name: "Лимфатический — лицо", duration: "40 мин", price: "2 000 ₽", tags: ["face"], description: "Деликатно выводит лишнюю жидкость, возвращая свежесть взгляду." },
     { id: "classic_legs", name: "Классический — ноги/стопы", duration: "60 мин", price: "3 000 ₽", tags: ["legs", "lymph"], description: "Снимает усталость и тяжесть в ногах после долгого дня." },
     { id: "classic_head", name: "Классический — голова", duration: "20 мин", price: "1 000 ₽", tags: ["relax"], description: "Помогает «выключить голову» и избавиться от эмоционального напряжения." },
     { id: "cups_fire", name: "Стихия Огонь (стеклянные банки)", duration: "10-20 мин", price: "2 000 ₽", tags: ["wellness"], isWellness: true, description: "Классическая интенсивная техника с глубоким вакуумным воздействием. Подходит как дополнение к массажу с глубокой проработкой." },
@@ -179,5 +177,6 @@ export const QUIZ_CONFIG: {
     { id: "girudo_med", name: "Гирудотерапия (медицинские пиявки)", duration: "60-90 мин", price: "от 600 ₽ за шт", tags: ["wellness"], isWellness: true, description: "Биологически активное воздействие для комплексного оздоровления." },
     { id: "girudo_cosm", name: "Гирудотерапия (косметические пиявки)", duration: "40-60 мин", price: "от 600 ₽ за шт", tags: ["face", "wellness"], isWellness: true, description: "Природный лифтинг и улучшение микроциркуляции кожи лица." },
     { id: "ketgut", name: "Акупунктурный кетгут", duration: "30-60 мин", price: "по запросу", tags: ["wellness"], isWellness: true, description: "Длительное воздействие на биологически активные точки." },
+    { id: "lymphatic", name: "Лимфатический массаж", duration: "120 мин", price: "5 000 ₽", tags: ["lymph", "relax"], description: "Глубокая проработка лимфатической системы для лёгкости в теле." },
   ],
 };

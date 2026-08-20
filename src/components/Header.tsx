@@ -21,7 +21,7 @@ const servicePages = [
   { label: "Векторный массаж", to: "/vektornyi-massazh" },
   { label: "Классический массаж", to: "/klassicheskii-massazh" },
   { label: "Лимфатический массаж", to: "/limfaticheskii-massazh" },
-  { label: "Лимфодренажный массаж", to: "/limfodrenazhnyi-massazh" },
+  
 ] as const;
 
 
