@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage, type ServicePageContent } from "@/components/ServicePage";
+import { ToolTabs } from "@/components/banki/ToolTabs";
 
 export const Route = createFileRoute("/banki")({
   head: () => ({
@@ -169,7 +170,7 @@ const content: ServicePageContent = {
   heroImageAlt: "Вакуумный массаж в кабинете Татьяны Злобиной",
   aboutHeading: (
     <>
-      Обсуждаем состояние перед каждым визитом и подбираем технику
+      Что такое вакуумный массаж
     </>
   ),
   bookingPrefix: "Вакуумный массаж",
@@ -177,7 +178,7 @@ const content: ServicePageContent = {
   pricesStyle: "table",
   sections: [
     {
-      label: "Вакуумный массаж",
+      label: "Что такое вакуумный массаж",
       content: (
         <>
           <p>
@@ -204,17 +205,8 @@ const content: ServicePageContent = {
       content: (
         <>
           <p>В работе применяются стеклянные и мягкие силиконовые инструменты.</p>
-          <ul className="list-disc pl-5 space-y-2 mb-6">
-            <li>
-              <strong>Стеклянные инструменты</strong> позволяют специалисту точно контролировать
-              постановку и силу вакуумного воздействия.
-            </li>
-            <li>
-              <strong>Мягкие силиконовые инструменты</strong> дают возможность мягко регулировать
-              интенсивность и выполнять динамический массаж.
-            </li>
-          </ul>
-          <p>
+          <ToolTabs />
+          <p className="mt-8">
             Тип и размер инструментов подбираются с учётом зоны воздействия, состояния кожи,
             чувствительности и цели процедуры.
           </p>
