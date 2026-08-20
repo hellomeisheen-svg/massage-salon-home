@@ -4,10 +4,10 @@ import { ServicePage, type ServicePageContent } from "@/components/ServicePage";
 export const Route = createFileRoute("/vektornyi-massazh")({
   head: () => ({
     meta: [
-      { title: "Векторный массаж во Владивостоке — Седьмое небо" },
+      { title: "Векторный массаж во Владивостоке и Трудовом — Седьмое небо" },
       {
         name: "description",
-        content: "Точная работа с мышцами и фасциями по анатомическим линиям тела в кабинете Седьмое небо (Трудовое). Освобождение глубоких зажимов и возвращение свободы движений.",
+        content: "Профессиональный векторный массаж во Владивостоке (Трудовое). Точная работа с мышцами и фасциями для снятия боли в спине, глубоких зажимов и восстановления свободы движений.",
       },
       { property: "og:title", content: "Векторный массаж — Седьмое небо" },
       {
@@ -35,7 +35,7 @@ export const Route = createFileRoute("/vektornyi-massazh")({
               address: { "@type": "PostalAddress", streetAddress: "ул. Лермонтова, 46", addressLocality: "посёлок Трудовое", addressRegion: "Приморский край", addressCountry: "RU" },
               geo: { "@type": "GeoCoordinates", latitude: 43.3125, longitude: 132.0119 },
               openingHoursSpecification: [{ "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], opens: "09:00", closes: "22:00" }],
-              areaServed: [{ "@type": "Place", name: "Трудовое" }, { "@type": "Place", name: "Владивосток" }, { "@type": "Place", name: "Артём" }],
+              areaServed: [{ "@type": "Place", name: "Трудовое" }, { "@type": "Place", name: "Владивосток" }, { "@type": "Place", name: "Артём" }, { "@type": "Place", name: "Приморский край" }],
             },
             {
               "@type": "Service",
@@ -90,7 +90,7 @@ const content: ServicePageContent = {
   hit: true,
   heroText: "Точная работа с мышцами и фасциями по анатомическим линиям тела. Освобождение глубоких зажимов. Кабинет в Трудовом.",
   heroImage: "/images/uslugi-massazh-spiny-i-shei.webp",
-  heroImageAlt: "Векторный массаж в кабинете Татьяны Злобиной",
+  heroImageAlt: "Специалист проводит векторный оздоровительный массаж в кабинете Седьмое небо",
   aboutHeading: <>Обсуждаем состояние перед каждым визитом и подбираем технику</>,
   bookingPrefix: "Векторный массаж",
   prioritizeKeys: ["classic", "lymphdrainage"],
