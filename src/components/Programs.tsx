@@ -10,8 +10,7 @@ type ServiceInfo = {
 
 const serviceCatalog: Record<string, ServiceInfo> = {
   lymphatic: { title: "Лимфатический", priceMin: 5000, durationMin: 120, unit: "сеанс" },
-  lymphdrainage: { title: "Лимфодренажный", priceMin: 5000, durationMin: 120, unit: "сеанс" },
-  lymphdrainageFace: { title: "Лимфодренажный  •  Лицо", priceMin: 2000, durationMin: 40, unit: "сеанс" },
+  lymphaticFace: { title: "Лимфатический  •  Лицо", priceMin: 2000, durationMin: 40, unit: "сеанс" },
   classic: { title: "Классический", priceMin: 2000, durationMin: 60, unit: "сеанс" },
   classicFace: { title: "Классический  •  Лицо", priceMin: 2000, durationMin: 40, unit: "сеанс" },
   hirudoMed: { title: "Гирудотерапия  •  Медицинские пиявки", priceMin: 4800, durationMin: 120, unit: "постановка" },
@@ -33,11 +32,10 @@ const DISCOUNT = 0.2;
 
 const programs: Program[] = [
   {
-    name: "Лёгкость",
+    name: "Лёх-лёгкость",
     description: "При отёках и тяжести в теле — мягкое восстановление лимфотока.",
     items: [
-      { key: "lymphatic", sessions: 1 },
-      { key: "lymphdrainage", sessions: 6 },
+      { key: "lymphatic", sessions: 7 },
       { key: "airSoft", sessions: 6 },
     ],
     validity: "2 месяца с первого сеанса",
@@ -46,7 +44,7 @@ const programs: Program[] = [
     name: "Свежесть",
     description: "Тонус кожи, поддержка овала и ощущение отдохнувшего лица.",
     items: [
-      { key: "lymphdrainageFace", sessions: 3 },
+      { key: "lymphaticFace", sessions: 3 },
       { key: "classicFace", sessions: 3 },
       { key: "hirudoCosm", sessions: 6 },
     ],
@@ -56,7 +54,7 @@ const programs: Program[] = [
     name: "Тишина",
     description: "Антистресс и восстановление ресурса — спокойный маршрут из мягких техник.",
     items: [
-      { key: "lymphdrainage", sessions: 3 },
+      { key: "lymphatic", sessions: 3 },
       { key: "classic", sessions: 3 },
       { key: "hirudoCosm", sessions: 6 },
     ],
