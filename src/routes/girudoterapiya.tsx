@@ -136,13 +136,6 @@ export const Route = createFileRoute("/girudoterapiya")({
               "@type": "FAQPage",
               "@id": "https://7heavenmassage.ru/girudoterapiya#faq",
               mainEntity: [
-                {
-                  "@type": "Question",
-                  name: "Какой результат после первого сеанса?",
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: "Многие отмечают облегчение уже в первые сутки: снижается мышечное напряжение, улучшается сон и общее самочувствие. Эффект от гирудотерапии часто нарастает постепенно в течение нескольких дней.",
-                  },
                 },
                 {
                   "@type": "Question",
