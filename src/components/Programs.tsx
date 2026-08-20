@@ -44,7 +44,7 @@ const programs: Program[] = [
     name: "Свежесть",
     description: "Тонус кожи, поддержка овала и ощущение отдохнувшего лица.",
     items: [
-      { key: "lymphdrainageFace", sessions: 3 },
+      { key: "lymphaticFace", sessions: 3 },
       { key: "classicFace", sessions: 3 },
       { key: "hirudoCosm", sessions: 6 },
     ],
