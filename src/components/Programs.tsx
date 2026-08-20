@@ -54,7 +54,7 @@ const programs: Program[] = [
     name: "Тишина",
     description: "Антистресс и восстановление ресурса — спокойный маршрут из мягких техник.",
     items: [
-      { key: "lymphdrainage", sessions: 3 },
+      { key: "lymphatic", sessions: 3 },
       { key: "classic", sessions: 3 },
       { key: "hirudoCosm", sessions: 6 },
     ],
