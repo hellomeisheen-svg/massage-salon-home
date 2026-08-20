@@ -4,9 +4,16 @@ import { useRef, useState, useEffect } from "react";
 
 export const otherServices = [
   {
-    slug: "girudoterapiya",
-    title: "Гирудотерапия",
-    description: "Бережная работа с медицинскими пиявками для глубокого расслабления и восстановления внутреннего баланса.",
+    slug: "ketgut",
+    title: "Акупунктурный кетгут",
+    description: "Постановка тонких нитей в акупунктурные точки для длительной поддержки и мягкого восстановления баланса.",
+    isHot: true,
+  },
+  {
+    slug: "vektornyi-massazh",
+    title: "Векторный массаж",
+    description: "Точная работа с мышцами и фасциями для снятия зажимов и восстановления лёгкости и свободы по всему теле.",
+    isHot: true,
   },
   {
     slug: "banki",
@@ -14,9 +21,10 @@ export const otherServices = [
     description: "Вакуумный массаж стеклянными и мягкими инструментами, снимающий тяжесть и возвращающий телу лёгкость и баланс.",
   },
   {
-    slug: "vektornyi-massazh",
-    title: "Векторный массаж",
-    description: "Точная работа с мышцами и фасциями для снятия зажимов и восстановления лёгкости и свободы по всему теле.",
+    slug: "girudoterapiya",
+    title: "Гирудотерапия",
+    description: "Бережная работа с медицинскими пиявками для глубокого расслабления и восстановления внутреннего баланса.",
+    isHot: true,
   },
   {
     slug: "limfaticheskii-massazh",
@@ -33,12 +41,6 @@ export const otherServices = [
     title: "Классический массаж",
     description: "Комплексная проработка тела для снятия напряжения и усталости. Восстанавливает силы и ощущение лёгкости.",
   },
-  {
-    slug: "ketgut",
-    title: "Акупунктурный кетгут",
-    description: "Постановка тонких нитей в акупунктурные точки для длительной поддержки и мягкого восстановления баланса.",
-  },
-
 ] as const;
 
 
@@ -134,9 +136,22 @@ export function OtherServices({ exclude }: { exclude?: string }) {
               className={`${cardClass} flex-[0_0_100%] sm:flex-[0_0_calc((100%-0.75rem)/2)] xl:flex-[0_0_calc((100%-3*0.75rem)/4)] snap-start`}
             >
               <div className="flex-1">
-                <h3 className="ds-h4 font-noto-serif-narrow font-light leading-[1.2] text-[#1C3C8C]">
-                  {service.title}
-                </h3>
+                <div className="flex items-start justify-between">
+                  <h3 className="ds-h4 font-noto-serif-narrow font-light leading-[1.2] text-[#1C3C8C]">
+                    {service.title}
+                  </h3>
+                  {'isHot' in service && service.isHot && (
+                    <span 
+                      className="ml-2 px-2 py-0.5 text-[10px] font-bold tracking-wider text-white uppercase rounded-[6px]"
+                      style={{
+                        backgroundImage: "linear-gradient(135deg, #FF6B6B 0%, #FF8E8E 100%)",
+                        boxShadow: "0 2px 4px rgba(255, 107, 107, 0.2)"
+                      }}
+                    >
+                      Hot
+                    </span>
+                  )}
+                </div>
                 <p className="mt-2 body-text text-[#566A93]">
                   {service.description}
                 </p>
