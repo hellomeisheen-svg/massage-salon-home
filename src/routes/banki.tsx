@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage, type ServicePageContent } from "@/components/ServicePage";
+import { ToolTabs } from "@/components/banki/ToolTabs";
 
 export const Route = createFileRoute("/banki")({
   head: () => ({
