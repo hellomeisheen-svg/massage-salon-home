@@ -195,7 +195,7 @@ const content: ServicePageContent = {
         </>
       ) },
     {
-      label: "СТЕКЛЯННЫЕ БАНКИ",
+      label: "Стеклянные банки",
       content: (
         <div className="space-y-4">
           <div className="space-y-4 text-[15px] leading-[1.6] text-[#566A93]">
@@ -216,7 +216,7 @@ const content: ServicePageContent = {
       )
     },
     {
-      label: "МЯГКИЕ БАНКИ",
+      label: "Мягкие банки",
       content: (
         <div className="space-y-4">
           <div className="space-y-4 text-[15px] leading-[1.6] text-[#566A93]">
