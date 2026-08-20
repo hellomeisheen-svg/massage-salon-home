@@ -144,7 +144,7 @@ export function OtherServices({ exclude }: { exclude?: string }) {
                     <span 
                       className="ml-2 px-2 py-0.5 text-[10px] font-bold tracking-wider text-white uppercase"
                       style={{
-                        borderRadius: "6px",
+                        borderRadius: "12px",
                         backgroundImage: "linear-gradient(to bottom, #A2CFFE, #88C1FF)",
                       }}
                     >
