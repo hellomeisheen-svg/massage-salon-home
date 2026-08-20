@@ -94,7 +94,7 @@ const content: ServicePageContent = {
   slug: "limfodrenazhnyi-massazh",
   breadcrumb: "Лимфодренажный массаж",
   title: "Лимфодренажный массаж",
-  heroText: "Мягкая техника для поддержания самочувствия и\u00A0ощущения лёгкости. Кабинет в\u00A0посёлке Трудовое.",
+  heroText: "Мягкая техника для поддержания самочувствия и ощущения лёгкости. Кабинет в посёлке Трудовое.",
   heroImage: "/images/uslugi-massazh-vorotnikovoi-zony.webp",
   heroImageAlt: "Лимфодренажный массаж в Трудовом — Седьмое небо",
   aboutHeading: <>Обсуждаем состояние перед каждым визитом и подбираем технику</>,
