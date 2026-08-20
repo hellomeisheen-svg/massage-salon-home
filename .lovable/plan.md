@@ -1,28 +1,38 @@
-# Plan - Update Lymphatic Drainage Massage Page
+# Унификация FAQ на страницах услуг
 
-Update the content of `src/routes/limfodrenazhnyi-massazh.tsx` with the new structured text provided by the user, ensuring the distinction from the "lymphatic" page is maintained.
+Унификация вопросов и ответов в блоке FAQ на всех страницах услуг (массажи, гирудотерапия, кетгут, вакуумный массаж) для обеспечения последовательности и точности информации.
 
-## User Review Required
+## Задачи
 
-> [!IMPORTANT]
-> The "Lymphatic Drainage Massage" page will be updated with extensive structured content. The duration is set to 60–90 minutes as per the new text (previously it was 2 hours).
+### 1. Подготовка контента
+Для каждой страницы будут подготовлены ответы на три обязательных вопроса, адаптированные под специфику услуги:
+- **Нужен ли курс?** (Индивидуально для каждой услуги)
+- **Можно ли делать [название услуги] после простуды?** (Индивидуально для каждой услуги)
+- **Где находится кабинет и как записаться?** (Единый ответ для всех страниц)
 
-- **Prices and Address**: I will use placeholders for the specific price and full address as they were not provided in the prompt (marked as `[указать...]`). If you have these details, please provide them.
-
-## Technical Details
-
-- **Content Update**: Completely replace the `sections` array in `ServicePageContent` with:
-    - `Об услуге` (What it is)
-    - `Эффект` (Effects)
-    - `Показания` (When to apply)
-    - `Противопоказания` (Contraindications)
-    - `Процесс` (How it goes)
-    - `Подготовка` (Preparation)
-    - `После сеанса` (Aftercare)
-    - `Курс` (Course information)
-- **Typography**: Apply Russian typography rules (non-breaking spaces after short prepositions, correct dashes, and quotes).
-- **SEO & JSON-LD**: Update meta tags and schema markup to reflect the new content and duration (60–90 min).
-- **Duration Sync**: Update `duration` in the `prices` array and `heroText`.
-
-## Files
+### 2. Обновление страниц услуг
+Внесение изменений в следующие файлы:
+- `src/routes/klassicheskii-massazh.tsx`
+- `src/routes/limfaticheskii-massazh.tsx`
 - `src/routes/limfodrenazhnyi-massazh.tsx`
+- `src/routes/vektornyi-massazh.tsx`
+- `src/routes/banki.tsx`
+- `src/routes/girudoterapiya.tsx`
+- `src/routes/ketgut.tsx`
+
+### 3. Обновление JSON-LD
+Синхронизация обновленных вопросов и ответов в схеме микроразметки `FAQPage` на каждой странице.
+
+## Технические детали
+
+### Единый ответ для всех услуг:
+**Где находится кабинет и как записаться?**
+> Кабинет находится в посёлке Трудовое — между Владивостоком и Артёмом. Записаться можно через Max — уточню удобное время, отвечу на вопросы и подготовлю рекомендации перед первым сеансом.
+
+### Адаптированные ответы (примеры):
+- **Массажи:** Акцент на восстановлении мышц и отсутствии острых симптомов.
+- **Гирудотерапия:** Акцент на нагрузке на иммунитет и ферментах пиявки (пауза 7-10 дней).
+- **Кетгут:** Акцент на инвазивности и необходимости восстановления иммунитета (пауза 7-10 дней).
+- **Вакуумный массаж:** Акцент на обменных процессах и прогреве тканей.
+
+Все ответы будут строго в диапазоне 200–230 символов.
