@@ -1,28 +1,43 @@
-# Plan - Update Lymphatic Drainage Massage Page
+# FAQ Update Plan
 
-Update the content of `src/routes/limfodrenazhnyi-massazh.tsx` with the new structured text provided by the user, ensuring the distinction from the "lymphatic" page is maintained.
+Update service pages with required FAQ questions:
+1. **Нужен ли курс?** (Specific to service)
+2. **Можно ли применять процедуру [название] после простуды?** (Specific to service)
+3. **Где находится кабинет и как записаться?** (Uniform across all)
 
-## User Review Required
+## Content Generation
 
-> [!IMPORTANT]
-> The "Lymphatic Drainage Massage" page will be updated with extensive structured content. The duration is set to 60–90 minutes as per the new text (previously it was 2 hours).
+### 1. Вакуумный массаж (banki.tsx)
+- **Курс**: Количество сеансов вакуумного массажа зависит от состояния тканей и ваших целей. Один визит помогает оценить реакцию кожи и сосудов. Если процедура подходит, я предложу индивидуальный график с интервалом в 2–4 дня для лучшего эффекта.
+- **Простуда**: В период температуры, озноба или активного кашля процедура противопоказана. После выздоровления важно дождаться полного исчезновения острых симптомов. При сохранении слабости стоит проконсультироваться с врачом перед посещением кабинета.
 
-- **Prices and Address**: I will use placeholders for the specific price and full address as they were not provided in the prompt (marked as `[указать...]`). If you have these details, please provide them.
+### 2. Классический массаж (klassicheskii-massazh.tsx)
+- **Курс**: (Already has one, will unify/keep) Количество сеансов классического массажа зависит от состояния мышц и ваших пожеланий. Один визит помогает оценить уровень напряжения. Если процедура подходит, я предложу индивидуальный график для поддержания тонуса или расслабления.
+- **Простуда**: При температуре, слабости или остром воспалении массаж не проводится. После выздоровления важно дождаться исчезновения симптомов. При сохранении слабости лучше проконсультироваться с врачом, чтобы сеанс принес пользу, а не нагрузку.
+
+### 3. Лимфатический массаж (limfaticheskii-massazh.tsx)
+- **Курс**: (Already has one) Количество процедур лимфатического массажа зависит от выраженности отёчности и состояния здоровья. Один сеанс помогает оценить переносимость. Если метод подходит, мы составим график встреч с учетом того, как долго сохраняется лёгкость в теле.
+- **Простуда**: В острый период болезни (жар, кашель, озноб) процедура противопоказана. Рекомендуется выдержать паузу в 7–10 дней после выздоровления, чтобы иммунитет восстановился и реакция организма на лимфодренаж была предсказуемой и безопасной.
+
+### 4. Лимфодренажный массаж (limfodrenazhnyi-massazh.tsx)
+- **Курс**: (Already has one) Один сеанс помогает оценить переносимость лимфодренажного массажа. Если он подходит, мы подберём индивидуальный график. Количество встреч зависит от ваших целей, состояния здоровья и того, как организм реагирует на воздействие.
+- **Простуда**: В период температуры или выраженной слабости массаж не проводится. После выздоровления дождитесь полного исчезновения острых симптомов. При сохранении недомогания стоит проконсультироваться с врачом, прежде чем записываться на процедуру.
+
+### 5. Векторный массаж (vektornyi-massazh.tsx)
+- **Курс**: (Already has one) Разовый сеанс векторного массажа даст облегчение, но для устойчивого результата в работе с глубокими зажимами лучше пройти 3–5 встреч. Это позволит телу привыкнуть к новому положению без привычного напряжения в мышцах.
+- **Простуда**: При температуре, ознобе или активном воспалении глубокая работа с тканями противопоказана. После выздоровления важно дождаться исчезновения симптомов. При сохранении слабости проконсультируйтесь с врачом перед записью на сеанс.
+
+### 6. Гирудотерапия (girudoterapiya.tsx)
+- (Already implemented, will verify consistency)
+
+### 7. Акупунктурный кетгут (ketgut.tsx)
+- (Already implemented, will verify consistency)
+
+## Uniform FAQ (Location & Booking)
+**Где находится кабинет и как записаться?**
+> Кабинет расположен в посёлке Трудовое. Принимаю по предварительной записи. Записаться можно через Max — я уточню удобное время и дам необходимые рекомендации по подготовке к вашему первому сеансу.
 
 ## Technical Details
-
-- **Content Update**: Completely replace the `sections` array in `ServicePageContent` with:
-    - `Об услуге` (What it is)
-    - `Эффект` (Effects)
-    - `Показания` (When to apply)
-    - `Противопоказания` (Contraindications)
-    - `Процесс` (How it goes)
-    - `Подготовка` (Preparation)
-    - `После сеанса` (Aftercare)
-    - `Курс` (Course information)
-- **Typography**: Apply Russian typography rules (non-breaking spaces after short prepositions, correct dashes, and quotes).
-- **SEO & JSON-LD**: Update meta tags and schema markup to reflect the new content and duration (60–90 min).
-- **Duration Sync**: Update `duration` in the `prices` array and `heroText`.
-
-## Files
-- `src/routes/limfodrenazhnyi-massazh.tsx`
+- Update both `scripts` (JSON-LD) and `faq` array in `content` object for each route.
+- Use `\u00A0` for non-breaking spaces in text strings where appropriate.
+- Ensure all answers are between 200-230 characters for uniformity.
