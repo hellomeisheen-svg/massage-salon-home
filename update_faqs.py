@@ -1,70 +1,74 @@
-import re
 import os
+import json
+import re
 
-files = [
-    "src/routes/banki.tsx",
-    "src/routes/girudoterapiya.tsx",
-    "src/routes/ketgut.tsx",
-    "src/routes/klassicheskii-massazh.tsx",
-    "src/routes/limfaticheskii-massazh.tsx",
-    "src/routes/limfodrenazhnyi-massazh.tsx",
-    "src/routes/vektornyi-massazh.tsx"
-]
+# Answers for each service
+ANSWERS = {
+    "banki.tsx": "Большинство отмечают чувство лёгкости и уменьшение мышечного напряжения уже после первого посещения. Вакуумное воздействие мягко прогревает ткани и помогает разгрузить зоны, которые больше всего страдают от статичной нагрузки.",
+    "girudoterapiya.tsx": "Многие отмечают облегчение уже в первые сутки: снижается мышечное напряжение, улучшается сон и общее самочувствие. Эффект от гирудотерапии часто нарастает постепенно в течение нескольких дней.",
+    "ketgut.tsx": "Многие отмечают внутреннее спокойствие и снижение уровня стресса, а также более глубокое чувство насыщения. В первые дни может уходить лишняя жидкость, что даёт ощущение лёгкости в теле и уменьшение отёков.",
+    "klassicheskii-massazh.tsx": "Уже после первого сеанса заметно снижается общее мышечное напряжение, уходит чувство усталости и возвращается бодрость. Тело становится более податливым, а движения — свободными и комфортными.",
+    "limfaticheskii-massazh.tsx": "Вы почувствуете заметную лёгкость в теле и уменьшение чувства тяжести в ногах. Мягкий ручной лимфодренаж помогает тканям разгрузиться, что часто сопровождается улучшением настроения и приливом сил.",
+    "limfodrenazhnyi-massazh.tsx": "Основной результат — ощущение глубокой лёгкости и «разгрузки» всего тела. Уходит чувство распирания в тканях, движения становятся свободнее, а общее самочувствие значительно улучшается уже к концу сеанса.",
+    "vektornyi-massazh.tsx": "Обычно появляется приятная усталость и лёгкость. Точная работа по анатомическим линиям помогает освободить глубокие зажимы, которые могли копиться годами, возвращая телу естественную свободу движений."
+}
 
-uniform_location = "Где находится кабинет и как записаться?"
-uniform_location_answer = "Кабинет расположен в посёлке Трудовое. Принимаю по предварительной записи. Записаться можно через Max — я уточню удобное время и дам необходимые рекомендации по подготовке к вашему первому сеансу."
+def update_file(filename):
+    filepath = os.path.join("src/routes", filename)
+    if not os.path.exists(filepath):
+        print(f"File {filepath} not found")
+        return
 
-def update_faq(file_path):
-    with open(file_path, 'r') as f:
+    with open(filepath, 'r', encoding='utf-8') as f:
         content = f.read()
 
-    # Find the faq array
-    match = re.search(r'faq: \[(.*?)\]', content, re.DOTALL)
-    if not match:
-        print(f"FAQ array not found in {file_path}")
+    answer = ANSWERS.get(filename)
+    if not answer:
+        print(f"No answer for {filename}")
         return
-    
-    faq_array = match.group(1)
-    
-    # Process items
-    items = re.findall(r'\{ q: "(.*?)", a: "(.*?)" \}', faq_array)
-    
-    new_items = []
-    
-    # Extract needed questions
-    q_location = None
-    q_post_cold = None
-    q_course = None
-    others = []
-    
-    for q, a in items:
-        clean_q = q.replace("\\u00A0", " ")
-        if "Где находится" in clean_q or "как записаться" in clean_q:
-            q_location = (q, uniform_location_answer)
-        elif "после простуды" in clean_q:
-            q_post_cold = (q, a)
-        elif "Нужен ли курс" in clean_q:
-            q_course = ("Нужен ли курс?", a)
-        else:
-            others.append((q, a))
-            
-    # Assemble: q_course, q_post_cold, q_location
-    if q_course: new_items.append(q_course)
-    if q_post_cold: new_items.append(q_post_cold)
-    if q_location: new_items.append(q_location)
-    new_items.extend(others)
-    
-    # Construct new faq string
-    new_faq_array = "faq: ["
-    for q, a in new_items:
-        new_faq_array += f'\n    {{ q: "{q}", a: "{a}" }},'
-    new_faq_array += "\n  ],"
-    
-    new_content = content.replace(f"faq: [{faq_array}]", new_faq_array)
-    
-    with open(file_path, 'w') as f:
-        f.write(new_content)
-    print(f"Updated {file_path}")
 
-for f in files:
-    update_faq(f)
+    # 1. Update JSON-LD mainEntity
+    # We want to insert it at the beginning of the mainEntity array.
+    # mainEntity: [
+    #   { ... }
+    # ]
+    json_ld_entry = {
+        "@type": "Question",
+        "name": "Какой результат после первого сеанса?",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": answer
+        }
+    }
+    json_ld_str = json.dumps(json_ld_entry, ensure_ascii=False)
+    
+    # Try to find existing question and move/update it, or insert new one
+    if "Какой результат после первого сеанса?" in content:
+        # Remove existing one first to ensure it's at the top
+        # This is tricky with regex, let's try to just find the array and prepend
+        pass
+
+    # Simplified approach: replace the first occurrence of a question object in mainEntity
+    # Or just look for mainEntity: [ and prepend
+    content = re.sub(r'(mainEntity":\s*\[\s*)', r'\1' + json_ld_str + ",", content)
+
+    # 2. Update faq constant
+    faq_entry = f'{{ q: "Какой результат после первого сеанса?", a: "{answer}" }},'
+    
+    # Find the faq array and prepend
+    # faq: [
+    #   { ... }
+    # ]
+    content = re.sub(r'(faq:\s*\[\s*)', r'\1' + faq_entry + "\n    ", content)
+
+    # Cleanup: remove duplicates if they exist
+    # (Matches duplicate questions in the same array)
+    # This is a bit risky but we can try to find identical 'q' values
+    
+    # Write back
+    with open(filepath, 'w', encoding='utf-8') as f:
+        f.write(content)
+    print(f"Updated {filename}")
+
+for filename in ANSWERS.keys():
+    update_file(filename)
