@@ -142,12 +142,13 @@ export function OtherServices({ exclude }: { exclude?: string }) {
                   </h3>
                   {'isHit' in service && service.isHit && (
                     <span 
-                      className="ml-2 px-2 py-0.5 text-[10px] font-bold tracking-wider text-white uppercase rounded-[6px]"
+                      className="ml-2 px-2 py-0.5 text-[10px] font-bold tracking-wider text-white uppercase"
                       style={{
+                        borderRadius: "6px",
                         backgroundImage: "linear-gradient(to bottom, #A2CFFE, #88C1FF)",
                       }}
                     >
-                      Hit
+                      Хит
                     </span>
                   )}
                 </div>
