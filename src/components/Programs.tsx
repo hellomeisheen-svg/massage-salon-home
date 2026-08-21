@@ -168,7 +168,7 @@ export function Programs({ prioritizeKeys }: ProgramsProps = {}) {
   const next = () => setActive((i) => (i + 1) % orderedPrograms.length);
 
   return (
-    <section id="programs" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section">
+    <section id="programs" className="scroll-mt-[120px] bg-[#EFF6FF] ds-section">
       <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-8 sm:gap-5 items-start">
         {/* Left column */}
         <div className="self-start flex flex-col items-center xl:items-start text-center xl:text-left">
