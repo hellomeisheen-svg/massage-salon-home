@@ -98,7 +98,7 @@ export function Faq() {
           </span>
           <h2 
             className="mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0"
-            style={{ fontFamily: window.innerWidth < 640 ? 'Inter, sans-serif' : 'var(--font-heading)' }}
+            style={{ fontFamily: isMobile ? 'Inter, sans-serif' : 'var(--font-heading)' }}
           >
             Отвечаю на&nbsp;самые важные вопросы
           </h2>
