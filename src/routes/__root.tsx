@@ -18,12 +18,6 @@ import { ClientOnly } from "@/components/ClientOnly";
 import { Analytics } from "@/components/Analytics";
 import { HydrationWatchdog } from "@/components/HydrationWatchdog";
 
-
-
-
-
-
-
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-start justify-center bg-[#EFF6FF] px-4 pb-24 pt-36 sm:px-5 sm:pt-44">
@@ -141,7 +135,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" }],
     scripts: [],
-
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -177,16 +170,16 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Preloader />
-      <TypographyProvider />
-      
-      
-
+      <HydrationWatchdog />
+      <ClientOnly>
+        <Preloader />
+        <TypographyProvider />
+        <Analytics />
+      </ClientOnly>
 
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
       <StickyMobileCTA />
     </QueryClientProvider>
-
   );
 }
