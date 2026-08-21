@@ -1,24 +1,7 @@
 import { useState, useRef } from "react";
 import { Loader2, Check } from "lucide-react";
+import { extractDigits, formatPhone } from "@/lib/utils";
 
-// Из любого ввода достаём до 10 «абонентских» цифр (без кода страны 7/8)
-function extractDigits(raw: string) {
-  let digits = raw.replace(/\D/g, "");
-  if (digits.startsWith("7") || digits.startsWith("8")) {
-    digits = digits.slice(1);
-  }
-  return digits.slice(0, 10);
-}
-
-function formatPhone(rest: string) {
-  if (!rest) return "";
-  let out = `+7 (${rest.slice(0, 3)}`;
-  if (rest.length >= 3) out += ")";
-  if (rest.length > 3) out += ` ${rest.slice(3, 6)}`;
-  if (rest.length > 6) out += `-${rest.slice(6, 8)}`;
-  if (rest.length > 8) out += `-${rest.slice(8, 10)}`;
-  return out;
-}
 
 export function QuizContactForm({ 
   onSubmit, 

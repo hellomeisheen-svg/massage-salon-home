@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { X, ChevronLeft, Check } from "lucide-react";
+import { toast } from "sonner";
 import { QUIZ_CONFIG } from "@/config/quiz";
 import { calculateResult } from "@/lib/quiz.utils";
 import { sendLeadNotification } from "@/lib/notifications.functions";
 import { supabase } from "@/integrations/supabase/client";
 import { QuizResults } from "./QuizResults";
 import { QuizContactForm } from "./QuizContactForm";
+
 
 export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const [step, setStep] = useState(0); 
@@ -74,20 +76,34 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
 
       const message = `[QUIZ LEAD]\nРЕКОМЕНДАЦИИ: ${recommendedServices.map(s => s.name).join(", ")}\n---\nОТВЕТЫ:\n${answersText}\n---\nСПОСОБ СВЯЗИ: ${contact.method.toUpperCase()}`;
 
-      const { error: insertError } = await supabase.from("leads").insert([
-        {
-          name: contact.name,
-          phone: contact.phone,
-          message: message,
-        },
-      ]);
+      const { data: leadData, error: insertError } = await supabase
+        .from("leads")
+        .insert([
+          {
+            name: contact.name,
+            phone: contact.phone,
+            message: message,
+          },
+        ])
+        .select("id")
+        .single();
 
       if (insertError) throw insertError;
 
-      const result = await sendLeadNotification({ data: { phone: contact.phone } });
-      if (result && !result.success) {
-        console.error("Quiz notification failed:", result.error);
+      if (leadData?.id) {
+        sendLeadNotification({ data: { leadId: leadData.id } })
+          .then((result) => {
+            if (result && !result.success) {
+              console.error("Quiz notification failed:", result.error);
+              toast.error("Результат сохранен, но возникла ошибка при уведомлении мастера.");
+            }
+          })
+          .catch((err) => {
+            console.error("Quiz notification error:", err);
+            toast.error("Ошибка уведомления");
+          });
       }
+
       setIsSuccess(true);
     } catch (e) {
       console.error("Quiz submission error:", e);

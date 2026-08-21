@@ -68,7 +68,10 @@ export function Hero() {
             src="/images/hero-portrait-solid.webp"
             loading="eager"
             fetchPriority="high"
+            width={1280}
+            height={853}
           />
+
         </div>
       </section>
       <QuizModal isOpen={isQuizOpen} onClose={() => setIsQuizOpen(false)} />

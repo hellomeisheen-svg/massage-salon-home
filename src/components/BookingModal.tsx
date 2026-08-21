@@ -9,40 +9,11 @@ import {
   type ReactNode,
 } from "react";
 import { Check, Loader2, X } from "lucide-react";
+import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { sendLeadNotification } from "@/lib/notifications.functions";
+import { extractDigits, formatPhone } from "@/lib/utils";
 
-type BookingContextValue = {
-  openBooking: (subject?: string) => void;
-  closeBooking: () => void;
-};
-
-const BookingContext = createContext<BookingContextValue | null>(null);
-
-export function useBooking() {
-  const ctx = useContext(BookingContext);
-  if (!ctx) throw new Error("useBooking must be used inside <BookingProvider>");
-  return ctx;
-}
-
-// Из любого ввода достаём до 10 «абонентских» цифр (без кода страны 7/8)
-function extractDigits(raw: string) {
-  let digits = raw.replace(/\D/g, "");
-  if (digits.startsWith("7") || digits.startsWith("8")) {
-    digits = digits.slice(1);
-  }
-  return digits.slice(0, 10);
-}
-
-function formatPhone(rest: string) {
-  if (!rest) return "";
-  let out = `+7 (${rest.slice(0, 3)}`;
-  if (rest.length >= 3) out += ")";
-  if (rest.length > 3) out += ` ${rest.slice(3, 6)}`;
-  if (rest.length > 6) out += `-${rest.slice(6, 8)}`;
-  if (rest.length > 8) out += `-${rest.slice(8, 10)}`;
-  return out;
-}
 
 
 
@@ -222,22 +193,36 @@ function BookingDialog({
 
                   const phoneValue = formatPhone(phone);
 
-                  const { error: insertError } = await supabase.from("leads").insert([
-                    {
-                      name,
-                      phone: phoneValue,
-                      message: `${method.toUpperCase()}${comment ? `: ${comment}` : ""}`,
-                      email: email || null,
-                    },
-                  ]);
+                  const { data: leadData, error: insertError } = await supabase
+                    .from("leads")
+                    .insert([
+                      {
+                        name,
+                        phone: phoneValue,
+                        message: `${method.toUpperCase()}${comment ? `: ${comment}` : ""}`,
+                        email: email || null,
+                      },
+                    ])
+                    .select("id")
+                    .single();
 
                   if (insertError) throw insertError;
 
-                  // Trigger Resend notification via server function (lookup by phone)
-                  const result = await sendLeadNotification({ data: { phone: phoneValue } });
-                  if (result && !result.success) {
-                    console.error("Notification failed:", result.error);
+                  // Trigger Resend notification via server function using Lead ID
+                  if (leadData?.id) {
+                    sendLeadNotification({ data: { leadId: leadData.id } })
+                      .then((result) => {
+                        if (result && !result.success) {
+                          console.error("Notification failed:", result.error);
+                          toast.error("Заявка принята, но возникла ошибка при отправке уведомления мастеру. Мы все равно увидим её в системе.");
+                        }
+                      })
+                      .catch((err) => {
+                        console.error("Notification error:", err);
+                        toast.error("Ошибка уведомления");
+                      });
                   }
+
 
                   setSent(true);
                 } catch (err) {
