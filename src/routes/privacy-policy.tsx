@@ -15,7 +15,7 @@ export const Route = createFileRoute("/privacy-policy")({
       {
         property: "og:description",
         content:
-          "Какие данные собираются, как они используются и как связаться с нами по вопросам конфиденциальности.",
+          "Какие данные собираются, как они используются и как связаться со мной по вопросам конфиденциальности.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://7heavenmassage.ru/privacy-policy" },
