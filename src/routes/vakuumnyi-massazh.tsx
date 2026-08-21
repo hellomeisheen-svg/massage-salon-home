@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage, type ServicePageContent } from "@/components/ServicePage";
 
 
-export const Route = createFileRoute("/banki")({
+export const Route = createFileRoute("/vakuumnyi-massazh")({
   head: () => ({
     meta: [
       { title: "Вакуумный массаж во Владивостоке и Трудовом — Седьмое небо" },
@@ -16,9 +16,9 @@ export const Route = createFileRoute("/banki")({
         content:
           "Стеклянные и мягкие инструменты в кабинете Седьмое небо: бережное вакуумное воздействие, спокойный ритм сеанса и внимательное сопровождение." },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "https://7heavenmassage.ru/banki" },
+      { property: "og:url", content: "https://7heavenmassage.ru/vakuumnyi-massazh" },
       { name: "twitter:card", content: "summary_large_image" }],
-    links: [{ rel: "canonical", href: "https://7heavenmassage.ru/banki" }],
+    links: [{ rel: "canonical", href: "https://7heavenmassage.ru/vakuumnyi-massazh" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -27,7 +27,7 @@ export const Route = createFileRoute("/banki")({
           "@graph": [
             {
               "@type": "MedicalBusiness",
-              "@id": "https://7heavenmassage.ru/#business",
+              "@id": "https://7heavenmassage.ru/vakuumnyi-massazh#business",
               name: "Седьмое небо",
               description:
                 "Кабинет массажа и оздоровительных практик Татьяны Злобиной в посёлке Трудовое между Владивостоком и Артёмом.",
@@ -66,7 +66,7 @@ export const Route = createFileRoute("/banki")({
               "@type": "Service",
               name: "Вакуумный массаж",
               serviceType: "Вакуумный массаж (банки)",
-              url: "https://7heavenmassage.ru/banki",
+              url: "https://7heavenmassage.ru/vakuumnyi-massazh",
               provider: { "@id": "https://7heavenmassage.ru/#business" },
               areaServed: [
                 { "@type": "Place", name: "Трудовое" },
@@ -78,13 +78,13 @@ export const Route = createFileRoute("/banki")({
                   name: "Стеклянные банки",
                   price: "2000",
                   priceCurrency: "RUB",
-                  url: "https://7heavenmassage.ru/banki#prices" },
+                  url: "https://7heavenmassage.ru/vakuumnyi-massazh#prices" },
                 {
                   "@type": "Offer",
                   name: "Мягкие банки",
                   price: "1000",
                   priceCurrency: "RUB",
-                  url: "https://7heavenmassage.ru/banki#prices" }] },
+                  url: "https://7heavenmassage.ru/vakuumnyi-massazh#prices" }] },
             {
               "@type": "BreadcrumbList",
               itemListElement: [
@@ -97,10 +97,10 @@ export const Route = createFileRoute("/banki")({
                   "@type": "ListItem",
                   position: 2,
                   name: "Вакуумный массаж",
-                  item: "https://7heavenmassage.ru/banki" }] },
+                  item: "https://7heavenmassage.ru/vakuumnyi-massazh" }] },
             {
               "@type": "FAQPage",
-              "@id": "https://7heavenmassage.ru/banki#faq",
+              "@id": "https://7heavenmassage.ru/vakuumnyi-massazh#faq",
               mainEntity: [
                 {
                   "@type": "Question",
@@ -150,7 +150,7 @@ export const Route = createFileRoute("/banki")({
   component: BankiPage });
 
 const content: ServicePageContent = {
-  slug: "banki",
+  slug: "vakuumnyi-massazh",
   breadcrumb: "Вакуумный массаж",
   title: "Вакуумный массаж",
   heroText:

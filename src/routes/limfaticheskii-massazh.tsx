@@ -24,7 +24,7 @@ export const Route = createFileRoute("/limfaticheskii-massazh")({
           "@graph": [
             {
               "@type": "MedicalBusiness",
-              "@id": "https://7heavenmassage.ru/#business",
+              "@id": "https://7heavenmassage.ru/limfaticheskii-massazh#business",
               name: "Седьмое небо",
               description: "Кабинет массажа и оздоровительных практик Татьяны Злобиной в посёлке Трудовое.",
               url: "https://7heavenmassage.ru/",
@@ -38,7 +38,7 @@ export const Route = createFileRoute("/limfaticheskii-massazh")({
               name: "Лимфатический массаж",
               serviceType: "Лимфатический оздоровительный массаж",
               url: "https://7heavenmassage.ru/limfaticheskii-massazh",
-              provider: { "@id": "https://7heavenmassage.ru/#business" },
+              provider: { "@id": "https://7heavenmassage.ru/limfaticheskii-massazh#business" },
               offers: [{ "@type": "Offer", name: "Лимфатический массаж, сеанс", price: "5000", priceCurrency: "RUB", url: "https://7heavenmassage.ru/limfaticheskii-massazh#prices" }] },
             {
               "@type": "FAQPage",

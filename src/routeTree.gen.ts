@@ -10,13 +10,13 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as VektornyiMassazhRouteImport } from './routes/vektornyi-massazh'
+import { Route as VakuumnyiMassazhRouteImport } from './routes/vakuumnyi-massazh'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as LimfaticheskiiMassazhRouteImport } from './routes/limfaticheskii-massazh'
 import { Route as KlassicheskiiMassazhRouteImport } from './routes/klassicheskii-massazh'
 import { Route as KetgutRouteImport } from './routes/ketgut'
 import { Route as GirudoterapiyaRouteImport } from './routes/girudoterapiya'
-import { Route as BankiRouteImport } from './routes/banki'
 import { Route as SplatRouteImport } from './routes/$'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as RobotsTxtRouteImport } from './routes/robots.txt'
@@ -24,6 +24,11 @@ import { Route as RobotsTxtRouteImport } from './routes/robots.txt'
 const VektornyiMassazhRoute = VektornyiMassazhRouteImport.update({
   id: '/vektornyi-massazh',
   path: '/vektornyi-massazh',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VakuumnyiMassazhRoute = VakuumnyiMassazhRouteImport.update({
+  id: '/vakuumnyi-massazh',
+  path: '/vakuumnyi-massazh',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -56,11 +61,6 @@ const GirudoterapiyaRoute = GirudoterapiyaRouteImport.update({
   path: '/girudoterapiya',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BankiRoute = BankiRouteImport.update({
-  id: '/banki',
-  path: '/banki',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const SplatRoute = SplatRouteImport.update({
   id: '/$',
   path: '/$',
@@ -80,26 +80,26 @@ const RobotsTxtRoute = RobotsTxtRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
-  '/banki': typeof BankiRoute
   '/girudoterapiya': typeof GirudoterapiyaRoute
   '/ketgut': typeof KetgutRoute
   '/klassicheskii-massazh': typeof KlassicheskiiMassazhRoute
   '/limfaticheskii-massazh': typeof LimfaticheskiiMassazhRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/vakuumnyi-massazh': typeof VakuumnyiMassazhRoute
   '/vektornyi-massazh': typeof VektornyiMassazhRoute
   '/robots/txt': typeof RobotsTxtRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
-  '/banki': typeof BankiRoute
   '/girudoterapiya': typeof GirudoterapiyaRoute
   '/ketgut': typeof KetgutRoute
   '/klassicheskii-massazh': typeof KlassicheskiiMassazhRoute
   '/limfaticheskii-massazh': typeof LimfaticheskiiMassazhRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/vakuumnyi-massazh': typeof VakuumnyiMassazhRoute
   '/vektornyi-massazh': typeof VektornyiMassazhRoute
   '/robots/txt': typeof RobotsTxtRoute
 }
@@ -107,13 +107,13 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
-  '/banki': typeof BankiRoute
   '/girudoterapiya': typeof GirudoterapiyaRoute
   '/ketgut': typeof KetgutRoute
   '/klassicheskii-massazh': typeof KlassicheskiiMassazhRoute
   '/limfaticheskii-massazh': typeof LimfaticheskiiMassazhRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/vakuumnyi-massazh': typeof VakuumnyiMassazhRoute
   '/vektornyi-massazh': typeof VektornyiMassazhRoute
   '/robots/txt': typeof RobotsTxtRoute
 }
@@ -122,39 +122,39 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/$'
-    | '/banki'
     | '/girudoterapiya'
     | '/ketgut'
     | '/klassicheskii-massazh'
     | '/limfaticheskii-massazh'
     | '/privacy-policy'
     | '/sitemap.xml'
+    | '/vakuumnyi-massazh'
     | '/vektornyi-massazh'
     | '/robots/txt'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/$'
-    | '/banki'
     | '/girudoterapiya'
     | '/ketgut'
     | '/klassicheskii-massazh'
     | '/limfaticheskii-massazh'
     | '/privacy-policy'
     | '/sitemap.xml'
+    | '/vakuumnyi-massazh'
     | '/vektornyi-massazh'
     | '/robots/txt'
   id:
     | '__root__'
     | '/'
     | '/$'
-    | '/banki'
     | '/girudoterapiya'
     | '/ketgut'
     | '/klassicheskii-massazh'
     | '/limfaticheskii-massazh'
     | '/privacy-policy'
     | '/sitemap.xml'
+    | '/vakuumnyi-massazh'
     | '/vektornyi-massazh'
     | '/robots/txt'
   fileRoutesById: FileRoutesById
@@ -162,13 +162,13 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   SplatRoute: typeof SplatRoute
-  BankiRoute: typeof BankiRoute
   GirudoterapiyaRoute: typeof GirudoterapiyaRoute
   KetgutRoute: typeof KetgutRoute
   KlassicheskiiMassazhRoute: typeof KlassicheskiiMassazhRoute
   LimfaticheskiiMassazhRoute: typeof LimfaticheskiiMassazhRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  VakuumnyiMassazhRoute: typeof VakuumnyiMassazhRoute
   VektornyiMassazhRoute: typeof VektornyiMassazhRoute
   RobotsTxtRoute: typeof RobotsTxtRoute
 }
@@ -180,6 +180,13 @@ declare module '@tanstack/react-router' {
       path: '/vektornyi-massazh'
       fullPath: '/vektornyi-massazh'
       preLoaderRoute: typeof VektornyiMassazhRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/vakuumnyi-massazh': {
+      id: '/vakuumnyi-massazh'
+      path: '/vakuumnyi-massazh'
+      fullPath: '/vakuumnyi-massazh'
+      preLoaderRoute: typeof VakuumnyiMassazhRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sitemap.xml': {
@@ -224,13 +231,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GirudoterapiyaRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/banki': {
-      id: '/banki'
-      path: '/banki'
-      fullPath: '/banki'
-      preLoaderRoute: typeof BankiRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/$': {
       id: '/$'
       path: '/$'
@@ -258,13 +258,13 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   SplatRoute: SplatRoute,
-  BankiRoute: BankiRoute,
   GirudoterapiyaRoute: GirudoterapiyaRoute,
   KetgutRoute: KetgutRoute,
   KlassicheskiiMassazhRoute: KlassicheskiiMassazhRoute,
   LimfaticheskiiMassazhRoute: LimfaticheskiiMassazhRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  VakuumnyiMassazhRoute: VakuumnyiMassazhRoute,
   VektornyiMassazhRoute: VektornyiMassazhRoute,
   RobotsTxtRoute: RobotsTxtRoute,
 }

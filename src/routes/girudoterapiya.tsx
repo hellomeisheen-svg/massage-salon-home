@@ -47,7 +47,7 @@ export const Route = createFileRoute("/girudoterapiya")({
           "@graph": [
             {
               "@type": "MedicalBusiness",
-              "@id": "https://7heavenmassage.ru/#business",
+              "@id": "https://7heavenmassage.ru/girudoterapiya#business",
               name: "Седьмое небо",
               description:
                 "Кабинет массажа и гирудотерапии Татьяны Злобиной в посёлке Трудовое между Владивостоком и Артёмом.",
@@ -87,7 +87,7 @@ export const Route = createFileRoute("/girudoterapiya")({
               name: "Гирудотерапия",
               serviceType: "Гирудотерапия (лечение медицинскими пиявками)",
               url: "https://7heavenmassage.ru/girudoterapiya",
-              provider: { "@id": "https://7heavenmassage.ru/#business" },
+              provider: { "@id": "https://7heavenmassage.ru/girudoterapiya#business" },
               areaServed: [
                 { "@type": "Place", name: "Трудовое" },
                 { "@type": "Place", name: "Владивосток" },
