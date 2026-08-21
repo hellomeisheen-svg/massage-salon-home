@@ -281,7 +281,7 @@ export function formatDurationString(value: string, multiplier = 1) {
 
 export function formatSessionLine(sessionCount: number, duration: string) {
   if (sessionCount === 1) {
-    return `1 сеанс — ${duration}`;
+    return `1 сеанс · ${duration}`;
   }
   const sessionWord = pluralize(sessionCount, ["сеанс", "сеанса", "сеансов"]);
   return `В пакете: ${sessionCount}\u00A0${sessionWord} · ${duration}`;
@@ -504,7 +504,7 @@ function ServiceCardContent({
           )}
 
           {/* Description */}
-          <p className="mt-6 whitespace-pre-line body-text text-[#566A93] sm:hidden">
+          <p className="mt-6 body-text text-[#566A93] sm:hidden line-clamp-3">
             {variant.mobileDescription || variant.description}
           </p>
           <p className="mt-6 hidden whitespace-pre-line body-text text-[#566A93] sm:block sm:max-w-none xl:max-w-[540px]">
@@ -542,7 +542,7 @@ function ServiceCardContent({
             onClick={() => openBooking(bookingTitle)}
             className="btn-primary flex-1"
           >
-            Записаться
+            Записаться онлайн
           </button>
           {servicePageLinks[clean(type.title)] ? (
             <Link
@@ -607,7 +607,7 @@ function ServiceCardContent({
             onClick={() => openBooking(bookingTitle)}
             className="btn-primary w-full h-[60px]"
           >
-            Записаться
+            Записаться онлайн
           </button>
           
           <div className="flex items-center gap-2">

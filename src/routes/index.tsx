@@ -149,7 +149,7 @@ function Index() {
       <PromoBanner
         title={
           <>
-            <span className="xl:hidden">До&nbsp;1&nbsp;сентября покупайте программы по&nbsp;прежней цене</span>
+            <span className="xl:hidden">Успейте до повышения цен</span>
             <span className="hidden xl:inline">
               С&nbsp;1&nbsp;сентября часть курсов подорожает, а&nbsp;пока
               <br />

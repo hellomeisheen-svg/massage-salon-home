@@ -54,7 +54,7 @@ export const Route = createFileRoute("/klassicheskii-massazh")({
                 {
                   "@type": "Question",
                   name: "Что взять с собой?",
-                  acceptedAnswer: { "@type": "Answer", text: "Ничего: бельё, полотенца и всё необходимое есть в кабинете, каждому гостю — свежий выглаженный комплект. Просто приходите в удобной одежде." } },
+                  acceptedAnswer: { "@type": "Answer", text: "Возьмите с собой хорошее настроение и удобную одежду. Всё остальное мы предоставим: одноразовые материалы, стерильные инструменты и заботу о вашем комфорте. Если у вас есть вопросы — напишите нам заранее, мы с радостью поможем подготовиться." } },
                 {
                   "@type": "Question",
                   name: "Можно ли применять классический массаж после простуды?",
@@ -63,7 +63,7 @@ export const Route = createFileRoute("/klassicheskii-massazh")({
                 {
                   "@type": "Question",
                   name: "Где находится кабинет и как записаться?",
-                  acceptedAnswer: { "@type": "Answer", text: "Кабинет расположен в посёлке Трудовое. Принимаю по предварительной записи. Записаться можно через Max — я уточню удобное время и дам необходимые рекомендации по подготовке к вашему первому сеансу." } }] }] }) }] }),
+                  acceptedAnswer: { "@type": "Answer", text: "Кабинет расположен в посёлке Трудовое. Принимаю по предварительной записи. Записаться можно в мессенджере — я уточню удобное время и дам необходимые рекомендации по подготовке к вашему первому сеансу." } }] }] }) }] }),
   component: KlassicheskiiPage });
 
 const content: ServicePageContent = {
@@ -72,7 +72,7 @@ const content: ServicePageContent = {
   title: "Классический массаж",
   heroText: "Массажные техники для расслабления мышц, снятия напряжения и ощущения лёгкости в теле. Кабинет в посёлке Трудовое.",
   heroImage: "/images/uslugi-klassicheskii-massazh.webp",
-  heroImageAlt: "Классический массаж в кабинете Татьяны Злобиной",
+  heroImageAlt: "Классический массаж всего тела в кабинете Седьмое небо",
   aboutHeading: <>Обсуждаем состояние перед каждым визитом и подбираем технику</>,
   bookingPrefix: "Классический массаж",
   prioritizeKeys: ["classic", "classicFace"],
@@ -114,8 +114,12 @@ const content: ServicePageContent = {
               <p className="mt-2">Точная работа с зонами ежедневной нагрузки. Массаж может подойти после длительного стояния, ходьбы или физической активности.</p>
             </div>
           </div>
-          <div className="mt-6 p-4 bg-[#F2F8FF] text-[#1C3C8C] rounded-lg font-medium">
-            Интенсивность и зоны подбираются индивидуально. Массаж лица и ног имеет ряд противопоказаний, которые обсуждаются до сеанса.
+          <div className="mt-6 p-5 bg-[#F2F8FF] text-[#1C3C8C] rounded-[12px] border border-[#DAEBFF] shadow-sm flex items-start gap-4">
+            <div className="shrink-0 w-6 h-6 rounded-full bg-white border border-[#DAEBFF] flex items-center justify-center text-[12px]">✅</div>
+            <div className="text-[15px] leading-[1.5]">
+              <p className="font-semibold mb-1">Используем только одноразовое</p>
+              Интенсивность и зоны подбираются индивидуально. Массаж лица и ног имеет ряд противопоказаний, которые обсуждаются до сеанса.
+            </div>
           </div>
         </>
       ) },

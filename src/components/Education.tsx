@@ -98,7 +98,7 @@ export function Education() {
                 <div className="flex justify-end xl:hidden xl:flex-shrink-0 pointer-events-none relative z-20 xl:mb-[-10px]">
                   <img
                     src="/images/tatiana-signature.svg"
-                    alt="Подпись Татьяны Злобиной — гарантия качества"
+                    alt="Подпись Татьяны Злобиной"
                     className="h-auto w-[120px] sm:w-[180px] xl:w-[clamp(140px,12vw,225px)] opacity-80 xl:opacity-100"
                     loading="lazy"
                   />

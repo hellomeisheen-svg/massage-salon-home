@@ -51,15 +51,19 @@ export function QuizContactForm({
     e.preventDefault();
     let ok = true;
     
+    if (!name.trim()) {
+      ok = false;
+    }
+
     if (phone.length !== 10) {
-      setPhoneError("Введите номер телефона полностью");
+      setPhoneError("Пожалуйста, введите телефон");
       ok = false;
     } else {
       setPhoneError(null);
     }
     
     if (!consent) {
-      setConsentError("Отметьте согласие с политикой конфиденциальности");
+      setConsentError("Пожалуйста, отметьте согласие");
       ok = false;
     } else {
       setConsentError(null);
@@ -92,7 +96,7 @@ export function QuizContactForm({
             name="name"
             required
             autoComplete="name"
-            placeholder="Как к вам обращаться" 
+            placeholder="Пожалуйста, укажите имя" 
             className="ds-input"
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -121,7 +125,7 @@ export function QuizContactForm({
             {[
               { id: "whatsapp", label: "WhatsApp" },
               { id: "telegram", label: "Telegram" },
-              { id: "max", label: "'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n                                        \n                                            \n                                            я прошу тебя предоставить отчет? почему ты меня игнорируешь!" },
+              { id: "max", label: "Мессенджер" },
             ].map(m => (
               <button
                 key={m.id}
@@ -182,7 +186,7 @@ export function QuizContactForm({
             <span>Отправка...</span>
           </>
         ) : (
-          "Отправить"
+          "Получить результат"
         )}
       </button>
 

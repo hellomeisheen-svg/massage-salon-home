@@ -61,8 +61,8 @@ export const Route = createFileRoute("/limfaticheskii-massazh")({
 
                 {
                   "@type": "Question",
-                  name: "Нужен ли курс?",
-                  acceptedAnswer: { "@type": "Answer", text: "Количество процедур лимфатического массажа зависит от выраженности отёчности и состояния здоровья. Один сеанс помогает оценить переносимость. Если метод подходит, мы составим график встреч с учетом того, как долго сохраняется лёгкость в теле." }
+                  name: "Что взять с собой?",
+                  acceptedAnswer: { "@type": "Answer", text: "Возьмите с собой хорошее настроение и удобную одежду. Всё остальное мы предоставим: одноразовые материалы, стерильные инструменты и заботу о вашем комфорте. Если у вас есть вопросы — напишите нам заранее, мы с радостью поможем подготовиться." }
                 },
                 {
                   "@type": "Question",
@@ -72,7 +72,7 @@ export const Route = createFileRoute("/limfaticheskii-massazh")({
                 {
                   "@type": "Question",
                   name: "Где находится кабинет и как записаться?",
-                  acceptedAnswer: { "@type": "Answer", text: "Кабинет расположен в посёлке Трудовое. Принимаю по предварительной записи. Записаться можно через Max — я уточню удобное время и дам необходимые рекомендации по подготовке к вашему первому сеансу." } }] }] }) }] }),
+                  acceptedAnswer: { "@type": "Answer", text: "Кабинет расположен в посёлке Трудовое. Принимаю по предварительной записи. Записаться можно в мессенджере — я уточню удобное время и дам необходимые рекомендации по подготовке к вашему первому сеансу." } }] }] }) }] }),
   component: LimfaticheskiiPage });
 
 const content: ServicePageContent = {
@@ -114,8 +114,12 @@ const content: ServicePageContent = {
             </div>
           </div>
 
-          <div className="mt-6 p-4 bg-[#F2F8FF] text-[#1C3C8C] rounded-lg font-medium">
-            Продолжительность сеанса составляет 2 часа для всего тела и 40 минут для зоны лица.
+          <div className="mt-6 p-5 bg-[#F2F8FF] text-[#1C3C8C] rounded-[12px] border border-[#DAEBFF] shadow-sm flex items-start gap-4">
+            <div className="shrink-0 w-6 h-6 rounded-full bg-white border border-[#DAEBFF] flex items-center justify-center text-[12px]">✅</div>
+            <div className="text-[15px] leading-[1.5]">
+              <p className="font-semibold mb-1">Используем только одноразовое</p>
+              Продолжительность сеанса составляет 2 часа для всего тела и 40 минут для зоны лица.
+            </div>
           </div>
         </>
       ) },
@@ -166,8 +170,12 @@ const content: ServicePageContent = {
             <li>выраженных сосудистых заболеваниях;</li>
             <li>диагностированной лимфедеме или выраженном лимфостазе.</li>
           </ul>
-          <div className="mt-6 p-4 bg-[#F2F8FF] text-[#1C3C8C] rounded-lg font-medium">
-            Перед процедурой сообщите специалисту о хронических заболеваниях, аллергиях, беременности, недавних операциях и всех принимаемых препаратах. Не отменяйте назначенные лекарства самостоятельно.
+          <div className="mt-6 p-5 bg-[#F2F8FF] text-[#1C3C8C] rounded-[12px] border border-[#DAEBFF] shadow-sm flex items-start gap-4">
+            <div className="shrink-0 w-6 h-6 rounded-full bg-white border border-[#DAEBFF] flex items-center justify-center text-[12px]">✅</div>
+            <div className="text-[15px] leading-[1.5]">
+              <p className="font-semibold mb-1">Используем только одноразовое</p>
+              Перед процедурой сообщите специалисту о хронических заболеваниях, аллергиях, беременности, недавних операциях и всех принимаемых препаратах. Не отменяйте назначенные лекарства самостоятельно.
+            </div>
           </div>
         </>
       ) },

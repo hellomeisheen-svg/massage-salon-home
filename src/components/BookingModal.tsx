@@ -146,7 +146,7 @@ function BookingDialog({
               Спасибо!
             </h2>
             <p className="mt-4 max-w-[360px] text-[15px] leading-[1.6] text-[#566A93] sm:text-[16px]">
-              Свяжемся с&nbsp;вами в&nbsp;течение 15&nbsp;минут, чтобы уточнить детали и&nbsp;подтвердить время.
+              Мы свяжемся с вами в течение 15 минут, чтобы уточнить детали и подтвердить время.
             </p>
 
             <div className="mt-8 flex w-full flex-col gap-3 sm:px-0">
@@ -189,14 +189,14 @@ function BookingDialog({
                 setError(null);
                 let ok = true;
                 if (phone.length !== 10) {
-                  setPhoneError("Введите номер телефона полностью");
+                  setPhoneError("Пожалуйста, введите телефон");
                   ok = false;
                 } else {
                   setPhoneError(null);
                 }
                 if (!consent) {
                   setConsentError(
-                    "Отметьте согласие с политикой конфиденциальности, чтобы отправить заявку",
+                    "Пожалуйста, отметьте согласие",
                   );
                   ok = false;
                 } else {
@@ -254,7 +254,7 @@ function BookingDialog({
                   name="name"
                   required
                   autoComplete="name"
-                  placeholder="Как к вам обращаться"
+                  placeholder="Пожалуйста, укажите имя"
                   className="ds-input"
                 />
               </label>
@@ -283,7 +283,7 @@ function BookingDialog({
                   {[
                     { id: "whatsapp", label: "WhatsApp" },
                     { id: "telegram", label: "Telegram" },
-                    { id: "max", label: "'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n                                        \n                                            \n                                            я прошу тебя предоставить отчет? почему ты меня игнорируешь!" },
+                    { id: "max", label: "Мессенджер" },
                   ].map(m => (
                     <button
                       key={m.id}
@@ -370,7 +370,7 @@ function BookingDialog({
                     <span>Отправка...</span>
                   </>
                 ) : (
-                  "Отправить заявку"
+                  "Записаться онлайн"
                 )}
               </button>
             </form>
