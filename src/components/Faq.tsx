@@ -42,7 +42,10 @@ function FaqItem({ q, a }: { q: string; a: string }) {
         aria-controls={contentId}
         className="w-full flex items-center justify-between gap-4 p-5 sm:p-6 xl:p-7 text-left faq-trigger focus:outline-none"
       >
-        <span className="[font-family:Inter] sm:[font-family:var(--font-heading)] ds-h4 text-[#1C3C8C] text-[18px] sm:text-[28px] xl:text-[28px]">
+        <span 
+          className="ds-h4 text-[#1C3C8C] text-[18px] sm:text-[28px] xl:text-[28px]"
+          style={{ fontFamily: window.innerWidth < 640 ? 'Inter, sans-serif' : 'var(--font-heading)' }}
+        >
           {q}
         </span>
         <span
