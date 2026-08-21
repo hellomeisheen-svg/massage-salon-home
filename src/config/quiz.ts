@@ -70,7 +70,7 @@ export const QUIZ_CONFIG: {
     },
     {
       id: "addCups",
-      question: "Дополнить массаж постановкой банок для лучшего эффекта?",
+      question: "Дополнить массаж вакуумной техникой для лучшего эффекта?",
       type: "single",
       showIf: (a) => a.goal === "relax" && ["whole_body", "back_neck"].includes(a.relax_area),
       options: [
