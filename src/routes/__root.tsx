@@ -162,7 +162,7 @@ function RootShell({ children }: { children: ReactNode }) {
             <img
               src="https://mc.yandex.ru/watch/111534340"
               style={{ position: "absolute", left: "-9999px" }}
-              alt=""
+              alt="Яндекс Метрика"
             />
           </div>
         </noscript>

@@ -50,7 +50,7 @@ export const Route = createFileRoute("/ketgut")({
               "image": "https://7heavenmassage.ru/images/uslugi-ketgut.webp",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "ул. Лермонтова, 77",
+                "streetAddress": "ул. Лермонтова, 46",
                 "addressLocality": "посёлок Трудовое",
                 "addressRegion": "Приморский край",
                 "addressCountry": "RU" },

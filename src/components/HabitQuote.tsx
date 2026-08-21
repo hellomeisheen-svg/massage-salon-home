@@ -52,7 +52,7 @@ export function HabitQuote() {
             <img
               key={i}
               src={img.src}
-              alt=""
+              alt="Уютная атмосфера в массажном кабинете Седьмое небо"
               width={512}
               height={512}
               loading="lazy"

@@ -45,7 +45,7 @@ export function Hero() {
           <div className="flex flex-col items-start text-left">
             <img
               src="/images/tatyana-photo.webp"
-              alt="Татьяна Злобина"
+              alt="Татьяна Злобина — мастер оздоровительных практик в кабинете Седьмое небо"
               className="h-[90px] w-[70px] xl:h-[110px] xl:w-[85px] rounded-[12px] border border-[#daebff] ds-bento-shadow object-cover"
             />
             <h3 className="font-noto-serif-narrow mt-6 ds-h4 text-[#1C3C8C] sm:text-[28px] xl:text-[28px]">
@@ -64,7 +64,7 @@ export function Hero() {
         <div className="relative h-[420px] overflow-hidden rounded-[12px] border border-[#daebff] ds-bento-shadow sm:h-[520px] xl:h-auto xl:min-h-0">
           <img
             className="absolute inset-0 h-full w-full scale-x-[-1] object-cover object-top sm:object-center xl:object-top"
-            alt="Оздоровительные процедуры"
+            alt="Оздоровительные процедуры в кабинете Седьмое небо (Трудовое)"
             src="/images/hero-portrait-solid.webp"
             loading="eager"
             fetchPriority="high"
