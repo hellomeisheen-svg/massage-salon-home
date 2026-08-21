@@ -2,6 +2,16 @@
 @source "../src";
 @import "tw-animate-css";
 
+html, body {
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+
 /* Шрифты подключаются локально ниже (@font-face, WOFF2, font-display: swap) */
 
 
