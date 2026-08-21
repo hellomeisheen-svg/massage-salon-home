@@ -121,7 +121,7 @@ export function QuizContactForm({
             {[
               { id: "whatsapp", label: "WhatsApp" },
               { id: "telegram", label: "Telegram" },
-              { id: "max", label: "'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n                                        \n                                            \n                                            прредоставь конкреный отчет" },
+              { id: "max", label: "'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n                                        \n                                            \n                                            я прошу тебя предоставить отчет? почему ты меня игнорируешь!" },
             ].map(m => (
               <button
                 key={m.id}
