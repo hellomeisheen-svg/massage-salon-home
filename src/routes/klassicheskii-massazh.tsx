@@ -79,20 +79,18 @@ const content: ServicePageContent = {
   pricesStyle: "table",
   sections: [
     {
-      label: "Об услуге",
+      label: "Что такое классический массаж?",
       content: (
         <>
-          <p className="font-medium uppercase tracking-wider text-sm mb-4">Что такое классический массаж</p>
           <p>Классический массаж — это ручная техника, включающая поглаживание, растирание, разминание и другие мягкие приёмы воздействия.</p>
           <p className="mt-4">Процедура выполняется с учётом выбранной зоны и реакции организма. Специалист регулирует давление и темп, чтобы массаж оставался комфортным и соответствовал цели обращения.</p>
           <p className="mt-4">Классический массаж может использоваться для расслабления, поддержания ощущения лёгкости, снижения чувства мышечной скованности и восстановления после обычной физической или сидячей нагрузки.</p>
         </>
       ) },
     {
-      label: "Эффект",
+      label: "Какой эффект можно получить?",
       content: (
         <>
-          <p className="font-medium uppercase tracking-wider text-sm mb-4">Какой эффект можно получить</p>
           <p>После сеанса можно почувствовать:</p>
           <ul className="list-disc pl-5 space-y-2 mt-4">
             <li>расслабление мышц;</li>
@@ -105,14 +103,13 @@ const content: ServicePageContent = {
           </ul>
           <p className="mt-4 text-sm text-muted-foreground italic">Результат зависит от выбранных зон, техники, интенсивности, продолжительности сеанса и индивидуальной реакции организма.</p>
           <p className="mt-4 text-sm text-muted-foreground italic">Классический массаж не гарантирует устранение боли, исправление осанки, лечение заболеваний позвоночника, суставов или внутренних органов.</p>
-          <p className="mt-6 text-destructive font-medium">Если боль сильная, появилась внезапно, сохраняется длительное время или сопровождается онемением, отёком, слабостью либо повышенной температурой, сначала обратитесь к врачу.</p>
+          <p className="mt-6 p-4 bg-[#DAEBFF] text-[#1C3C8C] rounded-lg font-medium">Если боль сильная, появилась внезапно, сохраняется длительное время или сопровождается онемением, отёком, слабостью либо повышенной температурой, сначала обратитесь к врачу.</p>
         </>
       ) },
     {
       label: "Зоны массажа",
       content: (
         <>
-          <p className="font-medium uppercase tracking-wider text-sm mb-4">Зоны массажа</p>
           <div className="space-y-6">
             <div>
               <p className="font-semibold text-primary">Всё тело</p>
@@ -146,7 +143,6 @@ const content: ServicePageContent = {
       label: "Как проходит сеанс",
       content: (
         <>
-          <p className="font-medium uppercase tracking-wider text-sm mb-4">Как проходит сеанс</p>
           <ol className="list-decimal pl-5 space-y-3">
             <li>Специалист уточняет цель обращения, самочувствие, пожелания и выбранные зоны.</li>
             <li>Уточняет наличие хронических заболеваний, травм, операций, аллергий и принимаемых препаратов.</li>
@@ -158,7 +154,7 @@ const content: ServicePageContent = {
           </ol>
           <div className="mt-6 p-4 bg-muted/50 rounded-lg space-y-2">
             <p>Во время процедуры возможны тепло, расслабление, умеренное давление и чувствительность в отдельных зонах.</p>
-            <p className="text-destructive font-medium">Сильная, резкая или нарастающая боль не является целью массажа. Сразу сообщите специалисту о неприятных ощущениях.</p>
+            <p className="text-[#1C3C8C] font-medium">Сильная, резкая или нарастающая боль не является целью массажа. Сразу сообщите специалисту о неприятных ощущениях.</p>
           </div>
         </>
       ) },
@@ -166,7 +162,6 @@ const content: ServicePageContent = {
       label: "Противопоказания",
       content: (
         <>
-          <p className="font-medium uppercase tracking-wider text-sm mb-4">Противопоказания и ограничения</p>
           <p>Классический массаж не проводится при:</p>
           <ul className="list-disc pl-5 space-y-1 mt-2">
             <li>повышенной температуре;</li>
@@ -198,10 +193,9 @@ const content: ServicePageContent = {
         </>
       ) },
     {
-      label: "Подготовка",
+      label: "Как подготовиться?",
       content: (
         <>
-          <p className="font-medium uppercase tracking-wider text-sm mb-4">Как подготовиться</p>
           <p>Перед сеансом:</p>
           <ul className="list-disc pl-5 space-y-2 mt-2">
             <li>примите душ;</li>
@@ -217,10 +211,9 @@ const content: ServicePageContent = {
         </>
       ) },
     {
-      label: "После сеанса",
+      label: "Что делать после сеанса?",
       content: (
         <>
-          <p className="font-medium uppercase tracking-wider text-sm mb-4">Что делать после процедуры</p>
           <p>После классического массажа возможны расслабление, лёгкая усталость, умеренная чувствительность или ощущение тепла в обработанных зонах.</p>
           <p className="mt-4 font-semibold">После сеанса:</p>
           <ul className="list-disc pl-5 space-y-2 mt-2">
@@ -231,7 +224,7 @@ const content: ServicePageContent = {
             <li>наблюдайте за самочувствием;</li>
             <li>соблюдайте индивидуальные рекомендации специалиста.</li>
           </ul>
-          <p className="mt-6 p-4 bg-destructive/5 text-destructive rounded-lg border border-destructive/20 font-medium">
+          <p className="mt-6 p-4 bg-[#DAEBFF] text-[#1C3C8C] rounded-lg border border-[#DAEBFF]/20 font-medium">
             Обратитесь к врачу, если после процедуры появляются сильная или нарастающая боль, выраженный отёк, онемение, слабость, головокружение, повышение температуры или другие необычные симптомы.
           </p>
         </>
