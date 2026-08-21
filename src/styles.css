@@ -404,7 +404,7 @@ button:focus-visible {
   --breakpoint-2xl: 1536px;
 
   --font-heading: "Noto Serif Display", "NSD Fallback", "Times New Roman", serif;
-  --font-body: "Inter", "Inter Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", "Inter Fallback", ui-sans-serif, system-ui, sans-serif !important;
 
   --shadow-tab-active: 0 2px 8px rgba(28, 60, 140, 0.08);
   --shadow-card-hover: 0 4px 16px rgba(28, 60, 140, 0.06);
