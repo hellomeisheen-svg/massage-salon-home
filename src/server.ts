@@ -49,7 +49,18 @@ export default {
     try {
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
-      return await normalizeCatastrophicSsrResponse(response);
+      const finalResponse = await normalizeCatastrophicSsrResponse(response);
+      
+      // Set cache headers
+      const url = new URL(request.url);
+      if (url.pathname.startsWith("/assets/")) {
+        finalResponse.headers.set("Cache-Control", "public, max-age=31536000, immutable");
+      } else {
+        finalResponse.headers.set("Cache-Control", "no-cache, no-store, must-revalidate");
+      }
+      
+      return finalResponse;
+
     } catch (error) {
       console.error(error);
       return new Response(renderErrorPage(), {

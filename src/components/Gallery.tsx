@@ -1,4 +1,6 @@
 import { RollingGallery } from "@/components/ui/rolling-gallery";
+import { ClientOnly } from "@/components/ClientOnly";
+
 
 const heading = "'Noto Serif Display', Georgia, serif";
 
@@ -23,7 +25,10 @@ export default function Gallery() {
       </div>
 
       <div className="xl:pt-0">
-        <RollingGallery autoplay pauseOnHover />
+        <ClientOnly>
+          <RollingGallery autoplay pauseOnHover />
+        </ClientOnly>
+
       </div>
     </section>
   );
