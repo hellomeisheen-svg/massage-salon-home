@@ -135,7 +135,7 @@ export function Faq() {
         {/* Right column: accordion card */}
         <div className="flex flex-col gap-3 sm:gap-4">
           {items.map((it) => (
-            <FaqItem key={it.q} q={it.q} a={it.a} />
+            <FaqItem key={it.q} q={it.q} a={it.a} isMobile={isMobile} />
           ))}
         </div>
       </div>
