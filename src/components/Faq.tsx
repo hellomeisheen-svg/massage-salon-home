@@ -42,7 +42,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
         aria-controls={contentId}
         className="w-full flex items-center justify-between gap-4 p-5 sm:p-6 xl:p-7 text-left faq-trigger focus:outline-none"
       >
-        <span className="font-inter sm:font-noto-serif-narrow ds-h4 text-[#1C3C8C] text-[18px] sm:text-[28px] xl:text-[28px]">
+        <span className="font-heading ds-h4 text-[#1C3C8C] text-[18px] sm:text-[28px] xl:text-[28px] max-sm:!font-body">
           {q}
         </span>
         <span
@@ -84,7 +84,7 @@ export function Faq() {
           >
             FAQs
           </span>
-          <h2 className="font-inter sm:font-noto-serif-narrow mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0">
+          <h2 className="font-heading mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0 max-sm:!font-body">
             Отвечаю на&nbsp;самые важные вопросы
           </h2>
 
@@ -94,7 +94,7 @@ export function Faq() {
               alt="Татьяна Злобина"
               className="h-[90px] w-[70px] xl:h-[110px] xl:w-[85px] rounded-[12px] border border-[#daebff] ds-bento-shadow object-cover"
             />
-            <h3 className="font-inter sm:font-noto-serif-narrow mt-6 ds-h4 text-[#1C3C8C] sm:text-[28px] xl:text-[28px]">
+            <h3 className="font-heading mt-6 ds-h4 text-[#1C3C8C] sm:text-[28px] xl:text-[28px] max-sm:!font-body">
               Татьяна Злобина
             </h3>
             <p className="mt-3 body-text text-[#566A93]">
