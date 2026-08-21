@@ -180,9 +180,6 @@ function RootComponent() {
         <Analytics />
       </ClientOnly>
       
-      {/* 
-        Preloader must be outside ClientOnly to be visible immediately in SSR HTML.
-      */}
       <Preloader />
 
       <Outlet />
