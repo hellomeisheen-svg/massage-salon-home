@@ -27,7 +27,7 @@ export const Route = createFileRoute("/vakuumnyi-massazh")({
           "@graph": [
             {
               "@type": "MedicalBusiness",
-              "@id": "https://7heavenmassage.ru/#business",
+              "@id": "https://7heavenmassage.ru/vakuumnyi-massazh#business",
               name: "Седьмое небо",
               description:
                 "Кабинет массажа и оздоровительных практик Татьяны Злобиной в посёлке Трудовое между Владивостоком и Артёмом.",
