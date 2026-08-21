@@ -20,13 +20,15 @@ export function HydrationWatchdog() {
   if (!isHanging) return null;
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-[#EFF6FF] p-6 text-center">
-      <div className="max-w-md space-y-4">
-        <h2 className="text-xl font-medium text-[#1C3C8C]">Похоже, загрузка заняла слишком много времени</h2>
-        <p className="text-[#566A93]">Попробуйте обновить страницу или проверьте соединение.</p>
+    <div className="fixed bottom-4 left-4 right-4 z-[9999] sm:left-auto sm:w-[400px]">
+      <div className="ds-card ds-bento-shadow flex flex-col items-start gap-3 p-4 bg-white/95 backdrop-blur-md border-[#DAEBFF]">
+        <div className="flex items-center gap-2 text-[#1C3C8C]">
+          <div className="h-2 w-2 animate-pulse rounded-full bg-[#1C3C8C]" />
+          <p className="text-sm font-medium">Некоторые элементы загружаются дольше обычного</p>
+        </div>
         <button 
           onClick={() => window.location.reload()}
-          className="btn-primary"
+          className="text-xs font-medium text-[#1C3C8C] underline underline-offset-4 hover:opacity-70 transition-opacity"
         >
           Обновить страницу
         </button>

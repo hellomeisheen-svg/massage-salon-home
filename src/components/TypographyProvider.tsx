@@ -11,6 +11,9 @@ import { typographyPass } from "@/lib/typography";
  */
 export function TypographyProvider() {
   useEffect(() => {
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    const initialDelay = isSafari ? 300 : 150;
+
     let scheduled = false;
     let observer: MutationObserver | null = null;
 
@@ -34,7 +37,7 @@ export function TypographyProvider() {
     };
 
     observer = new MutationObserver(() => schedule(0));
-    schedule(150);
+    schedule(initialDelay);
 
     return () => {
       observer?.disconnect();

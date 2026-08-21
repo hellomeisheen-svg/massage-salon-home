@@ -7,9 +7,14 @@ const Star = ({ className }: { className?: string }) => (
 );
 
 export function Preloader() {
-  const [hidden, setHidden] = useState(false);
+  const [hidden, setHidden] = useState(true);
   const [leaving, setLeaving] = useState(false);
   const loadedRef = useRef(false);
+
+  useEffect(() => {
+    // Включаем отображение только на клиенте
+    setHidden(false);
+  }, []);
 
   useEffect(() => {
     let removeTimer: ReturnType<typeof setTimeout>;

@@ -172,10 +172,10 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <HydrationWatchdog />
       <ClientOnly>
-        <Preloader />
         <TypographyProvider />
         <Analytics />
       </ClientOnly>
+      <Preloader />
 
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
