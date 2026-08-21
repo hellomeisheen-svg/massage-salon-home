@@ -149,11 +149,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="ru">
+    <html>
       <head>
         <HeadContent />
       </head>
       <body>
+        <Preloader />
         {children}
         <Scripts />
         <noscript>
@@ -180,8 +181,6 @@ function RootComponent() {
         <Analytics />
       </ClientOnly>
       
-      <Preloader />
-
       <Outlet />
       
       <ClientOnly>
