@@ -121,7 +121,7 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
             </div>
             <h2 className="font-noto-serif-narrow ds-h3 text-[#1c3c8c]">Спасибо!</h2>
             <p className="mt-4 max-w-[360px] text-[15px] leading-[1.6] text-[#566A93] sm:text-[16px]">
-              Ваша программа уже у&nbsp;нас. Администратор свяжется с&nbsp;вами в&nbsp;течение 15&nbsp;минут.
+              Ваша программа уже у&nbsp;меня. Свяжусь с&nbsp;вами в&nbsp;течение 15&nbsp;минут.
             </p>
             <button onClick={onClose} className="btn-primary mt-8 w-full">Вернуться на сайт</button>
           </div>
@@ -148,7 +148,7 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
                 ))}
               </div>
             </div>
-            <button onClick={handleNext} className="btn-primary mt-8 w-full">Подобрать программу</button>
+            <button onClick={handleNext} className="btn-primary mt-8 w-full">Подобрать процедуру</button>
           </div>
         ) : isResultsStep ? (
           <div className="animate-in fade-in slide-in-from-right-4 duration-300">

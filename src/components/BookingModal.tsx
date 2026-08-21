@@ -146,7 +146,7 @@ function BookingDialog({
               Спасибо!
             </h2>
             <p className="mt-4 max-w-[360px] text-[15px] leading-[1.6] text-[#566A93] sm:text-[16px]">
-              Мы свяжемся с вами в течение 15 минут, чтобы уточнить детали и подтвердить время.
+              Свяжусь с вами в течение 15 минут, чтобы уточнить детали и подтвердить время.
             </p>
 
             <div className="mt-8 flex w-full flex-col gap-3 sm:px-0">

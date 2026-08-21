@@ -166,7 +166,7 @@ function PageHero({ content }: { content: ServicePageContent }) {
                   }
                   className="btn-secondary w-full sm:w-[280px] xl:w-[250px] whitespace-nowrap"
                 >
-                  Получить консультацию
+                  Написать мастеру
                 </button>
               </div>
             </div>
