@@ -32,7 +32,7 @@ export function PriceInclusions() {
             </div>
             <h4 className="font-noto-serif-narrow text-lg text-[#1C3C8C]">Забота</h4>
             <p className="text-sm font-light text-[#566A93] leading-relaxed">
-              После сеанса мы предложим вам чашку травяного чая, чтобы плавного вернуться в ритм дня.
+              После сеанса я предложу вам чашку травяного чая, чтобы плавного вернуться в ритм дня.
             </p>
           </div>
         </div>
@@ -50,7 +50,7 @@ export function FinalCTA() {
         <div className="max-w-3xl mx-auto text-center space-y-8">
           <h2 className="ds-h2 font-noto-serif-narrow text-[#1C3C8C]">Не знаете, что выбрать?</h2>
           <p className="text-lg font-light text-[#566A93] leading-relaxed">
-            Запишитесь на первичную консультацию, и мы вместе подберем идеальную программу восстановления, исходя из вашего состояния и запроса.
+            Запишитесь на первичную консультацию, и я вместе с вами подберу идеальную программу восстановления, исходя из вашего состояния и запроса.
           </p>
           <div className="pt-4">
             <button 

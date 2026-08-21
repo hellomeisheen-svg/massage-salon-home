@@ -41,7 +41,7 @@ function PrivacyPolicy() {
           <div className="mt-8 p-6 bg-white border border-[#DAEBFF] rounded-[12px] ds-bento-shadow text-[#566A93]">
             <p className="font-semibold text-[#1C3C8C] mb-3">Коротко о защите ваших данных:</p>
             <ol className="list-decimal pl-5 space-y-2 text-[15px]">
-              <li>Мы не передаём ваши данные третьим лицам.</li>
+              <li>Я не передаю ваши данные третьим лицам.</li>
               <li>Храним информацию в защищённой системе.</li>
               <li>Вы можете запросить удаление данных в любой момент.</li>
             </ol>
