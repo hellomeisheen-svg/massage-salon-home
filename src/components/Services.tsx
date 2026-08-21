@@ -235,26 +235,11 @@ export function pluralize(n: number, forms: [string, string, string]) {
 }
 
 export function formatDurationValue(min: number) {
-  const hours = Math.floor(min / 60);
-  const minutes = min % 60;
-  if (hours === 0) {
-    return {
-      text: `${min}\u00A0${pluralize(min, ["минута", "минуты", "минут"])}`,
-      amount: min,
-      unit: "min" as const,
-    };
-  }
-  if (minutes === 0) {
-    return {
-      text: `${hours}\u00A0${pluralize(hours, ["час", "часа", "часов"])}`,
-      amount: hours,
-      unit: "hour" as const,
-    };
-  }
+  const hours = Math.round(min / 60);
   return {
-    text: `${hours}\u00A0${pluralize(hours, ["час", "часа", "часов"])} ${minutes}\u00A0${pluralize(minutes, ["минута", "минуты", "минут"])}`,
-    amount: min,
-    unit: "mixed" as const,
+    text: `${hours}\u00A0${pluralize(hours, ["час", "часа", "часов"])}`,
+    amount: hours,
+    unit: "hour" as const,
   };
 }
 
