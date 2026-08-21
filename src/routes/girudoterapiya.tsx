@@ -195,14 +195,15 @@ const hirudoRows: HirudoRow[] = [
   {
     zone: "Медицинские пиявки",
     subtitle: "Оздоровительная практика",
-    duration: "2 часа",
+    duration: "1,5–2 часа",
     base: 4800,
     perLeech: false,
     leechCounts: [6, 16, 74] },
   {
     zone: "Косметические пиявки",
     subtitle: "Мягкий уход и\u00A0забота о\u00A0коже",
-    duration: "2 часа",
+    duration: "1,5–2 часа",
+
     base: 600,
     perLeech: true,
     leechCounts: [6, 10, 20] }];
@@ -797,7 +798,8 @@ function Prices() {
     <section id="prices" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section">
       <div className="container-1900">
         <h2 className="font-noto-serif-narrow text-center ds-h2 text-[#1C3C8C]">
-          2 часа
+          1,5–2 часа
+
         </h2>
 
         {/* Desktop View */}
