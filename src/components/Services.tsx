@@ -251,14 +251,8 @@ export function formatDurationString(value: string, multiplier = 1) {
   if (isRange) {
     const a = formatDurationValue(scaled[0]);
     const b = formatDurationValue(scaled[1]);
-    if (a.unit === b.unit && a.unit !== "mixed") {
-      const unitWord =
-        a.unit === "hour"
-          ? pluralize(Math.max(scaled[0], scaled[1]) / 60, ["час", "часа", "часов"])
-          : pluralize(Math.max(...scaled), ["минута", "минуты", "минут"]);
-      return `${a.amount}\u00A0–\u00A0${b.amount}\u00A0${unitWord}`;
-    }
-    return `${a.text}\u00A0–\u00A0${b.text}`;
+    const unitWord = pluralize(Math.max(scaled[0], scaled[1]) / 60, ["час", "часа", "часов"]);
+    return `${a.amount}\u00A0–\u00A0${b.amount}\u00A0${unitWord}`;
   }
   return scaled.map((n) => formatDurationValue(n).text).join(", ");
 }
