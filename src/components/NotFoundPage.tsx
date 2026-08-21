@@ -46,7 +46,7 @@ export function NotFoundPage() {
 
             <div className="mt-8 flex justify-center">
               <Link to="/" className="btn-primary w-full sm:w-[280px] xl:w-[250px] inline-flex items-center justify-center text-center whitespace-nowrap">
-                На главную
+                Вернуться к услугам
               </Link>
             </div>
           </div>

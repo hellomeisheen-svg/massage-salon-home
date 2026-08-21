@@ -95,7 +95,7 @@ export const Route = createFileRoute("/girudoterapiya")({
               offers: [
                 {
                   "@type": "Offer",
-                  name: "Медицинские пиявки, сеанс",
+                  name: "Оздоровительный сеанс гирудотерапии",
                   price: "4800",
                   priceCurrency: "RUB",
                   url: "https://7heavenmassage.ru/girudoterapiya#prices" },
@@ -243,7 +243,7 @@ function GirudoterapiyaPage() {
         <PromoBanner
           title={
             <>
-              <span className="xl:hidden">До&nbsp;1&nbsp;сентября покупайте программы по&nbsp;прежней цене</span>
+              <span className="xl:hidden">Успейте до повышения цен</span>
               <span className="hidden xl:inline">
                 С&nbsp;1&nbsp;сентября часть курсов подорожает, а&nbsp;пока
                 <br />
