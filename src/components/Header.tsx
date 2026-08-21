@@ -104,7 +104,7 @@ export function Header({
           rel="noopener noreferrer"
           className={`btn-header-cta w-[250px] ${heroPassed ? "btn-header-cta-active" : ""}`}
         >
-          Онлайн запись
+          Записаться онлайн
         </a>
       </div>
 
