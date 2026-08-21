@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { RatingBlock } from "@/components/RatingBlock";
+
 import { QuizModal } from "@/components/quiz/QuizModal";
 
 
