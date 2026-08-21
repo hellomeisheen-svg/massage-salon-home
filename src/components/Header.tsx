@@ -174,7 +174,7 @@ export function Header({
                           className="flex w-full items-center justify-between rounded-[12px] px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors text-link-active"
                         >
 
-                          Посмотреть все услуги
+                          Выбрать услугу
                           <ChevronDown className={`transition-transform duration-300 ${servicesOpen ? "rotate-180" : ""}`} size={20} />
                         </button>
                         {servicesOpen && (

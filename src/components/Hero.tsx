@@ -27,7 +27,7 @@ function HeadlineBlock({ onOpenQuiz }: { onOpenQuiz: () => void }) {
           onClick={onOpenQuiz}
           className="btn-secondary w-full sm:w-[280px] xl:w-[250px] whitespace-nowrap"
         >
-          Подобрать программу
+          Подобрать процедуру
         </button>
       </div>
     </div>
