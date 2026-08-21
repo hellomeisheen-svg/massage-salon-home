@@ -9,7 +9,7 @@ import {
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
-import appCss from "../styles.css?url";
+import "../styles.css";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Preloader } from "@/components/Preloader";
 import { TypographyProvider } from "@/components/TypographyProvider";
@@ -115,10 +115,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "Седьмое небо" },
       { property: "og:locale", content: "ru_RU" }],
     links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
       {
         rel: "preconnect",
         href: "https://mc.yandex.ru",
