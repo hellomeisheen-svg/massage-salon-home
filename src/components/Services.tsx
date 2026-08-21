@@ -86,7 +86,7 @@ export const serviceTypes: ServiceType[] = [
           "Точная ручная работа с\u00A0мышцами и\u00A0фасциями по\u00A0естественным линиям тела освобождает накопленное напряжение и\u00A0снимает глубокие зажимы. Движения становятся более свободными, устойчивыми и\u00A0лёгкими, уходит ощущение скованности в\u00A0теле.",
         mobileDescription:
           "Точная работа с мышцами, фасциями помогает снять зажимы и вернуть движениям свободу и лёгкость.",
-        duration: "'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n                                        \n                                            \n                                            1 сеанс · Всё тело · 2\u00A0минуты\n\nНа главной странице в блоке \"Услуги\" в карточке \"Векторный массаж\" время отображается как две минуты. Я хочу заменить на два часа.",
+        duration: "2 часа",
         price: "5 000 ₽",
       },
     ],
