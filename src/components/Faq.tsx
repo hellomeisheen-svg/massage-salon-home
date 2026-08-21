@@ -44,7 +44,7 @@ function FaqItem({ q, a, isMobile }: { q: string; a: string; isMobile: boolean }
       >
         <span 
           className="ds-h4 text-[#1C3C8C] text-[18px] sm:text-[28px] xl:text-[28px]"
-          style={{ fontFamily: window.innerWidth < 640 ? 'Inter, sans-serif' : 'var(--font-heading)' }}
+          style={{ fontFamily: isMobile ? 'Inter, sans-serif' : 'var(--font-heading)' }}
         >
           {q}
         </span>
