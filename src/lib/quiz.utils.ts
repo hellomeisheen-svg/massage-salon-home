@@ -221,7 +221,7 @@ function getLightnessRecommendations(answers: Record<string, any>): QuizService[
   } else if (areas.includes("master_choice") || areas.length === 0) {
     ids = ["lymphatic", "classic_legs"];
   } else {
-    // Если ничего не подошло, но мы в этой ветке
+    // Если ничего не подошло — базовая рекомендация ветки
     ids = ["lymphatic", "classic_legs"];
   }
 
