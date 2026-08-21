@@ -139,7 +139,7 @@ const content: ServicePageContent = {
     </>
   ),
   heroImage: "/images/uslugi-ketgut.webp",
-  heroImageAlt: "Кабинет Татьяны Злобиной: процедура акупунктурного кетгута",
+  heroImageAlt: "Введение нитей в акупунктурные точки",
   aboutHeading: (
     <>
       Обсуждаем состояние перед каждым визитом и&nbsp;подбираем технику
