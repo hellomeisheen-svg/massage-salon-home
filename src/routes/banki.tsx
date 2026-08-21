@@ -264,9 +264,9 @@ const content: ServicePageContent = {
             <li>выраженной сосудистой хрупкости.</li>
           </ul>
 
-          <h4 className="font-semibold text-[#1C3C8C] mb-3">
+          <p className="font-semibold text-[#1C3C8C] mb-3">
             Процедура требует обязательного согласования с врачом при:
-          </h4>
+          </p>
           <ul className="list-disc pl-5 space-y-2 mb-6">
             <li>нарушениях свёртываемости крови;</li>
             <li>приёме антикоагулянтов и антиагрегантов;</li>
@@ -281,8 +281,7 @@ const content: ServicePageContent = {
           </ul>
 
           <div className="mt-6 p-5 bg-[#F2F8FF] text-[#1C3C8C] rounded-[12px] border border-[#DAEBFF]">
-            <p className="font-semibold mb-1">Используем только одноразовое</p>
-            <p className="text-[15px] leading-[1.5]">
+            <p className="font-medium text-[15px] leading-[1.5]">
               Перед процедурой сообщите специалисту о хронических заболеваниях, аллергиях, беременности, недавних операциях и всех принимаемых препаратах. Не отменяйте назначенные лекарства самостоятельно.
             </p>
           </div>
