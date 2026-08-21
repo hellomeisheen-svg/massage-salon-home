@@ -283,7 +283,7 @@ function BookingDialog({
                   {[
                     { id: "whatsapp", label: "WhatsApp" },
                     { id: "telegram", label: "Telegram" },
-                    { id: "max", label: "'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n                                        \n                                            \n                                            Внеси изменения" },
+                    { id: "max", label: "'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n                                        \n                                            \n                                            все ли изменения из отчета ты ввел? предоставь отчет о том что сделал?" },
                   ].map(m => (
                     <button
                       key={m.id}
