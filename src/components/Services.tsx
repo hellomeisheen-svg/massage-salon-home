@@ -507,7 +507,7 @@ function ServiceCardContent({
           <p className="mt-6 body-text text-[#566A93] sm:hidden line-clamp-3">
             {variant.mobileDescription || variant.description}
           </p>
-          <p className="mt-6 hidden whitespace-pre-line body-text text-[#566A93] sm:block sm:max-w-none xl:max-w-[540px]">
+          <p className="mt-6 hidden whitespace-pre-line body-text text-[#566A93] sm:block sm:max-w-[560px] xl:max-w-[540px]">
             {variant.description}
           </p>
 
