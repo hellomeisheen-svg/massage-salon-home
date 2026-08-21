@@ -7,7 +7,7 @@ import { PromoBanner } from "@/components/PromoBanner";
 import { Programs } from "@/components/Programs";
 import { Education } from "@/components/Education";
 import { OtherServices } from "@/components/OtherServices";
-import { RatingBlock } from "@/components/RatingBlock";
+
 import { BookingProvider, useBooking } from "@/components/BookingModal";
 import { formatPrice, pluralize, renderPrice, formatDurationString } from "@/components/Services";
 export type ServicePrice = {
@@ -120,7 +120,7 @@ function PageHero({ content }: { content: ServicePageContent }) {
             <p className="mt-3 body-text text-[#566A93]">
               Мастер кабинета, специалист<br />по{"\u00A0"}оздоровительным практикам
             </p>
-            <RatingBlock className="mt-4 xl:hidden" />
+            {/* RatingBlock removed from here as per request */}
           </div>
 
           <div className="mt-auto xl:mt-auto pt-6 sm:pt-12">
