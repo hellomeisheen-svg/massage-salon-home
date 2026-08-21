@@ -14,7 +14,7 @@ const defaultSubtitle =
 export function PromoBanner({
   title = defaultTitle,
   subtitle = defaultSubtitle,
-  buttonText = "Записаться онлайн",
+  buttonText = "Записаться",
 }: PromoBannerProps) {
   const { openBooking } = useBooking();
   return (
