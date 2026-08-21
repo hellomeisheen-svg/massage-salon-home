@@ -250,7 +250,7 @@ function GirudoterapiyaPage() {
         <PromoBanner
           title={
             <>
-              <span className="xl:hidden">Успейте до повышения цен</span>
+              <span className="xl:hidden">До повышения цен осталось немного времени</span>
               <span className="hidden xl:inline">
                 С&nbsp;1&nbsp;сентября часть курсов подорожает, а&nbsp;пока
                 <br />
