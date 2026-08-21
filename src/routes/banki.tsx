@@ -301,7 +301,7 @@ const content: ServicePageContent = {
             <li>Контролирует ощущения и состояние кожи во время процедуры.</li>
             <li>После снятия инструментов очищает кожу и даёт рекомендации по уходу.</li>
           </ol>
-          <div className="mt-6 p-4 bg-[#F2F8FF] text-[#1C3C8C] rounded-lg font-medium">
+          <div className="mt-6 p-4 bg-[#F2F8FF] text-[#1C3C8C] rounded-lg border border-[#DAEBFF] font-medium">
             Во время сеанса возможны чувство натяжения, давления, тепла или умеренный дискомфорт. Сильная боль не считается нормальной реакцией. Сообщите о ней специалисту, чтобы изменить интенсивность воздействия или прекратить процедуру.
           </div>
         </>
@@ -345,7 +345,7 @@ const content: ServicePageContent = {
             следов не означает, что из организма выводятся токсины.
           </p>
 
-          <div className="mt-6 p-4 bg-[#F2F8FF] text-[#1C3C8C] rounded-lg font-medium">
+          <div className="mt-6 p-4 bg-[#F2F8FF] text-[#1C3C8C] rounded-lg border border-[#DAEBFF] font-medium">
             Обратитесь к врачу, если после процедуры появляются сильная или нарастающая боль, выраженный отёк, пузыри, гнойное отделяемое, повышение температуры или другие необычные симптомы.
           </div>
         </>

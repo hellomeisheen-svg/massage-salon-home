@@ -203,7 +203,7 @@ const content: ServicePageContent = {
               </ul>
             </div>
           </div>
-          <div className="mt-6 p-4 bg-[#F2F8FF] text-[#1C3C8C] rounded-lg font-medium">
+          <div className="mt-6 p-4 bg-[#F2F8FF] text-[#1C3C8C] rounded-lg border border-[#DAEBFF] font-medium">
             Если появляются усиливающаяся боль, выраженный отёк, онемение, слабость или другие необычные симптомы, обратитесь к врачу.
           </div>
         </>

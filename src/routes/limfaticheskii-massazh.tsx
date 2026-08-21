@@ -223,7 +223,7 @@ const content: ServicePageContent = {
             <li>наблюдайте за самочувствием;</li>
             <li>соблюдайте индивидуальные рекомендации специалиста.</li>
           </ul>
-          <div className="mt-6 p-4 bg-[#F2F8FF] text-[#1C3C8C] rounded-lg font-medium">
+          <div className="mt-6 p-4 bg-[#F2F8FF] text-[#1C3C8C] rounded-lg border border-[#DAEBFF] font-medium">
             Обратитесь к врачу, если после процедуры появляются усиливающийся отёк, выраженная боль, одышка, головокружение, резкая слабость, повышение температуры или другие необычные симптомы.
           </div>
         </>
