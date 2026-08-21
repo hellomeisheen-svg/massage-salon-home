@@ -20,7 +20,7 @@ function HeadlineBlock({ onOpenQuiz }: { onOpenQuiz: () => void }) {
           rel="noopener noreferrer"
           className="btn-primary w-full sm:w-[280px] xl:w-[250px] inline-flex items-center justify-center text-center whitespace-nowrap"
         >
-          Онлайн запись
+          Записаться онлайн
         </a>
         <button
           type="button"

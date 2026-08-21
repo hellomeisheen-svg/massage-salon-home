@@ -102,7 +102,7 @@ export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
               rel="noopener noreferrer"
               className="btn-primary inline-flex items-center justify-center w-full"
             >
-              Онлайн запись
+              Записаться онлайн
             </a>
           </div>
         </div>

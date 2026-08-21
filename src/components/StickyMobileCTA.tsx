@@ -45,7 +45,7 @@ export const StickyMobileCTA = memo(function StickyMobileCTA() {
           rel="noopener noreferrer"
           className="btn-primary w-full !min-h-[60px] rounded-[12px] shadow-lg shadow-[#1C3C8C]/15"
         >
-          Онлайн запись
+          Записаться онлайн
         </a>
       </div>
     </div>
