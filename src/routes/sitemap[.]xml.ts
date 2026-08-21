@@ -1,55 +1,39 @@
-import { createFileRoute } from "@tanstack/react-router";
-import type {} from "@tanstack/react-start";
+import { createFileRoute } from '@tanstack/react-router';
 
-const BASE_URL = "https://7heavenmassage.ru";
-
-interface SitemapEntry {
-  path: string;
-  changefreq?: "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never";
-  priority?: string;
-}
-
-const entries: SitemapEntry[] = [
-  { path: "/", changefreq: "weekly", priority: "1.0" },
-  { path: "/girudoterapiya", changefreq: "monthly", priority: "0.9" },
-  { path: "/ketgut", changefreq: "monthly", priority: "0.9" },
-  { path: "/banki", changefreq: "monthly", priority: "0.8" },
-  { path: "/klassicheskii-massazh", changefreq: "monthly", priority: "0.8" },
-  { path: "/limfaticheskii-massazh", changefreq: "monthly", priority: "0.8" },
-  { path: "/vektornyi-massazh", changefreq: "monthly", priority: "0.8" },
-  { path: "/privacy-policy", changefreq: "yearly", priority: "0.2" },
+const BASE_URL = 'https://7heavenmassage.ru';
+const PAGES = [
+  '',
+  '/girudoterapiya',
+  '/ketgut',
+  '/klassicheskii-massazh',
+  '/limfaticheskii-massazh',
+  '/banki',
+  '/vektornyi-massazh',
+  '/privacy-policy'
 ];
 
-export const Route = createFileRoute("/sitemap.xml")({
+export const Route = createFileRoute('/sitemap.xml')({
   server: {
     handlers: {
       GET: async () => {
-        const urls = entries.map((e) =>
-          [
-            `  <url>`,
-            `    <loc>${BASE_URL}${e.path}</loc>`,
-            e.changefreq ? `    <changefreq>${e.changefreq}</changefreq>` : null,
-            e.priority ? `    <priority>${e.priority}</priority>` : null,
-            `  </url>`,
-          ]
-            .filter(Boolean)
-            .join("\n"),
-        );
+        const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  ${PAGES.map(page => `
+  <url>
+    <loc>${BASE_URL}${page}</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>${page === '' ? '1.0' : '0.8'}</priority>
+  </url>`).join('')}
+</urlset>`;
 
-        const xml = [
-          `<?xml version="1.0" encoding="UTF-8"?>`,
-          `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`,
-          ...urls,
-          `</urlset>`,
-        ].join("\n");
-
-        return new Response(xml, {
+        return new Response(sitemap, {
           headers: {
-            "Content-Type": "application/xml",
-            "Cache-Control": "public, max-age=3600",
-          },
+            'Content-Type': 'application/xml',
+            'Cache-Control': 'public, max-age=86400, s-maxage=86400, stale-while-revalidate=43200'
+          }
         });
-      },
-    },
-  },
+      }
+    }
+  }
 });
