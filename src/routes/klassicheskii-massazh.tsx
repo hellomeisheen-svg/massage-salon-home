@@ -120,7 +120,7 @@ const content: ServicePageContent = {
           <div className="space-y-6">
             <div>
               <p className="font-semibold text-primary">Всё тело</p>
-              <p className="mt-1 text-sm text-muted-foreground italic">Последовательная работа со спиной, шеей, руками и ногами. Продолжительность — около 60 минут.</p>
+              <p className="mt-1 text-sm text-muted-foreground italic">Последовательная работа со спиной, шеей, руками и ногами. Продолжительность — 1 час.</p>
               <p className="mt-2">Такой вариант подойдёт тем, кто хочет уделить внимание всему телу, снизить ощущение общей усталости и провести время в спокойном восстановлении.</p>
             </div>
             <div>

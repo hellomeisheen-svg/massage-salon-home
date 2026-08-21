@@ -797,7 +797,7 @@ function Prices() {
     <section id="prices" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section">
       <div className="container-1900">
         <h2 className="font-noto-serif-narrow text-center ds-h2 text-[#1C3C8C]">
-          1,5 часа
+          2 часа
         </h2>
 
         {/* Desktop View */}
