@@ -7,13 +7,14 @@ const Star = ({ className }: { className?: string }) => (
 );
 
 export function Preloader() {
-  const [hidden, setHidden] = useState(true);
+  // Always visible in SSR HTML, but sets self to hidden after mount if not already done
+  const [mounted, setMounted] = useState(false);
   const [leaving, setLeaving] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const loadedRef = useRef(false);
 
   useEffect(() => {
-    // Включаем отображение только на клиенте
-    setHidden(false);
+    setMounted(true);
   }, []);
 
   useEffect(() => {
@@ -38,7 +39,7 @@ export function Preloader() {
     };
   }, []);
 
-  if (hidden) return null;
+  if (hidden || (!mounted && typeof window !== "undefined")) return null;
 
   return (
     <div className={`preloader ${leaving ? "preloader-leaving" : ""}`} aria-label="Загрузка">

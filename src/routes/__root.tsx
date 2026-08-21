@@ -170,16 +170,22 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      
       <ClientOnly>
         <TypographyProvider />
         <Analytics />
       </ClientOnly>
+      
+      {/* 
+        Preloader must be outside ClientOnly to be visible immediately in SSR HTML.
+        Internal state setHidden(false) in useEffect ensures it's safe for hydration.
+      */}
       <Preloader />
 
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
-      <StickyMobileCTA />
+      
+      <ClientOnly>
+        <StickyMobileCTA />
+      </ClientOnly>
     </QueryClientProvider>
   );
 }
