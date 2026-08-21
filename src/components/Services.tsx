@@ -375,16 +375,11 @@ export function ServiceCard({
 
   const hasDiscount = discounts[activeSession] > 0;
 
-  const isHirudo = clean(type.title) === "Гирудотерапия";
-  const isKetgut = clean(type.title) === "Акупунктурный кетгут";
-  const computedDuration = isHirudo
-    ? "2 часа"
-    : isKetgut
-      ? "2 часа"
-      : formatDurationString(
-          variant.duration,
-          variant.multiplyDuration === false ? 1 : sessionCounts[activeSession]
-        );
+  const computedDuration = formatDurationString(
+    variant.duration,
+    variant.multiplyDuration === false ? 1 : sessionCounts[activeSession]
+  );
+
 
 
   const bookingTitle = hasZones
