@@ -313,7 +313,10 @@ function PriceCard({ p, prefix }: { p: ServicePrice; prefix: string }) {
   const hasDiscount = discount > 0;
 
   const sessionWord = pluralize(count, ["сеанс", "сеанса", "сеансов"]);
-  const summary = `${count} ${sessionWord} · ${p.duration}`;
+  
+  // Увеличиваем длительность в соответствии с количеством сеансов
+  const multipliedDuration = formatDurationString(p.duration, count);
+  const summary = `${count} ${sessionWord} · ${multipliedDuration}`;
 
   return (
     <article className="flex flex-col ds-card ds-bento-shadow p-6 sm:p-8 xl:p-10">
