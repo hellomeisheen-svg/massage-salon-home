@@ -55,6 +55,10 @@ export default {
       const url = new URL(request.url);
       if (url.pathname.startsWith("/assets/")) {
         finalResponse.headers.set("Cache-Control", "public, max-age=31536000, immutable");
+      } else if (url.pathname.match(/\.(webp|jpg|jpeg|png|svg|ico|woff2|woff)$/)) {
+        finalResponse.headers.set("Cache-Control", "public, max-age=604800, stale-while-revalidate=86400");
+      } else if (url.pathname === "/sitemap.xml" || url.pathname === "/robots.txt") {
+        finalResponse.headers.set("Cache-Control", "public, max-age=3600, stale-while-revalidate=600");
       } else {
         finalResponse.headers.set("Cache-Control", "no-cache, no-store, must-revalidate");
       }
