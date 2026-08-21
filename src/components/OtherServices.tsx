@@ -22,7 +22,7 @@ export const otherServices = [
     isHit: true,
   },
   {
-    slug: "banki",
+    slug: "vakuumnyi-massazh",
     title: "Вакуумный массаж",
     description: "Вакуумный массаж стеклянными и мягкими инструментами, снимающий тяжесть и возвращающий телу лёгкость и баланс.",
   },
