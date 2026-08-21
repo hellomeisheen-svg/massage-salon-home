@@ -200,7 +200,7 @@ const content: ServicePageContent = {
             </div>
           </div>
 
-          <div className="mt-6 p-5 bg-[#F2F8FF] text-[#1C3C8C] rounded-[12px] border border-[#DAEBFF] shadow-sm">
+          <div className="mt-6 p-5 bg-[#F2F8FF] text-[#1C3C8C] rounded-[12px] border border-[#DAEBFF]">
             <p className="font-semibold mb-1">Используем только одноразовое</p>
             <p className="text-[15px] leading-[1.5]">
               Перед сеансом инструменты очищаются и&nbsp;обрабатываются в&nbsp;соответствии с&nbsp;установленными правилами. В&nbsp;рамках процедуры кожа не&nbsp;прокалывается, а&nbsp;воздействие выполняется без&nbsp;нарушения целостности кожи.
@@ -280,7 +280,7 @@ const content: ServicePageContent = {
             <li>невозможности сообщить о симптомах или соблюдать рекомендации.</li>
           </ul>
 
-          <div className="mt-6 p-5 bg-[#F2F8FF] text-[#1C3C8C] rounded-[12px] border border-[#DAEBFF] shadow-sm">
+          <div className="mt-6 p-5 bg-[#F2F8FF] text-[#1C3C8C] rounded-[12px] border border-[#DAEBFF]">
             <p className="font-semibold mb-1">Используем только одноразовое</p>
             <p className="text-[15px] leading-[1.5]">
               Перед процедурой сообщите специалисту о хронических заболеваниях, аллергиях, беременности, недавних операциях и всех принимаемых препаратах. Не отменяйте назначенные лекарства самостоятельно.

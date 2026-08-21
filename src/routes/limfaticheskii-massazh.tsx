@@ -114,7 +114,7 @@ const content: ServicePageContent = {
             </div>
           </div>
 
-          <div className="mt-6 p-5 bg-[#F2F8FF] text-[#1C3C8C] rounded-[12px] border border-[#DAEBFF] shadow-sm">
+          <div className="mt-6 p-5 bg-[#F2F8FF] text-[#1C3C8C] rounded-[12px] border border-[#DAEBFF]">
             <p className="font-medium text-[15px] leading-[1.5]">
               Продолжительность сеанса составляет 2 часа для всего тела и 40 минут для зоны лица.
             </p>
@@ -168,7 +168,7 @@ const content: ServicePageContent = {
             <li>выраженных сосудистых заболеваниях;</li>
             <li>диагностированной лимфедеме или выраженном лимфостазе.</li>
           </ul>
-          <div className="mt-6 p-5 bg-[#F2F8FF] text-[#1C3C8C] rounded-[12px] border border-[#DAEBFF] shadow-sm">
+          <div className="mt-6 p-5 bg-[#F2F8FF] text-[#1C3C8C] rounded-[12px] border border-[#DAEBFF]">
             <p className="font-medium text-[15px] leading-[1.5]">
               Перед процедурой сообщите специалисту о хронических заболеваниях, аллергиях, беременности, недавних операциях и всех принимаемых препаратах. Не отменяйте назначенные лекарства самостоятельно.
             </p>

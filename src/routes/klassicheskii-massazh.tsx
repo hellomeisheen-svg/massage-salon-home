@@ -114,7 +114,7 @@ const content: ServicePageContent = {
               <p className="mt-2">Точная работа с зонами ежедневной нагрузки. Массаж может подойти после длительного стояния, ходьбы или физической активности.</p>
             </div>
           </div>
-          <div className="mt-6 p-5 bg-[#F2F8FF] text-[#1C3C8C] rounded-[12px] border border-[#DAEBFF] shadow-sm">
+          <div className="mt-6 p-5 bg-[#F2F8FF] text-[#1C3C8C] rounded-[12px] border border-[#DAEBFF]">
             <p className="font-semibold mb-1">Используем только одноразовое</p>
             <p className="text-[15px] leading-[1.5]">
               Интенсивность и зоны подбираются индивидуально. Массаж лица и ног имеет ряд противопоказаний, которые обсуждаются до сеанса.
