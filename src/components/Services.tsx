@@ -340,6 +340,38 @@ export function ServiceCard({
   onPrev: () => void;
   onNext: () => void;
 }) {
+  return (
+    <div id="services" className="scroll-mt-[120px]">
+      <ServiceCardContent
+        type={type}
+        zoneIndex={zoneIndex}
+        activeIndex={activeIndex}
+        totalCount={totalCount}
+        onZoneChange={onZoneChange}
+        onPrev={onPrev}
+        onNext={onNext}
+      />
+    </div>
+  );
+}
+
+function ServiceCardContent({
+  type,
+  zoneIndex,
+  activeIndex,
+  totalCount,
+  onZoneChange,
+  onPrev,
+  onNext,
+}: {
+  type: ServiceType;
+  zoneIndex: number;
+  activeIndex: number;
+  totalCount: number;
+  onZoneChange: (i: number) => void;
+  onPrev: () => void;
+  onNext: () => void;
+}) {
   const { openBooking } = useBooking();
   const [activeSession, setActiveSession] = useState(0);
   const variant = type.variants[zoneIndex] ?? type.variants[0];
