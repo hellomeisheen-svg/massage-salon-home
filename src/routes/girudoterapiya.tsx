@@ -387,7 +387,7 @@ const girudoSections: { label: string; content: React.ReactNode }[] = [
     label: "Материалы",
     content: (
       <>
-        <h4 className="font-semibold text-[#1C3C8C] mb-3">Медицинские пиявки</h4>
+        <p className="font-semibold text-[#1C3C8C]">Медицинские пиявки</p>
         <p>В работе применяются медицинские пиявки зарегистрированного и подтверждённого происхождения.</p>
         <ul className="list-disc pl-5 space-y-2 mt-4">
           <li>Каждая пиявка используется только для одного пациента;</li>
@@ -397,7 +397,7 @@ const girudoSections: { label: string; content: React.ReactNode }[] = [
           <li>Места укусов после сеанса обрабатывают, затем накладывают повязку.</li>
         </ul>
         
-        <h4 className="font-semibold text-[#1C3C8C] mt-8 mb-3">Косметические пиявки</h4>
+        <p className="font-semibold text-[#1C3C8C]">Косметические пиявки</p>
         <p>Постановка небольших медицинских пиявок на лицо и локальные зоны рассматривается отдельно. Процедуру можно проводить только после оценки состояния кожи, общего здоровья, склонности к кровотечениям и принимаемых препаратов.</p>
         
         <div className="mt-6 p-4 bg-[#F2F8FF] text-[#1C3C8C] rounded-lg font-medium">
