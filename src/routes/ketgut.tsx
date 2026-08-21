@@ -185,7 +185,7 @@ const content: ServicePageContent = {
             <li>срок предполагаемого рассасывания;</li>
             <li>способ утилизации иглы, канюли и других расходных материалов.</li>
           </ul>
-          <div className="mt-6 p-5 bg-[#F2F8FF] text-[#1C3C8C] rounded-[12px] border border-[#DAEBFF] shadow-sm">
+          <div className="mt-6 p-5 bg-[#F2F8FF] text-[#1C3C8C] rounded-[12px] border border-[#DAEBFF]">
             <p className="font-semibold mb-1">Используем только одноразовое</p>
             <p className="text-[15px] leading-[1.5]">
               Для постановки используются стерильные одноразовые иглы или канюли. Скорость рассасывания нити индивидуальна и зависит от материала, глубины постановки и реакции организма.
@@ -240,7 +240,7 @@ const content: ServicePageContent = {
             <li>состоянии алкогольного или наркотического опьянения.</li>
           </ul>
           <p className="mt-4 text-sm italic">Отдельного согласования с лечащим врачом могут требовать заболевания сердца, печени, почек, выраженное снижение артериального давления и восстановительный период после операции.</p>
-          <div className="mt-6 p-5 bg-[#F2F8FF] text-[#1C3C8C] rounded-[12px] border border-[#DAEBFF] shadow-sm">
+          <div className="mt-6 p-5 bg-[#F2F8FF] text-[#1C3C8C] rounded-[12px] border border-[#DAEBFF]">
             <p className="text-[15px] leading-[1.5] font-medium">
               Перед процедурой обязательно сообщите специалисту о хронических заболеваниях, аллергиях, беременности или лактации, недавних операциях, склонности к кровотечениям, плохом заживлении ран и всех принимаемых препаратах. Не отменяйте назначенные лекарства самостоятельно.
             </p>
