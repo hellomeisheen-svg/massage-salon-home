@@ -9,7 +9,7 @@ import { Education } from "@/components/Education";
 import { OtherServices } from "@/components/OtherServices";
 import { RatingBlock } from "@/components/RatingBlock";
 import { BookingProvider, useBooking } from "@/components/BookingModal";
-import { formatPrice, pluralize, renderPrice } from "@/components/Services";
+import { formatPrice, pluralize, renderPrice, formatDurationString } from "@/components/Services";
 export type ServicePrice = {
   zone: string;
   subtitle: string;
@@ -313,7 +313,10 @@ function PriceCard({ p, prefix }: { p: ServicePrice; prefix: string }) {
   const hasDiscount = discount > 0;
 
   const sessionWord = pluralize(count, ["сеанс", "сеанса", "сеансов"]);
-  const summary = `${count} ${sessionWord} · ${p.duration}`;
+  
+  // Увеличиваем длительность в соответствии с количеством сеансов
+  const multipliedDuration = formatDurationString(p.duration, count);
+  const summary = `${count} ${sessionWord} · ${multipliedDuration}`;
 
   return (
     <article className="flex flex-col ds-card ds-bento-shadow p-6 sm:p-8 xl:p-10">
@@ -441,23 +444,33 @@ function PriceTable({ content }: { content: ServicePageContent }) {
                     </span>
                   </td>
                   <td className="px-6 py-6 xl:px-8">
-                    <div className="flex items-center gap-2">
-                      <span className="font-noto-serif-narrow text-[14px] font-light text-[#566A93]/40 line-through">
-                        {renderPrice(formatPrice(base * 3))}
-                      </span>
-                      <span className="font-noto-serif-narrow text-[20px] xl:text-[24px] font-light text-[#1C3C8C]">
-                        {renderPrice(formatPrice(p3))}
-                      </span>
+                    <div className="flex flex-col gap-1">
+                      <div className="flex items-center gap-2">
+                        <span className="font-noto-serif-narrow text-[14px] font-light text-[#566A93]/40 line-through">
+                          {renderPrice(formatPrice(base * 3))}
+                        </span>
+                        <span className="font-noto-serif-narrow text-[20px] xl:text-[24px] font-light text-[#1C3C8C]">
+                          {renderPrice(formatPrice(p3))}
+                        </span>
+                      </div>
+                      <div className="text-[12px] font-light text-[#566A93]">
+                        {formatDurationString(p.duration, 3)}
+                      </div>
                     </div>
                   </td>
                   <td className="px-6 py-6 xl:px-8">
-                    <div className="flex items-center gap-2">
-                      <span className="font-noto-serif-narrow text-[14px] font-light text-[#566A93]/40 line-through">
-                        {renderPrice(formatPrice(base * 6))}
-                      </span>
-                      <span className="font-noto-serif-narrow text-[20px] xl:text-[24px] font-light text-[#1C3C8C]">
-                        {renderPrice(formatPrice(p6))}
-                      </span>
+                    <div className="flex flex-col gap-1">
+                      <div className="flex items-center gap-2">
+                        <span className="font-noto-serif-narrow text-[14px] font-light text-[#566A93]/40 line-through">
+                          {renderPrice(formatPrice(base * 6))}
+                        </span>
+                        <span className="font-noto-serif-narrow text-[20px] xl:text-[24px] font-light text-[#1C3C8C]">
+                          {renderPrice(formatPrice(p6))}
+                        </span>
+                      </div>
+                      <div className="text-[12px] font-light text-[#566A93]">
+                        {formatDurationString(p.duration, 6)}
+                      </div>
                     </div>
                   </td>
                 </tr>

@@ -11,7 +11,7 @@ import { Education } from "@/components/Education";
 import { OtherServices } from "@/components/OtherServices";
 // PriceTable removed as it was replaced by local Prices design
 import { BookingProvider, useBooking } from "@/components/BookingModal";
-import { formatPrice, pluralize, renderPrice } from "@/components/Services";
+import { formatPrice, pluralize, renderPrice, formatDurationString } from "@/components/Services";
 
 
 
@@ -681,25 +681,28 @@ function HirudoPriceTable() {
                   <td className="px-6 py-6 text-[16px] font-light text-[#566A93] xl:px-8">
                     {p.duration}
                   </td>
-                  {prices.map((price, i) => (
-                    <td key={i} className="px-6 py-6 xl:px-8">
-                      <div className="flex flex-col gap-1">
-                        <div className="flex items-center gap-2">
-                          {discountValues[i] > 0 && (
-                            <span className="font-noto-serif-narrow text-[14px] font-light text-[#566A93]/40 line-through">
-                              {renderPrice(formatPrice(price.totalBase))}
+                  {prices.map((price, i) => {
+                    const count = sessionCounts[i];
+                    return (
+                      <td key={i} className="px-6 py-6 xl:px-8">
+                        <div className="flex flex-col gap-1">
+                          <div className="flex items-center gap-2">
+                            {discountValues[i] > 0 && (
+                              <span className="font-noto-serif-narrow text-[14px] font-light text-[#566A93]/40 line-through">
+                                {renderPrice(formatPrice(price.totalBase))}
+                              </span>
+                            )}
+                            <span className="font-noto-serif-narrow text-[20px] xl:text-[24px] font-light text-[#1C3C8C]">
+                              {renderPrice(formatPrice(price.currentPrice))}
                             </span>
-                          )}
-                          <span className="font-noto-serif-narrow text-[20px] xl:text-[24px] font-light text-[#1C3C8C]">
-                            {renderPrice(formatPrice(price.currentPrice))}
-                          </span>
+                          </div>
+                          <div className="text-[12px] font-light text-[#566A93]">
+                            {price.leeches} {pluralize(price.leeches, ["пиявка", "пиявки", "пиявок"])} · {formatDurationString(p.duration, count)}
+                          </div>
                         </div>
-                        <div className="text-[12px] font-light text-[#566A93]">
-                          {price.leeches} {pluralize(price.leeches, ["пиявка", "пиявки", "пиявок"])}
-                        </div>
-                      </div>
-                    </td>
-                  ))}
+                      </td>
+                    );
+                  })}
                     <td className="px-6 py-6 xl:px-8">
                       <button
                         type="button"
