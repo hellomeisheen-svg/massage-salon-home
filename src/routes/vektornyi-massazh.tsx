@@ -145,12 +145,11 @@ const content: ServicePageContent = {
             <li>невозможности соблюдать рекомендации специалиста.</li>
           </ul>
           <p className="mt-4 text-sm italic">При варикозном расширении вен воздействие на изменённые вены не проводится. Возможность работы с другими зонами определяется индивидуально.</p>
-          <div className="mt-6 p-5 bg-[#F2F8FF] text-[#1C3C8C] rounded-[12px] border border-[#DAEBFF] shadow-sm flex items-start gap-4">
-            <div className="shrink-0 w-6 h-6 rounded-full bg-white border border-[#DAEBFF] flex items-center justify-center text-[12px]">✅</div>
-            <div className="text-[15px] leading-[1.5]">
-              <p className="font-semibold mb-1">Используем только одноразовое</p>
+          <div className="mt-6 p-5 bg-[#F2F8FF] text-[#1C3C8C] rounded-[12px] border border-[#DAEBFF] shadow-sm">
+            <p className="font-semibold mb-1">Используем только одноразовое</p>
+            <p className="text-[15px] leading-[1.5]">
               Перед сеансом сообщите специалисту о хронических заболеваниях, аллергиях, беременности, недавних травмах и операциях, склонности к образованию синяков и всех принимаемых препаратах. Не отменяйте назначенные лекарства самостоятельно.
-            </div>
+            </p>
           </div>
         </>
       ) },
