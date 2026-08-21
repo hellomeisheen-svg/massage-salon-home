@@ -178,8 +178,12 @@ const content: ServicePageContent = {
             <li>срок предполагаемого рассасывания;</li>
             <li>способ утилизации иглы, канюли и других расходных материалов.</li>
           </ul>
-          <div className="mt-6 p-4 bg-[#F2F8FF] text-[#1C3C8C] rounded-lg font-medium">
-            Для постановки используются стерильные одноразовые иглы или канюли. Скорость рассасывания нити индивидуальна и зависит от материала, глубины постановки и реакции организма.
+          <div className="mt-6 p-5 bg-[#F2F8FF] text-[#1C3C8C] rounded-[12px] border border-[#DAEBFF] shadow-sm flex items-start gap-4">
+            <div className="shrink-0 w-6 h-6 rounded-full bg-white border border-[#DAEBFF] flex items-center justify-center text-[12px]">✅</div>
+            <div className="text-[15px] leading-[1.5]">
+              <p className="font-semibold mb-1">Используем только одноразовое</p>
+              Для постановки используются стерильные одноразовые иглы или канюли. Скорость рассасывания нити индивидуальна и зависит от материала, глубины постановки и реакции организма.
+            </div>
           </div>
         </>
       ) },

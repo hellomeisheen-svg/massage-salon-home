@@ -281,7 +281,7 @@ export function formatDurationString(value: string, multiplier = 1) {
 
 export function formatSessionLine(sessionCount: number, duration: string) {
   if (sessionCount === 1) {
-    return `1 сеанс — ${duration}`;
+    return `1 сеанс · ${duration}`;
   }
   const sessionWord = pluralize(sessionCount, ["сеанс", "сеанса", "сеансов"]);
   return `В пакете: ${sessionCount}\u00A0${sessionWord} · ${duration}`;

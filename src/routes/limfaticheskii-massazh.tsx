@@ -72,7 +72,7 @@ export const Route = createFileRoute("/limfaticheskii-massazh")({
                 {
                   "@type": "Question",
                   name: "Где находится кабинет и как записаться?",
-                  acceptedAnswer: { "@type": "Answer", text: "Кабинет расположен в посёлке Трудовое. Принимаю по предварительной записи. Записаться можно через Max — я уточню удобное время и дам необходимые рекомендации по подготовке к вашему первому сеансу." } }] }] }) }] }),
+                  acceptedAnswer: { "@type": "Answer", text: "Кабинет расположен в посёлке Трудовое. Принимаю по предварительной записи. Записаться можно в мессенджере — я уточню удобное время и дам необходимые рекомендации по подготовке к вашему первому сеансу." } }] }] }) }] }),
   component: LimfaticheskiiPage });
 
 const content: ServicePageContent = {
@@ -114,8 +114,12 @@ const content: ServicePageContent = {
             </div>
           </div>
 
-          <div className="mt-6 p-4 bg-[#F2F8FF] text-[#1C3C8C] rounded-lg font-medium">
-            Продолжительность сеанса составляет 2 часа для всего тела и 40 минут для зоны лица.
+          <div className="mt-6 p-5 bg-[#F2F8FF] text-[#1C3C8C] rounded-[12px] border border-[#DAEBFF] shadow-sm flex items-start gap-4">
+            <div className="shrink-0 w-6 h-6 rounded-full bg-white border border-[#DAEBFF] flex items-center justify-center text-[12px]">✅</div>
+            <div className="text-[15px] leading-[1.5]">
+              <p className="font-semibold mb-1">Используем только одноразовое</p>
+              Продолжительность сеанса составляет 2 часа для всего тела и 40 минут для зоны лица.
+            </div>
           </div>
         </>
       ) },
