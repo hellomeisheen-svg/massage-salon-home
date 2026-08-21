@@ -444,23 +444,33 @@ function PriceTable({ content }: { content: ServicePageContent }) {
                     </span>
                   </td>
                   <td className="px-6 py-6 xl:px-8">
-                    <div className="flex items-center gap-2">
-                      <span className="font-noto-serif-narrow text-[14px] font-light text-[#566A93]/40 line-through">
-                        {renderPrice(formatPrice(base * 3))}
-                      </span>
-                      <span className="font-noto-serif-narrow text-[20px] xl:text-[24px] font-light text-[#1C3C8C]">
-                        {renderPrice(formatPrice(p3))}
-                      </span>
+                    <div className="flex flex-col gap-1">
+                      <div className="flex items-center gap-2">
+                        <span className="font-noto-serif-narrow text-[14px] font-light text-[#566A93]/40 line-through">
+                          {renderPrice(formatPrice(base * 3))}
+                        </span>
+                        <span className="font-noto-serif-narrow text-[20px] xl:text-[24px] font-light text-[#1C3C8C]">
+                          {renderPrice(formatPrice(p3))}
+                        </span>
+                      </div>
+                      <div className="text-[12px] font-light text-[#566A93]">
+                        {formatDurationString(p.duration, 3)}
+                      </div>
                     </div>
                   </td>
                   <td className="px-6 py-6 xl:px-8">
-                    <div className="flex items-center gap-2">
-                      <span className="font-noto-serif-narrow text-[14px] font-light text-[#566A93]/40 line-through">
-                        {renderPrice(formatPrice(base * 6))}
-                      </span>
-                      <span className="font-noto-serif-narrow text-[20px] xl:text-[24px] font-light text-[#1C3C8C]">
-                        {renderPrice(formatPrice(p6))}
-                      </span>
+                    <div className="flex flex-col gap-1">
+                      <div className="flex items-center gap-2">
+                        <span className="font-noto-serif-narrow text-[14px] font-light text-[#566A93]/40 line-through">
+                          {renderPrice(formatPrice(base * 6))}
+                        </span>
+                        <span className="font-noto-serif-narrow text-[20px] xl:text-[24px] font-light text-[#1C3C8C]">
+                          {renderPrice(formatPrice(p6))}
+                        </span>
+                      </div>
+                      <div className="text-[12px] font-light text-[#566A93]">
+                        {formatDurationString(p.duration, 6)}
+                      </div>
                     </div>
                   </td>
                 </tr>
