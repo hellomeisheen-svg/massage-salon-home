@@ -120,6 +120,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
       {
+        rel: "preconnect",
+        href: "https://mc.yandex.ru",
+        crossOrigin: "anonymous",
+      },
+      {
         rel: "preload",
         href: "/fonts/noto-serif-display-narrow.woff2",
         as: "font",

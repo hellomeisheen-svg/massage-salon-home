@@ -15,16 +15,19 @@ export function Preloader() {
 
   useEffect(() => {
     setMounted(true);
-  }, []);
-
-  useEffect(() => {
-    let removeTimer: ReturnType<typeof setTimeout>;
+    // Safety timeout: if window 'load' event doesn't fire for too long
+    const safetyTimer = setTimeout(() => {
+      if (!loadedRef.current) {
+        console.warn("Preloader safety timeout triggered");
+        finish();
+      }
+    }, 5000);
 
     const finish = () => {
       if (loadedRef.current) return;
       loadedRef.current = true;
       setLeaving(true);
-      removeTimer = setTimeout(() => setHidden(true), 400);
+      setTimeout(() => setHidden(true), 400);
     };
 
     if (document.readyState === "complete") {
@@ -34,10 +37,11 @@ export function Preloader() {
     }
 
     return () => {
-      clearTimeout(removeTimer);
+      clearTimeout(safetyTimer);
       window.removeEventListener("load", finish);
     };
   }, []);
+
 
   if (hidden || (!mounted && typeof window !== "undefined")) return null;
 
