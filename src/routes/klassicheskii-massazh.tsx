@@ -24,7 +24,7 @@ export const Route = createFileRoute("/klassicheskii-massazh")({
           "@graph": [
             {
               "@type": "MedicalBusiness",
-              "@id": "https://7heavenmassage.ru/#business",
+              "@id": "https://7heavenmassage.ru/klassicheskii-massazh#business",
               name: "Седьмое небо",
               description: "Кабинет массажа и оздоровительных практик Татьяны Злобиной в посёлке Трудовое.",
               url: "https://7heavenmassage.ru/",
@@ -38,7 +38,7 @@ export const Route = createFileRoute("/klassicheskii-massazh")({
               name: "Классический массаж",
               serviceType: "Классический оздоровительный массаж",
               url: "https://7heavenmassage.ru/klassicheskii-massazh",
-              provider: { "@id": "https://7heavenmassage.ru/#business" },
+              provider: { "@id": "https://7heavenmassage.ru/klassicheskii-massazh#business" },
               offers: [{ "@type": "Offer", name: "Классический массаж, сеанс", price: "3000", priceCurrency: "RUB", url: "https://7heavenmassage.ru/klassicheskii-massazh#prices" }] },
             {
               "@type": "FAQPage",
