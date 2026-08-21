@@ -114,7 +114,7 @@ function PageHero({ content }: { content: ServicePageContent }) {
               alt="Татьяна Злобина"
               className="h-[90px] w-[70px] xl:h-[110px] xl:w-[85px] rounded-[12px] border border-[#daebff] ds-bento-shadow object-cover"
             />
-            <h3 className="font-noto-serif-narrow mt-6 ds-h4 text-[#1C3C8C] sm:text-[28px] xl:text-[28px]">
+            <h3 className="font-light sm:font-noto-serif-narrow mt-6 ds-h4 text-[#1C3C8C] sm:text-[28px] xl:text-[28px]">
               Татьяна Злобина
             </h3>
             <p className="mt-3 body-text text-[#566A93]">
@@ -517,7 +517,7 @@ function FaqItem({ q, a }: { q: string; a: React.ReactNode }) {
         onClick={() => setOpen((v) => !v)}
         className="w-full flex items-center justify-between gap-4 p-5 sm:p-6 xl:p-7 text-left"
       >
-        <span className="font-noto-serif-narrow text-[#1C3C8C] ds-h4 text-[18px] sm:text-[28px]">
+        <span className="font-light sm:font-noto-serif-narrow text-[#1C3C8C] ds-h4 text-[18px] sm:text-[28px]">
           {q}
         </span>
         <span
@@ -567,7 +567,7 @@ function Faq({ content }: { content: ServicePageContent }) {
               alt="Татьяна Злобина"
               className="h-[90px] w-[70px] xl:h-[110px] xl:w-[85px] rounded-[12px] border border-[#daebff] ds-bento-shadow object-cover"
             />
-            <h3 className="font-noto-serif-narrow mt-6 ds-h4 text-[#1C3C8C]">
+            <h3 className="font-light sm:font-noto-serif-narrow mt-6 ds-h4 text-[#1C3C8C]">
               Татьяна Злобина
             </h3>
             <p className="mt-3 body-text text-[#566A93]">
