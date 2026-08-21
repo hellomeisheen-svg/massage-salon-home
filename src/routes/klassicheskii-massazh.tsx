@@ -193,10 +193,9 @@ const content: ServicePageContent = {
         </>
       ) },
     {
-      label: "Подготовка",
+      label: "Как подготовиться?",
       content: (
         <>
-          <p className="font-medium uppercase tracking-wider text-sm mb-4">Как подготовиться</p>
           <p>Перед сеансом:</p>
           <ul className="list-disc pl-5 space-y-2 mt-2">
             <li>примите душ;</li>
