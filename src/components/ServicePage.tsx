@@ -69,7 +69,7 @@ export function ServicePage({ content }: { content: ServicePageContent }) {
         <PromoBanner
           title={
             <>
-              <span className="xl:hidden">До&nbsp;1&nbsp;сентября покупайте программы по&nbsp;прежней цене</span>
+              <span className="xl:hidden">Успейте до повышения цен</span>
               <span className="hidden xl:inline">
                 С&nbsp;1&nbsp;сентября часть курсов подорожает, а&nbsp;пока
                 <br />
@@ -374,7 +374,7 @@ function PriceCard({ p, prefix }: { p: ServicePrice; prefix: string }) {
           onClick={() => openBooking(p.zone)}
           className="btn-primary w-full py-3 text-[15px]"
         >
-          Записаться
+          Записаться онлайн
         </button>
       </div>
     </article>
