@@ -84,7 +84,7 @@ export function Faq() {
           >
             FAQs
           </span>
-          <h2 className="font-sans sm:font-noto-serif-narrow mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0">
+          <h2 className="font-body sm:font-heading mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0">
             Отвечаю на&nbsp;самые важные вопросы
           </h2>
 
