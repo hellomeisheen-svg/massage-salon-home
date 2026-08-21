@@ -235,7 +235,7 @@ export function Header({
                   onClick={() => setMenuOpen(false)}
                   className="btn-primary mt-3 w-full inline-flex items-center justify-center"
                 >
-                  Онлайн запись
+                  Записаться онлайн
                 </a>
               </div>
             </div>

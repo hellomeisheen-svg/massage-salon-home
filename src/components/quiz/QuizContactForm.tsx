@@ -116,12 +116,12 @@ export function QuizContactForm({
         </label>
 
         <div className="space-y-2">
-          <span className="text-[14px] leading-[1.5] text-foreground block">Удобный способ связи</span>
+          <span className="text-[14px] leading-[1.5] text-foreground block">Где вам удобнее ответить?</span>
           <div className="grid grid-cols-3 gap-2">
             {[
               { id: "whatsapp", label: "WhatsApp" },
               { id: "telegram", label: "Telegram" },
-              { id: "max", label: "MAX" },
+              { id: "max", label: "'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n                                        \n                                            \n                                            Внеси изменения" },
             ].map(m => (
               <button
                 key={m.id}
