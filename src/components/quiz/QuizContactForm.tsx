@@ -125,7 +125,7 @@ export function QuizContactForm({
             {[
               { id: "whatsapp", label: "WhatsApp" },
               { id: "telegram", label: "Telegram" },
-              { id: "max", label: "Мессенджер" },
+              { id: "max", label: "Max" },
             ].map(m => (
               <button
                 key={m.id}
