@@ -214,7 +214,7 @@ export function Header({
                     href="https://max.ru/u/f9LHodD0cOLS1ZC9ThcQkVLRVzcK-MbYZ7JVAg8PC5Tx9LyihgOVdPnzaxM"
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="Макс — мессенджер"
+                    aria-label="Макс — мессенджер Max"
                     className="ml-auto flex h-10 w-10 items-center justify-center rounded-[12px] border border-[#daebff] bg-[#EFF6FF] text-[#1c3c8c] hover:bg-[#DAEBFF] transition-colors icon-btn-active"
                   >
 
