@@ -15,13 +15,6 @@ export function Preloader() {
 
   useEffect(() => {
     setMounted(true);
-    // Safety timeout: if window 'load' event doesn't fire for too long
-    const safetyTimer = setTimeout(() => {
-      if (!loadedRef.current) {
-        console.warn("Preloader safety timeout triggered");
-        finish();
-      }
-    }, 5000);
 
     const finish = () => {
       if (loadedRef.current) return;
@@ -29,6 +22,11 @@ export function Preloader() {
       setLeaving(true);
       setTimeout(() => setHidden(true), 400);
     };
+
+    // Safety timeout: force hide if load takes too long
+    const safetyTimer = setTimeout(() => {
+      if (!loadedRef.current) finish();
+    }, 4000);
 
     if (document.readyState === "complete") {
       finish();
