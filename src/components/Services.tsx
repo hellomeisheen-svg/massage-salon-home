@@ -35,7 +35,7 @@ export const serviceTypes: ServiceType[] = [
           "Медицинские пиявки на\u00A0выбранные зоны тела снимают накопленное напряжение, улучшают микроциркуляцию и\u00A0дарят ощущение лёгкости. Мягкая поддержка естественного восстановления и\u00A0общего самочувствия без\u00A0лекарств и\u00A0агрессивных вмешательств.",
         mobileDescription:
           "Постановка пиявок на\u00A0выбранные зоны тела для\u00A0поддержки лёгкости и\u00A0общего самочувствия.",
-        duration: "2 часа",
+        duration: "1,5–2 часа",
         price: "4 800 ₽",
         sessionLabels: ["6\u00A0пиявок", "16\u00A0пиявок", "74\u00A0пиявки"],
         multiplyDuration: false,
@@ -47,7 +47,7 @@ export const serviceTypes: ServiceType[] = [
           "Пиявки на\u00A0лицо и\u00A0локальные зоны улучшают микроциркуляцию и\u00A0лимфоотток, поддерживают свежий вид и\u00A0ровный тон кожи. Деликатный эстетический уход без\u00A0инъекций для\u00A0естественного ощущения лёгкости и\u00A0отдохнувшего лица.",
         mobileDescription:
           "Точная постановка пиявок на\u00A0лицо и\u00A0локальные зоны для\u00A0свежего и\u00A0отдохнувшего вида кожи.",
-        duration: "2 часа",
+        duration: "1,5–2 часа",
         price: "4 800 ₽",
         sessionLabels: ["6\u00A0пиявок", "10\u00A0пиявок", "20\u00A0пиявок"],
         multiplyDuration: false,
@@ -67,7 +67,7 @@ export const serviceTypes: ServiceType[] = [
           "Аккуратное введение 30 саморассасывающихся нитей в\u00A0акупунктурные точки всего тела. Работает 2–3 месяца: поддерживает тонус тканей, выравнивает внутренний баланс и\u00A0помогает организму саморегулироваться без\u00A0лекарств.",
         mobileDescription:
           "30 нитей в акупунктурные точки на всё тело для длительной поддержки внутреннего баланса организма без лекарств.",
-        duration: "2 часа",
+        duration: "1,5 часа",
         price: "20 000 ₽",
       },
     ],
@@ -104,7 +104,7 @@ export const serviceTypes: ServiceType[] = [
           "Глубокое вакуумное воздействие стеклянными инструментами прогревает выбранные зоны, снимает скованность и\u00A0расслабляет напряжённые мышцы. Возвращает ощущение тепла, свободы движения и\u00A0живой энергии, поддерживает восстановление после нагрузок.",
         mobileDescription:
           "Глубокое вакуумное воздействие мягко прогревает ткани, снимает скованность и\u00A0напряжение в\u00A0теле.",
-        duration: "1 час",
+        duration: "10 минут",
         price: "2 000 ₽",
       },
       {
@@ -115,7 +115,7 @@ export const serviceTypes: ServiceType[] = [
           "Деликатный массаж мягкими инструментами создаёт комфортное вакуумное воздействие, уменьшает чувство тяжести и\u00A0возвращает тканям больше подвижности. Поддерживает лёгкость во\u00A0всём теле, снимает напряжение и\u00A0помогает расслабиться после нагрузок.",
         mobileDescription:
           "Деликатный вакуум помогает уменьшить чувство тяжести и\u00A0вернуть телу больше лёгкости и\u00A0движения.",
-        duration: "1 час",
+        duration: "10–25 минут",
         price: "1 000 ₽",
       },
     ],
@@ -143,7 +143,7 @@ export const serviceTypes: ServiceType[] = [
           "Деликатная работа с\u00A0оттоком жидкости и\u00A0тонусом кожи лица уменьшает отёчность и\u00A0освежает вид. Поддерживает более чёткий овал, сохраняет естественную мягкость черт и\u00A0помогает выглядеть отдохнувшим без\u00A0активного воздействия.",
         mobileDescription:
           "Деликатная техника снимает отёчность и\u00A0ещё возвращает лицу свежесть, лёгкость, ровный тон кожи.",
-        duration: "1 час",
+        duration: "40 минут",
         price: "2 000 ₽",
       },
     ],
@@ -171,7 +171,7 @@ export const serviceTypes: ServiceType[] = [
           "Массаж головы и\u00A0шейно-воротниковой зоны мягко снимает накопленное напряжение, облегчает ощущение тяжести в\u00A0голове и\u00A0плечах. Помогает переключиться, убрать ментальную усталость и\u00A0вернуть более спокойное, ясное состояние.",
         mobileDescription:
           "Массаж головы и\u00A0шеи, мягко снимает напряжение, облегчает тяжесть и\u00A0помогает спокойно отдохнуть.",
-        duration: "1 час",
+        duration: "20 минут",
         price: "1 000 ₽",
       },
       {
@@ -181,7 +181,7 @@ export const serviceTypes: ServiceType[] = [
           "Бережная ручная работа с\u00A0кожей и\u00A0мимическими мышцами лица расслабляет привычные зажимы и\u00A0освежает вид. Поддерживает ровный тон кожи, возвращает выражению лица больше мягкости, спокойствия и\u00A0отдохнувшего вида после долгого дня.",
         mobileDescription:
           "Мягкая работа с\u00A0лицом расслабляет мимические мышцы, освежает вид и\u00A0поддерживает тон самой кожи.",
-        duration: "1 час",
+        duration: "40 минут",
         price: "2 000 ₽",
       },
       {
@@ -191,7 +191,7 @@ export const serviceTypes: ServiceType[] = [
           "Работа со\u00A0спиной и\u00A0шеей мягко разгружает зоны, которые чаще всего накапливают напряжение в\u00A0течение дня. Снимает зажимы, уменьшает тяжесть и\u00A0возвращает привычную подвижность движениям в\u00A0шее, плечах и\u00A0верхней части спины.",
         mobileDescription:
           "Работа с\u00A0нагруженными зонами помогает снять зажимы и\u00A0мягко вернуть спине подвижность и\u00A0комфорт.",
-        duration: "1 час",
+        duration: "30 минут",
         price: "1 500 ₽",
       },
       {
@@ -206,6 +206,7 @@ export const serviceTypes: ServiceType[] = [
       },
     ],
   },
+
 
 
 
@@ -234,28 +235,49 @@ export function pluralize(n: number, forms: [string, string, string]) {
   return forms[2];
 }
 
-export function formatDurationValue(min: number) {
-  const hours = Math.round(min / 60);
-  return {
-    text: `${hours}\u00A0${pluralize(hours, ["час", "часа", "часов"])}`,
-    amount: hours,
-    unit: "hour" as const,
-  };
+export function formatDurationValue(value: string) {
+  // Check if it's already a formatted string like "2 часа" or "1,5–2 часа"
+  if (value.includes("час") || value.includes("мин")) {
+    return {
+      text: value.replace(/\s/g, "\u00A0"),
+      amount: 0, // not used for text result
+      unit: "custom" as const,
+    };
+  }
+  
+  const numbers = [...value.matchAll(/\d+/g)].map((m) => Number(m[0]));
+  if (!numbers.length) return { text: value, amount: 0, unit: "custom" as const };
+  
+  const n = numbers[0];
+  // If it's a small number like 1 or 2, assume it's hours if not specified, 
+  // but here we trust the hardcoded duration strings in serviceTypes.
+  return { text: value, amount: n, unit: "custom" as const };
 }
 
 export function formatDurationString(value: string, multiplier = 1) {
-  const numbers = [...value.matchAll(/\d+/g)].map((m) => Number(m[0]));
+  if (multiplier === 1) return value.replace(/\s/g, "\u00A0");
+  
+  // For packages, we need to handle "2 часа" -> "12 часов" etc.
+  // But the request is mainly about the main card display which uses multiplier 1 usually,
+  // or simple multiplication for sessions.
+  const numbers = [...value.matchAll(/\d+([.,]\d+)?/g)].map((m) => parseFloat(m[0].replace(",", ".")));
   if (!numbers.length) return value;
-  const scaled = numbers.map((n) => n * multiplier);
-  const isRange = scaled.length === 2 && /[\u2013\u2014-]/.test(value);
-  if (isRange) {
-    const a = formatDurationValue(scaled[0]);
-    const b = formatDurationValue(scaled[1]);
-    const unitWord = pluralize(Math.max(scaled[0], scaled[1]) / 60, ["час", "часа", "часов"]);
-    return `${a.amount}\u00A0–\u00A0${b.amount}\u00A0${unitWord}`;
+  
+  const isHours = value.includes("час");
+  const isMinutes = value.includes("мин");
+  
+  if (numbers.length === 2 && /[\u2013\u2014-]/.test(value)) {
+    const a = numbers[0] * multiplier;
+    const b = numbers[1] * multiplier;
+    const unit = isHours ? pluralize(b, ["час", "часа", "часов"]) : pluralize(b, ["минута", "минуты", "минут"]);
+    return `${a.toString().replace(".", ",")}\u00A0–\u00A0${b.toString().replace(".", ",")}\u00A0${unit}`;
   }
-  return scaled.map((n) => formatDurationValue(n).text).join(", ");
+  
+  const result = numbers[0] * multiplier;
+  const unit = isHours ? pluralize(result, ["час", "часа", "часов"]) : pluralize(result, ["минута", "минуты", "минут"]);
+  return `${result.toString().replace(".", ",")}\u00A0${unit}`;
 }
+
 
 export function formatSessionLine(sessionCount: number, duration: string) {
   if (sessionCount === 1) {
@@ -353,16 +375,11 @@ export function ServiceCard({
 
   const hasDiscount = discounts[activeSession] > 0;
 
-  const isHirudo = clean(type.title) === "Гирудотерапия";
-  const isKetgut = clean(type.title) === "Акупунктурный кетгут";
-  const computedDuration = isHirudo
-    ? "2 часа"
-    : isKetgut
-      ? "2 часа"
-      : formatDurationString(
-          variant.duration,
-          variant.multiplyDuration === false ? 1 : sessionCounts[activeSession]
-        );
+  const computedDuration = formatDurationString(
+    variant.duration,
+    variant.multiplyDuration === false ? 1 : sessionCounts[activeSession]
+  );
+
 
 
   const bookingTitle = hasZones
