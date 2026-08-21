@@ -9,7 +9,7 @@ import { Education } from "@/components/Education";
 import { OtherServices } from "@/components/OtherServices";
 import { RatingBlock } from "@/components/RatingBlock";
 import { BookingProvider, useBooking } from "@/components/BookingModal";
-import { formatPrice, pluralize, renderPrice } from "@/components/Services";
+import { formatPrice, pluralize, renderPrice, formatDurationString } from "@/components/Services";
 export type ServicePrice = {
   zone: string;
   subtitle: string;

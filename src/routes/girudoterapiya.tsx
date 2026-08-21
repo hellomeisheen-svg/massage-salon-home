@@ -11,7 +11,7 @@ import { Education } from "@/components/Education";
 import { OtherServices } from "@/components/OtherServices";
 // PriceTable removed as it was replaced by local Prices design
 import { BookingProvider, useBooking } from "@/components/BookingModal";
-import { formatPrice, pluralize, renderPrice } from "@/components/Services";
+import { formatPrice, pluralize, renderPrice, formatDurationString } from "@/components/Services";
 
 
 
