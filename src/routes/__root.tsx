@@ -116,10 +116,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:locale", content: "ru_RU" }],
     links: [
       {
-        rel: "stylesheet",
-        href: appCss,
-      },
-      {
         rel: "preconnect",
         href: "https://mc.yandex.ru",
         crossOrigin: "anonymous",
