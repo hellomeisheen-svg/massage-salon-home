@@ -143,7 +143,6 @@ const content: ServicePageContent = {
       label: "Как проходит сеанс",
       content: (
         <>
-          <p className="font-medium uppercase tracking-wider text-sm mb-4">Как проходит сеанс</p>
           <ol className="list-decimal pl-5 space-y-3">
             <li>Специалист уточняет цель обращения, самочувствие, пожелания и выбранные зоны.</li>
             <li>Уточняет наличие хронических заболеваний, травм, операций, аллергий и принимаемых препаратов.</li>
