@@ -542,7 +542,7 @@ function ServiceCardContent({
             onClick={() => openBooking(bookingTitle)}
             className="btn-primary flex-1"
           >
-            Записаться онлайн
+            Записаться
           </button>
           {servicePageLinks[clean(type.title)] ? (
             <Link
@@ -607,7 +607,7 @@ function ServiceCardContent({
             onClick={() => openBooking(bookingTitle)}
             className="btn-primary w-full h-[60px]"
           >
-            Записаться онлайн
+            Записаться
           </button>
           
           <div className="flex items-center gap-2">
