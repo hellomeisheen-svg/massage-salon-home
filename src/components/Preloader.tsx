@@ -12,19 +12,28 @@ export function Preloader() {
   const loadedRef = useRef(false);
 
   useEffect(() => {
-    // If we're on the client, start the logic
+    console.log("Preloader effect start");
     const finish = () => {
+      console.log("Preloader finish called");
       if (loadedRef.current) return;
       loadedRef.current = true;
       setLeaving(true);
-      setTimeout(() => setShouldRender(false), 400);
+      setTimeout(() => {
+        console.log("Preloader setting shouldRender false");
+        setShouldRender(false);
+      }, 400);
     };
 
-    const safetyTimer = setTimeout(finish, 3000);
+    const safetyTimer = setTimeout(() => {
+      console.log("Preloader safety timer fired");
+      finish();
+    }, 2000);
 
     if (document.readyState === "complete") {
+      console.log("Preloader readyState complete");
       finish();
     } else {
+      console.log("Preloader adding load listener");
       window.addEventListener("load", finish, { once: true });
     }
 
