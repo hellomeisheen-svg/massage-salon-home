@@ -184,7 +184,8 @@ function RootComponent() {
         Preloader must be outside ClientOnly to be visible immediately in SSR HTML.
         Internal state setHidden(false) in useEffect ensures it's safe for hydration.
       */}
-      <Preloader />
+      {/* Preloader is safe here. */}
+      <Preloader key="app-preloader" />
 
       <Outlet />
       
