@@ -162,7 +162,6 @@ const content: ServicePageContent = {
       label: "Противопоказания",
       content: (
         <>
-          <p className="font-medium uppercase tracking-wider text-sm mb-4">Противопоказания и ограничения</p>
           <p>Классический массаж не проводится при:</p>
           <ul className="list-disc pl-5 space-y-1 mt-2">
             <li>повышенной температуре;</li>
