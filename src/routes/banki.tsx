@@ -337,7 +337,7 @@ const content: ServicePageContent = {
         </>
       ) },
     {
-      label: "Когда нужна помощь врача",
+      label: "Что делать после сеанса",
       content: (
         <>
           <p>
