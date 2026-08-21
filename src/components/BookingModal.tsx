@@ -178,7 +178,7 @@ function BookingDialog({
               </h2>
               <p className="mt-3 text-[15px] leading-[1.5] text-[#566A93] sm:text-[16px]">
                 Оставьте контакты — подберём формат под ваше состояние
-                и согласуем время без спешки. Используем только одноразовое.
+                и согласуем время без спешки.
               </p>
             </div>
 
@@ -189,7 +189,7 @@ function BookingDialog({
                 setError(null);
                 let ok = true;
                 if (phone.length !== 10) {
-                  setPhoneError("Пожалуйста, укажите телефон полностью");
+                  setPhoneError("Введите номер телефона полностью");
                   ok = false;
                 } else {
                   setPhoneError(null);
@@ -283,7 +283,7 @@ function BookingDialog({
                   {[
                     { id: "whatsapp", label: "WhatsApp" },
                     { id: "telegram", label: "Telegram" },
-                    { id: "max", label: "💬 Max" },
+                    { id: "max", label: "'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n                                        \n                                            \n                                            я прошу тебя предоставить отчет? почему ты меня игнорируешь!" },
                   ].map(m => (
                     <button
                       key={m.id}

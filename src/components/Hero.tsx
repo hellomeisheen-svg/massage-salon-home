@@ -8,10 +8,10 @@ function HeadlineBlock({ onOpenQuiz }: { onOpenQuiz: () => void }) {
     <div className="flex flex-col tablet-text-block xl:min-w-[640px] xl:w-[640px]">
 
       <h1 className="font-noto-serif-narrow ds-h1 text-[#1C3C8C] xl:whitespace-pre-line">
-        {"Замедлитесь.\nПозаботьтесь о себе."}
+        {"Массаж, гирудотерапия и\u00a0вакуум в\u00a0Трудовом"}
       </h1>
       <p className="mt-4 text-[16px] font-light leading-[26px] text-[#566A93] xl:max-w-[540px]">
-        Убираю напряжение, отёки и&nbsp;боли, возвращаю лёгкость движений в&nbsp;Трудовом — первый эффект уже после 1–2 сеансов.
+        Убираю напряжение, отёки и&nbsp;боли, возвращаю лёгкость движений — первый эффект уже после 1–2 сеансов.
       </p>
       <div className="mt-[30px] flex flex-col gap-3 sm:flex-row sm:gap-4">
         <a
@@ -20,7 +20,7 @@ function HeadlineBlock({ onOpenQuiz }: { onOpenQuiz: () => void }) {
           rel="noopener noreferrer"
           className="btn-primary w-full sm:w-[280px] xl:w-[250px] inline-flex items-center justify-center text-center whitespace-nowrap"
         >
-          Записаться онлайн
+          Онлайн запись
         </a>
         <button
           type="button"

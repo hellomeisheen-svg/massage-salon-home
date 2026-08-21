@@ -277,7 +277,7 @@ export function Programs({ prioritizeKeys }: ProgramsProps = {}) {
               onClick={() => openBooking(program.name)}
               className="btn-primary w-full sm:flex-1"
             >
-              Записаться онлайн
+              Записаться
             </button>
             <div className="grid grid-cols-2 gap-3 sm:contents">
               <button

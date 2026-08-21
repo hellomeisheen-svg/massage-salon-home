@@ -95,7 +95,7 @@ export const Route = createFileRoute("/girudoterapiya")({
               offers: [
                 {
                   "@type": "Offer",
-                  name: "Оздоровительный сеанс гирудотерапии",
+                  name: "Медицинские пиявки, сеанс",
                   price: "4800",
                   priceCurrency: "RUB",
                   url: "https://7heavenmassage.ru/girudoterapiya#prices" },
@@ -157,7 +157,7 @@ export const Route = createFileRoute("/girudoterapiya")({
                   name: "Где находится кабинет и как записаться?",
                   acceptedAnswer: {
                     "@type": "Answer",
-                    text: "Кабинет расположен в посёлке Трудовое. Принимаю по предварительной записи. Записаться в мессенджере можно через Max — я уточню удобное время и дам необходимые рекомендации по подготовке к вашему первому сеансу." } }] }] }) }] }),
+                    text: "Кабинет расположен в посёлке Трудовое. Принимаю по предварительной записи. Записаться можно через Max — я уточню удобное время и дам необходимые рекомендации по подготовке к вашему первому сеансу." } }] }] }) }] }),
   component: GirudoterapiyaPage });
 
 const badges = ["Стерильные материалы", "Пиявка используется один раз", "Сопровождение после сеанса"];
@@ -243,7 +243,7 @@ function GirudoterapiyaPage() {
         <PromoBanner
           title={
             <>
-              <span className="xl:hidden">Успейте до повышения цен</span>
+              <span className="xl:hidden">До&nbsp;1&nbsp;сентября покупайте программы по&nbsp;прежней цене</span>
               <span className="hidden xl:inline">
                 С&nbsp;1&nbsp;сентября часть курсов подорожает, а&nbsp;пока
                 <br />

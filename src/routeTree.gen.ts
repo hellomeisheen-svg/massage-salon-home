@@ -17,7 +17,6 @@ import { Route as KlassicheskiiMassazhRouteImport } from './routes/klassicheskii
 import { Route as KetgutRouteImport } from './routes/ketgut'
 import { Route as GirudoterapiyaRouteImport } from './routes/girudoterapiya'
 import { Route as BankiRouteImport } from './routes/banki'
-import { Route as R404RouteImport } from './routes/404'
 import { Route as SplatRouteImport } from './routes/$'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -61,11 +60,6 @@ const BankiRoute = BankiRouteImport.update({
   path: '/banki',
   getParentRoute: () => rootRouteImport,
 } as any)
-const R404Route = R404RouteImport.update({
-  id: '/404',
-  path: '/404',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const SplatRoute = SplatRouteImport.update({
   id: '/$',
   path: '/$',
@@ -80,7 +74,6 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
-  '/404': typeof R404Route
   '/banki': typeof BankiRoute
   '/girudoterapiya': typeof GirudoterapiyaRoute
   '/ketgut': typeof KetgutRoute
@@ -93,7 +86,6 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
-  '/404': typeof R404Route
   '/banki': typeof BankiRoute
   '/girudoterapiya': typeof GirudoterapiyaRoute
   '/ketgut': typeof KetgutRoute
@@ -107,7 +99,6 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
-  '/404': typeof R404Route
   '/banki': typeof BankiRoute
   '/girudoterapiya': typeof GirudoterapiyaRoute
   '/ketgut': typeof KetgutRoute
@@ -122,7 +113,6 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/$'
-    | '/404'
     | '/banki'
     | '/girudoterapiya'
     | '/ketgut'
@@ -135,7 +125,6 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/$'
-    | '/404'
     | '/banki'
     | '/girudoterapiya'
     | '/ketgut'
@@ -148,7 +137,6 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/$'
-    | '/404'
     | '/banki'
     | '/girudoterapiya'
     | '/ketgut'
@@ -162,7 +150,6 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   SplatRoute: typeof SplatRoute
-  R404Route: typeof R404Route
   BankiRoute: typeof BankiRoute
   GirudoterapiyaRoute: typeof GirudoterapiyaRoute
   KetgutRoute: typeof KetgutRoute
@@ -231,13 +218,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BankiRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/404': {
-      id: '/404'
-      path: '/404'
-      fullPath: '/404'
-      preLoaderRoute: typeof R404RouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/$': {
       id: '/$'
       path: '/$'
@@ -258,7 +238,6 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   SplatRoute: SplatRoute,
-  R404Route: R404Route,
   BankiRoute: BankiRoute,
   GirudoterapiyaRoute: GirudoterapiyaRoute,
   KetgutRoute: KetgutRoute,
