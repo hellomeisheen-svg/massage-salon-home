@@ -11,7 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import "../styles.css";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-import { StickyMobileCTA } from "@/components/StickyMobileCTA";
+
 import { ClientOnly } from "@/components/ClientOnly";
 import { Analytics } from "@/components/Analytics";
 
@@ -175,9 +175,6 @@ function RootComponent() {
       
       <Outlet />
       
-      <ClientOnly>
-        <StickyMobileCTA />
-      </ClientOnly>
     </QueryClientProvider>
   );
 }
