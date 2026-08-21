@@ -24,13 +24,11 @@ export const StickyMobileCTA = memo(function StickyMobileCTA() {
     // Initial check
     updateVisibility();
 
-    // Periodic check in case DOM changes without scroll
-    const interval = setInterval(updateVisibility, 500);
 
     return () => {
       window.removeEventListener("scroll", updateVisibility);
       window.removeEventListener("resize", updateVisibility);
-      clearInterval(interval);
+      
     };
   }, []);
 

@@ -11,8 +11,6 @@ import { useEffect, type ReactNode } from "react";
 
 import "../styles.css";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-import { Preloader } from "@/components/Preloader";
-import { TypographyProvider } from "@/components/TypographyProvider";
 import { StickyMobileCTA } from "@/components/StickyMobileCTA";
 import { ClientOnly } from "@/components/ClientOnly";
 import { Analytics } from "@/components/Analytics";
@@ -150,7 +148,6 @@ function RootShell({ children }: { children: ReactNode }) {
         <HeadContent />
       </head>
       <body>
-        <Preloader />
         {children}
         <Scripts />
         <noscript>
@@ -173,7 +170,6 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <ClientOnly>
-        <TypographyProvider />
         <Analytics />
       </ClientOnly>
       
