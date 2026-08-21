@@ -211,10 +211,9 @@ const content: ServicePageContent = {
         </>
       ) },
     {
-      label: "После сеанса",
+      label: "Что делать после сеанса?",
       content: (
         <>
-          <p className="font-medium uppercase tracking-wider text-sm mb-4">Что делать после процедуры</p>
           <p>После классического массажа возможны расслабление, лёгкая усталость, умеренная чувствительность или ощущение тепла в обработанных зонах.</p>
           <p className="mt-4 font-semibold">После сеанса:</p>
           <ul className="list-disc pl-5 space-y-2 mt-2">
