@@ -19,7 +19,8 @@ export function Preloader() {
       setTimeout(() => setShouldRender(false), 400);
     };
 
-    const safetyTimer = setTimeout(finish, 3000);
+    // Safety timeout to prevent infinite loader
+    const safetyTimer = setTimeout(finish, 2000);
 
     if (document.readyState === "complete") {
       finish();

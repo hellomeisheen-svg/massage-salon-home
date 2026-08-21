@@ -70,9 +70,10 @@ export default {
       } 
       // HTML and data requests
       else {
-        finalResponse.headers.set("Cache-Control", "no-cache, no-store, must-revalidate");
+        finalResponse.headers.set("Cache-Control", "no-store, no-cache, must-revalidate, proxy-revalidate");
         finalResponse.headers.set("Pragma", "no-cache");
         finalResponse.headers.set("Expires", "0");
+        finalResponse.headers.set("Surrogate-Control", "no-store");
       }
       
       return finalResponse;
