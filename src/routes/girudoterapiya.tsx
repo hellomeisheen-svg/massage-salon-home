@@ -407,7 +407,7 @@ const girudoSections: { label: string; content: React.ReactNode }[] = [
         <p className="font-semibold text-[#1C3C8C]">Косметические пиявки</p>
         <p>Постановка небольших медицинских пиявок на лицо и локальные зоны рассматривается отдельно. Процедуру можно проводить только после оценки состояния кожи, общего здоровья, склонности к кровотечениям и принимаемых препаратов.</p>
         
-        <div className="mt-6 p-4 bg-[#F2F8FF] text-[#1C3C8C] rounded-lg font-medium">
+        <div className="mt-6 p-4 bg-[#F2F8FF] text-[#1C3C8C] rounded-lg border border-[#DAEBFF] font-medium">
           Конкретные санитарные процедуры и документы на медицинских пиявок можно уточнить у специалиста перед записью.
         </div>
       </>
@@ -451,7 +451,7 @@ const girudoSections: { label: string; content: React.ReactNode }[] = [
           <li>состоянии алкогольного опьянения или невозможности выполнять рекомендации специалиста;</li>
           <li>недавних операциях, особенно на головном или спинном мозге.</li>
         </ul>
-        <div className="mt-6 p-4 bg-[#F2F8FF] text-[#1C3C8C] rounded-lg font-medium">
+        <div className="mt-6 p-4 bg-[#F2F8FF] text-[#1C3C8C] rounded-lg border border-[#DAEBFF] font-medium">
           Перечень не заменяет медицинскую консультацию. Перед процедурой обязательно сообщите специалисту о заболеваниях, аллергиях, беременности, недавних операциях и всех принимаемых препаратах. Не отменяйте назначенные лекарства самостоятельно, в том числе препараты, влияющие на свёртываемость крови.
         </div>
       </>
@@ -468,7 +468,7 @@ const girudoSections: { label: string; content: React.ReactNode }[] = [
           <li>После снятия обрабатывает места укусов и накладывает повязку;</li>
           <li>Объясняет правила ухода и признаки, при которых нужно обратиться за помощью.</li>
         </ul>
-        <div className="mt-6 p-4 bg-[#F2F8FF] text-[#1C3C8C] rounded-lg font-medium">
+        <div className="mt-6 p-4 bg-[#F2F8FF] text-[#1C3C8C] rounded-lg border border-[#DAEBFF] font-medium">
           Продолжительность сеанса зависит от количества пиявок, зон постановки и реакции организма. В среднем процедура занимает от 1,5 до 2 часов.
         </div>
       </>
@@ -505,7 +505,7 @@ const girudoSections: { label: string; content: React.ReactNode }[] = [
           <li>не массируйте зоны постановки;</li>
           <li>не наносите косметику на повреждённую кожу.</li>
         </ul>
-        <div className="mt-6 p-4 bg-[#F2F8FF] text-[#1C3C8C] rounded-lg font-medium">
+        <div className="mt-6 p-4 bg-[#F2F8FF] text-[#1C3C8C] rounded-lg border border-[#DAEBFF] font-medium">
           Обратитесь за медицинской помощью, если кровотечение не уменьшается, усиливаются боль или отёк, повышается температура, появляется гнойное или необычное отделяемое.
         </div>
       </>

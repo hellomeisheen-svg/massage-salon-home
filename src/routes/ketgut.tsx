@@ -262,7 +262,7 @@ const content: ServicePageContent = {
             <li>на место постановки накладывается повязку или пластырь;</li>
             <li>специалист объясняет правила ухода и признаки возможных осложнений.</li>
           </ul>
-          <div className="mt-6 p-4 bg-[#F2F8FF] text-[#1C3C8C] rounded-lg font-medium">
+          <div className="mt-6 p-4 bg-[#F2F8FF] text-[#1C3C8C] rounded-lg border border-[#DAEBFF] font-medium">
             Во время процедуры возможны покалывание, жжение или умеренная болезненность. Продолжительность сеанса зависит от количества зон, выбранной методики и индивидуальной реакции организма.
           </div>
         </>
@@ -301,7 +301,7 @@ const content: ServicePageContent = {
             <li>избегайте горячей ванны;</li>
             <li>временно откажитесь от интенсивных тренировок и тяжёлых нагрузок.</li>
           </ul>
-          <div className="mt-6 p-4 bg-[#F2F8FF] text-[#1C3C8C] rounded-lg font-medium">
+          <div className="mt-6 p-4 bg-[#F2F8FF] text-[#1C3C8C] rounded-lg border border-[#DAEBFF] font-medium">
             Обратитесь к врачу, если боль усиливается, быстро нарастает отёк, появляется гнойное отделяемое, повышается температура, возникает сыпь, затруднение дыхания или другие признаки острой реакции.
           </div>
         </>

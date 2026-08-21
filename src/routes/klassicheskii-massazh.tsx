@@ -165,7 +165,7 @@ const content: ServicePageContent = {
             <li>выраженном остеопорозе;</li>
             <li>активных онкологических заболеваниях.</li>
           </ul>
-          <div className="mt-6 p-4 bg-[#F2F8FF] text-[#1C3C8C] rounded-lg font-medium">
+          <div className="mt-6 p-4 bg-[#F2F8FF] text-[#1C3C8C] rounded-lg border border-[#DAEBFF] font-medium">
             Перед сеансом сообщите специалисту о хронических заболеваниях, аллергиях, беременности, недавних травмах и операциях, склонности к образованию синяков и принимаемых препаратах. Не отменяйте назначенные лекарства самостоятельно.
           </div>
         </>
@@ -221,7 +221,7 @@ const content: ServicePageContent = {
             <li>наблюдайте за самочувствием;</li>
             <li>соблюдайте индивидуальные рекомендации специалиста.</li>
           </ul>
-          <div className="mt-6 p-4 bg-[#F2F8FF] text-[#1C3C8C] rounded-lg font-medium">
+          <div className="mt-6 p-4 bg-[#F2F8FF] text-[#1C3C8C] rounded-lg border border-[#DAEBFF] font-medium">
             Обратитесь к врачу, если после процедуры появляются сильная или нарастающая боль, выраженный отёк, онемение, слабость, головокружение, повышение температуры или другие необычные симптомы.
           </div>
         </>
