@@ -7,26 +7,19 @@ const Star = ({ className }: { className?: string }) => (
 );
 
 export function Preloader() {
-  // Always visible in SSR HTML, but sets self to hidden after mount if not already done
-  const [mounted, setMounted] = useState(false);
+  const [shouldRender, setShouldRender] = useState(true);
   const [leaving, setLeaving] = useState(false);
-  const [hidden, setHidden] = useState(false);
   const loadedRef = useRef(false);
 
   useEffect(() => {
-    setMounted(true);
-
     const finish = () => {
       if (loadedRef.current) return;
       loadedRef.current = true;
       setLeaving(true);
-      setTimeout(() => setHidden(true), 400);
+      setTimeout(() => setShouldRender(false), 400);
     };
 
-    // Safety timeout: force hide if load takes too long
-    const safetyTimer = setTimeout(() => {
-      if (!loadedRef.current) finish();
-    }, 4000);
+    const safetyTimer = setTimeout(finish, 3000);
 
     if (document.readyState === "complete") {
       finish();
@@ -40,11 +33,25 @@ export function Preloader() {
     };
   }, []);
 
-
-  if (hidden || (!mounted && typeof window !== "undefined")) return null;
+  if (!shouldRender) return null;
 
   return (
-    <div className={`preloader ${leaving ? "preloader-leaving" : ""}`} aria-label="Загрузка">
+    <div 
+      className={`preloader ${leaving ? "preloader-leaving" : ""}`} 
+      aria-label="Загрузка"
+      style={{
+        position: 'fixed',
+        inset: 0,
+        zIndex: 9999,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#eff6ff',
+        opacity: leaving ? 0 : 1,
+        transition: 'opacity 0.35s ease',
+        pointerEvents: leaving ? 'none' : 'auto'
+      }}
+    >
       <div className="preloader-inner">
         <Star className="preloader-star h-6 w-6 text-[#1C3C8C]" />
         <div className="preloader-track">
@@ -54,4 +61,3 @@ export function Preloader() {
     </div>
   );
 }
-
