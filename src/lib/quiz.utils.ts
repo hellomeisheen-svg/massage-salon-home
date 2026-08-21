@@ -201,67 +201,10 @@ function getLightnessRecommendations(answers: Record<string, any>): QuizService[
     answers.relaxArea;
 
 
-  // Готовые объекты для ветки lightness с кастомными описаниями, если нужно
-  // Но мы будем брать их из основного конфига для консистентности, 
-  // если ID совпадают.
-  const getService = (id: string) => QUIZ_CONFIG.services.find(s => s.id === id);
+  // Единый источник данных — QUIZ_CONFIG.services (названия, длительность, цены)
+  const getService = (id: string) => QUIZ_CONFIG.services.find((s) => s.id === id);
 
-  const lightnessServices: Record<string, Partial<QuizService>> = {
-    lymphatic: {
-      id: "lymphatic",
-      name: "Лимфатический",
-      description: "Деликатная работа с лимфатической системой и общим состоянием тела. Помогает мягко поддержать естественные процессы восстановления и почувствовать лёгкость.",
-      duration: "120 минут",
-      price: "5 000 ₽"
-    },
-    classic_legs: {
-      id: "classic_legs",
-      name: "Классический — ноги/стопы",
-      description: "Работа с икрами, бёдрами и стопами. Подходит после долгого дня на ногах, тренировок или длительной сидячей работы.",
-      duration: "60 минут",
-      price: "3 000 ₽"
-    },
-    vector: {
-      id: "vector",
-      name: "Векторный массаж",
-      description: "Комплексная работа с телом для глубокого расслабления и восстановления баланса.",
-      duration: "120 минут",
-      price: "5 000 ₽"
-    },
-    lymph_face: {
-      id: "lymph_face",
-      name: "Лимфатический — лицо",
-      description: "Деликатно выводит лишнюю жидкость, возвращая свежесть взгляду.",
-      duration: "40 минут",
-      price: "2 000 ₽"
-    },
-    classic_face: {
-      id: "classic_face",
-      name: "Классический — лицо",
-      description: "Поддерживает тонус мышц лица и улучшает цвет кожи.",
-      duration: "40 минут",
-      price: "2 000 ₽"
-    },
-    girudo_cosm: {
-      id: "girudo_cosm",
-      name: "Косметические пиявки",
-      description: "Природный лифтинг и улучшение микроциркуляции кожи лица.",
-      duration: "40-60 мин",
-      price: "от 600 ₽ за шт"
-    }
-  };
-
-  const resolve = (id: string): QuizService | null => {
-    const base = getService(id);
-    const custom = lightnessServices[id];
-    if (!base && !custom) return null;
-    return {
-      ...(base || {}),
-      ...(custom || {}),
-      id: id,
-      tags: base?.tags || [],
-    } as QuizService;
-  };
+  const resolve = (id: string): QuizService | null => getService(id) ?? null;
 
   let ids: string[] = [];
 
@@ -278,7 +221,7 @@ function getLightnessRecommendations(answers: Record<string, any>): QuizService[
   } else if (areas.includes("master_choice") || areas.length === 0) {
     ids = ["lymphatic", "classic_legs"];
   } else {
-    // Если ничего не подошло, но мы в этой ветке
+    // Если ничего не подошло — базовая рекомендация ветки
     ids = ["lymphatic", "classic_legs"];
   }
 
