@@ -6,7 +6,7 @@ import Logo from "@/components/Logo";
 type NavItem = { label: string; href: string };
 
 const defaultNavigationItems: NavItem[] = [
-  { label: "Услуги", href: "/#uslugi" },
+  { label: "Услуги", href: "/#services" },
     { label: "Преимущества", href: "/#advantages" },
     { label: "Программы", href: "/#programs" },
   { label: "Обо мне", href: "/#obrazovanie" },
