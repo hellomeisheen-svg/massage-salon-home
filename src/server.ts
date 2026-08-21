@@ -51,16 +51,28 @@ export default {
       const response = await handler.fetch(request, env, ctx);
       const finalResponse = await normalizeCatastrophicSsrResponse(response);
       
-      // Set cache headers
+      // Force response headers for stability
+      finalResponse.headers.set("X-Content-Type-Options", "nosniff");
+      
       const url = new URL(request.url);
+      
+      // Static assets
       if (url.pathname.startsWith("/assets/")) {
         finalResponse.headers.set("Cache-Control", "public, max-age=31536000, immutable");
-      } else if (url.pathname.match(/\.(webp|jpg|jpeg|png|svg|ico|woff2|woff)$/)) {
+      } 
+      // Media and fonts
+      else if (url.pathname.match(/\.(webp|jpg|jpeg|png|gif|svg|ico|woff2|woff|ttf|otf)$/i)) {
         finalResponse.headers.set("Cache-Control", "public, max-age=604800, stale-while-revalidate=86400");
-      } else if (url.pathname === "/sitemap.xml" || url.pathname === "/robots.txt") {
+      } 
+      // SEO and manifest
+      else if (url.pathname === "/sitemap.xml" || url.pathname === "/robots.txt" || url.pathname === "/manifest.json") {
         finalResponse.headers.set("Cache-Control", "public, max-age=3600, stale-while-revalidate=600");
-      } else {
+      } 
+      // HTML and data requests
+      else {
         finalResponse.headers.set("Cache-Control", "no-cache, no-store, must-revalidate");
+        finalResponse.headers.set("Pragma", "no-cache");
+        finalResponse.headers.set("Expires", "0");
       }
       
       return finalResponse;

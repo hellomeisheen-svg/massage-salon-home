@@ -7,24 +7,19 @@ const Star = ({ className }: { className?: string }) => (
 );
 
 export function Preloader() {
-  const [hidden, setHidden] = useState(true);
+  const [shouldRender, setShouldRender] = useState(true);
   const [leaving, setLeaving] = useState(false);
   const loadedRef = useRef(false);
 
   useEffect(() => {
-    // Включаем отображение только на клиенте
-    setHidden(false);
-  }, []);
-
-  useEffect(() => {
-    let removeTimer: ReturnType<typeof setTimeout>;
-
     const finish = () => {
       if (loadedRef.current) return;
       loadedRef.current = true;
       setLeaving(true);
-      removeTimer = setTimeout(() => setHidden(true), 400);
+      setTimeout(() => setShouldRender(false), 400);
     };
+
+    const safetyTimer = setTimeout(finish, 3000);
 
     if (document.readyState === "complete") {
       finish();
@@ -33,15 +28,30 @@ export function Preloader() {
     }
 
     return () => {
-      clearTimeout(removeTimer);
+      clearTimeout(safetyTimer);
       window.removeEventListener("load", finish);
     };
   }, []);
 
-  if (hidden) return null;
+  if (!shouldRender) return null;
 
   return (
-    <div className={`preloader ${leaving ? "preloader-leaving" : ""}`} aria-label="Загрузка">
+    <div 
+      className={`preloader-root ${leaving ? "preloader-leaving" : ""}`} 
+      aria-label="Загрузка"
+      style={{
+        position: 'fixed',
+        inset: 0,
+        zIndex: 9999,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#eff6ff',
+        opacity: leaving ? 0 : 1,
+        transition: 'opacity 0.35s ease',
+        pointerEvents: leaving ? 'none' : 'auto'
+      }}
+    >
       <div className="preloader-inner">
         <Star className="preloader-star h-6 w-6 text-[#1C3C8C]" />
         <div className="preloader-track">
@@ -51,4 +61,3 @@ export function Preloader() {
     </div>
   );
 }
-

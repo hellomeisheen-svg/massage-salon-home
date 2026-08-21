@@ -120,6 +120,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
       {
+        rel: "preconnect",
+        href: "https://mc.yandex.ru",
+        crossOrigin: "anonymous",
+      },
+      {
         rel: "preload",
         href: "/fonts/noto-serif-display-narrow.woff2",
         as: "font",
@@ -170,16 +175,18 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      
       <ClientOnly>
         <TypographyProvider />
         <Analytics />
       </ClientOnly>
+      
       <Preloader />
 
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
-      <StickyMobileCTA />
+      
+      <ClientOnly>
+        <StickyMobileCTA />
+      </ClientOnly>
     </QueryClientProvider>
   );
 }
