@@ -2,7 +2,7 @@ import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 
 const sendNotificationSchema = z.object({
-  leadId: z.string().uuid().optional(),
+  leadId: z.string().uuid(),
   phone: z.string().optional(),
   results: z.array(z.string()).optional(),
   answers: z.array(z.object({
@@ -14,39 +14,24 @@ const sendNotificationSchema = z.object({
 export const sendLeadNotification = createServerFn({ method: "POST" })
   .inputValidator((data) => sendNotificationSchema.parse(data))
   .handler(async ({ data }) => {
-    const { leadId, phone } = data;
+    const { leadId } = data;
     
     // Import admin client dynamically inside handler to avoid client-side leakage
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
 
     try {
-      let lead;
-      if (leadId) {
-        // 1a. Fetch by ID
-        const { data: leadData, error: fetchError } = await supabaseAdmin
-          .from("leads")
-          .select("*")
-          .eq("id", leadId)
-          .single();
-        lead = leadData;
-        if (fetchError) throw fetchError;
-      } else if (phone) {
-        // 1b. Fetch latest by phone if ID is missing (e.g. anon insert)
-        const { data: leadData, error: fetchError } = await supabaseAdmin
-          .from("leads")
-          .select("*")
-          .eq("phone", phone)
-          .order("created_at", { ascending: false })
-          .limit(1)
-          .maybeSingle();
-        lead = leadData;
-        if (fetchError) throw fetchError;
-      }
-
-      if (!lead) {
-        console.error(`[Notification Error] Could not find lead (ID: ${leadId}, Phone: ${phone})`);
+      // 1. Fetch by ID only to avoid collisions
+      const { data: lead, error: fetchError } = await supabaseAdmin
+        .from("leads")
+        .select("*")
+        .eq("id", leadId)
+        .single();
+      
+      if (fetchError || !lead) {
+        console.error(`[Notification Error] Could not find lead (ID: ${leadId})`, fetchError);
         return { success: false, error: "Lead not found" };
       }
+
 
       // 2. Prevent duplicate notifications
       if (lead.notification_sent) {
