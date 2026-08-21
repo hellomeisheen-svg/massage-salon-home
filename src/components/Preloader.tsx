@@ -12,6 +12,7 @@ export function Preloader() {
   const loadedRef = useRef(false);
 
   useEffect(() => {
+    // Включаем отображение только на клиенте
     setHidden(false);
   }, []);
 
