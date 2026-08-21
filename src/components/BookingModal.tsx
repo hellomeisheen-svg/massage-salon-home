@@ -143,10 +143,10 @@ function BookingDialog({
               id="booking-title"
               className="font-noto-serif-narrow ds-h3 text-[#1C3C8C]"
             >
-              Ваш визит забронирован
+              Спасибо!
             </h2>
             <p className="mt-4 max-w-[360px] text-[15px] leading-[1.6] text-[#566A93] sm:text-[16px]">
-              Мы создадим для вас атмосферу полного спокойствия в&nbsp;«Седьмом небе». Администратор свяжется с&nbsp;вами, чтобы уточнить детали и&nbsp;подтвердить время.
+              Свяжемся с&nbsp;вами в&nbsp;течение 15&nbsp;минут, чтобы уточнить детали и&nbsp;подтвердить время.
             </p>
 
             <div className="mt-8 flex w-full flex-col gap-3 sm:px-0">
@@ -278,12 +278,12 @@ function BookingDialog({
               </label>
 
               <div className="space-y-2">
-                <span className="text-[14px] leading-[1.5] text-foreground block">Удобный способ связи</span>
+                <span className="text-[14px] leading-[1.5] text-foreground block">Где вам удобнее ответить?</span>
                 <div className="grid grid-cols-3 gap-2">
                   {[
                     { id: "whatsapp", label: "WhatsApp" },
                     { id: "telegram", label: "Telegram" },
-                    { id: "max", label: "MAX" },
+                    { id: "max", label: "'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n                                        \n                                            \n                                            Внеси изменения" },
                   ].map(m => (
                     <button
                       key={m.id}
