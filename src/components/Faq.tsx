@@ -29,7 +29,7 @@ const items = [
   },
 ];
 
-function FaqItem({ q, a, isMobile }: { q: string; a: string; isMobile: boolean }) {
+function FaqItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
   const contentId = useId();
 
