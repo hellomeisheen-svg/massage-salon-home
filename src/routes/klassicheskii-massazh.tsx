@@ -110,7 +110,6 @@ const content: ServicePageContent = {
       label: "Зоны массажа",
       content: (
         <>
-          <p className="font-medium uppercase tracking-wider text-sm mb-4">Зоны массажа</p>
           <div className="space-y-6">
             <div>
               <p className="font-semibold text-primary">Всё тело</p>
