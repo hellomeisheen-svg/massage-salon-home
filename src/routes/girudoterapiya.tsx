@@ -292,7 +292,7 @@ function SpecialistBlock() {
         <p className="mt-3 body-text text-[#566A93]">
           Мастер кабинета, специалист<br />по{"\u00A0"}оздоровительным практикам
         </p>
-        {/* RatingBlock removed from here as per request */}
+        
       </div>
     </div>
   );

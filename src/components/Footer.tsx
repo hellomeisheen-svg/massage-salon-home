@@ -94,7 +94,7 @@ export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
               </li>
             </ul>
 
-            <RatingBlock />
+            <RatingBlock className="hidden xl:flex" />
 
             <a
               href="https://n2418813.yclients.com"
