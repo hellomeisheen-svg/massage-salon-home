@@ -235,28 +235,49 @@ export function pluralize(n: number, forms: [string, string, string]) {
   return forms[2];
 }
 
-export function formatDurationValue(min: number) {
-  const hours = Math.round(min / 60);
-  return {
-    text: `${hours}\u00A0${pluralize(hours, ["час", "часа", "часов"])}`,
-    amount: hours,
-    unit: "hour" as const,
-  };
+export function formatDurationValue(value: string) {
+  // Check if it's already a formatted string like "2 часа" or "1,5–2 часа"
+  if (value.includes("час") || value.includes("мин")) {
+    return {
+      text: value.replace(/\s/g, "\u00A0"),
+      amount: 0, // not used for text result
+      unit: "custom" as const,
+    };
+  }
+  
+  const numbers = [...value.matchAll(/\d+/g)].map((m) => Number(m[0]));
+  if (!numbers.length) return { text: value, amount: 0, unit: "custom" as const };
+  
+  const n = numbers[0];
+  // If it's a small number like 1 or 2, assume it's hours if not specified, 
+  // but here we trust the hardcoded duration strings in serviceTypes.
+  return { text: value, amount: n, unit: "custom" as const };
 }
 
 export function formatDurationString(value: string, multiplier = 1) {
-  const numbers = [...value.matchAll(/\d+/g)].map((m) => Number(m[0]));
+  if (multiplier === 1) return value.replace(/\s/g, "\u00A0");
+  
+  // For packages, we need to handle "2 часа" -> "12 часов" etc.
+  // But the request is mainly about the main card display which uses multiplier 1 usually,
+  // or simple multiplication for sessions.
+  const numbers = [...value.matchAll(/\d+([.,]\d+)?/g)].map((m) => parseFloat(m[0].replace(",", ".")));
   if (!numbers.length) return value;
-  const scaled = numbers.map((n) => n * multiplier);
-  const isRange = scaled.length === 2 && /[\u2013\u2014-]/.test(value);
-  if (isRange) {
-    const a = formatDurationValue(scaled[0]);
-    const b = formatDurationValue(scaled[1]);
-    const unitWord = pluralize(Math.max(scaled[0], scaled[1]) / 60, ["час", "часа", "часов"]);
-    return `${a.amount}\u00A0–\u00A0${b.amount}\u00A0${unitWord}`;
+  
+  const isHours = value.includes("час");
+  const isMinutes = value.includes("мин");
+  
+  if (numbers.length === 2 && /[\u2013\u2014-]/.test(value)) {
+    const a = numbers[0] * multiplier;
+    const b = numbers[1] * multiplier;
+    const unit = isHours ? pluralize(b, ["час", "часа", "часов"]) : pluralize(b, ["минута", "минуты", "минут"]);
+    return `${a.toString().replace(".", ",")}\u00A0–\u00A0${b.toString().replace(".", ",")}\u00A0${unit}`;
   }
-  return scaled.map((n) => formatDurationValue(n).text).join(", ");
+  
+  const result = numbers[0] * multiplier;
+  const unit = isHours ? pluralize(result, ["час", "часа", "часов"]) : pluralize(result, ["минута", "минуты", "минут"]);
+  return `${result.toString().replace(".", ",")}\u00A0${unit}`;
 }
+
 
 export function formatSessionLine(sessionCount: number, duration: string) {
   if (sessionCount === 1) {
