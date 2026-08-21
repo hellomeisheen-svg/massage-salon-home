@@ -39,6 +39,14 @@ function PrivacyPolicy() {
           </h1>
 
         <div className="mt-10 space-y-8 text-[15px] xl:text-base leading-[150%] font-light text-[#566A93]">
+          <div className="p-6 bg-[#DAEBFF] rounded-[12px] text-[#1C3C8C] mb-10">
+            <h3 className="font-noto-serif-narrow text-[18px] mb-4">Коротко о главном:</h3>
+            <ul className="list-disc pl-5 space-y-2 text-[14px]">
+              <li>Мы не передаём ваши данные третьим лицам.</li>
+              <li>Храним информацию в защищённой системе Lovable Cloud.</li>
+              <li>Вы можете запросить удаление данных в любой момент.</li>
+            </ul>
+          </div>
           <section>
             <h2 className="text-[20px] xl:text-[24px] font-light font-noto-serif-narrow text-[#1c3c8c]">
               1. Общие положения
@@ -82,7 +90,7 @@ function PrivacyPolicy() {
               сетевому адресу https://7heavenmassage.ru.
             </p>
             <p className="mt-3">
-              2.4. Информационная система персональных данных — совокупность содержащихся в базах
+              2.4. Как мы защищаем ваши данные — совокупность содержащихся в базах
               данных персональных данных и обеспечивающих их обработку информационных технологий и
               технических средств.
             </p>

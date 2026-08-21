@@ -189,7 +189,7 @@ function BookingDialog({
                 setError(null);
                 let ok = true;
                 if (phone.length !== 10) {
-                  setPhoneError("Введите номер телефона полностью");
+                  setPhoneError("Пожалуйста, укажите телефон полностью");
                   ok = false;
                 } else {
                   setPhoneError(null);
@@ -283,7 +283,7 @@ function BookingDialog({
                   {[
                     { id: "whatsapp", label: "WhatsApp" },
                     { id: "telegram", label: "Telegram" },
-                    { id: "max", label: "'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n                                        \n                                            \n                                            я прошу тебя предоставить отчет? почему ты меня игнорируешь!" },
+                    { id: "max", label: "💬 Max" },
                   ].map(m => (
                     <button
                       key={m.id}
