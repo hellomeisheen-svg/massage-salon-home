@@ -14,10 +14,21 @@ import { supabase } from "@/integrations/supabase/client";
 import { sendLeadNotification } from "@/lib/notifications.functions";
 import { extractDigits, formatPhone } from "@/lib/utils";
 
+type BookingContextValue = {
+  openBooking: (subject?: string) => void;
+  closeBooking: () => void;
+};
 
+const BookingContext = createContext<BookingContextValue | null>(null);
 
+export function useBooking() {
+  const ctx = useContext(BookingContext);
+  if (!ctx) throw new Error("useBooking must be used inside <BookingProvider>");
+  return ctx;
+}
 
 function BookingDialog({
+
   subject,
   onClose,
 }: {
