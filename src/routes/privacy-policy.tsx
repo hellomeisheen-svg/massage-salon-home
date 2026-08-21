@@ -35,7 +35,7 @@ function PrivacyPolicy() {
           <h1
             className="font-noto-serif-narrow text-[30px] leading-[1.1] text-[#1c3c8c] xl:text-[44px]"
           >
-            Как мы защищаем ваши данные
+            Как я защищаю ваши данные
           </h1>
 
           <div className="mt-8 p-6 bg-white border border-[#DAEBFF] rounded-[12px] ds-bento-shadow text-[#566A93]">
