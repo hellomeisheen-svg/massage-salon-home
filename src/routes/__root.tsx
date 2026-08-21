@@ -16,7 +16,7 @@ import { TypographyProvider } from "@/components/TypographyProvider";
 import { StickyMobileCTA } from "@/components/StickyMobileCTA";
 import { ClientOnly } from "@/components/ClientOnly";
 import { Analytics } from "@/components/Analytics";
-import { HydrationWatchdog } from "@/components/HydrationWatchdog";
+
 
 function NotFoundComponent() {
   return (
@@ -170,7 +170,7 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <HydrationWatchdog />
+      
       <ClientOnly>
         <TypographyProvider />
         <Analytics />
