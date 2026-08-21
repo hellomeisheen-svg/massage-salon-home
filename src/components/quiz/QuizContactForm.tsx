@@ -69,7 +69,7 @@ export function QuizContactForm({
     <form onSubmit={handleSubmit} className="flex flex-col gap-4 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <div className="pr-12">
         <h3 className="font-noto-serif-narrow ds-h3 text-[#1C3C8C] mb-2">Куда отправить результат?</h3>
-        <p className="mt-3 text-[15px] leading-[1.5] text-[#566A93] sm:text-[16px]">Оставьте контакты, чтобы мы могли закрепить за вами спецпредложение на первый визит.</p>
+        <p className="mt-3 text-[15px] leading-[1.5] text-[#566A93] sm:text-[16px]">Оставьте контакты, чтобы я могла закрепить за вами спецпредложение на первый визит.</p>
       </div>
 
       <div className="space-y-4">

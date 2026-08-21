@@ -9,13 +9,13 @@ export const Route = createFileRoute("/privacy-policy")({
       {
         name: "description",
         content:
-          "Политика конфиденциальности кабинета оздоровительных практик Седьмое небо: какие данные собираются, как они используются и как связаться с нами.",
+          "Политика конфиденциальности кабинета оздоровительных практик Седьмое небо: какие данные собираются, как они используются и как связаться со мной.",
       },
       { property: "og:title", content: "Политика конфиденциальности — Седьмое небо" },
       {
         property: "og:description",
         content:
-          "Какие данные собираются, как они используются и как связаться с нами по вопросам конфиденциальности.",
+          "Какие данные собираются, как они используются и как связаться со мной по вопросам конфиденциальности.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://7heavenmassage.ru/privacy-policy" },
@@ -35,14 +35,14 @@ function PrivacyPolicy() {
           <h1
             className="font-noto-serif-narrow text-[30px] leading-[1.1] text-[#1c3c8c] xl:text-[44px]"
           >
-            Как мы защищаем ваши данные
+            Как я защищаю ваши данные
           </h1>
 
           <div className="mt-8 p-6 bg-white border border-[#DAEBFF] rounded-[12px] ds-bento-shadow text-[#566A93]">
             <p className="font-semibold text-[#1C3C8C] mb-3">Коротко о защите ваших данных:</p>
             <ol className="list-decimal pl-5 space-y-2 text-[15px]">
-              <li>Мы не передаём ваши данные третьим лицам.</li>
-              <li>Храним информацию в защищённой системе.</li>
+              <li>Я не передаю ваши данные третьим лицам.</li>
+              <li>Храню информацию в защищённой системе.</li>
               <li>Вы можете запросить удаление данных в любой момент.</li>
             </ol>
           </div>
