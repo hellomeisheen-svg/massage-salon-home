@@ -12,6 +12,7 @@ export function Preloader() {
   const loadedRef = useRef(false);
 
   useEffect(() => {
+    // If we're on the client, start the logic
     const finish = () => {
       if (loadedRef.current) return;
       loadedRef.current = true;
@@ -37,7 +38,7 @@ export function Preloader() {
 
   return (
     <div 
-      className={`preloader ${leaving ? "preloader-leaving" : ""}`} 
+      className={`preloader-root ${leaving ? "preloader-leaving" : ""}`} 
       aria-label="Загрузка"
       style={{
         position: 'fixed',
