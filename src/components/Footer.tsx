@@ -209,7 +209,7 @@ export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
           <p className="text-[13px] text-[#1c3c8c]/80 font-light">
             Сайт разработан —{" "}
             <a
-              href="https://t.me/ksenny_designer"
+              href="https://cubik-design.ru/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#1c3c8c]/80 hover:text-[#1c3c8c] transition-colors font-light"
