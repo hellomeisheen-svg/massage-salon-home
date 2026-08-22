@@ -47,7 +47,7 @@ const NavigationMenuTrigger = React.forwardRef<
     className={cn(navigationMenuTriggerStyle(), "group", className)}
     {...props}
   >
-    {children}{"'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n                                        \n                                            \n                                            Спасибо. Проверка текущего HEAD 431cdc6d выглядит успешно.\n\nПеред деплоем, пожалуйста, только уточни:\n\n1. Какие SHA-коммиты (с полными SHA) содержат изменения:\n\n   - TypographyProvider / typographyPass / MutationObserver;\n\n   - React.lazy и Suspense для Gallery, BookingModal и QuizModal;\n\n   - pointer-events / overlay fixes;\n\n   - DOM null-checks в Header и других компонентах.\n\n2. Подтверди, что BookingModal отдельно проверен:\n\n   - открывается;\n\n   - закрывается крестиком, Escape и кликом вне окна — если эти способы поддерживаются;\n\n   - после закрытия весь экран и кнопки кликабельны;\n\n   - при закрытом состоянии overlay не перехватывает pointer events.\n\n3. Укажи полный итоговый SHA текущего main, который нужно деплоить.\n\nНе вноси новых изменений и не деплой на сервер."}
+    {children}{" "}
     <ChevronDown
       className="relative top-[1px] ml-1 h-3 w-3 transition duration-300 group-data-[state=open]:rotate-180"
       aria-hidden="true"
