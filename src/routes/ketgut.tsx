@@ -20,12 +20,6 @@ export const Route = createFileRoute("/ketgut")({
       { property: "og:image:alt", content: "Акупунктурный кетгут (постановка нитей) в кабинете Седьмое небо, г. Владивосток" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:image", content: "https://7heavenmassage.ru/images/uslugi-ketgut.webp" }],
-      {
-        property: "og:image",
-        content: "https://7heavenmassage.ru/images/uslugi-ketgut.webp" },
-      {
-        name: "twitter:image",
-        content: "https://7heavenmassage.ru/images/uslugi-ketgut.webp" }],
     links: [{ rel: "canonical", href: "https://7heavenmassage.ru/ketgut" }],
     scripts: [
       {
