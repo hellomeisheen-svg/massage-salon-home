@@ -10,35 +10,45 @@ declare global {
 export function Analytics() {
   useEffect(() => {
     if (typeof window === "undefined") return;
-    if (window.ym) return;
+    
+    const initMetrika = () => {
+      if (window.ym) return;
 
-    // Yandex.Metrika loader
-    (function(m: any, e: Document, t: string, r: string, i: string) {
-      m[i] = m[i] || function() { (m[i].a = m[i].a || []).push(arguments) };
-      m[i].l = 1 * (new Date() as any);
-      
-      const scripts = e.getElementsByTagName(t);
-      for (let j = 0; j < scripts.length; j++) {
-        const s = scripts[j] as HTMLScriptElement;
-        if (s.src === r) return;
-      }
-      
-      const k = e.createElement(t) as HTMLScriptElement;
-      const a = e.getElementsByTagName(t)[0] as HTMLScriptElement;
-      k.async = true;
-      k.src = r;
-      if (a && a.parentNode) {
-        a.parentNode.insertBefore(k, a);
-      }
-    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js?id=111534340", "ym");
+      // Yandex.Metrika loader
+      (function(m: any, e: Document, t: string, r: string, i: string) {
+        m[i] = m[i] || function() { (m[i].a = m[i].a || []).push(arguments) };
+        m[i].l = 1 * (new Date() as any);
+        
+        const scripts = e.getElementsByTagName(t);
+        for (let j = 0; j < scripts.length; j++) {
+          const s = scripts[j] as HTMLScriptElement;
+          if (s.src === r) return;
+        }
+        
+        const k = e.createElement(t) as HTMLScriptElement;
+        const a = e.getElementsByTagName(t)[0] as HTMLScriptElement;
+        k.async = true;
+        k.src = r;
+        if (a && a.parentNode) {
+          a.parentNode.insertBefore(k, a);
+        }
+      })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js?id=111534340", "ym");
 
-    window.ym(111534340, "init", {
-      clickmap: true,
-      trackLinks: true,
-      accurateTrackBounce: true,
-      webvisor: true,
-      ecommerce: "dataLayer"
-    });
+      window.ym(111534340, "init", {
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+        webvisor: true,
+        ecommerce: "dataLayer"
+      });
+    };
+
+    // Use requestIdleCallback with a fallback to setTimeout for Safari
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(() => initMetrika(), { timeout: 2000 });
+    } else {
+      setTimeout(initMetrika, 2000);
+    }
   }, []);
 
   return null;

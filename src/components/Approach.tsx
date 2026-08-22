@@ -43,7 +43,9 @@ export function Approach() {
               alt="Татьяна работает с клиенткой в светлом массажном кабинете"
               width={1024}
               height={1024}
+              loading="lazy"
               className="absolute inset-0 w-full h-full object-cover"
+
             />
           </div>
         </div>
