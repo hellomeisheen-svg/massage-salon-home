@@ -61,10 +61,12 @@ export function ServicePage({ content }: { content: ServicePageContent }) {
     <BookingProvider>
       <div className="relative flex flex-col min-h-screen bg-[#EFF6FF] lg:h-screen lg:overflow-hidden">
         <Header items={servicePageNav} />
-        <div className="flex-1 flex flex-col lg:overflow-hidden pt-20 xl:pt-[100px]">
-          <PageHero content={content} />
+        <div className="flex-1 flex flex-col lg:overflow-hidden pt-20 xl:pt-[100px] min-h-0">
+          <div className="lg:flex-shrink-0">
+            <PageHero content={content} />
+          </div>
           <AboutService content={content} />
-          <div className="lg:overflow-y-auto lg:flex-1">
+          <div className="lg:overflow-y-auto lg:flex-1 min-h-0">
             <Prices content={content} />
         <Prices content={content} />
         <PromoBanner />
@@ -102,8 +104,8 @@ export function ServicePage({ content }: { content: ServicePageContent }) {
 
 function PageHero({ content }: { content: ServicePageContent }) {
   return (
-    <main className="bg-[#EFF6FF] py-4 sm:py-5 lg:flex-shrink-0">
-      <section id="hero" className="container-1900 grid grid-cols-1 gap-4 sm:gap-5 lg:grid-cols-2">
+    <main className="bg-[#EFF6FF] py-4 sm:py-5">
+      <section id="hero" className="container-1900 grid grid-cols-1 gap-4 sm:gap-5 xl:grid-cols-2">
         <div className="ds-bento-shadow flex flex-col ds-card min-h-[640px] sm:h-[600px] xl:min-h-0 xl:h-auto p-5 sm:p-6 xl:p-10 overflow-hidden">
           <nav aria-label="Хлебные крошки" className="text-[14px] text-[#566A93]">
             <Link to="/" className="hover:opacity-70 transition-opacity">
@@ -276,7 +278,7 @@ function AboutService({ content }: { content: ServicePageContent }) {
           <div className="mt-8 hidden lg:block w-full max-w-[520px] text-left">{nav}</div>
         </div>
 
-        <div className="flex flex-col gap-4 lg:h-full lg:overflow-y-auto lg:pr-4 custom-scrollbar lg:py-10">
+        <div className="flex flex-col gap-4 lg:h-full lg:overflow-y-auto lg:pr-4 custom-scrollbar lg:py-10 min-h-0">
           <div className="ds-bento-shadow ds-card p-6 sm:p-8 xl:p-10">
             <div className="flex flex-col gap-10 sm:gap-12">
               {sections.map((s, i) => (
