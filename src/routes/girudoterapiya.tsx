@@ -300,7 +300,7 @@ function PageHero() {
   return (
     <main className="bg-[#EFF6FF] py-4 sm:py-5">
       <section id="hero" className="container-1900 grid grid-cols-1 gap-4 sm:gap-5 xl:min-h-[calc(100vh-160px)] xl:grid-cols-2">
-        <div className="ds-bento-shadow flex flex-col ds-card min-h-[720px] sm:h-[600px] xl:min-h-0 xl:h-auto p-5 sm:p-6 xl:p-10 overflow-hidden">
+        <div className="ds-bento-shadow flex flex-col ds-card min-h-[640px] sm:h-[600px] xl:min-h-0 xl:h-auto p-5 sm:p-6 xl:p-10 overflow-hidden">
           <nav aria-label="Хлебные крошки" className="text-[14px] text-[#566A93]">
             <Link to="/" className="hover:opacity-70 transition-opacity">
               Главная
@@ -313,7 +313,7 @@ function PageHero() {
             <SpecialistBlock />
           </div>
 
-          <div className="mt-auto xl:mt-auto pt-6 sm:pt-12">
+          <div className="mt-auto xl:mt-auto pt-4 sm:pt-12">
             <div className="flex flex-col tablet-text-block xl:max-w-[640px]">
               <div className="flex flex-col gap-y-2">
                 <div className="flex sm:hidden">
