@@ -40,12 +40,13 @@ export function Header({
 
   useEffect(() => {
     const hero = document.getElementById("hero");
-    if (!hero) return;
-
+    
     const handleScroll = () => {
+      if (!hero) return;
       const rect = hero.getBoundingClientRect();
       setHeroPassed(rect.bottom <= 0);
     };
+
 
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });

@@ -76,7 +76,10 @@ export function Hero() {
 
         </div>
       </section>
-      <QuizModal isOpen={isQuizOpen} onClose={() => setIsQuizOpen(false)} />
+      <Suspense fallback={null}>
+        <QuizModal isOpen={isQuizOpen} onClose={() => setIsQuizOpen(false)} />
+      </Suspense>
+
     </main>
   );
 }

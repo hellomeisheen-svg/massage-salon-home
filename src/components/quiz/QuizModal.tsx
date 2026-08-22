@@ -115,7 +115,7 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
 
   return (
     <div 
-      className={`fixed inset-0 z-[100] flex items-end justify-center overflow-y-auto bg-[#1C3C8C]/40 p-4 backdrop-blur-sm sm:items-center sm:p-6 transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0'}`}
+      className={`fixed inset-0 z-[100] flex items-end justify-center overflow-y-auto bg-[#1C3C8C]/40 p-4 backdrop-blur-sm sm:items-center sm:p-6 transition-opacity duration-300 pointer-events-auto ${isOpen ? 'opacity-100' : 'opacity-0'}`}
       role="presentation"
     >
       <div className="relative my-auto w-full max-w-[640px] ds-card ds-bento-shadow p-5 sm:p-8 xl:p-10 transition-transform duration-300 scale-100">
