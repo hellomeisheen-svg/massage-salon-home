@@ -5,7 +5,7 @@ import { useBooking } from "@/components/BookingModal";
 
 const QuizModal = lazy(() => import("@/components/quiz/QuizModal").then(m => ({ default: m.QuizModal })));
 
-function HeadlineBlock({ onOpenQuiz }: { onOpenQuiz: () => void }) {
+function HeadlineBlock() {
   return (
     <div className="flex flex-col tablet-text-block xl:min-w-[640px] xl:w-[640px]">
 
@@ -24,20 +24,21 @@ function HeadlineBlock({ onOpenQuiz }: { onOpenQuiz: () => void }) {
         >
           Записаться онлайн
         </a>
-        <button
-          type="button"
-          onClick={onOpenQuiz}
-          className="btn-secondary w-full sm:w-[280px] xl:w-[250px] whitespace-nowrap"
+        <a
+          href="https://t.me/Max_Zlobin"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-secondary w-full sm:w-[280px] xl:w-[250px] inline-flex items-center justify-center text-center whitespace-nowrap"
         >
-          Подобрать процедуру
-        </button>
+          Получить консультацию
+        </a>
       </div>
     </div>
   );
 }
 
 export function Hero() {
-  const [isQuizOpen, setIsQuizOpen] = useState(false);
+
 
   return (
     <main className="bg-[#EFF6FF] py-4 sm:py-5">
@@ -60,8 +61,9 @@ export function Hero() {
             </div>
           </div>
           <div className="mt-auto xl:mt-auto pt-4 sm:pt-12">
-            <HeadlineBlock onOpenQuiz={() => setIsQuizOpen(true)} />
+            <HeadlineBlock />
           </div>
+
         </div>
 
         {/* Hero image */}
@@ -79,8 +81,8 @@ export function Hero() {
         </div>
       </section>
       <Suspense fallback={null}>
-        {isQuizOpen && <QuizModal isOpen={isQuizOpen} onClose={() => setIsQuizOpen(false)} />}
       </Suspense>
+
 
     </main>
   );
