@@ -71,7 +71,7 @@ export const Route = createFileRoute("/limfaticheskii-massazh")({
                 },
                 {
                   "@type": "Question",
-                  name: "Где находится кабинет и как записаться?",
+                  name: "Где находится кабинет?",
                   acceptedAnswer: { "@type": "Answer", text: "Кабинет расположен в посёлке Трудовое. Принимаю по предварительной записи. Записаться можно в мессенджере Max — я уточню удобное время и дам необходимые рекомендации по подготовке к вашему первому сеансу." } }] }] }) }] }),
   component: LimfaticheskiiPage });
 
