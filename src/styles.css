@@ -838,7 +838,6 @@ button:focus-visible {
 
 /* Акцентный шрифт: локальный WOFF2, сабсет latin+cyrillic, ось wdth зафиксирована на 62.5 */
 @font-face {
-  font-display: block;
   font-family: "Noto Serif Display";
   src: url("/fonts/noto-serif-display-narrow.woff2") format("woff2");
   font-weight: 300 500;
@@ -852,7 +851,6 @@ button:focus-visible {
 
 /* Основной текст: Inter 300/400/500, локальные WOFF2 (latin + cyrillic) */
 @font-face {
-  font-display: block;
   font-family: "Inter";
   font-style: normal;
   font-weight: 300;
@@ -861,7 +859,6 @@ button:focus-visible {
   unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 @font-face {
-  font-display: block;
   font-family: "Inter";
   font-style: normal;
   font-weight: 300;
@@ -872,7 +869,6 @@ button:focus-visible {
     U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
-  font-display: block;
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
@@ -881,7 +877,6 @@ button:focus-visible {
   unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 @font-face {
-  font-display: block;
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
@@ -892,7 +887,6 @@ button:focus-visible {
     U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
-  font-display: block;
   font-family: "Inter";
   font-style: normal;
   font-weight: 500;
@@ -901,7 +895,6 @@ button:focus-visible {
   unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 @font-face {
-  font-display: block;
   font-family: "Inter";
   font-style: normal;
   font-weight: 500;
