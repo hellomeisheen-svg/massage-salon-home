@@ -42,7 +42,7 @@ export function Hero() {
       <section id="hero" className="container-1900 grid grid-cols-1 gap-4 sm:gap-5 xl:min-h-[calc(100vh-160px)] xl:grid-cols-2">
         {/* Content card */}
         <div className="flex flex-col ds-card ds-bento-shadow p-5 min-h-[720px] sm:h-[600px] xl:min-h-0 xl:h-auto p-5 sm:p-6 xl:p-10 overflow-hidden">
-          <div className="flex items-start text-left gap-4 xl:flex-col xl:gap-0">
+          <div className="flex items-end text-left gap-4 xl:flex-col xl:items-start xl:gap-0">
             <img
               src="/images/tatyana-photo.webp"
               alt="Татьяна Злобина — мастер оздоровительных практик в кабинете Седьмое небо"
