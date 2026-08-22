@@ -196,17 +196,44 @@ function AboutService({ content }: { content: ServicePageContent }) {
   const refs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    const onScroll = () => {
+    const onScroll = (e?: Event) => {
+      const isXL = window.innerWidth >= 1280;
       const anchor = window.innerHeight * 0.35;
       let current = 0;
+      
       refs.current.forEach((el: HTMLDivElement | null, i: number) => {
-        if (el && el.getBoundingClientRect().top <= anchor) current = i;
+        if (!el) return;
+        
+        if (isXL) {
+          // If xl, we check position relative to the scrollable container or viewport
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= anchor + 100) current = i;
+        } else {
+          if (el.getBoundingClientRect().top <= anchor) current = i;
+        }
       });
       setActive(current);
     };
+
     onScroll();
+    
+    const scrollTarget = window.innerWidth >= 1280 
+      ? document.querySelector('#services .xl\\:overflow-y-auto') 
+      : window;
+
+    if (scrollTarget) {
+      scrollTarget.addEventListener("scroll", onScroll, { passive: true });
+    }
+    
+    // Also listen to window scroll for mobile/tablet and for window resizing
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("resize", onScroll, { passive: true });
+
+    return () => {
+      if (scrollTarget) scrollTarget.removeEventListener("scroll", onScroll);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, []);
 
   const goTo = (i: number) => {
