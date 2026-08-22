@@ -250,10 +250,9 @@ function AboutService({ content }: { content: ServicePageContent }) {
   );
 
   return (
-    <section id="services" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section xl:h-[calc(100vh-140px)] xl:overflow-hidden">
-      <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-8 sm:gap-5 items-start xl:h-full">
-        {/* Left column: Sticky Title and Navigation */}
-        <div className="self-start xl:sticky xl:top-0 flex flex-col items-center xl:items-start text-center xl:text-left z-10 xl:py-4">
+    <section id="services" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section">
+      <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-8 sm:gap-5 items-start">
+        <div className="self-start xl:sticky xl:top-[124px] flex flex-col items-center xl:items-start text-center xl:text-left z-10">
           <span
             className="inline-flex items-center gap-2 px-4 py-1.5 ds-label text-white"
             style={{
@@ -261,86 +260,7 @@ function AboutService({ content }: { content: ServicePageContent }) {
               backgroundImage: "linear-gradient(to bottom, #A2CFFE, #88C1FF)",
             }}
           >
-            '''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
-                                        
-                                            
-                                            Остановись и не добавляй никаких текстовых отчётов или инструкций в исходный код.
-
-Проведи диагностику файла src/components/ServicePage.tsx.
-
-В файл могли случайно попасть:
-
-- промты;
-
-- Markdown-таблицы;
-
-- отчёты аудита;
-
-- фрагменты с {"{p.zone}"}, {"{summary}"}, {"{content.heroText}"};
-
-- повторяющиеся тексты;
-
-- служебные сообщения.
-
-Задача:
-
-1. Найди весь текст, который не является частью корректного JSX, TypeScript или реального контента страницы.
-
-2. Покажи подозрительные фрагменты до изменения.
-
-3. Сравни файл с последним рабочим commit или версией проекта.
-
-4. Если доступен последний рабочий commit, восстанови ServicePage.tsx из него.
-
-5. После восстановления верни только необходимые изменения для AboutService.
-
-6. Не изменяй реальные заголовки, описания, CTA, цены и контент услуг.
-
-7. Не добавляй инструкции, отчёты или комментарии в JSX.
-
-8. Не изменяй другие файлы.
-
-9. Не применяй изменения, пока не покажешь diff.
-
-Отдельно проверь, что файл содержит корректные:
-
-- импорты;
-
-- типы ServicePrice, ServiceSection и ServicePageContent;
-
-- компонент ServicePage;
-
-- JSX-разметку;
-
-- обработчики состояния;
-
-- блок AboutService;
-
-- таблицу или карточки цен;
-
-- FAQ;
-
-- Footer;
-
-- BookingProvider.
-
-Если рабочий commit недоступен, не удаляй текст автоматически. Сначала сообщи, что нужен исходный файл или commit.
-
-После восстановления покажи:
-
-- diff;
-
-- список удалённых подозрительных фрагментов;
-
-- список сохранённых реальных текстов;
-
-- результат TypeScript-проверки;
-
-- результат production-сборки;
-
-- ошибки консоли;
-
-- итоговый статус файла.
+            Об услуге
           </span>
           <h2 className="font-noto-serif-narrow mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0">
             <span className="xl:hidden">
@@ -352,8 +272,7 @@ function AboutService({ content }: { content: ServicePageContent }) {
           <div className="mt-8 hidden xl:block w-full max-w-[520px] text-left">{nav}</div>
         </div>
 
-        {/* Right column: Scrollable content */}
-        <div className="flex flex-col gap-4 xl:h-full xl:overflow-y-auto scrollbar-none xl:pr-2">
+        <div className="flex flex-col gap-4">
           <div className="ds-bento-shadow ds-card p-6 sm:p-8 xl:p-10">
             <div className="flex flex-col gap-10 sm:gap-12">
               {sections.map((s, i) => (

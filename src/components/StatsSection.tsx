@@ -43,7 +43,7 @@ export function StatsSection() {
             </span>
 
             <h2 className="font-noto-serif-narrow mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0">
-              Опыт, диалог и внимание в работе с телом
+              Бережная работа с телом: опыт, диалог, внимание
             </h2>
           </div>
 

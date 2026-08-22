@@ -14,9 +14,7 @@ export const Route = createFileRoute("/vektornyi-massazh")({
         content: "Точная работа по анатомическим линиям тела в кабинете Седьмое небо: освобождение глубоких зажимов и возвращение движениям свободы." },
       { property: "og:type", content: "article" },
       { property: "og:url", content: "https://7heavenmassage.ru/vektornyi-massazh" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:image", content: "https://7heavenmassage.ru/images/uslugi-massazh-spiny-i-shei.webp" },
-      { name: "twitter:image", content: "https://7heavenmassage.ru/images/uslugi-massazh-spiny-i-shei.webp" }],
+      { name: "twitter:card", content: "summary_large_image" }],
     links: [{ rel: "canonical", href: "https://7heavenmassage.ru/vektornyi-massazh" }],
     scripts: [
       {

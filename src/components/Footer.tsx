@@ -112,7 +112,7 @@ export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Brand */}
             <div>
-              <Link to="/" aria-label="На главную — Седьмое небо" className="inline-flex h-12 items-center hover:opacity-70 transition-opacity logo-link-active">
+              <Link to="/" aria-label="На главную" className="inline-flex h-12 items-center hover:opacity-70 transition-opacity logo-link-active">
                 <Logo className="h-full w-auto" />
               </Link>
 
@@ -174,7 +174,7 @@ export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
             <button
               type="button"
               onClick={scrollToTop}
-              aria-label="Вернуться в начало страницы"
+              aria-label="Наверх"
               className="inline-flex h-10 w-10 items-center justify-center rounded-[12px] border border-[#daebff] bg-[#EFF6FF] text-[#1c3c8c] hover:bg-[#DAEBFF] transition-colors shrink-0 icon-btn-active"
             >
 

@@ -17,9 +17,7 @@ export const Route = createFileRoute("/vakuumnyi-massazh")({
           "Стеклянные и мягкие инструменты в кабинете Седьмое небо: бережное вакуумное воздействие, спокойный ритм сеанса и внимательное сопровождение." },
       { property: "og:type", content: "article" },
       { property: "og:url", content: "https://7heavenmassage.ru/vakuumnyi-massazh" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:image", content: "https://7heavenmassage.ru/images/uslugi-myagkie-banki.webp" },
-      { name: "twitter:image", content: "https://7heavenmassage.ru/images/uslugi-myagkie-banki.webp" }],
+      { name: "twitter:card", content: "summary_large_image" }],
     links: [{ rel: "canonical", href: "https://7heavenmassage.ru/vakuumnyi-massazh" }],
     scripts: [
       {

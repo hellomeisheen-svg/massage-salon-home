@@ -14,9 +14,7 @@ export const Route = createFileRoute("/klassicheskii-massazh")({
         content: "Комплексная проработка тела в спокойном ритме в кабинете Седьмое небо: снятие напряжения, глубокое расслабление и восстановление сил." },
       { property: "og:type", content: "article" },
       { property: "og:url", content: "https://7heavenmassage.ru/klassicheskii-massazh" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:image", content: "https://7heavenmassage.ru/images/uslugi-klassicheskii-massazh.webp" },
-      { name: "twitter:image", content: "https://7heavenmassage.ru/images/uslugi-klassicheskii-massazh.webp" }],
+      { name: "twitter:card", content: "summary_large_image" }],
     links: [{ rel: "canonical", href: "https://7heavenmassage.ru/klassicheskii-massazh" }],
     scripts: [
       {
