@@ -68,35 +68,32 @@ export function ServicePage({ content }: { content: ServicePageContent }) {
           <AboutService content={content} />
           <div className="lg:overflow-y-auto lg:flex-1 min-h-0">
             <Prices content={content} />
-        <Prices content={content} />
-        <PromoBanner />
-        <Programs prioritizeKeys={content.prioritizeKeys} />
-        <PromoBanner
-          title={
-            <>
-              <span className="xl:hidden">До повышения цен осталось немного времени</span>
-              <span className="hidden xl:inline">
-                С&nbsp;1&nbsp;сентября часть курсов подорожает, а&nbsp;пока
-                <br />
-                можно купить их по&nbsp;прежней цене
-              </span>
-            </>
-          }
-          subtitle={
-            <>
-              До этой даты действует прежняя цена: можно купить курс сейчас
-              <br />
-              и приходить на сеансы позже.
-            </>
-          }
-        />
-        <Education />
-        <Faq content={content} />
+            <PromoBanner />
+            <Programs prioritizeKeys={content.prioritizeKeys} />
+            <PromoBanner
+              title={
+                <>
+                  <span className="xl:hidden">До повышения цен осталось немного времени</span>
+                  <span className="hidden xl:inline">
+                    С&nbsp;1&nbsp;сентября часть курсов подорожает, а&nbsp;пока
+                    <br />
+                    можно купить их по&nbsp;прежней цене
+                  </span>
+                </>
+              }
+              subtitle={
+                <>
+                  До этой даты действует прежняя цена: можно купить курс сейчас
+                  <br />
+                  и приходить на сеансы позже.
+                </>
+              }
+            />
+            <Education />
+            <Faq content={content} />
             <OtherServices exclude={content.slug} />
             <Footer items={servicePageFooterNav} />
           </div>
-        </div>
-      </div>
         </div>
       </div>
     </BookingProvider>
