@@ -456,16 +456,16 @@ function ServiceCardContent({
       <div className="flex-1 flex flex-col mb-4 md:flex-1 md:mb-6">
         <div className="flex-1">
           {/* Title */}
-          <div className="mt-5 flex flex-wrap items-center gap-3">
+          <div className="mt-5 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
+            {type.hit && (
+              <span className="order-first sm:order-last inline-flex items-center self-start sm:self-auto rounded-[12px] bg-gradient-to-b from-[#A2CFFE] to-[#88C1FF] px-2 py-1 text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-white whitespace-nowrap mb-2 sm:mb-0">
+                Хит
+              </span>
+            )}
             <h3 className="font-noto-serif-narrow ds-h3 text-[#1C3C8C] break-words hyphens-auto">
               <span className="xl:hidden">{mobileTitle(type.title)}</span>
               <span className="hidden xl:block">{mobileTitle(type.title)}</span>
             </h3>
-            {type.hit && (
-              <span className="inline-flex items-center rounded-[12px] bg-gradient-to-b from-[#A2CFFE] to-[#88C1FF] px-2 py-1 text-[11px] font-semibold uppercase tracking-wider text-white">
-                Хит
-              </span>
-            )}
           </div>
 
           {/* Zone / Type chips */}
