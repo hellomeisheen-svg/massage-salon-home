@@ -59,10 +59,13 @@ export type ServicePageContent = {
 export function ServicePage({ content }: { content: ServicePageContent }) {
   return (
     <BookingProvider>
-      <div className="relative min-h-screen bg-[#EFF6FF] pt-20 xl:pt-[100px]">
+      <div className="relative flex flex-col min-h-screen bg-[#EFF6FF] lg:h-screen lg:overflow-hidden">
         <Header items={servicePageNav} />
-        <PageHero content={content} />
-        <AboutService content={content} />
+        <div className="flex-1 flex flex-col lg:overflow-hidden pt-20 xl:pt-[100px]">
+          <PageHero content={content} />
+          <AboutService content={content} />
+          <div className="lg:overflow-y-auto lg:flex-1">
+            <Prices content={content} />
         <Prices content={content} />
         <PromoBanner />
         <Programs prioritizeKeys={content.prioritizeKeys} />
@@ -87,8 +90,10 @@ export function ServicePage({ content }: { content: ServicePageContent }) {
         />
         <Education />
         <Faq content={content} />
-        <OtherServices exclude={content.slug} />
-        <Footer items={servicePageFooterNav} />
+            <OtherServices exclude={content.slug} />
+            <Footer items={servicePageFooterNav} />
+          </div>
+        </div>
       </div>
     </BookingProvider>
   );
@@ -97,8 +102,8 @@ export function ServicePage({ content }: { content: ServicePageContent }) {
 
 function PageHero({ content }: { content: ServicePageContent }) {
   return (
-    <main className="bg-[#EFF6FF] py-4 sm:py-5">
-      <section id="hero" className="container-1900 grid grid-cols-1 gap-4 sm:gap-5 xl:min-h-[calc(100vh-160px)] xl:grid-cols-2">
+    <main className="bg-[#EFF6FF] py-4 sm:py-5 lg:flex-shrink-0">
+      <section id="hero" className="container-1900 grid grid-cols-1 gap-4 sm:gap-5 lg:grid-cols-2">
         <div className="ds-bento-shadow flex flex-col ds-card min-h-[640px] sm:h-[600px] xl:min-h-0 xl:h-auto p-5 sm:p-6 xl:p-10 overflow-hidden">
           <nav aria-label="Хлебные крошки" className="text-[14px] text-[#566A93]">
             <Link to="/" className="hover:opacity-70 transition-opacity">
@@ -249,9 +254,9 @@ function AboutService({ content }: { content: ServicePageContent }) {
   );
 
   return (
-    <section id="services" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section">
-      <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-8 sm:gap-5 items-start">
-        <div className="self-start xl:sticky xl:top-[140px] flex flex-col items-center xl:items-start text-center xl:text-left">
+    <section id="services" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section lg:flex-1 lg:min-h-0 lg:py-0">
+      <div className="container-1900 grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-5 items-start lg:h-full lg:overflow-hidden">
+        <div className="self-start lg:sticky lg:top-0 lg:h-full flex flex-col items-center lg:items-start text-center lg:text-left lg:py-10">
           <span
             className="inline-flex items-center gap-2 px-4 py-1.5 ds-label text-white"
             style={{
@@ -261,17 +266,17 @@ function AboutService({ content }: { content: ServicePageContent }) {
           >
             Об услуге
           </span>
-          <h2 className="font-noto-serif-narrow mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0">
-            <span className="xl:hidden">
+          <h2 className="font-noto-serif-narrow mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto lg:mx-0">
+            <span className="lg:hidden">
               {content.aboutHeadingMobile || "Обсуждаем состояние перед каждым визитом и\u00A0подбираем технику"}
             </span>
-            <span className="hidden xl:inline">{content.aboutHeading}</span>
+            <span className="hidden lg:inline">{content.aboutHeading}</span>
           </h2>
 
-          <div className="mt-8 hidden xl:block w-full max-w-[520px] text-left">{nav}</div>
+          <div className="mt-8 hidden lg:block w-full max-w-[520px] text-left">{nav}</div>
         </div>
 
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 lg:h-full lg:overflow-y-auto lg:pr-4 custom-scrollbar lg:py-10">
           <div className="ds-bento-shadow ds-card p-6 sm:p-8 xl:p-10">
             <div className="flex flex-col gap-10 sm:gap-12">
               {sections.map((s, i) => (
