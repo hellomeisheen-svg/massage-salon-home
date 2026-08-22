@@ -15,6 +15,7 @@ export type ServicePrice = {
   subtitle: string;
   duration: string;
   base: number;
+  sessionDurations?: [string, string, string];
 };
 
 
