@@ -149,7 +149,7 @@ function Index() {
       <PromoBanner
         title={
           <>
-            <span className="xl:hidden">До повышения цен осталось немного времени</span>
+            <span className="xl:hidden">Успейте записаться по&nbsp;старой цене</span>
             <span className="hidden xl:inline">
               С&nbsp;1&nbsp;сентября часть курсов подорожает, а&nbsp;пока
               <br />
@@ -159,9 +159,12 @@ function Index() {
         }
         subtitle={
           <>
-            До этой даты действует прежняя цена: можно купить курс сейчас
-            <br />
-            и приходить на сеансы позже.
+            <span className="xl:hidden">До&nbsp;повышения цен можно купить курс сейчас, а&nbsp;сеансы пройти в&nbsp;удобное время.</span>
+            <span className="hidden xl:inline">
+              До этой даты действует прежняя цена: можно купить курс сейчас
+              <br />
+              и приходить на сеансы позже.
+            </span>
           </>
         }
       />
