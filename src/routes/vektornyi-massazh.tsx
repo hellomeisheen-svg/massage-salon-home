@@ -73,8 +73,6 @@ export const Route = createFileRoute("/vektornyi-massazh")({
   component: VektornyiPage });
 
 const content: ServicePageContent = {
-  aboutHeading: "Обсуждаем состояние перед каждым визитом и подбираем технику",
-  aboutHeadingMobile: "Обсуждаем состояние перед каждым визитом и подбираем технику",
   slug: "vektornyi-massazh",
   breadcrumb: "Векторный массаж",
   title: "Векторный массаж",
@@ -82,7 +80,8 @@ const content: ServicePageContent = {
   heroText: "Точная работа с мышцами и фасциями по анатомическим линиям тела. Освобождение глубоких зажимов. Кабинет в Трудовом.",
   heroImage: "/images/uslugi-massazh-spiny-i-shei.webp",
   heroImageAlt: "Специалист проводит векторный оздоровительный массаж в кабинете Седьмое небо",
-  aboutHeading: <>Обсуждаем состояние перед каждым визитом и подбираем технику</>,
+  aboutHeading: "Обсуждаем состояние перед каждым визитом и подбираем технику",
+  aboutHeadingMobile: "Обсуждаем состояние перед каждым визитом и подбираем технику",
   bookingPrefix: "Векторный массаж",
   prioritizeKeys: ["classic", "lymphdrainage"],
   pricesStyle: "table",
