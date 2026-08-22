@@ -151,8 +151,8 @@ export function OtherServices({ exclude }: { exclude?: string }) {
                   {service.description}
                 </p>
               </div>
-              <div className="mt-auto pt-10 inline-flex items-center gap-1.5 text-[14px] font-medium text-[#1C3C8C] transition-opacity group-hover:opacity-70">
-                Подробнее о процедуре
+              <div className="mt-6 inline-flex items-center gap-1.5 text-[14px] font-medium text-[#1C3C8C] transition-opacity group-hover:opacity-70">
+                Подробнее об услуге
                 <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
               </div>
             </Link>
