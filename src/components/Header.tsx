@@ -40,12 +40,13 @@ export function Header({
 
   useEffect(() => {
     const hero = document.getElementById("hero");
-    if (!hero) return;
-
+    
     const handleScroll = () => {
+      if (!hero) return;
       const rect = hero.getBoundingClientRect();
       setHeroPassed(rect.bottom <= 0);
     };
+
 
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -133,11 +134,11 @@ export function Header({
         <>
           {/* Blur overlay behind menu */}
           <div 
-            className="fixed inset-x-0 bottom-0 top-[88px] z-50 bg-[#EFF6FF]/40 backdrop-blur-[8px] xl:hidden" 
-
+            className="fixed inset-0 z-50 bg-[#EFF6FF]/40 backdrop-blur-[8px] xl:hidden pointer-events-auto" 
             onClick={() => setMenuOpen(false)}
           />
-          <div className="absolute inset-x-4 sm:inset-x-5 top-[calc(100%+8px)] z-[60] h-[calc(100dvh-96px)] sm:h-[calc(100dvh-100px)] xl:hidden">
+
+          <div className="absolute inset-x-4 sm:inset-x-5 top-[calc(100%+8px)] z-[60] h-[calc(100dvh-96px)] sm:h-[calc(100dvh-100px)] xl:hidden pointer-events-auto">
             <div className="flex h-full flex-col ds-card p-4">
               <nav className="flex-1 overflow-y-auto pr-1 scrollbar-none" aria-label="Мобильная навигация">
                 <ul className="flex flex-col gap-1">

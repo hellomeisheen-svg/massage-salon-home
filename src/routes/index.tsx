@@ -4,6 +4,7 @@ import { Hero } from "@/components/Hero";
 import { HabitQuote } from "@/components/HabitQuote";
 import { QuoteBlock } from "@/components/QuoteBlock";
 import { Services } from "@/components/Services";
+import React, { Suspense } from "react";
 
 import { Approach } from "@/components/Approach";
 import { PromoBanner } from "@/components/PromoBanner";
@@ -12,7 +13,9 @@ import { StatsSection } from "@/components/StatsSection";
 import { Programs } from "@/components/Programs";
 import { Education } from "@/components/Education";
 import { Faq } from "@/components/Faq";
-import Gallery from "@/components/Gallery";
+
+const Gallery = React.lazy(() => import("@/components/Gallery"));
+
 
 import { Footer } from "@/components/Footer";
 import { BookingProvider } from "@/components/BookingModal";
@@ -170,7 +173,10 @@ function Index() {
       />
       <Education />
       
-      <Gallery />
+      <Suspense fallback={<div className="h-[400px] animate-pulse bg-[#DAEBFF]/20" />}>
+        <Gallery />
+      </Suspense>
+
       <Faq />
       <Footer />
 
