@@ -337,7 +337,7 @@ export default function BookingDialog({
                     <span>Отправка...</span>
                   </>
                 ) : (
-                  "Записаться онлайн"
+                  "Записаться"
                 )}
               </button>
             </form>
