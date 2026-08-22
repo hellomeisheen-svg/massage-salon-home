@@ -16,7 +16,6 @@ export function RatingBlock({ className }: { className?: string }) {
           <Star
             key={i}
             className="h-[14px] w-[14px] fill-[#A2CFFE] text-[#A2CFFE]"
-            aria-hidden="true"
           />
         ))}
       </div>

@@ -134,13 +134,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         type: "font/woff2",
         crossOrigin: "anonymous",
       },
-      {
-        rel: "preload",
-        href: "/fonts/inter-cyrillic-500-normal.woff2",
-        as: "font",
-        type: "font/woff2",
-        crossOrigin: "anonymous",
-      },
       { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" }],
     scripts: [],
   }),
@@ -179,6 +172,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <ClientOnly>
+        <Analytics />
         <TypographyProvider />
       </ClientOnly>
 
