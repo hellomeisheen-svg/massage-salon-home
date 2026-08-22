@@ -193,26 +193,56 @@ function AboutService({ content }: { content: ServicePageContent }) {
   const sections = content.sections;
   const [active, setActive] = useState(0);
   const refs = useRef<(HTMLDivElement | null)[]>([]);
+  const scrollContainerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    const container = scrollContainerRef.current;
+    
     const onScroll = () => {
+      // On desktop (lg+), we check the scroll position of the internal container
+      // On mobile, we check the window scroll
+      const isDesktop = window.innerWidth >= 1024;
       const anchor = window.innerHeight * 0.35;
+      
       let current = 0;
       refs.current.forEach((el: HTMLDivElement | null, i: number) => {
-        if (el && el.getBoundingClientRect().top <= anchor) current = i;
+        if (!el) return;
+        
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= anchor) {
+          current = i;
+        }
       });
       setActive(current);
     };
+
     onScroll();
+    
+    // Desktop internal scroll
+    container?.addEventListener("scroll", onScroll, { passive: true });
+    // Window scroll for mobile/tablet
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    
+    return () => {
+      container?.removeEventListener("scroll", onScroll);
+      window.removeEventListener("scroll", onScroll);
+    };
   }, []);
 
   const goTo = (i: number) => {
     const el = refs.current[i];
+    const container = scrollContainerRef.current;
     if (!el) return;
-    const top = el.getBoundingClientRect().top + window.scrollY - 140;
-    window.scrollTo({ top, behavior: "smooth" });
+
+    if (window.innerWidth >= 1024 && container) {
+      // Internal scroll for desktop
+      const top = el.offsetTop;
+      container.scrollTo({ top, behavior: "smooth" });
+    } else {
+      // Window scroll for mobile
+      const top = el.getBoundingClientRect().top + window.scrollY - 140;
+      window.scrollTo({ top, behavior: "smooth" });
+    }
   };
 
   const nav = (
