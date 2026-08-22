@@ -20,7 +20,7 @@ const servicePages = [
   { label: "Вакуумный массаж", to: "/vakuumnyi-massazh" },
   { label: "Векторный массаж", to: "/vektornyi-massazh" },
   { label: "Классический массаж", to: "/klassicheskii-massazh" },
-  { label: "Лимфатический массаж", to: "/limfaticheskii-massazh" },
+  { label: "Лимфодренажный массаж", to: "/limfaticheskii-massazh" },
   
 ] as const;
 
