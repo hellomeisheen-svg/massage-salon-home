@@ -147,16 +147,8 @@ const content: ServicePageContent = {
   ),
   heroImage: "/images/uslugi-ketgut.webp",
   heroImageAlt: "Введение нитей в акупунктурные точки",
-  aboutHeading: (
-    <>
-      Обсуждаем состояние перед каждым визитом и&nbsp;подбираем технику
-    </>
-  ),
-  aboutHeadingMobile: (
-    <>
-      Обсуждаем состояние перед каждым визитом и&nbsp;подбираем технику
-    </>
-  ),
+  aboutHeading: "Обсуждаем состояние перед каждым визитом и подбираем технику",
+  aboutHeadingMobile: "Обсуждаем состояние перед каждым визитом и подбираем технику",
   bookingPrefix: "Акупунктурный кетгут",
   pricesStyle: "table",
   sections: [

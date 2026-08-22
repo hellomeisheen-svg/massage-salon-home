@@ -67,13 +67,14 @@ export const Route = createFileRoute("/klassicheskii-massazh")({
   component: KlassicheskiiPage });
 
 const content: ServicePageContent = {
+  aboutHeading: "Обсуждаем состояние перед каждым визитом и подбираем технику",
+  aboutHeadingMobile: "Обсуждаем состояние перед каждым визитом и подбираем технику",
   slug: "klassicheskii-massazh",
   breadcrumb: "Классический массаж",
   title: "Классический массаж",
   heroText: "Массажные техники для расслабления мышц, снятия напряжения и ощущения лёгкости в теле. Кабинет в посёлке Трудовое.",
   heroImage: "/images/uslugi-klassicheskii-massazh.webp",
   heroImageAlt: "Классический массаж всего тела в кабинете Седьмое небо",
-  aboutHeading: <>Обсуждаем состояние перед каждым визитом и подбираем технику</>,
   bookingPrefix: "Классический массаж",
   prioritizeKeys: ["classic", "classicFace"],
   pricesStyle: "table",
