@@ -135,10 +135,7 @@ export default function BookingDialog({
                 Записаться на сеанс
               </h2>
               <p className="mt-3 text-[15px] font-light leading-[1.5] text-[#566A93] sm:text-[16px]">
-                '''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
-                                        
-                                            
-                                            Во всем макете лимфатический замени на лимфодренажный. В меню на страницах лимфатического массажа везде, везде. На странице лимфатического массажа просто замени везде название на лимфодренажный. Во всех карточках тоже перепроверь
+                Оставьте контакты — подберём формат под ваше состояние и{"\u00A0"}согласуем время без спешки.
               </p>
             </div>
 
