@@ -14,7 +14,10 @@ export const Route = createFileRoute("/vektornyi-massazh")({
         content: "Точная работа по анатомическим линиям тела в кабинете Седьмое небо: освобождение глубоких зажимов и возвращение движениям свободы." },
       { property: "og:type", content: "article" },
       { property: "og:url", content: "https://7heavenmassage.ru/vektornyi-massazh" },
-      { name: "twitter:card", content: "summary_large_image" }],
+      { property: "og:image", content: "https://7heavenmassage.ru/images/uslugi-massazh-spiny-i-shei.webp" },
+      { property: "og:image:alt", content: "Векторный массаж спины и шеи в кабинете Седьмое небо, г. Владивосток" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://7heavenmassage.ru/images/uslugi-massazh-spiny-i-shei.webp" }],
     links: [{ rel: "canonical", href: "https://7heavenmassage.ru/vektornyi-massazh" }],
     scripts: [
       {
@@ -41,6 +44,23 @@ export const Route = createFileRoute("/vektornyi-massazh")({
               provider: { "@id": "https://7heavenmassage.ru/vektornyi-massazh#business" },
               offers: [{ "@type": "Offer", name: "Векторный массаж, сеанс", price: "5000", priceCurrency: "RUB", url: "https://7heavenmassage.ru/vektornyi-massazh#prices" }] },
             {
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Главная",
+                  item: "https://7heavenmassage.ru/"
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "Векторный массаж",
+                  item: "https://7heavenmassage.ru/vektornyi-massazh"
+                }
+              ]
+            },
+            {
               "@type": "FAQPage",
               mainEntity: [
                 {
@@ -57,20 +77,18 @@ export const Route = createFileRoute("/vektornyi-massazh")({
                   acceptedAnswer: { "@type": "Answer", text: "Векторный метод отлично дополняет вакуумную технику. Однако между глубокими сеансами важно делать перерыв в 2–3 дня, чтобы организм успел усвоить воздействие и запустить процессы естественного восстановления." } },
                 {
                   "@type": "Question",
-                  name: "Что взять с собой?",
-                  acceptedAnswer: { "@type": "Answer", text: "Возьмите с собой хорошее настроение и удобную одежду. Всё остальное я предоставлю: одноразовые материалы, стерильные инструменты и заботу о вашем комфорте. Если у вас есть вопросы — напишите мне заранее, я с радостью помогу подготовиться." }
-                },
-                {
-                  "@type": "Question",
                   name: "Можно ли применять процедуру после\u00A0простуды?",
-                  acceptedAnswer: { "@type": "Answer", text: "При\u00A0температуре, ознобе или\u00A0активном воспалении глубокая работа с\u00A0тканями противопоказана. После\u00A0выздоровления важно дождаться исчезновения симптомов. При\u00A0сохранении слабости проконсультируйтесь с\u00A0врачом перед\u00A0записью на\u00A0сеанс." },
-                },
-                {
-                  "@type": "Question",
-                  name: "Где находится кабинет?",
-                  acceptedAnswer: { "@type": "Answer", text: "Кабинет расположен в посёлке Трудовое. Принимаю по предварительной записи. Записаться можно в мессенджере Max — я уточню удобное время и дам необходимые рекомендации по подготовке к вашему первому сеансу." }
-                } ] }] }) }] }),
-  component: VektornyiPage });
+                  acceptedAnswer: { "@type": "Answer", text: "При\u00A0температуре, ознобе или\u00A0активном воспалении глубокая работа с\u00A0тканями противопоказана. После\u00A0выздоровления важно дождаться исчезновения симптомов. При\u00A0сохранении слабости проконсультируйтесь с\u00A0врачом перед\u00A0записью на\u00A0сеанс." }
+                }
+              ]
+            }
+          ]
+        })
+      }
+    ]
+  }),
+  component: VektornyiPage
+});
 
 const content: ServicePageContent = {
   slug: "vektornyi-massazh",

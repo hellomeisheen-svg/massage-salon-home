@@ -50,6 +50,7 @@ export default function ImageReveal({
             <img
               src={tile.src}
               alt=""
+              role="presentation"
               loading="lazy"
               className="h-full w-full object-cover"
             />

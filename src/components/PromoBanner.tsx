@@ -26,15 +26,16 @@ export function PromoBanner({
         >
           <img
             src="/images/banner-clouds.svg"
-            alt="Декоративные облака"
+            alt=""
+            role="presentation"
             aria-hidden="true"
             className="pointer-events-none absolute inset-x-0 top-0 z-0 w-full -translate-y-[10px] select-none"
           />
 
           <img
             src="/images/banner-clouds-bottom.svg"
-            alt="Декоративные элементы фона"
-            aria-hidden="true"
+            alt=""
+            role="presentation"
             className="pointer-events-none absolute inset-x-0 bottom-0 z-0 hidden w-full translate-y-[120px] select-none xl:block"
           />
           <img

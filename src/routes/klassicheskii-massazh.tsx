@@ -14,7 +14,10 @@ export const Route = createFileRoute("/klassicheskii-massazh")({
         content: "Комплексная проработка тела в спокойном ритме в кабинете Седьмое небо: снятие напряжения, глубокое расслабление и восстановление сил." },
       { property: "og:type", content: "article" },
       { property: "og:url", content: "https://7heavenmassage.ru/klassicheskii-massazh" },
-      { name: "twitter:card", content: "summary_large_image" }],
+      { property: "og:image", content: "https://7heavenmassage.ru/images/uslugi-klassicheskii-massazh.webp" },
+      { property: "og:image:alt", content: "Классический массаж всего тела в кабинете Седьмое небо, г. Владивосток" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://7heavenmassage.ru/images/uslugi-klassicheskii-massazh.webp" }],
     links: [{ rel: "canonical", href: "https://7heavenmassage.ru/klassicheskii-massazh" }],
     scripts: [
       {
@@ -41,6 +44,23 @@ export const Route = createFileRoute("/klassicheskii-massazh")({
               provider: { "@id": "https://7heavenmassage.ru/klassicheskii-massazh#business" },
               offers: [{ "@type": "Offer", name: "Классический массаж, сеанс", price: "3000", priceCurrency: "RUB", url: "https://7heavenmassage.ru/klassicheskii-massazh#prices" }] },
             {
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Главная",
+                  item: "https://7heavenmassage.ru/"
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "Классический массаж",
+                  item: "https://7heavenmassage.ru/klassicheskii-massazh"
+                }
+              ]
+            },
+            {
               "@type": "FAQPage",
               mainEntity: [
                 {
@@ -53,18 +73,18 @@ export const Route = createFileRoute("/klassicheskii-massazh")({
                   acceptedAnswer: { "@type": "Answer", text: "Единой схемы нет, но результат заметнее при регулярности — поэтому есть курсы из 3 и 6 сеансов со скидкой. Конкретный ритм я подберу на первой встрече." } },
                 {
                   "@type": "Question",
-                  name: "Что взять с собой?",
-                  acceptedAnswer: { "@type": "Answer", text: "Возьмите с собой хорошее настроение и удобную одежду. Всё остальное я предоставлю: одноразовые материалы, стерильные инструменты и заботу о вашем комфорте. Если у вас есть вопросы — напишите мне заранее, я с радостью помогу подготовиться." } },
-                {
-                  "@type": "Question",
                   name: "Можно ли применять классический массаж после простуды?",
                   acceptedAnswer: { "@type": "Answer", text: "При температуре, слабости или остром воспалении массаж не проводится. После выздоровления важно дождаться исчезновения симптомов. При сохранении слабости лучше проконсультироваться с врачом, чтобы сеанс принес пользу, а не нагрузку." }
-                },
-                {
-                  "@type": "Question",
-                  name: "Где находится кабинет?",
-                  acceptedAnswer: { "@type": "Answer", text: "Кабинет расположен в посёлке Трудовое. Принимаю по предварительной записи. Записаться можно в мессенджере Max — я уточню удобное время и дам необходимые рекомендации по подготовке к вашему первому сеансу." } }] }] }) }] }),
-  component: KlassicheskiiPage });
+                }
+              ]
+            }
+          ]
+        })
+      }
+    ]
+  }),
+  component: KlassicheskiiPage
+});
 
 const content: ServicePageContent = {
   aboutHeading: "Обсуждаем состояние перед каждым визитом и подбираем технику",

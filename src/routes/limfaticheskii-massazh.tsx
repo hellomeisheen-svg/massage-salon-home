@@ -14,7 +14,10 @@ export const Route = createFileRoute("/limfaticheskii-massazh")({
         content: "Мягкая работа со всем телом в кабинете Седьмое небо: уменьшение отёчности, снятие ощущения тяжести и возвращение внутренней лёгкости." },
       { property: "og:type", content: "article" },
       { property: "og:url", content: "https://7heavenmassage.ru/limfaticheskii-massazh" },
-      { name: "twitter:card", content: "summary_large_image" }],
+      { property: "og:image", content: "https://7heavenmassage.ru/images/uslugi-limfodrenazhnyi-massazh.webp" },
+      { property: "og:image:alt", content: "Лимфодренажный массаж ног в кабинете Седьмое небо, г. Владивосток" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://7heavenmassage.ru/images/uslugi-limfodrenazhnyi-massazh.webp" }],
     links: [{ rel: "canonical", href: "https://7heavenmassage.ru/limfaticheskii-massazh" }],
     scripts: [
       {
@@ -41,6 +44,23 @@ export const Route = createFileRoute("/limfaticheskii-massazh")({
               provider: { "@id": "https://7heavenmassage.ru/limfaticheskii-massazh#business" },
               offers: [{ "@type": "Offer", name: "Лимфодренажный массаж, сеанс", price: "5000", priceCurrency: "RUB", url: "https://7heavenmassage.ru/limfaticheskii-massazh#prices" }] },
             {
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Главная",
+                  item: "https://7heavenmassage.ru/"
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "Лимфодренажный массаж",
+                  item: "https://7heavenmassage.ru/limfaticheskii-massazh"
+                }
+              ]
+            },
+            {
               "@type": "FAQPage",
               mainEntity: [
 
@@ -61,19 +81,18 @@ export const Route = createFileRoute("/limfaticheskii-massazh")({
 
                 {
                   "@type": "Question",
-                  name: "Что взять с собой?",
-                  acceptedAnswer: { "@type": "Answer", text: "Возьмите с собой хорошее настроение и удобную одежду. Всё остальное я предоставлю: одноразовые материалы, стерильные инструменты и заботу о вашем комфорте. Если у вас есть вопросы — напишите мне заранее, я с радостью помогу подготовиться." }
-                },
-                {
-                  "@type": "Question",
                   name: "Можно ли применять лимфодренажный массаж после простуды?",
                   acceptedAnswer: { "@type": "Answer", text: "В острый период болезни (жар, кашель, озноб) процедура противопоказана. Рекомендуется выдержать паузу в 7–10 дней после выздоровления, чтобы иммунитет восстановился и реакция организма на лимфодренаж была предсказуемой и безопасной." }
-                },
-                {
-                  "@type": "Question",
-                  name: "Где находится кабинет?",
-                  acceptedAnswer: { "@type": "Answer", text: "Кабинет расположен в посёлке Трудовое. Принимаю по предварительной записи. Записаться можно в мессенджере Max — я уточню удобное время и дам необходимые рекомендации по подготовке к вашему первому сеансу." } }] }] }) }] }),
-  component: LimfaticheskiiPage });
+                }
+              ]
+            }
+          ]
+        })
+      }
+    ]
+  }),
+  component: LimfaticheskiiPage
+});
 
 const content: ServicePageContent = {
   aboutHeading: "Обсуждаем состояние перед каждым визитом и подбираем технику",
