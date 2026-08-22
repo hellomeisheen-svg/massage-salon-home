@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build",
+    "build": "vite build && echo \"Please note: TanStack Start v1 is designed for SSR. This static build is a fallback. Verify routing and hydration on your hosting.\"",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",
