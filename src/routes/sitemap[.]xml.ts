@@ -7,7 +7,7 @@ const PAGES = [
   '/ketgut',
   '/klassicheskii-massazh',
   '/limfaticheskii-massazh',
-  '/banki',
+  '/vakuumnyi-massazh',
   '/vektornyi-massazh',
   '/privacy-policy'
 ];
@@ -21,7 +21,6 @@ export const Route = createFileRoute('/sitemap.xml')({
   ${PAGES.map(page => `
   <url>
     <loc>${BASE_URL}${page}</loc>
-    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>${page === '' ? '1.0' : '0.8'}</priority>
   </url>`).join('')}
