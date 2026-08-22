@@ -97,6 +97,8 @@ export function ServicePage({ content }: { content: ServicePageContent }) {
           </div>
         </div>
       </div>
+        </div>
+      </div>
     </BookingProvider>
   );
 }
