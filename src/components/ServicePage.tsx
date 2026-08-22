@@ -282,7 +282,7 @@ function AboutService({ content }: { content: ServicePageContent }) {
                   }}
                   className="scroll-mt-[140px] flex flex-col xl:flex-row xl:gap-10"
                 >
-                  <h3 className="font-noto-serif-narrow text-[26px] sm:text-[36px] font-light leading-[1.15] text-[#1C3C8C] xl:!sticky xl:!top-[160px] xl:!self-start xl:w-[240px] xl:shrink-0">
+                  <h3 className="font-noto-serif-narrow text-[26px] sm:text-[36px] font-light leading-[1.15] text-[#1C3C8C] xl:!sticky xl:!top-[160px] xl:!self-start xl:w-[240px] xl:shrink-0" style={{ position: 'sticky', top: '160px' }}>
                     {s.label}
                   </h3>
                   <div className="mt-5 xl:mt-0 text-[#566A93] space-y-4 text-[15px] leading-[1.6] flex-1">
