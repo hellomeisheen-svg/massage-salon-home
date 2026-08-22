@@ -272,7 +272,7 @@ function AboutService({ content }: { content: ServicePageContent }) {
         </div>
 
         <div className="flex flex-col gap-4">
-          <div className="ds-bento-shadow ds-card p-6 sm:p-8 xl:p-10">
+          <div className="ds-bento-shadow ds-card p-6 sm:p-8 xl:p-10 !overflow-visible">
             <div className="flex flex-col gap-10 sm:gap-12">
               {sections.map((s, i) => (
                 <div
