@@ -514,50 +514,26 @@ const girudoSections: { label: string; content: React.ReactNode }[] = [
 function GirudoterapiyaServices() {
   const [active, setActive] = useState(0);
   const refs = useRef<(HTMLDivElement | null)[]>([]);
-  const scrollContainerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const container = scrollContainerRef.current;
-    
     const onScroll = () => {
-      const isDesktop = window.innerWidth >= 1024;
       const anchor = window.innerHeight * 0.35;
-      
       let current = 0;
       refs.current.forEach((el: HTMLDivElement | null, i: number) => {
-        if (!el) return;
-        
-        const rect = el.getBoundingClientRect();
-        if (rect.top <= anchor) {
-          current = i;
-        }
+        if (el && el.getBoundingClientRect().top <= anchor) current = i;
       });
       setActive(current);
     };
-
     onScroll();
-    
-    container?.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("scroll", onScroll, { passive: true });
-    
-    return () => {
-      container?.removeEventListener("scroll", onScroll);
-      window.removeEventListener("scroll", onScroll);
-    };
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   const goTo = (i: number) => {
     const el = refs.current[i];
-    const container = scrollContainerRef.current;
     if (!el) return;
-
-    if (window.innerWidth >= 1024 && container) {
-      const top = el.offsetTop;
-      container.scrollTo({ top, behavior: "smooth" });
-    } else {
-      const top = el.getBoundingClientRect().top + window.scrollY - 140;
-      window.scrollTo({ top, behavior: "smooth" });
-    }
+    const top = el.getBoundingClientRect().top + window.scrollY - 140;
+    window.scrollTo({ top, behavior: "smooth" });
   };
 
   const nav = (
@@ -571,15 +547,18 @@ function GirudoterapiyaServices() {
             onClick={() => goTo(i)}
             aria-current={isActive}
             className="flex items-center gap-3 text-left group/nav"
+
           >
             <span
               className={`h-2 w-2 rounded-[12px] transition-colors ${
                 isActive ? "bg-[#1C3C8C]" : "bg-[#B7C5E3] group-hover/nav:bg-[#1C3C8C]/50"
+
               }`}
             />
             <span
               className={`text-[16px] transition-colors ${
                 isActive ? "text-[#1C3C8C]" : "text-[#566A93] group-hover/nav:text-[#1C3C8C]"
+
               }`}
             >
               {s.label}
@@ -591,9 +570,9 @@ function GirudoterapiyaServices() {
   );
 
   return (
-    <section id="services" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section desktop-sticky-layout">
-      <div className="container-1900 desktop-sticky-container gap-8 sm:gap-5 items-start">
-        <div className="self-start lg:sticky lg:top-0 lg:py-10 sticky-sidebar flex flex-col items-center lg:items-start text-center lg:text-left">
+    <section id="services" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section">
+      <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-8 sm:gap-5 items-start">
+        <div className="self-start xl:sticky xl:top-[140px] flex flex-col items-center xl:items-start text-center xl:text-left">
           <span
             className="inline-flex items-center gap-2 px-4 py-1.5 ds-label text-white"
             style={{
@@ -602,18 +581,15 @@ function GirudoterapiyaServices() {
           >
             Об услуге
           </span>
-          <h2 className="font-noto-serif-narrow mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto lg:mx-0">
+          <h2 className="font-noto-serif-narrow mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0">
             Обсуждаем состояние перед каждым визитом и&nbsp;подбираем технику
           </h2>
 
-          <div className="mt-8 hidden lg:block w-full max-w-[520px] text-left">{nav}</div>
+          <div className="mt-8 hidden xl:block w-full max-w-[520px] text-left">{nav}</div>
         </div>
 
-        <div 
-          ref={scrollContainerRef}
-          className="flex flex-col gap-4 lg:h-full lg:overflow-y-auto lg:scrollbar-none lg:py-10 scroll-container"
-        >
-          <div className="ds-bento-shadow ds-card p-6 sm:p-8 lg:p-10">
+        <div className="flex flex-col gap-4">
+          <div className="ds-bento-shadow ds-card p-6 sm:p-8 xl:p-10">
             <div className="flex flex-col gap-10 sm:gap-12">
               {girudoSections.map((s, i) => (
                 <div
@@ -621,7 +597,7 @@ function GirudoterapiyaServices() {
                   ref={(el) => {
                     refs.current[i] = el;
                   }}
-                  className="scroll-mt-[140px] lg:scroll-mt-0"
+                  className="scroll-mt-[140px]"
                 >
                   <h3 className="font-noto-serif-narrow text-[26px] sm:text-[32px] font-light leading-[1.15] text-[#1C3C8C]">
                     {s.label}
