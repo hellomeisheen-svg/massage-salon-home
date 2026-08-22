@@ -84,8 +84,8 @@ export function Faq() {
           >
             FAQs
           </span>
-          <h2 className="font-heading mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0">
-            '''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n                                        \n                                            \n                                            В блоке FAQs на мобильной версии нужно изменить, э-э-э, шрифт, а-а-а, на заголовке. "Отвечаю на самые важные вопросы" нужно поставить акцентный шрифт. Ниже карточка "Татьяна Злобина". А-а-а, "Татьяна Злобина" тоже должен стоять акцентный шрифт
+          <h2 className="font-heading mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0 max-sm:!font-body">
+            Отвечаю на&nbsp;самые важные вопросы
           </h2>
 
           <div className="mt-8 xl:mt-auto ds-card ds-bento-shadow p-6 sm:p-7 w-full xl:w-1/2 mx-auto xl:mx-0 text-left">
@@ -94,7 +94,7 @@ export function Faq() {
               alt="Татьяна Злобина"
               className="h-[90px] w-[70px] xl:h-[110px] xl:w-[85px] rounded-[12px] border border-[#daebff] ds-bento-shadow object-cover"
             />
-            <h3 className="font-heading mt-6 ds-h4 text-[#1C3C8C] sm:text-[28px] xl:text-[28px]">
+            <h3 className="font-heading mt-6 ds-h4 text-[#1C3C8C] sm:text-[28px] xl:text-[28px] max-sm:!font-body">
               Татьяна Злобина
             </h3>
             <p className="mt-3 body-text text-[#566A93]">
