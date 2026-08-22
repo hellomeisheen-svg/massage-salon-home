@@ -132,7 +132,7 @@ export function Header({
 
           {/* Mobile / tablet menu panel */}
           {menuOpen && (
-            <div className="absolute inset-x-4 sm:inset-x-5 top-[calc(100%+8px)] z-10 h-[calc(100dvh-96px)] sm:h-[calc(100dvh-100px)] xl:hidden pointer-events-auto">
+            <div className="absolute inset-x-4 sm:inset-x-5 top-[calc(100%+8px)] z-10 h-[calc(100dvh-120px)] sm:h-[calc(100dvh-130px)] xl:hidden pointer-events-auto">
               <div className="flex h-full flex-col ds-card p-4">
                 <nav className="flex-1 overflow-y-auto pr-1 scrollbar-none" aria-label="Мобильная навигация">
                   <ul className="flex flex-col gap-1">
