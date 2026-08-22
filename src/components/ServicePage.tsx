@@ -212,8 +212,14 @@ function AboutService({ content }: { content: ServicePageContent }) {
   const goTo = (i: number) => {
     const el = refs.current[i];
     if (!el) return;
-    const top = el.getBoundingClientRect().top + window.scrollY - 140;
-    window.scrollTo({ top, behavior: "smooth" });
+    
+    // For xl screens, we scroll inside the right column
+    if (window.innerWidth >= 1280) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      const top = el.getBoundingClientRect().top + window.scrollY - 140;
+      window.scrollTo({ top, behavior: "smooth" });
+    }
   };
 
   const nav = (
