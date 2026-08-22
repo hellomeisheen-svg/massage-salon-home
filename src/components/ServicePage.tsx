@@ -264,10 +264,10 @@ function AboutService({ content }: { content: ServicePageContent }) {
             Об услуге
           </span>
           <h2 className="font-noto-serif-narrow mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0">
-            '''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
-                                                    
-                                                        
-                                                        Стоп! Я не вижу, чтобы изменения внедрились. Страница все так же скроллится, колонка не фиксирована
+            <span className="xl:hidden">
+              {content.aboutHeadingMobile || "Обсуждаем состояние перед каждым визитом и\u00A0подбираем технику"}
+            </span>
+            <span className="hidden xl:inline">{content.aboutHeading}</span>
           </h2>
 
           <div className="mt-8 hidden xl:block w-full max-w-[520px] text-left">{nav}</div>
