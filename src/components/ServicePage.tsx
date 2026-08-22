@@ -262,9 +262,9 @@ function AboutService({ content }: { content: ServicePageContent }) {
             }}
           >
             '''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
-                                                    
-                                                        
-                                                        Остановись и не добавляй никаких текстовых отчётов или инструкций в исходный код.
+                                        
+                                            
+                                            Остановись и не добавляй никаких текстовых отчётов или инструкций в исходный код.
 
 Проведи диагностику файла src/components/ServicePage.tsx.
 
