@@ -1,32 +1,34 @@
-# Plan: Fix SSR Stability and Safari Infinite Loading
+# Plan: Convert to Static Vite SPA
 
-Analysis suggests that the "SSR stream transform exceeded maximum lifetime" error and Safari instability are likely caused by a combination of hydration mismatches (specifically from `TypographyProvider`) and the blocking injection of Yandex.Metrika in the head during SSR. Safari is particularly sensitive to DOM mutations occurring immediately after hydration.
+Convert the TanStack Start project into a standard Vite SPA to support shared hosting (static files). This involves disabling Nitro SSR, removing server-side only logic, and establishing a standard SPA entry point.
 
 ## Proposed Changes
 
-### 1. Optimize `src/routes/__root.tsx`
-- Remove Yandex.Metrika script from `head.scripts` (SSR blocking).
-- Move Metrika initialization to a dedicated client-side component using `useEffect`.
-- Wrap `Preloader` and `TypographyProvider` in `<ClientOnly />` to prevent hydration interference.
-- Add a client-side "Watchdog" to detect hydration hangs and show a "Reload" button after a timeout.
+### Configuration & Build
+- Update `vite.config.ts` to disable Nitro and SSR.
+- Create a standard `index.html` at the root as the entry point for the SPA.
+- Create `src/main.tsx` to handle client-side rendering/hydration without TanStack Start's server runtime.
+- Update `package.json` build scripts to target a static build.
 
-### 2. Selective SSR for Heavy Components
-- Wrap `RollingGallery` and other animation-heavy components in `<ClientOnly />`.
-- Ensure `Header` and `Hero` use consistent initial state during SSR.
+### Routing
+- Modify `src/router.tsx` to ensure it works in a pure client-side environment.
+- Remove `src/routes/robots.txt.ts` and `src/routes/sitemap[.]xml.ts` (which are server routes) and replace them with static files in `public/`.
 
-### 3. Harden Browser API Access
-- Double-check all components for unguarded `window`, `document`, or `localStorage` access.
-- Ensure the Supabase client initialization remains safe during SSR.
+### Server Functions & Backend
+- Replace `createServerFn` usage in `src/lib/notifications.functions.ts` with a client-side stub or a direct call to a Supabase Edge Function (or other configurable API).
+- Note: Since the user asked to keep the booking form UI but not expose secrets, I will keep the Supabase client logic (which uses the public key) but remove the `supabaseAdmin` dependency.
 
-### 4. Implementation of `src/components/Analytics.tsx`
-- Create a client-side component for Yandex.Metrika to handle its lifecycle safely outside the main SSR stream.
+### Components
+- Update `src/routes/__root.tsx` to remove Start-specific components like `HeadContent` and `Scripts` if they interfere with a standard Vite build, or ensure they degrade gracefully.
+- Move meta tags from `__root.tsx` (TanStack Router `head` option) to the static `index.html` where appropriate for SEO on shared hosting (though SPAs have limited SEO without pre-rendering).
 
 ## Technical Details
-- **Watchdog**: A small script in `__root.tsx` that starts a timer on load and clears it once React hydration is complete. If the timer hits 10s, it shows a minimal fallback UI.
-- **ClientOnly**: Using the newly created utility to gate components that don't need to be part of the initial HTML or might cause mismatches.
-- **Cache-Control**: Ensure headers are set to prevent aggressive caching of the HTML while allowing long-term caching of hashed assets.
 
-## Checks
-- `npm run build` to verify no breaking changes.
-- Manual verification of the site loading without infinite spinner in simulated environments.
-- Verify `ym` (Yandex Metrika) is correctly initialized only on the client.
+- **Nitro**: Will be set to `false` in `defineConfig` to stop it from generating a server build.
+- **TanStack Router**: We'll switch from `@tanstack/react-start` wrappers back to standard `@tanstack/react-router` patterns for hydration.
+- **Entry point**: `index.html` will point to `src/main.tsx`.
+- **Form submission**: `sendLeadNotification` will be updated to be a no-op or a simple `console.log` with a `toast.success` to preserve the UI flow, as server functions won't exist in a static build.
+
+## Approval Required
+- The site will become a Single Page Application (SPA). This means initial SEO might be affected unless the hosting provider supports pre-rendering or you use a static site generator (SSG). Shared hosting usually just serves static files.
+- You will need to configure your own backend for email notifications (like a Zapier webhook or a direct Resend call if you're okay with the API key being in the frontend, though the latter is not recommended). I will provide a placeholder for this.
