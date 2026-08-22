@@ -126,7 +126,8 @@ export function QuizContactForm({
           <span className="relative mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center">
             <input 
               type="checkbox" 
-              name="consent"
+              name="privacy_consent"
+              value="Согласие получено"
               checked={consent}
               onChange={(e) => {
                 setConsent(e.target.checked);
