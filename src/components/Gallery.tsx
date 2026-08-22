@@ -20,8 +20,9 @@ export default function Gallery() {
           Атмосфера кабинета
         </h2>
         <p className="mt-6 text-[18px] sm:text-[20px] text-[#566A93] font-light max-w-[600px] mx-auto">
-          Несколько кадров о&nbsp;том, как всё устроено внутри&nbsp;— свет, текстуры и&nbsp;тишина
+          Несколько кадров о&nbsp;том, как&nbsp;всё устроено внутри&nbsp;— свет, текстуры и&nbsp;тишина
         </p>
+
       </div>
 
       <div className="xl:pt-0">
