@@ -252,26 +252,24 @@ function AboutService({ content }: { content: ServicePageContent }) {
   return (
     <section id="services" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section">
       <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-8 sm:gap-5 items-start">
-        <div className="xl:sticky xl:top-[124px] xl:self-start z-10">
-          <div className="flex flex-col items-center xl:items-start text-center xl:text-left">
-            <span
-              className="inline-flex items-center gap-2 px-4 py-1.5 ds-label text-white"
-              style={{
-                borderRadius: "12px",
-                backgroundImage: "linear-gradient(to bottom, #A2CFFE, #88C1FF)",
-              }}
-            >
-              Об услуге
+        <div className="self-start xl:sticky xl:top-[124px] flex flex-col items-center xl:items-start text-center xl:text-left z-10">
+          <span
+            className="inline-flex items-center gap-2 px-4 py-1.5 ds-label text-white"
+            style={{
+              borderRadius: "12px",
+              backgroundImage: "linear-gradient(to bottom, #A2CFFE, #88C1FF)",
+            }}
+          >
+            Об услуге
+          </span>
+          <h2 className="font-noto-serif-narrow mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0">
+            <span className="xl:hidden">
+              {content.aboutHeadingMobile || "Обсуждаем состояние перед каждым визитом и\u00A0подбираем технику"}
             </span>
-            <h2 className="font-noto-serif-narrow mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0">
-              <span className="xl:hidden">
-                {content.aboutHeadingMobile || "Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.\n                                        \n                                            \n                                            нет не рабоатет"}
-              </span>
-              <span className="hidden xl:inline">{content.aboutHeading}</span>
-            </h2>
+            <span className="hidden xl:inline">{content.aboutHeading}</span>
+          </h2>
 
-            <div className="mt-8 hidden xl:block w-full max-w-[520px] text-left">{nav}</div>
-          </div>
+          <div className="mt-8 hidden xl:block w-full max-w-[520px] text-left">{nav}</div>
         </div>
 
         <div className="flex flex-col gap-4">
