@@ -4,6 +4,8 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  HeadContent,
+  Scripts,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
@@ -118,13 +120,51 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://mc.yandex.ru",
         crossOrigin: "anonymous",
       },
+      {
+        rel: "preload",
+        href: "/fonts/noto-serif-display-narrow.woff2",
+        as: "font",
+        type: "font/woff2",
+        crossOrigin: "anonymous",
+      },
+      {
+        rel: "preload",
+        href: "/fonts/inter-cyrillic-300-normal.woff2",
+        as: "font",
+        type: "font/woff2",
+        crossOrigin: "anonymous",
+      },
       { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" }],
     scripts: [],
   }),
+  shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
 });
+
+function RootShell({ children }: { children: ReactNode }) {
+  return (
+    <html>
+      <head>
+        <HeadContent />
+      </head>
+      <body>
+        {children}
+        <Scripts />
+        <noscript>
+          <div>
+            <img
+              src="https://mc.yandex.ru/watch/111534340"
+              style={{ position: "absolute", left: "-9999px" }}
+              alt="Яндекс Метрика"
+            />
+          </div>
+        </noscript>
+      </body>
+    </html>
+  );
+}
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
@@ -136,7 +176,9 @@ function RootComponent() {
         <TypographyProvider />
       </ClientOnly>
 
+      
       <Outlet />
+      
     </QueryClientProvider>
   );
 }

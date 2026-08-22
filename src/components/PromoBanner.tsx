@@ -28,7 +28,6 @@ export function PromoBanner({
             src="/images/banner-clouds.svg"
             alt="Декоративные облака"
             aria-hidden="true"
-            loading="lazy"
             className="pointer-events-none absolute inset-x-0 top-0 z-0 w-full -translate-y-[10px] select-none"
           />
 
@@ -36,18 +35,15 @@ export function PromoBanner({
             src="/images/banner-clouds-bottom.svg"
             alt="Декоративные элементы фона"
             aria-hidden="true"
-            loading="lazy"
             className="pointer-events-none absolute inset-x-0 bottom-0 z-0 hidden w-full translate-y-[120px] select-none xl:block"
           />
           <img
             src="/images/banner-ellipse.svg"
             alt="Фоновый градиент"
             aria-hidden="true"
-            loading="lazy"
             className="pointer-events-none absolute left-1/2 top-0 z-[1] hidden h-full w-[140%] max-w-none -translate-x-1/2 select-none xl:block xl:w-[995px]"
             style={{ objectFit: "fill" }}
           />
-
 
           {/* Decorative background sparkles */}
           {[

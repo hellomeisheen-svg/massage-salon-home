@@ -114,7 +114,7 @@ export default function BookingDialog({
                 rel="noopener noreferrer"
                 className="btn-primary inline-flex w-full items-center justify-center"
               >
-                Записаться
+                Записаться онлайн
               </a>
               <button
                 type="button"
@@ -337,7 +337,7 @@ export default function BookingDialog({
                     <span>Отправка...</span>
                   </>
                 ) : (
-                  "Записаться"
+                  "Записаться онлайн"
                 )}
               </button>
             </form>
