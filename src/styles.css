@@ -73,6 +73,8 @@ html, body {
   }
 }
 
+
+
 @utility container-1900 {
   width: 100%;
   max-width: 1590px;
@@ -111,6 +113,45 @@ html, body {
 }
 
 
+
+@utility desktop-sticky-layout {
+  @media (min-width: 1024px) {
+    height: calc(100vh - 100px);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@utility desktop-sticky-container {
+  @media (min-width: 1024px) {
+    height: 100%;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@utility scroll-container {
+  @media (min-width: 1024px) {
+    height: 100%;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+}
+
+@utility sticky-sidebar {
+  @media (min-width: 1024px) {
+    position: sticky;
+    top: 0;
+    align-self: start;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+}
 
 @utility btn-base {
   display: inline-flex;
