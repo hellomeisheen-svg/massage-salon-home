@@ -70,7 +70,7 @@ export function OtherServices({ exclude }: { exclude?: string }) {
   };
 
   const cardClass =
-    "group flex flex-col justify-between ds-card ds-bento-shadow p-4 sm:p-5 border border-[#DAEBFF]";
+    "group flex flex-col ds-card ds-bento-shadow p-4 sm:p-5 border border-[#DAEBFF]";
 
   const Controls = ({ className }: { className: string }) => (
     <div className={className}>
