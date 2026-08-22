@@ -330,14 +330,12 @@ function PriceTableCell({
   const current = Math.round(total * (1 - discount));
   return (
     <div className="flex items-center gap-2">
+      <span className="font-noto-serif-narrow text-[13px] xl:text-[15px] font-light text-[#566A93]/40 line-through decoration-[#566A93]/20">
+        {renderPrice(formatPrice(total))}
+      </span>
       <span className="font-noto-serif-narrow text-[18px] xl:text-[24px] font-light text-[#1C3C8C]">
         {renderPrice(formatPrice(current))}
       </span>
-      {discount > 0 && (
-        <span className="font-noto-serif-narrow text-[13px] xl:text-[15px] font-light text-[#566A93]/40 line-through decoration-[#566A93]/20">
-          {renderPrice(formatPrice(total))}
-        </span>
-      )}
     </div>
   );
 }

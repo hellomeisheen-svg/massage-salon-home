@@ -686,14 +686,14 @@ function HirudoPriceTable() {
                       <td key={i} className="px-6 py-6 xl:px-8">
                         <div className="flex flex-col gap-1">
                           <div className="flex items-center gap-2">
-                            <span className="font-noto-serif-narrow text-[20px] xl:text-[24px] font-light text-[#1C3C8C]">
-                              {renderPrice(formatPrice(price.currentPrice))}
-                            </span>
                             {discountValues[i] > 0 && (
                               <span className="font-noto-serif-narrow text-[14px] font-light text-[#566A93]/40 line-through">
                                 {renderPrice(formatPrice(price.totalBase))}
                               </span>
                             )}
+                            <span className="font-noto-serif-narrow text-[20px] xl:text-[24px] font-light text-[#1C3C8C]">
+                              {renderPrice(formatPrice(price.currentPrice))}
+                            </span>
                           </div>
                           <div className="text-[12px] font-light text-[#566A93]">
                             {price.leeches} {pluralize(price.leeches, ["пиявка", "пиявки", "пиявок"])}
