@@ -457,7 +457,7 @@ function PriceTable({ content }: { content: ServicePageContent }) {
                         </span>
                       </div>
                       <div className="text-[12px] font-light text-[#566A93]">
-                        {formatDurationString(p.duration, 3)}
+                        {p.sessionDurations?.[1] !== undefined ? p.sessionDurations[1] : formatDurationString(p.duration, 3)}
                       </div>
                     </div>
                   </td>
