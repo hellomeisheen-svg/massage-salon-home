@@ -667,7 +667,7 @@ button:focus-visible {
 @utility ds-h3 {
   font-family: var(--font-heading);
   font-weight: 400;
-  font-size: 24px;
+  font-size: 26px; /* Increased from 24px */
   line-height: 1.15;
   @media (max-width: 639px) {
     font-weight: 500;
@@ -679,6 +679,7 @@ button:focus-visible {
     font-size: 36px;
   }
 }
+
 
 @utility ds-h4 {
   font-family: var(--font-heading);
