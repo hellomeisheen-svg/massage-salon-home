@@ -667,18 +667,19 @@ button:focus-visible {
 @utility ds-h3 {
   font-family: var(--font-heading);
   font-weight: 400;
-  font-size: 26px; /* Increased from 24px */
+  font-size: 30px; /* Increased to match ds-h2 for mobile/tablet */
   line-height: 1.15;
   @media (max-width: 639px) {
     font-weight: 500;
   }
   @media (min-width: 640px) {
-    font-size: 28px;
+    font-size: 36px; /* Increased to match ds-h2 for tablet/desktop */
   }
   @media (min-width: 940px) {
     font-size: 36px;
   }
 }
+
 
 
 @utility ds-h4 {
