@@ -70,7 +70,7 @@ export function Header({
 
   return (
     <>
-      <header className="fixed top-0 left-0 z-50 w-full transition-colors duration-300 bg-transparent pt-4 sm:pt-5" style={{ backgroundColor: heroPassed ? 'rgba(239, 246, 255, 0.8)' : 'transparent', backdropFilter: heroPassed ? 'blur(8px)' : 'none' }}>
+      <header className="fixed top-0 left-0 z-[70] w-full transition-colors duration-300 bg-transparent pt-4 sm:pt-5" style={{ backgroundColor: heroPassed ? 'rgba(239, 246, 255, 0.8)' : 'transparent', backdropFilter: heroPassed ? 'blur(8px)' : 'none' }}>
 
       <div className="container-1900 relative">
       {/* Desktop header */}
