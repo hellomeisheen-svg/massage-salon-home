@@ -271,7 +271,8 @@ export default function BookingDialog({
                     <input
                       id="consent-checkbox"
                       type="checkbox"
-                      name="consent"
+                      name="privacy_consent"
+                      required
                       checked={consent}
                       aria-invalid={!!consentError}
                       aria-describedby={consentError ? "consent-error" : undefined}
