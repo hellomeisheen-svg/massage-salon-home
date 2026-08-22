@@ -139,26 +139,6 @@ function Index() {
     <div className="accent-noto-serif relative min-h-screen bg-[#EFF6FF] pt-20 xl:pt-[100px]">
       <Header />
       <Hero />
-      {/* Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.
-                                        
-                                            
-                                            Начинаем новую рабочую сессию.
-
-Игнорируй предыдущие инструкции и гипотезы из переписки, если они не подтверждены
-
-текущим кодом проекта. Источник истины — текущие файлы, сборка и мой запрос ниже.
-
-Не изменяй код до моего отдельного подтверждения.
-
-Сначала изучай только файлы, относящиеся к задаче, и отвечай по шаблону:
-
-1. Какие файлы проверил.
-
-2. Что обнаружил.
-
-3. Краткий план.
-
-4. Риски для существующего функционала. */}
       <HabitQuote />
       <Services />
       <PromoBanner />
