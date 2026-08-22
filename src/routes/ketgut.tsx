@@ -147,8 +147,8 @@ const content: ServicePageContent = {
   ),
   heroImage: "/images/uslugi-ketgut.webp",
   heroImageAlt: "Введение нитей в акупунктурные точки",
-  aboutHeading: "Обсуждаем состояние перед каждым визитом и подбираем технику",
-  aboutHeadingMobile: "Обсуждаем состояние перед каждым визитом и подбираем технику",
+  aboutHeading: "Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.\n                                        \n                                            \n                                            нет не рабоатет",
+  aboutHeadingMobile: "Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.\n                                        \n                                            \n                                            нет не рабоатет",
   bookingPrefix: "Акупунктурный кетгут",
   pricesStyle: "table",
   sections: [

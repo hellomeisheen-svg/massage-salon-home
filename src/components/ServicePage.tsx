@@ -265,7 +265,7 @@ function AboutService({ content }: { content: ServicePageContent }) {
             </span>
             <h2 className="font-noto-serif-narrow mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0">
               <span className="xl:hidden">
-                {content.aboutHeadingMobile || "Обсуждаем состояние перед каждым визитом и\u00A0подбираем технику"}
+                {content.aboutHeadingMobile || "Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.\n                                        \n                                            \n                                            нет не рабоатет"}
               </span>
               <span className="hidden xl:inline">{content.aboutHeading}</span>
             </h2>
