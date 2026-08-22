@@ -54,10 +54,10 @@ export function Approach() {
             Всё, чтобы вы чувствовали себя спокойно и&nbsp;комфортно с&nbsp;первых минут
           </h3>
 
-          <ul className="mt-[120px] flex flex-col gap-8 sm:mt-[140px] sm:text-left xl:mt-[140px] xl:gap-[40px]">
+          <ul className="mt-[120px] flex flex-col gap-12 sm:mt-[140px] sm:text-left xl:mt-[140px] xl:gap-[40px]">
             {environmentItems.map((item, i) => (
               <li key={i} className="group">
-                  <div className="flex flex-col gap-8 sm:grid sm:grid-cols-[auto_1fr] sm:items-start sm:gap-x-6 sm:gap-y-2 sm:text-left">
+                  <div className="flex flex-col gap-4 sm:grid sm:grid-cols-[auto_1fr] sm:items-start sm:gap-x-6 sm:gap-y-2 sm:text-left">
                     <div className="pb-2 sm:row-span-2 sm:pb-0">
                       <NumberBadge number={i + 1} />
                     </div>
