@@ -136,6 +136,37 @@ export function Header({
               <div className="flex h-full flex-col ds-card p-4">
                 <nav className="flex-1 overflow-y-auto pr-1 scrollbar-none" aria-label="Мобильная навигация">
                   <ul className="flex flex-col gap-1">
+                    {(pathname === "/" || items !== undefined) && (
+                      <li>
+                        <button
+                          type="button"
+                          onClick={() => setServicesOpen(!servicesOpen)}
+                          className="flex w-full items-center justify-between rounded-[12px] px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors text-link-active"
+                        >
+                          Выбрать услугу
+                          <ChevronDown className={`transition-transform duration-300 ${servicesOpen ? "rotate-180" : ""}`} size={20} />
+                        </button>
+                        {servicesOpen && (
+                          <ul className="mt-1 flex flex-col gap-1 pl-4">
+                            {servicePages
+                              .filter((service) => service.to !== pathname)
+                              .map((service) => (
+                                <li key={service.to}>
+                                  <Link
+                                    to={service.to}
+                                    onClick={() => setMenuOpen(false)}
+                                    className="block w-full rounded-[12px] px-3 py-2 text-sm font-normal leading-[150%] text-[#4A5C85] hover:bg-[#EFF6FF] transition-colors text-link-active"
+                                  >
+                                    {service.label}
+                                  </Link>
+                                </li>
+                              ))}
+                          </ul>
+                        )}
+                        <div className="my-1 border-t border-[#daebff]" />
+                      </li>
+                    )}
+                    
                     {pathname !== "/" && (
                       <li>
                         <Link
@@ -158,39 +189,6 @@ export function Header({
                         </a>
                       </li>
                     ))}
-                    
-                    {(pathname === "/" || items !== undefined) && (
-                      <>
-                        <li className="my-1 border-t border-[#daebff]" />
-                        <li>
-                          <button
-                            type="button"
-                            onClick={() => setServicesOpen(!servicesOpen)}
-                            className="flex w-full items-center justify-between rounded-[12px] px-3 py-2.5 text-left text-base font-normal leading-[150%] text-[#1c3c8c] hover:bg-[#EFF6FF] transition-colors text-link-active"
-                          >
-                            Выбрать услугу
-                            <ChevronDown className={`transition-transform duration-300 ${servicesOpen ? "rotate-180" : ""}`} size={20} />
-                          </button>
-                          {servicesOpen && (
-                            <ul className="mt-1 flex flex-col gap-1 pl-4">
-                              {servicePages
-                                .filter((service) => service.to !== pathname)
-                                .map((service) => (
-                                  <li key={service.to}>
-                                    <Link
-                                      to={service.to}
-                                      onClick={() => setMenuOpen(false)}
-                                      className="block w-full rounded-[12px] px-3 py-2 text-sm font-normal leading-[150%] text-[#4A5C85] hover:bg-[#EFF6FF] transition-colors text-link-active"
-                                    >
-                                      {service.label}
-                                    </Link>
-                                  </li>
-                                ))}
-                            </ul>
-                          )}
-                        </li>
-                      </>
-                    )}
                   </ul>
                 </nav>
                 <div className="mt-auto pt-3">
