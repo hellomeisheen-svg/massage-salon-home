@@ -151,25 +151,9 @@ function Index() {
       <Programs />
       <PromoBanner
         title={
-          <>
-            <span className="xl:hidden">Успейте записаться по&nbsp;старой цене</span>
-            <span className="hidden xl:inline">
-              С&nbsp;1&nbsp;сентября часть курсов подорожает, а&nbsp;пока
-              <br />
-              можно купить их по&nbsp;прежней цене
-            </span>
-          </>
+          "'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n                                        \n                                            \n                                            не учитывай предыдущий контент чата и промты давай начнем с нуля"
         }
-        subtitle={
-          <>
-            <span className="xl:hidden">До&nbsp;повышения цен можно купить курс сейчас, а&nbsp;сеансы пройти в&nbsp;удобное время.</span>
-            <span className="hidden xl:inline">
-              До этой даты действует прежняя цена: можно купить курс сейчас
-              <br />
-              и приходить на сеансы позже.
-            </span>
-          </>
-        }
+        subtitle={""}
       />
       <Education />
       

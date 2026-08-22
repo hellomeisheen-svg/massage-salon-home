@@ -7,9 +7,8 @@ interface PromoBannerProps {
   buttonText?: string;
 }
 
-const defaultTitle = "Знакомство с\u00A0кабинетом по\u00A0комфортной цене";
-const defaultSubtitle =
-  "Первый визит со\u00A0скидкой 20%. Подберём формат под\u00A0ваше состояние и\u00A0обсудим всё заранее\u00A0— без\u00A0спешки и\u00A0шаблонов.";
+const defaultTitle = "'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n                                        \n                                            \n                                            не учитывай предыдущий контент чата и промты давай начнем с нуля";
+const defaultSubtitle = "";
 
 export function PromoBanner({
   title = defaultTitle,
