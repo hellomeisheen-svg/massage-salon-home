@@ -771,10 +771,11 @@ function PriceCard({ p }: { p: HirudoRow }) {
       <p className="mt-3 text-[15px] font-light leading-[1.5] text-[#566A93]">{p.subtitle}</p>
 
       <div className="mt-6 flex flex-col gap-1">
-        <p className="text-[13px] font-medium leading-[18px] tracking-wide text-[#1C3C8C]">
+        <p className="text-[13px] font-medium leading-[18px] tracking-wide text-[#1C3C8C] lg:block">
           {summary}
+          <span className="lg:hidden"> · {leeches} {pluralize(leeches, ["пиявка", "пиявки", "пиявок"])}</span>
         </p>
-        <p className="text-[12px] font-light text-[#566A93]">
+        <p className="hidden lg:block text-[12px] font-light text-[#566A93]">
           {leeches} {pluralize(leeches, ["пиявка", "пиявки", "пиявок"])}
         </p>
       </div>
