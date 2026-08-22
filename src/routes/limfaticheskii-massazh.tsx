@@ -84,7 +84,6 @@ const content: ServicePageContent = {
   heroText: "Мягкие массажные техники для поддержки естественного лимфотока, уменьшения ощущения отёчности и лёгкости в теле. Кабинет в посёлке Трудовое.",
   heroImage: "/images/uslugi-limfodrenazhnyi-massazh.webp",
   heroImageAlt: "Специалист проводит лимфатический массаж ног для снятия отёков в кабинете Седьмое небо",
-  aboutHeading: <>Обсуждаем состояние перед каждым визитом и подбираем технику</>,
   bookingPrefix: "Лимфатический массаж",
   prioritizeKeys: ["lymphatic", "lymphdrainage"],
   pricesStyle: "table",
