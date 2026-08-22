@@ -272,7 +272,7 @@ function AboutService({ content }: { content: ServicePageContent }) {
           <div className="mt-8 hidden xl:block w-full max-w-[520px] text-left">{nav}</div>
         </div>
 
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 xl:overflow-y-auto xl:max-h-full xl:pr-4 scrollbar-none xl:pt-6 xl:pb-6">
           <div className="ds-bento-shadow ds-card p-6 sm:p-8 xl:p-10">
             <div className="flex flex-col gap-10 sm:gap-12">
               {sections.map((s, i) => (
