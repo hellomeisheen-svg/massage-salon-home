@@ -203,14 +203,14 @@ const hirudoRows: HirudoRow[] = [
   {
     zone: "Медицинские пиявки",
     subtitle: "Оздоровительная практика",
-    duration: "1,5–2 часа",
+    duration: "",
     base: 4800,
     perLeech: false,
     leechCounts: [6, 16, 74] },
   {
     zone: "Косметические пиявки",
     subtitle: "Мягкий уход и\u00A0забота о\u00A0коже",
-    duration: "1,5–2 часа",
+    duration: "",
 
     base: 600,
     perLeech: true,
@@ -696,7 +696,7 @@ function HirudoPriceTable() {
                             </span>
                           </div>
                           <div className="text-[12px] font-light text-[#566A93]">
-                            {price.leeches} {pluralize(price.leeches, ["пиявка", "пиявки", "пиявок"])} · {formatDurationString(p.duration, count)}
+                            {price.leeches} {pluralize(price.leeches, ["пиявка", "пиявки", "пиявок"])}
                           </div>
                         </div>
                       </td>
@@ -734,7 +734,7 @@ function PriceCard({ p }: { p: HirudoRow }) {
   const currentPrice = Math.round(totalBase * (1 - discount));
   
   const sessionWord = pluralize(count, ["сеанс", "сеанса", "сеансов"]);
-  const summary = `${count} ${sessionWord} · ${p.duration}`;
+  const summary = `${count} ${sessionWord}`;
 
   return (
     <article className="flex flex-col ds-card ds-bento-shadow p-6 sm:p-8 xl:p-10">
