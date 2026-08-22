@@ -12,30 +12,35 @@ export function Preloader() {
   const loadedRef = useRef(false);
 
   useEffect(() => {
-    // We only show preloader on the very first mount of the app (initial load)
-    // To avoid showing it on every client-side navigation, we could use a global variable
-    // but Preloader is currently placed in RootShell which only mounts once in TanStack Start.
-
     const finish = () => {
       if (loadedRef.current) return;
       loadedRef.current = true;
       setLeaving(true);
-      // Wait for the opacity transition to finish
       setTimeout(() => setShouldRender(false), 400);
     };
 
-    // Safety timeout: 2500ms max as per requirements
     const safetyTimer = setTimeout(finish, 2500);
 
-    // Check if hero image and critical content are ready
-    // In a real app, we might check for specific image loads, 
-    // but 'load' event is a good proxy for "critical elements ready" 
-    // without waiting for heavy external scripts like Yandex Maps if handled correctly.
-    if (document.readyState === "complete") {
+    // Initial check in case it's already loaded (Hydration)
+    if (typeof window !== 'undefined' && document.readyState === "complete") {
       finish();
-    } else {
-      window.addEventListener("load", finish, { once: true });
     }
+
+    // We use a global check for critical hero image readiness
+    const handleLoad = () => {
+      // Check if hero image is loaded (if present)
+      const heroImg = document.querySelector('img[src*="hero-portrait-solid"]') as HTMLImageElement;
+      if (!heroImg || heroImg.complete) {
+        finish();
+      } else {
+        heroImg.addEventListener('load', finish, { once: true });
+      }
+    };
+
+    if (typeof window !== 'undefined') {
+      window.addEventListener("load", handleLoad, { once: true });
+    }
+
 
     return () => {
       clearTimeout(safetyTimer);
