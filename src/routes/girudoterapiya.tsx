@@ -696,7 +696,11 @@ function HirudoPriceTable() {
                             </span>
                           </div>
                           <div className="text-[12px] font-light text-[#566A93]">
-                            {price.leeches} {pluralize(price.leeches, ["пиявка", "пиявки", "пиявок"])}
+                            {p.sessionDurations?.[i] !== undefined ? p.sessionDurations[i] : (
+                              <>
+                                {price.leeches} {pluralize(price.leeches, ["пиявка", "пиявки", "пиявок"])}
+                              </>
+                            )}
                           </div>
                         </div>
                       </td>
