@@ -25,7 +25,7 @@ function HeadlineBlock() {
           Записаться онлайн
         </a>
         <a
-          href="https://t.me/Max_Zlobin"
+          href="https://max.ru/u/f9LHodD0cOLS1ZC9ThcQkVLRVzcK-MbYZ7JVAg8PC5Tx9LyihgOVdPnzaxM"
           target="_blank"
           rel="noopener noreferrer"
           className="btn-secondary w-full sm:w-[280px] xl:w-[250px] inline-flex items-center justify-center text-center whitespace-nowrap"
