@@ -280,7 +280,7 @@ function AboutService({ content }: { content: ServicePageContent }) {
                   ref={(el) => {
                     refs.current[i] = el;
                   }}
-                  className="scroll-mt-[140px]"
+                  className="scroll-mt-[140px] xl:scroll-mt-[160px]"
                 >
                   <h3 className="font-noto-serif-narrow text-[26px] sm:text-[36px] font-light leading-[1.15] text-[#1C3C8C]">
                     {s.label}

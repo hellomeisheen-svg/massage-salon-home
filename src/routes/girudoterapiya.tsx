@@ -597,7 +597,7 @@ function GirudoterapiyaServices() {
                   ref={(el) => {
                     refs.current[i] = el;
                   }}
-                  className="scroll-mt-[140px]"
+                  className="scroll-mt-[140px] xl:scroll-mt-[160px]"
                 >
                   <h3 className="font-noto-serif-narrow text-[26px] sm:text-[32px] font-light leading-[1.15] text-[#1C3C8C]">
                     {s.label}
