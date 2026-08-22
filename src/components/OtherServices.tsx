@@ -122,7 +122,7 @@ export function OtherServices({ exclude }: { exclude?: string }) {
         <div
           ref={trackRef}
           onScroll={updateArrows}
-          className="mt-8 xl:mt-4 flex gap-3 overflow-hidden scroll-smooth p-6 -m-6"
+          className="mt-8 xl:mt-4 flex gap-3 overflow-x-auto scrollbar-none scroll-smooth p-6 -m-6"
         >
           {items.map((service) => (
             <Link
