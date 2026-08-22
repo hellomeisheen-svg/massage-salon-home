@@ -207,14 +207,19 @@ const hirudoRows: HirudoRow[] = [
     duration: "1,5\u00A0\u2013\u00A02\u00A0часа",
     base: 4800,
     perLeech: false,
-    leechCounts: [6, 16, 74] },
+    leechCounts: [6, 16, 74],
+    sessionDurations: ["6 пиявок", "16 пиявок", "74 пиявки"]
+  },
   {
     zone: "Косметические пиявки",
     subtitle: "Мягкий уход и\u00A0забота о\u00A0коже",
     duration: "1,5\u00A0\u2013\u00A02\u00A0часа",
     base: 600,
     perLeech: true,
-    leechCounts: [6, 10, 20] }];
+    leechCounts: [6, 10, 20],
+    sessionDurations: ["6 пиявок", "10 пиявок", "20 пиявок"]
+  }
+];
 
 
 const faq = [
