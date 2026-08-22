@@ -163,6 +163,7 @@ export function PriceTable({ prices, title = "Форматы и стоимост
                 // Specific data for leech therapy
                 const hirudoRow = isHirudo ? (p as any) : null;
                 const leeches = hirudoRow?.leechCounts ? hirudoRow.leechCounts[activeTab] : 0;
+                const leechWord = pluralize(leeches, ["пиявка", "пиявки", "пиявок"]);
                 
                 const totalBase = hirudoRow?.perLeech ? leeches * p.base : p.base * count;
                 const currentPrice = Math.round(totalBase * (1 - discount));
@@ -186,10 +187,16 @@ export function PriceTable({ prices, title = "Форматы и стоимост
                             )}
                           </div>
                           <div className="mt-0.5 text-[11px] font-light text-[#566A93]">
-                            {p.zone.toLowerCase().includes("пиявк") ? "" : p.duration}
+                            {isHirudo ? (
+                              <span className="lg:hidden">
+                                {count} {sessionWord} · {leeches} {leechWord}
+                              </span>
+                            ) : (
+                              p.duration
+                            )}
                           </div>
                         </div>
-                        <div className="text-right shrink-0">
+                        <div className={`text-right shrink-0 ${isHirudo ? 'hidden lg:block' : ''}`}>
                           <div className="inline-flex rounded-[12px] bg-[#DAEBFF] px-2 py-0.5 text-[10px] font-light text-[#566A93]">
                             {count} {sessionWord}
                           </div>
@@ -208,8 +215,8 @@ export function PriceTable({ prices, title = "Форматы и стоимост
                           )}
                         </div>
                         {isHirudo && (
-                          <div className="text-[11px] font-light text-[#566A93]">
-                            {leeches} {pluralize(leeches, ["пиявка", "пиявки", "пиявок"])}
+                          <div className="hidden lg:block text-[11px] font-light text-[#566A93]">
+                            {leeches} {leechWord}
                           </div>
                         )}
                       </div>
