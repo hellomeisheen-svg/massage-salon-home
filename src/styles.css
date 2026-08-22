@@ -101,8 +101,6 @@ html, body {
     padding-bottom: 2.5rem;
   }
 }
-  }
-}
 
 @utility sticky-sidebar {
   @media (min-width: 1024px) {
