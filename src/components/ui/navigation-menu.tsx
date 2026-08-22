@@ -48,7 +48,6 @@ const NavigationMenuTrigger = React.forwardRef<
     {...props}
   >
     {children}
-    {"'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n                                        \n                                            \n                                            СТОП. Не добавляй никакой текст команды, пояснения или служебные фразы в интерфейс сайта.\n\nТекущий коммит e2a1ed... НЕ деплоим.\n\nНужна одна правка в src/components/ui/navigation-menu.tsx:\n\nв NavigationMenuTrigger должно быть ровно:\n\n{children}\n\n<ChevronDown ... />\n\nУдалить любой отображаемый текст, который связан с нашими сообщениями или инструкциями.\n\nНе меняй TypographyProvider, SSR, lazy loading, дизайн, зависимости и другие файлы.\n\nПосле этого:\n\n1. npm run build;\n\n2. сделай отдельный коммит в GitHub main;\n\n3. верни реальный SHA GitHub;\n\n4. укажи точный diff только для navigation-menu.tsx."}
     <ChevronDown
       className="relative top-[1px] ml-1 h-3 w-3 transition duration-300 group-data-[state=open]:rotate-180"
       aria-hidden="true"
