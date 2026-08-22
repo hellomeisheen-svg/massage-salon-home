@@ -204,7 +204,7 @@ export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
       </div>
       </footer>
 
-      <div className="bg-[#EFF6FF] border-t border-[#daebff] pt-5 pb-2 xl:py-5 footer-bottom-padding">
+      <div className="bg-[#EFF6FF] border-t border-[#daebff] pt-5 pb-0 footer-bottom-padding">
         <div className="container-1900 flex justify-center">
           <p className="text-[13px] text-[#1c3c8c]/80 font-light">
             Сайт разработан —{" "}
