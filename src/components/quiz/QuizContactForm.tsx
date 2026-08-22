@@ -14,7 +14,7 @@ export function QuizContactForm({
 }) {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
-  const [method, setMethod] = useState("whatsapp");
+  const [method, setMethod] = useState("WhatsApp");
   const [consent, setConsent] = useState(false);
   const [phoneError, setPhoneError] = useState<string | null>(null);
   const [consentError, setConsentError] = useState<string | null>(null);
@@ -106,9 +106,9 @@ export function QuizContactForm({
           <span className="text-[14px] leading-[1.5] text-foreground block">Где вам удобнее ответить?</span>
           <div className="grid grid-cols-3 gap-2">
             {[
-              { id: "whatsapp", label: "WhatsApp" },
-              { id: "telegram", label: "Telegram" },
-              { id: "max", label: "Max" },
+              { id: "WhatsApp", label: "WhatsApp" },
+              { id: "Telegram", label: "Telegram" },
+              { id: "Max", label: "Max" },
             ].map(m => (
               <button
                 key={m.id}
@@ -173,9 +173,10 @@ export function QuizContactForm({
         )}
       </button>
 
-      {/* Honeypot for spam bots */}
+      <input type="hidden" name="messenger" value={method} />
+      <input type="hidden" name="_subject" value="Новая запись (Квиз) с сайта" />
       <div className="absolute opacity-0 -z-10 w-0 h-0 overflow-hidden" aria-hidden="true">
-        <input type="text" name="website" tabIndex={-1} autoComplete="off" />
+        <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" />
       </div>
     </form>
   );
