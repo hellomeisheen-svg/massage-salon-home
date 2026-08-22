@@ -272,7 +272,7 @@ function AboutService({ content }: { content: ServicePageContent }) {
         </div>
 
         <div className="flex flex-col gap-4">
-          <div className="ds-bento-shadow ds-card p-6 sm:p-8 xl:p-10">
+          <div className="ds-bento-shadow ds-card p-6 sm:p-8 xl:p-10 !overflow-visible">
             <div className="flex flex-col gap-10 sm:gap-12">
               {sections.map((s, i) => (
                 <div
@@ -280,12 +280,12 @@ function AboutService({ content }: { content: ServicePageContent }) {
                   ref={(el) => {
                     refs.current[i] = el;
                   }}
-                  className="scroll-mt-[140px]"
+                  className="scroll-mt-[140px] flex flex-col xl:flex-row xl:gap-10"
                 >
-                  <h3 className="font-noto-serif-narrow text-[26px] sm:text-[36px] font-light leading-[1.15] text-[#1C3C8C]">
+                  <h3 className="font-noto-serif-narrow text-[26px] sm:text-[36px] font-light leading-[1.15] text-[#1C3C8C] xl:sticky xl:top-[160px] xl:self-start xl:w-[240px] xl:shrink-0">
                     {s.label}
                   </h3>
-                  <div className="mt-5 text-[#566A93] space-y-4 text-[15px] leading-[1.6]">
+                  <div className="mt-5 xl:mt-0 text-[#566A93] space-y-4 text-[15px] leading-[1.6] flex-1">
                     {s.content}
                   </div>
                 </div>
