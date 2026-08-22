@@ -163,48 +163,58 @@ export default function BookingDialog({
 
                 setLoading(true);
                 try {
-                  const form = e.currentTarget;
-                  const formData = new FormData(form);
+                  const formData = new FormData(e.currentTarget);
+                  const honeypot = formData.get("website") as string;
                   
-                  // Add messenger mapping
-                  formData.set("messenger", method.charAt(0).toUpperCase() + method.slice(1));
-                  // Rename comment to message for Formspree
-                  formData.set("message", formData.get("comment") as string);
-                  formData.delete("comment");
-                  // Ensure privacy consent is sent
-                  formData.set("privacy_consent", "Yes");
-                  
-                  const response = await fetch("https://formspree.io/f/mqaebrjr", {
-                    method: "POST",
-                    body: formData,
-                    headers: {
-                      'Accept': 'application/json'
-                    }
-                  });
-
-                  if (response.ok) {
-                    toast.success("Спасибо! Заявка отправлена. Мы свяжемся с вами.");
-                    form.reset();
-                    setPhone("");
-                    setConsent(false);
-                    setTimeout(() => {
-                      onClose();
-                    }, 1000);
-                  } else {
-                    throw new Error("Formspree error");
+                  if (honeypot) {
+                    console.warn("Spam detected via honeypot");
+                    setSent(true);
+                    return;
                   }
+
+                  const name = formData.get("name") as string;
+                  const comment = formData.get("comment") as string;
+                  const email = formData.get("email") as string;
+
+                  const phoneValue = formatPhone(phone);
+
+                  const { data: leadData, error: insertError } = await supabase
+                    .from("leads")
+                    .insert([
+                      {
+                        name,
+                        phone: phoneValue,
+                        message: `${method.toUpperCase()}${comment ? `: ${comment}` : ""}`,
+                        email: email || null,
+                      },
+                    ])
+                    .select("id")
+                    .single();
+
+                  if (insertError) throw insertError;
+
+                  if (leadData?.id) {
+                    sendLeadNotification({ data: { leadId: leadData.id } })
+                      .then((result) => {
+                        if (result && !result.success) {
+                          console.error("Notification failed:", result.error);
+                          toast.error("Заявка принята, но возникла ошибка при отправке уведомления мастеру.");
+                        }
+                      })
+                      .catch((err) => {
+                        console.error("Notification error:", err);
+                      });
+                  }
+
+                  setSent(true);
                 } catch (err) {
                   console.error("Lead submission error:", err);
-                  toast.error("Не удалось отправить заявку. Попробуйте ещё раз.");
                   setError("Не удалось отправить заявку. Попробуйте ещё раз.");
                 } finally {
                   setLoading(false);
                 }
               }}
             >
-              <input type="hidden" name="_subject" value="Новая запись на сеанс с сайта" />
-              <input type="text" name="_gotcha" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
-
               <label className="flex flex-col gap-2">
                 <span className="text-[14px] leading-[1.5] text-foreground">Ваше имя</span>
                 <input
@@ -271,8 +281,7 @@ export default function BookingDialog({
                     <input
                       id="consent-checkbox"
                       type="checkbox"
-                      name="privacy_consent"
-                      required
+                      name="consent"
                       checked={consent}
                       aria-invalid={!!consentError}
                       aria-describedby={consentError ? "consent-error" : undefined}
@@ -312,6 +321,9 @@ export default function BookingDialog({
                 <p className="text-[13px] leading-[1.5] text-[#C0392B] text-center">{error}</p>
               )}
 
+              <div className="absolute opacity-0 -z-10 w-0 h-0 overflow-hidden" aria-hidden="true">
+                <input type="text" name="website" tabIndex={-1} autoComplete="off" />
+              </div>
               
               <button 
                 type="submit" 
