@@ -89,17 +89,17 @@ export function Faq() {
           </h2>
 
           <div className="mt-8 xl:mt-auto ds-card ds-bento-shadow p-5 sm:p-7 w-full xl:w-1/2 mx-auto xl:mx-0 text-left">
-            <div className="flex items-end text-left gap-4 sm:flex-col sm:items-start sm:gap-0 xl:flex-col xl:items-start xl:gap-0">
+            <div className="flex items-end text-left gap-4 xl:flex-col xl:items-start xl:gap-0">
               <img
                 src="/images/tatyana-photo.webp"
                 alt="Татьяна Злобина"
                 className="h-[90px] w-[70px] sm:h-[110px] sm:w-[85px] xl:h-[110px] xl:w-[85px] rounded-[12px] border border-[#daebff] ds-bento-shadow object-cover flex-shrink-0"
               />
               <div className="flex flex-col">
-                <h3 className="font-noto-serif-narrow mt-0 sm:mt-6 xl:mt-6 ds-h4 text-[#1C3C8C] sm:text-[28px] xl:text-[28px]">
+                <h3 className="font-noto-serif-narrow mt-0 xl:mt-6 ds-h4 text-[#1C3C8C] sm:text-[28px] xl:text-[28px]">
                   Татьяна Злобина
                 </h3>
-                <p className="mt-1 sm:mt-3 xl:mt-3 text-[14px] sm:text-[16px] leading-[1.4] sm:leading-[1.6] body-text text-[#566A93]">
+                <p className="mt-1 xl:mt-3 text-[14px] sm:text-[16px] leading-[1.4] sm:leading-[1.6] body-text text-[#566A93]">
                   Мастер кабинета, специалист<br className="hidden sm:block xl:block" /> по{"\u00A0"}оздоровительным практикам
                 </p>
               </div>
