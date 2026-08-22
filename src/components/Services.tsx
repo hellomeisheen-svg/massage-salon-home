@@ -342,6 +342,9 @@ export function ServiceCard({
 }) {
   return (
     <div id="services" className="scroll-mt-[120px]">
+      <ClientOnly>
+        <Analytics />
+      </ClientOnly>
       <ServiceCardContent
         type={type}
         zoneIndex={zoneIndex}

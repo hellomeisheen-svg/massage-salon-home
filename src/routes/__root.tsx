@@ -179,7 +179,6 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <ClientOnly>
-        <Analytics />
         <TypographyProvider />
       </ClientOnly>
 
