@@ -278,21 +278,19 @@ function GirudoterapiyaPage() {
 
 function SpecialistBlock() {
   return (
-    <div className="flex flex-col items-start gap-3 sm:gap-4">
+    <div className="flex items-end text-left gap-4 sm:flex-col sm:items-start sm:gap-0 xl:flex-col xl:items-start xl:gap-0">
       <img
-        className="h-[90px] w-[70px] xl:h-[110px] xl:w-[85px] rounded-[12px] border border-[#daebff] ds-bento-shadow object-cover"
-        alt="Татьяна Злобина"
         src="/images/tatyana-photo.webp"
-
+        alt="Татьяна Злобина — мастер оздоровительных практик в кабинете Седьмое небо"
+        className="h-[90px] w-[70px] sm:h-[110px] sm:w-[85px] xl:h-[110px] xl:w-[85px] rounded-[12px] border border-[#daebff] ds-bento-shadow object-cover flex-shrink-0"
       />
-      <div className="flex flex-col gap-1">
-        <h3 className="font-noto-serif-narrow mt-6 ds-h4 text-[#1C3C8C] sm:text-[28px] xl:text-[28px]">
-          Татьяна&nbsp;Злобина
+      <div className="flex flex-col">
+        <h3 className="font-noto-serif-narrow mt-0 sm:mt-6 xl:mt-6 ds-h4 text-[#1C3C8C] sm:text-[28px] xl:text-[28px]">
+          Татьяна Злобина
         </h3>
-        <p className="mt-3 body-text text-[#566A93]">
-          Мастер кабинета, специалист<br />по{"\u00A0"}оздоровительным практикам
+        <p className="mt-1 sm:mt-3 xl:mt-3 text-[14px] sm:text-[16px] leading-[1.4] sm:leading-[1.6] body-text text-[#566A93]">
+          Мастер кабинета, специалист<br className="hidden sm:block xl:block" /> по{"\u00A0"}оздоровительным практикам
         </p>
-        
       </div>
     </div>
   );
