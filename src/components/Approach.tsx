@@ -57,11 +57,11 @@ export function Approach() {
           <ul className="mt-[120px] flex flex-col gap-8 sm:mt-[140px] sm:text-left xl:mt-[140px] xl:gap-[40px]">
             {environmentItems.map((item, i) => (
               <li key={i} className="group">
-                  <div className="flex flex-col gap-6 sm:grid sm:grid-cols-[auto_1fr] sm:items-start sm:gap-x-6 sm:gap-y-2 sm:text-left">
+                  <div className="flex flex-col gap-4 sm:grid sm:grid-cols-[auto_1fr] sm:items-start sm:gap-x-6 sm:gap-y-2 sm:text-left">
                     <div className="pb-2 sm:row-span-2 sm:pb-0">
                       <NumberBadge number={i + 1} />
                     </div>
-                    <h4 className="font-noto-serif-narrow ds-h4 text-[#1C3C8C] text-[24px] sm:text-[28px] xl:text-[28px] max-sm:-mt-2">
+                    <h4 className="font-noto-serif-narrow ds-h4 text-[#1C3C8C] text-[24px] sm:text-[28px] xl:text-[28px]">
                       {item.title}
                     </h4>
                     <p className="body-text text-[#566A93] sm:max-w-[560px] xl:max-w-none">
