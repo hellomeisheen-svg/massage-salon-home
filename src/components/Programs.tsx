@@ -127,9 +127,14 @@ function formatSessionLine(sessionCount: number, duration: string) {
 function computeItem(it: ProgramItem) {
   const info = serviceCatalog[it.key];
   const isHirudo = it.key === "hirudoMed" || it.key === "hirudoCosm";
-  const totalMin = isHirudo ? 0 : info.durationMin * it.sessions;
+  
+  const totalMin = isHirudo ? it.sessions * 120 : info.durationMin * it.sessions;
   const subtotal = info.priceMin * it.sessions;
-  const durationText = totalMin > 0 ? formatDurationValue(totalMin).text : "";
+  
+  const durationText = isHirudo 
+    ? "1,5 – 2 часа" 
+    : (totalMin > 0 ? formatDurationValue(totalMin).text : "");
+
   return {
     title: info.title,
     duration: formatSessionLine(it.sessions, durationText),

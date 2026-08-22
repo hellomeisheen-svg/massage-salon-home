@@ -197,6 +197,7 @@ type HirudoRow = {
   base: number;
   perLeech: boolean;
   leechCounts: number[];
+  sessionDurations?: [string, string, string];
 };
 
 const hirudoRows: HirudoRow[] = [
@@ -206,14 +207,19 @@ const hirudoRows: HirudoRow[] = [
     duration: "1,5\u00A0\u2013\u00A02\u00A0часа",
     base: 4800,
     perLeech: false,
-    leechCounts: [6, 16, 74] },
+    leechCounts: [6, 16, 74],
+    sessionDurations: ["6 пиявок", "16 пиявок", "74 пиявки"]
+  },
   {
     zone: "Косметические пиявки",
     subtitle: "Мягкий уход и\u00A0забота о\u00A0коже",
     duration: "1,5\u00A0\u2013\u00A02\u00A0часа",
     base: 600,
     perLeech: true,
-    leechCounts: [6, 10, 20] }];
+    leechCounts: [6, 10, 20],
+    sessionDurations: ["6 пиявок", "10 пиявок", "20 пиявок"]
+  }
+];
 
 
 const faq = [
@@ -695,7 +701,11 @@ function HirudoPriceTable() {
                             </span>
                           </div>
                           <div className="text-[12px] font-light text-[#566A93]">
-                            {price.leeches} {pluralize(price.leeches, ["пиявка", "пиявки", "пиявок"])}
+                            {p.sessionDurations?.[i] !== undefined ? p.sessionDurations[i] : (
+                              <>
+                                {price.leeches} {pluralize(price.leeches, ["пиявка", "пиявки", "пиявок"])}
+                              </>
+                            )}
                           </div>
                         </div>
                       </td>
@@ -771,11 +781,11 @@ function PriceCard({ p }: { p: HirudoRow }) {
 
       <div className="mt-6 flex flex-col gap-1">
         <p className="text-[13px] font-medium leading-[18px] tracking-wide text-[#1C3C8C] lg:block">
-          {summary}
-          <span className="lg:hidden"> · {leeches} {pluralize(leeches, ["пиявка", "пиявки", "пиявок"])}</span>
-        </p>
-        <p className="hidden lg:block text-[12px] font-light text-[#566A93]">
-          {leeches} {pluralize(leeches, ["пиявка", "пиявки", "пиявок"])}
+          {count} {sessionWord} · {p.sessionDurations?.[active] !== undefined ? p.sessionDurations[active] : (
+            <>
+              {leeches} {pluralize(leeches, ["пиявка", "пиявки", "пиявок"])}
+            </>
+          )}
         </p>
       </div>
 

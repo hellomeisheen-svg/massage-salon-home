@@ -15,6 +15,7 @@ export type ServicePrice = {
   subtitle: string;
   duration: string;
   base: number;
+  sessionDurations?: [string, string, string];
 };
 
 
@@ -456,7 +457,7 @@ function PriceTable({ content }: { content: ServicePageContent }) {
                         </span>
                       </div>
                       <div className="text-[12px] font-light text-[#566A93]">
-                        {formatDurationString(p.duration, 3)}
+                        {p.sessionDurations?.[1] !== undefined ? p.sessionDurations[1] : formatDurationString(p.duration, 3)}
                       </div>
                     </div>
                   </td>
@@ -471,7 +472,7 @@ function PriceTable({ content }: { content: ServicePageContent }) {
                         </span>
                       </div>
                       <div className="text-[12px] font-light text-[#566A93]">
-                        {formatDurationString(p.duration, 6)}
+                        {p.sessionDurations?.[2] !== undefined ? p.sessionDurations[2] : formatDurationString(p.duration, 6)}
                       </div>
                     </div>
                   </td>
