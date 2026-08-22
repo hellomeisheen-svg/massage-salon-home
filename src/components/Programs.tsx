@@ -128,7 +128,7 @@ function computeItem(it: ProgramItem) {
   const info = serviceCatalog[it.key];
   const isHirudo = it.key === "hirudoMed" || it.key === "hirudoCosm";
   
-  const totalMin = isHirudo ? it.sessions * info.durationMin : info.durationMin * it.sessions;
+  const totalMin = isHirudo ? it.sessions * 120 : info.durationMin * it.sessions;
   const subtotal = info.priceMin * it.sessions;
   
   const durationText = isHirudo 
