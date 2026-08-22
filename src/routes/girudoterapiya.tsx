@@ -32,13 +32,9 @@ export const Route = createFileRoute("/girudoterapiya")({
           "Медицинские и косметические пиявки в кабинете Седьмое небо: мягкая процедура, стерильные материалы, внимательное сопровождение до и после сеанса." },
       { property: "og:type", content: "article" },
       { property: "og:url", content: "https://7heavenmassage.ru/girudoterapiya" },
+      { property: "og:image", content: "https://7heavenmassage.ru/images/uslugi-girudoterapiya-litsa.webp" },
       { name: "twitter:card", content: "summary_large_image" },
-      {
-        property: "og:image",
-        content: "https://7heavenmassage.ru/images/uslugi-girudoterapiya-litsa.webp" },
-      {
-        name: "twitter:image",
-        content: "https://7heavenmassage.ru/images/uslugi-girudoterapiya-litsa.webp" }],
+      { name: "twitter:image", content: "https://7heavenmassage.ru/images/uslugi-girudoterapiya-litsa.webp" }],
     links: [{ rel: "canonical", href: "https://7heavenmassage.ru/girudoterapiya" }],
     scripts: [
       {
@@ -158,7 +154,7 @@ export const Route = createFileRoute("/girudoterapiya")({
                   name: "Где находится кабинет?",
                   acceptedAnswer: {
                     "@type": "Answer",
-                    text: "Кабинет расположен в посёлке Трудовое. Принимаю по записи. Записаться можно в мессенджере — я уточню удобное время и дам необходимые рекомендации по подготовке к вашему первому сеансу." } },
+                text: "Кабинет расположен в посёлке Трудовое. Принимаю по записи. Записаться можно в мессенджере — я уточню удобное время и дам необходимые рекомендации по подготовке к вашему первому сеансу." } },
                 {
                   "@type": "Question",
                   name: "Нужен ли курс?",

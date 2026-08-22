@@ -14,7 +14,9 @@ export const Route = createFileRoute("/limfaticheskii-massazh")({
         content: "Мягкая работа со всем телом в кабинете Седьмое небо: уменьшение отёчности, снятие ощущения тяжести и возвращение внутренней лёгкости." },
       { property: "og:type", content: "article" },
       { property: "og:url", content: "https://7heavenmassage.ru/limfaticheskii-massazh" },
-      { name: "twitter:card", content: "summary_large_image" }],
+      { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:image", content: "https://7heavenmassage.ru/images/uslugi-limfodrenazhnyi-massazh.webp" },
+      { name: "twitter:image", content: "https://7heavenmassage.ru/images/uslugi-limfodrenazhnyi-massazh.webp" }],
     links: [{ rel: "canonical", href: "https://7heavenmassage.ru/limfaticheskii-massazh" }],
     scripts: [
       {

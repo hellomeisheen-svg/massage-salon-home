@@ -76,7 +76,7 @@ export function Education() {
         <div className="relative xl:min-h-0 xl:h-full flex flex-col xl:rounded-[12px] xl:overflow-hidden xl:border xl:border-[#DAEBFF]">
           <img
             src="/images/tatiana-zlobina.webp"
-            alt="Татьяна Злобина — мастер кабинета Седьмое небо"
+            alt="Татьяна Злобина — мастер оздоровительных практик"
             loading="eager"
             fetchPriority="high"
             className="w-full h-[480px] sm:h-[720px] rounded-[12px] border border-[#DAEBFF] ds-bento-shadow xl:border-0 xl:rounded-none xl:absolute xl:inset-0 xl:h-full object-cover object-top sm:object-center"

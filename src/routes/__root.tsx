@@ -145,7 +145,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html>
+    <html lang="ru">
       <head>
         <HeadContent />
       </head>
@@ -157,7 +157,7 @@ function RootShell({ children }: { children: ReactNode }) {
             <img
               src="https://mc.yandex.ru/watch/111534340"
               style={{ position: "absolute", left: "-9999px" }}
-              alt="Яндекс Метрика"
+              alt=""
             />
           </div>
         </noscript>

@@ -40,7 +40,7 @@ export function Approach() {
           <div className="relative h-[420px] sm:h-[720px] xl:h-full ds-card ds-bento-shadow overflow-hidden rounded-[12px]">
             <img
               src="/images/approach-master.webp"
-              alt="Татьяна работает с клиенткой в светлом массажном кабинете"
+              alt="Мастер проводит консультацию в светлом кабинете"
               width={1024}
               height={1024}
               className="absolute inset-0 w-full h-full object-cover"

@@ -47,7 +47,7 @@ export function Hero() {
           <div className="flex items-end text-left gap-4 sm:flex-col sm:items-start sm:gap-0 xl:flex-col xl:items-start xl:gap-0">
             <img
               src="/images/tatyana-photo.webp"
-              alt="Татьяна Злобина — мастер оздоровительных практик в кабинете Седьмое небо"
+              alt="Татьяна Злобина — мастер оздоровительных практик"
               className="h-[90px] w-[70px] sm:h-[110px] sm:w-[85px] xl:h-[110px] xl:w-[85px] rounded-[12px] border border-[#daebff] ds-bento-shadow object-cover flex-shrink-0"
             />
             <div className="flex flex-col">
