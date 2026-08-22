@@ -82,6 +82,17 @@ export const Route = createFileRoute("/")({
               },
               {
                 "@type": "BreadcrumbList",
+                "@id": "https://7heavenmassage.ru/#breadcrumb",
+                itemListElement: [
+                  {
+                    "@type": "ListItem",
+                    position: 1,
+                    name: "Главная",
+                    item: "https://7heavenmassage.ru/"
+                  }],
+              },
+              {
+                "@type": "BreadcrumbList",
                 itemListElement: [
                   {
                     "@type": "ListItem",
