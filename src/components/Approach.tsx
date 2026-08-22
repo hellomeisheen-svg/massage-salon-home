@@ -20,9 +20,9 @@ const environmentItems: { title: string; text: string }[] = [
 ];
 
 const NumberBadge = ({ number }: { number: number }) => (
-  <div className="relative flex shrink-0 items-center justify-center w-[44px] h-[44px] xl:w-[40px] xl:h-[40px]">
+  <div className="relative flex shrink-0 items-center justify-center w-[44px] h-[44px] xl:w-[40px] xl:h-[40px]" aria-label={`Преимущество №${number}`}>
     {/* Decorative outer ring */}
-    <span className="absolute -inset-2 rounded-[12px] border border-[#88C1FF]/20" />
+    <span className="absolute -inset-2 rounded-[12px] border border-[#88C1FF]/20" aria-hidden="true" />
     {/* Main badge ring */}
     <span className="ds-counter relative flex h-full w-full items-center justify-center rounded-[12px] border border-[#88C1FF] bg-white text-[#1C3C8C]">
       {number}
