@@ -280,7 +280,7 @@ function AboutService({ content }: { content: ServicePageContent }) {
 
   return (
     <section id="services" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section desktop-sticky-layout">
-      <div className="container-1900 grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-5 items-start lg:h-full lg:min-h-0">
+      <div className="container-1900 desktop-sticky-container gap-8 sm:gap-5 items-start">
         <div className="self-start lg:sticky lg:top-0 lg:py-10 sticky-sidebar flex flex-col items-center lg:items-start text-center lg:text-left">
           <span
             className="inline-flex items-center gap-2 px-4 py-1.5 ds-label text-white"
