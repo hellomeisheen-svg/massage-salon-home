@@ -8,6 +8,8 @@ html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  /* overflow: initial is important for sticky elements to work correctly */
+  overflow: initial !important;
 }
 
 
