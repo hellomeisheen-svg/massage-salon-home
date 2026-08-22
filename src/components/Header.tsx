@@ -134,7 +134,7 @@ export function Header({
         <>
           {/* Blur overlay behind menu */}
           <div 
-            className="fixed inset-0 z-50 bg-[#EFF6FF]/40 backdrop-blur-[8px] xl:hidden pointer-events-auto" 
+            className="fixed inset-0 z-[40] bg-[#EFF6FF]/40 backdrop-blur-[8px] xl:hidden pointer-events-auto" 
             onClick={() => setMenuOpen(false)}
           />
 
