@@ -3,8 +3,6 @@ import { X, ChevronLeft, Check } from "lucide-react";
 import { toast } from "sonner";
 import { QUIZ_CONFIG } from "@/config/quiz";
 import { calculateResult } from "@/lib/quiz.utils";
-import { sendLeadNotification } from "@/lib/notifications.functions";
-import { supabase } from "@/integrations/supabase/client";
 import { QuizResults } from "./QuizResults";
 import { QuizContactForm } from "./QuizContactForm";
 
@@ -74,37 +72,31 @@ export function QuizModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
         return `- ${s.question}: ${displayValue}`;
       }).join("\n");
 
-      const message = `[QUIZ LEAD]\nРЕКОМЕНДАЦИИ: ${recommendedServices.map(s => s.name).join(", ")}\n---\nОТВЕТЫ:\n${answersText}\n---\nСПОСОБ СВЯЗИ: ${contact.method.toUpperCase()}`;
+      const message = `[QUIZ LEAD]\nРЕКОМЕНДАЦИИ: ${recommendedServices.map(s => s.name).join(", ")}\n---\nОТВЕТЫ:\n${answersText}\n---\nСПОСОБ СВЯЗИ: ${contact.method}`;
 
-      const { data: leadData, error: insertError } = await supabase
-        .from("leads")
-        .insert([
-          {
-            name: contact.name,
-            phone: contact.phone,
-            message: message,
-          },
-        ])
-        .select("id")
-        .single();
+      const response = await fetch("https://formspree.io/f/xrpzdvbo", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          name: contact.name,
+          phone: contact.phone,
+          messenger: contact.method,
+          message: message,
+          privacy_consent: "Согласие получено",
+          _subject: "Новая запись (Квиз) с сайта"
+        })
+      });
 
-      if (insertError) throw insertError;
-
-      if (leadData?.id) {
-        sendLeadNotification({ data: { leadId: leadData.id } })
-          .then((result) => {
-            if (result && !result.success) {
-              console.error("Quiz notification failed:", result.error);
-              toast.error("Результат сохранен, но возникла ошибка при уведомлении мастера.");
-            }
-          })
-          .catch((err) => {
-            console.error("Quiz notification error:", err);
-            toast.error("Ошибка уведомления");
-          });
+      if (response.ok) {
+        setIsSuccess(true);
+        toast.success("Спасибо! Заявка отправлена. Мы свяжемся с вами.");
+      } else {
+        const errorData = await response.json();
+        throw new Error(errorData.error || "Formspree error");
       }
-
-      setIsSuccess(true);
     } catch (e) {
       console.error("Quiz submission error:", e);
       setError("Не удалось отправить заявку. Попробуйте ещё раз.");

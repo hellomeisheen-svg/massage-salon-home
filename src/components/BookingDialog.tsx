@@ -1,8 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Check, Loader2, X } from "lucide-react";
 import { toast } from "sonner";
-import { supabase } from "@/integrations/supabase/client";
-import { sendLeadNotification } from "@/lib/notifications.functions";
 import { extractDigits, formatPhone } from "@/lib/utils";
 
 export interface BookingDialogProps {
@@ -17,8 +15,9 @@ export default function BookingDialog({
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
-  const [method, setMethod] = useState("whatsapp");
+  const [method, setMethod] = useState("WhatsApp");
   
   const [phoneError, setPhoneError] = useState<string | null>(null);
   const [consent, setConsent] = useState(false);
@@ -145,6 +144,9 @@ export default function BookingDialog({
                 e.preventDefault();
                 setError(null);
                 let ok = true;
+                if (!name.trim()) {
+                  ok = false;
+                }
                 if (phone.length !== 10) {
                   setPhoneError("Пожалуйста, введите телефон");
                   ok = false;
@@ -164,57 +166,52 @@ export default function BookingDialog({
                 setLoading(true);
                 try {
                   const formData = new FormData(e.currentTarget);
-                  const honeypot = formData.get("website") as string;
+                  const honeypot = formData.get("_gotcha") as string;
                   
                   if (honeypot) {
-                    console.warn("Spam detected via honeypot");
                     setSent(true);
                     return;
                   }
 
-                  const name = formData.get("name") as string;
-                  const comment = formData.get("comment") as string;
-                  const email = formData.get("email") as string;
-
+                  const message = formData.get("message") as string;
                   const phoneValue = formatPhone(phone);
 
-                  const { data: leadData, error: insertError } = await supabase
-                    .from("leads")
-                    .insert([
-                      {
-                        name,
-                        phone: phoneValue,
-                        message: `${method.toUpperCase()}${comment ? `: ${comment}` : ""}`,
-                        email: email || null,
-                      },
-                    ])
-                    .select("id")
-                    .single();
+                  const response = await fetch("https://formspree.io/f/xrpzdvbo", {
+                    method: "POST",
+                    headers: {
+                      "Content-Type": "application/json",
+                      "Accept": "application/json"
+                    },
+                    body: JSON.stringify({
+                      name,
+                      phone: phoneValue,
+                      messenger: method,
+                      message,
+                      privacy_consent: "Согласие получено",
+                      _subject: "Новая запись на сеанс с сайта"
+                    })
+                  });
 
-                  if (insertError) throw insertError;
-
-                  if (leadData?.id) {
-                    sendLeadNotification({ data: { leadId: leadData.id } })
-                      .then((result) => {
-                        if (result && !result.success) {
-                          console.error("Notification failed:", result.error);
-                          toast.error("Заявка принята, но возникла ошибка при отправке уведомления мастеру.");
-                        }
-                      })
-                      .catch((err) => {
-                        console.error("Notification error:", err);
-                      });
+                  if (response.ok) {
+                    setSent(true);
+                    toast.success("Спасибо! Заявка отправлена. Мы свяжемся с вами.");
+                  } else {
+                    const errorData = await response.json();
+                    throw new Error(errorData.error || "Formspree error");
                   }
-
-                  setSent(true);
                 } catch (err) {
-                  console.error("Lead submission error:", err);
+                  console.error("Booking submission error:", err);
                   setError("Не удалось отправить заявку. Попробуйте ещё раз.");
                 } finally {
                   setLoading(false);
                 }
               }}
             >
+              <input type="hidden" name="_subject" value="Новая запись на сеанс с сайта" />
+              <input type="text" name="_gotcha" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
+              <input type="hidden" name="messenger" value={method} />
+              <input type="hidden" name="privacy_consent" value="Согласие получено" />
+
               <label className="flex flex-col gap-2">
                 <span className="text-[14px] leading-[1.5] text-foreground">Ваше имя</span>
                 <input
@@ -223,6 +220,8 @@ export default function BookingDialog({
                   autoComplete="name"
                   placeholder="Пожалуйста, укажите имя"
                   className="ds-input"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                 />
               </label>
 
@@ -248,9 +247,9 @@ export default function BookingDialog({
                 <span className="text-[14px] leading-[1.5] text-foreground block">Где вам удобнее ответить?</span>
                 <div className="grid grid-cols-3 gap-2">
                   {[
-                    { id: "whatsapp", label: "WhatsApp" },
-                    { id: "telegram", label: "Telegram" },
-                    { id: "max", label: "Max" },
+                    { id: "WhatsApp", label: "WhatsApp" },
+                    { id: "Telegram", label: "Telegram" },
+                    { id: "Max", label: "Max" },
                   ].map(m => (
                     <button
                       key={m.id}
@@ -267,7 +266,7 @@ export default function BookingDialog({
               <label className="flex flex-col gap-2">
                 <span className="text-[14px] leading-[1.5] text-foreground">Комментарий</span>
                 <textarea
-                  name="comment"
+                  name="message"
                   rows={4}
                   defaultValue={subject ? `${subject}: ` : ""}
                   placeholder="Самочувствие, пожелания, удобное время"
@@ -281,7 +280,8 @@ export default function BookingDialog({
                     <input
                       id="consent-checkbox"
                       type="checkbox"
-                      name="consent"
+                      name="privacy_consent"
+                      value="Согласие получено"
                       checked={consent}
                       aria-invalid={!!consentError}
                       aria-describedby={consentError ? "consent-error" : undefined}
@@ -321,9 +321,6 @@ export default function BookingDialog({
                 <p className="text-[13px] leading-[1.5] text-[#C0392B] text-center">{error}</p>
               )}
 
-              <div className="absolute opacity-0 -z-10 w-0 h-0 overflow-hidden" aria-hidden="true">
-                <input type="text" name="website" tabIndex={-1} autoComplete="off" />
-              </div>
               
               <button 
                 type="submit" 
