@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useState, Suspense, lazy } from "react";
+import { Link } from "@tanstack/react-router";
+import { ChevronRight, Star } from "lucide-react";
+import { useBooking } from "@/components/BookingModal";
 
-import { QuizModal } from "@/components/quiz/QuizModal";
-
+const QuizModal = lazy(() => import("@/components/quiz/QuizModal").then(m => ({ default: m.QuizModal })));
 
 function HeadlineBlock({ onOpenQuiz }: { onOpenQuiz: () => void }) {
   return (
@@ -77,7 +79,7 @@ export function Hero() {
         </div>
       </section>
       <Suspense fallback={null}>
-        <QuizModal isOpen={isQuizOpen} onClose={() => setIsQuizOpen(false)} />
+        {isQuizOpen && <QuizModal isOpen={isQuizOpen} onClose={() => setIsQuizOpen(false)} />}
       </Suspense>
 
     </main>
