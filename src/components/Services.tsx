@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { useBooking } from "@/components/BookingModal";
 import { applyTypography } from "@/lib/typography";
 import { Analytics } from "@/components/Analytics";
+import { ClientOnly } from "@/components/ClientOnly";
 
 export type Variant = {
   zone: string;
