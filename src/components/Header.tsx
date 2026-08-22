@@ -70,6 +70,14 @@ export function Header({
 
   return (
     <>
+      {/* Blur overlay moved outside header to be truly global but z-index controlled */}
+      {menuOpen && (
+        <div 
+          className="fixed inset-0 z-[60] bg-[#EFF6FF]/40 backdrop-blur-[8px] xl:hidden pointer-events-auto" 
+          onClick={() => setMenuOpen(false)}
+        />
+      )}
+
       <header className="fixed top-0 left-0 z-[70] w-full transition-colors duration-300 bg-transparent pt-4 sm:pt-5" style={{ backgroundColor: heroPassed ? 'rgba(239, 246, 255, 0.8)' : 'transparent', backdropFilter: heroPassed ? 'blur(8px)' : 'none' }}>
 
       <div className="container-1900 relative">
@@ -131,15 +139,7 @@ export function Header({
 
       {/* Mobile / tablet menu panel */}
       {menuOpen && (
-        <>
-          <div 
-            className="absolute inset-0 z-[40] bg-[#EFF6FF]/40 backdrop-blur-[8px] xl:hidden pointer-events-auto" 
-            onClick={() => setMenuOpen(false)}
-            style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}
-          />
-
-          <div className="absolute inset-x-4 sm:inset-x-5 top-[calc(100%+8px)] z-[60] h-[calc(100dvh-96px)] sm:h-[calc(100dvh-100px)] xl:hidden pointer-events-auto">
-
+        <div className="absolute inset-x-4 sm:inset-x-5 top-[calc(100%+8px)] z-[80] h-[calc(100dvh-96px)] sm:h-[calc(100dvh-100px)] xl:hidden pointer-events-auto">
             <div className="flex h-full flex-col ds-card p-4">
               <nav className="flex-1 overflow-y-auto pr-1 scrollbar-none" aria-label="Мобильная навигация">
                 <ul className="flex flex-col gap-1">
@@ -242,8 +242,6 @@ export function Header({
               </div>
             </div>
           </div>
-        </>
-
       )}
       </div>
     </header>
