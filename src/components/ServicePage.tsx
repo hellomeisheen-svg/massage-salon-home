@@ -276,7 +276,7 @@ function AboutService({ content }: { content: ServicePageContent }) {
 
 - отчёты аудита;
 
-- фрагменты с {p.zone}, {summary}, {content.heroText};
+- фрагменты с {"{p.zone}"}, {"{summary}"}, {"{content.heroText}"};
 
 - повторяющиеся тексты;
 
