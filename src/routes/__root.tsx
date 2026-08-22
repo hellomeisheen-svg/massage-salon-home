@@ -11,10 +11,12 @@ import { useEffect, type ReactNode } from "react";
 
 import "../styles.css";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { Preloader } from "@/components/Preloader";
 
 import { ClientOnly } from "@/components/ClientOnly";
 import { Analytics } from "@/components/Analytics";
 import { TypographyProvider } from "@/components/TypographyProvider";
+
 
 
 
@@ -164,8 +166,10 @@ function RootShell({ children }: { children: ReactNode }) {
         <HeadContent />
       </head>
       <body>
+        <Preloader />
         {children}
         <Scripts />
+
         <noscript>
           <div>
             <img

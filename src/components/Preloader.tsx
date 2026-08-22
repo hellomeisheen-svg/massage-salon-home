@@ -12,16 +12,25 @@ export function Preloader() {
   const loadedRef = useRef(false);
 
   useEffect(() => {
+    // We only show preloader on the very first mount of the app (initial load)
+    // To avoid showing it on every client-side navigation, we could use a global variable
+    // but Preloader is currently placed in RootShell which only mounts once in TanStack Start.
+
     const finish = () => {
       if (loadedRef.current) return;
       loadedRef.current = true;
       setLeaving(true);
+      // Wait for the opacity transition to finish
       setTimeout(() => setShouldRender(false), 400);
     };
 
-    // Safety timeout to prevent infinite loader
-    const safetyTimer = setTimeout(finish, 2000);
+    // Safety timeout: 2500ms max as per requirements
+    const safetyTimer = setTimeout(finish, 2500);
 
+    // Check if hero image and critical content are ready
+    // In a real app, we might check for specific image loads, 
+    // but 'load' event is a good proxy for "critical elements ready" 
+    // without waiting for heavy external scripts like Yandex Maps if handled correctly.
     if (document.readyState === "complete") {
       finish();
     } else {
@@ -53,12 +62,22 @@ export function Preloader() {
         pointerEvents: leaving ? 'none' : 'auto'
       }}
     >
-      <div className="preloader-inner">
-        <Star className="preloader-star h-6 w-6 text-[#1C3C8C]" />
-        <div className="preloader-track">
-          <span className="preloader-bar" />
+      <div className="preloader-inner flex flex-col items-center gap-4">
+        <Star className="preloader-star h-8 w-8 text-[#1C3C8C] animate-pulse" />
+        <div className="w-16 h-0.5 bg-[#DAEBFF] overflow-hidden rounded-full">
+          <div className="h-full bg-[#1C3C8C] w-full origin-left animate-[loading-bar_1.5s_infinite_linear]" />
         </div>
       </div>
+      <style>{`
+        @keyframes loading-bar {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(100%); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .preloader-star { animation: none !important; }
+          .animate-[loading-bar_1.5s_infinite_linear] { animation: none !important; transform: none !important; width: 100% !important; }
+        }
+      `}</style>
     </div>
   );
 }
