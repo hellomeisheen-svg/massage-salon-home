@@ -250,9 +250,9 @@ function AboutService({ content }: { content: ServicePageContent }) {
   );
 
   return (
-    <section id="services" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section">
-      <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-8 sm:gap-5 items-start xl:max-h-[calc(100vh-140px)] xl:min-h-0">
-        <div className="self-start xl:sticky xl:top-0 xl:pt-6 flex flex-col items-center xl:items-start text-center xl:text-left z-10">
+    <section id="services" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section xl:h-screen xl:max-h-screen xl:overflow-hidden">
+      <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-8 sm:gap-5 items-start xl:h-full xl:min-h-0">
+        <div className="self-start xl:sticky xl:top-0 xl:pt-[124px] xl:pb-6 flex flex-col items-center xl:items-start text-center xl:text-left z-10">
           <span
             className="inline-flex items-center gap-2 px-4 py-1.5 ds-label text-white"
             style={{
