@@ -1,10 +1,8 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
+  nitro: false,
   tanstackStart: {
-    server: { entry: "server" },
+    // Disable Start's SSR features for static build
   },
-  // We use the environment variable NITRO_PRESET to control the build target
-  // when running in the user's VPS environment.
-  // In Lovable Cloud, the config automatically targets Cloudflare.
 });

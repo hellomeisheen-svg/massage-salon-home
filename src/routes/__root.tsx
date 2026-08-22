@@ -4,8 +4,6 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
-  HeadContent,
-  Scripts,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
@@ -123,34 +121,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" }],
     scripts: [],
   }),
-  shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
 });
-
-function RootShell({ children }: { children: ReactNode }) {
-  return (
-    <html>
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        {children}
-        <Scripts />
-        <noscript>
-          <div>
-            <img
-              src="https://mc.yandex.ru/watch/111534340"
-              style={{ position: "absolute", left: "-9999px" }}
-              alt="Яндекс Метрика"
-            />
-          </div>
-        </noscript>
-      </body>
-    </html>
-  );
-}
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
@@ -162,9 +136,7 @@ function RootComponent() {
         <TypographyProvider />
       </ClientOnly>
 
-      
       <Outlet />
-      
     </QueryClientProvider>
   );
 }
