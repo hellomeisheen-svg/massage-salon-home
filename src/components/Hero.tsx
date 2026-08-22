@@ -52,7 +52,7 @@ export function Hero() {
               <h3 className="font-noto-serif-narrow mt-0 xl:mt-6 ds-h4 text-[#1C3C8C] sm:text-[28px] xl:text-[28px]">
                 Татьяна Злобина
               </h3>
-              <p className="mt-1 xl:mt-3 text-[14px] sm:text-[16px] leading-[1.4] sm:leading-[1.6] body-text text-[#566A93]">
+              <p className="mt-1 xl:mt-3 text-[14px] sm:text-[16px] leading-[1.4] sm:leading-[1.6] body-text text-[#566A93] sm:max-w-[200px] xl:max-w-none">
                 Мастер кабинета, специалист<br className="hidden xl:block" /> по{"\u00A0"}оздоровительным практикам
               </p>
             </div>
