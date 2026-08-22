@@ -14,6 +14,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 
 import { ClientOnly } from "@/components/ClientOnly";
 import { Analytics } from "@/components/Analytics";
+import { typographyPass } from "../lib/typography";
 
 
 function NotFoundComponent() {
@@ -166,6 +167,21 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+
+  useEffect(() => {
+    typographyPass(document.body);
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        mutation.addedNodes.forEach((node) => {
+          if (node.nodeType === Node.ELEMENT_NODE || node.nodeType === Node.TEXT_NODE) {
+            typographyPass(node);
+          }
+        });
+      });
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>
