@@ -255,7 +255,7 @@ function AboutService({ content }: { content: ServicePageContent }) {
 
   return (
     <section id="services" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section lg:flex-1 lg:min-h-0 lg:py-0">
-      <div className="container-1900 grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-5 items-start lg:h-full lg:overflow-hidden">
+      <div className="container-1900 grid grid-cols-1 lg:grid-cols-[520px_1fr] gap-8 sm:gap-5 items-start lg:h-full lg:overflow-hidden">
         <div className="self-start lg:sticky lg:top-0 lg:h-full flex flex-col items-center lg:items-start text-center lg:text-left lg:py-10">
           <span
             className="inline-flex items-center gap-2 px-4 py-1.5 ds-label text-white"

@@ -110,6 +110,23 @@ html, body {
   display: none;
 }
 
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #DAEBFF;
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #A2CFFE;
+}
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #DAEBFF transparent;
+}
 
 
 @utility btn-base {
