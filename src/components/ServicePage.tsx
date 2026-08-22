@@ -250,9 +250,9 @@ function AboutService({ content }: { content: ServicePageContent }) {
   );
 
   return (
-    <section id="services" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section xl:h-[calc(100vh-100px)] xl:overflow-hidden">
-      <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-8 sm:gap-5 items-start xl:h-full">
-        <div className="self-start xl:sticky xl:top-0 xl:h-full flex flex-col items-center xl:items-start text-center xl:text-left z-10 xl:py-10">
+    <section id="services" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section">
+      <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-8 sm:gap-5 items-start">
+        <div className="self-start xl:sticky xl:top-[124px] flex flex-col items-center xl:items-start text-center xl:text-left z-10">
           <span
             className="inline-flex items-center gap-2 px-4 py-1.5 ds-label text-white"
             style={{
@@ -272,7 +272,7 @@ function AboutService({ content }: { content: ServicePageContent }) {
           <div className="mt-8 hidden xl:block w-full max-w-[520px] text-left">{nav}</div>
         </div>
 
-        <div className="flex flex-col gap-4 xl:h-full xl:overflow-y-auto xl:min-h-0 xl:py-10 xl:pr-4">
+        <div className="flex flex-col gap-4">
           <div className="ds-bento-shadow ds-card p-6 sm:p-8 xl:p-10">
             <div className="flex flex-col gap-10 sm:gap-12">
               {sections.map((s, i) => (
