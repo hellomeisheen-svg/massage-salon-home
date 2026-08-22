@@ -462,7 +462,7 @@ function ServiceCardContent({
                 Хит
               </span>
             )}
-            <h3 className="font-noto-serif-narrow ds-h3 text-[#1C3C8C] break-words hyphens-auto sm:order-1 max-[380px]:text-[24px] max-sm:text-[27px] whitespace-nowrap">
+            <h3 className="font-noto-serif-narrow ds-h3 text-[#1C3C8C] break-words hyphens-auto sm:order-1 max-[380px]:text-[24px] max-sm:text-[27px] max-sm:whitespace-nowrap">
               <span className="xl:hidden">{mobileTitle(type.title)}</span>
               <span className="hidden xl:block">{mobileTitle(type.title)}</span>
             </h3>
