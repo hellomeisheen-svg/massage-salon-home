@@ -99,9 +99,8 @@ html, body {
     -ms-overflow-style: none;
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
-    &::-webkit-scrollbar {
-      display: none;
-    }
+  }
+}
   }
 }
 
