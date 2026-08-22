@@ -196,57 +196,24 @@ function AboutService({ content }: { content: ServicePageContent }) {
   const refs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    const onScroll = (e?: Event) => {
-      const isXL = window.innerWidth >= 1280;
+    const onScroll = () => {
       const anchor = window.innerHeight * 0.35;
       let current = 0;
-      
       refs.current.forEach((el: HTMLDivElement | null, i: number) => {
-        if (!el) return;
-        
-        if (isXL) {
-          // If xl, we check position relative to the scrollable container or viewport
-          const rect = el.getBoundingClientRect();
-          if (rect.top <= anchor + 100) current = i;
-        } else {
-          if (el.getBoundingClientRect().top <= anchor) current = i;
-        }
+        if (el && el.getBoundingClientRect().top <= anchor) current = i;
       });
       setActive(current);
     };
-
     onScroll();
-    
-    const scrollTarget = window.innerWidth >= 1280 
-      ? document.querySelector('#services .xl\\:overflow-y-auto') 
-      : window;
-
-    if (scrollTarget) {
-      scrollTarget.addEventListener("scroll", onScroll, { passive: true });
-    }
-    
-    // Also listen to window scroll for mobile/tablet and for window resizing
     window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll, { passive: true });
-
-    return () => {
-      if (scrollTarget) scrollTarget.removeEventListener("scroll", onScroll);
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
-    };
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   const goTo = (i: number) => {
     const el = refs.current[i];
     if (!el) return;
-    
-    // For xl screens, we scroll inside the right column
-    if (window.innerWidth >= 1280) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-    } else {
-      const top = el.getBoundingClientRect().top + window.scrollY - 140;
-      window.scrollTo({ top, behavior: "smooth" });
-    }
+    const top = el.getBoundingClientRect().top + window.scrollY - 140;
+    window.scrollTo({ top, behavior: "smooth" });
   };
 
   const nav = (
@@ -283,9 +250,9 @@ function AboutService({ content }: { content: ServicePageContent }) {
   );
 
   return (
-    <section id="services" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section xl:h-[calc(100vh-140px)] xl:overflow-hidden">
-      <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-8 sm:gap-5 items-start xl:h-full">
-        <div className="self-start xl:sticky xl:top-0 flex flex-col items-center xl:items-start text-center xl:text-left z-10 xl:py-10">
+    <section id="services" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section">
+      <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-8 sm:gap-5 items-start">
+        <div className="self-start xl:sticky xl:top-[124px] flex flex-col items-center xl:items-start text-center xl:text-left z-10">
           <span
             className="inline-flex items-center gap-2 px-4 py-1.5 ds-label text-white"
             style={{
@@ -305,7 +272,7 @@ function AboutService({ content }: { content: ServicePageContent }) {
           <div className="mt-8 hidden xl:block w-full max-w-[520px] text-left">{nav}</div>
         </div>
 
-        <div className="flex flex-col gap-4 xl:h-full xl:overflow-y-auto scrollbar-none xl:py-10">
+        <div className="flex flex-col gap-4">
           <div className="ds-bento-shadow ds-card p-6 sm:p-8 xl:p-10">
             <div className="flex flex-col gap-10 sm:gap-12">
               {sections.map((s, i) => (
