@@ -9,8 +9,8 @@ type ServiceInfo = {
 };
 
 const serviceCatalog: Record<string, ServiceInfo> = {
-  lymphatic: { title: "Лимфатический", priceMin: 5000, durationMin: 120, unit: "сеанс" },
-  lymphaticFace: { title: "Лимфатический  •  Лицо", priceMin: 2000, durationMin: 40, unit: "сеанс" },
+  lymphatic: { title: "Лимфодренажный", priceMin: 5000, durationMin: 120, unit: "сеанс" },
+  lymphaticFace: { title: "Лимфодренажный  •  Лицо", priceMin: 2000, durationMin: 40, unit: "сеанс" },
   classic: { title: "Классический", priceMin: 2000, durationMin: 60, unit: "сеанс" },
   classicFace: { title: "Классический  •  Лицо", priceMin: 2000, durationMin: 40, unit: "сеанс" },
   hirudoMed: { title: "Гирудотерапия  •  Медицинские пиявки", priceMin: 4800, durationMin: 120, unit: "постановка" },

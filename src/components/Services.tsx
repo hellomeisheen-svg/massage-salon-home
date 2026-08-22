@@ -123,7 +123,7 @@ export const serviceTypes: ServiceType[] = [
 
 
   {
-    title: "Лимфатический",
+    title: "Лимфодренажный",
     category: 1,
     variants: [
       {
@@ -304,7 +304,7 @@ export function clean(value: string) {
 
 export function mobileTitle(title: string) {
   const t = clean(title);
-  if (t === "Лимфатический" || t === "Классический" || t === "Векторный") {
+  if (t === "Лимфодренажный" || t === "Классический" || t === "Векторный") {
     return t + " массаж";
   }
   return t;
@@ -315,7 +315,7 @@ export const servicePageLinks: Record<string, string> = {
   "Гирудотерапия": "/girudoterapiya",
   "Вакуумный массаж": "/vakuumnyi-massazh",
   "Векторный": "/vektornyi-massazh",
-  "Лимфатический": "/limfaticheskii-massazh",
+  "Лимфодренажный": "/limfaticheskii-massazh",
   
   "Классический": "/klassicheskii-massazh",
   "Акупунктурный кетгут": "/ketgut",
