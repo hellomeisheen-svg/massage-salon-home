@@ -135,8 +135,10 @@ export default function BookingDialog({
                 Записаться на сеанс
               </h2>
               <p className="mt-3 text-[15px] leading-[1.5] text-[#566A93] sm:text-[16px]">
-                Оставьте контакты — подберём формат под ваше состояние
-                и согласуем время без спешки.
+                '''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
+                                        
+                                            
+                                            На страницах услуг, форма-- в блоке "Форматы и стоимость" нужно внести изменения в контент блоков "Один сеанс", "Три сеанса" и "Шесть сеансов". Что нужно конкретно удалить? Где блок "Один сеанс", там находится информация: шесть пиявок, точка, полтора-два часа. Нужно удалить полтора-два часа и сделать это во всем блоке.
               </p>
             </div>
 
