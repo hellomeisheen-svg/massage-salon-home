@@ -110,7 +110,7 @@ export function Header({
       </div>
 
       {/* Mobile / tablet header */}
-      <div className="flex h-16 w-full items-center justify-between ds-card ds-bento-shadow px-4 py-2.5 xl:hidden">
+      <div className="relative z-50 flex h-16 w-full items-center justify-between ds-card ds-bento-shadow px-4 py-2.5 xl:hidden">
         {/* Logo */}
         <Link to="/" aria-label="На главную" onClick={() => setMenuOpen(false)} className="flex h-10 items-center hover:opacity-70 transition-opacity logo-link-active">
           <Logo className="h-full w-auto" />
