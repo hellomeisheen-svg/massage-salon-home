@@ -301,11 +301,7 @@ function AboutService({ content }: { content: ServicePageContent }) {
 const sessionDiscounts = [null, "-10%", "-15%"] as const;
 const discountValues = [0, 0.1, 0.15];
 const sessionCounts = [1, 3, 6];
-const tabLabels = [
-  "'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n                                        \n                                            \n                                            В блоке формата и стоимости на десктопе в разделе \"Один сеанс\" удали часы \"полтора-два часа\". \"Три сеанса\" тоже удали часы, \"четыре с половиной-шесть часов\" и \"шесть сеансов\" тоже удали часы. В этих блоках не должно быть времени. Сделай так на всех экранах, где присутствует такая ошибка",
-  "3\u00A0сеанса",
-  "6\u00A0сеансов"
-];
+const tabLabels = ["1\u00A0сеанс", "3\u00A0сеанса", "6\u00A0сеансов"];
 
 function PriceCard({ p, prefix }: { p: ServicePrice; prefix: string }) {
   const { openBooking } = useBooking();

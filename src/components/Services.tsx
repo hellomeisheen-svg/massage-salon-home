@@ -218,7 +218,7 @@ export const serviceTypes: ServiceType[] = [
 const categories = ["Оздоровительные процедуры", "Массаж"];
 
 export const sessions = [
-  { label: "'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n                                        \n                                            \n                                            В блоке формата и стоимости на десктопе в разделе \"Один сеанс\" удали часы \"полтора-два часа\". \"Три сеанса\" тоже удали часы, \"четыре с половиной-шесть часов\" и \"шесть сеансов\" тоже удали часы. В этих блоках не должно быть времени. Сделай так на всех экранах, где присутствует такая ошибка\"", discount: null },
+  { label: "1 сеанс", discount: null },
   { label: "3 сеанса", discount: "-10%" },
   { label: "6 сеансов", discount: "-15%" },
 ];
