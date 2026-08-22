@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { useBooking } from "@/components/BookingModal";
 import { applyTypography } from "@/lib/typography";
+import { Analytics } from "@/components/Analytics";
 
 export type Variant = {
   zone: string;
