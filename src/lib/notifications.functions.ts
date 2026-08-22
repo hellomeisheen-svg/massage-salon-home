@@ -20,14 +20,5 @@ const sendNotificationSchema = z.object({
 export const sendLeadNotification = async ({ data }: { data: z.infer<typeof sendNotificationSchema> }) => {
   console.log("[Notification Stub] Данные для уведомления:", data);
   
-  // В будущем здесь можно вызвать ваш API:
-  /*
-  const response = await fetch('https://your-api-endpoint.com/notify', {
-    method: 'POST',
-    body: JSON.stringify(data)
-  });
-  return response.json();
-  */
-  
-  return { success: true, message: "Static stub notification received" };
+  return { success: true, message: "Static stub notification received", error: null };
 };
