@@ -10,6 +10,8 @@ export type ServicePrice = {
   duration: string;
   /** Цена одного сеанса */
   base: number;
+  /** Кастомные длительности для 1, 3, 6 сеансов (для десктопа) */
+  sessionDurations?: [string, string, string];
 };
 
 export function PriceTable({ prices, title = "Форматы и стоимость", id }: { prices: ServicePrice[], title?: string, id?: string }) {
@@ -286,10 +288,10 @@ function PriceTableRow({ p, isProgram = false }: { p: ServicePrice, isProgram?: 
       {!isProgram ? (
         <>
           <td className="px-6 py-5 xl:px-8">
-            <PriceTableCell base={p.base} count={3} discount={0.1} />
+            <PriceTableCell base={p.base} count={3} discount={0.1} customDuration={p.sessionDurations?.[1]} />
           </td>
           <td className="px-6 py-5 xl:px-8">
-            <PriceTableCell base={p.base} count={6} discount={0.15} />
+            <PriceTableCell base={p.base} count={6} discount={0.15} customDuration={p.sessionDurations?.[2]} />
           </td>
         </>
       ) : (
@@ -321,21 +323,30 @@ function PriceTableCell({
   base,
   count,
   discount,
+  customDuration,
 }: {
   base: number;
   count: number;
   discount: number;
+  customDuration?: string;
 }) {
   const total = base * count;
   const current = Math.round(total * (1 - discount));
   return (
-    <div className="flex items-center gap-2">
-      <span className="font-noto-serif-narrow text-[13px] xl:text-[15px] font-light text-[#566A93]/40 line-through decoration-[#566A93]/20">
-        {renderPrice(formatPrice(total))}
-      </span>
-      <span className="font-noto-serif-narrow text-[18px] xl:text-[24px] font-light text-[#1C3C8C]">
-        {renderPrice(formatPrice(current))}
-      </span>
+    <div className="flex flex-col gap-1">
+      <div className="flex items-center gap-2">
+        <span className="font-noto-serif-narrow text-[13px] xl:text-[15px] font-light text-[#566A93]/40 line-through decoration-[#566A93]/20">
+          {renderPrice(formatPrice(total))}
+        </span>
+        <span className="font-noto-serif-narrow text-[18px] xl:text-[24px] font-light text-[#1C3C8C]">
+          {renderPrice(formatPrice(current))}
+        </span>
+      </div>
+      {customDuration !== undefined && (
+        <div className="text-[11px] font-light text-[#566A93]">
+          {customDuration}
+        </div>
+      )}
     </div>
   );
 }
