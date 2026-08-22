@@ -72,7 +72,54 @@ export function HabitQuote() {
         
         <div className="relative z-10 max-w-[900px] xl:max-w-[1100px]">
           <h2 className="font-noto-serif-narrow ds-h1 text-[#1C3C8C]">
-            Регулярная забота о&nbsp;теле&nbsp;— привычка, которая помогает сохранять внутреннюю опору и&nbsp;легкость в&nbsp;повседневной жизни
+            '''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
+                                                    
+                                                        
+                                                        Проведи проверку последних SEO-изменений и ничего больше не изменяй.
+
+Важно: не добавляй и не удаляй блоки, страницы, изображения или компоненты. Не изменяй видимый текст, дизайн, структуру и функциональность без моего согласования.
+
+Покажи точный список всех изменений:
+
+- изменённые файлы;
+
+- изменённые title и description;
+
+- изменённые заголовки;
+
+- изменённые alt-тексты;
+
+- добавленные og:image и twitter:image;
+
+- полный список URL в sitemap.xml;
+
+- содержимое robots.txt;
+
+- добавленные или удалённые компоненты.
+
+Отдельно проверь:
+
+- в sitemap отсутствует /banki;
+
+- в sitemap присутствует /vakuumnyi-massazh;
+
+- все URL sitemap существуют;
+
+- sitemap доступен по адресу /sitemap.xml;
+
+- robots.txt доступен по адресу /robots.txt;
+
+- Sitemap указан абсолютным URL;
+
+- на всех страницах установлен lang="ru";
+
+- canonical, title, description и JSON-LD не были изменены без необходимости;
+
+- на каждой странице только один H1;
+
+- внешний вид и видимый текст сайта не изменились.
+
+Если заголовки или видимый текст были изменены, не исправляй их автоматически. Покажи список изменений и дождись моего согласования.
           </h2>
         </div>
 
