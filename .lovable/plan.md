@@ -1,32 +1,44 @@
-# Plan: Fix SSR Stability and Safari Infinite Loading
+# Desktop scroll behavior for AboutService section
 
-Analysis suggests that the "SSR stream transform exceeded maximum lifetime" error and Safari instability are likely caused by a combination of hydration mismatches (specifically from `TypographyProvider`) and the blocking injection of Yandex.Metrika in the head during SSR. Safari is particularly sensitive to DOM mutations occurring immediately after hydration.
+Implement a sticky layout for the "AboutService" section on desktop (min-width: 1024px) where the left column (heading and navigation) stays fixed while the right column (content) scrolls.
+
+## User Review Required
+
+> [!IMPORTANT]
+> This change only affects the desktop view (1024px+). The mobile and tablet versions will remain unchanged with standard page scrolling.
+
+- The sticky behavior relies on `overflow-y: auto` for the right column and a fixed height for the section container.
+- I will use `calc(100vh - 100px)` for the height to account for the sticky header.
 
 ## Proposed Changes
 
-### 1. Optimize `src/routes/__root.tsx`
-- Remove Yandex.Metrika script from `head.scripts` (SSR blocking).
-- Move Metrika initialization to a dedicated client-side component using `useEffect`.
-- Wrap `Preloader` and `TypographyProvider` in `<ClientOnly />` to prevent hydration interference.
-- Add a client-side "Watchdog" to detect hydration hangs and show a "Reload" button after a timeout.
+### Styling (CSS)
 
-### 2. Selective SSR for Heavy Components
-- Wrap `RollingGallery` and other animation-heavy components in `<ClientOnly />`.
-- Ensure `Header` and `Hero` use consistent initial state during SSR.
+- Add a utility class `.service-section-desktop-scroll` in `src/styles.css` specifically for the `lg` breakpoint.
+- Ensure `min-height: 0` is set on flex/grid containers to allow inner overflow.
+- Hide the scrollbar for the right content area using the existing `.scrollbar-none` utility or standard CSS if preferred.
 
-### 3. Harden Browser API Access
-- Double-check all components for unguarded `window`, `document`, or `localStorage` access.
-- Ensure the Supabase client initialization remains safe during SSR.
+### Components
 
-### 4. Implementation of `src/components/Analytics.tsx`
-- Create a client-side component for Yandex.Metrika to handle its lifecycle safely outside the main SSR stream.
+#### `src/components/ServicePage.tsx`
+
+- Modify the `AboutService` component structure:
+    - Apply `lg:h-[calc(100vh-100px)] lg:overflow-hidden` to the section container on desktop.
+    - Set the right content column to `lg:h-full lg:overflow-y-auto lg:scrollbar-none`.
+    - Ensure the left column remains `lg:sticky lg:top-0 lg:self-start`.
+    - Adjust padding and alignment to match the existing design exactly.
+- Ensure the anchor scroll logic (`goTo` function) works with the new internal scroll container.
 
 ## Technical Details
-- **Watchdog**: A small script in `__root.tsx` that starts a timer on load and clears it once React hydration is complete. If the timer hits 10s, it shows a minimal fallback UI.
-- **ClientOnly**: Using the newly created utility to gate components that don't need to be part of the initial HTML or might cause mismatches.
-- **Cache-Control**: Ensure headers are set to prevent aggressive caching of the HTML while allowing long-term caching of hashed assets.
 
-## Checks
-- `npm run build` to verify no breaking changes.
-- Manual verification of the site loading without infinite spinner in simulated environments.
-- Verify `ym` (Yandex Metrika) is correctly initialized only on the client.
+- **Breakpoint**: `lg` (1024px) as requested.
+- **Scroll Hijacking**: No JS scroll hijacking; using native CSS `overflow-y: auto`.
+- **Z-Index**: Ensure no overlap issues with the site header.
+
+## Verification Plan
+
+- [ ] Check desktop view (1440px) for sticky behavior.
+- [ ] Check laptop view (1024px) for sticky behavior.
+- [ ] Check tablet/mobile (<1024px) to ensure normal scrolling persists.
+- [ ] Verify tab navigation/anchor clicks scroll the internal container correctly.
+- [ ] Ensure no horizontal scroll is introduced.
