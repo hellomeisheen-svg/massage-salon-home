@@ -197,6 +197,7 @@ type HirudoRow = {
   base: number;
   perLeech: boolean;
   leechCounts: number[];
+  sessionDurations?: [string, string, string];
 };
 
 const hirudoRows: HirudoRow[] = [
