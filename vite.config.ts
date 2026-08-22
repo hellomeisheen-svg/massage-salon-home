@@ -1,8 +1,25 @@
-import { defineConfig } from "@lovable.dev/vite-tanstack-config";
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import tsconfigPaths from "vite-tsconfig-paths";
+import { TanStackRouterVite } from "@tanstack/router-plugin/vite";
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  nitro: false,
-  tanstackStart: {
-    // Disable Start's SSR features for static build
+  plugins: [
+    TanStackRouterVite({
+      autoCodeSplitting: true,
+    }),
+    react(),
+    tsconfigPaths(),
+    tailwindcss(),
+  ],
+  build: {
+    outDir: "dist",
+    emptyOutDir: true,
+  },
+  resolve: {
+    alias: {
+      "@": "/src",
+    },
   },
 });
