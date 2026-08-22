@@ -35,7 +35,7 @@ export const serviceTypes: ServiceType[] = [
           "Медицинские пиявки на\u00A0выбранные зоны тела снимают накопленное напряжение, улучшают микроциркуляцию и\u00A0дарят ощущение лёгкости. Мягкая поддержка естественного восстановления и\u00A0общего самочувствия без\u00A0лекарств и\u00A0агрессивных вмешательств.",
         mobileDescription:
           "Постановка пиявок на\u00A0выбранные зоны тела для\u00A0поддержки лёгкости и\u00A0общего самочувствия.",
-        duration: "1,5–2 часа",
+        duration: "",
         price: "4 800 ₽",
         sessionLabels: ["6\u00A0пиявок", "16\u00A0пиявок", "74\u00A0пиявки"],
         multiplyDuration: false,
@@ -47,7 +47,7 @@ export const serviceTypes: ServiceType[] = [
           "Пиявки на\u00A0лицо и\u00A0локальные зоны улучшают микроциркуляцию и\u00A0лимфоотток, поддерживают свежий вид и\u00A0ровный тон кожи. Деликатный эстетический уход без\u00A0инъекций для\u00A0естественного ощущения лёгкости и\u00A0отдохнувшего лица.",
         mobileDescription:
           "Точная постановка пиявок на\u00A0лицо и\u00A0локальные зоны для\u00A0свежего и\u00A0отдохнувшего вида кожи.",
-        duration: "1,5–2 часа",
+        duration: "",
         price: "4 800 ₽",
         sessionLabels: ["6\u00A0пиявок", "10\u00A0пиявок", "20\u00A0пиявок"],
         multiplyDuration: false,
@@ -281,10 +281,10 @@ export function formatDurationString(value: string, multiplier = 1) {
 
 export function formatSessionLine(sessionCount: number, duration: string) {
   if (sessionCount === 1) {
-    return `1 сеанс · ${duration}`;
+    return duration ? `1 сеанс · ${duration}` : "1 сеанс";
   }
   const sessionWord = pluralize(sessionCount, ["сеанс", "сеанса", "сеансов"]);
-  return `В пакете: ${sessionCount}\u00A0${sessionWord} · ${duration}`;
+  return duration ? `В пакете: ${sessionCount}\u00A0${sessionWord} · ${duration}` : `В пакете: ${sessionCount}\u00A0${sessionWord}`;
 }
 
 export function renderPrice(price: string) {

@@ -186,7 +186,7 @@ export function PriceTable({ prices, title = "Форматы и стоимост
                             )}
                           </div>
                           <div className="mt-0.5 text-[11px] font-light text-[#566A93]">
-                            {p.zone.toLowerCase().includes("пиявк") ? "от 1,5 до 2 часов" : p.duration}
+                            {p.zone.toLowerCase().includes("пиявк") ? "" : p.duration}
                           </div>
                         </div>
                         <div className="text-right shrink-0">
@@ -270,7 +270,7 @@ function PriceTableRow({ p, isProgram = false }: { p: ServicePrice, isProgram?: 
         {isProgram ? (
           <div className="whitespace-pre-line">{p.subtitle}</div>
         ) : (
-          p.zone.toLowerCase().includes("пиявк") ? "от 1,5 до 2 часов" : p.duration
+          p.zone.toLowerCase().includes("пиявк") ? "" : p.duration
         )}
       </td>
       <td className="font-noto-serif-narrow px-6 py-5 text-[15px] xl:text-[18px] font-light text-[#566A93] xl:px-8">

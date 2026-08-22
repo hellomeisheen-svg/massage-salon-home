@@ -118,18 +118,18 @@ function formatDurationValue(min: number) {
 
 function formatSessionLine(sessionCount: number, duration: string) {
   if (sessionCount === 1) {
-    return `1 сеанс · ${duration}`;
+    return duration ? `1 сеанс · ${duration}` : "1 сеанс";
   }
   const sessionWord = pluralize(sessionCount, ["сеанс", "сеанса", "сеансов"]);
-  return `${sessionCount}\u00A0${sessionWord} · ${duration}`;
+  return duration ? `${sessionCount}\u00A0${sessionWord} · ${duration}` : `${sessionCount}\u00A0${sessionWord}`;
 }
 
 function computeItem(it: ProgramItem) {
   const info = serviceCatalog[it.key];
   const isHirudo = it.key === "hirudoMed" || it.key === "hirudoCosm";
-  const totalMin = isHirudo ? 120 : info.durationMin * it.sessions;
+  const totalMin = isHirudo ? 0 : info.durationMin * it.sessions;
   const subtotal = info.priceMin * it.sessions;
-  const durationText = formatDurationValue(totalMin).text;
+  const durationText = totalMin > 0 ? formatDurationValue(totalMin).text : "";
   return {
     title: info.title,
     duration: formatSessionLine(it.sessions, durationText),
