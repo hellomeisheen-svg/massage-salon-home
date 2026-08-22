@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { useBooking } from "@/components/BookingModal";
 import { applyTypography } from "@/lib/typography";
+import { Analytics } from "@/components/Analytics";
+import { ClientOnly } from "@/components/ClientOnly";
 
 export type Variant = {
   zone: string;
@@ -341,6 +343,9 @@ export function ServiceCard({
 }) {
   return (
     <div id="services" className="scroll-mt-[120px]">
+      <ClientOnly>
+        <Analytics />
+      </ClientOnly>
       <ServiceCardContent
         type={type}
         zoneIndex={zoneIndex}
