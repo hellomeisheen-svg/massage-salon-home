@@ -73,6 +73,8 @@ export const Route = createFileRoute("/vektornyi-massazh")({
   component: VektornyiPage });
 
 const content: ServicePageContent = {
+  aboutHeading: "Обсуждаем состояние перед каждым визитом и подбираем технику",
+  aboutHeadingMobile: "Обсуждаем состояние перед каждым визитом и подбираем технику",
   slug: "vektornyi-massazh",
   breadcrumb: "Векторный массаж",
   title: "Векторный массаж",

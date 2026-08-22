@@ -67,6 +67,8 @@ export const Route = createFileRoute("/klassicheskii-massazh")({
   component: KlassicheskiiPage });
 
 const content: ServicePageContent = {
+  aboutHeading: "Обсуждаем состояние перед каждым визитом и подбираем технику",
+  aboutHeadingMobile: "Обсуждаем состояние перед каждым визитом и подбираем технику",
   slug: "klassicheskii-massazh",
   breadcrumb: "Классический массаж",
   title: "Классический массаж",

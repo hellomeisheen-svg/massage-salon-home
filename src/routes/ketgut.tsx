@@ -130,6 +130,8 @@ export const Route = createFileRoute("/ketgut")({
   component: KetgutPage });
 
 const content: ServicePageContent = {
+  aboutHeading: "Обсуждаем состояние перед каждым визитом и подбираем технику",
+  aboutHeadingMobile: "Обсуждаем состояние перед каждым визитом и подбираем технику",
   slug: "ketgut",
   breadcrumb: "Акупунктурный кетгут",
   title: "Акупунктурный кетгут",

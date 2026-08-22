@@ -76,6 +76,8 @@ export const Route = createFileRoute("/limfaticheskii-massazh")({
   component: LimfaticheskiiPage });
 
 const content: ServicePageContent = {
+  aboutHeading: "Обсуждаем состояние перед каждым визитом и подбираем технику",
+  aboutHeadingMobile: "Обсуждаем состояние перед каждым визитом и подбираем технику",
   slug: "limfaticheskii-massazh",
   breadcrumb: "Лимфатический массаж",
   title: "Лимфатический массаж",

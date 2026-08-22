@@ -150,6 +150,8 @@ export const Route = createFileRoute("/vakuumnyi-massazh")({
   component: BankiPage });
 
 const content: ServicePageContent = {
+  aboutHeading: "Обсуждаем состояние перед каждым визитом и подбираем технику",
+  aboutHeadingMobile: "Обсуждаем состояние перед каждым визитом и подбираем технику",
   slug: "vakuumnyi-massazh",
   breadcrumb: "Вакуумный массаж",
   title: "Вакуумный массаж",
