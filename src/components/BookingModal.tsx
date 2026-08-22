@@ -75,7 +75,8 @@ function BookingDialog({
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-end justify-center overflow-y-auto bg-[#1C3C8C]/40 p-4 backdrop-blur-sm sm:items-center sm:p-6"
+      className="fixed inset-0 z-[100] flex items-end justify-center overflow-y-auto bg-[#1C3C8C]/40 p-4 backdrop-blur-sm sm:items-center sm:p-6 pointer-events-auto"
+
       onMouseDown={(e) => {
         if (!panelRef.current?.contains(e.target as Node)) onClose();
       }}
