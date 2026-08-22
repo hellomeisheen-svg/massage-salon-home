@@ -252,24 +252,26 @@ function AboutService({ content }: { content: ServicePageContent }) {
   return (
     <section id="services" className="scroll-mt-[140px] bg-[#EFF6FF] ds-section">
       <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-8 sm:gap-5 items-start">
-        <div className="self-start xl:sticky xl:top-[124px] flex flex-col items-center xl:items-start text-center xl:text-left z-10">
-          <span
-            className="inline-flex items-center gap-2 px-4 py-1.5 ds-label text-white"
-            style={{
-              borderRadius: "12px",
-              backgroundImage: "linear-gradient(to bottom, #A2CFFE, #88C1FF)",
-            }}
-          >
-            Об услуге
-          </span>
-          <h2 className="font-noto-serif-narrow mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0">
-            <span className="xl:hidden">
-              {content.aboutHeadingMobile || "Обсуждаем состояние перед каждым визитом и\u00A0подбираем технику"}
+        <div className="xl:sticky xl:top-[124px] self-start z-10">
+          <div className="flex flex-col items-center xl:items-start text-center xl:text-left">
+            <span
+              className="inline-flex items-center gap-2 px-4 py-1.5 ds-label text-white"
+              style={{
+                borderRadius: "12px",
+                backgroundImage: "linear-gradient(to bottom, #A2CFFE, #88C1FF)",
+              }}
+            >
+              Об услуге
             </span>
-            <span className="hidden xl:inline">{content.aboutHeading}</span>
-          </h2>
+            <h2 className="font-noto-serif-narrow mt-6 ds-h2 text-[#1C3C8C] max-w-[520px] mx-auto xl:mx-0">
+              <span className="xl:hidden">
+                {content.aboutHeadingMobile || "Обсуждаем состояние перед каждым визитом и\u00A0подбираем технику"}
+              </span>
+              <span className="hidden xl:inline">{content.aboutHeading}</span>
+            </h2>
 
-          <div className="mt-8 hidden xl:block w-full max-w-[520px] text-left">{nav}</div>
+            <div className="mt-8 hidden xl:block w-full max-w-[520px] text-left">{nav}</div>
+          </div>
         </div>
 
         <div className="flex flex-col gap-4">
