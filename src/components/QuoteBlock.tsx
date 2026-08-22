@@ -55,6 +55,7 @@ export function QuoteBlock() {
               key={i}
               src={img.src}
               alt=""
+              role="presentation"
               width={512}
               height={512}
               loading="lazy"

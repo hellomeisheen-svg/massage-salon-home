@@ -14,7 +14,10 @@ export const Route = createFileRoute("/vektornyi-massazh")({
         content: "Точная работа по анатомическим линиям тела в кабинете Седьмое небо: освобождение глубоких зажимов и возвращение движениям свободы." },
       { property: "og:type", content: "article" },
       { property: "og:url", content: "https://7heavenmassage.ru/vektornyi-massazh" },
-      { name: "twitter:card", content: "summary_large_image" }],
+      { property: "og:image", content: "https://7heavenmassage.ru/images/uslugi-massazh-spiny-i-shei.webp" },
+      { property: "og:image:alt", content: "Векторный массаж спины и шеи в кабинете Седьмое небо, г. Владивосток" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://7heavenmassage.ru/images/uslugi-massazh-spiny-i-shei.webp" }],
     links: [{ rel: "canonical", href: "https://7heavenmassage.ru/vektornyi-massazh" }],
     scripts: [
       {
@@ -40,6 +43,23 @@ export const Route = createFileRoute("/vektornyi-massazh")({
               url: "https://7heavenmassage.ru/vektornyi-massazh",
               provider: { "@id": "https://7heavenmassage.ru/vektornyi-massazh#business" },
               offers: [{ "@type": "Offer", name: "Векторный массаж, сеанс", price: "5000", priceCurrency: "RUB", url: "https://7heavenmassage.ru/vektornyi-massazh#prices" }] },
+            {
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Главная",
+                  item: "https://7heavenmassage.ru/"
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "Векторный массаж",
+                  item: "https://7heavenmassage.ru/vektornyi-massazh"
+                }
+              ]
+            },
             {
               "@type": "FAQPage",
               mainEntity: [

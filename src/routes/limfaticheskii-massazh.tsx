@@ -14,7 +14,10 @@ export const Route = createFileRoute("/limfaticheskii-massazh")({
         content: "Мягкая работа со всем телом в кабинете Седьмое небо: уменьшение отёчности, снятие ощущения тяжести и возвращение внутренней лёгкости." },
       { property: "og:type", content: "article" },
       { property: "og:url", content: "https://7heavenmassage.ru/limfaticheskii-massazh" },
-      { name: "twitter:card", content: "summary_large_image" }],
+      { property: "og:image", content: "https://7heavenmassage.ru/images/uslugi-limfodrenazhnyi-massazh.webp" },
+      { property: "og:image:alt", content: "Лимфодренажный массаж ног в кабинете Седьмое небо, г. Владивосток" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://7heavenmassage.ru/images/uslugi-limfodrenazhnyi-massazh.webp" }],
     links: [{ rel: "canonical", href: "https://7heavenmassage.ru/limfaticheskii-massazh" }],
     scripts: [
       {
@@ -40,6 +43,23 @@ export const Route = createFileRoute("/limfaticheskii-massazh")({
               url: "https://7heavenmassage.ru/limfaticheskii-massazh",
               provider: { "@id": "https://7heavenmassage.ru/limfaticheskii-massazh#business" },
               offers: [{ "@type": "Offer", name: "Лимфодренажный массаж, сеанс", price: "5000", priceCurrency: "RUB", url: "https://7heavenmassage.ru/limfaticheskii-massazh#prices" }] },
+            {
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Главная",
+                  item: "https://7heavenmassage.ru/"
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "Лимфодренажный массаж",
+                  item: "https://7heavenmassage.ru/limfaticheskii-massazh"
+                }
+              ]
+            },
             {
               "@type": "FAQPage",
               mainEntity: [

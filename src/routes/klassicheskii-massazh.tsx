@@ -14,7 +14,10 @@ export const Route = createFileRoute("/klassicheskii-massazh")({
         content: "Комплексная проработка тела в спокойном ритме в кабинете Седьмое небо: снятие напряжения, глубокое расслабление и восстановление сил." },
       { property: "og:type", content: "article" },
       { property: "og:url", content: "https://7heavenmassage.ru/klassicheskii-massazh" },
-      { name: "twitter:card", content: "summary_large_image" }],
+      { property: "og:image", content: "https://7heavenmassage.ru/images/uslugi-klassicheskii-massazh.webp" },
+      { property: "og:image:alt", content: "Классический массаж всего тела в кабинете Седьмое небо, г. Владивосток" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://7heavenmassage.ru/images/uslugi-klassicheskii-massazh.webp" }],
     links: [{ rel: "canonical", href: "https://7heavenmassage.ru/klassicheskii-massazh" }],
     scripts: [
       {
@@ -40,6 +43,23 @@ export const Route = createFileRoute("/klassicheskii-massazh")({
               url: "https://7heavenmassage.ru/klassicheskii-massazh",
               provider: { "@id": "https://7heavenmassage.ru/klassicheskii-massazh#business" },
               offers: [{ "@type": "Offer", name: "Классический массаж, сеанс", price: "3000", priceCurrency: "RUB", url: "https://7heavenmassage.ru/klassicheskii-massazh#prices" }] },
+            {
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Главная",
+                  item: "https://7heavenmassage.ru/"
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "Классический массаж",
+                  item: "https://7heavenmassage.ru/klassicheskii-massazh"
+                }
+              ]
+            },
             {
               "@type": "FAQPage",
               mainEntity: [
