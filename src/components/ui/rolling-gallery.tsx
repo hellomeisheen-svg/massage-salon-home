@@ -175,7 +175,9 @@ export const RollingGallery: React.FC<RollingGalleryProps> = ({
                 draggable={false}
                 loading="lazy"
                 decoding="async"
-                style={{ width: imgWidth, height: imgHeight, flexShrink: 0, maxWidth: "none" }}
+                width={imgWidth}
+                height={imgHeight}
+                style={{ width: imgWidth, height: imgHeight, flexShrink: 0, maxWidth: "none", aspectRatio: `${imgWidth}/${imgHeight}` }}
                 className={`pointer-events-none rounded-[12px] ds-bento-shadow object-cover`}
               />
 
