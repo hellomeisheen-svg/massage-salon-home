@@ -1,29 +1,18 @@
-import { defineConfig } from "@lovable.dev/vite-tanstack-config";
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import tsconfigPaths from "vite-tsconfig-paths";
+import tailwindcss from "@tailwindcss/vite";
+import { TanStackRouterVite } from "@tanstack/router-plugin/vite";
 
 export default defineConfig({
-  vite: {
-    base: "./",
-  },
-  tanstackStart: {
-    server: {
-      entry: "server",
-    },
-  },
-  nitro: {
-    preset: "static",
-    prerender: {
-      routes: [
-        "/",
-        "/girudoterapiya",
-        "/ketgut",
-        "/klassicheskii-massazh",
-        "/limfaticheskii-massazh",
-        "/vakuumnyi-massazh",
-        "/vektornyi-massazh",
-        "/privacy-policy",
-      ],
-      crawlLinks: true,
-      failOnError: false,
-    },
+  base: "./",
+  plugins: [
+    TanStackRouterVite(),
+    react(),
+    tsconfigPaths(),
+    tailwindcss(),
+  ],
+  build: {
+    outDir: "dist",
   },
 });
