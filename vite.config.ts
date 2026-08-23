@@ -9,4 +9,20 @@ export default defineConfig({
       entry: "server",
     },
   },
+  nitro: {
+    preset: "static",
+    prerender: {
+      routes: [
+        "/",
+        "/girudoterapiya",
+        "/ketgut",
+        "/klassicheskii-massazh",
+        "/limfaticheskii-massazh",
+        "/vakuumnyi-massazh",
+        "/vektornyi-massazh",
+        "/privacy-policy",
+      ],
+      crawlLinks: true,
+    },
+  },
 });
