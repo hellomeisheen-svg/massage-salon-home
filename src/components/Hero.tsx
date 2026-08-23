@@ -46,11 +46,8 @@ export function Hero() {
         {/* Content card */}
         <div className="flex flex-col ds-card ds-bento-shadow p-5 min-h-[640px] sm:h-[600px] xl:min-h-0 xl:h-auto sm:p-6 xl:p-10 overflow-hidden">
           <div className="flex items-end text-left gap-4 sm:flex-col sm:items-start sm:gap-0 xl:flex-col xl:items-start xl:gap-0">
-            <img
-              src="/images/tatyana-photo.webp"
+            <img loading="eager" decoding="sync" fetchPriority="high" src="/images/tatyana-photo.webp"
               alt="Татьяна Злобина, мастер оздоровительных практик, кабинет Седьмое небо, г. Владивосток"
-              loading="eager"
-              decoding="sync"
               width={85}
               height={110}
               className="h-[90px] w-[70px] sm:h-[110px] sm:w-[85px] xl:h-[110px] xl:w-[85px] rounded-[12px] border border-[#daebff] ds-bento-shadow object-cover flex-shrink-0"
@@ -72,11 +69,9 @@ export function Hero() {
 
         {/* Hero image */}
         <div className="relative h-[420px] overflow-hidden rounded-[12px] border border-[#daebff] ds-bento-shadow sm:h-[520px] md:h-[600px] xl:h-auto xl:min-h-0">
-          <img
-            className="absolute inset-0 h-full w-full scale-x-[-1] object-cover object-top sm:object-center xl:object-top min-[1400px]:object-center"
+          <img loading="eager" decoding="sync" className="absolute inset-0 h-full w-full scale-x-[-1] object-cover object-top sm:object-center xl:object-top min-[1400px]:object-center"
             alt="Оздоровительные процедуры в кабинете Седьмое небо (Трудовое)"
             src="/images/hero-portrait-solid.webp"
-            loading="eager"
             fetchPriority="high"
             width={1280}
             height={853}

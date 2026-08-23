@@ -169,12 +169,9 @@ export const RollingGallery: React.FC<RollingGalleryProps> = ({
                 transform: `translateX(-50%) translateY(-50%) rotateY(${(360 / faceCount) * i}deg) translateZ(${radius}px)`,
               }}
             >
-              <img
-                src={url}
+              <img loading="lazy" decoding="async" src={url}
                 alt={alt}
                 draggable={false}
-                loading="lazy"
-                decoding="async"
                 width={imgWidth}
                 height={imgHeight}
                 style={{ width: imgWidth, height: imgHeight, flexShrink: 0, maxWidth: "none", aspectRatio: `${imgWidth}/${imgHeight}` }}

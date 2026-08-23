@@ -10,7 +10,7 @@ interface LogoProps {
  * и надпись «небо».
  */
 const Logo = ({ className, title = "Седьмое небо" }: LogoProps) => (
-  <img src={logoSvg} loading="lazy" decoding="async" alt={title} className={className} /  >
+  <img loading="lazy" decoding="async" src={logoSvg} alt={title} className={className} /  >
 );
 
 

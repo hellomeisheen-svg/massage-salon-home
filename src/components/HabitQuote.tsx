@@ -49,14 +49,11 @@ export function HabitQuote() {
       <div className="container-1900 absolute inset-0 left-1/2 -translate-x-1/2 hidden sm:block pointer-events-none">
         <div className="relative w-full h-full">
           {decoImages.map((img, i) => (
-            <img
-              key={i}
+            <img loading="lazy" decoding="async" key={i}
               src={img.src}
               alt="Уютная атмосфера в массажном кабинете Седьмое небо"
               width={512}
               height={512}
-              loading="lazy"
-              decoding="async"
               className={`deco-photo ${img.className}`}
               style={{
                 ["--deco-delay" as string]: img.delay,
