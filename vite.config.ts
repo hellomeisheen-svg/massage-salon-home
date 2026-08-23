@@ -6,11 +6,15 @@ export default defineConfig({
   },
   tanstackStart: {
     server: {
-      entry: "server",
+      entry: "src/server.ts",
     },
   },
   nitro: {
     preset: "static",
+    output: {
+      dir: ".output",
+      publicDir: ".output/public",
+    },
     prerender: {
       routes: [
         "/",
