@@ -2,6 +2,16 @@
 @source "../src";
 @import "tw-animate-css";
 
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 html, body {
   position: relative;
   width: 100%;
@@ -13,6 +23,7 @@ html, body {
      but we must ensure no horizontal overflow. */
   overflow-y: auto;
 }
+
 
 #root {
   width: 100%;
