@@ -113,6 +113,10 @@ function PageHero({ content }: { content: ServicePageContent }) {
             <img
               src="/images/tatyana-photo.webp"
               alt="Татьяна Злобина"
+              loading="eager"
+              decoding="sync"
+              width={85}
+              height={110}
               className="h-[90px] w-[70px] sm:h-[110px] sm:w-[85px] xl:h-[110px] xl:w-[85px] rounded-[12px] border border-[#daebff] ds-bento-shadow object-cover flex-shrink-0"
             />
             <div className="flex flex-col">
