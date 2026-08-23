@@ -5,9 +5,20 @@ export default defineConfig({
     base: "./",
   },
   tanstackStart: {
-    server: { entry: "server" },
+    server: {
+      entry: "server",
+      prerender: {
+        routes: [
+          "/",
+          "/girudoterapiya",
+          "/ketgut",
+          "/klassicheskii-massazh",
+          "/limfaticheskii-massazh",
+          "/vakuumnyi-massazh",
+          "/vektornyi-massazh",
+          "/privacy-policy",
+        ],
+      },
+    },
   },
-  // We use the environment variable NITRO_PRESET to control the build target
-  // when running in the user's VPS environment.
-  // In Lovable Cloud, the config automatically targets Cloudflare.
 });
