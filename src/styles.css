@@ -966,7 +966,7 @@ select {
 .accent-noto-serif .ds-h4,
 .accent-noto-serif .ds-price,
 .accent-noto-serif .font-heading {
-  font-family: "Noto Serif Display", serif !important;
+  font-family: "Noto Serif Display", "NSD Fallback", serif !important;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
