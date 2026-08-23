@@ -18,11 +18,10 @@ html, body {
   max-width: 100%;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
-  /* overflow: initial is important for sticky elements to work correctly on desktop, 
+  /* overflow: initial/visible is important for sticky elements to work correctly on desktop, 
      but we must ensure no horizontal overflow. */
+  overflow-x: clip !important;
   overflow-y: visible !important;
-  overflow-x: hidden !important;
 }
 
 
