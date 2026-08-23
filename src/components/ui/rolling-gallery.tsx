@@ -142,7 +142,7 @@ export const RollingGallery: React.FC<RollingGalleryProps> = ({
         }}
       />
 
-      <div className="flex h-full items-center justify-center [perspective:1000px] [transform-style:preserve-3d]">
+      <div className="flex h-full items-center justify-center [perspective:1000px] [transform-style:preserve-3d] max-w-full">
         <motion.div
           drag="x"
           dragElastic={0}
