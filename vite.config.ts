@@ -7,10 +7,9 @@ export default defineConfig({
   },
   tanstackStart: {
     server: {
-      entry: "src/server.ts",
+      entry: "src/entry-server.tsx",
     },
   },
-  // Отключаем встроенный Nitro, чтобы обойти форсированный cloudflare-module в песочнице
   nitro: false,
   plugins: [
     nitro({
