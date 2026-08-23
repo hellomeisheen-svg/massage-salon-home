@@ -17,7 +17,7 @@ const navItems: FooterNavItem[] = [
 
 
 const ADDRESS =
-  "Приморский край, п. Трудовое, ул. Лермонтова, 46";
+  "Приморский край, п. Трудовое, ул. Лермонтова, 46, этаж 3, кабинет 9";
 
 
 function scrollToTop() {
