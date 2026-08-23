@@ -74,10 +74,8 @@ export function Education() {
 
         {/* Left: photo + quote panel */}
         <div className="relative xl:min-h-0 xl:h-full flex flex-col xl:rounded-[12px] xl:overflow-hidden xl:border xl:border-[#DAEBFF]">
-          <img
-            src="/images/tatiana-zlobina.webp"
+          <img loading="eager" decoding="sync" src="/images/tatiana-zlobina.webp"
             alt="Татьяна Злобина — мастер кабинета Седьмое небо"
-            loading="eager"
             fetchPriority="high"
             className="w-full h-[480px] sm:h-[720px] rounded-[12px] border border-[#DAEBFF] ds-bento-shadow xl:border-0 xl:rounded-none xl:absolute xl:inset-0 xl:h-full object-cover object-top sm:object-center"
           />
@@ -96,11 +94,9 @@ export function Education() {
                 </div>
 
                 <div className="flex justify-end xl:hidden xl:flex-shrink-0 pointer-events-none relative z-20 xl:mb-[-10px]">
-                  <img
-                    src="/images/tatiana-signature.svg"
+                  <img loading="lazy" decoding="async" src="/images/tatiana-signature.svg"
                     alt="Подпись Татьяны Злобиной"
                     className="h-auto w-[120px] sm:w-[180px] xl:w-[clamp(140px,12vw,225px)] opacity-80 xl:opacity-100"
-                    loading="lazy"
                   />
                 </div>
               </div>

@@ -24,27 +24,21 @@ export function PromoBanner({
           className="relative overflow-hidden rounded-[12px] border px-6 py-14 xl:px-24 xl:py-[60px] ds-bento-shadow"
           style={{ backgroundColor: "#DAEBFF", borderColor: "#daebff" }}
         >
-          <img
-            src="/images/banner-clouds.svg"
+          <img loading="lazy" decoding="async" src="/images/banner-clouds.svg"
             alt=""
             role="presentation"
             aria-hidden="true"
-            className="pointer-events-none absolute inset-x-0 top-0 z-0 w-full -translate-y-[10px] select-none"
-          />
+            className="pointer-events-none absolute inset-x-0 top-0 z-0 w-full -translate-y-[10px] select-none" />
 
-          <img
-            src="/images/banner-clouds-bottom.svg"
+          <img loading="lazy" decoding="async" src="/images/banner-clouds-bottom.svg"
             alt=""
             role="presentation"
-            className="pointer-events-none absolute inset-x-0 bottom-0 z-0 hidden w-full translate-y-[120px] select-none xl:block"
-          />
-          <img
-            src="/images/banner-ellipse.svg"
+            className="pointer-events-none absolute inset-x-0 bottom-0 z-0 hidden w-full translate-y-[120px] select-none xl:block" />
+          <img loading="lazy" decoding="async" src="/images/banner-ellipse.svg"
             alt="Фоновый градиент"
             aria-hidden="true"
             className="pointer-events-none absolute left-1/2 top-0 z-[1] hidden h-full w-[140%] max-w-none -translate-x-1/2 select-none xl:block xl:w-[995px]"
-            style={{ objectFit: "fill" }}
-          />
+            style={{ objectFit: "fill" }} />
 
           {/* Decorative background sparkles */}
           {[

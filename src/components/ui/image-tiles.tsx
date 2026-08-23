@@ -47,11 +47,9 @@ export default function ImageReveal({
               delay: tile.delay,
             }}
           >
-            <img
-              src={tile.src}
+            <img loading="lazy" decoding="async" src={tile.src}
               alt=""
               role="presentation"
-              loading="lazy"
               className="h-full w-full object-cover"
             />
           </motion.div>
