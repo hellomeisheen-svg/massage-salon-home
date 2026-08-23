@@ -1,10 +1,19 @@
-import { defineConfig } from "@lovable.dev/vite-tanstack-config";
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import tsconfigPaths from "vite-tsconfig-paths";
+import { TanStackRouterVite } from "@tanstack/router-plugin";
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  tanstackStart: {
-    server: { entry: "server" },
+  plugins: [
+    TanStackRouterVite(),
+    react(),
+    tsconfigPaths(),
+    tailwindcss(),
+  ],
+  base: "./",
+  build: {
+    outDir: "dist",
+    emptyOutDir: true,
   },
-  // We use the environment variable NITRO_PRESET to control the build target
-  // when running in the user's VPS environment.
-  // In Lovable Cloud, the config automatically targets Cloudflare.
 });
