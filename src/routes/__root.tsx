@@ -98,7 +98,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   head: () => ({
     meta: [
       { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1.0" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Седьмое небо — кабинет оздоровительных практик" },
       {
         name: "description",
@@ -124,33 +124,33 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       {
         rel: "preload",
-        href: "assets/noto-serif-display-narrow-PcDvQ3Gf.woff2",
+        href: "/fonts/noto-serif-display-narrow.woff2",
         as: "font",
         type: "font/woff2",
         crossOrigin: "anonymous",
       },
       {
         rel: "preload",
-        href: "assets/inter-cyrillic-300-normal-BnqRxXuy.woff2",
+        href: "/fonts/inter-cyrillic-300-normal.woff2",
         as: "font",
         type: "font/woff2",
         crossOrigin: "anonymous",
       },
       {
         rel: "preload",
-        href: "assets/inter-cyrillic-400-normal-obahsSVq.woff2",
+        href: "/fonts/inter-cyrillic-400-normal.woff2",
         as: "font",
         type: "font/woff2",
         crossOrigin: "anonymous",
       },
       {
         rel: "preload",
-        href: "assets/inter-cyrillic-500-normal-BasfLYem.woff2",
+        href: "/fonts/inter-cyrillic-500-normal.woff2",
         as: "font",
         type: "font/woff2",
         crossOrigin: "anonymous",
       },
-      { rel: "icon", href: "favicon.svg", type: "image/svg+xml" }],
+      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" }],
     scripts: [],
   }),
   shellComponent: RootShell,
