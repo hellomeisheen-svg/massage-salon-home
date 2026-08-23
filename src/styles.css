@@ -2,11 +2,13 @@
 @source "../src";
 @import "tw-animate-css";
 
-html,
-body,
-#root {
-  -webkit-text-size-adjust: none !important;
-  text-size-adjust: none !important;
+@layer base {
+  html,
+  body,
+  #root {
+    -webkit-text-size-adjust: none !important;
+    text-size-adjust: none !important;
+  }
 }
 
 html, body {
