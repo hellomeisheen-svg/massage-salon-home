@@ -161,26 +161,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="ru">
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        <Preloader />
-        {children}
-        <Scripts />
-
-        <noscript>
-          <div>
-            <img
-              src="https://mc.yandex.ru/watch/111534340"
-              style={{ position: "absolute", left: "-9999px" }}
-              alt="Яндекс Метрика"
-            />
-          </div>
-        </noscript>
-      </body>
-    </html>
+    <>
+      <Preloader />
+      {children}
+    </>
   );
 }
 
