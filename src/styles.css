@@ -2,14 +2,11 @@
 @source "../src";
 @import "tw-animate-css";
 
-html {
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-}
-
-body {
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
+html,
+body,
+#root {
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
 }
 
 html, body {
