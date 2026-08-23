@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as VektornyiMassazhRouteImport } from './routes/vektornyi-massazh'
 import { Route as VakuumnyiMassazhRouteImport } from './routes/vakuumnyi-massazh'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as LimfaticheskiiMassazhRouteImport } from './routes/limfaticheskii-massazh'
 import { Route as KlassicheskiiMassazhRouteImport } from './routes/klassicheskii-massazh'
@@ -27,6 +28,11 @@ const VektornyiMassazhRoute = VektornyiMassazhRouteImport.update({
 const VakuumnyiMassazhRoute = VakuumnyiMassazhRouteImport.update({
   id: '/vakuumnyi-massazh',
   path: '/vakuumnyi-massazh',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
@@ -73,6 +79,7 @@ export interface FileRoutesByFullPath {
   '/klassicheskii-massazh': typeof KlassicheskiiMassazhRoute
   '/limfaticheskii-massazh': typeof LimfaticheskiiMassazhRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/vakuumnyi-massazh': typeof VakuumnyiMassazhRoute
   '/vektornyi-massazh': typeof VektornyiMassazhRoute
 }
@@ -84,6 +91,7 @@ export interface FileRoutesByTo {
   '/klassicheskii-massazh': typeof KlassicheskiiMassazhRoute
   '/limfaticheskii-massazh': typeof LimfaticheskiiMassazhRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/vakuumnyi-massazh': typeof VakuumnyiMassazhRoute
   '/vektornyi-massazh': typeof VektornyiMassazhRoute
 }
@@ -96,6 +104,7 @@ export interface FileRoutesById {
   '/klassicheskii-massazh': typeof KlassicheskiiMassazhRoute
   '/limfaticheskii-massazh': typeof LimfaticheskiiMassazhRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/vakuumnyi-massazh': typeof VakuumnyiMassazhRoute
   '/vektornyi-massazh': typeof VektornyiMassazhRoute
 }
@@ -109,6 +118,7 @@ export interface FileRouteTypes {
     | '/klassicheskii-massazh'
     | '/limfaticheskii-massazh'
     | '/privacy-policy'
+    | '/sitemap.xml'
     | '/vakuumnyi-massazh'
     | '/vektornyi-massazh'
   fileRoutesByTo: FileRoutesByTo
@@ -120,6 +130,7 @@ export interface FileRouteTypes {
     | '/klassicheskii-massazh'
     | '/limfaticheskii-massazh'
     | '/privacy-policy'
+    | '/sitemap.xml'
     | '/vakuumnyi-massazh'
     | '/vektornyi-massazh'
   id:
@@ -131,6 +142,7 @@ export interface FileRouteTypes {
     | '/klassicheskii-massazh'
     | '/limfaticheskii-massazh'
     | '/privacy-policy'
+    | '/sitemap.xml'
     | '/vakuumnyi-massazh'
     | '/vektornyi-massazh'
   fileRoutesById: FileRoutesById
@@ -143,6 +155,7 @@ export interface RootRouteChildren {
   KlassicheskiiMassazhRoute: typeof KlassicheskiiMassazhRoute
   LimfaticheskiiMassazhRoute: typeof LimfaticheskiiMassazhRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   VakuumnyiMassazhRoute: typeof VakuumnyiMassazhRoute
   VektornyiMassazhRoute: typeof VektornyiMassazhRoute
 }
@@ -161,6 +174,13 @@ declare module '@tanstack/react-router' {
       path: '/vakuumnyi-massazh'
       fullPath: '/vakuumnyi-massazh'
       preLoaderRoute: typeof VakuumnyiMassazhRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy-policy': {
@@ -223,9 +243,20 @@ const rootRouteChildren: RootRouteChildren = {
   KlassicheskiiMassazhRoute: KlassicheskiiMassazhRoute,
   LimfaticheskiiMassazhRoute: LimfaticheskiiMassazhRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   VakuumnyiMassazhRoute: VakuumnyiMassazhRoute,
   VektornyiMassazhRoute: VektornyiMassazhRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
