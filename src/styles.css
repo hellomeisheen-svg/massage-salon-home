@@ -21,7 +21,8 @@ html, body {
   overflow-x: hidden;
   /* overflow: initial is important for sticky elements to work correctly on desktop, 
      but we must ensure no horizontal overflow. */
-  overflow-y: auto;
+  overflow-y: visible !important;
+  overflow-x: hidden !important;
 }
 
 
