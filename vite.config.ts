@@ -1,22 +1,18 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import tsconfigPaths from "vite-tsconfig-paths";
-import tailwindcss from "@tailwindcss/vite";
-import { tanstackRouter } from "@tanstack/router-plugin/vite";
-import { tanstackStart } from "@tanstack/react-start/plugin/vite";
+import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 import { nitro } from "nitro/vite";
 
 export default defineConfig({
+  vite: {
+    base: "./",
+  },
+  tanstackStart: {
+    server: {
+      entry: "src/server.ts",
+    },
+  },
+  // Отключаем встроенный Nitro, чтобы обойти форсированный cloudflare-module в песочнице
+  nitro: false,
   plugins: [
-    tanstackRouter(),
-    tanstackStart({
-      server: {
-        entry: "src/server.ts",
-      },
-    }),
-    react(),
-    tsconfigPaths(),
-    tailwindcss(),
     nitro({
       preset: "static",
       output: {
@@ -38,12 +34,4 @@ export default defineConfig({
       },
     }),
   ],
-  resolve: {
-    alias: {
-      "@": "/dev-server/src",
-    },
-  },
-  css: {
-    transformer: "lightningcss",
-  },
 });
