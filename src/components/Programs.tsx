@@ -223,7 +223,7 @@ export function Programs({ prioritizeKeys }: ProgramsProps = {}) {
         </div>
 
         {/* Right column — program card */}
-        <article className="ds-card ds-bento-shadow p-5 sm:p-8 flex flex-col h-[560px] sm:h-[671px] xl:h-auto xl:min-h-[700px] border border-[#DAEBFF]">
+        <article className="ds-card ds-bento-shadow p-5 sm:p-8 flex flex-col h-[560px] sm:h-[671px] xl:h-auto xl:min-h-[700px] border border-[#DAEBFF] max-w-full overflow-hidden">
           <h3 className="font-noto-serif-narrow ds-h3 text-[#1C3C8C] max-[380px]:text-[24px] max-sm:text-[27px] max-sm:whitespace-nowrap">
             {program.name}
           </h3>
