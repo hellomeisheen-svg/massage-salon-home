@@ -109,19 +109,19 @@ function PageHero({ content }: { content: ServicePageContent }) {
             <span className="text-[#1C3C8C]">{content.breadcrumb}</span>
           </nav>
 
-          <div className="mt-6 sm:mt-8 mb-4 flex items-end text-left gap-4 sm:flex-col sm:items-start sm:gap-0 xl:flex-col xl:items-start xl:gap-0">
+          <div className="mt-6 sm:mt-8 mb-4 flex items-end text-left gap-4">
             <img loading="eager" decoding="sync" fetchPriority="high" src="/images/tatyana-photo.webp"
               alt="Татьяна Злобина"
               width={85}
               height={110}
-              className="h-[90px] w-[70px] sm:h-[110px] sm:w-[85px] xl:h-[110px] xl:w-[85px] rounded-[12px] border border-[#daebff] ds-bento-shadow object-cover flex-shrink-0"
+              className="h-[90px] w-[70px] sm:h-[110px] sm:w-[85px] rounded-[12px] border border-[#daebff] ds-bento-shadow object-cover flex-shrink-0"
             />
             <div className="flex flex-col">
-              <h3 className="font-noto-serif-narrow mt-0 sm:mt-6 xl:mt-6 ds-h4 text-[#1C3C8C] sm:text-[28px] xl:text-[28px]">
+              <h3 className="font-noto-serif-narrow ds-h4 text-[#1C3C8C] text-[24px] sm:text-[28px]">
                 Татьяна Злобина
               </h3>
-              <p className="mt-1 sm:mt-3 xl:mt-3 text-[14px] sm:text-[16px] leading-[1.4] sm:leading-[1.6] body-text text-[#566A93]">
-                Мастер кабинета, специалист<br className="hidden sm:block xl:block" /> по{"\u00A0"}оздоровительным практикам
+              <p className="mt-1 text-[14px] sm:text-[16px] leading-[1.4] sm:leading-[1.6] body-text text-[#566A93] sm:max-w-[280px] xl:max-w-[280px]">
+                Мастер кабинета, специалист по{"\u00A0"}оздоровительным практикам
               </p>
             </div>
           </div>
