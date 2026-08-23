@@ -1,36 +1,10 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
-import { nitro } from "nitro/vite";
 
 export default defineConfig({
-  vite: {
-    base: "./",
-  },
   tanstackStart: {
-    server: {
-      entry: "src/entry-server.tsx",
-    },
+    server: { entry: "server" },
   },
-  nitro: false,
-  plugins: [
-    nitro({
-      preset: "static",
-      output: {
-        dir: ".output",
-        publicDir: ".output/public",
-      },
-      prerender: {
-        routes: [
-          "/",
-          "/girudoterapiya",
-          "/ketgut",
-          "/klassicheskii-massazh",
-          "/limfaticheskii-massazh",
-          "/vakuumnyi-massazh",
-          "/vektornyi-massazh",
-          "/privacy-policy",
-        ],
-        crawlLinks: true,
-      },
-    }),
-  ],
+  // We use the environment variable NITRO_PRESET to control the build target
+  // when running in the user's VPS environment.
+  // In Lovable Cloud, the config automatically targets Cloudflare.
 });
