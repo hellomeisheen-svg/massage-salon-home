@@ -126,7 +126,7 @@ function PageHero({ content }: { content: ServicePageContent }) {
           </div>
 
           <div className="mt-auto xl:mt-auto pt-4 sm:pt-12">
-            <div className="flex flex-col tablet-text-block xl:max-w-[640px]">
+            <div className="flex flex-col tablet-text-block xl:max-w-[640px] max-w-full">
               <div className="flex flex-col gap-y-2">
                 {content.hit && (
                   <div className="flex sm:hidden">

@@ -7,7 +7,7 @@ const QuizModal = lazy(() => import("@/components/quiz/QuizModal").then(m => ({ 
 
 function HeadlineBlock() {
   return (
-    <div className="flex flex-col tablet-text-block xl:min-w-[640px] xl:w-[640px]">
+    <div className="flex flex-col tablet-text-block xl:min-w-[640px] xl:w-[640px] max-w-full">
 
       <h1 className="font-noto-serif-narrow ds-h1 text-[#1C3C8C] xl:whitespace-pre-line">
         {"Массаж, гирудотерапия и\u00a0вакуум в\u00a0Трудовом"}
