@@ -311,14 +311,16 @@ button:focus-visible {
 }
 
 /* Tactile form inputs (white surface + soft inset depth) */
-.ds-input {
+.ds-input,
+textarea,
+select {
   width: 100%;
   min-height: 52px;
   border-radius: 12px;
   border: 1px solid #DAEBFF;
   background-color: #FFFFFF;
   padding: 0 1rem;
-  font-size: 16px;
+  font-size: 16px; /* Prevents auto-zoom on iOS Safari */
   color: #1C3C8C;
   box-shadow: 0 4px 16px rgba(28, 60, 140, 0.03);
   transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
