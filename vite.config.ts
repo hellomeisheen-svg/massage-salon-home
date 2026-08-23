@@ -7,18 +7,23 @@ export default defineConfig({
   tanstackStart: {
     server: {
       entry: "server",
-      prerender: {
-        routes: [
-          "/",
-          "/girudoterapiya",
-          "/ketgut",
-          "/klassicheskii-massazh",
-          "/limfaticheskii-massazh",
-          "/vakuumnyi-massazh",
-          "/vektornyi-massazh",
-          "/privacy-policy",
-        ],
-      },
+    },
+  },
+  nitro: {
+    preset: "static",
+    prerender: {
+      routes: [
+        "/",
+        "/girudoterapiya",
+        "/ketgut",
+        "/klassicheskii-massazh",
+        "/limfaticheskii-massazh",
+        "/vakuumnyi-massazh",
+        "/vektornyi-massazh",
+        "/privacy-policy",
+      ],
+      crawlLinks: true,
+      ignore: ["/api"],
     },
   },
 });
