@@ -4,6 +4,9 @@ export default defineConfig({
   vite: {
     base: "./",
   },
+  nitro: {
+    preset: "static",
+  },
   tanstackStart: {
     server: { entry: "server" },
   },
