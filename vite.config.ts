@@ -1,32 +1,46 @@
-import { defineConfig } from "@lovable.dev/vite-tanstack-config";
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import tsconfigPaths from "vite-tsconfig-paths";
+import tailwindcss from "@tailwindcss/vite";
+import { TanStackRouterVite } from "@tanstack/router-plugin";
+import { tanstackStart } from "@tanstack/react-start/plugin/vite";
+import { nitro } from "nitro/vite";
 
 export default defineConfig({
-  vite: {
-    base: "./",
-  },
-  tanstackStart: {
-    server: {
-      entry: "src/server.ts",
+  base: "./",
+  plugins: [
+    TanStackRouterVite(),
+    react(),
+    tsconfigPaths(),
+    tailwindcss(),
+    tanstackStart({
+      server: {
+        entry: "src/server.ts",
+      },
+    }),
+    nitro({
+      preset: "static",
+      prerender: {
+        routes: [
+          "/",
+          "/girudoterapiya",
+          "/ketgut",
+          "/klassicheskii-massazh",
+          "/limfaticheskii-massazh",
+          "/vakuumnyi-massazh",
+          "/vektornyi-massazh",
+          "/privacy-policy",
+        ],
+        crawlLinks: true,
+      },
+    }),
+  ],
+  resolve: {
+    alias: {
+      "@": "/dev-server/src",
     },
   },
-  nitro: {
-    preset: "static",
-    output: {
-      dir: ".output",
-      publicDir: ".output/public",
-    },
-    prerender: {
-      routes: [
-        "/",
-        "/girudoterapiya",
-        "/ketgut",
-        "/klassicheskii-massazh",
-        "/limfaticheskii-massazh",
-        "/vakuumnyi-massazh",
-        "/vektornyi-massazh",
-        "/privacy-policy",
-      ],
-      crawlLinks: true,
-    },
+  css: {
+    transformer: "lightningcss",
   },
 });
