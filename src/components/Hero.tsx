@@ -20,7 +20,7 @@ function HeadlineBlock() {
           href="https://n2418813.yclients.com"
           target="_blank"
           rel="noopener noreferrer"
-           className="btn-hero-orange w-full sm:w-[280px] xl:w-[250px] inline-flex items-center justify-center text-center whitespace-nowrap"
+          className="btn-primary w-full sm:w-[280px] xl:w-[250px] inline-flex items-center justify-center text-center whitespace-nowrap"
         >
           Записаться онлайн
         </a>
