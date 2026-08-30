@@ -187,6 +187,28 @@ img, video, svg {
 .btn-primary:hover::before {
   opacity: 1;
 }
+@utility btn-hero-orange {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 150%;
+  min-height: 60px;
+  color: white;
+  background-color: #f28c28;
+  touch-action: manipulation;
+  transition: transform 0.1s ease, opacity 0.2s, background-color 0.2s;
+}
+.btn-hero-orange:hover {
+  background-color: #d97706;
+}
+.btn-hero-orange:active {
+  opacity: 0.85;
+}
 @utility btn-secondary {
   position: relative;
   display: inline-flex;
