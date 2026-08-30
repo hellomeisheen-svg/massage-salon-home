@@ -79,7 +79,7 @@ export function Footer({ items = navItems }: { items?: FooterNavItem[] }) {
             <ul className="flex flex-col gap-5 xl:gap-6">
               <li className="text-[#1c3c8c] leading-[150%] font-light">
                 <div className="body-text text-[#566A93] mb-2">Адрес</div>
-                <div className="body-text text-[#1c3c8c]">{ADDRESS}</div>
+                <div className="body-text text-[#1c3c8c]">{ADDRESS}, этаж 3, кабинет 9</div>
               </li>
               <li className="text-[#1c3c8c] leading-[150%] font-light">
                 <div className="body-text text-[#566A93] mb-2">Телефон</div>
