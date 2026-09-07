@@ -1,97 +1,65 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage, type ServicePageContent } from "@/components/ServicePage";
+import { buildSEOHead } from "@/components/SEOHead";
 
-export const Route = createFileRoute("/klassicheskii-massazh")({
-  head: () => ({
-    meta: [
-      { title: "Классический массаж во Владивостоке — Седьмое небо" },
-      {
-        name: "description",
-        content: "Массажные техники для расслабления мышц, снятия напряжения и ощущения лёгкости в теле. Кабинет в посёлке Трудовое. Спокойный ритм, стерильность, профессиональный подход." },
-      { property: "og:title", content: "Классический массаж — Седьмое небо" },
-      {
-        property: "og:description",
-        content: "Комплексная проработка тела в спокойном ритме в кабинете Седьмое небо: снятие напряжения, глубокое расслабление и восстановление сил." },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: "https://7heavenmassage.ru/klassicheskii-massazh" },
-      { property: "og:image", content: "https://7heavenmassage.ru/images/uslugi-klassicheskii-massazh.webp" },
-      { property: "og:image:alt", content: "Классический массаж всего тела в кабинете Седьмое небо, г. Владивосток" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: "https://7heavenmassage.ru/images/uslugi-klassicheskii-massazh.webp" }],
-    links: [{ rel: "canonical", href: "https://7heavenmassage.ru/klassicheskii-massazh" }],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@graph": [
-            {
-              "@type": "MedicalBusiness",
-              "@id": "https://7heavenmassage.ru/klassicheskii-massazh#business",
-              name: "Седьмое небо",
-              description: "Кабинет массажа и оздоровительных практик Татьяны Злобиной в посёлке Трудовое.",
-              url: "https://7heavenmassage.ru/",
-              telephone: "+7 924 232 46 11",
-              address: { "@type": "PostalAddress", streetAddress: "ул. Лермонтова, 46", addressLocality: "посёлок Трудовое", addressRegion: "Приморский край", addressCountry: "RU" },
-              geo: { "@type": "GeoCoordinates", latitude: 43.3125, longitude: 132.0119 },
-              openingHoursSpecification: [{ "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], opens: "09:00", closes: "22:00" }],
-              areaServed: [{ "@type": "Place", name: "Трудовое" }, { "@type": "Place", name: "Владивосток" }, { "@type": "Place", name: "Артём" }] },
-            {
-              "@type": "Service",
-              name: "Классический массаж",
-              serviceType: "Классический оздоровительный массаж",
-              url: "https://7heavenmassage.ru/klassicheskii-massazh",
-              provider: { "@id": "https://7heavenmassage.ru/klassicheskii-massazh#business" },
-              offers: [{ "@type": "Offer", name: "Классический массаж, сеанс", price: "3000", priceCurrency: "RUB", url: "https://7heavenmassage.ru/klassicheskii-massazh#prices" }] },
-            {
-              "@type": "BreadcrumbList",
-              itemListElement: [
-                {
-                  "@type": "ListItem",
-                  position: 1,
-                  name: "Главная",
-                  item: "https://7heavenmassage.ru/"
-                },
-                {
-                  "@type": "ListItem",
-                  position: 2,
-                  name: "Классический массаж",
-                  item: "https://7heavenmassage.ru/klassicheskii-massazh"
-                }
-              ]
-            },
-            {
-              "@type": "FAQPage",
-              mainEntity: [
-                {
-                  "@type": "Question",
-                  name: "Массаж должен быть болезненным?",
-                  acceptedAnswer: { "@type": "Answer", text: "Нет. Глубина воздействия регулируется по вашим ощущениям: задача — расслабить тело, а не проверить терпение. Мы всегда работаем в комфортном ритме." } },
-                {
-                  "@type": "Question",
-                  name: "Сколько сеансов нужно?",
-                  acceptedAnswer: { "@type": "Answer", text: "Единой схемы нет, но результат заметнее при регулярности — поэтому есть курсы из 3 и 6 сеансов со скидкой. Конкретный ритм я подберу на первой встрече." } },
-                {
-                  "@type": "Question",
-                  name: "Можно ли применять классический массаж после простуды?",
-                  acceptedAnswer: { "@type": "Answer", text: "При температуре, слабости или остром воспалении массаж не проводится. После выздоровления важно дождаться исчезновения симптомов. При сохранении слабости лучше проконсультироваться с врачом, чтобы сеанс принес пользу, а не нагрузку." }
-                }
-              ]
-            }
+export const Route = createFileRoute("/klassicheskij-massazh")({
+  head: () => buildSEOHead({
+    title: "Классический массаж в Трудовом — цена и запись",
+    description: "Классический массаж в Трудовом рядом с Владивостоком и Артёмом. Массаж всего тела, спины и шеи, головы, лица, ног и стоп. Стоимость и запись.",
+    canonicalPath: "/klassicheskij-massazh",
+    ogTitle: "Классический массаж в Трудовом — Седьмое небо",
+    ogDescription: "Комплексная проработка тела в спокойном ритме в кабинете Седьмое небо: снятие напряжения, глубокое расслабление и восстановление сил.",
+    ogImage: "https://7heavenmassage.ru/images/uslugi-klassicheskii-massazh.webp",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "MedicalBusiness",
+          "@id": "https://7heavenmassage.ru/klassicheskij-massazh#business",
+          name: "Седьмое небо",
+          description: "Кабинет массажа и оздоровительных практик Татьяны Злобиной в посёлке Трудовое.",
+          url: "https://7heavenmassage.ru/",
+          telephone: "+7 924 232 46 11",
+          address: { "@type": "PostalAddress", streetAddress: "ул. Лермонтова, 46", addressLocality: "посёлок Трудовое", addressRegion: "Приморский край", addressCountry: "RU" },
+          geo: { "@type": "GeoCoordinates", latitude: 43.3125, longitude: 132.0119 },
+          openingHoursSpecification: [{ "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], opens: "09:00", closes: "22:00" }],
+          areaServed: [{ "@type": "Place", name: "Трудовое" }, { "@type": "Place", name: "Владивосток" }, { "@type": "Place", name: "Артём" }]
+        },
+        {
+          "@type": "Service",
+          name: "Классический массаж",
+          serviceType: "Классический оздоровительный массаж",
+          url: "https://7heavenmassage.ru/klassicheskij-massazh",
+          provider: { "@id": "https://7heavenmassage.ru/klassicheskij-massazh#business" },
+          offers: [{ "@type": "Offer", name: "Классический массаж, сеанс", price: "3000", priceCurrency: "RUB", url: "https://7heavenmassage.ru/klassicheskij-massazh#prices" }]
+        },
+        {
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Главная", item: "https://7heavenmassage.ru/" },
+            { "@type": "ListItem", position: 2, name: "Классический массаж", item: "https://7heavenmassage.ru/klassicheskij-massazh" }
           ]
-        })
-      }
-    ]
+        },
+        {
+          "@type": "FAQPage",
+          mainEntity: [
+            { "@type": "Question", name: "Массаж должен быть болезненным?", acceptedAnswer: { "@type": "Answer", text: "Нет. Глубина воздействия регулируется по вашим ощущениям: задача — расслабить тело, а не проверить терпение. Мы всегда работаем в комфортном ритме." } },
+            { "@type": "Question", name: "Сколько сеансов нужно?", acceptedAnswer: { "@type": "Answer", text: "Единой схемы нет, но результат заметнее при регулярности — поэтому есть курсы из 3 и 6 сеансов со скидкой. Конкретный ритм я подберу на первой встрече." } },
+            { "@type": "Question", name: "Можно ли применять классический массаж после простуды?", acceptedAnswer: { "@type": "Answer", text: "При температуре, слабости или остром воспалении массаж не проводится. После выздоровления важно дождаться исчезновения симптомов. При сохранении слабости лучше проконсультироваться с врачом, чтобы сеанс принес пользу, а не нагрузку." } }
+          ]
+        }
+      ]
+    }
   }),
-  component: KlassicheskiiPage
+  component: KlassicheskijPage
 });
 
 const content: ServicePageContent = {
   aboutHeading: "Обсуждаем состояние перед каждым визитом и подбираем технику",
   aboutHeadingMobile: "Обсуждаем состояние перед каждым визитом и подбираем технику",
-  slug: "klassicheskii-massazh",
+  slug: "klassicheskij-massazh",
   breadcrumb: "Классический массаж",
-  title: "Классический массаж",
+  title: "Классический массаж в Трудовом",
   heroText: "Массажные техники для расслабления мышц, снятия напряжения и ощущения лёгкости в теле. Кабинет в посёлке Трудовое.",
   heroImage: "/images/uslugi-klassicheskii-massazh.webp",
   heroImageAlt: "Классический массаж всего тела в кабинете Седьмое небо",
@@ -136,9 +104,7 @@ const content: ServicePageContent = {
             </div>
           </div>
           <div className="mt-6 p-5 bg-[#F2F8FF] text-[#1C3C8C] rounded-[12px] border border-[#DAEBFF]">
-            <p className="font-medium text-[15px] leading-[1.5]">
-              Интенсивность и зоны подбираются индивидуально. Массаж лица и ног имеет ряд противопоказаний, которые обсуждаются до сеанса.
-            </p>
+            <p className="font-medium text-[15px] leading-[1.5]">Интенсивность и зоны подбираются индивидуально. Массаж лица и ног имеет ряд противопоказаний, которые обсуждаются до сеанса.</p>
           </div>
         </>
       ) },
@@ -185,9 +151,7 @@ const content: ServicePageContent = {
             <li>выраженном остеопорозе;</li>
             <li>активных онкологических заболеваниях.</li>
           </ul>
-          <div className="mt-6 p-4 bg-[#F2F8FF] text-[#1C3C8C] rounded-lg border border-[#DAEBFF] font-medium">
-            Перед сеансом сообщите специалисту о хронических заболеваниях, аллергиях, беременности, недавних травмах и операциях, склонности к образованию синяков и принимаемых препаратах. Не отменяйте назначенные лекарства самостоятельно.
-          </div>
+          <div className="mt-6 p-4 bg-[#F2F8FF] text-[#1C3C8C] rounded-lg border border-[#DAEBFF] font-medium">Перед сеансом сообщите специалисту о хронических заболеваниях, аллергиях, беременности, недавних травмах и операциях, склонности к образованию синяков и принимаемых препаратах. Не отменяйте назначенные лекарства самостоятельно.</div>
         </>
       ) },
     {
@@ -241,27 +205,27 @@ const content: ServicePageContent = {
             <li>наблюдайте за самочувствием;</li>
             <li>соблюдайте индивидуальные рекомендации специалиста.</li>
           </ul>
-          <div className="mt-6 p-4 bg-[#F2F8FF] text-[#1C3C8C] rounded-lg border border-[#DAEBFF] font-medium">
-            Обратитесь к врачу, если после процедуры появляются сильная или нарастающая боль, выраженный отёк, онемение, слабость, головокружение, повышение температуры или другие необычные симптомы.
-          </div>
+          <div className="mt-6 p-4 bg-[#F2F8FF] text-[#1C3C8C] rounded-lg border border-[#DAEBFF] font-medium">Обратитесь к врачу, если после процедуры появляются сильная или нарастающая боль, выраженный отёк, онемение, слабость, головокружение, повышение температуры или другие необычные симптомы.</div>
         </>
-      ) }],
+      ) }
+  ],
   prices: [
     { zone: "Всё тело", subtitle: "Последовательная работа со\u00A0спиной, шеей, руками и\u00A0ногами", duration: "1 час", base: 3000, sessionDurations: ["1 час", "", ""] },
     { zone: "Голова", subtitle: "Мягкая работа с\u00A0областью, где собирается стресс", duration: "20 минут", base: 1000, sessionDurations: ["20 минут", "", ""] },
     { zone: "Лицо", subtitle: "Бережная ручная работа с\u00A0мышцами и\u00A0мягкими тканями", duration: "40 минут", base: 2000, sessionDurations: ["40 минут", "", ""] },
     { zone: "Спина и\u00A0шея", subtitle: "Целенаправленная работа с\u00A0наиболее нагруженными зонами", duration: "30 минут", base: 1500, sessionDurations: ["30 минут", "", ""] },
-    { zone: "Ноги и\u00A0стопы", subtitle: "Точная работа с\u00A0зонами ежедневной нагрузки", duration: "1 час", base: 3000, sessionDurations: ["1 час", "", ""] }],
-
+    { zone: "Ноги и\u00A0стопы", subtitle: "Точная работа с\u00A0зонами ежедневной нагрузки", duration: "1 час", base: 3000, sessionDurations: ["1 час", "", ""] }
+  ],
   faq: [
     { q: "Какой результат после первого сеанса?", a: "Уже после первого сеанса заметно снижается общее мышечное напряжение, уходит чувство усталости и возвращается бодрость. Тело становится более податливым, а движения — свободными и комфортными." },
     { q: "Массаж должен быть болезненным?", a: "Нет. Глубина воздействия регулируется по вашим ощущениям: задача — расслабить тело, а не проверить терпение. Я всегда работаю в комфортном ритме." },
-    
     { q: "Что взять с собой?", a: "Ничего: бельё, полотенца и всё необходимое есть в кабинете, каждому гостю — свежий выглаженный комплект. Просто приходите в удобной одежде." },
     { q: "Нужен ли курс?", a: "Количество сеансов классического массажа зависит от\u00A0состояния мышц и\u00A0ваших пожеланий. Один визит помогает оценить уровень напряжения. Если процедура подходит, я предложу индивидуальный график для\u00A0поддержания тонуса или\u00A0расслабления." },
     { q: "Можно ли применять процедуру после\u00A0простуды?", a: "При\u00A0температуре, слабости или\u00A0остром воспалении массаж не\u00A0проводится. После\u00A0выздоровления важно дождаться исчезновения симптомов. При\u00A0сохранении слабости лучше проконсультироваться с\u00A0врачом, чтобы сеанс принес пользу, а\u00A0не\u00A0нагрузку." },
-    { q: "Где находится кабинет?", a: "Кабинет расположен в посёлке Трудовое. Принимаю по записи. Записаться можно через мессенджер Max — я уточню удобное время и дам необходимые рекомендации по подготовке к вашему первому сеансу." } ] };
+    { q: "Где находится кабинет?", a: "Кабинет расположен в посёлке Трудовое. Принимаю по записи. Записаться можно через мессенджер Max — я уточню удобное время и дам необходимые рекомендации по подготовке к вашему первому сеансу." }
+  ]
+};
 
-function KlassicheskiiPage() {
+function KlassicheskijPage() {
   return <ServicePage content={content} />;
 }

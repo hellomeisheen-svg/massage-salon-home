@@ -4,7 +4,7 @@ import { useRef, useState, useEffect } from "react";
 
 export const otherServices = [
   {
-    slug: "vektornyi-massazh",
+    slug: "vektornyj-massazh",
     title: "Векторный массаж",
     description: "Точная работа с мышцами и фасциями для снятия зажимов и восстановления лёгкости и свободы по всему теле.",
     isHit: true,
@@ -22,17 +22,17 @@ export const otherServices = [
     isHit: true,
   },
   {
-    slug: "vakuumnyi-massazh",
+    slug: "vakuumnyj-massazh",
     title: "Вакуумный массаж",
     description: "Вакуумный массаж стеклянными и мягкими инструментами, снимающий тяжесть и возвращающий телу лёгкость и баланс.",
   },
   {
-    slug: "limfaticheskii-massazh",
+    slug: "limfodrenazhnyj-massazh",
     title: "Лимфодренажный массаж",
     description: "Мягкий массаж для уменьшения отёчности и тяжести ног. Возвращает лёгкость, комфорт и спокойствие в теле.",
   },
   {
-    slug: "klassicheskii-massazh",
+    slug: "klassicheskij-massazh",
     title: "Классический массаж",
     description: "Комплексная проработка тела для снятия напряжения и усталости. Восстанавливает силы и ощущение лёгкости.",
   },

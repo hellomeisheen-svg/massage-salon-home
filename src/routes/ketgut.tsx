@@ -1,33 +1,19 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage, type ServicePageContent } from "@/components/ServicePage";
+import { buildSEOHead } from "@/components/SEOHead";
 
 export const Route = createFileRoute("/ketgut")({
-  head: () => ({
-    meta: [
-      { title: "Акупунктурный кетгут в Трудовом (Владивосток, Артём) | Седьмое небо" },
-      {
-        name: "description",
-        content:
-          "Акупунктурный кетгут в кабинете Седьмое небо (посёлок Трудовое): постановка 30 саморассасывающихся нитей в акупунктурные точки. Стоимость 20 000 ₽, запись онлайн." },
-      { property: "og:title", content: "Акупунктурный кетгут — постановка нитей | Седьмое небо" },
-      {
-        property: "og:description",
-        content:
-          "Постановка 30 нитей в акупунктурные точки в кабинете Седьмое небо (Трудовое) для мягкой поддержки тела. Запись из Владивостока и Артёма." },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: "https://7heavenmassage.ru/ketgut" },
-      { property: "og:image", content: "https://7heavenmassage.ru/images/uslugi-ketgut.webp" },
-      { property: "og:image:alt", content: "Акупунктурный кетгут (постановка нитей) в кабинете Седьмое небо, г. Владивосток" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: "https://7heavenmassage.ru/images/uslugi-ketgut.webp" }],
-    links: [{ rel: "canonical", href: "https://7heavenmassage.ru/ketgut" }],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@graph": [
-            {
+  head: () => buildSEOHead({
+    title: "Акупунктурный кетгут в Трудовом — консультация и запись",
+    description: "Акупунктурный кетгут в посёлке Трудовое рядом с Владивостоком. Описание процедуры, материалы, противопоказания, подготовка и запись на консультацию.",
+    canonicalPath: "/ketgut",
+    ogTitle: "Акупунктурный кетгут в Трудовом — Седьмое небо",
+    ogDescription: "Постановка 30 нитей в акупунктурные точки в кабинете Седьмое небо (Трудовое) для мягкой поддержки тела. Запись из Владивостока и Артёма.",
+    ogImage: "https://7heavenmassage.ru/images/uslugi-ketgut.webp",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
               "@type": "BreadcrumbList",
               "itemListElement": [
                 {
@@ -116,9 +102,7 @@ export const Route = createFileRoute("/ketgut")({
               ]
             }
           ]
-        })
-      }
-    ]
+    }
   }),
   component: KetgutPage
 });
@@ -126,7 +110,7 @@ export const Route = createFileRoute("/ketgut")({
 const content: ServicePageContent = {
   slug: "ketgut",
   breadcrumb: "Акупунктурный кетгут",
-  title: "Акупунктурный кетгут",
+  title: "Акупунктурный кетгут в Трудовом",
   hit: true,
 
   heroText: (

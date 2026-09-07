@@ -99,19 +99,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Седьмое небо — кабинет оздоровительных практик" },
-      {
-        name: "description",
-        content:
-          "Кабинет оздоровительных практик «Седьмое небо»: массаж, банки, гирудотерапия, акупунктурный кетгут. Посёлок Трудовое, Владивосток.",
-      },
       { name: "author", content: "Седьмое небо" },
-      { property: "og:title", content: "Седьмое небо — кабинет оздоровительных практик" },
-      {
-        property: "og:description",
-        content:
-          "Кабинет оздоровительных практик «Седьмое небо»: массаж, банки, гирудотерапия, акупунктурный кетгут. Посёлок Трудовое, Владивосток.",
-      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:site_name", content: "Седьмое небо" },

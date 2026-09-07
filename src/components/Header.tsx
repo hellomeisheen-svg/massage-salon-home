@@ -17,10 +17,10 @@ const defaultNavigationItems: NavItem[] = [
 const servicePages = [
   { label: "Гирудотерапия", to: "/girudoterapiya" },
   { label: "Акупунктурный кетгут", to: "/ketgut" },
-  { label: "Вакуумный массаж", to: "/vakuumnyi-massazh" },
-  { label: "Векторный массаж", to: "/vektornyi-massazh" },
-  { label: "Классический массаж", to: "/klassicheskii-massazh" },
-  { label: "Лимфодренажный массаж", to: "/limfaticheskii-massazh" },
+  { label: "Вакуумный массаж", to: "/vakuumnyj-massazh" },
+  { label: "Векторный массаж", to: "/vektornyj-massazh" },
+  { label: "Классический массаж", to: "/klassicheskij-massazh" },
+  { label: "Лимфодренажный массаж", to: "/limfodrenazhnyj-massazh" },
   
 ] as const;
 

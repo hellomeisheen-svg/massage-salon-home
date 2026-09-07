@@ -1,26 +1,14 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
 import { BookingProvider } from "@/components/BookingModal";
+import { buildSEOHead } from "@/components/SEOHead";
 
 export const Route = createFileRoute("/privacy-policy")({
-  head: () => ({
-    meta: [
-      { title: "Политика конфиденциальности — Седьмое небо" },
-      {
-        name: "description",
-        content:
-          "Политика конфиденциальности кабинета оздоровительных практик Седьмое небо: какие данные собираются, как они используются и как связаться со мной.",
-      },
-      { property: "og:title", content: "Политика конфиденциальности — Седьмое небо" },
-      {
-        property: "og:description",
-        content:
-          "Какие данные собираются, как они используются и как связаться со мной по вопросам конфиденциальности.",
-      },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://7heavenmassage.ru/privacy-policy" },
-      { name: "twitter:card", content: "summary" }],
-    links: [{ rel: "canonical", href: "https://7heavenmassage.ru/privacy-policy" }],
+  head: () => buildSEOHead({
+    title: "Политика конфиденциальности — Седьмое небо",
+    description: "Политика обработки персональных данных сайта кабинета оздоровительных практик «Седьмое небо».",
+    canonicalPath: "/privacy-policy",
+    noindex: true,
   }),
   component: PrivacyPolicy,
 });

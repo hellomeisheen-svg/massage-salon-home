@@ -313,11 +313,11 @@ export function mobileTitle(title: string) {
 
 export const servicePageLinks: Record<string, string> = {
   "Гирудотерапия": "/girudoterapiya",
-  "Вакуумный массаж": "/vakuumnyi-massazh",
-  "Векторный": "/vektornyi-massazh",
-  "Лимфодренажный": "/limfaticheskii-massazh",
+  "Вакуумный массаж": "/vakuumnyj-massazh",
+  "Векторный": "/vektornyj-massazh",
+  "Лимфодренажный": "/limfodrenazhnyj-massazh",
   
-  "Классический": "/klassicheskii-massazh",
+  "Классический": "/klassicheskij-massazh",
   "Акупунктурный кетгут": "/ketgut",
 };
 

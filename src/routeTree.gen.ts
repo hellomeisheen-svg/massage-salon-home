@@ -13,11 +13,11 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as SplatRouteImport } from './routes/$'
 import { Route as GirudoterapiyaRouteImport } from './routes/girudoterapiya'
 import { Route as KetgutRouteImport } from './routes/ketgut'
-import { Route as KlassicheskiiMassazhRouteImport } from './routes/klassicheskii-massazh'
-import { Route as LimfaticheskiiMassazhRouteImport } from './routes/limfaticheskii-massazh'
+import { Route as KlassicheskijMassazhRouteImport } from './routes/klassicheskij-massazh'
+import { Route as LimfodrenazhnyjMassazhRouteImport } from './routes/limfodrenazhnyj-massazh'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
-import { Route as VakuumnyiMassazhRouteImport } from './routes/vakuumnyi-massazh'
-import { Route as VektornyiMassazhRouteImport } from './routes/vektornyi-massazh'
+import { Route as VakuumnyjMassazhRouteImport } from './routes/vakuumnyj-massazh'
+import { Route as VektornyjMassazhRouteImport } from './routes/vektornyj-massazh'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -39,14 +39,14 @@ const KetgutRoute = KetgutRouteImport.update({
   path: '/ketgut',
   getParentRoute: () => rootRouteImport,
 } as any)
-const KlassicheskiiMassazhRoute = KlassicheskiiMassazhRouteImport.update({
-  id: '/klassicheskii-massazh',
-  path: '/klassicheskii-massazh',
+const KlassicheskijMassazhRoute = KlassicheskijMassazhRouteImport.update({
+  id: '/klassicheskij-massazh',
+  path: '/klassicheskij-massazh',
   getParentRoute: () => rootRouteImport,
 } as any)
-const LimfaticheskiiMassazhRoute = LimfaticheskiiMassazhRouteImport.update({
-  id: '/limfaticheskii-massazh',
-  path: '/limfaticheskii-massazh',
+const LimfodrenazhnyjMassazhRoute = LimfodrenazhnyjMassazhRouteImport.update({
+  id: '/limfodrenazhnyj-massazh',
+  path: '/limfodrenazhnyj-massazh',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
@@ -54,14 +54,14 @@ const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
   path: '/privacy-policy',
   getParentRoute: () => rootRouteImport,
 } as any)
-const VakuumnyiMassazhRoute = VakuumnyiMassazhRouteImport.update({
-  id: '/vakuumnyi-massazh',
-  path: '/vakuumnyi-massazh',
+const VakuumnyjMassazhRoute = VakuumnyjMassazhRouteImport.update({
+  id: '/vakuumnyj-massazh',
+  path: '/vakuumnyj-massazh',
   getParentRoute: () => rootRouteImport,
 } as any)
-const VektornyiMassazhRoute = VektornyiMassazhRouteImport.update({
-  id: '/vektornyi-massazh',
-  path: '/vektornyi-massazh',
+const VektornyjMassazhRoute = VektornyjMassazhRouteImport.update({
+  id: '/vektornyj-massazh',
+  path: '/vektornyj-massazh',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -70,22 +70,22 @@ export interface FileRoutesByFullPath {
   '/$': typeof SplatRoute
   '/girudoterapiya': typeof GirudoterapiyaRoute
   '/ketgut': typeof KetgutRoute
-  '/klassicheskii-massazh': typeof KlassicheskiiMassazhRoute
-  '/limfaticheskii-massazh': typeof LimfaticheskiiMassazhRoute
+  '/klassicheskij-massazh': typeof KlassicheskijMassazhRoute
+  '/limfodrenazhnyj-massazh': typeof LimfodrenazhnyjMassazhRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
-  '/vakuumnyi-massazh': typeof VakuumnyiMassazhRoute
-  '/vektornyi-massazh': typeof VektornyiMassazhRoute
+  '/vakuumnyj-massazh': typeof VakuumnyjMassazhRoute
+  '/vektornyj-massazh': typeof VektornyjMassazhRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
   '/girudoterapiya': typeof GirudoterapiyaRoute
   '/ketgut': typeof KetgutRoute
-  '/klassicheskii-massazh': typeof KlassicheskiiMassazhRoute
-  '/limfaticheskii-massazh': typeof LimfaticheskiiMassazhRoute
+  '/klassicheskij-massazh': typeof KlassicheskijMassazhRoute
+  '/limfodrenazhnyj-massazh': typeof LimfodrenazhnyjMassazhRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
-  '/vakuumnyi-massazh': typeof VakuumnyiMassazhRoute
-  '/vektornyi-massazh': typeof VektornyiMassazhRoute
+  '/vakuumnyj-massazh': typeof VakuumnyjMassazhRoute
+  '/vektornyj-massazh': typeof VektornyjMassazhRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -93,11 +93,11 @@ export interface FileRoutesById {
   '/$': typeof SplatRoute
   '/girudoterapiya': typeof GirudoterapiyaRoute
   '/ketgut': typeof KetgutRoute
-  '/klassicheskii-massazh': typeof KlassicheskiiMassazhRoute
-  '/limfaticheskii-massazh': typeof LimfaticheskiiMassazhRoute
+  '/klassicheskij-massazh': typeof KlassicheskijMassazhRoute
+  '/limfodrenazhnyj-massazh': typeof LimfodrenazhnyjMassazhRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
-  '/vakuumnyi-massazh': typeof VakuumnyiMassazhRoute
-  '/vektornyi-massazh': typeof VektornyiMassazhRoute
+  '/vakuumnyj-massazh': typeof VakuumnyjMassazhRoute
+  '/vektornyj-massazh': typeof VektornyjMassazhRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -106,33 +106,33 @@ export interface FileRouteTypes {
     | '/$'
     | '/girudoterapiya'
     | '/ketgut'
-    | '/klassicheskii-massazh'
-    | '/limfaticheskii-massazh'
+    | '/klassicheskij-massazh'
+    | '/limfodrenazhnyj-massazh'
     | '/privacy-policy'
-    | '/vakuumnyi-massazh'
-    | '/vektornyi-massazh'
+    | '/vakuumnyj-massazh'
+    | '/vektornyj-massazh'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/$'
     | '/girudoterapiya'
     | '/ketgut'
-    | '/klassicheskii-massazh'
-    | '/limfaticheskii-massazh'
+    | '/klassicheskij-massazh'
+    | '/limfodrenazhnyj-massazh'
     | '/privacy-policy'
-    | '/vakuumnyi-massazh'
-    | '/vektornyi-massazh'
+    | '/vakuumnyj-massazh'
+    | '/vektornyj-massazh'
   id:
     | '__root__'
     | '/'
     | '/$'
     | '/girudoterapiya'
     | '/ketgut'
-    | '/klassicheskii-massazh'
-    | '/limfaticheskii-massazh'
+    | '/klassicheskij-massazh'
+    | '/limfodrenazhnyj-massazh'
     | '/privacy-policy'
-    | '/vakuumnyi-massazh'
-    | '/vektornyi-massazh'
+    | '/vakuumnyj-massazh'
+    | '/vektornyj-massazh'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -140,11 +140,11 @@ export interface RootRouteChildren {
   SplatRoute: typeof SplatRoute
   GirudoterapiyaRoute: typeof GirudoterapiyaRoute
   KetgutRoute: typeof KetgutRoute
-  KlassicheskiiMassazhRoute: typeof KlassicheskiiMassazhRoute
-  LimfaticheskiiMassazhRoute: typeof LimfaticheskiiMassazhRoute
+  KlassicheskijMassazhRoute: typeof KlassicheskijMassazhRoute
+  LimfodrenazhnyjMassazhRoute: typeof LimfodrenazhnyjMassazhRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
-  VakuumnyiMassazhRoute: typeof VakuumnyiMassazhRoute
-  VektornyiMassazhRoute: typeof VektornyiMassazhRoute
+  VakuumnyjMassazhRoute: typeof VakuumnyjMassazhRoute
+  VektornyjMassazhRoute: typeof VektornyjMassazhRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -177,18 +177,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof KetgutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/klassicheskii-massazh': {
-      id: '/klassicheskii-massazh'
-      path: '/klassicheskii-massazh'
-      fullPath: '/klassicheskii-massazh'
-      preLoaderRoute: typeof KlassicheskiiMassazhRouteImport
+    '/klassicheskij-massazh': {
+      id: '/klassicheskij-massazh'
+      path: '/klassicheskij-massazh'
+      fullPath: '/klassicheskij-massazh'
+      preLoaderRoute: typeof KlassicheskijMassazhRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/limfaticheskii-massazh': {
-      id: '/limfaticheskii-massazh'
-      path: '/limfaticheskii-massazh'
-      fullPath: '/limfaticheskii-massazh'
-      preLoaderRoute: typeof LimfaticheskiiMassazhRouteImport
+    '/limfodrenazhnyj-massazh': {
+      id: '/limfodrenazhnyj-massazh'
+      path: '/limfodrenazhnyj-massazh'
+      fullPath: '/limfodrenazhnyj-massazh'
+      preLoaderRoute: typeof LimfodrenazhnyjMassazhRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy-policy': {
@@ -198,18 +198,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivacyPolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/vakuumnyi-massazh': {
-      id: '/vakuumnyi-massazh'
-      path: '/vakuumnyi-massazh'
-      fullPath: '/vakuumnyi-massazh'
-      preLoaderRoute: typeof VakuumnyiMassazhRouteImport
+    '/vakuumnyj-massazh': {
+      id: '/vakuumnyj-massazh'
+      path: '/vakuumnyj-massazh'
+      fullPath: '/vakuumnyj-massazh'
+      preLoaderRoute: typeof VakuumnyjMassazhRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/vektornyi-massazh': {
-      id: '/vektornyi-massazh'
-      path: '/vektornyi-massazh'
-      fullPath: '/vektornyi-massazh'
-      preLoaderRoute: typeof VektornyiMassazhRouteImport
+    '/vektornyj-massazh': {
+      id: '/vektornyj-massazh'
+      path: '/vektornyj-massazh'
+      fullPath: '/vektornyj-massazh'
+      preLoaderRoute: typeof VektornyjMassazhRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -220,11 +220,11 @@ const rootRouteChildren: RootRouteChildren = {
   SplatRoute: SplatRoute,
   GirudoterapiyaRoute: GirudoterapiyaRoute,
   KetgutRoute: KetgutRoute,
-  KlassicheskiiMassazhRoute: KlassicheskiiMassazhRoute,
-  LimfaticheskiiMassazhRoute: LimfaticheskiiMassazhRoute,
+  KlassicheskijMassazhRoute: KlassicheskijMassazhRoute,
+  LimfodrenazhnyjMassazhRoute: LimfodrenazhnyjMassazhRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
-  VakuumnyiMassazhRoute: VakuumnyiMassazhRoute,
-  VektornyiMassazhRoute: VektornyiMassazhRoute,
+  VakuumnyjMassazhRoute: VakuumnyjMassazhRoute,
+  VektornyjMassazhRoute: VektornyjMassazhRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -1,99 +1,64 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage, type ServicePageContent } from "@/components/ServicePage";
+import { buildSEOHead } from "@/components/SEOHead";
 
-export const Route = createFileRoute("/vektornyi-massazh")({
-  head: () => ({
-    meta: [
-      { title: "Векторный массаж во Владивостоке и Трудовом — Седьмое небо" },
-      {
-        name: "description",
-        content: "Профессиональный векторный массаж во Владивостоке (Трудовое). Точная работа с мышцами и фасциями для снятия боли в спине, глубоких зажимов и восстановления свободы движений." },
-      { property: "og:title", content: "Векторный массаж — Седьмое небо" },
-      {
-        property: "og:description",
-        content: "Точная работа по анатомическим линиям тела в кабинете Седьмое небо: освобождение глубоких зажимов и возвращение движениям свободы." },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: "https://7heavenmassage.ru/vektornyi-massazh" },
-      { property: "og:image", content: "https://7heavenmassage.ru/images/uslugi-massazh-spiny-i-shei.webp" },
-      { property: "og:image:alt", content: "Векторный массаж спины и шеи в кабинете Седьмое небо, г. Владивосток" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: "https://7heavenmassage.ru/images/uslugi-massazh-spiny-i-shei.webp" }],
-    links: [{ rel: "canonical", href: "https://7heavenmassage.ru/vektornyi-massazh" }],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@graph": [
-            {
-              "@type": "MedicalBusiness",
-              "@id": "https://7heavenmassage.ru/vektornyi-massazh#business",
-              name: "Седьмое небо",
-              description: "Кабинет массажа и оздоровительных практик Татьяны Злобиной в посёлке Трудовое.",
-              url: "https://7heavenmassage.ru/",
-              telephone: "+7 924 232 46 11",
-              address: { "@type": "PostalAddress", streetAddress: "ул. Лермонтова, 46", addressLocality: "посёлок Трудовое", addressRegion: "Приморский край", addressCountry: "RU" },
-              geo: { "@type": "GeoCoordinates", latitude: 43.3125, longitude: 132.0119 },
-              openingHoursSpecification: [{ "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], opens: "09:00", closes: "22:00" }],
-              areaServed: [{ "@type": "Place", name: "Трудовое" }, { "@type": "Place", name: "Владивосток" }, { "@type": "Place", name: "Артём" }, { "@type": "Place", name: "Приморский край" }] },
-            {
-              "@type": "Service",
-              name: "Векторный массаж",
-              serviceType: "Векторный оздоровительный массаж",
-              url: "https://7heavenmassage.ru/vektornyi-massazh",
-              provider: { "@id": "https://7heavenmassage.ru/vektornyi-massazh#business" },
-              offers: [{ "@type": "Offer", name: "Векторный массаж, сеанс", price: "5000", priceCurrency: "RUB", url: "https://7heavenmassage.ru/vektornyi-massazh#prices" }] },
-            {
-              "@type": "BreadcrumbList",
-              itemListElement: [
-                {
-                  "@type": "ListItem",
-                  position: 1,
-                  name: "Главная",
-                  item: "https://7heavenmassage.ru/"
-                },
-                {
-                  "@type": "ListItem",
-                  position: 2,
-                  name: "Векторный массаж",
-                  item: "https://7heavenmassage.ru/vektornyi-massazh"
-                }
-              ]
-            },
-            {
-              "@type": "FAQPage",
-              mainEntity: [
-                {
-                  "@type": "Question",
-                  name: "Какой результат после первого сеанса?",
-                  acceptedAnswer: { "@type": "Answer", text: "Обычно появляется приятная усталость и лёгкость. Точная работа по анатомическим линиям помогает освободить глубокие зажимы, которые могли копиться годами, возвращая телу естественную свободу движений." } },
-                {
-                  "@type": "Question",
-                  name: "Что если во время массажа станет больно?",
-                  acceptedAnswer: { "@type": "Answer", text: "Я сразу скорректирую технику. Векторная работа может быть интенсивной, но она всегда остаётся в границах вашего комфорта. Мы не работаем через резкую боль, так как это вызывает защитный спазм и мешает расслаблению тканей." } },
-                {
-                  "@type": "Question",
-                  name: "Можно ли сочетать этот массаж с другими практиками?",
-                  acceptedAnswer: { "@type": "Answer", text: "Векторный метод отлично дополняет вакуумную технику. Однако между глубокими сеансами важно делать перерыв в 2–3 дня, чтобы организм успел усвоить воздействие и запустить процессы естественного восстановления." } },
-                {
-                  "@type": "Question",
-                  name: "Можно ли применять процедуру после\u00A0простуды?",
-                  acceptedAnswer: { "@type": "Answer", text: "При\u00A0температуре, ознобе или\u00A0активном воспалении глубокая работа с\u00A0тканями противопоказана. После\u00A0выздоровления важно дождаться исчезновения симптомов. При\u00A0сохранении слабости проконсультируйтесь с\u00A0врачом перед\u00A0записью на\u00A0сеанс." }
-                }
-              ]
-            }
+export const Route = createFileRoute("/vektornyj-massazh")({
+  head: () => buildSEOHead({
+    title: "Векторный массаж в Трудовом — цена и запись",
+    description: "Векторный массаж в Трудовом рядом с Владивостоком и Артёмом. Индивидуальная работа с мышечным напряжением, длительность сеанса, ограничения и запись.",
+    canonicalPath: "/vektornyj-massazh",
+    ogTitle: "Векторный массаж в Трудовом — Седьмое небо",
+    ogDescription: "Точная работа по анатомическим линиям тела в кабинете Седьмое небо: освобождение глубоких зажимов и возвращение движениям свободы.",
+    ogImage: "https://7heavenmassage.ru/images/uslugi-massazh-spiny-i-shei.webp",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "MedicalBusiness",
+          "@id": "https://7heavenmassage.ru/vektornyj-massazh#business",
+          name: "Седьмое небо",
+          description: "Кабинет массажа и оздоровительных практик Татьяны Злобиной в посёлке Трудовое.",
+          url: "https://7heavenmassage.ru/",
+          telephone: "+7 924 232 46 11",
+          address: { "@type": "PostalAddress", streetAddress: "ул. Лермонтова, 46", addressLocality: "посёлок Трудовое", addressRegion: "Приморский край", addressCountry: "RU" },
+          geo: { "@type": "GeoCoordinates", latitude: 43.3125, longitude: 132.0119 },
+          openingHoursSpecification: [{ "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], opens: "09:00", closes: "22:00" }],
+          areaServed: [{ "@type": "Place", name: "Трудовое" }, { "@type": "Place", name: "Владивосток" }, { "@type": "Place", name: "Артём" }, { "@type": "Place", name: "Приморский край" }]
+        },
+        {
+          "@type": "Service",
+          name: "Векторный массаж",
+          serviceType: "Векторный оздоровительный массаж",
+          url: "https://7heavenmassage.ru/vektornyj-massazh",
+          provider: { "@id": "https://7heavenmassage.ru/vektornyj-massazh#business" },
+          offers: [{ "@type": "Offer", name: "Векторный массаж, сеанс", price: "5000", priceCurrency: "RUB", url: "https://7heavenmassage.ru/vektornyj-massazh#prices" }]
+        },
+        {
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Главная", item: "https://7heavenmassage.ru/" },
+            { "@type": "ListItem", position: 2, name: "Векторный массаж", item: "https://7heavenmassage.ru/vektornyj-massazh" }
           ]
-        })
-      }
-    ]
+        },
+        {
+          "@type": "FAQPage",
+          mainEntity: [
+            { "@type": "Question", name: "Какой результат после первого сеанса?", acceptedAnswer: { "@type": "Answer", text: "Обычно появляется приятная усталость и лёгкость. Точная работа по анатомическим линиям помогает освободить глубокие зажимы, которые могли копиться годами, возвращая телу естественную свободу движений." } },
+            { "@type": "Question", name: "Что если во время массажа станет больно?", acceptedAnswer: { "@type": "Answer", text: "Я сразу скорректирую технику. Векторная работа может быть интенсивной, но она всегда остаётся в границах вашего комфорта. Мы не работаем через резкую боль, так как это вызывает защитный спазм и мешает расслаблению тканей." } },
+            { "@type": "Question", name: "Можно ли сочетать этот массаж с другими практиками?", acceptedAnswer: { "@type": "Answer", text: "Векторный метод отлично дополняет вакуумную технику. Однако между глубокими сеансами важно делать перерыв в 2–3 дня, чтобы организм успел усвоить воздействие и запустить процессы естественного восстановления." } },
+            { "@type": "Question", name: "Можно ли применять процедуру после простуды?", acceptedAnswer: { "@type": "Answer", text: "При температуре, ознобе или активном воспалении глубокая работа с тканями противопоказана. После выздоровления важно дождаться исчезновения симптомов. При сохранении слабости проконсультируйтесь с врачом перед записью на сеанс." } }
+          ]
+        }
+      ]
+    }
   }),
-  component: VektornyiPage
+  component: VektornyjPage
 });
 
 const content: ServicePageContent = {
-  slug: "vektornyi-massazh",
+  slug: "vektornyj-massazh",
   breadcrumb: "Векторный массаж",
-  title: "Векторный массаж",
+  title: "Векторный массаж в Трудовом",
   hit: true,
   heroText: "Точная работа с мышцами и фасциями по анатомическим линиям тела. Освобождение глубоких зажимов. Кабинет в Трудовом.",
   heroImage: "/images/uslugi-massazh-spiny-i-shei.webp",
@@ -165,9 +130,7 @@ const content: ServicePageContent = {
           </ul>
           <p className="mt-4 text-sm italic">При варикозном расширении вен воздействие на изменённые вены не проводится. Возможность работы с другими зонами определяется индивидуально.</p>
           <div className="mt-6 p-5 bg-[#F2F8FF] text-[#1C3C8C] rounded-[12px] border border-[#DAEBFF]">
-            <p className="font-medium text-[15px] leading-[1.5]">
-              Перед сеансом сообщите специалисту о хронических заболеваниях, аллергиях, беременности, недавних травмах и операциях, склонности к образованию синяков и всех принимаемых препаратах. Не отменяйте назначенные лекарства самостоятельно.
-            </p>
+            <p className="font-medium text-[15px] leading-[1.5]">Перед сеансом сообщите специалисту о хронических заболеваниях, аллергиях, беременности, недавних травмах и операциях, склонности к образованию синяков и всех принимаемых препаратах. Не отменяйте назначенные лекарства самостоятельно.</p>
           </div>
         </>
       ) },
@@ -221,22 +184,23 @@ const content: ServicePageContent = {
               </ul>
             </div>
           </div>
-          <div className="mt-6 p-4 bg-[#F2F8FF] text-[#1C3C8C] rounded-lg border border-[#DAEBFF] font-medium">
-            Если появляются усиливающаяся боль, выраженный отёк, онемение, слабость или другие необычные симптомы, обратитесь к врачу.
-          </div>
+          <div className="mt-6 p-4 bg-[#F2F8FF] text-[#1C3C8C] rounded-lg border border-[#DAEBFF] font-medium">Если появляются усиливающаяся боль, выраженный отёк, онемение, слабость или другие необычные симптомы, обратитесь к врачу.</div>
         </>
       ) }
   ],
   prices: [
-    { zone: "Всё тело", subtitle: "Точная ручная работа по\u00A0анатомическим линиям", duration: "2 часа", base: 5000, sessionDurations: ["2 часа", "", ""] as [string, string, string] }],
+    { zone: "Всё тело", subtitle: "Точная ручная работа по\u00A0анатомическим линиям", duration: "2 часа", base: 5000, sessionDurations: ["2 часа", "", ""] as [string, string, string] }
+  ],
   faq: [
     { q: "Какой результат после первого сеанса?", a: "Обычно появляется приятная усталость и лёгкость. Точная работа по анатомическим линиям помогает освободить глубокие зажимы, которые могли копиться годами, возвращая телу естественную свободу движений." },
     { q: "Что если во время массажа станет больно?", a: "Мы сразу скорректируем технику. Векторная работа может быть интенсивной, но она всегда остаётся в границах вашего комфорта. Мы не работаем через резкую боль, так как это вызывает защитный спазм и мешает расслаблению тканей." },
     { q: "Можно ли сочетать этот массаж с другими практиками?", a: "Векторный метод отлично дополняет вакуумную технику. Однако между глубокими сеансами важно делать перерыв в 2–3 дня, чтобы организм успел усвоить воздействие и запустить процессы естественного восстановления." },
     { q: "Нужен ли курс?", a: "Разовый сеанс даст облегчение, но для устойчивого результата в работе с зажимами лучше пройти 3–5 встреч. Это позволит телу не только расслабиться, но и привыкнуть к новому положению без привычного напряжения в мышцах." },
     { q: "Можно ли применять процедуру после\u00A0простуды?", a: "При\u00A0температуре, ознобе или\u00A0активном воспалении глубокая работа с\u00A0тканями противопоказана. После\u00A0выздоровления важно дождаться исчезновения симптомов. При\u00A0сохранении слабости проконсультируйтесь с\u00A0врачом перед\u00A0записью на\u00A0сеанс." },
-    { q: "Где находится кабинет?", a: "Кабинет расположен в посёлке Трудовое. Принимаю по записи. Записаться можно через мессенджер Max — я уточню удобное время и дам необходимые рекомендации по подготовке к вашему первому сеансу." } ] };
+    { q: "Где находится кабинет?", a: "Кабинет расположен в посёлке Трудовое. Принимаю по записи. Записаться можно через мессенджер Max — я уточню удобное время и дам необходимые рекомендации по подготовке к вашему первому сеансу." }
+  ]
+};
 
-function VektornyiPage() {
+function VektornyjPage() {
   return <ServicePage content={content} />;
 }

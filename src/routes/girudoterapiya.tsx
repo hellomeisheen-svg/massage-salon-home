@@ -13,40 +13,23 @@ import { OtherServices } from "@/components/OtherServices";
 // PriceTable removed as it was replaced by local Prices design
 import { BookingProvider, useBooking } from "@/components/BookingModal";
 import { formatPrice, pluralize, renderPrice, formatDurationString } from "@/components/Services";
+import { buildSEOHead } from "@/components/SEOHead";
 
 
 
 
 export const Route = createFileRoute("/girudoterapiya")({
-  head: () => ({
-    meta: [
-      { title: "Гирудотерапия во Владивостоке — Седьмое небо" },
-      {
-        name: "description",
-        content:
-          "Гирудотерапия в кабинете Седьмое небо в спокойном ритме: медицинские и косметические пиявки, стерильные материалы, бережная постановка. Стоимость от 4 800 ₽, запись онлайн." },
-      { property: "og:title", content: "Гирудотерапия — Седьмое небо" },
-      {
-        property: "og:description",
-        content:
-          "Медицинские и косметические пиявки в кабинете Седьмое небо: мягкая процедура, стерильные материалы, внимательное сопровождение до и после сеанса." },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: "https://7heavenmassage.ru/girudoterapiya" },
-      { name: "twitter:card", content: "summary_large_image" },
-      {
-        property: "og:image",
-        content: "https://7heavenmassage.ru/images/uslugi-girudoterapiya-litsa.webp" },
-      {
-        name: "twitter:image",
-        content: "https://7heavenmassage.ru/images/uslugi-girudoterapiya-litsa.webp" }],
-    links: [{ rel: "canonical", href: "https://7heavenmassage.ru/girudoterapiya" }],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@graph": [
-            {
+  head: () => buildSEOHead({
+    title: "Гирудотерапия в Трудовом — цена и запись | Седьмое небо",
+    description: "Гирудотерапия в посёлке Трудовое рядом с Владивостоком и Артёмом. Информация о процедуре, подготовке, противопоказаниях, стоимости и записи.",
+    canonicalPath: "/girudoterapiya",
+    ogTitle: "Гирудотерапия в Трудовом — Седьмое небо",
+    ogDescription: "Медицинские и косметические пиявки в кабинете Седьмое небо: мягкая процедура, стерильные материалы, внимательное сопровождение до и после сеанса.",
+    ogImage: "https://7heavenmassage.ru/images/uslugi-girudoterapiya-litsa.webp",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
               "@type": "MedicalBusiness",
               "@id": "https://7heavenmassage.ru/girudoterapiya#business",
               name: "Седьмое небо",
@@ -158,9 +141,7 @@ export const Route = createFileRoute("/girudoterapiya")({
               ]
             }
           ]
-        })
-      }
-    ]
+    }
   }),
   component: GirudoterapiyaPage
 });
@@ -326,7 +307,7 @@ function PageHero() {
                 </div>
                 <div className="flex items-center gap-x-3 gap-y-2 flex-wrap">
                   <h1 className="font-noto-serif-narrow text-[30px] font-light leading-[1.12] text-[#1C3C8C] sm:text-[58px] sm:leading-[1.15]">
-                    Гирудотерапия
+                    Гирудотерапия в Трудовом рядом с Владивостоком
                   </h1>
                   <span className="hidden sm:inline-flex items-center rounded-[12px] bg-[#A2CFFE] px-2 py-0.5 text-[14px] font-medium lowercase tracking-tight text-white">
                     хит
