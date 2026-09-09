@@ -15,158 +15,122 @@ import { BookingProvider, useBooking } from "@/components/BookingModal";
 import { formatPrice, pluralize, renderPrice, formatDurationString } from "@/components/Services";
 import { buildSEOHead } from "@/components/SEOHead";
 
-
-
-
 export const Route = createFileRoute("/girudoterapiya")({
-  head: () => buildSEOHead({
-    title: "Гирудотерапия в Трудовом — цена и запись | Седьмое небо",
-    description: "Гирудотерапия в посёлке Трудовое рядом с Владивостоком и Артёмом. Информация о процедуре, подготовке, противопоказаниях, стоимости и записи.",
-    canonicalPath: "/girudoterapiya",
-    ogTitle: "Гирудотерапия в Трудовом — Седьмое небо",
-    ogDescription: "Медицинские и косметические пиявки в кабинете Седьмое небо: мягкая процедура, стерильные материалы, внимательное сопровождение до и после сеанса.",
-    ogImage: "https://7heavenmassage.ru/images/uslugi-girudoterapiya-litsa.webp",
-    jsonLd: {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-              "@type": "MedicalBusiness",
-              "@id": "https://7heavenmassage.ru/girudoterapiya#business",
-              name: "Седьмое небо",
-              description:
-                "Кабинет массажа и гирудотерапии Татьяны Злобиной в посёлке Трудовое между Владивостоком и Артёмом.",
-              url: "https://7heavenmassage.ru/",
-              image: "https://7heavenmassage.ru/images/uslugi-girudoterapiya-litsa.webp",
-              medicalSpecialty: "https://schema.org/PhysicalTherapy",
-              telephone: "+7 924 232 46 11",
-              address: {
-                "@type": "PostalAddress",
-                streetAddress: "ул. Лермонтова, 46",
-                addressLocality: "посёлок Трудовое",
-                addressRegion: "Приморский край",
-                addressCountry: "RU" },
-              geo: {
-                "@type": "GeoCoordinates",
-                latitude: 43.3125,
-                longitude: 132.0119 },
-              openingHoursSpecification: [
-                {
-                  "@type": "OpeningHoursSpecification",
-                  dayOfWeek: [
-                    "Monday",
-                    "Tuesday",
-                    "Wednesday",
-                    "Thursday",
-                    "Friday",
-                    "Saturday"],
-                  opens: "09:00",
-                  closes: "22:00" }],
-              areaServed: [
-                { "@type": "Place", name: "Трудовое" },
-                { "@type": "Place", name: "Владивосток" },
-                { "@type": "Place", name: "Артём" }],
-              priceRange: "600–4800 ₽" },
-            {
-              "@type": "Service",
-              name: "Гирудотерапия",
-              serviceType: "Гирудотерапия (лечение медицинскими пиявками)",
-              url: "https://7heavenmassage.ru/girudoterapiya",
-              provider: { "@id": "https://7heavenmassage.ru/girudoterapiya#business" },
-              areaServed: [
-                { "@type": "Place", name: "Трудовое" },
-                { "@type": "Place", name: "Владивосток" },
-                { "@type": "Place", name: "Артём" }],
-              offers: [
-                {
-                  "@type": "Offer",
-                  name: "Оздоровительный сеанс гирудотерапии",
-                  price: "4800",
-                  priceCurrency: "RUB",
-                  url: "https://7heavenmassage.ru/girudoterapiya#prices" },
-                {
-                  "@type": "Offer",
-                  name: "Косметические пиявки, за пиявку",
-                  price: "600",
-                  priceCurrency: "RUB",
-                  url: "https://7heavenmassage.ru/girudoterapiya#prices" }] },
-            {
-              "@type": "BreadcrumbList",
-              itemListElement: [
-                {
-                  "@type": "ListItem",
-                  position: 1,
-                  name: "Главная",
-                  item: "https://7heavenmassage.ru/" },
-                {
-                  "@type": "ListItem",
-                  position: 2,
-                  name: "Гирудотерапия",
-                  item: "https://7heavenmassage.ru/girudoterapiya" }] },
-            {
-              "@type": "FAQPage",
-              "@id": "https://7heavenmassage.ru/girudoterapiya#faq",
-              mainEntity: [
-                {
-                  "@type": "Question",
-                  name: "Какой результат после первого сеанса?",
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: "Многие отмечают облегчение уже в первые сутки: снижается мышечное напряжение, улучшается сон и общее самочувствие. Эффект от гирудотерапии часто нарастает постепенно в течение нескольких дней." } },
-                {
-                  "@type": "Question",
-                  name: "Остаются ли следы или синяки после процедуры?",
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: "Да, на месте укуса остаются небольшие точки, которые заживают от нескольких дней до двух недель. Это нормальная реакция кожи. В первые сутки важно не мочить и не тереть места постановки пиявок." } },
-                {
-                  "@type": "Question",
-                  name: "Сочетается ли гирудотерапия с массажем?",
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: "Совмещать их в один день нельзя из-за риска кровотечений. Между процедурами рекомендуется выдержать паузу в 2–3 суток. Я составлю план так, чтобы каждый метод работал максимально эффективно и безопасно для вас." } },
-                {
-                  "@type": "Question",
-                  name: "Нужен ли курс?",
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: "Количество сеансов гирудотерапии зависит от цели, состояния сосудов и реакции организма. Первый визит помогает оценить переносимость ферментов пиявки. Если процедура подходит, я предложу график с интервалом в 3–7 дней." }
-                },
-                {
-                  "@type": "Question",
-                  name: "Можно ли ставить пиявки после простуды?",
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: "В период температуры, озноба или активного кашля процедура противопоказана. После выздоровления важно дождаться полного исчезновения острых симптомов. При сохранении слабости стоит проконсультироваться с врачом перед сеансом." }
-                }
-              ]
-            }
-          ]
-    }
-  }),
-  component: GirudoterapiyaPage
+  head: () =>
+    buildSEOHead({
+      title: "Гирудотерапия в Трудовом — цена и запись | Седьмое небо",
+      description:
+        "Гирудотерапия в посёлке Трудовое рядом с Владивостоком и Артёмом. Информация о процедуре, подготовке, противопоказаниях, стоимости и записи.",
+      canonicalPath: "/girudoterapiya",
+      ogTitle: "Гирудотерапия в Трудовом — Седьмое небо",
+      ogDescription:
+        "Медицинские и косметические пиявки в кабинете Седьмое небо: мягкая процедура, стерильные материалы, внимательное сопровождение до и после сеанса.",
+      ogImage: "https://7heavenmassage.ru/images/uslugi-girudoterapiya-litsa.webp",
+      jsonLd: {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "LocalBusiness",
+            "@id": "https://7heavenmassage.ru/#business",
+            name: "Седьмое небо",
+            description: "Кабинет оздоровительных практик в посёлке Трудовое, Приморский край.",
+            url: "https://7heavenmassage.ru/",
+            image: "https://7heavenmassage.ru/images/hero-portrait-solid.webp",
+            telephone: "+7 924 232 46 11",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "ул. Лермонтова, 46",
+              addressLocality: "посёлок Трудовое",
+              addressRegion: "Приморский край",
+              addressCountry: "RU",
+            },
+            openingHoursSpecification: [
+              {
+                "@type": "OpeningHoursSpecification",
+                dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                opens: "09:00",
+                closes: "22:00",
+              },
+            ],
+            areaServed: ["Трудовое", "Владивосток", "Артём"],
+          },
+          {
+            "@type": "Service",
+            name: "Гирудотерапия",
+            serviceType: "Гирудотерапия",
+            url: "https://7heavenmassage.ru/girudoterapiya",
+            provider: {
+              "@id": "https://7heavenmassage.ru/#business",
+            },
+            areaServed: ["Трудовое", "Владивосток", "Артём"],
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://7heavenmassage.ru/girudoterapiya#breadcrumb",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Главная",
+                item: "https://7heavenmassage.ru/",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Гирудотерапия",
+                item: "https://7heavenmassage.ru/girudoterapiya",
+              },
+            ],
+          },
+        ],
+      },
+    }),
+  component: GirudoterapiyaPage,
 });
 
-const badges = ["Стерильные материалы", "Пиявка используется один раз", "Сопровождение после сеанса"];
+const badges = [
+  "Стерильные материалы",
+  "Пиявка используется один раз",
+  "Сопровождение после сеанса",
+];
 
 const benefits = [
   {
     title: "Мягкое снятие напряжения",
-    text: "Процедура помогает почувствовать лёгкость в теле и спокойно отпустить накопленное напряжение." },
+    text: "Процедура помогает почувствовать лёгкость в теле и спокойно отпустить накопленное напряжение.",
+  },
   {
     title: "Внимание к состоянию",
-    text: "Перед сеансом обсуждаем самочувствие и подбираем количество пиявок и зоны без спешки." },
+    text: "Перед сеансом обсуждаем самочувствие и подбираем количество пиявок и зоны без спешки.",
+  },
   {
     title: "Аккуратный эстетический уход",
-    text: "Косметическая постановка поддерживает свежий вид и ровный тон кожи без агрессивного воздействия." },
+    text: "Косметическая постановка поддерживает свежий вид и ровный тон кожи без агрессивного воздействия.",
+  },
   {
     title: "Спокойная атмосфера",
-    text: "Тихий кабинет, свежее выглаженное бельё и тёплый чай после процедуры." }];
+    text: "Тихий кабинет, свежее выглаженное бельё и тёплый чай после процедуры.",
+  },
+];
 
 const steps = [
-  { n: "01", title: "Знакомство", text: "Короткая беседа о самочувствии, ожиданиях и подходящем формате." },
+  {
+    n: "01",
+    title: "Знакомство",
+    text: "Короткая беседа о самочувствии, ожиданиях и подходящем формате.",
+  },
   { n: "02", title: "Подготовка", text: "Выбираем зоны, готовим кожу и стерильные материалы." },
-  { n: "03", title: "Как проходит сеанс", text: "Постановка пиявок, комфортное положение тела, тишина и покой." },
-  { n: "04", title: "После сеанса", text: "Накладываю стерильную повязку и подробно рассказываю, как ухаживать за зонами." }];
+  {
+    n: "03",
+    title: "Как проходит сеанс",
+    text: "Постановка пиявок, комфортное положение тела, тишина и покой.",
+  },
+  {
+    n: "04",
+    title: "После сеанса",
+    text: "Накладываю стерильную повязку и подробно рассказываю, как ухаживать за зонами.",
+  },
+];
 
 type HirudoRow = {
   zone: string;
@@ -186,7 +150,7 @@ const hirudoRows: HirudoRow[] = [
     base: 4800,
     perLeech: false,
     leechCounts: [6, 16, 74],
-    sessionDurations: ["6 пиявок", "16 пиявок", "74 пиявки"]
+    sessionDurations: ["6 пиявок", "16 пиявок", "74 пиявки"],
   },
   {
     zone: "Косметические пиявки",
@@ -195,31 +159,36 @@ const hirudoRows: HirudoRow[] = [
     base: 600,
     perLeech: true,
     leechCounts: [6, 10, 20],
-    sessionDurations: ["6 пиявок", "10 пиявок", "20 пиявок"]
-  }
+    sessionDurations: ["6 пиявок", "10 пиявок", "20 пиявок"],
+  },
 ];
-
 
 const faq = [
   {
     q: "Какой результат после\u00A0первого сеанса?",
-    a: "Многие отмечают облегчение уже в первые сутки: снижается мышечное напряжение, улучшается сон и общее самочувствие. Эффект от гирудотерапии часто нарастает постепенно в течение нескольких дней." },
+    a: "Ощущения после процедуры индивидуальны. Специалист заранее расскажет о возможной реакции организма и правилах наблюдения после сеанса.",
+  },
   {
     q: "Остаются ли следы или синяки после\u00A0процедуры?",
-    a: "Да, на месте укуса остаются небольшие точки, которые заживают от нескольких дней до двух недель. Это нормальная реакция кожи. В первые сутки важно не мочить и не тереть места постановки пиявок." },
+    a: "Да, на месте укуса остаются небольшие точки, которые заживают от нескольких дней до двух недель. Это нормальная реакция кожи. В первые сутки важно не мочить и не тереть места постановки пиявок.",
+  },
   {
     q: "Сочетается ли гирудотерапия с\u00A0массажем?",
-    a: "Совмещать их в один день нельзя из-за риска кровотечений. Между процедурами рекомендуется выдержать паузу в 2–3 суток. Я составлю план так, чтобы каждый метод работал максимально эффективно и безопасно для вас." },
+    a: "Совмещать их в один день нельзя из-за риска кровотечений. Между процедурами рекомендуется выдержать паузу в 2–3 суток. Специалист поможет согласовать безопасный порядок процедур с учётом самочувствия.",
+  },
   {
     q: "Нужен ли курс?",
-    a: "Количество сеансов гирудотерапии зависит от цели, состояния сосудов и реакции организма. Первый визит помогает оценить переносимость ферментов пиявки. Если процедура подходит, я предложу график с интервалом в 3–7 дней." },
+    a: "Количество сеансов гирудотерапии зависит от цели, состояния сосудов и реакции организма. Первый визит помогает обсудить переносимость процедуры. Дальнейшие рекомендации возможны только после оценки самочувствия и противопоказаний.",
+  },
   {
     q: "Можно ли применять процедуру после простуды?",
-    a: "В острый период болезни (озноб, кашель, жар) процедура противопоказана. Рекомендуется выдержать паузу в 7–10 дней после выздоровления, чтобы иммунитет восстановился и реакция организма на сеанс была предсказуемой." },
+    a: "В острый период болезни (озноб, кашель, жар) процедура противопоказана. Рекомендуется выдержать паузу в 7–10 дней после выздоровления, чтобы иммунитет восстановился и реакция организма на сеанс была предсказуемой.",
+  },
   {
     q: "Где находится кабинет?",
-    a: "Кабинет расположен в посёлке Трудовое. Принимаю по записи. Записаться можно в мессенджере Max — я уточню удобное время и дам необходимые рекомендации по подготовке к вашему первому сеансу." }];
-
+    a: "Кабинет расположен в посёлке Трудовое. Принимаю по записи. Записаться можно в мессенджере Max — я уточню удобное время и дам необходимые рекомендации по подготовке к вашему первому сеансу.",
+  },
+];
 
 function GirudoterapiyaPage() {
   return (
@@ -245,8 +214,7 @@ function GirudoterapiyaPage() {
           subtitle={
             <>
               До этой даты действует прежняя цена: можно купить курс сейчас
-              <br />
-              и приходить на сеансы позже.
+              <br />и приходить на сеансы позже.
             </>
           }
         />
@@ -262,8 +230,12 @@ function GirudoterapiyaPage() {
 function SpecialistBlock() {
   return (
     <div className="flex items-end text-left gap-4">
-      <img loading="eager" decoding="sync" fetchPriority="high" src="/images/tatyana-photo.webp"
-        alt="Татьяна Злобина, мастер оздоровительных практик, кабинет Седьмое небо, г. Владивосток"
+      <img
+        loading="eager"
+        decoding="sync"
+        fetchPriority="high"
+        src="/images/tatyana-photo.webp"
+        alt="Татьяна Злобина, мастер оздоровительных практик, кабинет Седьмое небо в посёлке Трудовое"
         width={85}
         height={110}
         className="h-[90px] w-[70px] sm:h-[110px] sm:w-[85px] rounded-[12px] border border-[#daebff] ds-bento-shadow object-cover flex-shrink-0"
@@ -283,7 +255,10 @@ function SpecialistBlock() {
 function PageHero() {
   return (
     <main className="bg-[#EFF6FF] py-4 sm:py-5">
-      <section id="hero" className="container-1900 grid grid-cols-1 gap-4 sm:gap-5 xl:min-h-[calc(100vh-160px)] xl:grid-cols-2">
+      <section
+        id="hero"
+        className="container-1900 grid grid-cols-1 gap-4 sm:gap-5 xl:min-h-[calc(100vh-160px)] xl:grid-cols-2"
+      >
         <div className="ds-bento-shadow flex flex-col ds-card min-h-[640px] sm:h-[600px] xl:min-h-0 xl:h-auto p-5 sm:p-6 xl:p-10 overflow-hidden">
           <nav aria-label="Хлебные крошки" className="text-[14px] text-[#566A93]">
             <Link to="/" className="hover:opacity-70 transition-opacity">
@@ -309,6 +284,9 @@ function PageHero() {
                   <h1 className="font-noto-serif-narrow text-[30px] font-light leading-[1.12] text-[#1C3C8C] sm:text-[58px] sm:leading-[1.15]">
                     Гирудотерапия в Трудовом рядом с Владивостоком
                   </h1>
+                  <p className="mt-3 text-sm text-[#566A93]">
+                    Текст обновлён: 9 сентября 2026 года.
+                  </p>
                   <span className="hidden sm:inline-flex items-center rounded-[12px] bg-[#A2CFFE] px-2 py-0.5 text-[14px] font-medium lowercase tracking-tight text-white">
                     хит
                   </span>
@@ -316,10 +294,12 @@ function PageHero() {
               </div>
               <p className="mt-4 text-[16px] font-light leading-[26px] text-[#566A93]">
                 <span className="hidden sm:inline">
-                  Практика с медицинскими пиявками для поддержания самочувствия и ощущения лёгкости. Кабинет в посёлке Трудовое.
+                  Практика с медицинскими пиявками для поддержания самочувствия и ощущения лёгкости.
+                  Кабинет в посёлке Трудовое.
                 </span>
                 <span className="sm:hidden">
-                  Практика с медицинскими пиявками для поддержания самочувствия и ощущения лёгкости. Кабинет в посёлке Трудовое.
+                  Практика с медицинскими пиявками для поддержания самочувствия и ощущения лёгкости.
+                  Кабинет в посёлке Трудовое.
                 </span>
               </p>
               <div className="mt-[30px] flex flex-col gap-3 sm:flex-row sm:gap-4">
@@ -337,7 +317,7 @@ function PageHero() {
                     window.open(
                       "https://max.ru/u/f9LHodD0cOLS1ZC9ThcQkVLRVzcK-MbYZ7JVAg8PC5Tx9LyihgOVdPnzaxM",
                       "_blank",
-                      "noopener,noreferrer"
+                      "noopener,noreferrer",
                     )
                   }
                   className="btn-secondary w-full sm:w-[280px] xl:w-[250px] whitespace-nowrap"
@@ -350,7 +330,10 @@ function PageHero() {
         </div>
 
         <div className="ds-bento-shadow relative h-[420px] overflow-hidden rounded-[12px] border border-[#daebff] sm:h-[520px] md:h-[600px] xl:h-auto xl:min-h-0">
-          <img loading="eager" decoding="sync" className="absolute inset-0 h-full w-full object-cover object-top sm:object-center xl:object-top"
+          <img
+            loading="eager"
+            decoding="sync"
+            className="absolute inset-0 h-full w-full object-cover object-top sm:object-center xl:object-top"
             alt="Гирудотерапия в кабинете Татьяны Злобиной"
             src="/images/uslugi-girudoterapiya-litsa.webp"
             fetchPriority="high"
@@ -361,23 +344,38 @@ function PageHero() {
   );
 }
 
-
 const girudoSections: { label: string; content: React.ReactNode }[] = [
   {
     label: "Что такое гирудотерапия",
     content: (
       <>
-        <p>Во время процедуры медицинская пиявка воздействует на кожу и местный кровоток. В её секрете содержатся биологически активные вещества, которые могут влиять на свёртываемость крови.</p>
-        <p>После снятия пиявок в местах укусов некоторое время может сохраняться кровоточивость. Это ожидаемая реакция, но её продолжительность зависит от зоны постановки, количества пиявок, состояния здоровья и принимаемых препаратов.</p>
-        <p>Гирудотерапия не заменяет обследование, лекарственную терапию и назначения лечащего врача. При хронических и острых заболеваниях возможность процедуры согласовывают с профильным специалистом.</p>
+        <p>
+          Во время процедуры медицинская пиявка воздействует на кожу и местный кровоток. В её
+          секрете содержатся биологически активные вещества, которые могут влиять на свёртываемость
+          крови.
+        </p>
+        <p>
+          После снятия пиявок в местах укусов некоторое время может сохраняться кровоточивость. Это
+          ожидаемая реакция, но её продолжительность зависит от зоны постановки, количества пиявок,
+          состояния здоровья и принимаемых препаратов.
+        </p>
+        <p>
+          Гирудотерапия не заменяет обследование, лекарственную терапию и назначения лечащего врача.
+          При хронических и острых заболеваниях возможность процедуры согласовывают с профильным
+          специалистом.
+        </p>
       </>
-    ) },
+    ),
+  },
   {
     label: "Материалы",
     content: (
       <>
         <p className="font-semibold text-[#1C3C8C]">Медицинские пиявки</p>
-        <p>В работе применяются медицинские пиявки зарегистрированного и подтверждённого происхождения.</p>
+        <p>
+          В работе применяются медицинские пиявки зарегистрированного и подтверждённого
+          происхождения.
+        </p>
         <ul className="list-disc pl-5 space-y-2 mt-4">
           <li>Каждая пиявка используется только для&nbsp;одного пациента;</li>
           <li>После процедуры её не&nbsp;применяют повторно;</li>
@@ -385,34 +383,37 @@ const girudoSections: { label: string; content: React.ReactNode }[] = [
           <li>Перед процедурой кожу подготавливают с учётом требований безопасности;</li>
           <li>Места укусов после сеанса обрабатывают, затем накладывают повязку.</li>
         </ul>
-        
+
         <p className="font-semibold text-[#1C3C8C]">Косметические пиявки</p>
-        <p>Постановка небольших медицинских пиявок на лицо и локальные зоны рассматривается отдельно. Процедуру можно проводить только после оценки состояния кожи, общего здоровья, склонности к кровотечениям и принимаемых препаратов.</p>
-        
+        <p>
+          Постановка небольших медицинских пиявок на лицо и локальные зоны рассматривается отдельно.
+          Процедуру можно проводить только после оценки состояния кожи, общего здоровья, склонности
+          к кровотечениям и принимаемых препаратов.
+        </p>
+
         <div className="mt-6 p-4 bg-[#F2F8FF] text-[#1C3C8C] rounded-lg border border-[#DAEBFF] font-medium">
-          Конкретные санитарные процедуры и документы на медицинских пиявок можно уточнить у специалиста перед записью.
+          Конкретные санитарные процедуры и документы на медицинских пиявок можно уточнить у
+          специалиста перед записью.
         </div>
       </>
-    ) },
+    ),
+  },
   {
     label: "Показания",
     content: (
       <>
-        <p>Гирудотерапия может рассматриваться как дополнительный метод в составе комплексного лечения при отдельных состояниях. Решение зависит от диагноза, результатов обследований, общего самочувствия и назначенной терапии.</p>
+        <p>
+          Возможность процедуры обсуждается индивидуально после консультации и оценки самочувствия.
+          Гирудотерапия не заменяет диагностику, назначения врача или основное лечение.
+        </p>
 
-        <p className="mt-4">Возможность процедуры иногда обсуждают при:</p>
-        <ul className="list-disc pl-5 space-y-2 mt-4">
-          <li>отдельных заболеваниях вен и нарушениях венозного оттока;</li>
-          <li>некоторых воспалительных и застойных состояниях;</li>
-          <li>заболеваниях суставов и опорно-двигательного аппарата;</li>
-          <li>отдельных неврологических и урологических состояниях;</li>
-          <li>некоторых гинекологических заболеваниях;</li>
-          <li>восстановлении после травм или операций — только после согласования с лечащим врачом.</li>
-        </ul>
-
-        <p className="mt-4">Этот список не является назначением. Наличие диагноза само по себе не означает, что гирудотерапия вам показана.</p>
+        <p className="mt-4">
+          Перед записью важно сообщить о диагнозах, принимаемых препаратах, аллергиях и недавних
+          операциях. При необходимости сначала обратитесь к профильному врачу.
+        </p>
       </>
-    ) },
+    ),
+  },
   {
     label: "Противопоказания",
     content: (
@@ -422,7 +423,10 @@ const girudoSections: { label: string; content: React.ReactNode }[] = [
           <li>нарушениях свёртываемости крови, включая гемофилию и геморрагические диатезы;</li>
           <li>выраженной анемии;</li>
           <li>продолжающихся кровотечениях;</li>
-          <li>приёме антикоагулянтов, антиагрегантов и других препаратов, влияющих на свёртываемость крови;</li>
+          <li>
+            приёме антикоагулянтов, антиагрегантов и других препаратов, влияющих на свёртываемость
+            крови;
+          </li>
           <li>индивидуальной непереносимости компонентов секрета пиявки;</li>
           <li>беременности;</li>
           <li>выраженном снижении артериального давления;</li>
@@ -430,19 +434,28 @@ const girudoSections: { label: string; content: React.ReactNode }[] = [
           <li>выраженном истощении организма;</li>
           <li>активных онкологических и других тяжёлых заболеваниях;</li>
           <li>повреждениях или воспалении кожи в предполагаемой зоне постановки;</li>
-          <li>состоянии алкогольного опьянения или невозможности выполнять рекомендации специалиста;</li>
+          <li>
+            состоянии алкогольного опьянения или невозможности выполнять рекомендации специалиста;
+          </li>
           <li>недавних операциях, особенно на головном или спинном мозге.</li>
         </ul>
         <div className="mt-6 p-4 bg-[#F2F8FF] text-[#1C3C8C] rounded-lg border border-[#DAEBFF] font-medium">
-          Перечень не заменяет медицинскую консультацию. Перед процедурой обязательно сообщите специалисту о заболеваниях, аллергиях, беременности, недавних операциях и всех принимаемых препаратах. Не отменяйте назначенные лекарства самостоятельно, в том числе препараты, влияющие на свёртываемость крови.
+          Перечень не заменяет медицинскую консультацию. Перед процедурой обязательно сообщите
+          специалисту о заболеваниях, аллергиях, беременности, недавних операциях и всех принимаемых
+          препаратах. Не отменяйте назначенные лекарства самостоятельно, в том числе препараты,
+          влияющие на свёртываемость крови.
         </div>
       </>
-    ) },
+    ),
+  },
   {
     label: "Как проходит сеанс",
     content: (
       <>
-        <p>Специалист проводит беседу и уточняет состояние здоровья, проверяет возможные ограничения и задаёт вопросы о лекарствах.</p>
+        <p>
+          Специалист проводит беседу и уточняет состояние здоровья, проверяет возможные ограничения
+          и задаёт вопросы о лекарствах.
+        </p>
         <ul className="list-disc pl-5 space-y-2 mt-4">
           <li>Определяет зоны постановки и количество пиявок;</li>
           <li>Подготавливает кожу без раздражающих и ароматизированных средств;</li>
@@ -451,10 +464,12 @@ const girudoSections: { label: string; content: React.ReactNode }[] = [
           <li>Объясняет правила ухода и признаки, при которых нужно обратиться за помощью.</li>
         </ul>
         <div className="mt-6 p-4 bg-[#F2F8FF] text-[#1C3C8C] rounded-lg border border-[#DAEBFF] font-medium">
-          Продолжительность сеанса зависит от количества пиявок, зон постановки и реакции организма. В среднем процедура занимает от 1,5 до 2 часов.
+          Продолжительность сеанса зависит от количества пиявок, зон постановки и реакции организма.
+          В среднем процедура занимает от 1,5 до 2 часов.
         </div>
       </>
-    ) },
+    ),
+  },
   {
     label: "Как подготовиться",
     content: (
@@ -467,16 +482,26 @@ const girudoSections: { label: string; content: React.ReactNode }[] = [
           <li>не приходите натощак — допускается лёгкий приём пищи;</li>
           <li>сообщите обо всех хронических заболеваниях и аллергиях;</li>
           <li>перечислите все принимаемые препараты;</li>
-          <li>заранее скажите, если у вас бывают длительные кровотечения или плохо заживают повреждения кожи.</li>
+          <li>
+            заранее скажите, если у вас бывают длительные кровотечения или плохо заживают
+            повреждения кожи.
+          </li>
         </ul>
-        <p>Если специалист рекомендует анализы, пройдите их до процедуры. Не отменяйте лекарства без согласования с врачом.</p>
+        <p>
+          Если специалист рекомендует анализы, пройдите их до процедуры. Не отменяйте лекарства без
+          согласования с врачом.
+        </p>
       </>
-    ) },
+    ),
+  },
   {
     label: "Что делать после процедуры",
     content: (
       <>
-        <p>После сеанса в местах укусов может сохраняться кровоточивость. Повязку нужно менять и снимать только по инструкции специалиста.</p>
+        <p>
+          После сеанса в местах укусов может сохраняться кровоточивость. Повязку нужно менять и
+          снимать только по инструкции специалиста.
+        </p>
         <p>В первые 24–48 часов:</p>
         <ul className="list-disc pl-5 space-y-2">
           <li>не срывайте повязку раньше рекомендованного времени;</li>
@@ -488,10 +513,13 @@ const girudoSections: { label: string; content: React.ReactNode }[] = [
           <li>не наносите косметику на повреждённую кожу.</li>
         </ul>
         <div className="mt-6 p-4 bg-[#F2F8FF] text-[#1C3C8C] rounded-lg border border-[#DAEBFF] font-medium">
-          Обратитесь за медицинской помощью, если кровотечение не уменьшается, усиливаются боль или отёк, повышается температура, появляется гнойное или необычное отделяемое.
+          Обратитесь за медицинской помощью, если кровотечение не уменьшается, усиливаются боль или
+          отёк, повышается температура, появляется гнойное или необычное отделяемое.
         </div>
       </>
-    ) }];
+    ),
+  },
+];
 
 function GirudoterapiyaServices() {
   const [active, setActive] = useState(0);
@@ -529,18 +557,15 @@ function GirudoterapiyaServices() {
             onClick={() => goTo(i)}
             aria-current={isActive}
             className="flex items-center gap-3 text-left group/nav"
-
           >
             <span
               className={`h-2 w-2 rounded-[12px] transition-colors ${
                 isActive ? "bg-[#1C3C8C]" : "bg-[#B7C5E3] group-hover/nav:bg-[#1C3C8C]/50"
-
               }`}
             />
             <span
               className={`text-[16px] transition-colors ${
                 isActive ? "text-[#1C3C8C]" : "text-[#566A93] group-hover/nav:text-[#1C3C8C]"
-
               }`}
             >
               {s.label}
@@ -552,14 +577,18 @@ function GirudoterapiyaServices() {
   );
 
   return (
-    <section id="services" className="scroll-mt-[120px] xl:scroll-mt-[140px] bg-[#EFF6FF] ds-section">
+    <section
+      id="services"
+      className="scroll-mt-[120px] xl:scroll-mt-[140px] bg-[#EFF6FF] ds-section"
+    >
       <div className="container-1900 grid grid-cols-1 xl:grid-cols-2 gap-8 xl:gap-20 items-start relative">
         <div className="self-start xl:sticky xl:top-[124px] flex flex-col items-center xl:items-start text-center xl:text-left z-10">
           <span
             className="inline-flex items-center gap-2 px-4 py-1.5 ds-label text-white"
             style={{
               borderRadius: "12px",
-              backgroundImage: "linear-gradient(to bottom, #A2CFFE, #88C1FF)" }}
+              backgroundImage: "linear-gradient(to bottom, #A2CFFE, #88C1FF)",
+            }}
           >
             Об услуге
           </span>
@@ -655,9 +684,7 @@ function HirudoPriceTable() {
                     <div className="font-noto-serif-narrow text-[20px] xl:text-[24px] font-light leading-tight text-[#1C3C8C]">
                       {p.zone}
                     </div>
-                    <div className="mt-1 text-[13px] font-light text-[#566A93]">
-                      {p.subtitle}
-                    </div>
+                    <div className="mt-1 text-[13px] font-light text-[#566A93]">{p.subtitle}</div>
                   </td>
                   <td className="px-6 py-6 text-[16px] font-light text-[#566A93] xl:px-8">
                     {p.duration}
@@ -678,9 +705,12 @@ function HirudoPriceTable() {
                             </span>
                           </div>
                           <div className="text-[12px] font-light text-[#566A93]">
-                            {p.sessionDurations?.[i] !== undefined ? p.sessionDurations[i] : (
+                            {p.sessionDurations?.[i] !== undefined ? (
+                              p.sessionDurations[i]
+                            ) : (
                               <>
-                                {price.leeches} {pluralize(price.leeches, ["пиявка", "пиявки", "пиявок"])}
+                                {price.leeches}{" "}
+                                {pluralize(price.leeches, ["пиявка", "пиявки", "пиявок"])}
                               </>
                             )}
                           </div>
@@ -688,18 +718,18 @@ function HirudoPriceTable() {
                       </td>
                     );
                   })}
-                    <td className="px-6 py-6 xl:px-8">
-                      <button
-                        type="button"
-                        onClick={() => openBooking(p.zone)}
-                        className="btn-primary px-5 py-2 text-[14px]"
-                      >
-                        Записаться
-                      </button>
-                    </td>
-                  </tr>
-                );
-              })}
+                  <td className="px-6 py-6 xl:px-8">
+                    <button
+                      type="button"
+                      onClick={() => openBooking(p.zone)}
+                      className="btn-primary px-5 py-2 text-[14px]"
+                    >
+                      Записаться
+                    </button>
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>
@@ -713,12 +743,12 @@ function PriceCard({ p }: { p: HirudoRow }) {
 
   const count = sessionCounts[active];
   const discount = discountValues[active];
-  
+
   // Specific data for leech therapy
   const leeches = p.leechCounts[active];
   const totalBase = p.perLeech ? leeches * p.base : p.base * count;
   const currentPrice = Math.round(totalBase * (1 - discount));
-  
+
   const sessionWord = pluralize(count, ["сеанс", "сеанса", "сеансов"]);
   const summary = `${count} ${sessionWord}`;
 
@@ -733,7 +763,6 @@ function PriceCard({ p }: { p: HirudoRow }) {
             className={`relative flex flex-1 items-center justify-center rounded-[12px] px-2 py-2.5 transition-all duration-300 ${
               active === i ? "bg-white shadow-tab-active" : "bg-transparent hover:bg-white/40"
             }`}
-
           >
             <span
               className={`whitespace-nowrap text-[13px] tracking-tight transition-colors duration-300 ${
@@ -758,7 +787,10 @@ function PriceCard({ p }: { p: HirudoRow }) {
 
       <div className="mt-6 flex flex-col gap-1">
         <p className="text-[13px] font-medium leading-[18px] tracking-wide text-[#1C3C8C] lg:block">
-          {count} {sessionWord} · {p.sessionDurations?.[active] !== undefined ? p.sessionDurations[active] : (
+          {count} {sessionWord} ·{" "}
+          {p.sessionDurations?.[active] !== undefined ? (
+            p.sessionDurations[active]
+          ) : (
             <>
               {leeches} {pluralize(leeches, ["пиявка", "пиявки", "пиявок"])}
             </>
@@ -813,12 +845,10 @@ function Prices() {
             <PriceCard key={p.zone} p={p} />
           ))}
         </div>
-
       </div>
     </section>
   );
 }
-
 
 function FaqItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
@@ -856,7 +886,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
                 </div>
               ) : line ? (
                 <p key={i}>{line}</p>
-              ) : null
+              ) : null,
             )}
           </div>
         </div>
@@ -874,7 +904,8 @@ function Faq() {
             className="inline-flex items-center gap-2 px-4 py-1.5 ds-label text-white"
             style={{
               borderRadius: "12px",
-              backgroundImage: "linear-gradient(to bottom, #A2CFFE, #88C1FF)" }}
+              backgroundImage: "linear-gradient(to bottom, #A2CFFE, #88C1FF)",
+            }}
           >
             FAQs
           </span>
@@ -884,15 +915,21 @@ function Faq() {
 
           <div className="mt-8 xl:mt-auto ds-card ds-bento-shadow p-5 sm:p-7 w-full xl:w-1/2 mx-auto xl:mx-0 text-left">
             <div className="flex items-end text-left gap-4 xl:flex-col xl:items-start xl:gap-0">
-              <img loading="eager" decoding="sync" fetchPriority="high" src="/images/tatyana-photo.webp"
+              <img
+                loading="eager"
+                decoding="sync"
+                fetchPriority="high"
+                src="/images/tatyana-photo.webp"
                 alt="Татьяна Злобина"
-                className="h-[90px] w-[70px] sm:h-[110px] sm:w-[85px] xl:h-[110px] xl:w-[85px] rounded-[12px] border border-[#daebff] ds-bento-shadow object-cover flex-shrink-0" />
+                className="h-[90px] w-[70px] sm:h-[110px] sm:w-[85px] xl:h-[110px] xl:w-[85px] rounded-[12px] border border-[#daebff] ds-bento-shadow object-cover flex-shrink-0"
+              />
               <div className="flex flex-col">
                 <h3 className="font-noto-serif-narrow mt-0 xl:mt-6 ds-h4 text-[#1C3C8C] sm:text-[28px] xl:text-[28px]">
                   Татьяна Злобина
                 </h3>
                 <p className="mt-1 xl:mt-3 text-[14px] sm:text-[16px] leading-[1.4] sm:leading-[1.6] body-text text-[#566A93]">
-                  Мастер кабинета, специалист<br className="hidden sm:block xl:block" /> по{"\u00A0"}оздоровительным практикам
+                  Мастер кабинета, специалист
+                  <br className="hidden sm:block xl:block" /> по{"\u00A0"}оздоровительным практикам
                 </p>
               </div>
             </div>
@@ -919,4 +956,3 @@ function Faq() {
     </section>
   );
 }
-

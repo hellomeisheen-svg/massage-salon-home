@@ -16,29 +16,29 @@ import { Faq } from "@/components/Faq";
 
 const Gallery = React.lazy(() => import("@/components/Gallery"));
 
-
 import { Footer } from "@/components/Footer";
 import { BookingProvider } from "@/components/BookingModal";
 import { buildSEOHead } from "@/components/SEOHead";
 
-
 export const Route = createFileRoute("/")({
-    head: () => buildSEOHead({
+  head: () =>
+    buildSEOHead({
       title: "Седьмое небо — массаж и оздоровительные практики в Трудовом",
-      description: "Массаж и оздоровительные практики в посёлке Трудовое рядом с Владивостоком и Артёмом. Классический, вакуумный, лимфодренажный и векторный массаж, запись.",
+      description:
+        "Массаж и оздоровительные практики в посёлке Трудовое рядом с Владивостоком и Артёмом. Классический, вакуумный, лимфодренажный и векторный массаж, запись.",
       canonicalPath: "/",
       ogTitle: "Седьмое небо — массаж и оздоровительные практики в Трудовом",
-      ogDescription: "Массаж, вакуумный массаж, гирудотерапия в кабинете Седьмое небо. Место, где можно замедлиться и вернуться к себе без спешки.",
+      ogDescription:
+        "Массаж, вакуумный массаж, гирудотерапия в кабинете Седьмое небо. Место, где можно замедлиться и вернуться к себе без спешки.",
       ogImage: "https://7heavenmassage.ru/images/hero-portrait-solid.webp",
       jsonLd: {
         "@context": "https://schema.org",
         "@graph": [
           {
-            "@type": "MedicalBusiness",
+            "@type": "LocalBusiness",
             "@id": "https://7heavenmassage.ru/#business",
             name: "Седьмое небо",
-            description:
-              "Кабинет оздоровительных практик Татьяны Злобиной: массаж, вакуумный массаж, гирудотерапия, акупунктурный кетгут.",
+            description: "Кабинет оздоровительных практик в посёлке Трудовое, Приморский край.",
             url: "https://7heavenmassage.ru/",
             image: "https://7heavenmassage.ru/images/hero-portrait-solid.webp",
             telephone: "+7 924 232 46 11",
@@ -49,124 +49,69 @@ export const Route = createFileRoute("/")({
               addressRegion: "Приморский край",
               addressCountry: "RU",
             },
-            geo: {
-              "@type": "GeoCoordinates",
-              latitude: 43.306027,
-              longitude: 132.072118,
-            },
             openingHoursSpecification: [
               {
                 "@type": "OpeningHoursSpecification",
                 dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
                 opens: "09:00",
                 closes: "22:00",
-              }],
+              },
+            ],
             areaServed: ["Трудовое", "Владивосток", "Артём"],
-            priceRange: "600–20000 ₽",
           },
-          {
-            "@type": "BreadcrumbList",
-            "@id": "https://7heavenmassage.ru/#breadcrumb",
-            itemListElement: [
-              {
-                "@type": "ListItem",
-                position: 1,
-                name: "Главная",
-                item: "https://7heavenmassage.ru/"
-              }],
-          },
-          {
-            "@type": "FAQPage",
-            mainEntity: [
-              {
-                "@type": "Question",
-                name: "Как проходит первый сеанс?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Я начинаю с короткой беседы, чтобы обсудить ваш запрос и самочувствие. Я подбираю техники и силу воздействия индивидуально. Первый сеанс помогает познакомиться с методами и почувствовать начальный эффект расслабления.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Впервые: с чего начать?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Начну со знакомства с кабинетом: короткая беседа о самочувствии и целях, а затем — мягкий пробный сеанс, чтобы вы почувствовали формат работы и атмосферу.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Как выбрать процедуру?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Не обязательно выбирать заранее — на первой встрече я вместе с вами подберу подходящую практику под ваше состояние, пожелания и текущий запрос организма.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Где находится кабинет?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Кабинет расположен по адресу: ул. Лермонтова, 46. Это центр посёлка с удобным подъездом и парковкой. Точную схему проезда я присылаю после подтверждения записи.",
-                },
-              }],
-          }],
+        ],
       },
     }),
   component: Index,
 });
 
-
 function Index() {
   return (
     <BookingProvider>
-    <div className="accent-noto-serif relative min-h-screen bg-[#EFF6FF] pt-20 xl:pt-[100px]">
-      <Header />
-      <Hero />
-      <HabitQuote />
-      <Services />
-      <PromoBanner />
-      
-      
-      <StatsSection />
-      <Approach />
-      
-      
-      <Programs />
-      <PromoBanner
-        title={
-          <>
-            <span className="xl:hidden">Успейте записаться по&nbsp;старой цене</span>
-            <span className="hidden xl:inline">
-              С&nbsp;1&nbsp;сентября часть курсов подорожает, а&nbsp;пока
-              <br />
-              можно купить их по&nbsp;прежней цене
-            </span>
-          </>
-        }
-        subtitle={
-          <>
-            <span className="xl:hidden">До&nbsp;повышения цен можно купить курс сейчас, а&nbsp;сеансы пройти в&nbsp;удобное время.</span>
-            <span className="hidden xl:inline">
-              До этой даты действует прежняя цена: можно купить курс сейчас
-              <br />
-              и приходить на сеансы позже.
-            </span>
-          </>
-        }
-      />
-      <Education />
-      
-      <Suspense fallback={<div className="h-[400px] animate-pulse bg-[#DAEBFF]/20" />}>
-        <Gallery />
-      </Suspense>
+      <div className="accent-noto-serif relative min-h-screen bg-[#EFF6FF] pt-20 xl:pt-[100px]">
+        <Header />
+        <Hero />
+        <HabitQuote />
+        <Services />
+        <PromoBanner />
 
-      <Faq />
-      <Footer />
+        <StatsSection />
+        <Approach />
 
+        <Programs />
+        <PromoBanner
+          title={
+            <>
+              <span className="xl:hidden">Успейте записаться по&nbsp;старой цене</span>
+              <span className="hidden xl:inline">
+                С&nbsp;1&nbsp;сентября часть курсов подорожает, а&nbsp;пока
+                <br />
+                можно купить их по&nbsp;прежней цене
+              </span>
+            </>
+          }
+          subtitle={
+            <>
+              <span className="xl:hidden">
+                До&nbsp;повышения цен можно купить курс сейчас, а&nbsp;сеансы пройти в&nbsp;удобное
+                время.
+              </span>
+              <span className="hidden xl:inline">
+                До этой даты действует прежняя цена: можно купить курс сейчас
+                <br />и приходить на сеансы позже.
+              </span>
+            </>
+          }
+        />
+        <Education />
 
+        <Suspense fallback={<div className="h-[400px] animate-pulse bg-[#DAEBFF]/20" />}>
+          <Gallery />
+        </Suspense>
 
-    </div>
+        <Faq />
+        <Footer />
+      </div>
     </BookingProvider>
   );
 }
