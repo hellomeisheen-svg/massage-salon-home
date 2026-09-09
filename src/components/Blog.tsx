@@ -91,15 +91,20 @@ export function Blog() {
             >
               <div className="aspect-[4/3] w-full shrink-0 bg-gradient-to-b from-[#A2CFFE] to-[#88C1FF]" />
               <div className="flex flex-1 flex-col p-4">
-                <span className="text-[12px] font-medium uppercase tracking-[0.08em] text-[#7194C8]">
-                  {article.tag}
-                </span>
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-[12px] font-medium uppercase tracking-[0.08em] text-[#7194C8]">
+                    {article.tag}
+                  </span>
+                  <time dateTime={article.date} className="text-[12px] text-[#9BB3D6]">
+                    {article.formattedDate}
+                  </time>
+                </div>
                 <h3 className="mt-2 font-noto-serif-narrow text-[20px] leading-[1.15] text-[#1C3C8C]">
                   {article.title}
                 </h3>
-                <p className="mt-2 body-text text-[#566A93] line-clamp-2">{article.excerpt}</p>
+                <p className="mt-2 body-text text-[#566A93] line-clamp-3">{article.excerpt}</p>
                 <div className="mt-4 inline-flex items-center gap-1.5 text-[14px] font-medium text-[#1C3C8C] transition-opacity group-hover:opacity-70">
-                  Читать заметку
+                  Читать статью
                   <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" strokeWidth={1.8} />
                 </div>
               </div>

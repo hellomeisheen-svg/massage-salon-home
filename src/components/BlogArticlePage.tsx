@@ -39,30 +39,32 @@ export function BlogArticlePage({ article }: { article: BlogArticle }) {
               <span className="text-[#1C3C8C]">{article.title}</span>
             </nav>
 
-            <span
-              className="mt-8 inline-flex items-center gap-2 px-4 py-1.5 ds-label text-white"
-              style={{
-                borderRadius: "12px",
-                backgroundImage: "linear-gradient(to bottom, #A2CFFE, #88C1FF)",
-              }}
-            >
-              {article.tag}
-            </span>
+            <div className="mt-8 flex items-center gap-3">
+              <span
+                className="inline-flex items-center gap-2 px-4 py-1.5 ds-label text-white"
+                style={{
+                  borderRadius: "12px",
+                  backgroundImage: "linear-gradient(to bottom, #A2CFFE, #88C1FF)",
+                }}
+              >
+                {article.tag}
+              </span>
+              <time dateTime={article.date} className="text-[14px] text-[#9BB3D6]">
+                {article.formattedDate}
+              </time>
+            </div>
 
             <h1 className="mt-6 font-heading ds-h2 text-[#1C3C8C]">
               {article.title}
             </h1>
 
-            <img
-              src={article.image}
-              alt={article.imageAlt}
-              loading="lazy"
-              className="mt-8 h-[300px] w-full rounded-[12px] border border-[#DAEBFF] object-cover ds-bento-shadow sm:h-[420px]"
-            />
-
             <div className="mt-8 body-text text-[#566A93]">
               <p className="text-[18px] leading-[1.6]">{article.excerpt}</p>
-              <p className="mt-6 text-[16px] leading-[1.7]">{article.body}</p>
+              <div className="mt-6 text-[16px] leading-[1.7] [&>p]:mt-4">
+                {article.body.split("\n\n").map((para, i) => (
+                  <p key={i}>{para}</p>
+                ))}
+              </div>
             </div>
 
             <div className="mt-12 border-t border-[#DAEBFF] pt-8">

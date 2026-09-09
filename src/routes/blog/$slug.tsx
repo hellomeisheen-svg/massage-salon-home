@@ -14,7 +14,6 @@ export const Route = createFileRoute("/blog/$slug")({
       canonicalPath: `/blog/${params.slug}`,
       ogTitle: article?.title ?? "Блог Седьмого неба",
       ogDescription: article?.excerpt ?? "",
-      ogImage: article ? `https://7heavenmassage.ru${article.image}` : undefined,
     });
   },
   component: BlogSlugPage,
