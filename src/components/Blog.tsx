@@ -89,23 +89,25 @@ export function Blog() {
               to={`/blog/${article.slug}`}
               className="group ds-card ds-bento-shadow flex flex-col overflow-hidden border border-[#DAEBFF] flex-[0_0_100%] sm:flex-[0_0_calc((100%-0.75rem)/2)] xl:flex-[0_0_calc((100%-3*0.75rem)/4)] snap-start"
             >
-              <img
-                src={article.image}
-                alt={article.imageAlt}
-                loading="lazy"
-                className="h-[200px] w-full object-cover transition-transform duration-500 group-hover:scale-[1.03] sm:h-[220px]"
-              />
-              <div className="flex flex-1 flex-col p-5">
-                <span className="text-[13px] font-medium uppercase tracking-[0.08em] text-[#7194C8]">
+              <div className="h-[160px] w-full overflow-hidden">
+                <img
+                  src={article.image}
+                  alt={article.imageAlt}
+                  loading="lazy"
+                  className="h-[160px] w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                />
+              </div>
+              <div className="flex flex-1 flex-col p-4">
+                <span className="text-[12px] font-medium uppercase tracking-[0.08em] text-[#7194C8]">
                   {article.tag}
                 </span>
-                <h3 className="mt-3 font-noto-serif-narrow text-[24px] leading-[1.15] text-[#1C3C8C]">
+                <h3 className="mt-2 font-noto-serif-narrow text-[20px] leading-[1.15] text-[#1C3C8C]">
                   {article.title}
                 </h3>
-                <p className="mt-3 body-text text-[#566A93] line-clamp-3">{article.excerpt}</p>
-                <div className="mt-5 inline-flex items-center gap-1.5 text-[15px] font-medium text-[#1C3C8C] transition-opacity group-hover:opacity-70">
+                <p className="mt-2 body-text text-[#566A93] line-clamp-2">{article.excerpt}</p>
+                <div className="mt-4 inline-flex items-center gap-1.5 text-[14px] font-medium text-[#1C3C8C] transition-opacity group-hover:opacity-70">
                   Читать заметку
-                  <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" strokeWidth={1.8} />
+                  <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" strokeWidth={1.8} />
                 </div>
               </div>
             </Link>
