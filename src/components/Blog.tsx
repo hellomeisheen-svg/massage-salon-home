@@ -89,12 +89,12 @@ export function Blog() {
               to={`/blog/${article.slug}`}
               className="group ds-card ds-bento-shadow flex flex-col overflow-hidden border border-[#DAEBFF] flex-[0_0_100%] sm:flex-[0_0_calc((100%-0.75rem)/2)] xl:flex-[0_0_calc((100%-3*0.75rem)/4)] snap-start"
             >
-              <div className="h-[160px] w-full overflow-hidden">
+              <div className="aspect-[4/3] w-full shrink-0 overflow-hidden">
                 <img
                   src={article.image}
                   alt={article.imageAlt}
                   loading="lazy"
-                  className="h-[160px] w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  className="block h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                 />
               </div>
               <div className="flex flex-1 flex-col p-4">
