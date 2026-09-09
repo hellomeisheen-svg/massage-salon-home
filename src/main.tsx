@@ -7,7 +7,8 @@ import "./styles.css";
 const router = getRouter();
 
 const rootElement = document.getElementById("root")!;
-if (!rootElement.innerHTML) {
+{
+  rootElement.innerHTML = "";
   const root = ReactDOM.createRoot(rootElement);
   root.render(
     <StrictMode>
