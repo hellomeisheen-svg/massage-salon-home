@@ -32,11 +32,7 @@ export function BlogArticlePage({ article }: { article: BlogArticle }) {
                 Главная
               </Link>
               <span className="px-2">/</span>
-              <Link to="/#blog" className="hover:opacity-70 transition-opacity">
-                Блог
-              </Link>
-              <span className="px-2">/</span>
-              <span className="text-[#1C3C8C]">{article.title}</span>
+              <span className="text-[#1C3C8C]">Статья</span>
             </nav>
 
             <div className="mt-8 flex items-center gap-3">
@@ -55,25 +51,30 @@ export function BlogArticlePage({ article }: { article: BlogArticle }) {
             </div>
 
             <h1 className="mt-6 font-heading ds-h2 text-[#1C3C8C]">
-              {article.title}
+              {article.heading ?? article.title}
             </h1>
+
+            <div className="mt-5 border-y border-[#DAEBFF] py-4 text-[14px] text-[#566A93]">
+              <p><strong>Об авторе:</strong> {article.author ?? "Информация об авторе не указана"}</p>
+              <p className="mt-1"><strong>Дата публикации:</strong> {article.formattedDate}</p>
+              {article.updatedDate && <p className="mt-1"><strong>Дата обновления:</strong> {article.formattedDate}</p>}
+            </div>
 
             <div className="mt-8 body-text text-[#566A93]">
               <p className="text-[18px] leading-[1.6]">{article.excerpt}</p>
-              <div className="mt-6 text-[16px] leading-[1.7] [&>p]:mt-4">
-                {article.body.split("\n\n").map((para, i) => (
-                  <p key={i}>{para}</p>
-                ))}
-              </div>
+              <ArticleBody body={article.body} />
+              <p className="mt-8 rounded-[12px] border border-[#DAEBFF] bg-white/60 p-4 text-[14px] leading-[1.6]">
+                Информация на странице носит ознакомительный характер и не заменяет консультацию врача.
+              </p>
+              <Link to="/girudoterapiya" className="mt-6 inline-flex text-[15px] font-medium text-[#1C3C8C] hover:opacity-70">
+                Подробнее о гирудотерапии
+              </Link>
             </div>
 
             <div className="mt-12 border-t border-[#DAEBFF] pt-8">
-              <Link
-                to="/#blog"
-                className="inline-flex items-center gap-2 text-[15px] font-medium text-[#1C3C8C] transition-opacity hover:opacity-65"
-              >
+              <Link to="/" className="inline-flex items-center gap-2 text-[15px] font-medium text-[#1C3C8C] transition-opacity hover:opacity-65">
                 <ArrowLeft className="h-4 w-4" strokeWidth={1.8} />
-                Вернуться к блогу
+                Вернуться на главную
               </Link>
             </div>
           </div>
@@ -81,6 +82,20 @@ export function BlogArticlePage({ article }: { article: BlogArticle }) {
         <Footer items={blogFooterNav} />
       </div>
     </BookingProvider>
+  );
+}
+
+function ArticleBody({ body }: { body: string }) {
+  const blocks = body.split("\n\n");
+  return (
+    <div className="mt-6 text-[16px] leading-[1.7] [&>p]:mt-4 [&>h2]:mt-8 [&>h2]:font-heading [&>h2]:text-[28px] [&>h2]:leading-[1.2] [&>h2]:text-[#1C3C8C] [&>ul]:mt-4 [&>ol]:mt-4 [&>ul]:list-disc [&>ol]:list-decimal [&>ul]:pl-6 [&>ol]:pl-6">
+      {blocks.map((block, index) => {
+        if (block.startsWith("## ")) return <h2 key={index}>{block.slice(3)}</h2>;
+        if (block.startsWith("- ")) return <ul key={index}>{block.split("\n").map((item) => <li key={item}>{item.slice(2)}</li>)}</ul>;
+        if (/^\d+\. /.test(block)) return <ol key={index}>{block.split("\n").map((item) => <li key={item}>{item.replace(/^\d+\. /, "")}</li>)}</ol>;
+        return <p key={index}>{block}</p>;
+      })}
+    </div>
   );
 }
 

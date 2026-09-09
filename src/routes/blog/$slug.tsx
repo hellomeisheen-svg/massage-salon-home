@@ -6,14 +6,36 @@ import { blogArticles } from "@/data/blog-articles";
 export const Route = createFileRoute("/blog/$slug")({
   head: ({ params }) => {
     const article = blogArticles.find((a) => a.slug === params.slug);
+    const canonicalPath = `/blog/${params.slug}`;
     return buildSEOHead({
-      title: article
-        ? `${article.title} — Блог Седьмого неба`
-        : "Статья не найдена — Блог Седьмого неба",
-      description: article?.excerpt ?? "",
-      canonicalPath: `/blog/${params.slug}`,
+      title: article?.seoTitle ?? (article ? `${article.title} — Блог Седьмого неба` : "Статья не найдена — Блог Седьмого неба"),
+      description: article?.seoDescription ?? article?.excerpt ?? "",
+      canonicalPath,
       ogTitle: article?.title ?? "Блог Седьмого неба",
-      ogDescription: article?.excerpt ?? "",
+      ogDescription: article?.seoDescription ?? article?.excerpt ?? "",
+      jsonLd: article
+        ? [
+            {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                { "@type": "ListItem", position: 1, name: "Главная", item: "https://7heavenmassage.ru/" },
+                { "@type": "ListItem", position: 2, name: "Статья", item: `https://7heavenmassage.ru${canonicalPath}` },
+              ],
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "Article",
+              headline: article.heading ?? article.title,
+              description: article.seoDescription ?? article.excerpt,
+              datePublished: article.date,
+              dateModified: article.updatedDate ?? article.date,
+              author: { "@type": "Organization", name: article.author ?? "Кабинет «Седьмое небо»" },
+              publisher: { "@type": "Organization", name: "Седьмое небо" },
+              mainEntityOfPage: `https://7heavenmassage.ru${canonicalPath}`,
+            },
+          ]
+        : undefined,
     });
   },
   component: BlogSlugPage,
