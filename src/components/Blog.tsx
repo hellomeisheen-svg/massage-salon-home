@@ -1,8 +1,60 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { useRef, useState, useEffect } from "react";
 import { blogArticles } from "@/data/blog-articles";
 
 export function Blog() {
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [canPrev, setCanPrev] = useState(false);
+  const [canNext, setCanNext] = useState(false);
+
+  const updateArrows = () => {
+    const el = trackRef.current;
+    if (!el) return;
+    setCanPrev(el.scrollLeft > 1);
+    setCanNext(el.scrollLeft + el.clientWidth < el.scrollWidth - 1);
+  };
+
+  useEffect(() => {
+    updateArrows();
+    const el = trackRef.current;
+    if (!el) return;
+    const onResize = () => updateArrows();
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, [blogArticles.length]);
+
+  const scroll = (dir: number) => {
+    const el = trackRef.current;
+    const card = el?.firstElementChild as HTMLElement | undefined;
+    if (!el || !card) return;
+    const step = card.offsetWidth + 12;
+    el.scrollBy({ left: dir * step, behavior: "smooth" });
+  };
+
+  const Controls = ({ className }: { className: string }) => (
+    <div className={className}>
+      <button
+        type="button"
+        onClick={() => scroll(-1)}
+        disabled={!canPrev}
+        aria-label="Предыдущие статьи"
+        className="h-12 w-12 rounded-[12px] border border-[#daebff] bg-white flex items-center justify-center text-[#1C3C8C] transition-[background-color,opacity] hover:bg-[#EFF6FF] active:opacity-60 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-white"
+      >
+        <ChevronLeft className="h-5 w-5" />
+      </button>
+      <button
+        type="button"
+        onClick={() => scroll(1)}
+        disabled={!canNext}
+        aria-label="Следующие статьи"
+        className="h-12 w-12 rounded-[12px] border border-[#daebff] bg-white flex items-center justify-center text-[#1C3C8C] transition-[background-color,opacity] hover:bg-[#EFF6FF] active:opacity-60 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-white"
+      >
+        <ChevronRight className="h-5 w-5" />
+      </button>
+    </div>
+  );
+
   return (
     <section id="blog" className="scroll-mt-[120px] bg-[#EFF6FF] ds-section">
       <div className="container-1900">
@@ -24,38 +76,43 @@ export function Blog() {
           </p>
         </div>
 
-        <div className="mt-8 grid grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2 xl:grid-cols-3">
+        <Controls className="hidden xl:flex justify-end gap-2 mt-6" />
+
+        <div
+          ref={trackRef}
+          onScroll={updateArrows}
+          className="mt-8 xl:mt-4 flex gap-3 overflow-x-auto scrollbar-none scroll-smooth py-6 px-1"
+        >
           {blogArticles.map((article) => (
-            <article
+            <Link
               key={article.slug}
-              className="ds-card ds-bento-shadow flex flex-col overflow-hidden border border-[#DAEBFF]"
+              to={`/blog/${article.slug}`}
+              className="group ds-card ds-bento-shadow flex flex-col overflow-hidden border border-[#DAEBFF] flex-[0_0_100%] sm:flex-[0_0_calc((100%-0.75rem)/2)] xl:flex-[0_0_calc((100%-3*0.75rem)/4)] snap-start"
             >
               <img
                 src={article.image}
                 alt={article.imageAlt}
                 loading="lazy"
-                className="h-[210px] w-full object-cover transition-transform duration-500 hover:scale-[1.03] sm:h-[240px]"
+                className="h-[200px] w-full object-cover transition-transform duration-500 group-hover:scale-[1.03] sm:h-[220px]"
               />
-              <div className="flex flex-1 flex-col p-5 sm:p-6">
+              <div className="flex flex-1 flex-col p-5">
                 <span className="text-[13px] font-medium uppercase tracking-[0.08em] text-[#7194C8]">
                   {article.tag}
                 </span>
-                <h3 className="mt-3 font-noto-serif-narrow text-[28px] leading-[1.12] text-[#1C3C8C]">
+                <h3 className="mt-3 font-noto-serif-narrow text-[24px] leading-[1.15] text-[#1C3C8C]">
                   {article.title}
                 </h3>
-                <p className="mt-4 body-text text-[#566A93]">{article.excerpt}</p>
-
-                <Link
-                  to={`/blog/${article.slug}`}
-                  className="mt-6 inline-flex w-fit items-center gap-2 text-[15px] font-medium text-[#1C3C8C] transition-opacity hover:opacity-65"
-                >
+                <p className="mt-3 body-text text-[#566A93] line-clamp-3">{article.excerpt}</p>
+                <div className="mt-5 inline-flex items-center gap-1.5 text-[15px] font-medium text-[#1C3C8C] transition-opacity group-hover:opacity-70">
                   Читать заметку
-                  <ArrowUpRight className="h-4 w-4" strokeWidth={1.8} />
-                </Link>
+                  <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" strokeWidth={1.8} />
+                </div>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
+
+        <Controls className="flex xl:hidden justify-center gap-2 mt-6" />
       </div>
     </section>
   );
