@@ -78,7 +78,7 @@ export const Route = createFileRoute("/ketgut")({
 const content: ServicePageContent = {
   slug: "ketgut",
   breadcrumb: "Акупунктурный кетгут",
-  title: "Кетгут в Трудовом",
+  title: "Акупунктурный кетгут",
   hit: true,
 
   heroText: (
