@@ -397,7 +397,7 @@ function PriceTable({ content }: { content: ServicePageContent }) {
                 1 сеанс
               </th>
               <th className="px-6 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
-                <span className="flex items-center gap-2">
+                <span className="flex min-w-max items-center gap-2 whitespace-nowrap">
                   3 сеанса
                   <span className="rounded-[12px] bg-[#1C3C8C] px-2 py-0.5 text-[10px] font-semibold text-white">
                     -10%
