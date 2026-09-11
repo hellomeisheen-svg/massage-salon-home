@@ -78,7 +78,7 @@ export const Route = createFileRoute("/vektornyj-massazh")({
 const content: ServicePageContent = {
   slug: "vektornyj-massazh",
   breadcrumb: "Векторный массаж",
-  title: "Векторный массаж в Трудовом",
+  title: "Векторный массаж",
   hit: true,
   heroText:
     "Точная работа с мышцами и фасциями по анатомическим линиям тела. Освобождение глубоких зажимов. Кабинет в Трудовом.",
