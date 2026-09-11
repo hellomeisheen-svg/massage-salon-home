@@ -730,7 +730,6 @@ function HirudoPriceTable() {
 }
 
 function PriceCard({ p }: { p: HirudoRow }) {
-  const { openBooking } = useBooking();
   const [active, setActive] = useState(0);
 
   const count = sessionCounts[active];
@@ -804,15 +803,6 @@ function PriceCard({ p }: { p: HirudoRow }) {
             за {count} {sessionWord}
           </span>
         </div>
-      </div>
-      <div className="mt-8">
-        <button
-          type="button"
-          onClick={() => openBooking(p.zone)}
-          className="btn-primary w-full py-3 text-[15px]"
-        >
-          Записаться
-        </button>
       </div>
     </article>
   );
