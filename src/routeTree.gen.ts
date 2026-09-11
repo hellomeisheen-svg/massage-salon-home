@@ -18,7 +18,6 @@ import { Route as LimfodrenazhnyjMassazhRouteImport } from './routes/limfodrenaz
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as VakuumnyjMassazhRouteImport } from './routes/vakuumnyj-massazh'
 import { Route as VektornyjMassazhRouteImport } from './routes/vektornyj-massazh'
-import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -65,11 +64,6 @@ const VektornyjMassazhRoute = VektornyjMassazhRouteImport.update({
   path: '/vektornyj-massazh',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BlogSlugRoute = BlogSlugRouteImport.update({
-  id: '/blog/$slug',
-  path: '/blog/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -81,7 +75,6 @@ export interface FileRoutesByFullPath {
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/vakuumnyj-massazh': typeof VakuumnyjMassazhRoute
   '/vektornyj-massazh': typeof VektornyjMassazhRoute
-  '/blog/$slug': typeof BlogSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -93,7 +86,6 @@ export interface FileRoutesByTo {
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/vakuumnyj-massazh': typeof VakuumnyjMassazhRoute
   '/vektornyj-massazh': typeof VektornyjMassazhRoute
-  '/blog/$slug': typeof BlogSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -106,7 +98,6 @@ export interface FileRoutesById {
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/vakuumnyj-massazh': typeof VakuumnyjMassazhRoute
   '/vektornyj-massazh': typeof VektornyjMassazhRoute
-  '/blog/$slug': typeof BlogSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -120,7 +111,6 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/vakuumnyj-massazh'
     | '/vektornyj-massazh'
-    | '/blog/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -132,7 +122,6 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/vakuumnyj-massazh'
     | '/vektornyj-massazh'
-    | '/blog/$slug'
   id:
     | '__root__'
     | '/'
@@ -144,7 +133,6 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/vakuumnyj-massazh'
     | '/vektornyj-massazh'
-    | '/blog/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -157,7 +145,6 @@ export interface RootRouteChildren {
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   VakuumnyjMassazhRoute: typeof VakuumnyjMassazhRoute
   VektornyjMassazhRoute: typeof VektornyjMassazhRoute
-  BlogSlugRoute: typeof BlogSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -225,13 +212,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof VektornyjMassazhRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/blog/$slug': {
-      id: '/blog/$slug'
-      path: '/blog/$slug'
-      fullPath: '/blog/$slug'
-      preLoaderRoute: typeof BlogSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
@@ -245,7 +225,6 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   VakuumnyjMassazhRoute: VakuumnyjMassazhRoute,
   VektornyjMassazhRoute: VektornyjMassazhRoute,
-  BlogSlugRoute: BlogSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

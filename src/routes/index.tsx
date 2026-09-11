@@ -13,7 +13,6 @@ import { StatsSection } from "@/components/StatsSection";
 import { Programs } from "@/components/Programs";
 import { Education } from "@/components/Education";
 import { Faq } from "@/components/Faq";
-import { Blog } from "@/components/Blog";
 
 const Gallery = React.lazy(() => import("@/components/Gallery"));
 
@@ -111,7 +110,6 @@ function Index() {
         </Suspense>
 
         <Faq />
-        <Blog />
         <Footer />
       </div>
     </BookingProvider>
