@@ -80,7 +80,7 @@ const content: ServicePageContent = {
   aboutHeadingMobile: "Обсуждаем состояние перед каждым визитом и подбираем технику",
   slug: "vakuumnyj-massazh",
   breadcrumb: "Вакуумный массаж",
-  title: "Вакуумный массаж банками",
+  title: "Вакуумный массаж",
   heroText:
     "Вакуумный массаж стеклянными и\u00a0мягкими инструментами для\u00a0прогревания тканей и\u00a0лёгкости в\u00a0движении. Кабинет в\u00a0посёлке Трудовое.",
   heroImage: "/images/uslugi-myagkie-banki.webp",
