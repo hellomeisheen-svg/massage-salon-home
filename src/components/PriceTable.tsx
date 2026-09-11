@@ -135,7 +135,7 @@ export function PriceTable({ prices, title = "Форматы и стоимост
                   key={label}
                   type="button"
                   onClick={() => setActiveTab(i)}
-                  className={`relative flex flex-1 items-center justify-center rounded-[12px] px-2 py-2.5 transition-all duration-300 ${
+                  className={`relative flex flex-1 items-center justify-center rounded-[12px] px-2 py-2.5 transition-all duration-300 sm:flex-col sm:gap-0.5 sm:py-2 ${
                     activeTab === i ? "bg-white shadow-tab-active" : "bg-transparent hover:bg-white/40"
                   }`}
 
@@ -148,7 +148,7 @@ export function PriceTable({ prices, title = "Форматы и стоимост
                     {label}
                   </span>
                   {sessionDiscounts[i] && (
-                    <span className="absolute -top-1 right-1 rounded-[12px] bg-[#1C3C8C] px-1.5 py-0.5 text-[9px] font-semibold tracking-wide text-white">
+                    <span className="absolute top-1 right-1 rounded-[12px] bg-[#1C3C8C] px-1.5 py-0.5 text-[9px] font-semibold tracking-wide text-white sm:static sm:order-first sm:mb-0.5">
                       {sessionDiscounts[i]}
                     </span>
                   )}
