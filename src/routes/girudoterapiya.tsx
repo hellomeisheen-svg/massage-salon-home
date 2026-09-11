@@ -656,7 +656,7 @@ function HirudoPriceTable() {
                   </span>
                 </span>
               </th>
-              <th className="px-6 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
+              <th className="hidden xl:table-cell px-6 py-4 text-[13px] font-medium tracking-wide text-[#1C3C8C] xl:px-8">
                 {/* Кнопка записи */}
               </th>
             </tr>
@@ -710,7 +710,7 @@ function HirudoPriceTable() {
                       </td>
                     );
                   })}
-                  <td className="px-6 py-6 xl:px-8">
+                  <td className="hidden xl:table-cell px-6 py-6 xl:px-8">
                     <button
                       type="button"
                       onClick={() => openBooking(p.zone)}
