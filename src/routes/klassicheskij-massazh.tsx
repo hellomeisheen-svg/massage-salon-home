@@ -80,7 +80,7 @@ const content: ServicePageContent = {
   aboutHeadingMobile: "Обсуждаем состояние перед каждым визитом и подбираем технику",
   slug: "klassicheskij-massazh",
   breadcrumb: "Классический массаж",
-  title: "Классический массаж в Трудовом",
+  title: "Классический массаж",
   heroText:
     "Массажные техники для расслабления мышц, снятия напряжения и ощущения лёгкости в теле. Кабинет в посёлке Трудовое.",
   heroImage: "/images/uslugi-klassicheskii-massazh.webp",

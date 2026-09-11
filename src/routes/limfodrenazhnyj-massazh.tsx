@@ -80,7 +80,7 @@ const content: ServicePageContent = {
   aboutHeadingMobile: "Обсуждаем состояние перед каждым визитом и подбираем технику",
   slug: "limfodrenazhnyj-massazh",
   breadcrumb: "Лимфодренажный массаж",
-  title: "Лимфодренажный массаж в Трудовом",
+  title: "Лимфодренажный массаж",
   heroText:
     "Мягкие массажные техники для поддержки естественного лимфотока, уменьшения ощущения отёчности и лёгкости в теле. Кабинет в посёлке Трудовое.",
   heroImage: "/images/uslugi-limfodrenazhnyi-massazh.webp",

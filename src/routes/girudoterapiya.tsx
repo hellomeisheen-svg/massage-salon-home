@@ -275,22 +275,14 @@ function PageHero() {
           <div className="mt-auto xl:mt-auto pt-4 sm:pt-12">
             <div className="flex flex-col tablet-text-block xl:max-w-[640px]">
               <div className="flex flex-col gap-y-2">
-                <div className="flex sm:hidden">
+                <div>
                   <span className="inline-flex items-center rounded-[12px] bg-[#A2CFFE] px-2 py-0.5 text-[14px] font-medium lowercase tracking-tight text-white">
                     хит
                   </span>
                 </div>
-                <div className="flex items-center gap-x-3 gap-y-2 flex-wrap">
-                  <h1 className="font-noto-serif-narrow text-[30px] font-light leading-[1.12] text-[#1C3C8C] sm:text-[58px] sm:leading-[1.15]">
-                    Гирудотерапия в Трудовом рядом с Владивостоком
-                  </h1>
-                  <p className="mt-3 text-sm text-[#566A93]">
-                    Текст обновлён: 9 сентября 2026 года.
-                  </p>
-                  <span className="hidden sm:inline-flex items-center rounded-[12px] bg-[#A2CFFE] px-2 py-0.5 text-[14px] font-medium lowercase tracking-tight text-white">
-                    хит
-                  </span>
-                </div>
+                <h1 className="font-noto-serif-narrow text-[30px] font-light leading-[1.12] text-[#1C3C8C] sm:text-[58px] sm:leading-[1.15]">
+                  Гирудотерапия
+                </h1>
               </div>
               <p className="mt-4 text-[16px] font-light leading-[26px] text-[#566A93]">
                 <span className="hidden sm:inline">
